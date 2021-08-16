@@ -1,0 +1,1889 @@
+
+
+Microchip MPLAB XC8 Assembler V2.32 build 20210201212658 
+                                                                                               Sun Aug 15 18:01:22 2021
+
+Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1 
+     1                           	processor	16F887
+     2                           	pagewidth 120
+     3                           	opt	flic
+     4                           	psect	cinit,global,class=CODE,merge=1,delta=2
+     5                           	psect	bssCOMMON,global,class=COMMON,space=1,delta=1,noexec
+     6                           	psect	bssBANK0,global,class=BANK0,space=1,delta=1,noexec
+     7                           	psect	clrtext,global,class=CODE,delta=2
+     8                           	psect	cstackCOMMON,global,class=COMMON,space=1,delta=1,noexec
+     9                           	psect	cstackBANK0,global,class=BANK0,space=1,delta=1,noexec
+    10                           	psect	maintext,global,class=CODE,split=1,delta=2
+    11                           	psect	text1,local,class=CODE,merge=1,delta=2
+    12                           	psect	text2,local,class=CODE,merge=1,delta=2
+    13                           	psect	text3,local,class=CODE,merge=1,delta=2
+    14                           	psect	text4,local,class=CODE,merge=1,delta=2
+    15                           	psect	text5,local,class=CODE,merge=1,delta=2
+    16                           	psect	intentry,global,class=CODE,delta=2
+    17                           	psect	config,global,abs,ovrld,class=CONFIG,space=4,delta=2,noexec
+    18                           	dabs	1,0x7E,2
+    19  0000                     
+    20                           ; Version 2.20
+    21                           ; Generated 12/02/2020 GMT
+    22                           ; 
+    23                           ; Copyright © 2020, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    24                           ; All rights reserved.
+    25                           ; 
+    26                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    27                           ; 
+    28                           ; Redistribution and use in source and binary forms, with or without modification, are
+    29                           ; permitted provided that the following conditions are met:
+    30                           ; 
+    31                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    32                           ;        conditions and the following disclaimer.
+    33                           ; 
+    34                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    35                           ;        of conditions and the following disclaimer in the documentation and/or other
+    36                           ;        materials provided with the distribution.
+    37                           ; 
+    38                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    39                           ;        software without specific prior written permission.
+    40                           ; 
+    41                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    42                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    43                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    44                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    45                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    46                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    47                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    48                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    49                           ; 
+    50                           ; 
+    51                           ; Code-generator required, PIC16F887 Definitions
+    52                           ; 
+    53                           ; SFR Addresses
+    54  0000                     	;# 
+    55  0001                     	;# 
+    56  0002                     	;# 
+    57  0003                     	;# 
+    58  0004                     	;# 
+    59  0005                     	;# 
+    60  0006                     	;# 
+    61  0007                     	;# 
+    62  0008                     	;# 
+    63  0009                     	;# 
+    64  000A                     	;# 
+    65  000B                     	;# 
+    66  000C                     	;# 
+    67  000D                     	;# 
+    68  000E                     	;# 
+    69  000E                     	;# 
+    70  000F                     	;# 
+    71  0010                     	;# 
+    72  0011                     	;# 
+    73  0012                     	;# 
+    74  0013                     	;# 
+    75  0014                     	;# 
+    76  0015                     	;# 
+    77  0015                     	;# 
+    78  0016                     	;# 
+    79  0017                     	;# 
+    80  0018                     	;# 
+    81  0019                     	;# 
+    82  001A                     	;# 
+    83  001B                     	;# 
+    84  001B                     	;# 
+    85  001C                     	;# 
+    86  001D                     	;# 
+    87  001E                     	;# 
+    88  001F                     	;# 
+    89  0081                     	;# 
+    90  0085                     	;# 
+    91  0086                     	;# 
+    92  0087                     	;# 
+    93  0088                     	;# 
+    94  0089                     	;# 
+    95  008C                     	;# 
+    96  008D                     	;# 
+    97  008E                     	;# 
+    98  008F                     	;# 
+    99  0090                     	;# 
+   100  0091                     	;# 
+   101  0092                     	;# 
+   102  0093                     	;# 
+   103  0093                     	;# 
+   104  0093                     	;# 
+   105  0094                     	;# 
+   106  0095                     	;# 
+   107  0096                     	;# 
+   108  0097                     	;# 
+   109  0098                     	;# 
+   110  0099                     	;# 
+   111  009A                     	;# 
+   112  009B                     	;# 
+   113  009C                     	;# 
+   114  009D                     	;# 
+   115  009E                     	;# 
+   116  009F                     	;# 
+   117  0105                     	;# 
+   118  0107                     	;# 
+   119  0108                     	;# 
+   120  0109                     	;# 
+   121  010C                     	;# 
+   122  010C                     	;# 
+   123  010D                     	;# 
+   124  010E                     	;# 
+   125  010F                     	;# 
+   126  0185                     	;# 
+   127  0187                     	;# 
+   128  0188                     	;# 
+   129  0189                     	;# 
+   130  018C                     	;# 
+   131  018D                     	;# 
+   132  0000                     	;# 
+   133  0001                     	;# 
+   134  0002                     	;# 
+   135  0003                     	;# 
+   136  0004                     	;# 
+   137  0005                     	;# 
+   138  0006                     	;# 
+   139  0007                     	;# 
+   140  0008                     	;# 
+   141  0009                     	;# 
+   142  000A                     	;# 
+   143  000B                     	;# 
+   144  000C                     	;# 
+   145  000D                     	;# 
+   146  000E                     	;# 
+   147  000E                     	;# 
+   148  000F                     	;# 
+   149  0010                     	;# 
+   150  0011                     	;# 
+   151  0012                     	;# 
+   152  0013                     	;# 
+   153  0014                     	;# 
+   154  0015                     	;# 
+   155  0015                     	;# 
+   156  0016                     	;# 
+   157  0017                     	;# 
+   158  0018                     	;# 
+   159  0019                     	;# 
+   160  001A                     	;# 
+   161  001B                     	;# 
+   162  001B                     	;# 
+   163  001C                     	;# 
+   164  001D                     	;# 
+   165  001E                     	;# 
+   166  001F                     	;# 
+   167  0081                     	;# 
+   168  0085                     	;# 
+   169  0086                     	;# 
+   170  0087                     	;# 
+   171  0088                     	;# 
+   172  0089                     	;# 
+   173  008C                     	;# 
+   174  008D                     	;# 
+   175  008E                     	;# 
+   176  008F                     	;# 
+   177  0090                     	;# 
+   178  0091                     	;# 
+   179  0092                     	;# 
+   180  0093                     	;# 
+   181  0093                     	;# 
+   182  0093                     	;# 
+   183  0094                     	;# 
+   184  0095                     	;# 
+   185  0096                     	;# 
+   186  0097                     	;# 
+   187  0098                     	;# 
+   188  0099                     	;# 
+   189  009A                     	;# 
+   190  009B                     	;# 
+   191  009C                     	;# 
+   192  009D                     	;# 
+   193  009E                     	;# 
+   194  009F                     	;# 
+   195  0105                     	;# 
+   196  0107                     	;# 
+   197  0108                     	;# 
+   198  0109                     	;# 
+   199  010C                     	;# 
+   200  010C                     	;# 
+   201  010D                     	;# 
+   202  010E                     	;# 
+   203  010F                     	;# 
+   204  0185                     	;# 
+   205  0187                     	;# 
+   206  0188                     	;# 
+   207  0189                     	;# 
+   208  018C                     	;# 
+   209  018D                     	;# 
+   210  0000                     	;# 
+   211  0001                     	;# 
+   212  0002                     	;# 
+   213  0003                     	;# 
+   214  0004                     	;# 
+   215  0005                     	;# 
+   216  0006                     	;# 
+   217  0007                     	;# 
+   218  0008                     	;# 
+   219  0009                     	;# 
+   220  000A                     	;# 
+   221  000B                     	;# 
+   222  000C                     	;# 
+   223  000D                     	;# 
+   224  000E                     	;# 
+   225  000E                     	;# 
+   226  000F                     	;# 
+   227  0010                     	;# 
+   228  0011                     	;# 
+   229  0012                     	;# 
+   230  0013                     	;# 
+   231  0014                     	;# 
+   232  0015                     	;# 
+   233  0015                     	;# 
+   234  0016                     	;# 
+   235  0017                     	;# 
+   236  0018                     	;# 
+   237  0019                     	;# 
+   238  001A                     	;# 
+   239  001B                     	;# 
+   240  001B                     	;# 
+   241  001C                     	;# 
+   242  001D                     	;# 
+   243  001E                     	;# 
+   244  001F                     	;# 
+   245  0081                     	;# 
+   246  0085                     	;# 
+   247  0086                     	;# 
+   248  0087                     	;# 
+   249  0088                     	;# 
+   250  0089                     	;# 
+   251  008C                     	;# 
+   252  008D                     	;# 
+   253  008E                     	;# 
+   254  008F                     	;# 
+   255  0090                     	;# 
+   256  0091                     	;# 
+   257  0092                     	;# 
+   258  0093                     	;# 
+   259  0093                     	;# 
+   260  0093                     	;# 
+   261  0094                     	;# 
+   262  0095                     	;# 
+   263  0096                     	;# 
+   264  0097                     	;# 
+   265  0098                     	;# 
+   266  0099                     	;# 
+   267  009A                     	;# 
+   268  009B                     	;# 
+   269  009C                     	;# 
+   270  009D                     	;# 
+   271  009E                     	;# 
+   272  009F                     	;# 
+   273  0105                     	;# 
+   274  0107                     	;# 
+   275  0108                     	;# 
+   276  0109                     	;# 
+   277  010C                     	;# 
+   278  010C                     	;# 
+   279  010D                     	;# 
+   280  010E                     	;# 
+   281  010F                     	;# 
+   282  0185                     	;# 
+   283  0187                     	;# 
+   284  0188                     	;# 
+   285  0189                     	;# 
+   286  018C                     	;# 
+   287  018D                     	;# 
+   288  0000                     	;# 
+   289  0001                     	;# 
+   290  0002                     	;# 
+   291  0003                     	;# 
+   292  0004                     	;# 
+   293  0005                     	;# 
+   294  0006                     	;# 
+   295  0007                     	;# 
+   296  0008                     	;# 
+   297  0009                     	;# 
+   298  000A                     	;# 
+   299  000B                     	;# 
+   300  000C                     	;# 
+   301  000D                     	;# 
+   302  000E                     	;# 
+   303  000E                     	;# 
+   304  000F                     	;# 
+   305  0010                     	;# 
+   306  0011                     	;# 
+   307  0012                     	;# 
+   308  0013                     	;# 
+   309  0014                     	;# 
+   310  0015                     	;# 
+   311  0015                     	;# 
+   312  0016                     	;# 
+   313  0017                     	;# 
+   314  0018                     	;# 
+   315  0019                     	;# 
+   316  001A                     	;# 
+   317  001B                     	;# 
+   318  001B                     	;# 
+   319  001C                     	;# 
+   320  001D                     	;# 
+   321  001E                     	;# 
+   322  001F                     	;# 
+   323  0081                     	;# 
+   324  0085                     	;# 
+   325  0086                     	;# 
+   326  0087                     	;# 
+   327  0088                     	;# 
+   328  0089                     	;# 
+   329  008C                     	;# 
+   330  008D                     	;# 
+   331  008E                     	;# 
+   332  008F                     	;# 
+   333  0090                     	;# 
+   334  0091                     	;# 
+   335  0092                     	;# 
+   336  0093                     	;# 
+   337  0093                     	;# 
+   338  0093                     	;# 
+   339  0094                     	;# 
+   340  0095                     	;# 
+   341  0096                     	;# 
+   342  0097                     	;# 
+   343  0098                     	;# 
+   344  0099                     	;# 
+   345  009A                     	;# 
+   346  009B                     	;# 
+   347  009C                     	;# 
+   348  009D                     	;# 
+   349  009E                     	;# 
+   350  009F                     	;# 
+   351  0105                     	;# 
+   352  0107                     	;# 
+   353  0108                     	;# 
+   354  0109                     	;# 
+   355  010C                     	;# 
+   356  010C                     	;# 
+   357  010D                     	;# 
+   358  010E                     	;# 
+   359  010F                     	;# 
+   360  0185                     	;# 
+   361  0187                     	;# 
+   362  0188                     	;# 
+   363  0189                     	;# 
+   364  018C                     	;# 
+   365  018D                     	;# 
+   366  0000                     	;# 
+   367  0001                     	;# 
+   368  0002                     	;# 
+   369  0003                     	;# 
+   370  0004                     	;# 
+   371  0005                     	;# 
+   372  0006                     	;# 
+   373  0007                     	;# 
+   374  0008                     	;# 
+   375  0009                     	;# 
+   376  000A                     	;# 
+   377  000B                     	;# 
+   378  000C                     	;# 
+   379  000D                     	;# 
+   380  000E                     	;# 
+   381  000E                     	;# 
+   382  000F                     	;# 
+   383  0010                     	;# 
+   384  0011                     	;# 
+   385  0012                     	;# 
+   386  0013                     	;# 
+   387  0014                     	;# 
+   388  0015                     	;# 
+   389  0015                     	;# 
+   390  0016                     	;# 
+   391  0017                     	;# 
+   392  0018                     	;# 
+   393  0019                     	;# 
+   394  001A                     	;# 
+   395  001B                     	;# 
+   396  001B                     	;# 
+   397  001C                     	;# 
+   398  001D                     	;# 
+   399  001E                     	;# 
+   400  001F                     	;# 
+   401  0081                     	;# 
+   402  0085                     	;# 
+   403  0086                     	;# 
+   404  0087                     	;# 
+   405  0088                     	;# 
+   406  0089                     	;# 
+   407  008C                     	;# 
+   408  008D                     	;# 
+   409  008E                     	;# 
+   410  008F                     	;# 
+   411  0090                     	;# 
+   412  0091                     	;# 
+   413  0092                     	;# 
+   414  0093                     	;# 
+   415  0093                     	;# 
+   416  0093                     	;# 
+   417  0094                     	;# 
+   418  0095                     	;# 
+   419  0096                     	;# 
+   420  0097                     	;# 
+   421  0098                     	;# 
+   422  0099                     	;# 
+   423  009A                     	;# 
+   424  009B                     	;# 
+   425  009C                     	;# 
+   426  009D                     	;# 
+   427  009E                     	;# 
+   428  009F                     	;# 
+   429  0105                     	;# 
+   430  0107                     	;# 
+   431  0108                     	;# 
+   432  0109                     	;# 
+   433  010C                     	;# 
+   434  010C                     	;# 
+   435  010D                     	;# 
+   436  010E                     	;# 
+   437  010F                     	;# 
+   438  0185                     	;# 
+   439  0187                     	;# 
+   440  0188                     	;# 
+   441  0189                     	;# 
+   442  018C                     	;# 
+   443  018D                     	;# 
+   444  0018                     _RCSTAbits	set	24
+   445  0013                     _SSPBUF	set	19
+   446  0014                     _SSPCON	set	20
+   447  000F                     _TMR1H	set	15
+   448  000E                     _TMR1L	set	14
+   449  0005                     _PORTAbits	set	5
+   450  0010                     _T1CONbits	set	16
+   451  0001                     _TMR0	set	1
+   452  0009                     _PORTE	set	9
+   453  0007                     _PORTC	set	7
+   454  0007                     _PORTCbits	set	7
+   455  0008                     _PORTD	set	8
+   456  0006                     _PORTBbits	set	6
+   457  0009                     _PORTEbits	set	9
+   458  0006                     _PORTB	set	6
+   459  000B                     _INTCONbits	set	11
+   460  0063                     _SSPIF	set	99
+   461  005E                     _PEIE	set	94
+   462  005F                     _GIE	set	95
+   463  005A                     _TMR0IF	set	90
+   464  0099                     _SPBRG	set	153
+   465  009A                     _SPBRGH	set	154
+   466  0098                     _TXSTAbits	set	152
+   467  008F                     _OSCCONbits	set	143
+   468  0091                     _SSPCON2bits	set	145
+   469  0087                     _TRISCbits	set	135
+   470  0094                     _SSPSTAT	set	148
+   471  0093                     _SSPADD	set	147
+   472  0091                     _SSPCON2	set	145
+   473  0096                     _IOCBbits	set	150
+   474  0095                     _WPUBbits	set	149
+   475  0081                     _OPTION_REGbits	set	129
+   476  0089                     _TRISEbits	set	137
+   477  0086                     _TRISBbits	set	134
+   478  0087                     _TRISC	set	135
+   479  0088                     _TRISD	set	136
+   480  0085                     _TRISAbits	set	133
+   481  0463                     _SSPIE	set	1123
+   482  043C                     _TRISC4	set	1084
+   483  043B                     _TRISC3	set	1083
+   484  0187                     _BAUDCTLbits	set	391
+   485  0189                     _ANSELH	set	393
+   486  0188                     _ANSEL	set	392
+   487                           
+   488                           	psect	cinit
+   489  0011                     start_initialization:	
+   490                           ; #config settings
+   491                           
+   492  0011                     __initialization:
+   493                           
+   494                           ; Clear objects allocated to COMMON
+   495  0011  01F0               	clrf	__pbssCOMMON& (0+127)
+   496  0012  01F1               	clrf	(__pbssCOMMON+1)& (0+127)
+   497  0013  01F2               	clrf	(__pbssCOMMON+2)& (0+127)
+   498  0014  01F3               	clrf	(__pbssCOMMON+3)& (0+127)
+   499  0015  01F4               	clrf	(__pbssCOMMON+4)& (0+127)
+   500                           
+   501                           ; Clear objects allocated to BANK0
+   502  0016  1383               	bcf	3,7	;select IRP bank0
+   503  0017  3020               	movlw	low __pbssBANK0
+   504  0018  0084               	movwf	4
+   505  0019  3030               	movlw	low (__pbssBANK0+16)
+   506  001A  120A  118A  2174  120A  118A  	fcall	clear_ram0
+   507  001F                     end_of_initialization:	
+   508                           ;End of C runtime variable initialization code
+   509                           
+   510  001F                     __end_of__initialization:
+   511  001F  0183               	clrf	3
+   512  0020  120A  118A  2932   	ljmp	_main	;jump to C main() function
+   513                           
+   514                           	psect	bssCOMMON
+   515  0070                     __pbssCOMMON:
+   516  0070                     _duracion:
+   517  0070                     	ds	2
+   518  0072                     _sensorOn:
+   519  0072                     	ds	1
+   520  0073                     _botonazo:
+   521  0073                     	ds	1
+   522  0074                     _antirrebote:
+   523  0074                     	ds	1
+   524                           
+   525                           	psect	bssBANK0
+   526  0020                     __pbssBANK0:
+   527  0020                     _talanquera:
+   528  0020                     	ds	2
+   529  0022                     _dismin:
+   530  0022                     	ds	2
+   531  0024                     _dismax:
+   532  0024                     	ds	2
+   533  0026                     _anterior:
+   534  0026                     	ds	2
+   535  0028                     _T1L:
+   536  0028                     	ds	2
+   537  002A                     _T1H:
+   538  002A                     	ds	2
+   539  002C                     _distancia:
+   540  002C                     	ds	2
+   541  002E                     _hc04:
+   542  002E                     	ds	2
+   543                           
+   544                           	psect	clrtext
+   545  0174                     clear_ram0:	
+   546                           ;	Called with FSR containing the base address, and
+   547                           ;	W with the last address+1
+   548                           
+   549  0174  0064               	clrwdt	;clear the watchdog before getting into this loop
+   550  0175                     clrloop0:
+   551  0175  0180               	clrf	0	;clear RAM location pointed to by FSR
+   552  0176  0A84               	incf	4,f	;increment pointer
+   553  0177  0604               	xorwf	4,w	;XOR with final address
+   554  0178  1903               	btfsc	3,2	;have we reached the end yet?
+   555  0179  3400               	retlw	0	;all done for this memory range, return
+   556  017A  0604               	xorwf	4,w	;XOR again to restore value
+   557  017B  2975               	goto	clrloop0	;do the next byte
+   558                           
+   559                           	psect	cstackCOMMON
+   560  0075                     __pcstackCOMMON:
+   561  0075                     ?_setup:
+   562  0075                     ?_sensor_ultrasonico:	
+   563                           ; 1 bytes @ 0x0
+   564                           
+   565  0075                     ?_osc_config:	
+   566                           ; 1 bytes @ 0x0
+   567                           
+   568  0075                     ?_uart_config:	
+   569                           ; 1 bytes @ 0x0
+   570                           
+   571  0075                     ?_isr:	
+   572                           ; 1 bytes @ 0x0
+   573                           
+   574  0075                     ??_isr:	
+   575                           ; 1 bytes @ 0x0
+   576                           
+   577  0075                     ?_main:	
+   578                           ; 1 bytes @ 0x0
+   579                           
+   580                           
+   581                           ; 1 bytes @ 0x0
+   582  0075                     	ds	5
+   583                           
+   584                           	psect	cstackBANK0
+   585  0030                     __pcstackBANK0:
+   586  0030                     ??_sensor_ultrasonico:
+   587  0030                     ??_osc_config:	
+   588                           ; 1 bytes @ 0x0
+   589                           
+   590  0030                     ??_uart_config:	
+   591                           ; 1 bytes @ 0x0
+   592                           
+   593                           
+   594                           ; 1 bytes @ 0x0
+   595  0030                     	ds	2
+   596  0032                     osc_config@freq:
+   597                           
+   598                           ; 1 bytes @ 0x2
+   599  0032                     	ds	1
+   600  0033                     ??_setup:
+   601  0033                     ??_main:	
+   602                           ; 1 bytes @ 0x3
+   603                           
+   604                           
+   605                           ; 1 bytes @ 0x3
+   606  0033                     	ds	1
+   607                           
+   608                           	psect	maintext
+   609  0132                     __pmaintext:	
+   610 ;;
+   611 ;;Main: autosize = 0, tempsize = 1, incstack = 0, save=0
+   612 ;;
+   613 ;; *************** function _main *****************
+   614 ;; Defined at:
+   615 ;;		line 107 in file "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c"
+   616 ;; Parameters:    Size  Location     Type
+   617 ;;		None
+   618 ;; Auto vars:     Size  Location     Type
+   619 ;;		None
+   620 ;; Return value:  Size  Location     Type
+   621 ;;                  1    wreg      void 
+   622 ;; Registers used:
+   623 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+   624 ;; Tracked objects:
+   625 ;;		On entry : B00/0
+   626 ;;		On exit  : 0/0
+   627 ;;		Unchanged: 0/0
+   628 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   629 ;;      Params:         0       0       0       0       0
+   630 ;;      Locals:         0       0       0       0       0
+   631 ;;      Temps:          0       1       0       0       0
+   632 ;;      Totals:         0       1       0       0       0
+   633 ;;Total ram usage:        1 bytes
+   634 ;; Hardware stack levels required when called: 3
+   635 ;; This function calls:
+   636 ;;		_sensor_ultrasonico
+   637 ;;		_setup
+   638 ;; This function is called by:
+   639 ;;		Startup code after reset
+   640 ;; This function uses a non-reentrant model
+   641 ;;
+   642                           
+   643                           
+   644                           ;psect for function _main
+   645  0132                     _main:
+   646  0132                     l1311:	
+   647                           ;incstack = 0
+   648                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+   649                           
+   650                           
+   651                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          109:     hc04=0;
+   652  0132  1283               	bcf	3,5	;RP0=0, select bank0
+   653  0133  1303               	bcf	3,6	;RP1=0, select bank0
+   654  0134  01AE               	clrf	_hc04
+   655  0135  01AF               	clrf	_hc04+1
+   656                           
+   657                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          110:     sensorOn=0;
+   658  0136  01F2               	clrf	_sensorOn
+   659  0137                     l1313:
+   660                           
+   661                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          111:     setup();
+   662  0137  120A  118A  20BC  120A  118A  	fcall	_setup
+   663  013C                     l1315:
+   664                           
+   665                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          114:     {;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_m
+      +                          otores.c: 116:         if (antirrebote==1 && PORTBbits.RB0==0 )
+   666  013C  0374               	decf	_antirrebote,w
+   667  013D  1D03               	btfss	3,2
+   668  013E  2940               	goto	u241
+   669  013F  2941               	goto	u240
+   670  0140                     u241:
+   671  0140  294E               	goto	l1325
+   672  0141                     u240:
+   673  0141                     l1317:
+   674  0141  1283               	bcf	3,5	;RP0=0, select bank0
+   675  0142  1303               	bcf	3,6	;RP1=0, select bank0
+   676  0143  1806               	btfsc	6,0	;volatile
+   677  0144  2946               	goto	u251
+   678  0145  2947               	goto	u250
+   679  0146                     u251:
+   680  0146  294E               	goto	l1325
+   681  0147                     u250:
+   682  0147                     l1319:
+   683                           
+   684                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          117:         {;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Ma
+      +                          in_motores.c: 118:             botonazo++;
+   685  0147  3001               	movlw	1
+   686  0148  00B3               	movwf	??_main
+   687  0149  0833               	movf	??_main,w
+   688  014A  07F3               	addwf	_botonazo,f
+   689  014B                     l1321:
+   690                           
+   691                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          119:             PORTD=botonazo;
+   692  014B  0873               	movf	_botonazo,w
+   693  014C  0088               	movwf	8	;volatile
+   694  014D                     l1323:
+   695                           
+   696                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          120:             antirrebote=0;
+   697  014D  01F4               	clrf	_antirrebote
+   698  014E                     l1325:
+   699                           
+   700                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          123:         sensor_ultrasonico();
+   701  014E  120A  118A  2070  120A  118A  	fcall	_sensor_ultrasonico
+   702  0153                     l1327:
+   703                           
+   704                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          124:         PORTCbits.RC1=talanquera;
+   705  0153  1283               	bcf	3,5	;RP0=0, select bank0
+   706  0154  1303               	bcf	3,6	;RP1=0, select bank0
+   707  0155  0C20               	rrf	_talanquera,w
+   708  0156  1C03               	skipc
+   709  0157  1087               	bcf	7,1	;volatile
+   710  0158  1803               	skipnc
+   711  0159  1487               	bsf	7,1	;volatile
+   712  015A  293C               	goto	l1315
+   713  015B  120A  118A  280E   	ljmp	start
+   714  015E                     __end_of_main:
+   715                           
+   716                           	psect	text1
+   717  00BC                     __ptext1:	
+   718 ;; *************** function _setup *****************
+   719 ;; Defined at:
+   720 ;;		line 139 in file "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c"
+   721 ;; Parameters:    Size  Location     Type
+   722 ;;		None
+   723 ;; Auto vars:     Size  Location     Type
+   724 ;;		None
+   725 ;; Return value:  Size  Location     Type
+   726 ;;                  1    wreg      void 
+   727 ;; Registers used:
+   728 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+   729 ;; Tracked objects:
+   730 ;;		On entry : 0/0
+   731 ;;		On exit  : 0/0
+   732 ;;		Unchanged: 0/0
+   733 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   734 ;;      Params:         0       0       0       0       0
+   735 ;;      Locals:         0       0       0       0       0
+   736 ;;      Temps:          0       0       0       0       0
+   737 ;;      Totals:         0       0       0       0       0
+   738 ;;Total ram usage:        0 bytes
+   739 ;; Hardware stack levels used: 1
+   740 ;; Hardware stack levels required when called: 2
+   741 ;; This function calls:
+   742 ;;		_osc_config
+   743 ;;		_uart_config
+   744 ;; This function is called by:
+   745 ;;		_main
+   746 ;; This function uses a non-reentrant model
+   747 ;;
+   748                           
+   749                           
+   750                           ;psect for function _setup
+   751  00BC                     _setup:
+   752  00BC                     l1247:	
+   753                           ;incstack = 0
+   754                           ; Regs used in _setup: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+   755                           
+   756                           
+   757                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          142:     ANSEL=0;
+   758  00BC  1683               	bsf	3,5	;RP0=1, select bank3
+   759  00BD  1703               	bsf	3,6	;RP1=1, select bank3
+   760  00BE  0188               	clrf	8	;volatile
+   761                           
+   762                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          143:     ANSELH=0;
+   763  00BF  0189               	clrf	9	;volatile
+   764  00C0                     l1249:
+   765                           
+   766                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          145:     TRISAbits.TRISA0=0;
+   767  00C0  1683               	bsf	3,5	;RP0=1, select bank1
+   768  00C1  1303               	bcf	3,6	;RP1=0, select bank1
+   769  00C2  1005               	bcf	5,0	;volatile
+   770  00C3                     l1251:
+   771                           
+   772                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          146:     TRISAbits.TRISA1=1;
+   773  00C3  1485               	bsf	5,1	;volatile
+   774                           
+   775                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          147:     TRISD=0;
+   776  00C4  0188               	clrf	8	;volatile
+   777                           
+   778                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          148:     TRISC=0;
+   779  00C5  0187               	clrf	7	;volatile
+   780  00C6                     l1253:
+   781                           
+   782                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          149:     TRISBbits.TRISB0=1;
+   783  00C6  1406               	bsf	6,0	;volatile
+   784  00C7                     l1255:
+   785                           
+   786                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          150:     TRISEbits.TRISE0=0;
+   787  00C7  1009               	bcf	9,0	;volatile
+   788  00C8                     l1257:
+   789                           
+   790                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          151:     TRISEbits.TRISE1=0;
+   791  00C8  1089               	bcf	9,1	;volatile
+   792                           
+   793                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          154:     PORTB=0;
+   794  00C9  1283               	bcf	3,5	;RP0=0, select bank0
+   795  00CA  1303               	bcf	3,6	;RP1=0, select bank0
+   796  00CB  0186               	clrf	6	;volatile
+   797                           
+   798                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          155:     PORTC=0;
+   799  00CC  0187               	clrf	7	;volatile
+   800                           
+   801                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          156:     PORTD=0;
+   802  00CD  0188               	clrf	8	;volatile
+   803                           
+   804                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          157:     PORTE=0;
+   805  00CE  0189               	clrf	9	;volatile
+   806  00CF                     l1259:
+   807                           
+   808                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          159:     osc_config(4);
+   809  00CF  3004               	movlw	4
+   810  00D0  120A  118A  20F9  120A  118A  	fcall	_osc_config
+   811  00D5                     l1261:
+   812                           
+   813                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          161:     OPTION_REGbits.T0CS = 0;
+   814  00D5  1683               	bsf	3,5	;RP0=1, select bank1
+   815  00D6  1303               	bcf	3,6	;RP1=0, select bank1
+   816  00D7  1281               	bcf	1,5	;volatile
+   817  00D8                     l1263:
+   818                           
+   819                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          162:     OPTION_REGbits.PSA = 0;
+   820  00D8  1181               	bcf	1,3	;volatile
+   821  00D9                     l1265:
+   822                           
+   823                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          163:     OPTION_REGbits.PS = 0b111;
+   824  00D9  3007               	movlw	7
+   825  00DA  0481               	iorwf	1,f	;volatile
+   826  00DB                     l1267:
+   827                           
+   828                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          164:     TMR0 = 78;
+   829  00DB  304E               	movlw	78
+   830  00DC  1283               	bcf	3,5	;RP0=0, select bank0
+   831  00DD  1303               	bcf	3,6	;RP1=0, select bank0
+   832  00DE  0081               	movwf	1	;volatile
+   833  00DF                     l1269:
+   834                           
+   835                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          166:     OPTION_REGbits.nRBPU=0;
+   836  00DF  1683               	bsf	3,5	;RP0=1, select bank1
+   837  00E0  1303               	bcf	3,6	;RP1=0, select bank1
+   838  00E1  1381               	bcf	1,7	;volatile
+   839  00E2                     l1271:
+   840                           
+   841                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          167:     WPUBbits.WPUB0=1;
+   842  00E2  1415               	bsf	21,0	;volatile
+   843  00E3                     l1273:
+   844                           
+   845                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          169:     uart_config();
+   846  00E3  120A  118A  215E  120A  118A  	fcall	_uart_config
+   847  00E8                     l1275:
+   848                           
+   849                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          171:     T1CONbits.T1CKPS=0x00;
+   850  00E8  30CF               	movlw	-49
+   851  00E9  1283               	bcf	3,5	;RP0=0, select bank0
+   852  00EA  1303               	bcf	3,6	;RP1=0, select bank0
+   853  00EB  0590               	andwf	16,f	;volatile
+   854  00EC                     l1277:
+   855                           
+   856                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          172:     T1CONbits.nT1SYNC=1;
+   857  00EC  1510               	bsf	16,2	;volatile
+   858  00ED                     l1279:
+   859                           
+   860                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          173:     T1CONbits.TMR1CS=0;
+   861  00ED  1090               	bcf	16,1	;volatile
+   862  00EE                     l1281:
+   863                           
+   864                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          174:     T1CONbits.TMR1ON=0;
+   865  00EE  1010               	bcf	16,0	;volatile
+   866  00EF                     l1283:
+   867                           
+   868                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          177:     INTCONbits.GIE=1;
+   869  00EF  178B               	bsf	11,7	;volatile
+   870  00F0                     l1285:
+   871                           
+   872                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          178:     INTCONbits.PEIE = 1;
+   873  00F0  170B               	bsf	11,6	;volatile
+   874  00F1                     l1287:
+   875                           
+   876                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          179:     INTCONbits.T0IE=1;
+   877  00F1  168B               	bsf	11,5	;volatile
+   878  00F2                     l1289:
+   879                           
+   880                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          180:     INTCONbits.T0IF=0;
+   881  00F2  110B               	bcf	11,2	;volatile
+   882  00F3                     l1291:
+   883                           
+   884                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          181:     INTCONbits.RBIE=1;
+   885  00F3  158B               	bsf	11,3	;volatile
+   886  00F4                     l1293:
+   887                           
+   888                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          182:     INTCONbits.RBIF=0;
+   889  00F4  100B               	bcf	11,0	;volatile
+   890  00F5                     l1295:
+   891                           
+   892                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          183:     IOCBbits.IOCB0=1;
+   893  00F5  1683               	bsf	3,5	;RP0=1, select bank1
+   894  00F6  1303               	bcf	3,6	;RP1=0, select bank1
+   895  00F7  1416               	bsf	22,0	;volatile
+   896  00F8                     l109:
+   897  00F8  0008               	return
+   898  00F9                     __end_of_setup:
+   899                           
+   900                           	psect	text2
+   901  015E                     __ptext2:	
+   902 ;; *************** function _uart_config *****************
+   903 ;; Defined at:
+   904 ;;		line 21 in file "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/UART_CONFIG.c"
+   905 ;; Parameters:    Size  Location     Type
+   906 ;;		None
+   907 ;; Auto vars:     Size  Location     Type
+   908 ;;		None
+   909 ;; Return value:  Size  Location     Type
+   910 ;;                  1    wreg      void 
+   911 ;; Registers used:
+   912 ;;		wreg, status,2
+   913 ;; Tracked objects:
+   914 ;;		On entry : 0/0
+   915 ;;		On exit  : 0/0
+   916 ;;		Unchanged: 0/0
+   917 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   918 ;;      Params:         0       0       0       0       0
+   919 ;;      Locals:         0       0       0       0       0
+   920 ;;      Temps:          0       0       0       0       0
+   921 ;;      Totals:         0       0       0       0       0
+   922 ;;Total ram usage:        0 bytes
+   923 ;; Hardware stack levels used: 1
+   924 ;; Hardware stack levels required when called: 1
+   925 ;; This function calls:
+   926 ;;		Nothing
+   927 ;; This function is called by:
+   928 ;;		_setup
+   929 ;; This function uses a non-reentrant model
+   930 ;;
+   931                           
+   932                           
+   933                           ;psect for function _uart_config
+   934  015E                     _uart_config:
+   935  015E                     l1233:	
+   936                           ;incstack = 0
+   937                           ; Regs used in _uart_config: [wreg+status,2]
+   938                           
+   939                           
+   940                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/UART_CONFIG.c: 2
+      +                          4:     TXSTAbits.SYNC = 0;
+   941  015E  1683               	bsf	3,5	;RP0=1, select bank1
+   942  015F  1303               	bcf	3,6	;RP1=0, select bank1
+   943  0160  1218               	bcf	24,4	;volatile
+   944                           
+   945                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/UART_CONFIG.c: 2
+      +                          5:  TXSTAbits.BRGH = 1;
+   946  0161  1518               	bsf	24,2	;volatile
+   947                           
+   948                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/UART_CONFIG.c: 2
+      +                          6:  TXSTAbits.TX9 = 0;
+   949  0162  1318               	bcf	24,6	;volatile
+   950                           
+   951                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/UART_CONFIG.c: 2
+      +                          7:  BAUDCTLbits.BRG16 = 0;
+   952  0163  1683               	bsf	3,5	;RP0=1, select bank3
+   953  0164  1703               	bsf	3,6	;RP1=1, select bank3
+   954  0165  1187               	bcf	7,3	;volatile
+   955  0166                     l1235:
+   956                           
+   957                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/UART_CONFIG.c: 2
+      +                          8:  SPBRGH = 0;
+   958  0166  1683               	bsf	3,5	;RP0=1, select bank1
+   959  0167  1303               	bcf	3,6	;RP1=0, select bank1
+   960  0168  019A               	clrf	26	;volatile
+   961  0169                     l1237:
+   962                           
+   963                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/UART_CONFIG.c: 2
+      +                          9:  SPBRG = 25;
+   964  0169  3019               	movlw	25
+   965  016A  0099               	movwf	25	;volatile
+   966  016B                     l1239:
+   967                           
+   968                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/UART_CONFIG.c: 3
+      +                          1:  RCSTAbits.SPEN = 1;
+   969  016B  1283               	bcf	3,5	;RP0=0, select bank0
+   970  016C  1303               	bcf	3,6	;RP1=0, select bank0
+   971  016D  1798               	bsf	24,7	;volatile
+   972  016E                     l1241:
+   973                           
+   974                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/UART_CONFIG.c: 3
+      +                          2:  RCSTAbits.RX9 = 0;
+   975  016E  1318               	bcf	24,6	;volatile
+   976  016F                     l1243:
+   977                           
+   978                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/UART_CONFIG.c: 3
+      +                          3:  RCSTAbits.CREN = 0;
+   979  016F  1218               	bcf	24,4	;volatile
+   980  0170                     l1245:
+   981                           
+   982                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/UART_CONFIG.c: 3
+      +                          4:  TXSTAbits.TXEN = 1;
+   983  0170  1683               	bsf	3,5	;RP0=1, select bank1
+   984  0171  1303               	bcf	3,6	;RP1=0, select bank1
+   985  0172  1698               	bsf	24,5	;volatile
+   986  0173                     l199:
+   987  0173  0008               	return
+   988  0174                     __end_of_uart_config:
+   989                           
+   990                           	psect	text3
+   991  00F9                     __ptext3:	
+   992 ;; *************** function _osc_config *****************
+   993 ;; Defined at:
+   994 ;;		line 16 in file "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Osc_config.c"
+   995 ;; Parameters:    Size  Location     Type
+   996 ;;  freq            1    wreg     unsigned char 
+   997 ;; Auto vars:     Size  Location     Type
+   998 ;;  freq            1    2[BANK0 ] unsigned char 
+   999 ;; Return value:  Size  Location     Type
+  1000 ;;                  1    wreg      void 
+  1001 ;; Registers used:
+  1002 ;;		wreg, fsr0l, fsr0h, status,2, status,0
+  1003 ;; Tracked objects:
+  1004 ;;		On entry : 0/0
+  1005 ;;		On exit  : 0/0
+  1006 ;;		Unchanged: 0/0
+  1007 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1008 ;;      Params:         0       0       0       0       0
+  1009 ;;      Locals:         0       1       0       0       0
+  1010 ;;      Temps:          0       2       0       0       0
+  1011 ;;      Totals:         0       3       0       0       0
+  1012 ;;Total ram usage:        3 bytes
+  1013 ;; Hardware stack levels used: 1
+  1014 ;; Hardware stack levels required when called: 1
+  1015 ;; This function calls:
+  1016 ;;		Nothing
+  1017 ;; This function is called by:
+  1018 ;;		_setup
+  1019 ;; This function uses a non-reentrant model
+  1020 ;;
+  1021                           
+  1022                           
+  1023                           ;psect for function _osc_config
+  1024  00F9                     _osc_config:
+  1025                           
+  1026                           ;incstack = 0
+  1027                           ; Regs used in _osc_config: [wreg-fsr0h+status,2+status,0]
+  1028                           ;osc_config@freq stored from wreg
+  1029  00F9  1283               	bcf	3,5	;RP0=0, select bank0
+  1030  00FA  1303               	bcf	3,6	;RP1=0, select bank0
+  1031  00FB  00B2               	movwf	osc_config@freq
+  1032  00FC                     l1205:
+  1033                           
+  1034                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Osc_config.c: 16
+      +                          : void osc_config(uint8_t freq);C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2
+      +                          /PIC_motores.X/Osc_config.c: 17: {;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_
+      +                          ED2/PIC_motores.X/Osc_config.c: 18:     switch(freq)
+  1035  00FC  291B               	goto	l1225
+  1036  00FD                     l1207:
+  1037                           
+  1038                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Osc_config.c: 21
+      +                          :             OSCCONbits.IRCF=0b100;
+  1039  00FD  1683               	bsf	3,5	;RP0=1, select bank1
+  1040  00FE  1303               	bcf	3,6	;RP1=0, select bank1
+  1041  00FF  080F               	movf	15,w	;volatile
+  1042  0100  398F               	andlw	-113
+  1043  0101  3840               	iorlw	64
+  1044  0102  008F               	movwf	15	;volatile
+  1045  0103                     l1209:
+  1046                           
+  1047                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Osc_config.c: 22
+      +                          :             OSCCONbits.SCS=1;
+  1048  0103  140F               	bsf	15,0	;volatile
+  1049                           
+  1050                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Osc_config.c: 23
+      +                          :             break;
+  1051  0104  2931               	goto	l186
+  1052  0105                     l1211:
+  1053                           
+  1054                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Osc_config.c: 26
+      +                          :             OSCCONbits.IRCF=0b101;
+  1055  0105  1683               	bsf	3,5	;RP0=1, select bank1
+  1056  0106  1303               	bcf	3,6	;RP1=0, select bank1
+  1057  0107  080F               	movf	15,w	;volatile
+  1058  0108  398F               	andlw	-113
+  1059  0109  3850               	iorlw	80
+  1060  010A  008F               	movwf	15	;volatile
+  1061  010B                     l1213:
+  1062                           
+  1063                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Osc_config.c: 27
+      +                          :             OSCCONbits.SCS=1;
+  1064  010B  140F               	bsf	15,0	;volatile
+  1065                           
+  1066                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Osc_config.c: 28
+      +                          :             break;
+  1067  010C  2931               	goto	l186
+  1068  010D                     l1215:
+  1069                           
+  1070                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Osc_config.c: 31
+      +                          :             OSCCONbits.IRCF=0b110;
+  1071  010D  1683               	bsf	3,5	;RP0=1, select bank1
+  1072  010E  1303               	bcf	3,6	;RP1=0, select bank1
+  1073  010F  080F               	movf	15,w	;volatile
+  1074  0110  398F               	andlw	-113
+  1075  0111  3860               	iorlw	96
+  1076  0112  008F               	movwf	15	;volatile
+  1077  0113                     l1217:
+  1078                           
+  1079                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Osc_config.c: 32
+      +                          :             OSCCONbits.SCS=1;
+  1080  0113  140F               	bsf	15,0	;volatile
+  1081                           
+  1082                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Osc_config.c: 33
+      +                          :             break;
+  1083  0114  2931               	goto	l186
+  1084  0115                     l1219:
+  1085                           
+  1086                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Osc_config.c: 36
+      +                          :             OSCCONbits.IRCF=0b111;
+  1087  0115  3070               	movlw	112
+  1088  0116  1683               	bsf	3,5	;RP0=1, select bank1
+  1089  0117  1303               	bcf	3,6	;RP1=0, select bank1
+  1090  0118  048F               	iorwf	15,f	;volatile
+  1091  0119                     l1221:
+  1092                           
+  1093                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Osc_config.c: 37
+      +                          :             OSCCONbits.SCS=1;
+  1094  0119  140F               	bsf	15,0	;volatile
+  1095                           
+  1096                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Osc_config.c: 38
+      +                          :             break;
+  1097  011A  2931               	goto	l186
+  1098  011B                     l1225:
+  1099  011B  0832               	movf	osc_config@freq,w
+  1100  011C  00B0               	movwf	??_osc_config
+  1101  011D  01B1               	clrf	??_osc_config+1
+  1102                           
+  1103                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
+      +                          itches
+  1104                           ; Switch size 1, requested type "simple"
+  1105                           ; Number of cases is 1, Range of values is 0 to 0
+  1106                           ; switch strategies available:
+  1107                           ; Name         Instructions Cycles
+  1108                           ; simple_byte            4     3 (average)
+  1109                           ; direct_byte           11     8 (fixed)
+  1110                           ; jumptable            260     6 (fixed)
+  1111                           ;	Chosen strategy is simple_byte
+  1112  011E  0831               	movf	??_osc_config+1,w
+  1113  011F  3A00               	xorlw	0	; case 0
+  1114  0120  1903               	skipnz
+  1115  0121  2923               	goto	l1379
+  1116  0122  2931               	goto	l186
+  1117  0123                     l1379:
+  1118                           
+  1119                           ; Switch size 1, requested type "simple"
+  1120                           ; Number of cases is 4, Range of values is 1 to 8
+  1121                           ; switch strategies available:
+  1122                           ; Name         Instructions Cycles
+  1123                           ; simple_byte           13     7 (average)
+  1124                           ; direct_byte           35    11 (fixed)
+  1125                           ; jumptable            263     9 (fixed)
+  1126                           ;	Chosen strategy is simple_byte
+  1127  0123  0830               	movf	??_osc_config,w
+  1128  0124  3A01               	xorlw	1	; case 1
+  1129  0125  1903               	skipnz
+  1130  0126  28FD               	goto	l1207
+  1131  0127  3A03               	xorlw	3	; case 2
+  1132  0128  1903               	skipnz
+  1133  0129  2905               	goto	l1211
+  1134  012A  3A06               	xorlw	6	; case 4
+  1135  012B  1903               	skipnz
+  1136  012C  290D               	goto	l1215
+  1137  012D  3A0C               	xorlw	12	; case 8
+  1138  012E  1903               	skipnz
+  1139  012F  2915               	goto	l1219
+  1140  0130  2931               	goto	l186
+  1141  0131                     l186:
+  1142  0131  0008               	return
+  1143  0132                     __end_of_osc_config:
+  1144                           
+  1145                           	psect	text4
+  1146  0070                     __ptext4:	
+  1147 ;; *************** function _sensor_ultrasonico *****************
+  1148 ;; Defined at:
+  1149 ;;		line 188 in file "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c"
+  1150 ;; Parameters:    Size  Location     Type
+  1151 ;;		None
+  1152 ;; Auto vars:     Size  Location     Type
+  1153 ;;		None
+  1154 ;; Return value:  Size  Location     Type
+  1155 ;;                  1    wreg      void 
+  1156 ;; Registers used:
+  1157 ;;		wreg, status,2
+  1158 ;; Tracked objects:
+  1159 ;;		On entry : 0/0
+  1160 ;;		On exit  : 0/0
+  1161 ;;		Unchanged: 0/0
+  1162 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1163 ;;      Params:         0       0       0       0       0
+  1164 ;;      Locals:         0       0       0       0       0
+  1165 ;;      Temps:          0       2       0       0       0
+  1166 ;;      Totals:         0       2       0       0       0
+  1167 ;;Total ram usage:        2 bytes
+  1168 ;; Hardware stack levels used: 1
+  1169 ;; Hardware stack levels required when called: 1
+  1170 ;; This function calls:
+  1171 ;;		Nothing
+  1172 ;; This function is called by:
+  1173 ;;		_main
+  1174 ;; This function uses a non-reentrant model
+  1175 ;;
+  1176                           
+  1177                           
+  1178                           ;psect for function _sensor_ultrasonico
+  1179  0070                     _sensor_ultrasonico:
+  1180  0070                     l1297:	
+  1181                           ;incstack = 0
+  1182                           ; Regs used in _sensor_ultrasonico: [wreg+status,2]
+  1183                           
+  1184                           
+  1185                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          190:     PORTAbits.RA0=1;
+  1186  0070  1283               	bcf	3,5	;RP0=0, select bank0
+  1187  0071  1303               	bcf	3,6	;RP1=0, select bank0
+  1188  0072  1405               	bsf	5,0	;volatile
+  1189  0073                     l1299:
+  1190                           
+  1191                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          191:     _delay((unsigned long)((10)*(4000000/4000000.0)));
+  1192  0073  3002               	movlw	2
+  1193  0074  1283               	bcf	3,5	;RP0=0, select bank0
+  1194  0075  1303               	bcf	3,6	;RP1=0, select bank0
+  1195  0076  00B0               	movwf	??_sensor_ultrasonico
+  1196  0077                     u267:
+  1197  0077  0BB0               	decfsz	??_sensor_ultrasonico,f
+  1198  0078  2877               	goto	u267
+  1199  0079  0000               	nop
+  1200  007A                     l1301:
+  1201                           
+  1202                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          192:     PORTAbits.RA0=0;
+  1203  007A  1283               	bcf	3,5	;RP0=0, select bank0
+  1204  007B  1303               	bcf	3,6	;RP1=0, select bank0
+  1205  007C  1005               	bcf	5,0	;volatile
+  1206  007D                     l112:	
+  1207                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          194:     while(PORTAbits.RA1==0);
+  1208                           
+  1209  007D  1C85               	btfss	5,1	;volatile
+  1210  007E  2880               	goto	u201
+  1211  007F  2881               	goto	u200
+  1212  0080                     u201:
+  1213  0080  287D               	goto	l112
+  1214  0081                     u200:
+  1215  0081                     l114:
+  1216                           
+  1217                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          195:     T1CONbits.TMR1ON=1;
+  1218  0081  1410               	bsf	16,0	;volatile
+  1219  0082                     l115:	
+  1220                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          196:     while(PORTAbits.RA1==1);
+  1221                           
+  1222  0082  1885               	btfsc	5,1	;volatile
+  1223  0083  2885               	goto	u211
+  1224  0084  2886               	goto	u210
+  1225  0085                     u211:
+  1226  0085  2882               	goto	l115
+  1227  0086                     u210:
+  1228  0086                     l117:
+  1229                           
+  1230                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          197:     T1CONbits.TMR1ON=0;
+  1231  0086  1010               	bcf	16,0	;volatile
+  1232  0087                     l1303:
+  1233                           
+  1234                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          198:     T1L=TMR1L;
+  1235  0087  080E               	movf	14,w	;volatile
+  1236  0088  00B0               	movwf	??_sensor_ultrasonico
+  1237  0089  01B1               	clrf	??_sensor_ultrasonico+1
+  1238  008A  0830               	movf	??_sensor_ultrasonico,w
+  1239  008B  00A8               	movwf	_T1L
+  1240  008C  0831               	movf	??_sensor_ultrasonico+1,w
+  1241  008D  00A9               	movwf	_T1L+1
+  1242                           
+  1243                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          199:     T1H=TMR1H;
+  1244  008E  080F               	movf	15,w	;volatile
+  1245  008F  00B0               	movwf	??_sensor_ultrasonico
+  1246  0090  01B1               	clrf	??_sensor_ultrasonico+1
+  1247  0091  0830               	movf	??_sensor_ultrasonico,w
+  1248  0092  00AA               	movwf	_T1H
+  1249  0093  0831               	movf	??_sensor_ultrasonico+1,w
+  1250  0094  00AB               	movwf	_T1H+1
+  1251                           
+  1252                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          200:     duracion=(T1L|(T1H<<8));
+  1253  0095  082A               	movf	_T1H,w
+  1254  0096  00B1               	movwf	??_sensor_ultrasonico+1
+  1255  0097  01B0               	clrf	??_sensor_ultrasonico
+  1256  0098  0828               	movf	_T1L,w
+  1257  0099  0430               	iorwf	??_sensor_ultrasonico,w
+  1258  009A  00F0               	movwf	_duracion
+  1259  009B  0829               	movf	_T1L+1,w
+  1260  009C  0431               	iorwf	??_sensor_ultrasonico+1,w
+  1261  009D  00F1               	movwf	_duracion+1
+  1262                           
+  1263                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          201:     if (duracion > 232 && duracion<250)
+  1264  009E  3000               	movlw	0
+  1265  009F  0271               	subwf	_duracion+1,w
+  1266  00A0  30E9               	movlw	233
+  1267  00A1  1903               	skipnz
+  1268  00A2  0270               	subwf	_duracion,w
+  1269  00A3  1C03               	skipc
+  1270  00A4  28A6               	goto	u221
+  1271  00A5  28A7               	goto	u220
+  1272  00A6                     u221:
+  1273  00A6  28B5               	goto	l1309
+  1274  00A7                     u220:
+  1275  00A7                     l1305:
+  1276  00A7  3000               	movlw	0
+  1277  00A8  0271               	subwf	_duracion+1,w
+  1278  00A9  30FA               	movlw	250
+  1279  00AA  1903               	skipnz
+  1280  00AB  0270               	subwf	_duracion,w
+  1281  00AC  1803               	skipnc
+  1282  00AD  28AF               	goto	u231
+  1283  00AE  28B0               	goto	u230
+  1284  00AF                     u231:
+  1285  00AF  28B5               	goto	l1309
+  1286  00B0                     u230:
+  1287  00B0                     l1307:
+  1288                           
+  1289                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          202:         talanquera=1;
+  1290  00B0  3001               	movlw	1
+  1291  00B1  00A0               	movwf	_talanquera
+  1292  00B2  3000               	movlw	0
+  1293  00B3  00A1               	movwf	_talanquera+1
+  1294  00B4  28B7               	goto	l119
+  1295  00B5                     l1309:
+  1296                           
+  1297                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          204:         talanquera=0;
+  1298  00B5  01A0               	clrf	_talanquera
+  1299  00B6  01A1               	clrf	_talanquera+1
+  1300  00B7                     l119:
+  1301                           
+  1302                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          206:     duracion=0;
+  1303  00B7  01F0               	clrf	_duracion
+  1304  00B8  01F1               	clrf	_duracion+1
+  1305                           
+  1306                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          207:     TMR1L=0;
+  1307  00B9  018E               	clrf	14	;volatile
+  1308                           
+  1309                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          208:     TMR1H=0;
+  1310  00BA  018F               	clrf	15	;volatile
+  1311  00BB                     l120:
+  1312  00BB  0008               	return
+  1313  00BC                     __end_of_sensor_ultrasonico:
+  1314                           
+  1315                           	psect	text5
+  1316  0023                     __ptext5:	
+  1317 ;; *************** function _isr *****************
+  1318 ;; Defined at:
+  1319 ;;		line 73 in file "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c"
+  1320 ;; Parameters:    Size  Location     Type
+  1321 ;;		None
+  1322 ;; Auto vars:     Size  Location     Type
+  1323 ;;		None
+  1324 ;; Return value:  Size  Location     Type
+  1325 ;;                  1    wreg      void 
+  1326 ;; Registers used:
+  1327 ;;		wreg, fsr0l, fsr0h, status,2, status,0
+  1328 ;; Tracked objects:
+  1329 ;;		On entry : 0/0
+  1330 ;;		On exit  : 0/0
+  1331 ;;		Unchanged: 0/0
+  1332 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1333 ;;      Params:         0       0       0       0       0
+  1334 ;;      Locals:         0       0       0       0       0
+  1335 ;;      Temps:          5       0       0       0       0
+  1336 ;;      Totals:         5       0       0       0       0
+  1337 ;;Total ram usage:        5 bytes
+  1338 ;; Hardware stack levels used: 1
+  1339 ;; This function calls:
+  1340 ;;		Nothing
+  1341 ;; This function is called by:
+  1342 ;;		Interrupt level 1
+  1343 ;; This function uses a non-reentrant model
+  1344 ;;
+  1345                           
+  1346                           
+  1347                           ;psect for function _isr
+  1348  0023                     _isr:
+  1349  0023                     i1l899:
+  1350                           
+  1351                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          76:     if (INTCONbits.RBIF)
+  1352  0023  1C0B               	btfss	11,0	;volatile
+  1353  0024  2826               	goto	u7_21
+  1354  0025  2827               	goto	u7_20
+  1355  0026                     u7_21:
+  1356  0026  2834               	goto	i1l909
+  1357  0027                     u7_20:
+  1358  0027                     i1l901:
+  1359                           
+  1360                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          77:     {;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_mo
+      +                          tores.c: 78:         if (PORTB==0b11111110)
+  1361  0027  30FE               	movlw	254
+  1362  0028  1283               	bcf	3,5	;RP0=0, select bank0
+  1363  0029  1303               	bcf	3,6	;RP1=0, select bank0
+  1364  002A  0606               	xorwf	6,w	;volatile
+  1365  002B  1D03               	btfss	3,2
+  1366  002C  282E               	goto	u8_21
+  1367  002D  282F               	goto	u8_20
+  1368  002E                     u8_21:
+  1369  002E  2832               	goto	i1l905
+  1370  002F                     u8_20:
+  1371  002F                     i1l903:
+  1372                           
+  1373                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          79:             antirrebote=1;
+  1374  002F  01F4               	clrf	_antirrebote
+  1375  0030  0AF4               	incf	_antirrebote,f
+  1376  0031  2833               	goto	i1l907
+  1377  0032                     i1l905:
+  1378                           
+  1379                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          81:             antirrebote=0;
+  1380  0032  01F4               	clrf	_antirrebote
+  1381  0033                     i1l907:
+  1382                           
+  1383                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          82:         INTCONbits.RBIF=0;
+  1384  0033  100B               	bcf	11,0	;volatile
+  1385  0034                     i1l909:
+  1386                           
+  1387                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          85:     if (TMR0IF)
+  1388  0034  1D0B               	btfss	11,2	;volatile
+  1389  0035  2837               	goto	u9_21
+  1390  0036  2838               	goto	u9_20
+  1391  0037                     u9_21:
+  1392  0037  2867               	goto	i1l97
+  1393  0038                     u9_20:
+  1394  0038  2856               	goto	i1l925
+  1395  0039                     i1l94:	
+  1396                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          88:         {;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Mai
+      +                          n_motores.c: 89:             case(1):
+  1397                           
+  1398                           
+  1399                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          90:                 PORTEbits.RE0=1;
+  1400  0039  1283               	bcf	3,5	;RP0=0, select bank0
+  1401  003A  1303               	bcf	3,6	;RP1=0, select bank0
+  1402  003B  1409               	bsf	9,0	;volatile
+  1403  003C                     i1l913:
+  1404                           
+  1405                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          91:                 _delay((unsigned long)((1.5)*(4000000/4000.0)));
+  1406  003C  30D6               	movlw	214
+  1407  003D  00F5               	movwf	??_isr
+  1408  003E                     u27_27:
+  1409  003E  283F               	nop2
+  1410  003F  2840               	nop2
+  1411  0040  0BF5               	decfsz	??_isr,f
+  1412  0041  283E               	goto	u27_27
+  1413  0042  0000               	nop
+  1414  0043                     i1l915:
+  1415                           
+  1416                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          92:                 PORTEbits.RE0=0;
+  1417  0043  1283               	bcf	3,5	;RP0=0, select bank0
+  1418  0044  1303               	bcf	3,6	;RP1=0, select bank0
+  1419  0045  1009               	bcf	9,0	;volatile
+  1420                           
+  1421                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          93:                 break;
+  1422  0046  2866               	goto	i1l95
+  1423  0047                     i1l96:	
+  1424                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          94:             case(2):
+  1425                           
+  1426                           
+  1427                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          95:                 PORTEbits.RE0=1;
+  1428  0047  1283               	bcf	3,5	;RP0=0, select bank0
+  1429  0048  1303               	bcf	3,6	;RP1=0, select bank0
+  1430  0049  1409               	bsf	9,0	;volatile
+  1431  004A                     i1l917:
+  1432                           
+  1433                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          96:                 _delay((unsigned long)((1)*(4000000/4000.0)));
+  1434  004A  30C7               	movlw	199
+  1435  004B  00F5               	movwf	??_isr
+  1436  004C                     u28_27:
+  1437  004C  284D               	nop2
+  1438  004D  0BF5               	decfsz	??_isr,f
+  1439  004E  284C               	goto	u28_27
+  1440  004F  2850               	nop2
+  1441  0050  2851               	nop2
+  1442  0051                     i1l919:
+  1443                           
+  1444                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          97:                 PORTEbits.RE0=0;
+  1445  0051  1283               	bcf	3,5	;RP0=0, select bank0
+  1446  0052  1303               	bcf	3,6	;RP1=0, select bank0
+  1447  0053  1009               	bcf	9,0	;volatile
+  1448  0054                     i1l921:
+  1449                           
+  1450                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          98:                 botonazo=0;
+  1451  0054  01F3               	clrf	_botonazo
+  1452                           
+  1453                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          99:                 break;
+  1454  0055  2866               	goto	i1l95
+  1455  0056                     i1l925:
+  1456  0056  0873               	movf	_botonazo,w
+  1457  0057  00F5               	movwf	??_isr
+  1458  0058  01F6               	clrf	??_isr+1
+  1459                           
+  1460                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
+      +                          itches
+  1461                           ; Switch size 1, requested type "simple"
+  1462                           ; Number of cases is 1, Range of values is 0 to 0
+  1463                           ; switch strategies available:
+  1464                           ; Name         Instructions Cycles
+  1465                           ; simple_byte            4     3 (average)
+  1466                           ; direct_byte           11     8 (fixed)
+  1467                           ; jumptable            260     6 (fixed)
+  1468                           ;	Chosen strategy is simple_byte
+  1469  0059  0876               	movf	??_isr+1,w
+  1470  005A  3A00               	xorlw	0	; case 0
+  1471  005B  1903               	skipnz
+  1472  005C  285E               	goto	i1l1381
+  1473  005D  2866               	goto	i1l95
+  1474  005E                     i1l1381:
+  1475                           
+  1476                           ; Switch size 1, requested type "simple"
+  1477                           ; Number of cases is 2, Range of values is 1 to 2
+  1478                           ; switch strategies available:
+  1479                           ; Name         Instructions Cycles
+  1480                           ; simple_byte            7     4 (average)
+  1481                           ; direct_byte           17    11 (fixed)
+  1482                           ; jumptable            263     9 (fixed)
+  1483                           ;	Chosen strategy is simple_byte
+  1484  005E  0875               	movf	??_isr,w
+  1485  005F  3A01               	xorlw	1	; case 1
+  1486  0060  1903               	skipnz
+  1487  0061  2839               	goto	i1l94
+  1488  0062  3A03               	xorlw	3	; case 2
+  1489  0063  1903               	skipnz
+  1490  0064  2847               	goto	i1l96
+  1491  0065  2866               	goto	i1l95
+  1492  0066                     i1l95:
+  1493                           
+  1494                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c: 
+      +                          101:         TMR0IF=0;
+  1495  0066  110B               	bcf	11,2	;volatile
+  1496  0067                     i1l97:
+  1497  0067  0879               	movf	??_isr+4,w
+  1498  0068  008A               	movwf	10
+  1499  0069  0878               	movf	??_isr+3,w
+  1500  006A  0084               	movwf	4
+  1501  006B  0E77               	swapf	??_isr+2,w
+  1502  006C  0083               	movwf	3
+  1503  006D  0EFE               	swapf	btemp,f
+  1504  006E  0E7E               	swapf	btemp,w
+  1505  006F  0009               	retfie
+  1506  0070                     __end_of_isr:
+  1507  007E                     btemp	set	126	;btemp
+  1508  007E                     wtemp0	set	126
+  1509                           
+  1510                           	psect	intentry
+  1511  0004                     __pintentry:	
+  1512                           ;incstack = 0
+  1513                           ; Regs used in _isr: [wreg-fsr0h+status,2+status,0]
+  1514                           
+  1515  0004                     interrupt_function:
+  1516  007E                     saved_w	set	btemp
+  1517  0004  00FE               	movwf	btemp
+  1518  0005  0E03               	swapf	3,w
+  1519  0006  00F7               	movwf	??_isr+2
+  1520  0007  0804               	movf	4,w
+  1521  0008  00F8               	movwf	??_isr+3
+  1522  0009  080A               	movf	10,w
+  1523  000A  00F9               	movwf	??_isr+4
+  1524  000B  120A  118A  2823   	ljmp	_isr
+  1525                           
+  1526                           	psect	config
+  1527                           
+  1528                           ;Config register CONFIG1 @ 0x2007
+  1529                           ;	Oscillator Selection bits
+  1530                           ;	FOSC = INTRC_NOCLKOUT, INTOSCIO oscillator: I/O function on RA6/OSC2/CLKOUT pin, I/O f
+      +                          unction on RA7/OSC1/CLKIN
+  1531                           ;	Watchdog Timer Enable bit
+  1532                           ;	WDTE = OFF, WDT disabled and can be enabled by SWDTEN bit of the WDTCON register
+  1533                           ;	Power-up Timer Enable bit
+  1534                           ;	PWRTE = OFF, PWRT disabled
+  1535                           ;	RE3/MCLR pin function select bit
+  1536                           ;	MCLRE = OFF, RE3/MCLR pin function is digital input, MCLR internally tied to VDD
+  1537                           ;	Code Protection bit
+  1538                           ;	CP = OFF, Program memory code protection is disabled
+  1539                           ;	Data Code Protection bit
+  1540                           ;	CPD = OFF, Data memory code protection is disabled
+  1541                           ;	Brown Out Reset Selection bits
+  1542                           ;	BOREN = OFF, BOR disabled
+  1543                           ;	Internal External Switchover bit
+  1544                           ;	IESO = OFF, Internal/External Switchover mode is disabled
+  1545                           ;	Fail-Safe Clock Monitor Enabled bit
+  1546                           ;	FCMEN = OFF, Fail-Safe Clock Monitor is disabled
+  1547                           ;	Low Voltage Programming Enable bit
+  1548                           ;	LVP = OFF, RB3 pin has digital I/O, HV on MCLR must be used for programming
+  1549                           ;	In-Circuit Debugger Mode bit
+  1550                           ;	DEBUG = 0x1, unprogrammed default
+  1551  2007                     	org	8199
+  1552  2007  20D4               	dw	8404
+  1553                           
+  1554                           ;Config register CONFIG2 @ 0x2008
+  1555                           ;	Brown-out Reset Selection bit
+  1556                           ;	BOR4V = BOR40V, Brown-out Reset set to 4.0V
+  1557                           ;	Flash Program Memory Self Write Enable bits
+  1558                           ;	WRT = OFF, Write protection off
+  1559  2008                     	org	8200
+  1560  2008  3FFF               	dw	16383
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        0
+    BSS         21
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMMON           14      5      10
+    BANK0            80      4      20
+    BANK1            80      0       0
+    BANK3            96      0       0
+    BANK2            96      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMMON
+
+    None.
+
+Critical Paths under _isr in COMMON
+
+    None.
+
+Critical Paths under _main in BANK0
+
+    _setup->_osc_config
+
+Critical Paths under _isr in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _isr in BANK1
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _isr in BANK3
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Critical Paths under _isr in BANK2
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 1     1      0      31
+                                              3 BANK0      1     1      0
+                 _sensor_ultrasonico
+                              _setup
+ ---------------------------------------------------------------------------------
+ (1) _setup                                                0     0      0      31
+                         _osc_config
+                        _uart_config
+ ---------------------------------------------------------------------------------
+ (2) _uart_config                                          0     0      0       0
+ ---------------------------------------------------------------------------------
+ (2) _osc_config                                           3     3      0      31
+                                              0 BANK0      3     3      0
+ ---------------------------------------------------------------------------------
+ (1) _sensor_ultrasonico                                   2     2      0       0
+                                              0 BANK0      2     2      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 2
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (3) _isr                                                  5     5      0       0
+                                              0 COMMON     5     5      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 3
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _sensor_ultrasonico
+   _setup
+     _osc_config
+     _uart_config
+
+ _isr (ROOT)
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BITCOMMON            E      0       0       0        0.0%
+EEDATA             100      0       0       0        0.0%
+NULL                 0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+COMMON               E      5       A       1       71.4%
+BITSFR0              0      0       0       1        0.0%
+SFR0                 0      0       0       1        0.0%
+BITSFR1              0      0       0       2        0.0%
+SFR1                 0      0       0       2        0.0%
+STACK                0      0       0       2        0.0%
+ABS                  0      0      1E       3        0.0%
+BITBANK0            50      0       0       4        0.0%
+BITSFR3              0      0       0       4        0.0%
+SFR3                 0      0       0       4        0.0%
+BANK0               50      4      14       5       25.0%
+BITSFR2              0      0       0       5        0.0%
+SFR2                 0      0       0       5        0.0%
+BITBANK1            50      0       0       6        0.0%
+BANK1               50      0       0       7        0.0%
+BITBANK3            60      0       0       8        0.0%
+BANK3               60      0       0       9        0.0%
+BITBANK2            60      0       0      10        0.0%
+BANK2               60      0       0      11        0.0%
+DATA                 0      0      1E      12        0.0%
+
+
+Microchip Technology PIC Macro Assembler V2.32 build 20210201212658 
+Symbol Table                                                                                   Sun Aug 15 18:01:22 2021
+
+                         fsr 0004                          l120 00BB                          l112 007D  
+                        l114 0081                          l115 0082                          l117 0086  
+                        l109 00F8                          l119 00B7                          l186 0131  
+                        l199 0173                          _GIE 005F                          _T1H 002A  
+                        _T1L 0028                          u200 0081                          u201 0080  
+                        u210 0086                          u211 0085                          u220 00A7  
+                        u221 00A6                          u230 00B0                          u231 00AF  
+                        u240 0141                          u241 0140                          u250 0147  
+                        u251 0146                          u267 0077                          _isr 0023  
+                        fsr0 0004                          indf 0000                         l1211 0105  
+                       l1301 007A                         l1221 0119                         l1213 010B  
+                       l1205 00FC                         l1303 0087                         l1215 010D  
+                       l1207 00FD                         l1311 0132                         l1305 00A7  
+                       l1217 0113                         l1209 0103                         l1225 011B  
+                       l1241 016E                         l1233 015E                         l1321 014B  
+                       l1313 0137                         l1307 00B0                         l1219 0115  
+                       l1243 016F                         l1235 0166                         l1251 00C3  
+                       l1323 014D                         l1315 013C                         l1309 00B5  
+                       l1245 0170                         l1237 0169                         l1261 00D5  
+                       l1253 00C6                         l1317 0141                         l1325 014E  
+                       l1239 016B                         l1271 00E2                         l1263 00D8  
+                       l1255 00C7                         l1247 00BC                         l1327 0153  
+                       l1319 0147                         l1281 00EE                         l1273 00E3  
+                       l1265 00D9                         l1257 00C8                         l1249 00C0  
+                       l1291 00F3                         l1283 00EF                         l1275 00E8  
+                       l1267 00DB                         l1259 00CF                         l1293 00F4  
+                       l1285 00F0                         l1277 00EC                         l1269 00DF  
+                       l1295 00F5                         l1287 00F1                         l1279 00ED  
+                       l1297 0070                         l1289 00F2                         l1299 0073  
+                       l1379 0123                         ?_isr 0075                         _PEIE 005E  
+                       i1l94 0039                         i1l95 0066                         i1l96 0047  
+                       i1l97 0067                         _TMR0 0001                         u7_20 0027  
+                       u7_21 0026                         u8_20 002F                         u8_21 002E  
+                       u9_20 0038                         u9_21 0037                         _hc04 002E  
+                       _main 0132                         btemp 007E                         start 000E  
+             osc_config@freq 0032                        ??_isr 0075                        ?_main 0075  
+                      _ANSEL 0188                        i1l901 0027                        i1l903 002F  
+                      i1l921 0054                        i1l913 003C                        i1l905 0032  
+                      i1l915 0043                        i1l907 0033                        i1l917 004A  
+                      i1l925 0056                        i1l909 0034                        i1l919 0051  
+                      i1l899 0023                        _TMR1H 000F                        _TMR1L 000E  
+                      _SPBRG 0099                        _PORTB 0006                        _PORTC 0007  
+                      _PORTD 0008                        _PORTE 0009                        u27_27 003E  
+                      u28_27 004C                        _TRISC 0087                        _TRISD 0088  
+                      _SSPIE 0463                        _SSPIF 0063                        _setup 00BC  
+                      pclath 000A                        status 0003                        wtemp0 007E  
+            __initialization 0011                 __end_of_main 015E                       ??_main 0033  
+                     ?_setup 0075                       _ANSELH 0189                       i1l1381 005E  
+                     _TMR0IF 005A                       _SPBRGH 009A                       _SSPADD 0093  
+                     _TRISC3 043B                       _TRISC4 043C                       _SSPCON 0014  
+                     _SSPBUF 0013  __size_of_sensor_ultrasonico 004C                       _dismax 0024  
+                     _dismin 0022                 ?_uart_config 0075                       saved_w 007E  
+    __end_of__initialization 001F               __pcstackCOMMON 0075                __end_of_setup 00F9  
+             _OPTION_REGbits 0081                      ??_setup 0033                   __pbssBANK0 0020  
+                 __pmaintext 0132                   __pintentry 0004                      _SSPCON2 0091  
+                    _SSPSTAT 0094                      __ptext1 00BC                      __ptext2 015E  
+                    __ptext3 00F9                      __ptext4 0070                      __ptext5 0023  
+                  _T1CONbits 0010                 __size_of_isr 004D         __size_of_uart_config 0016  
+                    clrloop0 0175         end_of_initialization 001F                   _talanquera 0020  
+                 _osc_config 00F9                    _RCSTAbits 0018                    _PORTAbits 0005  
+                  _PORTBbits 0006                    _PORTCbits 0007                    _PORTEbits 0009  
+                  _TRISAbits 0085                    _TRISBbits 0086                    _TRISCbits 0087  
+                  _TRISEbits 0089                    _TXSTAbits 0098   __end_of_sensor_ultrasonico 00BC  
+                _BAUDCTLbits 0187          start_initialization 0011                  __end_of_isr 0070  
+                ?_osc_config 0075                  __pbssCOMMON 0070                    ___latbits 0002  
+              __pcstackBANK0 0030                    _distancia 002C          __size_of_osc_config 0039  
+             __size_of_setup 003D            interrupt_function 0004                     _IOCBbits 0096  
+                  clear_ram0 0174                  _antirrebote 0074                ??_uart_config 0030  
+                   _WPUBbits 0095           _sensor_ultrasonico 0070          ?_sensor_ultrasonico 0075  
+        __end_of_uart_config 0174                     _anterior 0026                     _botonazo 0073  
+                   _duracion 0070                 ??_osc_config 0030                __size_of_main 002C  
+       ??_sensor_ultrasonico 0030                     _sensorOn 0072                   _INTCONbits 000B  
+         __end_of_osc_config 0132                     intlevel1 0000                   _OSCCONbits 008F  
+                _uart_config 015E                  _SSPCON2bits 0091  
