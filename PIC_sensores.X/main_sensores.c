@@ -1,7 +1,7 @@
 /*------------------------------------------------------------------------------
 Archivo: mainsproject.s
 Microcontrolador: PIC16F887
-Autor: Andy Bonilla
+Autores: Pablo Herrarte y Andy Bonilla
 Compilador: pic-as (v2.30), MPLABX v5.45
     
 Programa: pic para sensores de proyecto 1 de Electronica Digital 2
@@ -52,14 +52,14 @@ unsigned char antirrebote;
  ------------------------ PROTOTIPOS DE FUNCIONES ------------------------------
  -----------------------------------------------------------------------------*/
 void setup(void);
-
+void infrarrojos(void);
 /*-----------------------------------------------------------------------------
  --------------------------- INTERRUPCIONES -----------------------------------
  -----------------------------------------------------------------------------*/
 void __interrupt() isr(void) //funcion de interrupciones
 {
     //-------INTERRUPCION POR BOTONAZO
-    if (INTCONbits.RBIF)
+    /*if (INTCONbits.RBIF)
     {
         if (PORTB==0b11111110)
         {
@@ -67,7 +67,7 @@ void __interrupt() isr(void) //funcion de interrupciones
             antirrebote=1;
         }
         INTCONbits.RBIF=0;
-    }
+    }*/
     //-------INTERRUPCION 
    
 }
@@ -81,23 +81,8 @@ void main(void)
     
     while(1)
     {
-        PORTEbits.RE0=1;
-        /*__delay_ms(500);
-        PORTEbits.RE0=0;
-        __delay_ms(500);*/
-        //-------ANTIRREBOTE DE BOTON
-        /*if (antirrebote==1 && PORTBbits.RB0==0  )
-        {
-            PORTEbits.RE0=1;
-            antirrebote=0;
-        }
-        else
-        {
-            PORTEbits.RE0=0;
-            antirrebote=0;
-        }   */
-        //-------FUNCIONAMIENTO DEL SENSOR
-        
+        //-------FUNCION PARA CONTROL DE SENSORES INFRARROJOS
+        infrarrojos();
         
     }
    
@@ -111,8 +96,9 @@ void setup(void)
     ANSEL=0;
     ANSELH=0;
     //-------CONFIGURACION IN/OUT
-    TRISBbits.TRISB0=1;                 //entrada boton prueba
-    TRISEbits.TRISE0=0;                 //salida para PWM de servo
+    TRISBbits.TRISB0=1;                 //entrada de sensor
+    TRISEbits.TRISE0=0;                 //salida para led verde
+    TRISEbits.TRISE1=0;                 //salida para led rojo
    
     //-------LIMPIEZA DE PUERTOS
     PORTB=0;
@@ -122,12 +108,26 @@ void setup(void)
     //-------CONFIGURACION DE COMUNICACION I2C
         
     //-------CONFIGURACION DE INTERRUPCIONES
-    //INTCONbits.GIE=1;           //se habilita interrupciones globales
-    INTCONbits.PEIE = 1;        //habilitan interrupciones por perifericos
-    INTCONbits.RBIE=1;          //se  habilita IntOnChange B
-    INTCONbits.RBIF=0;          //se  apaga bandera IntOnChange B
+    
     
 }
 /*-----------------------------------------------------------------------------
  --------------------------------- FUNCIONES ----------------------------------
  -----------------------------------------------------------------------------*/
+//-------FUNCION PARA CONTROL DE SENSORES INFRARROJOS
+void infrarrojos(void)
+{
+    //-------PARQUEO 1
+    if (PORTBbits.RB0==1)
+    {
+        PORTEbits.RE0=1;
+        PORTEbits.RE1=0;
+    }
+    else
+    {
+        PORTEbits.RE0=0;
+        PORTEbits.RE1=1;
+    }
+    //-------PARQUEO2
+    //-------PARQUEO3
+}

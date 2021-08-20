@@ -2658,24 +2658,13 @@ unsigned char antirrebote;
 
 
 void setup(void);
-
+void infrarrojos(void);
 
 
 
 void __attribute__((picinterrupt(("")))) isr(void)
 {
-
-    if (INTCONbits.RBIF)
-    {
-        if (PORTB==0b11111110)
-        {
-            PORTEbits.RE0=0;
-            antirrebote=1;
-        }
-        INTCONbits.RBIF=0;
-    }
-
-
+# 73 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c"
 }
 
 
@@ -2687,8 +2676,9 @@ void main(void)
 
     while(1)
     {
-        PORTEbits.RE0=1;
-# 102 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c"
+
+        infrarrojos();
+
     }
 
 }
@@ -2703,6 +2693,7 @@ void setup(void)
 
     TRISBbits.TRISB0=1;
     TRISEbits.TRISE0=0;
+    TRISEbits.TRISE1=0;
 
 
     PORTB=0;
@@ -2713,8 +2704,25 @@ void setup(void)
 
 
 
-    INTCONbits.PEIE = 1;
-    INTCONbits.RBIE=1;
-    INTCONbits.RBIF=0;
+
+}
+
+
+
+
+void infrarrojos(void)
+{
+
+    if (PORTBbits.RB0==1)
+    {
+        PORTEbits.RE0=1;
+        PORTEbits.RE1=0;
+    }
+    else
+    {
+        PORTEbits.RE0=0;
+        PORTEbits.RE1=1;
+    }
+
 
 }
