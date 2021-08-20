@@ -82,6 +82,9 @@ void main(void)
     while(1)
     {
         PORTEbits.RE0=1;
+        /*__delay_ms(500);
+        PORTEbits.RE0=0;
+        __delay_ms(500);*/
         //-------ANTIRREBOTE DE BOTON
         /*if (antirrebote==1 && PORTBbits.RB0==0  )
         {
@@ -116,17 +119,14 @@ void setup(void)
     PORTE=0;
     //-------CONFIGURACION DE RELOJ A 4MHz
     osc_config(4);
-    //-------CONFIGURACION DE WPUB
-    OPTION_REGbits.nRBPU=0;             //se activan WPUB
-    WPUBbits.WPUB0=1;                   //RB0, boton prueba
     //-------CONFIGURACION DE COMUNICACION I2C
         
     //-------CONFIGURACION DE INTERRUPCIONES
-    INTCONbits.GIE=1;           //se habilita interrupciones globales
+    //INTCONbits.GIE=1;           //se habilita interrupciones globales
     INTCONbits.PEIE = 1;        //habilitan interrupciones por perifericos
     INTCONbits.RBIE=1;          //se  habilita IntOnChange B
     INTCONbits.RBIF=0;          //se  apaga bandera IntOnChange B
-    IOCBbits.IOCB0=1;           //habilita IOCB RB0
+    
 }
 /*-----------------------------------------------------------------------------
  --------------------------------- FUNCIONES ----------------------------------

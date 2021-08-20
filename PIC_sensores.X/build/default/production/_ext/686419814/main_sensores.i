@@ -2688,7 +2688,7 @@ void main(void)
     while(1)
     {
         PORTEbits.RE0=1;
-# 99 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c"
+# 102 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c"
     }
 
 }
@@ -2710,14 +2710,11 @@ void setup(void)
 
     osc_config(4);
 
-    OPTION_REGbits.nRBPU=0;
-    WPUBbits.WPUB0=1;
 
 
 
-    INTCONbits.GIE=1;
     INTCONbits.PEIE = 1;
     INTCONbits.RBIE=1;
     INTCONbits.RBIF=0;
-    IOCBbits.IOCB0=1;
+
 }

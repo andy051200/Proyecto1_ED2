@@ -51,39 +51,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "14 C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/Osc_config.h
 [; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/Osc_config.h: 14: void osc_config(uint8_t freq);
 [v _osc_config `(v ~T0 @X0 0 ef1`uc ]
-"1352 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc/pic16f887.h
-[s S50 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S50 . PS PSA T0SE T0CS INTEDG nRBPU ]
-"1360
-[s S51 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S51 . PS0 PS1 PS2 ]
-"1351
-[u S49 `S50 1 `S51 1 ]
-[n S49 . . . ]
-"1366
-[v _OPTION_REGbits `VS49 ~T0 @X0 0 e@129 ]
-"2352
-[s S90 :8 `uc 1 ]
-[n S90 . WPUB ]
-"2355
-[s S91 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S91 . WPUB0 WPUB1 WPUB2 WPUB3 WPUB4 WPUB5 WPUB6 WPUB7 ]
-"2351
-[u S89 `S90 1 `S91 1 ]
-[n S89 . . . ]
-"2366
-[v _WPUBbits `VS89 ~T0 @X0 0 e@149 ]
-"2422
-[s S93 :8 `uc 1 ]
-[n S93 . IOCB ]
-"2425
-[s S94 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S94 . IOCB0 IOCB1 IOCB2 IOCB3 IOCB4 IOCB5 IOCB6 IOCB7 ]
-"2421
-[u S92 `S93 1 `S94 1 ]
-[n S92 . . . ]
-"2436
-[v _IOCBbits `VS92 ~T0 @X0 0 e@150 ]
 "15 C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
 [p x FOSC  =  INTRC_NOCLKOUT    ]
 "16
@@ -330,54 +297,45 @@ Version 4.0 HI-TECH Software Intermediate Code
 "84
 [; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 84:         PORTEbits.RE0=1;
 [e = . . _PORTEbits 0 0 -> -> 1 `i `uc ]
-"99
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 99:     }
+"102
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 102:     }
 }
 [e :U 142 ]
 [e $U 143  ]
 [e :U 144 ]
-"101
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 101: }
+"104
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 104: }
 [e :UE 141 ]
 }
-"105
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 105: void setup(void)
+"108
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 108: void setup(void)
 [v _setup `(v ~T0 @X0 1 ef ]
-"106
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 106: {
+"109
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 109: {
 {
 [e :U _setup ]
 [f ]
-"108
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 108:     ANSEL=0;
-[e = _ANSEL -> -> 0 `i `uc ]
-"109
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 109:     ANSELH=0;
-[e = _ANSELH -> -> 0 `i `uc ]
 "111
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 111:     TRISBbits.TRISB0=1;
-[e = . . _TRISBbits 0 0 -> -> 1 `i `uc ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 111:     ANSEL=0;
+[e = _ANSEL -> -> 0 `i `uc ]
 "112
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 112:     TRISEbits.TRISE0=0;
-[e = . . _TRISEbits 0 0 -> -> 0 `i `uc ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 112:     ANSELH=0;
+[e = _ANSELH -> -> 0 `i `uc ]
+"114
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 114:     TRISBbits.TRISB0=1;
+[e = . . _TRISBbits 0 0 -> -> 1 `i `uc ]
 "115
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 115:     PORTB=0;
-[e = _PORTB -> -> 0 `i `uc ]
-"116
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 116:     PORTE=0;
-[e = _PORTE -> -> 0 `i `uc ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 115:     TRISEbits.TRISE0=0;
+[e = . . _TRISEbits 0 0 -> -> 0 `i `uc ]
 "118
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 118:     osc_config(4);
-[e ( _osc_config (1 -> -> 4 `i `uc ]
-"120
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 120:     OPTION_REGbits.nRBPU=0;
-[e = . . _OPTION_REGbits 0 5 -> -> 0 `i `uc ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 118:     PORTB=0;
+[e = _PORTB -> -> 0 `i `uc ]
+"119
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 119:     PORTE=0;
+[e = _PORTE -> -> 0 `i `uc ]
 "121
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 121:     WPUBbits.WPUB0=1;
-[e = . . _WPUBbits 1 0 -> -> 1 `i `uc ]
-"125
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 125:     INTCONbits.GIE=1;
-[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 121:     osc_config(4);
+[e ( _osc_config (1 -> -> 4 `i `uc ]
 "126
 [; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 126:     INTCONbits.PEIE = 1;
 [e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
@@ -387,9 +345,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "128
 [; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 128:     INTCONbits.RBIF=0;
 [e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
-"129
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 129:     IOCBbits.IOCB0=1;
-[e = . . _IOCBbits 1 0 -> -> 1 `i `uc ]
 "130
 [; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 130: }
 [e :UE 145 ]
