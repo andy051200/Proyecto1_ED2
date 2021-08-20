@@ -1,8 +1,8 @@
 /*------------------------------------------------------------------------------
 Archivo: mainsproject.s
 Microcontrolador: PIC16F887
-Autor: Andy Bonilla
-Compilador: pic-as (v2.30), MPLABX v5.45
+Autor: Pablo Herrarte y Andy Bonilla
+Compilador: pic-as (v2.30), MPLABX v5.40
     
 Programa: pic para motores de proyecto 1 de Electronica Digital 2
 Hardware: PIC16F887
@@ -75,53 +75,52 @@ void __interrupt() isr(void) //funcion de interrupciones
     //-------INTERRUPCION POR BOTONAZO
     if (INTCONbits.RBIF)
     {
-        if (PORTB==0b11111110)
+        if (PORTB==0b11111101)
             antirrebote=1;
         else
             antirrebote=0;
         INTCONbits.RBIF=0;
     }
     //-------INTERRUPCION POR TIMER0
-    if (TMR0IF)
-    {
-        switch(botonazo)
-        {
-            case(1):                //servo en posicion de 0°
-                PORTEbits.RE0=1;
-                __delay_ms(1.5);
-                PORTEbits.RE0=0;
-                break;
-            case(2):                //servo en posicion 90°
-                PORTEbits.RE0=1;
-                __delay_ms(1);
-                PORTEbits.RE0=0;
-                botonazo=0;
-                break;
-        }
-        TMR0IF=0;
-    }
+    
+    
 }
 /*-----------------------------------------------------------------------------
  ----------------------------- MAIN LOOP --------------------------------------
  -----------------------------------------------------------------------------*/
 void main(void)
 {
-    hc04=0;
-    sensorOn=0;
     setup();
     
     while(1)
     {
         //-------ANTIRREBOTE DE BOTON
-        if (antirrebote==1 && PORTBbits.RB0==0  )
+        if (antirrebote==1 && PORTBbits.RB1==0  )
         {
             botonazo++;
-            PORTD=botonazo;
+            //PORTD=botonazo;
             antirrebote=0;
         }
         //-------FUNCIONAMIENTO DEL SENSOR
-        sensor_ultrasonico();
-        PORTCbits.RC1=talanquera;
+        switch(botonazo)
+        {
+            case(0):                //servo en posicion de 0°
+                PORTDbits.RD0=1;
+                __delay_ms(1);
+                PORTDbits.RD0=0;
+                break;
+            case(1):                //servo en posicion 90°
+                PORTDbits.RD0=1;
+                __delay_ms(2);
+                PORTDbits.RD0=0;
+                break;
+            case(2):
+                botonazo=0;
+                break;
+        }
+        
+        //sensor_ultrasonico();
+        //PORTCbits.RC1=talanquera;
         
         /*distancia=ObtenerDistancia();   //todo el timepo estará midiendo
         dismax=anterior+2;              //tomar un rango maximo 
@@ -142,11 +141,10 @@ void setup(void)
     ANSEL=0;
     ANSELH=0;
     //-------CONFIGURACION IN/OUT
-    TRISAbits.TRISA0=0;                 //Salida para trigger
-    TRISAbits.TRISA1=1;                 //Salida para echo
-    TRISD=0;
+    TRISDbits.TRISD0=0;
     TRISC=0;
     TRISBbits.TRISB0=1;                 //entrada boton prueba
+    TRISBbits.TRISB1=1;                 //entrada boton prueba
     TRISEbits.TRISE0=0;                 //salida para PWM de servo
     TRISEbits.TRISE1=0;                 //salida para PWM de servo
    
@@ -164,7 +162,7 @@ void setup(void)
     TMR0 = 78;                  //Reinicio del timmer
     //-------CONFIGURACION DE WPUB
     OPTION_REGbits.nRBPU=0;             //se activan WPUB
-    WPUBbits.WPUB0=1;                   //RB0, boton prueba
+    WPUBbits.WPUB1=1;                   //RB0, boton prueba
     //-------CONFIGURACION DE COMUNICACION UART
     uart_config();
     //-------CONFIGURACION DEL TIMER1
@@ -176,11 +174,11 @@ void setup(void)
     //-------CONFIGURACION DE INTERRUPCIONES
     INTCONbits.GIE=1;           //se habilita interrupciones globales
     INTCONbits.PEIE = 1;        //habilitan interrupciones por perifericos
-    INTCONbits.T0IE=1;          //se habilita interrupcion timer0
-    INTCONbits.T0IF=0;          //se baja bandera de timer0
+    //INTCONbits.T0IE=1;          //se habilita interrupcion timer0
+    //INTCONbits.T0IF=0;          //se baja bandera de timer0
     INTCONbits.RBIE=1;          //se  habilita IntOnChange B
     INTCONbits.RBIF=0;          //se  apaga bandera IntOnChange B
-    IOCBbits.IOCB0=1;           //habilita IOCB RB0
+    IOCBbits.IOCB1=1;           //habilita IOCB RB0
 }
 /*-----------------------------------------------------------------------------
  --------------------------------- FUNCIONES ----------------------------------

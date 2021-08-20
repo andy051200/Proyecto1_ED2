@@ -2697,6 +2697,7 @@ void setup(void)
 
 
     PORTB=0;
+    PORTC=0;
     PORTE=0;
 
     osc_config(4);
@@ -2718,7 +2719,7 @@ void infrarrojos(void)
         PORTEbits.RE0=1;
         PORTEbits.RE1=0;
     }
-    else
+    if (PORTBbits.RB0==0)
     {
         PORTEbits.RE0=0;
         PORTEbits.RE1=1;

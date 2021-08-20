@@ -2684,54 +2684,50 @@ void __attribute__((picinterrupt(("")))) isr(void)
 
     if (INTCONbits.RBIF)
     {
-        if (PORTB==0b11111110)
+        if (PORTB==0b11111101)
             antirrebote=1;
         else
             antirrebote=0;
         INTCONbits.RBIF=0;
     }
 
-    if (TMR0IF)
-    {
-        switch(botonazo)
-        {
-            case(1):
-                PORTEbits.RE0=1;
-                _delay((unsigned long)((1.5)*(4000000/4000.0)));
-                PORTEbits.RE0=0;
-                break;
-            case(2):
-                PORTEbits.RE0=1;
-                _delay((unsigned long)((1)*(4000000/4000.0)));
-                PORTEbits.RE0=0;
-                botonazo=0;
-                break;
-        }
-        TMR0IF=0;
-    }
+
+
 }
 
 
 
 void main(void)
 {
-    hc04=0;
-    sensorOn=0;
     setup();
 
     while(1)
     {
 
-        if (antirrebote==1 && PORTBbits.RB0==0 )
+        if (antirrebote==1 && PORTBbits.RB1==0 )
         {
             botonazo++;
-            PORTD=botonazo;
+
             antirrebote=0;
         }
 
-        sensor_ultrasonico();
-        PORTCbits.RC1=talanquera;
-# 133 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c"
+        switch(botonazo)
+        {
+            case(0):
+                PORTDbits.RD0=1;
+                _delay((unsigned long)((1)*(4000000/4000.0)));
+                PORTDbits.RD0=0;
+                break;
+            case(1):
+                PORTDbits.RD0=1;
+                _delay((unsigned long)((2)*(4000000/4000.0)));
+                PORTDbits.RD0=0;
+                break;
+            case(2):
+                botonazo=0;
+                break;
+        }
+# 132 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c"
     }
 
 }
@@ -2744,11 +2740,10 @@ void setup(void)
     ANSEL=0;
     ANSELH=0;
 
-    TRISAbits.TRISA0=0;
-    TRISAbits.TRISA1=1;
-    TRISD=0;
+    TRISDbits.TRISD0=0;
     TRISC=0;
     TRISBbits.TRISB0=1;
+    TRISBbits.TRISB1=1;
     TRISEbits.TRISE0=0;
     TRISEbits.TRISE1=0;
 
@@ -2766,7 +2761,7 @@ void setup(void)
     TMR0 = 78;
 
     OPTION_REGbits.nRBPU=0;
-    WPUBbits.WPUB0=1;
+    WPUBbits.WPUB1=1;
 
     uart_config();
 
@@ -2778,11 +2773,11 @@ void setup(void)
 
     INTCONbits.GIE=1;
     INTCONbits.PEIE = 1;
-    INTCONbits.T0IE=1;
-    INTCONbits.T0IF=0;
+
+
     INTCONbits.RBIE=1;
     INTCONbits.RBIF=0;
-    IOCBbits.IOCB0=1;
+    IOCBbits.IOCB1=1;
 }
 
 
@@ -2808,5 +2803,5 @@ void sensor_ultrasonico(void)
     duracion=0;
     TMR1L=0;
     TMR1H=0;
-# 220 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c"
+# 218 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c"
 }

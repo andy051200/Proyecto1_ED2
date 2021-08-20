@@ -9,7 +9,7 @@
 [v _main main `(v  1 e 1 0 ]
 "93
 [v _setup setup `(v  1 e 1 0 ]
-"118
+"119
 [v _infrarrojos infrarrojos `(v  1 e 1 0 ]
 "16 C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/Osc_config.c
 [v _osc_config osc_config `(v  1 e 1 0 ]
@@ -23,7 +23,7 @@
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
 "228 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc/pic16f887.h
 [v _PORTB PORTB `VEuc  1 e 1 @6 ]
-[s S73 . 1 `uc 1 RB0 1 0 :1:0 
+[s S74 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -33,18 +33,20 @@
 `uc 1 RB7 1 0 :1:7 
 ]
 "245
-[u S82 . 1 `S73 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES82  1 e 1 @6 ]
+[u S83 . 1 `S74 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES83  1 e 1 @6 ]
+"290
+[v _PORTC PORTC `VEuc  1 e 1 @7 ]
 "414
 [v _PORTE PORTE `VEuc  1 e 1 @9 ]
-[s S94 . 1 `uc 1 RE0 1 0 :1:0 
+[s S95 . 1 `uc 1 RE0 1 0 :1:0 
 `uc 1 RE1 1 0 :1:1 
 `uc 1 RE2 1 0 :1:2 
 `uc 1 RE3 1 0 :1:3 
 ]
 "427
-[u S99 . 1 `S94 1 . 1 0 ]
-[v _PORTEbits PORTEbits `VES99  1 e 1 @9 ]
+[u S100 . 1 `S95 1 . 1 0 ]
+[v _PORTEbits PORTEbits `VES100  1 e 1 @9 ]
 [s S32 . 1 `uc 1 TRISB0 1 0 :1:0 
 `uc 1 TRISB1 1 0 :1:1 
 `uc 1 TRISB2 1 0 :1:2 
@@ -69,20 +71,20 @@
 [v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
 "3449
 [v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
-[s S144 . 1 `uc 1 SCS 1 0 :1:0 
+[s S145 . 1 `uc 1 SCS 1 0 :1:0 
 `uc 1 LTS 1 0 :1:1 
 `uc 1 HTS 1 0 :1:2 
 `uc 1 OSTS 1 0 :1:3 
 `uc 1 IRCF 1 0 :3:4 
 ]
 "1882 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
-[s S150 . 1 `uc 1 . 1 0 :4:0 
+[s S151 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 IRCF0 1 0 :1:4 
 `uc 1 IRCF1 1 0 :1:5 
 `uc 1 IRCF2 1 0 :1:6 
 ]
-[u S155 . 1 `S144 1 . 1 0 `S150 1 . 1 0 ]
-[v _OSCCONbits OSCCONbits `VES155  1 e 1 @143 ]
+[u S156 . 1 `S145 1 . 1 0 `S151 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES156  1 e 1 @143 ]
 "77 C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
 [v _main main `(v  1 e 1 0 ]
 {
@@ -91,7 +93,7 @@
 "93
 [v _setup setup `(v  1 e 1 0 ]
 {
-"113
+"114
 } 0
 "16 C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/Osc_config.c
 [v _osc_config osc_config `(v  1 e 1 0 ]
@@ -101,10 +103,10 @@
 [v osc_config@freq freq `uc  1 a 1 4 ]
 "42
 } 0
-"118 C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+"119 C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
 [v _infrarrojos infrarrojos `(v  1 e 1 0 ]
 {
-"133
+"134
 } 0
 "59
 [v _isr isr `II(v  1 e 1 0 ]
