@@ -3,13 +3,13 @@
 [d edition pro ]
 [d chip 16F887 ]
 [d frameptr 0 ]
-"59 C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+"62 C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
 [v _isr isr `II(v  1 e 1 0 ]
-"77
+"80
 [v _main main `(v  1 e 1 0 ]
-"93
+"96
 [v _setup setup `(v  1 e 1 0 ]
-"119
+"126
 [v _infrarrojos infrarrojos `(v  1 e 1 0 ]
 "16 C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/Osc_config.c
 [v _osc_config osc_config `(v  1 e 1 0 ]
@@ -23,7 +23,7 @@
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
 "228 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc/pic16f887.h
 [v _PORTB PORTB `VEuc  1 e 1 @6 ]
-[s S74 . 1 `uc 1 RB0 1 0 :1:0 
+[s S77 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -33,21 +33,29 @@
 `uc 1 RB7 1 0 :1:7 
 ]
 "245
-[u S83 . 1 `S74 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES83  1 e 1 @6 ]
+[u S86 . 1 `S77 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES86  1 e 1 @6 ]
 "290
 [v _PORTC PORTC `VEuc  1 e 1 @7 ]
+"352
+[v _PORTD PORTD `VEuc  1 e 1 @8 ]
+[s S98 . 1 `uc 1 RD0 1 0 :1:0 
+`uc 1 RD1 1 0 :1:1 
+`uc 1 RD2 1 0 :1:2 
+`uc 1 RD3 1 0 :1:3 
+`uc 1 RD4 1 0 :1:4 
+`uc 1 RD5 1 0 :1:5 
+`uc 1 RD6 1 0 :1:6 
+`uc 1 RD7 1 0 :1:7 
+]
+"369
+[u S107 . 1 `S98 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES107  1 e 1 @8 ]
 "414
 [v _PORTE PORTE `VEuc  1 e 1 @9 ]
-[s S95 . 1 `uc 1 RE0 1 0 :1:0 
-`uc 1 RE1 1 0 :1:1 
-`uc 1 RE2 1 0 :1:2 
-`uc 1 RE3 1 0 :1:3 
-]
-"427
-[u S100 . 1 `S95 1 . 1 0 ]
-[v _PORTEbits PORTEbits `VES100  1 e 1 @9 ]
-[s S32 . 1 `uc 1 TRISB0 1 0 :1:0 
+"1416
+[v _TRISA TRISA `VEuc  1 e 1 @133 ]
+[s S33 . 1 `uc 1 TRISB0 1 0 :1:0 
 `uc 1 TRISB1 1 0 :1:1 
 `uc 1 TRISB2 1 0 :1:2 
 `uc 1 TRISB3 1 0 :1:3 
@@ -57,43 +65,53 @@
 `uc 1 TRISB7 1 0 :1:7 
 ]
 "1495
-[u S41 . 1 `S32 1 . 1 0 ]
-[v _TRISBbits TRISBbits `VES41  1 e 1 @134 ]
-[s S53 . 1 `uc 1 TRISE0 1 0 :1:0 
+[u S42 . 1 `S33 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES42  1 e 1 @134 ]
+"1540
+[v _TRISC TRISC `VEuc  1 e 1 @135 ]
+"1602
+[v _TRISD TRISD `VEuc  1 e 1 @136 ]
+[s S54 . 1 `uc 1 TRISE0 1 0 :1:0 
 `uc 1 TRISE1 1 0 :1:1 
 `uc 1 TRISE2 1 0 :1:2 
 `uc 1 TRISE3 1 0 :1:3 
 ]
 "1677
-[u S58 . 1 `S53 1 . 1 0 ]
-[v _TRISEbits TRISEbits `VES58  1 e 1 @137 ]
+[u S59 . 1 `S54 1 . 1 0 ]
+[v _TRISEbits TRISEbits `VES59  1 e 1 @137 ]
 "3387
 [v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
 "3449
 [v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
-[s S145 . 1 `uc 1 SCS 1 0 :1:0 
+[s S165 . 1 `uc 1 SCS 1 0 :1:0 
 `uc 1 LTS 1 0 :1:1 
 `uc 1 HTS 1 0 :1:2 
 `uc 1 OSTS 1 0 :1:3 
 `uc 1 IRCF 1 0 :3:4 
 ]
 "1882 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
-[s S151 . 1 `uc 1 . 1 0 :4:0 
+[s S171 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 IRCF0 1 0 :1:4 
 `uc 1 IRCF1 1 0 :1:5 
 `uc 1 IRCF2 1 0 :1:6 
 ]
-[u S156 . 1 `S145 1 . 1 0 `S151 1 . 1 0 ]
-[v _OSCCONbits OSCCONbits `VES156  1 e 1 @143 ]
-"77 C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+[u S176 . 1 `S165 1 . 1 0 `S171 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES176  1 e 1 @143 ]
+"51 C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+[v _infrarrojo1 infrarrojo1 `uc  1 e 1 0 ]
+[v _infrarrojo2 infrarrojo2 `uc  1 e 1 0 ]
+[v _infrarrojo3 infrarrojo3 `uc  1 e 1 0 ]
+"52
+[v _suma_ir suma_ir `uc  1 e 1 0 ]
+"80
 [v _main main `(v  1 e 1 0 ]
 {
-"89
+"92
 } 0
-"93
+"96
 [v _setup setup `(v  1 e 1 0 ]
 {
-"114
+"121
 } 0
 "16 C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/Osc_config.c
 [v _osc_config osc_config `(v  1 e 1 0 ]
@@ -103,13 +121,13 @@
 [v osc_config@freq freq `uc  1 a 1 4 ]
 "42
 } 0
-"119 C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+"126 C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
 [v _infrarrojos infrarrojos `(v  1 e 1 0 ]
 {
-"134
+"186
 } 0
-"59
+"62
 [v _isr isr `II(v  1 e 1 0 ]
 {
-"73
+"76
 } 0

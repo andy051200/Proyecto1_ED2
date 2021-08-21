@@ -2654,6 +2654,9 @@ void osc_config(uint8_t freq);
 # 40 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c" 2
 # 50 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c"
 unsigned char antirrebote;
+unsigned char infrarrojo1, infrarrojo2, infrarrojo3;
+unsigned char suma_ir;
+
 
 
 
@@ -2664,7 +2667,7 @@ void infrarrojos(void);
 
 void __attribute__((picinterrupt(("")))) isr(void)
 {
-# 73 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c"
+# 76 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c"
 }
 
 
@@ -2691,13 +2694,17 @@ void setup(void)
     ANSEL=0;
     ANSELH=0;
 
-    TRISBbits.TRISB0=1;
+    TRISA=0;
+    TRISBbits.TRISB1=1;
+    TRISBbits.TRISB2=1;
+    TRISBbits.TRISB3=1;
     TRISEbits.TRISE0=0;
     TRISEbits.TRISE1=0;
-
+    TRISC=0;
+    TRISD=0;
 
     PORTB=0;
-    PORTC=0;
+    PORTD=0;
     PORTE=0;
 
     osc_config(4);
@@ -2714,16 +2721,61 @@ void setup(void)
 void infrarrojos(void)
 {
 
-    if (PORTBbits.RB0==1)
+    if (PORTBbits.RB1==1)
     {
-        PORTEbits.RE0=1;
-        PORTEbits.RE1=0;
+        PORTDbits.RD0=1;
+        PORTDbits.RD1=0;
+        infrarrojo1=1;
     }
-    if (PORTBbits.RB0==0)
+    if (PORTBbits.RB1==0)
     {
-        PORTEbits.RE0=0;
-        PORTEbits.RE1=1;
+        PORTDbits.RD0=0;
+        PORTDbits.RD1=1;
+        infrarrojo1=0;
     }
 
+    if (PORTBbits.RB2==1)
+    {
+        PORTDbits.RD2=1;
+        PORTDbits.RD3=0;
+        infrarrojo2=1;
+    }
+    if (PORTBbits.RB2==0)
+    {
+        PORTDbits.RD2=0;
+        PORTDbits.RD3=1;
+        infrarrojo2=0;
+    }
 
+    if (PORTBbits.RB3==1)
+    {
+        PORTDbits.RD4=1;
+        PORTDbits.RD5=0;
+        infrarrojo3=1;
+    }
+    if (PORTBbits.RB3==0)
+    {
+        PORTDbits.RD4=0;
+        PORTDbits.RD5=1;
+        infrarrojo3=0;
+    }
+    suma_ir=infrarrojo1+infrarrojo2+infrarrojo3;
+    switch(suma_ir)
+    {
+        default:
+            PORTC=0;
+            break;
+        case(0):
+            PORTC=0;
+            break;
+        case(1):
+            PORTC=suma_ir;
+            break;
+        case(2):
+            PORTC=suma_ir;
+            break;
+        case(3):
+            PORTC=suma_ir;
+            break;
+    }
 }

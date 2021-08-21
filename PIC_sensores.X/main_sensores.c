@@ -48,6 +48,9 @@ Descripcion:
 
 //-------VARIABLES DE PROGRAMA
 unsigned char antirrebote;
+unsigned char infrarrojo1, infrarrojo2, infrarrojo3;
+unsigned char suma_ir;
+
 /*-----------------------------------------------------------------------------
  ------------------------ PROTOTIPOS DE FUNCIONES ------------------------------
  -----------------------------------------------------------------------------*/
@@ -96,13 +99,17 @@ void setup(void)
     ANSEL=0;
     ANSELH=0;
     //-------CONFIGURACION IN/OUT
-    TRISBbits.TRISB0=1;                 //entrada de sensor
+    TRISA=0;
+    TRISBbits.TRISB1=1;                 //entrada de sensor
+    TRISBbits.TRISB2=1;                 //entrada de sensor
+    TRISBbits.TRISB3=1;                 //entrada de sensor
     TRISEbits.TRISE0=0;                 //salida para led verde
     TRISEbits.TRISE1=0;                 //salida para led rojo
-   
+    TRISC=0;
+    TRISD=0;
     //-------LIMPIEZA DE PUERTOS
     PORTB=0;
-    PORTC=0;
+    PORTD=0;
     PORTE=0;
     //-------CONFIGURACION DE RELOJ A 4MHz
     osc_config(4);
@@ -119,16 +126,61 @@ void setup(void)
 void infrarrojos(void)
 {
     //-------PARQUEO 1
-    if (PORTBbits.RB0==1)
+    if (PORTBbits.RB1==1)
     {
-        PORTEbits.RE0=1;
-        PORTEbits.RE1=0;
+        PORTDbits.RD0=1;
+        PORTDbits.RD1=0;
+        infrarrojo1=1;
     }
-    if (PORTBbits.RB0==0)
+    if (PORTBbits.RB1==0)
     {
-        PORTEbits.RE0=0;
-        PORTEbits.RE1=1;
+        PORTDbits.RD0=0;
+        PORTDbits.RD1=1;
+        infrarrojo1=0;
     }
     //-------PARQUEO2
+    if (PORTBbits.RB2==1)
+    {
+        PORTDbits.RD2=1;
+        PORTDbits.RD3=0;
+        infrarrojo2=1;
+    }
+    if (PORTBbits.RB2==0)
+    {
+        PORTDbits.RD2=0;
+        PORTDbits.RD3=1;
+        infrarrojo2=0;
+    }
     //-------PARQUEO3
+    if (PORTBbits.RB3==1)
+    {
+        PORTDbits.RD4=1;
+        PORTDbits.RD5=0;
+        infrarrojo3=1;
+    }
+    if (PORTBbits.RB3==0)
+    {
+        PORTDbits.RD4=0;
+        PORTDbits.RD5=1;
+        infrarrojo3=0;
+    }
+    suma_ir=infrarrojo1+infrarrojo2+infrarrojo3;
+    switch(suma_ir)
+    {
+        default:
+            PORTC=0;
+            break;
+        case(0):
+            PORTC=0;
+            break;
+        case(1):
+            PORTC=suma_ir;
+            break;
+        case(2):
+            PORTC=suma_ir;
+            break;
+        case(3):
+            PORTC=suma_ir;
+            break;
+    }
 }
