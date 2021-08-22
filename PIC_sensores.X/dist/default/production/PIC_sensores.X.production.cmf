@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsak8.o
+$C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs9m8.o
 reset_vec CODE 0 0 0 3 2
 end_init CODE 0 C C 3 2
 config CONFIG 4 2007 2007 2 2
@@ -100,21 +100,21 @@ STRING 1800-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\PIC_sensores.X.production.o
-F cinit CODE >790:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsak8.s
-F cinit CODE >793:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsak8.s
-F cinit CODE >828:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsak8.s
-10 cinit CODE >829:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsak8.s
-11 cinit CODE >830:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsak8.s
-12 cinit CODE >831:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsak8.s
-13 cinit CODE >834:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsak8.s
-14 cinit CODE >835:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsak8.s
-15 cinit CODE >836:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsak8.s
-16 cinit CODE >837:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsak8.s
-17 cinit CODE >838:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsak8.s
-18 cinit CODE >839:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsak8.s
-19 cinit CODE >845:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsak8.s
-19 cinit CODE >847:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsak8.s
-1A cinit CODE >848:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsak8.s
+F cinit CODE >790:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs9m8.s
+F cinit CODE >793:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs9m8.s
+F cinit CODE >828:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs9m8.s
+10 cinit CODE >829:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs9m8.s
+11 cinit CODE >830:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs9m8.s
+12 cinit CODE >831:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs9m8.s
+13 cinit CODE >834:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs9m8.s
+14 cinit CODE >835:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs9m8.s
+15 cinit CODE >836:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs9m8.s
+16 cinit CODE >837:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs9m8.s
+17 cinit CODE >838:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs9m8.s
+18 cinit CODE >839:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs9m8.s
+19 cinit CODE >845:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs9m8.s
+19 cinit CODE >847:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs9m8.s
+1A cinit CODE >848:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs9m8.s
 4 intentry CODE >64:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
 1D text2_split_11 CODE >277:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
 7D text2_split_11 CODE >278:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
@@ -414,19 +414,19 @@ __Hspace_3 0 0 ABS 0 - -
 __Hspace_4 4010 0 ABS 0 - -
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Hstrings 0 0 ABS 0 strings -
-___sp 0 0 STACK 2 stack C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsak8.o
+___sp 0 0 STACK 2 stack C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs9m8.o
 _main 2306 0 CODE 0 maintext dist/default/production\PIC_sensores.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\PIC_sensores.X.production.o
-start 18 0 CODE 0 init C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsak8.o
+start 18 0 CODE 0 init C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs9m8.o
 __size_of_main 0 0 ABS 0 - dist/default/production\PIC_sensores.X.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsak8.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsak8.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsak8.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsak8.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsak8.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsak8.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs9m8.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs9m8.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs9m8.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs9m8.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs9m8.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs9m8.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 pnum$text2 9 0 ABS 0 - dist/default/production\PIC_sensores.X.production.o
 _OSCCONbits 8F 0 ABS 0 - dist/default/production\PIC_sensores.X.production.o
@@ -442,8 +442,8 @@ _conversion1 3B 0 BANK0 1 bssBANK0 dist/default/production\PIC_sensores.X.produc
 _conversion_total 76 0 COMMON 1 bssCOMMON dist/default/production\PIC_sensores.X.production.o
 __size_of_toggle_adc 0 0 ABS 0 - dist/default/production\PIC_sensores.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
-___stackhi 0 0 ABS 0 - C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsak8.o
-___stacklo 0 0 ABS 0 - C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsak8.o
+___stackhi 0 0 ABS 0 - C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs9m8.o
+___stacklo 0 0 ABS 0 - C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs9m8.o
 __size_of_setup 0 0 ABS 0 - dist/default/production\PIC_sensores.X.production.o
 start_initialization 1E 0 CODE 0 cinit dist/default/production\PIC_sensores.X.production.o
 __end_of_temperatura DF6 0 CODE 0 text2_split_11 dist/default/production\PIC_sensores.X.production.o
@@ -452,7 +452,7 @@ _TRISBbits 86 0 ABS 0 - dist/default/production\PIC_sensores.X.production.o
 _TRISEbits 89 0 ABS 0 - dist/default/production\PIC_sensores.X.production.o
 _osc_config F6E 0 CODE 0 text6 dist/default/production\PIC_sensores.X.production.o
 __pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production\PIC_sensores.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsak8.o
+___int_sp 0 0 STACK 2 stack C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs9m8.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -517,7 +517,7 @@ pnum$text2_split_11 1D 0 ABS 0 - dist/default/production\PIC_sensores.X.producti
 ___xxtofl DF6 0 CODE 0 text3 dist/default/production\PIC_sensores.X.production.o
 __end_of_isr FEA 0 CODE 0 text9 dist/default/production\PIC_sensores.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsak8.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs9m8.o
 __end_of___xxtofl F6E 0 CODE 0 text3 dist/default/production\PIC_sensores.X.production.o
 __size_of___flge 0 0 ABS 0 - dist/default/production\PIC_sensores.X.production.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
