@@ -1,4 +1,4 @@
-# 1 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c"
+# 1 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/ADC_CONFIG.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,165 +6,45 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c" 2
-# 15 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c"
-#pragma config FOSC = INTRC_NOCLKOUT
-#pragma config WDTE = OFF
-#pragma config PWRTE = OFF
-#pragma config MCLRE = OFF
-#pragma config CP = OFF
-#pragma config CPD = OFF
-#pragma config BOREN = OFF
-#pragma config IESO = OFF
-#pragma config FCMEN = OFF
-#pragma config LVP = OFF
+# 1 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/ADC_CONFIG.c" 2
+# 11 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/ADC_CONFIG.c"
+# 1 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 1 3
+# 18 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 3
+extern const char __xc8_OPTIM_SPEED;
 
+extern double __fpnormalize(double);
 
-#pragma config BOR4V = BOR40V
-#pragma config WRT = OFF
 
 
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\xc8debug.h" 1 3
+# 13 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\xc8debug.h" 3
+#pragma intrinsic(__builtin_software_breakpoint)
+extern void __builtin_software_breakpoint(void);
+# 24 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
 
 
 
+# 1 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\pic.h" 1 3
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdint.h" 1 3
-# 13 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdint.h" 3
-typedef signed char int8_t;
 
+# 1 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\htc.h" 1 3
 
 
 
+# 1 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 1 3
+# 5 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\htc.h" 2 3
+# 6 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\pic.h" 2 3
 
 
-typedef signed int int16_t;
 
 
 
 
 
-
-
-typedef __int24 int24_t;
-
-
-
-
-
-
-
-typedef signed long int int32_t;
-# 52 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdint.h" 3
-typedef unsigned char uint8_t;
-
-
-
-
-
-typedef unsigned int uint16_t;
-
-
-
-
-
-
-typedef __uint24 uint24_t;
-
-
-
-
-
-
-typedef unsigned long int uint32_t;
-# 88 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdint.h" 3
-typedef signed char int_least8_t;
-
-
-
-
-
-
-
-typedef signed int int_least16_t;
-# 109 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdint.h" 3
-typedef __int24 int_least24_t;
-# 118 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdint.h" 3
-typedef signed long int int_least32_t;
-# 136 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdint.h" 3
-typedef unsigned char uint_least8_t;
-
-
-
-
-
-
-typedef unsigned int uint_least16_t;
-# 154 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdint.h" 3
-typedef __uint24 uint_least24_t;
-
-
-
-
-
-
-
-typedef unsigned long int uint_least32_t;
-# 181 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdint.h" 3
-typedef signed char int_fast8_t;
-
-
-
-
-
-
-typedef signed int int_fast16_t;
-# 200 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdint.h" 3
-typedef __int24 int_fast24_t;
-
-
-
-
-
-
-
-typedef signed long int int_fast32_t;
-# 224 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdint.h" 3
-typedef unsigned char uint_fast8_t;
-
-
-
-
-
-typedef unsigned int uint_fast16_t;
-# 240 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdint.h" 3
-typedef __uint24 uint_fast24_t;
-
-
-
-
-
-
-typedef unsigned long int uint_fast32_t;
-# 268 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdint.h" 3
-typedef int32_t intmax_t;
-# 282 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdint.h" 3
-typedef uint32_t uintmax_t;
-
-
-
-
-
-
-typedef int16_t intptr_t;
-
-
-
-
-typedef uint16_t uintptr_t;
-# 36 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c" 2
-
+# 1 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\pic_chip_select.h" 1 3
+# 723 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\pic_chip_select.h" 3
 # 1 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\proc\\pic16f887.h" 1 3
 # 44 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\proc\\pic16f887.h" 3
 # 1 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\__at.h" 1 3
@@ -2575,44 +2455,7 @@ extern volatile __bit nW __attribute__((address(0x4A2)));
 
 
 extern volatile __bit nWRITE __attribute__((address(0x4A2)));
-# 37 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c" 2
-
-# 1 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 1 3
-# 18 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 3
-extern const char __xc8_OPTIM_SPEED;
-
-extern double __fpnormalize(double);
-
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\xc8debug.h" 1 3
-# 13 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\xc8debug.h" 3
-#pragma intrinsic(__builtin_software_breakpoint)
-extern void __builtin_software_breakpoint(void);
-# 24 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
-
-
-
-# 1 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\pic.h" 1 3
-
-
-
-
-# 1 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\htc.h" 1 3
-
-
-
-# 1 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 1 3
-# 5 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\htc.h" 2 3
-# 6 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\pic.h" 2 3
-
-
-
-
-
-
-
-# 1 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\pic_chip_select.h" 1 3
+# 724 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\pic_chip_select.h" 2 3
 # 14 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\pic.h" 2 3
 # 30 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\pic.h" 3
 #pragma intrinsic(__nop)
@@ -2645,271 +2488,165 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
-# 38 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c" 2
+# 11 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/ADC_CONFIG.c" 2
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdint.h" 1 3
+# 13 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdint.h" 3
+typedef signed char int8_t;
 
 
-# 1 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/Osc_config.h" 1
-# 14 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/Osc_config.h"
-void osc_config(uint8_t freq);
-# 40 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c" 2
+
+
+
+
+typedef signed int int16_t;
+
+
+
+
+
+
+
+typedef __int24 int24_t;
+
+
+
+
+
+
+
+typedef signed long int int32_t;
+# 52 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdint.h" 3
+typedef unsigned char uint8_t;
+
+
+
+
+
+typedef unsigned int uint16_t;
+
+
+
+
+
+
+typedef __uint24 uint24_t;
+
+
+
+
+
+
+typedef unsigned long int uint32_t;
+# 88 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdint.h" 3
+typedef signed char int_least8_t;
+
+
+
+
+
+
+
+typedef signed int int_least16_t;
+# 109 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdint.h" 3
+typedef __int24 int_least24_t;
+# 118 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdint.h" 3
+typedef signed long int int_least32_t;
+# 136 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdint.h" 3
+typedef unsigned char uint_least8_t;
+
+
+
+
+
+
+typedef unsigned int uint_least16_t;
+# 154 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdint.h" 3
+typedef __uint24 uint_least24_t;
+
+
+
+
+
+
+
+typedef unsigned long int uint_least32_t;
+# 181 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdint.h" 3
+typedef signed char int_fast8_t;
+
+
+
+
+
+
+typedef signed int int_fast16_t;
+# 200 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdint.h" 3
+typedef __int24 int_fast24_t;
+
+
+
+
+
+
+
+typedef signed long int int_fast32_t;
+# 224 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdint.h" 3
+typedef unsigned char uint_fast8_t;
+
+
+
+
+
+typedef unsigned int uint_fast16_t;
+# 240 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdint.h" 3
+typedef __uint24 uint_fast24_t;
+
+
+
+
+
+
+typedef unsigned long int uint_fast32_t;
+# 268 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdint.h" 3
+typedef int32_t intmax_t;
+# 282 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdint.h" 3
+typedef uint32_t uintmax_t;
+
+
+
+
+
+
+typedef int16_t intptr_t;
+
+
+
+
+typedef uint16_t uintptr_t;
+# 12 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/ADC_CONFIG.c" 2
+
 
 # 1 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/ADC_CONFIG.h" 1
 # 13 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/ADC_CONFIG.h"
 void ADC_config(void);
-# 41 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c" 2
-# 50 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c"
-unsigned char antirrebote;
-unsigned char infrarrojo1, infrarrojo2, infrarrojo3, suma_ir;
-unsigned char conversion1, conversion_total, temperatura_aprox;
-
-
-
-void setup(void);
-void infrarrojos(void);
-void toggle_adc(void);
-void temperatura(void);
+# 14 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/ADC_CONFIG.c" 2
 
 
 
 
-void __attribute__((picinterrupt(("")))) isr(void)
-{
-# 78 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c"
-}
 
 
 
-void main(void)
+
+void ADC_config()
 {
 
-    setup();
+    ADCON1bits.ADFM = 1 ;
+    ADCON1bits.VCFG0 = 0 ;
+    ADCON1bits.VCFG1 = 0 ;
 
-    while(1)
-    {
+    ADCON0bits.ADCS = 0b00;
+    ADCON0bits.CHS = 0;
 
-        toggle_adc();
-
-        infrarrojos();
-
-        temperatura();
-        PORTC=temperatura_aprox;
-    }
-
-}
-
-
-
-void setup(void)
-{
-
-    ANSEL=0;
-    ANSELH=0;
-    ANSELbits.ANS0=1;
-
-    TRISAbits.TRISA0=1;
-    TRISBbits.TRISB1=1;
-    TRISBbits.TRISB2=1;
-    TRISBbits.TRISB3=1;
-    TRISEbits.TRISE0=0;
-    TRISEbits.TRISE1=0;
-    TRISC=0;
-    TRISD=0;
-
-    PORTB=0;
-    PORTD=0;
-    PORTE=0;
-
-    osc_config(4);
-
-    ADC_config();
-
-
-
-
-
-}
-
-
-
-
-void infrarrojos(void)
-{
-
-    if (PORTBbits.RB1==1)
-    {
-        PORTDbits.RD0=1;
-        PORTDbits.RD1=0;
-        infrarrojo1=1;
-    }
-    if (PORTBbits.RB1==0)
-    {
-        PORTDbits.RD0=0;
-        PORTDbits.RD1=1;
-        infrarrojo1=0;
-    }
-
-    if (PORTBbits.RB2==1)
-    {
-        PORTDbits.RD2=1;
-        PORTDbits.RD3=0;
-        infrarrojo2=1;
-    }
-    if (PORTBbits.RB2==0)
-    {
-        PORTDbits.RD2=0;
-        PORTDbits.RD3=1;
-        infrarrojo2=0;
-    }
-
-    if (PORTBbits.RB3==1)
-    {
-        PORTDbits.RD4=1;
-        PORTDbits.RD5=0;
-        infrarrojo3=1;
-    }
-    if (PORTBbits.RB3==0)
-    {
-        PORTDbits.RD4=0;
-        PORTDbits.RD5=1;
-        infrarrojo3=0;
-    }
-    suma_ir=infrarrojo1+infrarrojo2+infrarrojo3;
-    switch(suma_ir)
-    {
-        default:
-            PORTC=0;
-            break;
-        case(0):
-            PORTC=0;
-            break;
-        case(1):
-            PORTC=suma_ir;
-            break;
-        case(2):
-            PORTC=suma_ir;
-            break;
-        case(3):
-            PORTC=suma_ir;
-            break;
-    }
-}
-
-void toggle_adc(void)
-{
-    if (ADCON0bits.GO==0)
-    {
-        conversion1=ADRESH<<8;
-        conversion_total=conversion1+ADRESL;
-        _delay((unsigned long)((1)*(4000000/4000.0)));
-        ADCON0bits.GO=1;
-    }
-}
-
-
-void temperatura(void)
-{
-    if (conversion_total>0 && conversion_total <2.046)
-        temperatura_aprox=0;
-    else if (conversion_total>2.046 && conversion_total<4.092)
-        temperatura_aprox=1;
-    else if (conversion_total>4.092 && conversion_total <6.138)
-        temperatura_aprox=2;
-    else if (conversion_total>6.138 && conversion_total<8.184)
-        temperatura_aprox=3;
-    else if (conversion_total>8.184 && conversion_total<10.23)
-        temperatura_aprox=4;
-    else if (conversion_total>10.23 && conversion_total<12.276)
-        temperatura_aprox=5;
-    else if (conversion_total>12.276 && conversion_total<14.322)
-        temperatura_aprox=6;
-    else if (conversion_total>14.322 && conversion_total<16.368)
-        temperatura_aprox=7;
-    else if (conversion_total>16.368 && conversion_total<18.414)
-        temperatura_aprox=8;
-    else if (conversion_total>18.414 && conversion_total<20.46)
-        temperatura_aprox=9;
-    else if (conversion_total>20.46 && conversion_total<22.506)
-        temperatura_aprox=10;
-    else if (conversion_total>22.506 && conversion_total<24.552)
-        temperatura_aprox=11;
-    else if (conversion_total>24.552 && conversion_total<26.598)
-        temperatura_aprox=12;
-    else if (conversion_total>26.598 && conversion_total<28.64)
-        temperatura_aprox=13;
-    else if (conversion_total>28.64 && conversion_total<30.69)
-        temperatura_aprox=14;
-    else if (conversion_total>30.69 && conversion_total<32.73)
-        temperatura_aprox=15;
-    else if (conversion_total>32.73 && conversion_total<34.78)
-        temperatura_aprox=16;
-    else if (conversion_total>34.782 && conversion_total<36.82)
-        temperatura_aprox=17;
-    else if (conversion_total<36.82 && conversion_total<38.87)
-        temperatura_aprox=18;
-    else if (conversion_total>38.87 && conversion_total<40.92)
-        temperatura_aprox=19;
-    else if (conversion_total>40.92 && conversion_total<42.96)
-        temperatura_aprox=20;
-    else if (conversion_total>42.96 && conversion_total<45.01)
-        temperatura_aprox=21;
-    else if (conversion_total>45.01 && conversion_total<47.05)
-        temperatura_aprox=22;
-    else if (conversion_total>47.05 && conversion_total<49.10)
-        temperatura_aprox=23;
-    else if (conversion_total>49.10 && conversion_total<51.15)
-        temperatura_aprox=24;
-    else if (conversion_total>51.15 && conversion_total<53.19)
-        temperatura_aprox=25;
-    else if (conversion_total>53.19 && conversion_total<55.24)
-        temperatura_aprox=26;
-    else if (conversion_total>55.24 && conversion_total<57.28)
-        temperatura_aprox=27;
-    else if (conversion_total>57.28 && conversion_total<59.38)
-        temperatura_aprox=28;
-    else if (conversion_total>59.33 && conversion_total<61.38)
-        temperatura_aprox=29;
-    else if (conversion_total>61.38 && conversion_total<63.42)
-        temperatura_aprox=30;
-    else if (conversion_total>63.42 && conversion_total<65.47)
-        temperatura_aprox=31;
-    else if (conversion_total>65.47 && conversion_total<67.51)
-        temperatura_aprox=32;
-    else if (conversion_total>67.51 && conversion_total<69.56)
-        temperatura_aprox=33;
-    else if (conversion_total>69.56 && conversion_total<71.61)
-        temperatura_aprox=34;
-    else if (conversion_total>71.61 && conversion_total<73.65)
-        temperatura_aprox=35;
-    else if (conversion_total>73.65 && conversion_total<75.70)
-        temperatura_aprox=36;
-    else if (conversion_total>75.70 && conversion_total<77.74)
-        temperatura_aprox=37;
-    else if (conversion_total>77.74 && conversion_total<79.79)
-        temperatura_aprox=38;
-    else if (conversion_total>79.79 && conversion_total<81.84)
-        temperatura_aprox=39;
-    else if (conversion_total>81.84 && conversion_total<83.88)
-        temperatura_aprox=40;
-    else if (conversion_total>83.88 && conversion_total<85.93)
-        temperatura_aprox=41;
-    else if (conversion_total>87.97 && conversion_total<90.02)
-        temperatura_aprox=42;
-    else if (conversion_total>90.02 && conversion_total<92.07)
-        temperatura_aprox=43;
-    else if (conversion_total>92.07 && conversion_total<94.11)
-        temperatura_aprox=44;
-    else if (conversion_total>94.11 && conversion_total<96.16)
-        temperatura_aprox=45;
-    else if (conversion_total>96.16 && conversion_total<98.20)
-        temperatura_aprox=46;
-    else if (conversion_total>98.20 && conversion_total<100.25)
-        temperatura_aprox=47;
-    else if (conversion_total>100.25 && conversion_total<102.3)
-        temperatura_aprox=48;
-    else if (conversion_total>102.3 && conversion_total<104.94)
-        temperatura_aprox=49;
-    else
-        temperatura_aprox=50;
-
-
+    ADCON0bits.ADON = 1 ;
 }
