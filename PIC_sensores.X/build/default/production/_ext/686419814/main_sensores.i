@@ -2654,8 +2654,7 @@ void osc_config(uint8_t freq);
 # 40 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c" 2
 # 50 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c"
 unsigned char antirrebote;
-unsigned char infrarrojo1, infrarrojo2, infrarrojo3;
-unsigned char suma_ir;
+unsigned char infrarrojo1, infrarrojo2, infrarrojo3, suma_ir;
 
 
 
@@ -2667,7 +2666,7 @@ void infrarrojos(void);
 
 void __attribute__((picinterrupt(("")))) isr(void)
 {
-# 76 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c"
+# 75 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c"
 }
 
 

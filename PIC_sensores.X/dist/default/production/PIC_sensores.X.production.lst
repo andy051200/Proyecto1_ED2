@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.32 build 20210201212658 
-                                                                                               Fri Aug 20 18:41:53 2021
+                                                                                               Sat Aug 21 23:53:01 2021
 
 Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1 
      1                           	processor	16F887
@@ -387,7 +387,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    373 ;;
    374 ;; *************** function _main *****************
    375 ;; Defined at:
-   376 ;;		line 80 in file "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c"
+   376 ;;		line 79 in file "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c"
    377 ;; Parameters:    Size  Location     Type
    378 ;;		None
    379 ;; Auto vars:     Size  Location     Type
@@ -424,16 +424,16 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    410                           
    411                           
    412                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 83:     setup();
+      +                          : 82:     setup();
    413  00BD  120A  118A  20A3  120A  118A  	fcall	_setup
    414  00C2                     l52:	
    415                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 85:     while(1)
+      +                          : 84:     while(1)
    416                           
    417                           
    418                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 86:     {;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main
-      +                          _sensores.c: 88:         infrarrojos();
+      +                          : 85:     {;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main
+      +                          _sensores.c: 87:         infrarrojos();
    419  00C2  120A  118A  2018  120A  118A  	fcall	_infrarrojos
    420  00C7  28C2               	goto	l52
    421  00C8  120A  118A  280C   	ljmp	start
@@ -443,7 +443,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    425  00A3                     __ptext1:	
    426 ;; *************** function _setup *****************
    427 ;; Defined at:
-   428 ;;		line 96 in file "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c"
+   428 ;;		line 95 in file "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c"
    429 ;; Parameters:    Size  Location     Type
    430 ;;		None
    431 ;; Auto vars:     Size  Location     Type
@@ -480,71 +480,71 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    462                           
    463                           
    464                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 99:     ANSEL=0;
+      +                          : 98:     ANSEL=0;
    465  00A3  1683               	bsf	3,5	;RP0=1, select bank3
    466  00A4  1703               	bsf	3,6	;RP1=1, select bank3
    467  00A5  0188               	clrf	8	;volatile
    468                           
    469                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 100:     ANSELH=0;
+      +                          : 99:     ANSELH=0;
    470  00A6  0189               	clrf	9	;volatile
    471                           
    472                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 102:     TRISA=0;
+      +                          : 101:     TRISA=0;
    473  00A7  1683               	bsf	3,5	;RP0=1, select bank1
    474  00A8  1303               	bcf	3,6	;RP1=0, select bank1
    475  00A9  0185               	clrf	5	;volatile
    476  00AA                     l705:
    477                           
    478                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 103:     TRISBbits.TRISB1=1;
+      +                          : 102:     TRISBbits.TRISB1=1;
    479  00AA  1486               	bsf	6,1	;volatile
    480  00AB                     l707:
    481                           
    482                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 104:     TRISBbits.TRISB2=1;
+      +                          : 103:     TRISBbits.TRISB2=1;
    483  00AB  1506               	bsf	6,2	;volatile
    484  00AC                     l709:
    485                           
    486                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 105:     TRISBbits.TRISB3=1;
+      +                          : 104:     TRISBbits.TRISB3=1;
    487  00AC  1586               	bsf	6,3	;volatile
    488  00AD                     l711:
    489                           
    490                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 106:     TRISEbits.TRISE0=0;
+      +                          : 105:     TRISEbits.TRISE0=0;
    491  00AD  1009               	bcf	9,0	;volatile
    492  00AE                     l713:
    493                           
    494                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 107:     TRISEbits.TRISE1=0;
+      +                          : 106:     TRISEbits.TRISE1=0;
    495  00AE  1089               	bcf	9,1	;volatile
    496                           
    497                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 108:     TRISC=0;
+      +                          : 107:     TRISC=0;
    498  00AF  0187               	clrf	7	;volatile
    499                           
    500                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 109:     TRISD=0;
+      +                          : 108:     TRISD=0;
    501  00B0  0188               	clrf	8	;volatile
    502                           
    503                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 111:     PORTB=0;
+      +                          : 110:     PORTB=0;
    504  00B1  1283               	bcf	3,5	;RP0=0, select bank0
    505  00B2  1303               	bcf	3,6	;RP1=0, select bank0
    506  00B3  0186               	clrf	6	;volatile
    507                           
    508                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 112:     PORTD=0;
+      +                          : 111:     PORTD=0;
    509  00B4  0188               	clrf	8	;volatile
    510                           
    511                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 113:     PORTE=0;
+      +                          : 112:     PORTE=0;
    512  00B5  0189               	clrf	9	;volatile
    513  00B6                     l715:
    514                           
    515                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 115:     osc_config(4);
+      +                          : 114:     osc_config(4);
    516  00B6  3004               	movlw	4
    517  00B7  120A  118A  206C  120A  118A  	fcall	_osc_config
    518  00BC                     l58:
@@ -724,7 +724,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    676  0018                     __ptext3:	
    677 ;; *************** function _infrarrojos *****************
    678 ;; Defined at:
-   679 ;;		line 126 in file "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c"
+   679 ;;		line 125 in file "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c"
    680 ;; Parameters:    Size  Location     Type
    681 ;;		None
    682 ;; Auto vars:     Size  Location     Type
@@ -761,7 +761,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    713                           
    714                           
    715                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 129:     if (PORTBbits.RB1==1)
+      +                          : 128:     if (PORTBbits.RB1==1)
    716  0018  1283               	bcf	3,5	;RP0=0, select bank0
    717  0019  1303               	bcf	3,6	;RP1=0, select bank0
    718  001A  1C86               	btfss	6,1	;volatile
@@ -773,25 +773,25 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    724  001E                     l719:
    725                           
    726                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 130:     {;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/mai
-      +                          n_sensores.c: 131:         PORTDbits.RD0=1;
+      +                          : 129:     {;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/mai
+      +                          n_sensores.c: 130:         PORTDbits.RD0=1;
    727  001E  1408               	bsf	8,0	;volatile
    728                           
    729                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 132:         PORTDbits.RD1=0;
+      +                          : 131:         PORTDbits.RD1=0;
    730  001F  1088               	bcf	8,1	;volatile
    731                           
    732                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 133:         infrarrojo1=1;
+      +                          : 132:         infrarrojo1=1;
    733  0020  01F3               	clrf	_infrarrojo1
    734  0021  0AF3               	incf	_infrarrojo1,f
    735  0022                     l61:	
    736                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 134:     }
+      +                          : 133:     }
    737                           
    738                           
    739                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 135:     if (PORTBbits.RB1==0)
+      +                          : 134:     if (PORTBbits.RB1==0)
    740  0022  1886               	btfsc	6,1	;volatile
    741  0023  2825               	goto	u21
    742  0024  2826               	goto	u20
@@ -801,22 +801,22 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    746  0026                     l721:
    747                           
    748                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 136:     {;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/mai
-      +                          n_sensores.c: 137:         PORTDbits.RD0=0;
+      +                          : 135:     {;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/mai
+      +                          n_sensores.c: 136:         PORTDbits.RD0=0;
    749  0026  1008               	bcf	8,0	;volatile
    750                           
    751                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 138:         PORTDbits.RD1=1;
+      +                          : 137:         PORTDbits.RD1=1;
    752  0027  1488               	bsf	8,1	;volatile
    753  0028                     l723:
    754                           
    755                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 139:         infrarrojo1=0;
+      +                          : 138:         infrarrojo1=0;
    756  0028  01F3               	clrf	_infrarrojo1
    757  0029                     l725:
    758                           
    759                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 142:     if (PORTBbits.RB2==1)
+      +                          : 141:     if (PORTBbits.RB2==1)
    760  0029  1D06               	btfss	6,2	;volatile
    761  002A  282C               	goto	u31
    762  002B  282D               	goto	u30
@@ -826,25 +826,25 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    766  002D                     l727:
    767                           
    768                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 143:     {;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/mai
-      +                          n_sensores.c: 144:         PORTDbits.RD2=1;
+      +                          : 142:     {;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/mai
+      +                          n_sensores.c: 143:         PORTDbits.RD2=1;
    769  002D  1508               	bsf	8,2	;volatile
    770                           
    771                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 145:         PORTDbits.RD3=0;
+      +                          : 144:         PORTDbits.RD3=0;
    772  002E  1188               	bcf	8,3	;volatile
    773                           
    774                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 146:         infrarrojo2=1;
+      +                          : 145:         infrarrojo2=1;
    775  002F  01F2               	clrf	_infrarrojo2
    776  0030  0AF2               	incf	_infrarrojo2,f
    777  0031                     l63:	
    778                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 147:     }
+      +                          : 146:     }
    779                           
    780                           
    781                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 148:     if (PORTBbits.RB2==0)
+      +                          : 147:     if (PORTBbits.RB2==0)
    782  0031  1906               	btfsc	6,2	;volatile
    783  0032  2834               	goto	u41
    784  0033  2835               	goto	u40
@@ -854,22 +854,22 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    788  0035                     l729:
    789                           
    790                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 149:     {;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/mai
-      +                          n_sensores.c: 150:         PORTDbits.RD2=0;
+      +                          : 148:     {;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/mai
+      +                          n_sensores.c: 149:         PORTDbits.RD2=0;
    791  0035  1108               	bcf	8,2	;volatile
    792                           
    793                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 151:         PORTDbits.RD3=1;
+      +                          : 150:         PORTDbits.RD3=1;
    794  0036  1588               	bsf	8,3	;volatile
    795  0037                     l731:
    796                           
    797                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 152:         infrarrojo2=0;
+      +                          : 151:         infrarrojo2=0;
    798  0037  01F2               	clrf	_infrarrojo2
    799  0038                     l733:
    800                           
    801                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 155:     if (PORTBbits.RB3==1)
+      +                          : 154:     if (PORTBbits.RB3==1)
    802  0038  1D86               	btfss	6,3	;volatile
    803  0039  283B               	goto	u51
    804  003A  283C               	goto	u50
@@ -879,25 +879,25 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    808  003C                     l735:
    809                           
    810                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 156:     {;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/mai
-      +                          n_sensores.c: 157:         PORTDbits.RD4=1;
+      +                          : 155:     {;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/mai
+      +                          n_sensores.c: 156:         PORTDbits.RD4=1;
    811  003C  1608               	bsf	8,4	;volatile
    812                           
    813                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 158:         PORTDbits.RD5=0;
+      +                          : 157:         PORTDbits.RD5=0;
    814  003D  1288               	bcf	8,5	;volatile
    815                           
    816                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 159:         infrarrojo3=1;
+      +                          : 158:         infrarrojo3=1;
    817  003E  01F1               	clrf	_infrarrojo3
    818  003F  0AF1               	incf	_infrarrojo3,f
    819  0040                     l65:	
    820                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 160:     }
+      +                          : 159:     }
    821                           
    822                           
    823                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 161:     if (PORTBbits.RB3==0)
+      +                          : 160:     if (PORTBbits.RB3==0)
    824  0040  1986               	btfsc	6,3	;volatile
    825  0041  2843               	goto	u61
    826  0042  2844               	goto	u60
@@ -907,22 +907,22 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    830  0044                     l737:
    831                           
    832                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 162:     {;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/mai
-      +                          n_sensores.c: 163:         PORTDbits.RD4=0;
+      +                          : 161:     {;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/mai
+      +                          n_sensores.c: 162:         PORTDbits.RD4=0;
    833  0044  1208               	bcf	8,4	;volatile
    834                           
    835                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 164:         PORTDbits.RD5=1;
+      +                          : 163:         PORTDbits.RD5=1;
    836  0045  1688               	bsf	8,5	;volatile
    837  0046                     l739:
    838                           
    839                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 165:         infrarrojo3=0;
+      +                          : 164:         infrarrojo3=0;
    840  0046  01F1               	clrf	_infrarrojo3
    841  0047                     l741:
    842                           
    843                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 167:     suma_ir=infrarrojo1+infrarrojo2+infrarrojo3;
+      +                          : 166:     suma_ir=infrarrojo1+infrarrojo2+infrarrojo3;
    844  0047  0872               	movf	_infrarrojo2,w
    845  0048  0773               	addwf	_infrarrojo1,w
    846  0049  00F7               	movwf	??_infrarrojos
@@ -933,26 +933,26 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    851  004E  00F0               	movwf	_suma_ir
    852                           
    853                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 168:     switch(suma_ir)
+      +                          : 167:     switch(suma_ir)
    854  004F  2855               	goto	l755
    855  0050                     l743:
    856                           
    857                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 171:             PORTC=0;
+      +                          : 170:             PORTC=0;
    858  0050  0187               	clrf	7	;volatile
    859                           
    860                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 172:             break;
+      +                          : 171:             break;
    861  0051  286B               	goto	l74
    862  0052                     l747:
    863                           
    864                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 177:             PORTC=suma_ir;
+      +                          : 176:             PORTC=suma_ir;
    865  0052  0870               	movf	_suma_ir,w
    866  0053  0087               	movwf	7	;volatile
    867                           
    868                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 178:             break;
+      +                          : 177:             break;
    869  0054  286B               	goto	l74
    870  0055                     l755:
    871  0055  0870               	movf	_suma_ir,w
@@ -1006,7 +1006,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    918  00CB                     __ptext4:	
    919 ;; *************** function _isr *****************
    920 ;; Defined at:
-   921 ;;		line 62 in file "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c"
+   921 ;;		line 61 in file "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c"
    922 ;; Parameters:    Size  Location     Type
    923 ;;		None
    924 ;; Auto vars:     Size  Location     Type
@@ -1225,7 +1225,7 @@ DATA                 0      0       A      12        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.32 build 20210201212658 
-Symbol Table                                                                                   Fri Aug 20 18:41:53 2021
+Symbol Table                                                                                   Sat Aug 21 23:53:01 2021
 
                      l52 00C2                       l61 0022                       l63 0031  
                      l65 0040                       l74 006B                       l58 00BC  

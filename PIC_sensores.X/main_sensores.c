@@ -48,8 +48,7 @@ Descripcion:
 
 //-------VARIABLES DE PROGRAMA
 unsigned char antirrebote;
-unsigned char infrarrojo1, infrarrojo2, infrarrojo3;
-unsigned char suma_ir;
+unsigned char infrarrojo1, infrarrojo2, infrarrojo3, suma_ir;
 
 /*-----------------------------------------------------------------------------
  ------------------------ PROTOTIPOS DE FUNCIONES ------------------------------
