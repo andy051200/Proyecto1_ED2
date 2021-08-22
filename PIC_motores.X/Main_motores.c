@@ -45,7 +45,7 @@ Descripcion:
  -----------------------------------------------------------------------------*/
 
 //-------DIRECTIVAS DEL COMPILADOR
-#define _XTAL_FREQ 4000000
+#define _XTAL_FREQ 8000000
 #define PinEcho PORTAbits.RA1   //Pin RA1 conectado al Pin Echo. (entrada digital)
 #define PinTrig PORTAbits.RA0   //Pin RA0 conectado al Pin Trig. (salida digital)
 //-------VARIABLES DE PROGRAMA
@@ -154,7 +154,7 @@ void setup(void)
     PORTD=0;
     PORTE=0;
     //-------CONFIGURACION DE RELOJ A 4MHz
-    osc_config(4);
+    osc_config(8);
     //-------CONFIGURACION DE TIMER0
     OPTION_REGbits.T0CS = 0;    //Uso reloj interno
     OPTION_REGbits.PSA = 0;     //Uso pre-escaler

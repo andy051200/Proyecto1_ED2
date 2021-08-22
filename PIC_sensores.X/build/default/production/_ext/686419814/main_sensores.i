@@ -2719,7 +2719,7 @@ void setup(void)
     PORTD=0;
     PORTE=0;
 
-    osc_config(4);
+    osc_config(8);
 
     ADC_config();
 
@@ -2800,7 +2800,7 @@ void toggle_adc(void)
     {
         conversion1=ADRESH<<8;
         conversion_total=conversion1+ADRESL;
-        _delay((unsigned long)((1)*(4000000/4000.0)));
+        _delay((unsigned long)((1)*(8000000/4000.0)));
         ADCON0bits.GO=1;
     }
 }

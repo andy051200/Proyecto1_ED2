@@ -12,7 +12,7 @@
 #include <stdint.h>             //se incluye libreria
 #include <pic16f887.h>          //se incluye libreria del pic
 #include "ADC_CONFIG.h"
-#define _XTAL_FREQ 4000000
+#define _XTAL_FREQ 8000000
 
 /*-----------------------------------------------------------------------------
 -------------------------- FUNCION DE LIBRERIA --------------------------------
@@ -28,7 +28,7 @@ void ADC_config()
     
     ADCON0bits.ADCS = 0b00;     // se usa division de 4us con F/8
     ADCON0bits.CHS = 0;         // seleccion de canal 0
-    //__delay_us(50);             //delay de 50us para que cargue capacitor
+    __delay_us(100);             //delay de 50us para que cargue capacitor
     ADCON0bits.ADON = 1 ;       // se prende modulo ADC
 }
 

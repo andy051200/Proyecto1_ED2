@@ -6,7 +6,7 @@ __S3 0 0 ABS 0
 __Hintentry C 0 CODE 0
 __Lintentry 4 0 CODE 0
 __pintentry 4 0 CODE 0
-_isr 1164 0 CODE 0
+_isr 7EE 0 CODE 0
 osc_config@freq 74 0 COMMON 1
 _temperatura 1213 0 CODE 0
 __end_of_osc_config 7EE 0 CODE 0
@@ -41,7 +41,7 @@ __Hcommon 0 0 ABS 0
 __Lcommon 0 0 ABS 0
 __Heeprom_data 0 0 EEDATA 3
 __Leeprom_data 0 0 EEDATA 3
-__end_of_ADC_config 7FB 0 CODE 0
+__end_of_ADC_config 1169 0 CODE 0
 ___int_sp 0 0 STACK 2
 _ANSELH 189 0 ABS 0
 __Habs1 0 0 ABS 0
@@ -56,7 +56,7 @@ __Lsfr2 0 0 ABS 0
 __Hsfr3 0 0 ABS 0
 __Lsfr3 0 0 ABS 0
 ___stackhi 0 0 ABS 0
-_toggle_adc 116B 0 CODE 0
+_toggle_adc 1169 0 CODE 0
 __end_of___flge 8AA 0 CODE 0
 __Hcode 0 0 ABS 0
 __Lcode 0 0 ABS 0
@@ -103,16 +103,16 @@ __Lbank3 0 0 ABS 0
 ___latbits 2 0 ABS 0
 __Hpowerup 0 0 CODE 0
 __Lpowerup 0 0 CODE 0
-__ptext1 116B 0 CODE 0
+__ptext1 1169 0 CODE 0
 __ptext2 1213 0 CODE 0
 __ptext3 6FB 0 CODE 0
 __ptext4 806 0 CODE 0
 __ptext5 119F 0 CODE 0
 __ptext6 7B7 0 CODE 0
-__ptext7 7EE 0 CODE 0
+__ptext7 1155 0 CODE 0
 __ptext8 11BF 0 CODE 0
-_ADC_config 7EE 0 CODE 0
-__ptext9 1164 0 CODE 0
+_ADC_config 1155 0 CODE 0
+__ptext9 7EE 0 CODE 0
 __Hclrtext 0 0 ABS 0
 __Lclrtext 0 0 ABS 0
 _osc_config 7B7 0 CODE 0
@@ -124,7 +124,7 @@ __Hstack 0 0 STACK 2
 __Lstack 0 0 STACK 2
 __Hspace_0 1800 0 ABS 0
 __Lspace_0 0 0 ABS 0
-__end_of_isr 116B 0 CODE 0
+__end_of_isr 7F5 0 CODE 0
 __Hspace_1 7A 0 ABS 0
 __Lspace_1 0 0 ABS 0
 _suma_ir 77 0 COMMON 1
@@ -196,7 +196,7 @@ __pmaintext 1183 0 CODE 0
 __initialization F 0 CODE 0
 %segments
 reset_vec 0 5 CODE 0 0
-intentry 8 FF5 CODE 8 0
+intentry 8 FE9 CODE 8 0
 cstackCOMMON 70 79 COMMON 70 1
 cstackBANK0 20 3D BANK0 20 1
 text2_split_1 1D8E 1FFF CODE 1D8E 0
@@ -214,11 +214,11 @@ text4 100C 1153 CODE 100C 0
 text8 237E 2425 CODE 237E 0
 text5 233E 237D CODE 233E 0
 maintext 2306 233D CODE 2306 0
-text1 22D6 2305 CODE 22D6 0
-text9 22C8 22D5 CODE 22C8 0
+text1 22D2 2305 CODE 22D2 0
+text7 22AA 22D1 CODE 22AA 0
 %locals
 dist/default/production\PIC_sensores.X.production.o
-C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs728.s
+C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsak8.s
 790 F 0 CODE 0
 793 F 0 CODE 0
 828 F 0 CODE 0
@@ -241,11 +241,11 @@ C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sen
 92 118D 0 CODE 0
 94 1192 0 CODE 0
 95 1197 0 CODE 0
-197 116B 0 CODE 0
-199 116B 0 CODE 0
-201 1171 0 CODE 0
-202 1172 0 CODE 0
-203 1178 0 CODE 0
+197 1169 0 CODE 0
+199 1169 0 CODE 0
+201 116F 0 CODE 0
+202 1170 0 CODE 0
+203 1176 0 CODE 0
 204 117F 0 CODE 0
 206 1182 0 CODE 0
 209 1213 0 CODE 0
@@ -370,14 +370,15 @@ C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/Osc_conf
 40 7EA 0 CODE 0
 42 7ED 0 CODE 0
 C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/ADC_CONFIG.c
-22 7EE 0 CODE 0
-25 7EE 0 CODE 0
-26 7F1 0 CODE 0
-27 7F2 0 CODE 0
-29 7F3 0 CODE 0
-30 7F7 0 CODE 0
-32 7F9 0 CODE 0
-33 7FA 0 CODE 0
+22 1155 0 CODE 0
+25 1155 0 CODE 0
+26 1158 0 CODE 0
+27 1159 0 CODE 0
+29 115A 0 CODE 0
+30 115E 0 CODE 0
+31 1160 0 CODE 0
+32 1165 0 CODE 0
+33 1168 0 CODE 0
 C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
 135 11BF 0 CODE 0
 138 11BF 0 CODE 0
@@ -420,8 +421,8 @@ C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sen
 194 120C 0 CODE 0
 194 120F 0 CODE 0
 195 1212 0 CODE 0
-64 1164 0 CODE 0
-78 1164 0 CODE 0
+64 7EE 0 CODE 0
+78 7EE 0 CODE 0
 64 4 0 CODE 0
 217 EC7 0 CODE 0
 218 F27 0 CODE 0

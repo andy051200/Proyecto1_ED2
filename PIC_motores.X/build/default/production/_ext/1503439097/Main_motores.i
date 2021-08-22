@@ -2655,12 +2655,12 @@ switch(botonazo)
 {
 case(0):
 PORTDbits.RD0=1;
-_delay((unsigned long)((1)*(4000000/4000.0)));
+_delay((unsigned long)((1)*(8000000/4000.0)));
 PORTDbits.RD0=0;
 break;
 case(1):
 PORTDbits.RD0=1;
-_delay((unsigned long)((2)*(4000000/4000.0)));
+_delay((unsigned long)((2)*(8000000/4000.0)));
 PORTDbits.RD0=0;
 break;
 case(2):
@@ -2693,7 +2693,7 @@ PORTC=0;
 PORTD=0;
 PORTE=0;
 
-osc_config(4);
+osc_config(8);
 
 OPTION_REGbits.T0CS = 0;
 OPTION_REGbits.PSA = 0;
@@ -2724,7 +2724,7 @@ IOCBbits.IOCB1=1;
 void sensor_ultrasonico(void)
 {
 PORTAbits.RA0=1;
-_delay((unsigned long)((10)*(4000000/4000000.0)));
+_delay((unsigned long)((10)*(8000000/4000000.0)));
 PORTAbits.RA0=0;
 
 while(PORTAbits.RA1==0);

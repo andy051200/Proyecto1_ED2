@@ -44,7 +44,7 @@ Descripcion:
  -----------------------------------------------------------------------------*/
 
 //-------DIRECTIVAS DEL COMPILADOR
-#define _XTAL_FREQ 4000000
+#define _XTAL_FREQ 8000000
 
 //-------VARIABLES DE PROGRAMA
 unsigned char antirrebote;
@@ -119,7 +119,7 @@ void setup(void)
     PORTD=0;
     PORTE=0;
     //-------CONFIGURACION DE RELOJ A 4MHz
-    osc_config(4);
+    osc_config(8);
     //-------CONFIGURACION DE ADC
     ADC_config();
     //-------CONFIGURACION DE COMUNICACION I2C

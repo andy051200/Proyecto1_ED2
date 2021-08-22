@@ -2647,6 +2647,6 @@ void ADC_config()
 
     ADCON0bits.ADCS = 0b00;
     ADCON0bits.CHS = 0;
-
+    _delay((unsigned long)((100)*(8000000/4000000.0)));
     ADCON0bits.ADON = 1 ;
 }
