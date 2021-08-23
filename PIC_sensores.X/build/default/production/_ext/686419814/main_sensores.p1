@@ -11,9 +11,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "57
 [; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 57: void infrarrojos(void);
 [v _infrarrojos `(v ~T0 @X0 0 ef ]
-"59
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 59: void temperatura(void);
-[v _temperatura `(v ~T0 @X0 0 ef ]
 "290 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc/pic16f887.h
 [v _PORTC `Vuc ~T0 @X0 0 e@7 ]
 "3387
@@ -299,10 +296,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _infrarrojo3 `uc ~T0 @X0 1 e ]
 [v _suma_ir `uc ~T0 @X0 1 e ]
 "52
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 52: unsigned char conversion1, conversion_total, temperatura_aprox;
-[v _conversion1 `uc ~T0 @X0 1 e ]
-[v _conversion_total `uc ~T0 @X0 1 e ]
-[v _temperatura_aprox `uc ~T0 @X0 1 e ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 52: float conversion1, conversion_total, temperatura_aprox;
+[v _conversion1 `f ~T0 @X0 1 e ]
+[v _conversion_total `f ~T0 @X0 1 e ]
+[v _temperatura_aprox `f ~T0 @X0 1 e ]
 [v $root$_isr `(v ~T0 @X0 0 e ]
 "64
 [; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 64: void __attribute__((picinterrupt(("")))) isr(void)
@@ -341,11 +338,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 92:         infrarrojos();
 [e ( _infrarrojos ..  ]
 "94
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 94:         temperatura();
-[e ( _temperatura ..  ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 94:         temperatura_aprox=(conversion_total/2.046);
+[e = _temperatura_aprox -> / -> _conversion_total `d .2.046 `f ]
 "95
 [; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 95:         PORTC=temperatura_aprox;
-[e = _PORTC _temperatura_aprox ]
+[e = _PORTC -> _temperatura_aprox `uc ]
 "96
 [; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 96:     }
 }
@@ -541,68 +538,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "176
 [; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 176:     suma_ir=infrarrojo1+infrarrojo2+infrarrojo3;
 [e = _suma_ir -> + + -> _infrarrojo1 `i -> _infrarrojo2 `i -> _infrarrojo3 `i `uc ]
-"177
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 177:     switch(suma_ir)
-[e $U 152  ]
-"178
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 178:     {
-{
-"179
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 179:         default:
-[e :U 153 ]
-"180
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 180:             PORTC=0;
-[e = _PORTC -> -> 0 `i `uc ]
-"181
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 181:             break;
-[e $U 151  ]
-"182
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 182:         case(0):
-[e :U 154 ]
-"183
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 183:             PORTC=0;
-[e = _PORTC -> -> 0 `i `uc ]
-"184
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 184:             break;
-[e $U 151  ]
-"185
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 185:         case(1):
-[e :U 155 ]
-"186
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 186:             PORTC=suma_ir;
-[e = _PORTC _suma_ir ]
-"187
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 187:             break;
-[e $U 151  ]
-"188
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 188:         case(2):
-[e :U 156 ]
-"189
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 189:             PORTC=suma_ir;
-[e = _PORTC _suma_ir ]
-"190
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 190:             break;
-[e $U 151  ]
-"191
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 191:         case(3):
-[e :U 157 ]
-"192
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 192:             PORTC=suma_ir;
-[e = _PORTC _suma_ir ]
-"193
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 193:             break;
-[e $U 151  ]
-"194
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 194:     }
-}
-[e $U 151  ]
-[e :U 152 ]
-[e [\ -> _suma_ir `i , $ -> 0 `i 154
- , $ -> 1 `i 155
- , $ -> 2 `i 156
- , $ -> 3 `i 157
- 153 ]
-[e :U 151 ]
 "195
 [; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 195: }
 [e :UE 144 ]
@@ -617,16 +552,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "199
 [; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 199:     if (ADCON0bits.GO==0)
-[e $ ! == -> . . _ADCON0bits 1 1 `i -> 0 `i 159  ]
+[e $ ! == -> . . _ADCON0bits 1 1 `i -> 0 `i 152  ]
 "200
 [; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 200:     {
 {
 "201
 [; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 201:         conversion1=ADRESH<<8;
-[e = _conversion1 -> << -> _ADRESH `i -> 8 `i `uc ]
+[e = _conversion1 -> << -> _ADRESH `i -> 8 `i `f ]
 "202
 [; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 202:         conversion_total=conversion1+ADRESL;
-[e = _conversion_total -> + -> _conversion1 `i -> _ADRESL `i `uc ]
+[e = _conversion_total + _conversion1 -> -> _ADRESL `i `f ]
 "203
 [; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 203:         _delay((unsigned long)((1)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
@@ -636,10 +571,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "205
 [; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 205:     }
 }
-[e :U 159 ]
+[e :U 152 ]
 "206
 [; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 206: }
-[e :UE 158 ]
+[e :UE 151 ]
 }
 "209
 [; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 209: void temperatura(void)
@@ -650,461 +585,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _temperatura ]
 [f ]
 "211
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 211:     if (conversion_total>0 && conversion_total <2.046)
-[e $ ! && > -> _conversion_total `i -> 0 `i < -> -> _conversion_total `i `d .2.046 161  ]
-"212
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 212:         temperatura_aprox=0;
-[e = _temperatura_aprox -> -> 0 `i `uc ]
-[e $U 162  ]
-"213
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 213:     else if (conversion_total>2.046 && conversion_total<4.092)
-[e :U 161 ]
-[e $ ! && > -> -> _conversion_total `i `d .2.046 < -> -> _conversion_total `i `d .4.092 163  ]
-"214
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 214:         temperatura_aprox=1;
-[e = _temperatura_aprox -> -> 1 `i `uc ]
-[e $U 164  ]
-"215
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 215:     else if (conversion_total>4.092 && conversion_total <6.138)
-[e :U 163 ]
-[e $ ! && > -> -> _conversion_total `i `d .4.092 < -> -> _conversion_total `i `d .6.138 165  ]
-"216
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 216:         temperatura_aprox=2;
-[e = _temperatura_aprox -> -> 2 `i `uc ]
-[e $U 166  ]
-"217
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 217:     else if (conversion_total>6.138 && conversion_total<8.184)
-[e :U 165 ]
-[e $ ! && > -> -> _conversion_total `i `d .6.138 < -> -> _conversion_total `i `d .8.184 167  ]
-"218
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 218:         temperatura_aprox=3;
-[e = _temperatura_aprox -> -> 3 `i `uc ]
-[e $U 168  ]
-"219
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 219:     else if (conversion_total>8.184 && conversion_total<10.23)
-[e :U 167 ]
-[e $ ! && > -> -> _conversion_total `i `d .8.184 < -> -> _conversion_total `i `d .10.23 169  ]
-"220
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 220:         temperatura_aprox=4;
-[e = _temperatura_aprox -> -> 4 `i `uc ]
-[e $U 170  ]
-"221
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 221:     else if (conversion_total>10.23 && conversion_total<12.276)
-[e :U 169 ]
-[e $ ! && > -> -> _conversion_total `i `d .10.23 < -> -> _conversion_total `i `d .12.276 171  ]
-"222
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 222:         temperatura_aprox=5;
-[e = _temperatura_aprox -> -> 5 `i `uc ]
-[e $U 172  ]
-"223
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 223:     else if (conversion_total>12.276 && conversion_total<14.322)
-[e :U 171 ]
-[e $ ! && > -> -> _conversion_total `i `d .12.276 < -> -> _conversion_total `i `d .14.322 173  ]
-"224
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 224:         temperatura_aprox=6;
-[e = _temperatura_aprox -> -> 6 `i `uc ]
-[e $U 174  ]
-"225
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 225:     else if (conversion_total>14.322 && conversion_total<16.368)
-[e :U 173 ]
-[e $ ! && > -> -> _conversion_total `i `d .14.322 < -> -> _conversion_total `i `d .16.368 175  ]
-"226
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 226:         temperatura_aprox=7;
-[e = _temperatura_aprox -> -> 7 `i `uc ]
-[e $U 176  ]
-"227
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 227:     else if (conversion_total>16.368 && conversion_total<18.414)
-[e :U 175 ]
-[e $ ! && > -> -> _conversion_total `i `d .16.368 < -> -> _conversion_total `i `d .18.414 177  ]
-"228
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 228:         temperatura_aprox=8;
-[e = _temperatura_aprox -> -> 8 `i `uc ]
-[e $U 178  ]
-"229
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 229:     else if (conversion_total>18.414 && conversion_total<20.46)
-[e :U 177 ]
-[e $ ! && > -> -> _conversion_total `i `d .18.414 < -> -> _conversion_total `i `d .20.46 179  ]
-"230
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 230:         temperatura_aprox=9;
-[e = _temperatura_aprox -> -> 9 `i `uc ]
-[e $U 180  ]
-"231
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 231:     else if (conversion_total>20.46 && conversion_total<22.506)
-[e :U 179 ]
-[e $ ! && > -> -> _conversion_total `i `d .20.46 < -> -> _conversion_total `i `d .22.506 181  ]
-"232
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 232:         temperatura_aprox=10;
-[e = _temperatura_aprox -> -> 10 `i `uc ]
-[e $U 182  ]
-"233
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 233:     else if (conversion_total>22.506 && conversion_total<24.552)
-[e :U 181 ]
-[e $ ! && > -> -> _conversion_total `i `d .22.506 < -> -> _conversion_total `i `d .24.552 183  ]
-"234
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 234:         temperatura_aprox=11;
-[e = _temperatura_aprox -> -> 11 `i `uc ]
-[e $U 184  ]
-"235
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 235:     else if (conversion_total>24.552 && conversion_total<26.598)
-[e :U 183 ]
-[e $ ! && > -> -> _conversion_total `i `d .24.552 < -> -> _conversion_total `i `d .26.598 185  ]
-"236
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 236:         temperatura_aprox=12;
-[e = _temperatura_aprox -> -> 12 `i `uc ]
-[e $U 186  ]
-"237
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 237:     else if (conversion_total>26.598 && conversion_total<28.64)
-[e :U 185 ]
-[e $ ! && > -> -> _conversion_total `i `d .26.598 < -> -> _conversion_total `i `d .28.64 187  ]
-"238
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 238:         temperatura_aprox=13;
-[e = _temperatura_aprox -> -> 13 `i `uc ]
-[e $U 188  ]
-"239
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 239:     else if (conversion_total>28.64 && conversion_total<30.69)
-[e :U 187 ]
-[e $ ! && > -> -> _conversion_total `i `d .28.64 < -> -> _conversion_total `i `d .30.69 189  ]
-"240
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 240:         temperatura_aprox=14;
-[e = _temperatura_aprox -> -> 14 `i `uc ]
-[e $U 190  ]
-"241
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 241:     else if (conversion_total>30.69 && conversion_total<32.73)
-[e :U 189 ]
-[e $ ! && > -> -> _conversion_total `i `d .30.69 < -> -> _conversion_total `i `d .32.73 191  ]
-"242
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 242:         temperatura_aprox=15;
-[e = _temperatura_aprox -> -> 15 `i `uc ]
-[e $U 192  ]
-"243
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 243:     else if (conversion_total>32.73 && conversion_total<34.78)
-[e :U 191 ]
-[e $ ! && > -> -> _conversion_total `i `d .32.73 < -> -> _conversion_total `i `d .34.78 193  ]
-"244
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 244:         temperatura_aprox=16;
-[e = _temperatura_aprox -> -> 16 `i `uc ]
-[e $U 194  ]
-"245
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 245:     else if (conversion_total>34.782 && conversion_total<36.82)
-[e :U 193 ]
-[e $ ! && > -> -> _conversion_total `i `d .34.782 < -> -> _conversion_total `i `d .36.82 195  ]
-"246
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 246:         temperatura_aprox=17;
-[e = _temperatura_aprox -> -> 17 `i `uc ]
-[e $U 196  ]
-"247
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 247:     else if (conversion_total<36.82 && conversion_total<38.87)
-[e :U 195 ]
-[e $ ! && < -> -> _conversion_total `i `d .36.82 < -> -> _conversion_total `i `d .38.87 197  ]
-"248
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 248:         temperatura_aprox=18;
-[e = _temperatura_aprox -> -> 18 `i `uc ]
-[e $U 198  ]
-"249
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 249:     else if (conversion_total>38.87 && conversion_total<40.92)
-[e :U 197 ]
-[e $ ! && > -> -> _conversion_total `i `d .38.87 < -> -> _conversion_total `i `d .40.92 199  ]
-"250
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 250:         temperatura_aprox=19;
-[e = _temperatura_aprox -> -> 19 `i `uc ]
-[e $U 200  ]
-"251
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 251:     else if (conversion_total>40.92 && conversion_total<42.96)
-[e :U 199 ]
-[e $ ! && > -> -> _conversion_total `i `d .40.92 < -> -> _conversion_total `i `d .42.96 201  ]
-"252
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 252:         temperatura_aprox=20;
-[e = _temperatura_aprox -> -> 20 `i `uc ]
-[e $U 202  ]
-"253
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 253:     else if (conversion_total>42.96 && conversion_total<45.01)
-[e :U 201 ]
-[e $ ! && > -> -> _conversion_total `i `d .42.96 < -> -> _conversion_total `i `d .45.01 203  ]
-"254
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 254:         temperatura_aprox=21;
-[e = _temperatura_aprox -> -> 21 `i `uc ]
-[e $U 204  ]
-"255
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 255:     else if (conversion_total>45.01 && conversion_total<47.05)
-[e :U 203 ]
-[e $ ! && > -> -> _conversion_total `i `d .45.01 < -> -> _conversion_total `i `d .47.05 205  ]
-"256
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 256:         temperatura_aprox=22;
-[e = _temperatura_aprox -> -> 22 `i `uc ]
-[e $U 206  ]
-"257
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 257:     else if (conversion_total>47.05 && conversion_total<49.10)
-[e :U 205 ]
-[e $ ! && > -> -> _conversion_total `i `d .47.05 < -> -> _conversion_total `i `d .49.10 207  ]
-"258
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 258:         temperatura_aprox=23;
-[e = _temperatura_aprox -> -> 23 `i `uc ]
-[e $U 208  ]
-"259
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 259:     else if (conversion_total>49.10 && conversion_total<51.15)
-[e :U 207 ]
-[e $ ! && > -> -> _conversion_total `i `d .49.10 < -> -> _conversion_total `i `d .51.15 209  ]
-"260
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 260:         temperatura_aprox=24;
-[e = _temperatura_aprox -> -> 24 `i `uc ]
-[e $U 210  ]
-"261
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 261:     else if (conversion_total>51.15 && conversion_total<53.19)
-[e :U 209 ]
-[e $ ! && > -> -> _conversion_total `i `d .51.15 < -> -> _conversion_total `i `d .53.19 211  ]
-"262
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 262:         temperatura_aprox=25;
-[e = _temperatura_aprox -> -> 25 `i `uc ]
-[e $U 212  ]
-"263
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 263:     else if (conversion_total>53.19 && conversion_total<55.24)
-[e :U 211 ]
-[e $ ! && > -> -> _conversion_total `i `d .53.19 < -> -> _conversion_total `i `d .55.24 213  ]
-"264
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 264:         temperatura_aprox=26;
-[e = _temperatura_aprox -> -> 26 `i `uc ]
-[e $U 214  ]
-"265
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 265:     else if (conversion_total>55.24 && conversion_total<57.28)
-[e :U 213 ]
-[e $ ! && > -> -> _conversion_total `i `d .55.24 < -> -> _conversion_total `i `d .57.28 215  ]
-"266
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 266:         temperatura_aprox=27;
-[e = _temperatura_aprox -> -> 27 `i `uc ]
-[e $U 216  ]
-"267
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 267:     else if (conversion_total>57.28 && conversion_total<59.38)
-[e :U 215 ]
-[e $ ! && > -> -> _conversion_total `i `d .57.28 < -> -> _conversion_total `i `d .59.38 217  ]
-"268
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 268:         temperatura_aprox=28;
-[e = _temperatura_aprox -> -> 28 `i `uc ]
-[e $U 218  ]
-"269
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 269:     else if (conversion_total>59.33 && conversion_total<61.38)
-[e :U 217 ]
-[e $ ! && > -> -> _conversion_total `i `d .59.33 < -> -> _conversion_total `i `d .61.38 219  ]
-"270
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 270:         temperatura_aprox=29;
-[e = _temperatura_aprox -> -> 29 `i `uc ]
-[e $U 220  ]
-"271
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 271:     else if (conversion_total>61.38 && conversion_total<63.42)
-[e :U 219 ]
-[e $ ! && > -> -> _conversion_total `i `d .61.38 < -> -> _conversion_total `i `d .63.42 221  ]
-"272
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 272:         temperatura_aprox=30;
-[e = _temperatura_aprox -> -> 30 `i `uc ]
-[e $U 222  ]
-"273
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 273:     else if (conversion_total>63.42 && conversion_total<65.47)
-[e :U 221 ]
-[e $ ! && > -> -> _conversion_total `i `d .63.42 < -> -> _conversion_total `i `d .65.47 223  ]
-"274
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 274:         temperatura_aprox=31;
-[e = _temperatura_aprox -> -> 31 `i `uc ]
-[e $U 224  ]
-"275
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 275:     else if (conversion_total>65.47 && conversion_total<67.51)
-[e :U 223 ]
-[e $ ! && > -> -> _conversion_total `i `d .65.47 < -> -> _conversion_total `i `d .67.51 225  ]
-"276
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 276:         temperatura_aprox=32;
-[e = _temperatura_aprox -> -> 32 `i `uc ]
-[e $U 226  ]
-"277
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 277:     else if (conversion_total>67.51 && conversion_total<69.56)
-[e :U 225 ]
-[e $ ! && > -> -> _conversion_total `i `d .67.51 < -> -> _conversion_total `i `d .69.56 227  ]
-"278
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 278:         temperatura_aprox=33;
-[e = _temperatura_aprox -> -> 33 `i `uc ]
-[e $U 228  ]
-"279
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 279:     else if (conversion_total>69.56 && conversion_total<71.61)
-[e :U 227 ]
-[e $ ! && > -> -> _conversion_total `i `d .69.56 < -> -> _conversion_total `i `d .71.61 229  ]
-"280
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 280:         temperatura_aprox=34;
-[e = _temperatura_aprox -> -> 34 `i `uc ]
-[e $U 230  ]
-"281
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 281:     else if (conversion_total>71.61 && conversion_total<73.65)
-[e :U 229 ]
-[e $ ! && > -> -> _conversion_total `i `d .71.61 < -> -> _conversion_total `i `d .73.65 231  ]
-"282
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 282:         temperatura_aprox=35;
-[e = _temperatura_aprox -> -> 35 `i `uc ]
-[e $U 232  ]
-"283
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 283:     else if (conversion_total>73.65 && conversion_total<75.70)
-[e :U 231 ]
-[e $ ! && > -> -> _conversion_total `i `d .73.65 < -> -> _conversion_total `i `d .75.70 233  ]
-"284
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 284:         temperatura_aprox=36;
-[e = _temperatura_aprox -> -> 36 `i `uc ]
-[e $U 234  ]
-"285
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 285:     else if (conversion_total>75.70 && conversion_total<77.74)
-[e :U 233 ]
-[e $ ! && > -> -> _conversion_total `i `d .75.70 < -> -> _conversion_total `i `d .77.74 235  ]
-"286
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 286:         temperatura_aprox=37;
-[e = _temperatura_aprox -> -> 37 `i `uc ]
-[e $U 236  ]
-"287
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 287:     else if (conversion_total>77.74 && conversion_total<79.79)
-[e :U 235 ]
-[e $ ! && > -> -> _conversion_total `i `d .77.74 < -> -> _conversion_total `i `d .79.79 237  ]
-"288
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 288:         temperatura_aprox=38;
-[e = _temperatura_aprox -> -> 38 `i `uc ]
-[e $U 238  ]
-"289
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 289:     else if (conversion_total>79.79 && conversion_total<81.84)
-[e :U 237 ]
-[e $ ! && > -> -> _conversion_total `i `d .79.79 < -> -> _conversion_total `i `d .81.84 239  ]
-"290
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 290:         temperatura_aprox=39;
-[e = _temperatura_aprox -> -> 39 `i `uc ]
-[e $U 240  ]
-"291
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 291:     else if (conversion_total>81.84 && conversion_total<83.88)
-[e :U 239 ]
-[e $ ! && > -> -> _conversion_total `i `d .81.84 < -> -> _conversion_total `i `d .83.88 241  ]
-"292
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 292:         temperatura_aprox=40;
-[e = _temperatura_aprox -> -> 40 `i `uc ]
-[e $U 242  ]
-"293
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 293:     else if (conversion_total>83.88 && conversion_total<85.93)
-[e :U 241 ]
-[e $ ! && > -> -> _conversion_total `i `d .83.88 < -> -> _conversion_total `i `d .85.93 243  ]
-"294
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 294:         temperatura_aprox=41;
-[e = _temperatura_aprox -> -> 41 `i `uc ]
-[e $U 244  ]
-"295
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 295:     else if (conversion_total>87.97 && conversion_total<90.02)
-[e :U 243 ]
-[e $ ! && > -> -> _conversion_total `i `d .87.97 < -> -> _conversion_total `i `d .90.02 245  ]
-"296
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 296:         temperatura_aprox=42;
-[e = _temperatura_aprox -> -> 42 `i `uc ]
-[e $U 246  ]
-"297
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 297:     else if (conversion_total>90.02 && conversion_total<92.07)
-[e :U 245 ]
-[e $ ! && > -> -> _conversion_total `i `d .90.02 < -> -> _conversion_total `i `d .92.07 247  ]
-"298
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 298:         temperatura_aprox=43;
-[e = _temperatura_aprox -> -> 43 `i `uc ]
-[e $U 248  ]
-"299
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 299:     else if (conversion_total>92.07 && conversion_total<94.11)
-[e :U 247 ]
-[e $ ! && > -> -> _conversion_total `i `d .92.07 < -> -> _conversion_total `i `d .94.11 249  ]
-"300
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 300:         temperatura_aprox=44;
-[e = _temperatura_aprox -> -> 44 `i `uc ]
-[e $U 250  ]
-"301
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 301:     else if (conversion_total>94.11 && conversion_total<96.16)
-[e :U 249 ]
-[e $ ! && > -> -> _conversion_total `i `d .94.11 < -> -> _conversion_total `i `d .96.16 251  ]
-"302
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 302:         temperatura_aprox=45;
-[e = _temperatura_aprox -> -> 45 `i `uc ]
-[e $U 252  ]
-"303
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 303:     else if (conversion_total>96.16 && conversion_total<98.20)
-[e :U 251 ]
-[e $ ! && > -> -> _conversion_total `i `d .96.16 < -> -> _conversion_total `i `d .98.20 253  ]
-"304
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 304:         temperatura_aprox=46;
-[e = _temperatura_aprox -> -> 46 `i `uc ]
-[e $U 254  ]
-"305
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 305:     else if (conversion_total>98.20 && conversion_total<100.25)
-[e :U 253 ]
-[e $ ! && > -> -> _conversion_total `i `d .98.20 < -> -> _conversion_total `i `d .100.25 255  ]
-"306
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 306:         temperatura_aprox=47;
-[e = _temperatura_aprox -> -> 47 `i `uc ]
-[e $U 256  ]
-"307
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 307:     else if (conversion_total>100.25 && conversion_total<102.3)
-[e :U 255 ]
-[e $ ! && > -> -> _conversion_total `i `d .100.25 < -> -> _conversion_total `i `d .102.3 257  ]
-"308
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 308:         temperatura_aprox=48;
-[e = _temperatura_aprox -> -> 48 `i `uc ]
-[e $U 258  ]
-"309
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 309:     else if (conversion_total>102.3 && conversion_total<104.94)
-[e :U 257 ]
-[e $ ! && > -> -> _conversion_total `i `d .102.3 < -> -> _conversion_total `i `d .104.94 259  ]
-"310
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 310:         temperatura_aprox=49;
-[e = _temperatura_aprox -> -> 49 `i `uc ]
-[e $U 260  ]
-"311
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 311:     else
-[e :U 259 ]
-"312
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 312:         temperatura_aprox=50;
-[e = _temperatura_aprox -> -> 50 `i `uc ]
-[e :U 260 ]
-[e :U 258 ]
-[e :U 256 ]
-[e :U 254 ]
-[e :U 252 ]
-[e :U 250 ]
-[e :U 248 ]
-[e :U 246 ]
-[e :U 244 ]
-[e :U 242 ]
-[e :U 240 ]
-[e :U 238 ]
-[e :U 236 ]
-[e :U 234 ]
-[e :U 232 ]
-[e :U 230 ]
-[e :U 228 ]
-[e :U 226 ]
-[e :U 224 ]
-[e :U 222 ]
-[e :U 220 ]
-[e :U 218 ]
-[e :U 216 ]
-[e :U 214 ]
-[e :U 212 ]
-[e :U 210 ]
-[e :U 208 ]
-[e :U 206 ]
-[e :U 204 ]
-[e :U 202 ]
-[e :U 200 ]
-[e :U 198 ]
-[e :U 196 ]
-[e :U 194 ]
-[e :U 192 ]
-[e :U 190 ]
-[e :U 188 ]
-[e :U 186 ]
-[e :U 184 ]
-[e :U 182 ]
-[e :U 180 ]
-[e :U 178 ]
-[e :U 176 ]
-[e :U 174 ]
-[e :U 172 ]
-[e :U 170 ]
-[e :U 168 ]
-[e :U 166 ]
-[e :U 164 ]
-[e :U 162 ]
-"315
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 315: }
-[e :UE 160 ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 211:     temperatura_aprox=(conversion_total/2.046);
+[e = _temperatura_aprox -> / -> _conversion_total `d .2.046 `f ]
+"317
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 317: }
+[e :UE 153 ]
 }

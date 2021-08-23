@@ -1,108 +1,15 @@
 
-# 1 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c"
+# 1 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/ADC_CONFIG.c"
+
+# 18 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\xc.h"
+extern const char __xc8_OPTIM_SPEED;
+
+extern double __fpnormalize(double);
 
 
-# 15
-#pragma config FOSC = INTRC_NOCLKOUT
-#pragma config WDTE = OFF
-#pragma config PWRTE = OFF
-#pragma config MCLRE = OFF
-#pragma config CP = OFF
-#pragma config CPD = OFF
-#pragma config BOREN = OFF
-#pragma config IESO = OFF
-#pragma config FCMEN = OFF
-#pragma config LVP = OFF
-
-
-#pragma config BOR4V = BOR40V
-#pragma config WRT = OFF
-
-# 13 "C:\Program Files\Microchip\xc8\v2.32\pic\include\c90\stdint.h"
-typedef signed char int8_t;
-
-# 20
-typedef signed int int16_t;
-
-# 28
-typedef __int24 int24_t;
-
-# 36
-typedef signed long int int32_t;
-
-# 52
-typedef unsigned char uint8_t;
-
-# 58
-typedef unsigned int uint16_t;
-
-# 65
-typedef __uint24 uint24_t;
-
-# 72
-typedef unsigned long int uint32_t;
-
-# 88
-typedef signed char int_least8_t;
-
-# 96
-typedef signed int int_least16_t;
-
-# 109
-typedef __int24 int_least24_t;
-
-# 118
-typedef signed long int int_least32_t;
-
-# 136
-typedef unsigned char uint_least8_t;
-
-# 143
-typedef unsigned int uint_least16_t;
-
-# 154
-typedef __uint24 uint_least24_t;
-
-# 162
-typedef unsigned long int uint_least32_t;
-
-# 181
-typedef signed char int_fast8_t;
-
-# 188
-typedef signed int int_fast16_t;
-
-# 200
-typedef __int24 int_fast24_t;
-
-# 208
-typedef signed long int int_fast32_t;
-
-# 224
-typedef unsigned char uint_fast8_t;
-
-# 230
-typedef unsigned int uint_fast16_t;
-
-# 240
-typedef __uint24 uint_fast24_t;
-
-# 247
-typedef unsigned long int uint_fast32_t;
-
-# 268
-typedef int32_t intmax_t;
-
-# 282
-typedef uint32_t uintmax_t;
-
-# 289
-typedef int16_t intptr_t;
-
-
-
-
-typedef uint16_t uintptr_t;
+# 13 "C:\Program Files\Microchip\xc8\v2.32\pic\include\c90\xc8debug.h"
+#pragma intrinsic(__builtin_software_breakpoint)
+extern void __builtin_software_breakpoint(void);
 
 # 52 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h"
 extern volatile unsigned char INDF __at(0x000);
@@ -2556,16 +2463,6 @@ extern volatile __bit nW __at(0x4A2);
 
 extern volatile __bit nWRITE __at(0x4A2);
 
-# 18 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\xc.h"
-extern const char __xc8_OPTIM_SPEED;
-
-extern double __fpnormalize(double);
-
-
-# 13 "C:\Program Files\Microchip\xc8\v2.32\pic\include\c90\xc8debug.h"
-#pragma intrinsic(__builtin_software_breakpoint)
-extern void __builtin_software_breakpoint(void);
-
 
 # 30 "C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\pic.h"
 #pragma intrinsic(__nop)
@@ -2594,140 +2491,106 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 
-# 14 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Osc_config.h"
-void osc_config(uint8_t freq);
+# 13 "C:\Program Files\Microchip\xc8\v2.32\pic\include\c90\stdint.h"
+typedef signed char int8_t;
 
-# 17 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/UART_CONFIG.h"
-void uart_config(void);
+# 20
+typedef signed int int16_t;
+
+# 28
+typedef __int24 int24_t;
+
+# 36
+typedef signed long int int32_t;
+
+# 52
+typedef unsigned char uint8_t;
+
+# 58
+typedef unsigned int uint16_t;
+
+# 65
+typedef __uint24 uint24_t;
+
+# 72
+typedef unsigned long int uint32_t;
+
+# 88
+typedef signed char int_least8_t;
+
+# 96
+typedef signed int int_least16_t;
+
+# 109
+typedef __int24 int_least24_t;
+
+# 118
+typedef signed long int int_least32_t;
+
+# 136
+typedef unsigned char uint_least8_t;
+
+# 143
+typedef unsigned int uint_least16_t;
+
+# 154
+typedef __uint24 uint_least24_t;
+
+# 162
+typedef unsigned long int uint_least32_t;
+
+# 181
+typedef signed char int_fast8_t;
+
+# 188
+typedef signed int int_fast16_t;
+
+# 200
+typedef __int24 int_fast24_t;
+
+# 208
+typedef signed long int int_fast32_t;
+
+# 224
+typedef unsigned char uint_fast8_t;
+
+# 230
+typedef unsigned int uint_fast16_t;
+
+# 240
+typedef __uint24 uint_fast24_t;
+
+# 247
+typedef unsigned long int uint_fast32_t;
+
+# 268
+typedef int32_t intmax_t;
+
+# 282
+typedef uint32_t uintmax_t;
+
+# 289
+typedef int16_t intptr_t;
+
+
+
+
+typedef uint16_t uintptr_t;
 
 # 13 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/ADC_CONFIG.h"
 void ADC_config(void);
 
-# 52 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c"
-unsigned char antirrebote, botonazo;
-unsigned char conversion1, conversion_total, temperatura_aprox;
-
-# 57
-void setup(void);
-void sensor_ultrasonico(void);
-void servo(void);
-void toggle_adc(void);
-
-# 64
-void __interrupt() isr(void)
+# 22 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/ADC_CONFIG.c"
+void ADC_config()
 {
 
-if (INTCONbits.RBIF)
-{
-if (PORTB==0b11111101)
-antirrebote=1;
-else
-antirrebote=0;
-INTCONbits.RBIF=0;
+ADCON1bits.ADFM = 1 ;
+ADCON1bits.VCFG0 = 0 ;
+ADCON1bits.VCFG1 = 0 ;
+
+ADCON0bits.ADCS = 0b00;
+ADCON0bits.CHS = 0;
+_delay((unsigned long)((100)*(8000000/4000000.0)));
+ADCON0bits.ADON = 1 ;
 }
 
-
-}
-
-# 81
-void main(void)
-{
-setup();
-
-while(1)
-{
-
-servo();
-
-toggle_adc();
-temperatura_aprox=(conversion_total/2.046);
-PORTD=temperatura_aprox;
-
-}
-
-}
-
-# 100
-void setup(void)
-{
-
-ANSEL=0;
-ANSELH=0;
-ANSELbits.ANS0=1;
-
-TRISDbits.TRISD0=0;
-TRISBbits.TRISB1=1;
-TRISCbits.TRISC2=0;
-TRISD=0;
-TRISEbits.TRISE0=0;
-
-
-PORTB=0;
-PORTC=0;
-PORTD=0;
-PORTE=0;
-
-osc_config(8);
-
-ADC_config();
-
-TRISCbits.TRISC2=1;
-CCP1CONbits.P1M = 0;
-CCP1CONbits.CCP1M = 0b1100;
-CCPR1L = 0x0f ;
-CCP1CONbits.DC1B = 0;
-TRISCbits.TRISC2=0;
-
-
-
-
-OPTION_REGbits.nRBPU=0;
-WPUBbits.WPUB1=1;
-
-
-
-INTCONbits.GIE=1;
-INTCONbits.PEIE = 1;
-INTCONbits.RBIE=1;
-INTCONbits.RBIF=0;
-IOCBbits.IOCB1=1;
-}
-
-# 147
-void servo(void)
-{
-
-if (antirrebote==1 && PORTBbits.RB1==0 )
-{
-botonazo++;
-antirrebote=0;
-}
-
-switch(botonazo)
-{
-case(0):
-PORTEbits.RE0=1;
-_delay((unsigned long)((1)*(8000000/4000.0)));
-PORTEbits.RE0=0;
-break;
-case(1):
-PORTEbits.RE0=1;
-_delay((unsigned long)((2)*(8000000/4000.0)));
-PORTEbits.RE0=0;
-break;
-case(2):
-botonazo=0;
-break;
-}
-}
-
-void toggle_adc(void)
-{
-if (ADCON0bits.GO==0)
-{
-conversion1=ADRESH<<8;
-conversion_total=conversion1+ADRESL;
-_delay((unsigned long)((1)*(8000000/4000.0)));
-ADCON0bits.GO=1;
-}
-}

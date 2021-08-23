@@ -1,152 +1,13 @@
 Version 3.2 HI-TECH Software Intermediate Code
-[t ~ __interrupt . k ]
-[t T4 __interrupt  ]
-"465 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
-[s S16 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S16 . RBIF INTF T0IF RBIE INTE T0IE PEIE GIE ]
-"475
-[s S17 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S17 . . TMR0IF . TMR0IE ]
-"464
-[u S15 `S16 1 `S17 1 ]
-[n S15 . . . ]
-"482
-[v _INTCONbits `VS15 ~T0 @X0 0 e@11 ]
-"228
-[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
-[p mainexit ]
-"57 C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c
-[v _setup `(v ~T0 @X0 0 ef ]
-"59
-[v _servo `(v ~T0 @X0 0 ef ]
-"60
-[v _toggle_adc `(v ~T0 @X0 0 ef ]
-"352 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
-[v _PORTD `Vuc ~T0 @X0 0 e@8 ]
-"3387
-[v _ANSEL `Vuc ~T0 @X0 0 e@392 ]
-"3449
-[v _ANSELH `Vuc ~T0 @X0 0 e@393 ]
-"3393
-[s S133 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S133 . ANS0 ANS1 ANS2 ANS3 ANS4 ANS5 ANS6 ANS7 ]
-"3392
-[u S132 `S133 1 ]
-[n S132 . . ]
-"3404
-[v _ANSELbits `VS132 ~T0 @X0 0 e@392 ]
-"1608
-[s S59 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S59 . TRISD0 TRISD1 TRISD2 TRISD3 TRISD4 TRISD5 TRISD6 TRISD7 ]
-"1607
-[u S58 `S59 1 ]
-[n S58 . . ]
-"1619
-[v _TRISDbits `VS58 ~T0 @X0 0 e@136 ]
-"1484
-[s S55 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S55 . TRISB0 TRISB1 TRISB2 TRISB3 TRISB4 TRISB5 TRISB6 TRISB7 ]
-"1483
-[u S54 `S55 1 ]
-[n S54 . . ]
-"1495
-[v _TRISBbits `VS54 ~T0 @X0 0 e@134 ]
-"1546
-[s S57 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S57 . TRISC0 TRISC1 TRISC2 TRISC3 TRISC4 TRISC5 TRISC6 TRISC7 ]
-"1545
-[u S56 `S57 1 ]
-[n S56 . . ]
-"1557
-[v _TRISCbits `VS56 ~T0 @X0 0 e@135 ]
-"1602
-[v _TRISD `Vuc ~T0 @X0 0 e@136 ]
-"1670
-[s S61 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S61 . TRISE0 TRISE1 TRISE2 TRISE3 ]
-"1669
-[u S60 `S61 1 ]
-[n S60 . . ]
-"1677
-[v _TRISEbits `VS60 ~T0 @X0 0 e@137 ]
-"290
-[v _PORTC `Vuc ~T0 @X0 0 e@7 ]
-"414
-[v _PORTE `Vuc ~T0 @X0 0 e@9 ]
-"14 C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Osc_config.h
-[v _osc_config `(v ~T0 @X0 0 ef1`uc ]
-"13 C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/ADC_CONFIG.h
-[v _ADC_config `(v ~T0 @X0 0 ef ]
-"947 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
-[s S33 :4 `uc 1 :2 `uc 1 :2 `uc 1 ]
-[n S33 . CCP1M DC1B P1M ]
-"952
-[s S34 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S34 . CCP1M0 CCP1M1 CCP1M2 CCP1M3 DC1B0 DC1B1 P1M0 P1M1 ]
-"962
-[s S35 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S35 . . CCP1Y CCP1X ]
-"946
-[u S32 `S33 1 `S34 1 `S35 1 ]
-[n S32 . . . . ]
-"968
-[v _CCP1CONbits `VS32 ~T0 @X0 0 e@23 ]
-"927
-[v _CCPR1L `Vuc ~T0 @X0 0 e@21 ]
-"1352
-[s S50 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S50 . PS PSA T0SE T0CS INTEDG nRBPU ]
-"1360
-[s S51 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S51 . PS0 PS1 PS2 ]
-"1351
-[u S49 `S50 1 `S51 1 ]
-[n S49 . . . ]
-"1366
-[v _OPTION_REGbits `VS49 ~T0 @X0 0 e@129 ]
-"2352
-[s S90 :8 `uc 1 ]
-[n S90 . WPUB ]
-"2355
-[s S91 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S91 . WPUB0 WPUB1 WPUB2 WPUB3 WPUB4 WPUB5 WPUB6 WPUB7 ]
-"2351
-[u S89 `S90 1 `S91 1 ]
-[n S89 . . . ]
-"2366
-[v _WPUBbits `VS89 ~T0 @X0 0 e@149 ]
-"2422
-[s S93 :8 `uc 1 ]
-[n S93 . IOCB ]
-"2425
-[s S94 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S94 . IOCB0 IOCB1 IOCB2 IOCB3 IOCB4 IOCB5 IOCB6 IOCB7 ]
-"2421
-[u S92 `S93 1 `S94 1 ]
-[n S92 . . . ]
-"2436
-[v _IOCBbits `VS92 ~T0 @X0 0 e@150 ]
-"234
-[s S8 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S8 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
-"233
-[u S7 `S8 1 ]
-[n S7 . . ]
-"245
-[v _PORTBbits `VS7 ~T0 @X0 0 e@6 ]
-"420
-[s S14 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S14 . RE0 RE1 RE2 RE3 ]
-"419
-[u S13 `S14 1 ]
-[n S13 . . ]
-"427
-[v _PORTEbits `VS13 ~T0 @X0 0 e@9 ]
-[v F1286 `(v ~T0 @X0 1 tf1`ul ]
-"92 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\pic.h
-[v __delay `JF1286 ~T0 @X0 0 e ]
-[p i __delay ]
-"1251 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
+"2983 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
+[s S116 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S116 . . VCFG0 VCFG1 . ADFM ]
+"2982
+[u S115 `S116 1 ]
+[n S115 . . ]
+"2991
+[v _ADCON1bits `VS115 ~T0 @X0 0 e@159 ]
+"1251
 [s S45 :1 `uc 1 :1 `uc 1 :4 `uc 1 :2 `uc 1 ]
 [n S45 . ADON GO_nDONE CHS ADCS ]
 "1257
@@ -163,62 +24,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S44 . . . . . ]
 "1276
 [v _ADCON0bits `VS44 ~T0 @X0 0 e@31 ]
-"1238
-[v _ADRESH `Vuc ~T0 @X0 0 e@30 ]
-"2970
-[v _ADRESL `Vuc ~T0 @X0 0 e@158 ]
-"15 C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c
-[p x FOSC=INTRC_NOCLKOUT ]
-"16
-[p x WDTE=OFF ]
-"17
-[p x PWRTE=OFF ]
-"18
-[p x MCLRE=OFF ]
-"19
-[p x CP=OFF ]
-"20
-[p x CPD=OFF ]
-"21
-[p x BOREN=OFF ]
-"22
-[p x IESO=OFF ]
-"23
-[p x FCMEN=OFF ]
-"24
-[p x LVP=OFF ]
-"27
-[p x BOR4V=BOR40V ]
-"28
-[p x WRT=OFF ]
-[; ;stdint.h: 13: typedef signed char int8_t;
-[; ;stdint.h: 20: typedef signed int int16_t;
-[; ;stdint.h: 28: typedef __int24 int24_t;
-[; ;stdint.h: 36: typedef signed long int int32_t;
-[; ;stdint.h: 52: typedef unsigned char uint8_t;
-[; ;stdint.h: 58: typedef unsigned int uint16_t;
-[; ;stdint.h: 65: typedef __uint24 uint24_t;
-[; ;stdint.h: 72: typedef unsigned long int uint32_t;
-[; ;stdint.h: 88: typedef signed char int_least8_t;
-[; ;stdint.h: 96: typedef signed int int_least16_t;
-[; ;stdint.h: 109: typedef __int24 int_least24_t;
-[; ;stdint.h: 118: typedef signed long int int_least32_t;
-[; ;stdint.h: 136: typedef unsigned char uint_least8_t;
-[; ;stdint.h: 143: typedef unsigned int uint_least16_t;
-[; ;stdint.h: 154: typedef __uint24 uint_least24_t;
-[; ;stdint.h: 162: typedef unsigned long int uint_least32_t;
-[; ;stdint.h: 181: typedef signed char int_fast8_t;
-[; ;stdint.h: 188: typedef signed int int_fast16_t;
-[; ;stdint.h: 200: typedef __int24 int_fast24_t;
-[; ;stdint.h: 208: typedef signed long int int_fast32_t;
-[; ;stdint.h: 224: typedef unsigned char uint_fast8_t;
-[; ;stdint.h: 230: typedef unsigned int uint_fast16_t;
-[; ;stdint.h: 240: typedef __uint24 uint_fast24_t;
-[; ;stdint.h: 247: typedef unsigned long int uint_fast32_t;
-[; ;stdint.h: 268: typedef int32_t intmax_t;
-[; ;stdint.h: 282: typedef uint32_t uintmax_t;
-[; ;stdint.h: 289: typedef int16_t intptr_t;
-[; ;stdint.h: 294: typedef uint16_t uintptr_t;
+[v F1258 `(v ~T0 @X0 1 tf1`ul ]
+"92 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\pic.h
+[v __delay `JF1258 ~T0 @X0 0 e ]
+[p i __delay ]
+[; ;xc8\pic\include\xc.h: 18: extern const char __xc8_OPTIM_SPEED;
+[; ;xc8\pic\include\xc.h: 20: extern double __fpnormalize(double);
+[; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;xc8\pic\include\proc\pic16f887.h: 52: extern volatile unsigned char INDF __at(0x000);
 "54 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [; ;xc8\pic\include\proc\pic16f887.h: 54: asm("INDF equ 00h");
@@ -1689,9 +1501,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;xc8\pic\include\proc\pic16f887.h: 4676: extern volatile __bit nTX8 __at(0x4C6);
 [; ;xc8\pic\include\proc\pic16f887.h: 4679: extern volatile __bit nW __at(0x4A2);
 [; ;xc8\pic\include\proc\pic16f887.h: 4682: extern volatile __bit nWRITE __at(0x4A2);
-[; ;xc8\pic\include\xc.h: 18: extern const char __xc8_OPTIM_SPEED;
-[; ;xc8\pic\include\xc.h: 20: extern double __fpnormalize(double);
-[; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;xc8\pic\include\pic.h: 31: extern void __nop(void);
 [; ;xc8\pic\include\pic.h: 78: __attribute__((__unsupported__("The " "FLASH_READ" " macro function is no longer supported. Please use the MPLAB X MCC."))) unsigned char __flash_read(unsigned short addr);
 [; ;xc8\pic\include\pic.h: 80: __attribute__((__unsupported__("The " "FLASH_WRITE" " macro function is no longer supported. Please use the MPLAB X MCC."))) void __flash_write(unsigned short addr, unsigned short data);
@@ -1703,312 +1512,65 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;xc8\pic\include\pic.h: 137: extern __bank0 unsigned char __resetbits;
 [; ;xc8\pic\include\pic.h: 138: extern __bank0 __bit __powerdown;
 [; ;xc8\pic\include\pic.h: 139: extern __bank0 __bit __timeout;
-[; ;Osc_config.h: 14: void osc_config(uint8_t freq);
-[; ;UART_CONFIG.h: 17: void uart_config(void);
+[; ;stdint.h: 13: typedef signed char int8_t;
+[; ;stdint.h: 20: typedef signed int int16_t;
+[; ;stdint.h: 28: typedef __int24 int24_t;
+[; ;stdint.h: 36: typedef signed long int int32_t;
+[; ;stdint.h: 52: typedef unsigned char uint8_t;
+[; ;stdint.h: 58: typedef unsigned int uint16_t;
+[; ;stdint.h: 65: typedef __uint24 uint24_t;
+[; ;stdint.h: 72: typedef unsigned long int uint32_t;
+[; ;stdint.h: 88: typedef signed char int_least8_t;
+[; ;stdint.h: 96: typedef signed int int_least16_t;
+[; ;stdint.h: 109: typedef __int24 int_least24_t;
+[; ;stdint.h: 118: typedef signed long int int_least32_t;
+[; ;stdint.h: 136: typedef unsigned char uint_least8_t;
+[; ;stdint.h: 143: typedef unsigned int uint_least16_t;
+[; ;stdint.h: 154: typedef __uint24 uint_least24_t;
+[; ;stdint.h: 162: typedef unsigned long int uint_least32_t;
+[; ;stdint.h: 181: typedef signed char int_fast8_t;
+[; ;stdint.h: 188: typedef signed int int_fast16_t;
+[; ;stdint.h: 200: typedef __int24 int_fast24_t;
+[; ;stdint.h: 208: typedef signed long int int_fast32_t;
+[; ;stdint.h: 224: typedef unsigned char uint_fast8_t;
+[; ;stdint.h: 230: typedef unsigned int uint_fast16_t;
+[; ;stdint.h: 240: typedef __uint24 uint_fast24_t;
+[; ;stdint.h: 247: typedef unsigned long int uint_fast32_t;
+[; ;stdint.h: 268: typedef int32_t intmax_t;
+[; ;stdint.h: 282: typedef uint32_t uintmax_t;
+[; ;stdint.h: 289: typedef int16_t intptr_t;
+[; ;stdint.h: 294: typedef uint16_t uintptr_t;
 [; ;ADC_CONFIG.h: 13: void ADC_config(void);
-"52 C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c
-[v _antirrebote `uc ~T0 @X0 1 e ]
-[v _botonazo `uc ~T0 @X0 1 e ]
-[; ;Main_motores.c: 52: unsigned char antirrebote, botonazo;
-"53
-[v _conversion1 `uc ~T0 @X0 1 e ]
-[v _conversion_total `uc ~T0 @X0 1 e ]
-[v _temperatura_aprox `uc ~T0 @X0 1 e ]
-[; ;Main_motores.c: 53: unsigned char conversion1, conversion_total, temperatura_aprox;
-[; ;Main_motores.c: 57: void setup(void);
-[; ;Main_motores.c: 58: void sensor_ultrasonico(void);
-[; ;Main_motores.c: 59: void servo(void);
-[; ;Main_motores.c: 60: void toggle_adc(void);
-[v $root$_isr `(v ~T0 @X0 0 e ]
-"64
-[v _isr `(v ~T4 @X0 1 ef ]
-"65
+"22 C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/ADC_CONFIG.c
+[v _ADC_config `(v ~T0 @X0 1 ef ]
+"23
 {
-[; ;Main_motores.c: 64: void __interrupt() isr(void)
-[; ;Main_motores.c: 65: {
-[e :U _isr ]
+[; ;ADC_CONFIG.c: 22: void ADC_config()
+[; ;ADC_CONFIG.c: 23: {
+[e :U _ADC_config ]
 [f ]
-[; ;Main_motores.c: 67: if (INTCONbits.RBIF)
-"67
-[e $ ! != -> . . _INTCONbits 0 0 `i -> -> -> 0 `i `Vuc `i 139  ]
-[; ;Main_motores.c: 68: {
-"68
-{
-[; ;Main_motores.c: 69: if (PORTB==0b11111101)
-"69
-[e $ ! == -> _PORTB `i -> 253 `i 140  ]
-[; ;Main_motores.c: 70: antirrebote=1;
-"70
-[e = _antirrebote -> -> 1 `i `uc ]
-[e $U 141  ]
-"71
-[e :U 140 ]
-[; ;Main_motores.c: 71: else
-[; ;Main_motores.c: 72: antirrebote=0;
-"72
-[e = _antirrebote -> -> 0 `i `uc ]
-[e :U 141 ]
-[; ;Main_motores.c: 73: INTCONbits.RBIF=0;
-"73
-[e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
-"74
-}
-[e :U 139 ]
-[; ;Main_motores.c: 74: }
-[; ;Main_motores.c: 77: }
-"77
+[; ;ADC_CONFIG.c: 25: ADCON1bits.ADFM = 1 ;
+"25
+[e = . . _ADCON1bits 0 4 -> -> 1 `i `uc ]
+[; ;ADC_CONFIG.c: 26: ADCON1bits.VCFG0 = 0 ;
+"26
+[e = . . _ADCON1bits 0 1 -> -> 0 `i `uc ]
+[; ;ADC_CONFIG.c: 27: ADCON1bits.VCFG1 = 0 ;
+"27
+[e = . . _ADCON1bits 0 2 -> -> 0 `i `uc ]
+[; ;ADC_CONFIG.c: 29: ADCON0bits.ADCS = 0b00;
+"29
+[e = . . _ADCON0bits 0 3 -> -> 0 `i `uc ]
+[; ;ADC_CONFIG.c: 30: ADCON0bits.CHS = 0;
+"30
+[e = . . _ADCON0bits 0 2 -> -> 0 `i `uc ]
+[; ;ADC_CONFIG.c: 31: _delay((unsigned long)((100)*(8000000/4000000.0)));
+"31
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+[; ;ADC_CONFIG.c: 32: ADCON0bits.ADON = 1 ;
+"32
+[e = . . _ADCON0bits 0 0 -> -> 1 `i `uc ]
+[; ;ADC_CONFIG.c: 33: }
+"33
 [e :UE 138 ]
-}
-[v $root$_main `(v ~T0 @X0 0 e ]
-"81
-[v _main `(v ~T0 @X0 1 ef ]
-"82
-{
-[; ;Main_motores.c: 81: void main(void)
-[; ;Main_motores.c: 82: {
-[e :U _main ]
-[f ]
-[; ;Main_motores.c: 83: setup();
-"83
-[e ( _setup ..  ]
-[; ;Main_motores.c: 85: while(1)
-"85
-[e :U 144 ]
-[; ;Main_motores.c: 86: {
-"86
-{
-[; ;Main_motores.c: 88: servo();
-"88
-[e ( _servo ..  ]
-[; ;Main_motores.c: 90: toggle_adc();
-"90
-[e ( _toggle_adc ..  ]
-[; ;Main_motores.c: 91: temperatura_aprox=(conversion_total/2.046);
-"91
-[e = _temperatura_aprox -> / -> _conversion_total `d .2.046 `uc ]
-[; ;Main_motores.c: 92: PORTD=temperatura_aprox;
-"92
-[e = _PORTD _temperatura_aprox ]
-"94
-}
-[e :U 143 ]
-"85
-[e $U 144  ]
-[e :U 145 ]
-[; ;Main_motores.c: 94: }
-[; ;Main_motores.c: 96: }
-"96
-[e :UE 142 ]
-}
-"100
-[v _setup `(v ~T0 @X0 1 ef ]
-"101
-{
-[; ;Main_motores.c: 100: void setup(void)
-[; ;Main_motores.c: 101: {
-[e :U _setup ]
-[f ]
-[; ;Main_motores.c: 103: ANSEL=0;
-"103
-[e = _ANSEL -> -> 0 `i `uc ]
-[; ;Main_motores.c: 104: ANSELH=0;
-"104
-[e = _ANSELH -> -> 0 `i `uc ]
-[; ;Main_motores.c: 105: ANSELbits.ANS0=1;
-"105
-[e = . . _ANSELbits 0 0 -> -> 1 `i `uc ]
-[; ;Main_motores.c: 107: TRISDbits.TRISD0=0;
-"107
-[e = . . _TRISDbits 0 0 -> -> 0 `i `uc ]
-[; ;Main_motores.c: 108: TRISBbits.TRISB1=1;
-"108
-[e = . . _TRISBbits 0 1 -> -> 1 `i `uc ]
-[; ;Main_motores.c: 109: TRISCbits.TRISC2=0;
-"109
-[e = . . _TRISCbits 0 2 -> -> 0 `i `uc ]
-[; ;Main_motores.c: 110: TRISD=0;
-"110
-[e = _TRISD -> -> 0 `i `uc ]
-[; ;Main_motores.c: 111: TRISEbits.TRISE0=0;
-"111
-[e = . . _TRISEbits 0 0 -> -> 0 `i `uc ]
-[; ;Main_motores.c: 114: PORTB=0;
-"114
-[e = _PORTB -> -> 0 `i `uc ]
-[; ;Main_motores.c: 115: PORTC=0;
-"115
-[e = _PORTC -> -> 0 `i `uc ]
-[; ;Main_motores.c: 116: PORTD=0;
-"116
-[e = _PORTD -> -> 0 `i `uc ]
-[; ;Main_motores.c: 117: PORTE=0;
-"117
-[e = _PORTE -> -> 0 `i `uc ]
-[; ;Main_motores.c: 119: osc_config(8);
-"119
-[e ( _osc_config (1 -> -> 8 `i `uc ]
-[; ;Main_motores.c: 121: ADC_config();
-"121
-[e ( _ADC_config ..  ]
-[; ;Main_motores.c: 123: TRISCbits.TRISC2=1;
-"123
-[e = . . _TRISCbits 0 2 -> -> 1 `i `uc ]
-[; ;Main_motores.c: 124: CCP1CONbits.P1M = 0;
-"124
-[e = . . _CCP1CONbits 0 2 -> -> 0 `i `uc ]
-[; ;Main_motores.c: 125: CCP1CONbits.CCP1M = 0b1100;
-"125
-[e = . . _CCP1CONbits 0 0 -> -> 12 `i `uc ]
-[; ;Main_motores.c: 126: CCPR1L = 0x0f ;
-"126
-[e = _CCPR1L -> -> 15 `i `uc ]
-[; ;Main_motores.c: 127: CCP1CONbits.DC1B = 0;
-"127
-[e = . . _CCP1CONbits 0 1 -> -> 0 `i `uc ]
-[; ;Main_motores.c: 128: TRISCbits.TRISC2=0;
-"128
-[e = . . _TRISCbits 0 2 -> -> 0 `i `uc ]
-[; ;Main_motores.c: 133: OPTION_REGbits.nRBPU=0;
-"133
-[e = . . _OPTION_REGbits 0 5 -> -> 0 `i `uc ]
-[; ;Main_motores.c: 134: WPUBbits.WPUB1=1;
-"134
-[e = . . _WPUBbits 1 1 -> -> 1 `i `uc ]
-[; ;Main_motores.c: 138: INTCONbits.GIE=1;
-"138
-[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-[; ;Main_motores.c: 139: INTCONbits.PEIE = 1;
-"139
-[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-[; ;Main_motores.c: 140: INTCONbits.RBIE=1;
-"140
-[e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
-[; ;Main_motores.c: 141: INTCONbits.RBIF=0;
-"141
-[e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
-[; ;Main_motores.c: 142: IOCBbits.IOCB1=1;
-"142
-[e = . . _IOCBbits 1 1 -> -> 1 `i `uc ]
-[; ;Main_motores.c: 143: }
-"143
-[e :UE 146 ]
-}
-"147
-[v _servo `(v ~T0 @X0 1 ef ]
-"148
-{
-[; ;Main_motores.c: 147: void servo(void)
-[; ;Main_motores.c: 148: {
-[e :U _servo ]
-[f ]
-[; ;Main_motores.c: 150: if (antirrebote==1 && PORTBbits.RB1==0 )
-"150
-[e $ ! && == -> _antirrebote `i -> 1 `i == -> . . _PORTBbits 0 1 `i -> 0 `i 148  ]
-[; ;Main_motores.c: 151: {
-"151
-{
-[; ;Main_motores.c: 152: botonazo++;
-"152
-[e ++ _botonazo -> -> 1 `i `uc ]
-[; ;Main_motores.c: 153: antirrebote=0;
-"153
-[e = _antirrebote -> -> 0 `i `uc ]
-"154
-}
-[e :U 148 ]
-[; ;Main_motores.c: 154: }
-[; ;Main_motores.c: 156: switch(botonazo)
-"156
-[e $U 150  ]
-[; ;Main_motores.c: 157: {
-"157
-{
-[; ;Main_motores.c: 158: case(0):
-"158
-[e :U 151 ]
-[; ;Main_motores.c: 159: PORTEbits.RE0=1;
-"159
-[e = . . _PORTEbits 0 0 -> -> 1 `i `uc ]
-[; ;Main_motores.c: 160: _delay((unsigned long)((1)*(8000000/4000.0)));
-"160
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-[; ;Main_motores.c: 161: PORTEbits.RE0=0;
-"161
-[e = . . _PORTEbits 0 0 -> -> 0 `i `uc ]
-[; ;Main_motores.c: 162: break;
-"162
-[e $U 149  ]
-[; ;Main_motores.c: 163: case(1):
-"163
-[e :U 152 ]
-[; ;Main_motores.c: 164: PORTEbits.RE0=1;
-"164
-[e = . . _PORTEbits 0 0 -> -> 1 `i `uc ]
-[; ;Main_motores.c: 165: _delay((unsigned long)((2)*(8000000/4000.0)));
-"165
-[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-[; ;Main_motores.c: 166: PORTEbits.RE0=0;
-"166
-[e = . . _PORTEbits 0 0 -> -> 0 `i `uc ]
-[; ;Main_motores.c: 167: break;
-"167
-[e $U 149  ]
-[; ;Main_motores.c: 168: case(2):
-"168
-[e :U 153 ]
-[; ;Main_motores.c: 169: botonazo=0;
-"169
-[e = _botonazo -> -> 0 `i `uc ]
-[; ;Main_motores.c: 170: break;
-"170
-[e $U 149  ]
-"171
-}
-[; ;Main_motores.c: 171: }
-[e $U 149  ]
-"156
-[e :U 150 ]
-[e [\ _botonazo , $ -> -> 0 `i `uc 151
- , $ -> -> 1 `i `uc 152
- , $ -> -> 2 `i `uc 153
- 149 ]
-"171
-[e :U 149 ]
-[; ;Main_motores.c: 172: }
-"172
-[e :UE 147 ]
-}
-"174
-[v _toggle_adc `(v ~T0 @X0 1 ef ]
-"175
-{
-[; ;Main_motores.c: 174: void toggle_adc(void)
-[; ;Main_motores.c: 175: {
-[e :U _toggle_adc ]
-[f ]
-[; ;Main_motores.c: 176: if (ADCON0bits.GO==0)
-"176
-[e $ ! == -> . . _ADCON0bits 1 1 `i -> 0 `i 155  ]
-[; ;Main_motores.c: 177: {
-"177
-{
-[; ;Main_motores.c: 178: conversion1=ADRESH<<8;
-"178
-[e = _conversion1 -> << -> _ADRESH `i -> 8 `i `uc ]
-[; ;Main_motores.c: 179: conversion_total=conversion1+ADRESL;
-"179
-[e = _conversion_total -> + -> _conversion1 `i -> _ADRESL `i `uc ]
-[; ;Main_motores.c: 180: _delay((unsigned long)((1)*(8000000/4000.0)));
-"180
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-[; ;Main_motores.c: 181: ADCON0bits.GO=1;
-"181
-[e = . . _ADCON0bits 1 1 -> -> 1 `i `uc ]
-"182
-}
-[e :U 155 ]
-[; ;Main_motores.c: 182: }
-[; ;Main_motores.c: 183: }
-"183
-[e :UE 154 ]
 }

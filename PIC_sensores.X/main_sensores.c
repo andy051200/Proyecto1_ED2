@@ -49,7 +49,7 @@ Descripcion:
 //-------VARIABLES DE PROGRAMA
 unsigned char antirrebote;
 unsigned char infrarrojo1, infrarrojo2, infrarrojo3, suma_ir;
-unsigned char conversion1, conversion_total, temperatura_aprox;
+float conversion1, conversion_total, temperatura_aprox;
 /*-----------------------------------------------------------------------------
  ------------------------ PROTOTIPOS DE FUNCIONES ------------------------------
  -----------------------------------------------------------------------------*/
@@ -91,7 +91,7 @@ void main(void)
         //-------FUNCION PARA CONTROL DE SENSORES INFRARROJOS
         infrarrojos();
         //-------prueba de sensor de temperatura
-        temperatura();
+        temperatura_aprox=(conversion_total/2.046);
         PORTC=temperatura_aprox;
     }
    
@@ -174,7 +174,7 @@ void infrarrojos(void)
         infrarrojo3=0;
     }
     suma_ir=infrarrojo1+infrarrojo2+infrarrojo3;
-    switch(suma_ir)
+    /*switch(suma_ir)
     {
         default:
             PORTC=0;
@@ -191,7 +191,7 @@ void infrarrojos(void)
         case(3):
             PORTC=suma_ir;
             break;
-    }
+    }*/
 }
 //-------FUNCION PARA CONVERSION DEL ADC
 void toggle_adc(void)
@@ -208,7 +208,9 @@ void toggle_adc(void)
 //-------FUNCION PARA MAPEO DE TEMPERATURA  
 void temperatura(void)
 {
-    if (conversion_total>0 && conversion_total <2.046)
+    temperatura_aprox=(conversion_total/2.046);
+
+    /*if (conversion_total==0 && conversion_total <2.046)
         temperatura_aprox=0;
     else if (conversion_total>2.046 && conversion_total<4.092)
         temperatura_aprox=1;
@@ -310,6 +312,6 @@ void temperatura(void)
         temperatura_aprox=49;
     else 
         temperatura_aprox=50;
-            
+            */
     //return temperatura_aprox;
 }

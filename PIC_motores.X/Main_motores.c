@@ -39,7 +39,7 @@ Descripcion:
 #include <proc/pic16f887.h>
 #include "Osc_config.h"
 #include "UART_CONFIG.h"
-
+#include "ADC_CONFIG.h"
 /*-----------------------------------------------------------------------------
  ----------------------- VARIABLES A IMPLEMTENTAR------------------------------
  -----------------------------------------------------------------------------*/
@@ -49,24 +49,15 @@ Descripcion:
 #define PinEcho PORTAbits.RA1   //Pin RA1 conectado al Pin Echo. (entrada digital)
 #define PinTrig PORTAbits.RA0   //Pin RA0 conectado al Pin Trig. (salida digital)
 //-------VARIABLES DE PROGRAMA
-unsigned char antirrebote;
-unsigned char botonazo;
-unsigned int hc04;
-unsigned char sensorOn;
-unsigned int duracion;         
-unsigned int distancia;
-unsigned int T1H;
-unsigned int T1L;
-unsigned int distancia;       //Variable distancia.
-unsigned int anterior;        //Variable anterios.
-unsigned int dismax;          //Variable dis_max.
-unsigned int dismin;          //Variable dis_min.
-unsigned int talanquera;
+unsigned char antirrebote, botonazo;        //variables para control servo
+unsigned char conversion1, conversion_total, temperatura_aprox;
 /*-----------------------------------------------------------------------------
  ------------------------ PROTOTIPOS DE FUNCIONES ------------------------------
  -----------------------------------------------------------------------------*/
 void setup(void);
 void sensor_ultrasonico(void);
+void servo(void);
+void toggle_adc(void);
 /*-----------------------------------------------------------------------------
  --------------------------- INTERRUPCIONES -----------------------------------
  -----------------------------------------------------------------------------*/
@@ -81,7 +72,6 @@ void __interrupt() isr(void) //funcion de interrupciones
             antirrebote=0;
         INTCONbits.RBIF=0;
     }
-    //-------INTERRUPCION POR TIMER0
     
     
 }
@@ -94,41 +84,13 @@ void main(void)
     
     while(1)
     {
-        //-------ANTIRREBOTE DE BOTON
-        if (antirrebote==1 && PORTBbits.RB1==0  )
-        {
-            botonazo++;
-            //PORTD=botonazo;
-            antirrebote=0;
-        }
-        //-------FUNCIONAMIENTO DEL SENSOR
-        switch(botonazo)
-        {
-            case(0):                //servo en posicion de 0°
-                PORTDbits.RD0=1;
-                __delay_ms(1);
-                PORTDbits.RD0=0;
-                break;
-            case(1):                //servo en posicion 90°
-                PORTDbits.RD0=1;
-                __delay_ms(2);
-                PORTDbits.RD0=0;
-                break;
-            case(2):
-                botonazo=0;
-                break;
-        }
-        
-        //sensor_ultrasonico();
-        //PORTCbits.RC1=talanquera;
-        
-        /*distancia=ObtenerDistancia();   //todo el timepo estará midiendo
-        dismax=anterior+2;              //tomar un rango maximo 
-        dismin=anterior-2;              //tomar un rango minimo
-        
-        if((distancia>=dismin)&&(distancia<=dismax))
-        distancia=anterior;
-        anterior=distancia;  */
+        //-------FUNCION PARA SERVO CON BOTONAZO
+        servo();
+        //-------FUNCIONES PARA RECEPCION DE CONVERSION ADC
+        toggle_adc();
+        temperatura_aprox=(conversion_total/2.046);
+        PORTD=temperatura_aprox;
+
     }
    
 }
@@ -140,14 +102,14 @@ void setup(void)
     //-------CONFIGURACION ENTRADAS ANALOGICAS
     ANSEL=0;
     ANSELH=0;
+    ANSELbits.ANS0=1;
     //-------CONFIGURACION IN/OUT
     TRISDbits.TRISD0=0;
-    TRISC=0;
-    TRISBbits.TRISB0=1;                 //entrada boton prueba
     TRISBbits.TRISB1=1;                 //entrada boton prueba
+    TRISCbits.TRISC2=0;                 //salida de PWM de motor DC
+    TRISD=0;
     TRISEbits.TRISE0=0;                 //salida para PWM de servo
-    TRISEbits.TRISE1=0;                 //salida para PWM de servo
-   
+    
     //-------LIMPIEZA DE PUERTOS
     PORTB=0;
     PORTC=0;
@@ -155,64 +117,67 @@ void setup(void)
     PORTE=0;
     //-------CONFIGURACION DE RELOJ A 4MHz
     osc_config(8);
-    //-------CONFIGURACION DE TIMER0
-    OPTION_REGbits.T0CS = 0;    //Uso reloj interno
-    OPTION_REGbits.PSA = 0;     //Uso pre-escaler
-    OPTION_REGbits.PS = 0b111;  //PS = 111 / 1:256
-    TMR0 = 78;                  //Reinicio del timmer
+    //-------CONFIGURACION DEL ADC
+    ADC_config();
+    //-------CONFIGURACION DE CCP
+    TRISCbits.TRISC2=1;         // a motor se desconecta
+    CCP1CONbits.P1M = 0;        //
+    CCP1CONbits.CCP1M = 0b1100; // se configura como modo PWM
+    CCPR1L = 0x0f ;             // ciclo de trabajo inicial de la onda cuadrada
+    CCP1CONbits.DC1B = 0;       // LSB para ciclo de trabajo
+    TRISCbits.TRISC2=0;
+    p
+    
+    
     //-------CONFIGURACION DE WPUB
     OPTION_REGbits.nRBPU=0;             //se activan WPUB
     WPUBbits.WPUB1=1;                   //RB0, boton prueba
-    //-------CONFIGURACION DE COMUNICACION UART
-    uart_config();
-    //-------CONFIGURACION DEL TIMER1
-    T1CONbits.T1CKPS=0x00;      //Configuramos un Pre-escaler para el timer1 de 1
-    T1CONbits.nT1SYNC=1;        //No sincronizado con la fuente de reloj externa.
-    T1CONbits.TMR1CS=0;         //Configuramos el Reloj Interno 4/Fosc
-    T1CONbits.TMR1ON=0;         //Inicialmente el Timer1 inicia deshabilitado.
-        
+    //-------CONFIGURACION DE COMUNICACION I2C
+      
     //-------CONFIGURACION DE INTERRUPCIONES
-    INTCONbits.GIE=1;           //se habilita interrupciones globales
-    INTCONbits.PEIE = 1;        //habilitan interrupciones por perifericos
-    //INTCONbits.T0IE=1;          //se habilita interrupcion timer0
-    //INTCONbits.T0IF=0;          //se baja bandera de timer0
-    INTCONbits.RBIE=1;          //se  habilita IntOnChange B
-    INTCONbits.RBIF=0;          //se  apaga bandera IntOnChange B
-    IOCBbits.IOCB1=1;           //habilita IOCB RB0
+    INTCONbits.GIE=1;                   //se habilita interrupciones globales
+    INTCONbits.PEIE = 1;                //habilitan interrupciones por perifericos
+    INTCONbits.RBIE=1;                  //se  habilita IntOnChange B
+    INTCONbits.RBIF=0;                  //se  apaga bandera IntOnChange B
+    IOCBbits.IOCB1=1;                   //habilita IOCB RB0
 }
 /*-----------------------------------------------------------------------------
  --------------------------------- FUNCIONES ----------------------------------
  -----------------------------------------------------------------------------*/
-void sensor_ultrasonico(void)
-{   
-    PinTrig=1;                  //se da secuencia inicial de trigger
-    __delay_us(10); 
-    PinTrig=0;                  //off de secuencia inicial
-    
-    while(PinEcho==0);
-    T1CONbits.TMR1ON=1;         //Activamos el Timer1 como temporizador.
-    while(PinEcho==1);
-    T1CONbits.TMR1ON=0;         //Deshabilitamos el Timer1 como temporizador.
-    T1L=TMR1L;                  //Almacenamos los 8 bits menos significativos del Timer1 en T1L.
-    T1H=TMR1H;                  //Almacenamos los 8 bits mas significativos del Timer1 en T1H.
-    duracion=(T1L|(T1H<<8));    
-    if (duracion > 232 && duracion<250)    //232/58 = 4 cm y mayor a 2cm
-        talanquera=1;
-    else                        
-        talanquera=0;
-    
-    duracion=0;                 //se reunicia la variable
-    TMR1L=0;                    //se reinicia el almacenamiento de timer1
-    TMR1H=0;                    //se reinicia el almacenamiento de timer1
-    
-   /* 
-    if(duracion<=23200)         //El sensor Ultrasónico llega como máximo a 4 metros 
-    distancia=(duracion/58);    //23200/58 = 400cm
-    else if (duracion<116)      //116/58 = 2 cm
-    distancia=0;
-    else distancia=0;
-    duracion=0;
-    TMR1L=0;
-    TMR1H=0;*/
-    //return distancia;
+void servo(void)
+{
+    //-------ANTIRREBOTE DE BOTON PARA MOVER MOTOR
+    if (antirrebote==1 && PORTBbits.RB1==0  )
+    {
+        botonazo++;
+        antirrebote=0;
+    }
+    //-------FUNCIONAMIENTO DE SERVO DE TALANQUERA
+    switch(botonazo)
+    {
+        case(0):                //servo en posicion de 0°
+            PORTEbits.RE0=1;
+            __delay_ms(1);
+            PORTEbits.RE0=0;
+            break;
+        case(1):                //servo en posicion 90°
+            PORTEbits.RE0=1;    
+            __delay_ms(2);
+            PORTEbits.RE0=0;
+            break;
+        case(2):
+            botonazo=0;         //regresa a posicion 0°
+            break;
+    }
+}
+
+void toggle_adc(void)
+{
+    if (ADCON0bits.GO==0)
+    {
+        conversion1=ADRESH<<8;                  //toma los MSB del ADRE
+        conversion_total=conversion1+ADRESL;    //le suma los LSB
+        __delay_ms(1);                          //tiempo de carga
+        ADCON0bits.GO=1;
+    }
 }
