@@ -2920,7 +2920,7 @@ const char* conver(void){
 const char* conver1(void)
 {
     char temporal[16];
-    temporal[0] = NUM;
+    temporal[0] = C1;
     temporal[1] = C2;
     temporal[2] = C3;
     temporal[3] = 0x2E;
@@ -2981,13 +2981,13 @@ void LECT1(void){
         DH = 0x30;
         UH = num_ascii(HORA);
         if (HORA<7){
-            PORTBbits.RB0 = 1;
-            PORTBbits.RB1 = 1;
+            PORTDbits.RD0 = 1;
+            PORTDbits.RD1 = 1;
             CERRADO = 1;
         }
         else{
-            PORTBbits.RB0 = 0;
-            PORTBbits.RB1 = 0;
+            PORTDbits.RD0 = 0;
+            PORTDbits.RD1 = 0;
             if (DIA!=7){
                 CERRADO = 0;
             }
@@ -3001,20 +3001,20 @@ void LECT1(void){
             CERRADO = 0;
         }
         if (con>7){
-            PORTBbits.RB0 = 1;
-            PORTBbits.RB1 = 1;
+            PORTDbits.RD0 = 1;
+            PORTDbits.RD1 = 1;
         }
         else{
-            PORTBbits.RB0 = 0;
-            PORTBbits.RB1 = 0;
+            PORTDbits.RD0 = 0;
+            PORTDbits.RD1 = 0;
         }
     }
     else{
         DH = 0x32;
         con = HORA-32;
         UH = num_ascii(con);
-        PORTBbits.RB0 = 1;
-        PORTBbits.RB1 = 1;
+        PORTDbits.RD0 = 1;
+        PORTDbits.RD1 = 1;
         if (con>1){
             CERRADO = 1;
         }

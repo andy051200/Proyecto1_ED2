@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.32 build 20210201212658 
-                                                                                               Mon Aug 23 13:49:17 2021
+                                                                                               Mon Aug 23 14:07:54 2021
 
 Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1 
      1                           	processor	16F887
@@ -550,7 +550,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    536  0013                     _SSPBUF	set	19
    537  0014                     _SSPCON	set	20
    538  0009                     _PORTEbits	set	9
-   539  0006                     _PORTBbits	set	6
+   539  0008                     _PORTDbits	set	8
    540  0008                     _PORTD	set	8
    541  0006                     _PORTB	set	6
    542  0005                     _PORTA	set	5
@@ -2830,10 +2830,10 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2657                           
   2658                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 2
       +                          37:     char temporal[16];;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_
-      +                          maestro.X/main_mastre.c: 238:     temporal[0] = NUM;
+      +                          maestro.X/main_mastre.c: 238:     temporal[0] = C1;
   2659  0260  1283               	bcf	3,5	;RP0=0, select bank0
   2660  0261  1303               	bcf	3,6	;RP1=0, select bank0
-  2661  0262  0846               	movf	_NUM,w
+  2661  0262  0840               	movf	_C1,w
   2662  0263  00A2               	movwf	??_conver1
   2663  0264  0822               	movf	??_conver1,w
   2664  0265  00A5               	movwf	conver1@temporal
@@ -3976,11 +3976,11 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   3740  0F53                     l1560:
   3741                           
   3742                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c: 4: 
-      +                              PORTD = a;
+      +                              PORTB = a;
   3743  0F53  0870               	movf	Lcd_Port@a,w
   3744  0F54  1283               	bcf	3,5	;RP0=0, select bank0
   3745  0F55  1303               	bcf	3,6	;RP1=0, select bank0
-  3746  0F56  0088               	movwf	8	;volatile
+  3746  0F56  0086               	movwf	6	;volatile
   3747  0F57                     l150:
   3748  0F57  0008               	return
   3749  0F58                     __end_of_Lcd_Port:
@@ -4333,12 +4333,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   4062  0519                     l2004:
   4063                           
   4064                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 2
-      +                          99:             PORTBbits.RB0 = 1;
-  4065  0519  1406               	bsf	6,0	;volatile
+      +                          99:             PORTDbits.RD0 = 1;
+  4065  0519  1408               	bsf	8,0	;volatile
   4066                           
   4067                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 3
-      +                          00:             PORTBbits.RB1 = 1;
-  4068  051A  1486               	bsf	6,1	;volatile
+      +                          00:             PORTDbits.RD1 = 1;
+  4068  051A  1488               	bsf	8,1	;volatile
   4069                           
   4070                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 3
       +                          01:             CERRADO = 1;
@@ -4354,12 +4354,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   4078                           
   4079                           
   4080                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 3
-      +                          04:             PORTBbits.RB0 = 0;
-  4081  051E  1006               	bcf	6,0	;volatile
+      +                          04:             PORTDbits.RD0 = 0;
+  4081  051E  1008               	bcf	8,0	;volatile
   4082                           
   4083                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 3
-      +                          05:             PORTBbits.RB1 = 0;
-  4084  051F  1086               	bcf	6,1	;volatile
+      +                          05:             PORTDbits.RD1 = 0;
+  4084  051F  1088               	bcf	8,1	;volatile
   4085  0520                     l2006:
   4086                           
   4087                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 3
@@ -4447,12 +4447,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   4161  054F                     l2024:
   4162                           
   4163                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 3
-      +                          19:             PORTBbits.RB0 = 1;
-  4164  054F  1406               	bsf	6,0	;volatile
+      +                          19:             PORTDbits.RD0 = 1;
+  4164  054F  1408               	bsf	8,0	;volatile
   4165                           
   4166                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 3
-      +                          20:             PORTBbits.RB1 = 1;
-  4167  0550  1486               	bsf	6,1	;volatile
+      +                          20:             PORTDbits.RD1 = 1;
+  4167  0550  1488               	bsf	8,1	;volatile
   4168                           
   4169                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 3
       +                          21:         }
@@ -4463,12 +4463,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   4173                           
   4174                           
   4175                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 3
-      +                          23:             PORTBbits.RB0 = 0;
-  4176  0552  1006               	bcf	6,0	;volatile
+      +                          23:             PORTDbits.RD0 = 0;
+  4176  0552  1008               	bcf	8,0	;volatile
   4177                           
   4178                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 3
-      +                          24:             PORTBbits.RB1 = 0;
-  4179  0553  1086               	bcf	6,1	;volatile
+      +                          24:             PORTDbits.RD1 = 0;
+  4179  0553  1088               	bcf	8,1	;volatile
   4180  0554  2D7B               	goto	l2044
   4181  0555                     l2026:
   4182                           
@@ -4501,13 +4501,13 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   4206  0569                     l2032:
   4207                           
   4208                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 3
-      +                          31:         PORTBbits.RB0 = 1;
-  4209  0569  1406               	bsf	6,0	;volatile
+      +                          31:         PORTDbits.RD0 = 1;
+  4209  0569  1408               	bsf	8,0	;volatile
   4210  056A                     l2034:
   4211                           
   4212                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 3
-      +                          32:         PORTBbits.RB1 = 1;
-  4213  056A  1486               	bsf	6,1	;volatile
+      +                          32:         PORTDbits.RD1 = 1;
+  4213  056A  1488               	bsf	8,1	;volatile
   4214  056B                     l2036:
   4215                           
   4216                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 3
@@ -5221,7 +5221,7 @@ DATA                 0      0      36      12        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.32 build 20210201212658 
-Symbol Table                                                                                   Mon Aug 23 13:49:17 2021
+Symbol Table                                                                                   Mon Aug 23 14:07:54 2021
 
                        _C1 0040                         _C2 003F                         _C3 003E  
                        _DH 003C                         _DM 003A                         l95 046A  
@@ -5416,7 +5416,7 @@ __size_of_Lcd_Write_String 0021     __end_of_Lcd_Set_Cursor 1000                
                _osc_config 0046          __end_of_num_ascii 00F4  __size_of_I2C_Master_Start 0009  
 __size_of_I2C_Master_Write 000A            ___lldiv@divisor 0070            ___lldiv@counter 007D  
          I2C_Master_Init@c 0020           I2C_Master_Read@a 0070                  Lcd_Port@a 0070  
-                _PORTBbits 0006                  _PORTEbits 0009                  _TRISCbits 0087  
+                _PORTDbits 0008                  _PORTEbits 0009                  _TRISCbits 0087  
           ?_Lcd_Write_Char 0070          Lcd_Write_String@a 0076          Lcd_Write_String@i 0074  
          _Lcd_Write_String 0FBB             __end_of_conver 0138        start_initialization 07F3  
         __size_of_Lcd_Init 0019          __size_of_Lcd_Port 0006          ??_I2C_Master_Init 0024  

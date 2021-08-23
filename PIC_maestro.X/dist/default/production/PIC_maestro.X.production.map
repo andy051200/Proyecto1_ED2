@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files\Microchip\xc8\v2.32\pic\dat\en_msgs.txt -cn \
   -h+dist/default/production\PIC_maestro.X.production.sym \
   --cmf=dist/default/production\PIC_maestro.X.production.cmf -z -Q16F887 \
-  -oC:\Users\ANDYBO~1\AppData\Local\Temp\xcAs3cs.4 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\ANDYBO~1\AppData\Local\Temp\xcAs7q4.4 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/PIC_maestro.X.production.map -E1 \
   -ver=XC8 Compiler --acfsm=1493 -ASTACK=0110h-016Fh -pstack=STACK \
   -ACODE=00h-07FFhx4 -ASTRCODE=00h-01FFFh -ASTRING=00h-0FFhx32 \
@@ -18,7 +18,7 @@ Linker command line:
   -AEEDATA=00h-0FFh/02100h -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 \
   -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 \
   -preset_vec=00h,intentry,init,end_init -ppowerup=CODE -pcinit=CODE \
-  -pfunctab=ENTRY -k C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs3cs.o \
+  -pfunctab=ENTRY -k C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs7q4.o \
   dist/default/production\PIC_maestro.X.production.o 
 
 Object code version is 3.11
@@ -28,7 +28,7 @@ Machine type is 16F887
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs3cs.o
+C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs7q4.o
                 end_init                              0        0        3        0       0
                 config                             2007     2007        2        0       4
 dist/default/production\PIC_maestro.X.production.o
@@ -243,8 +243,8 @@ _PARKH                     bssBANK0     0047
 _PEIE                      (abs)        005E
 _PORTA                     (abs)        0005
 _PORTB                     (abs)        0006
-_PORTBbits                 (abs)        0006
 _PORTD                     (abs)        0008
+_PORTDbits                 (abs)        0008
 _PORTEbits                 (abs)        0009
 _SSPADD                    (abs)        0093
 _SSPBUF                    (abs)        0013

@@ -116,7 +116,7 @@ __size_of_I2C_Master_Wait 0 0 ABS 0
 __size_of_I2C_Master_Init 0 0 ABS 0
 __size_of_I2C_Master_Stop 0 0 ABS 0
 _TRISCbits 87 0 ABS 0
-_PORTBbits 6 0 ABS 0
+_PORTDbits 8 0 ABS 0
 __Hstrings 0 0 ABS 0
 __Lstrings 0 0 ABS 0
 _PORTEbits 9 0 ABS 0
@@ -284,7 +284,7 @@ clrtext 1EB0 1EBF CODE 1EB0 0
 text19 1EA4 1EAF CODE 1EA4 0
 %locals
 dist/default/production\PIC_maestro.X.production.o
-C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs3cs.s
+C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs7q4.s
 1144 7F3 0 CODE 0
 1147 7F3 0 CODE 0
 1221 7F3 0 CODE 0
