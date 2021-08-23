@@ -2603,15 +2603,46 @@ void uart_config(void);
 # 13 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/ADC_CONFIG.h"
 void ADC_config(void);
 
-# 52 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c"
+# 29 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/I2C.h"
+void I2C_Master_Init(const unsigned long c);
+
+# 37
+void I2C_Master_Wait(void);
+
+
+
+void I2C_Master_Start(void);
+
+
+
+void I2C_Master_RepeatedStart(void);
+
+
+
+void I2C_Master_Stop(void);
+
+# 55
+void I2C_Master_Write(unsigned d);
+
+
+
+
+unsigned short I2C_Master_Read(unsigned short a);
+
+
+
+void I2C_Slave_Init(uint8_t address);
+
+# 51 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c"
 unsigned char antirrebote, botonazo;
 unsigned char conversion1, conversion_total, temperatura_aprox;
+uint8_t z = 0, motor_recibido, BASURA;
 
 # 57
 void setup(void);
-void sensor_ultrasonico(void);
 void servo(void);
 void toggle_adc(void);
+void temp(void);
 
 # 64
 void __interrupt() isr(void)
@@ -2626,10 +2657,42 @@ antirrebote=0;
 INTCONbits.RBIF=0;
 }
 
+if(PIR1bits.SSPIF == 1){
+
+SSPCONbits.CKP = 0;
+
+if ((SSPCONbits.SSPOV) || (SSPCONbits.WCOL)){
+motor_recibido = SSPBUF;
+SSPCONbits.SSPOV = 0;
+SSPCONbits.WCOL = 0;
+SSPCONbits.CKP = 1;
+}
+
+if(!SSPSTATbits.D_nA && !SSPSTATbits.R_nW)
+{
+motor_recibido= SSPBUF;
+PIR1bits.SSPIF = 0;
+SSPCONbits.CKP = 1;
+while(!SSPSTATbits.BF);
+motor_recibido = SSPBUF;
+_delay((unsigned long)((200)*(8000000/4000000.0)));
+
+}
+else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
+motor_recibido = SSPBUF;
+BF = 0;
+SSPBUF = temperatura_aprox;
+SSPCONbits.CKP = 1;
+_delay((unsigned long)((200)*(8000000/4000000.0)));
+while(SSPSTATbits.BF);
+}
+
+PIR1bits.SSPIF = 0;
+}
 
 }
 
-# 81
+# 113
 void main(void)
 {
 setup();
@@ -2640,14 +2703,14 @@ while(1)
 servo();
 
 toggle_adc();
-temperatura_aprox=(conversion_total/2.046);
-PORTD=temperatura_aprox;
+
+temp();
 
 }
 
 }
 
-# 100
+# 132
 void setup(void)
 {
 
@@ -2676,15 +2739,12 @@ CCP1CONbits.P1M = 0;
 CCP1CONbits.CCP1M = 0b1100;
 CCPR1L = 0x0f ;
 CCP1CONbits.DC1B = 0;
-TRISCbits.TRISC2=0;
-
-
 
 
 OPTION_REGbits.nRBPU=0;
 WPUBbits.WPUB1=1;
 
-
+I2C_Slave_Init(0x60);
 
 INTCONbits.GIE=1;
 INTCONbits.PEIE = 1;
@@ -2693,7 +2753,7 @@ INTCONbits.RBIF=0;
 IOCBbits.IOCB1=1;
 }
 
-# 147
+# 177
 void servo(void)
 {
 
@@ -2730,4 +2790,14 @@ conversion_total=conversion1+ADRESL;
 _delay((unsigned long)((1)*(8000000/4000.0)));
 ADCON0bits.GO=1;
 }
+}
+
+void temp(void)
+{
+temperatura_aprox=(conversion_total/2.046);
+
+if (temperatura_aprox>28 && temperatura_aprox <50)
+TRISCbits.TRISC2=0;
+else
+TRISCbits.TRISC2=1;
 }

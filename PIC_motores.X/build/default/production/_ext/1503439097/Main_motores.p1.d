@@ -11,5 +11,6 @@ C:/Users/Andy\ Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/UART_CON
 C:/Program\ Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/xc.h  \
 C:/Program\ Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/htc.h  \
 C:/Program\ Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f887.h  \
+C:/Users/Andy\ Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/I2C.h  \
 C:/Program\ Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/__at.h  \
 C:/Users/Andy\ Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Osc_config.h 

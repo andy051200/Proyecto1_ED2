@@ -2657,24 +2657,98 @@ void osc_config(uint8_t freq);
 # 13 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/ADC_CONFIG.h"
 void ADC_config(void);
 # 41 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c" 2
-# 50 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c"
+
+# 1 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/I2C.h" 1
+# 20 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/I2C.h"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdint.h" 1 3
+# 20 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/I2C.h" 2
+# 29 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/I2C.h"
+void I2C_Master_Init(const unsigned long c);
+
+
+
+
+
+
+
+void I2C_Master_Wait(void);
+
+
+
+void I2C_Master_Start(void);
+
+
+
+void I2C_Master_RepeatedStart(void);
+
+
+
+void I2C_Master_Stop(void);
+
+
+
+
+
+void I2C_Master_Write(unsigned d);
+
+
+
+
+unsigned short I2C_Master_Read(unsigned short a);
+
+
+
+void I2C_Slave_Init(uint8_t address);
+# 42 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c" 2
+# 51 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c"
 unsigned char antirrebote;
 unsigned char infrarrojo1, infrarrojo2, infrarrojo3, suma_ir;
 float conversion1, conversion_total, temperatura_aprox;
+uint8_t abierto_cerrado, BASURA, PARQUEO;
 
 
 
 void setup(void);
 void infrarrojos(void);
-void toggle_adc(void);
-void temperatura(void);
-
 
 
 
 void __attribute__((picinterrupt(("")))) isr(void)
 {
-# 78 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c"
+
+    if(PIR1bits.SSPIF == 1){
+
+        SSPCONbits.CKP = 0;
+
+        if ((SSPCONbits.SSPOV) || (SSPCONbits.WCOL)){
+            abierto_cerrado = SSPBUF;
+            SSPCONbits.SSPOV = 0;
+            SSPCONbits.WCOL = 0;
+            SSPCONbits.CKP = 1;
+        }
+
+        if(!SSPSTATbits.D_nA && !SSPSTATbits.R_nW)
+        {
+            abierto_cerrado = SSPBUF;
+            PIR1bits.SSPIF = 0;
+            SSPCONbits.CKP = 1;
+            while(!SSPSTATbits.BF);
+            BASURA = SSPBUF;
+            _delay((unsigned long)((200)*(8000000/4000000.0)));
+
+        }
+        else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
+            abierto_cerrado = SSPBUF;
+            BF = 0;
+            SSPBUF = suma_ir;
+            SSPCONbits.CKP = 1;
+            _delay((unsigned long)((200)*(8000000/4000000.0)));
+            while(SSPSTATbits.BF);
+        }
+
+        PIR1bits.SSPIF = 0;
+    }
+
 }
 
 
@@ -2687,12 +2761,9 @@ void main(void)
     while(1)
     {
 
-        toggle_adc();
 
         infrarrojos();
 
-        temperatura_aprox=(conversion_total/2.046);
-        PORTC=temperatura_aprox;
     }
 
 }
@@ -2723,7 +2794,7 @@ void setup(void)
 
     ADC_config();
 
-
+    I2C_Slave_Init(0x50);
 
 
 
@@ -2774,7 +2845,7 @@ void infrarrojos(void)
         infrarrojo3=0;
     }
     suma_ir=infrarrojo1+infrarrojo2+infrarrojo3;
-# 195 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c"
+
 }
 
 void toggle_adc(void)
@@ -2786,11 +2857,4 @@ void toggle_adc(void)
         _delay((unsigned long)((1)*(8000000/4000.0)));
         ADCON0bits.GO=1;
     }
-}
-
-
-void temperatura(void)
-{
-    temperatura_aprox=(conversion_total/2.046);
-# 317 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c"
 }

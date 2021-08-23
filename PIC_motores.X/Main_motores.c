@@ -40,24 +40,24 @@ Descripcion:
 #include "Osc_config.h"
 #include "UART_CONFIG.h"
 #include "ADC_CONFIG.h"
+#include "I2C.h"
 /*-----------------------------------------------------------------------------
  ----------------------- VARIABLES A IMPLEMTENTAR------------------------------
  -----------------------------------------------------------------------------*/
 
 //-------DIRECTIVAS DEL COMPILADOR
 #define _XTAL_FREQ 8000000
-#define PinEcho PORTAbits.RA1   //Pin RA1 conectado al Pin Echo. (entrada digital)
-#define PinTrig PORTAbits.RA0   //Pin RA0 conectado al Pin Trig. (salida digital)
 //-------VARIABLES DE PROGRAMA
 unsigned char antirrebote, botonazo;        //variables para control servo
 unsigned char conversion1, conversion_total, temperatura_aprox;
+uint8_t z = 0, motor_recibido, BASURA; 
 /*-----------------------------------------------------------------------------
  ------------------------ PROTOTIPOS DE FUNCIONES ------------------------------
  -----------------------------------------------------------------------------*/
 void setup(void);
-void sensor_ultrasonico(void);
 void servo(void);
 void toggle_adc(void);
+void temp(void);
 /*-----------------------------------------------------------------------------
  --------------------------- INTERRUPCIONES -----------------------------------
  -----------------------------------------------------------------------------*/
@@ -72,7 +72,39 @@ void __interrupt() isr(void) //funcion de interrupciones
             antirrebote=0;
         INTCONbits.RBIF=0;
     }
-    
+    //-------INTERRUPCION POR I2C
+    if(PIR1bits.SSPIF == 1){    //Le va a mandar la cantidad de parqueos habilitados al master
+
+        SSPCONbits.CKP = 0;
+       
+        if ((SSPCONbits.SSPOV) || (SSPCONbits.WCOL)){
+            motor_recibido = SSPBUF;                 // Read the previous value to clear the buffer
+            SSPCONbits.SSPOV = 0;       // Clear the overflow flag
+            SSPCONbits.WCOL = 0;        // Clear the collision bit
+            SSPCONbits.CKP = 1;         // Enables SCL (Clock)
+        }
+
+        if(!SSPSTATbits.D_nA && !SSPSTATbits.R_nW) 
+        {
+            motor_recibido= SSPBUF;                 // Lectura del SSBUF para limpiar el buffer y la bandera BF
+            PIR1bits.SSPIF = 0;         // Limpia bandera de interrupci n recepci n/transmisi n SSP
+            SSPCONbits.CKP = 1;         // Habilita entrada de pulsos de reloj SCL
+            while(!SSPSTATbits.BF);     // Esperar a que la recepci n se complete
+            motor_recibido = SSPBUF;             // Guardar en z el valor del buffer de recepci n
+            __delay_us(200);
+            
+        }
+        else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
+            motor_recibido = SSPBUF;
+            BF = 0;
+            SSPBUF = temperatura_aprox;     //se manda le temperatura
+            SSPCONbits.CKP = 1;
+            __delay_us(200);
+            while(SSPSTATbits.BF);
+        }
+       
+        PIR1bits.SSPIF = 0;    
+    }
     
 }
 /*-----------------------------------------------------------------------------
@@ -88,8 +120,9 @@ void main(void)
         servo();
         //-------FUNCIONES PARA RECEPCION DE CONVERSION ADC
         toggle_adc();
-        temperatura_aprox=(conversion_total/2.046);
-        PORTD=temperatura_aprox;
+        //-------FUNCIONES PARA 
+        temp();
+        while())
 
     }
    
@@ -125,15 +158,12 @@ void setup(void)
     CCP1CONbits.CCP1M = 0b1100; // se configura como modo PWM
     CCPR1L = 0x0f ;             // ciclo de trabajo inicial de la onda cuadrada
     CCP1CONbits.DC1B = 0;       // LSB para ciclo de trabajo
-    TRISCbits.TRISC2=0;
-    p
-    
-    
+    //TRISCbits.TRISC2=0;
     //-------CONFIGURACION DE WPUB
     OPTION_REGbits.nRBPU=0;             //se activan WPUB
     WPUBbits.WPUB1=1;                   //RB0, boton prueba
     //-------CONFIGURACION DE COMUNICACION I2C
-      
+    I2C_Slave_Init(0x60);               //se da direccion 0x50         
     //-------CONFIGURACION DE INTERRUPCIONES
     INTCONbits.GIE=1;                   //se habilita interrupciones globales
     INTCONbits.PEIE = 1;                //habilitan interrupciones por perifericos
@@ -144,6 +174,7 @@ void setup(void)
 /*-----------------------------------------------------------------------------
  --------------------------------- FUNCIONES ----------------------------------
  -----------------------------------------------------------------------------*/
+//-------FUNCION PARA FUNCION DE SERVO/TALANQUERA
 void servo(void)
 {
     //-------ANTIRREBOTE DE BOTON PARA MOVER MOTOR
@@ -170,7 +201,7 @@ void servo(void)
             break;
     }
 }
-
+//-------FUNCION PARA RECEPCION DEL ADC
 void toggle_adc(void)
 {
     if (ADCON0bits.GO==0)
@@ -180,4 +211,14 @@ void toggle_adc(void)
         __delay_ms(1);                          //tiempo de carga
         ADCON0bits.GO=1;
     }
+}
+//-------FUNCION PARA CONVERSION DE TEMPERATURA
+void temp(void)
+{
+    temperatura_aprox=(conversion_total/2.046);
+    //PORTD=temperatura_aprox;
+    if (temperatura_aprox>28 && temperatura_aprox <50)
+        TRISCbits.TRISC2=0;
+    else
+        TRISCbits.TRISC2=1;
 }
