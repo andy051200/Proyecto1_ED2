@@ -1,7 +1,7 @@
 #include "lcd_pablo.h"
 
 void Lcd_Port(char a) {
-    PORTB = a;
+    PORTD = a;
 }
 
 void Lcd_Cmd(char a) {

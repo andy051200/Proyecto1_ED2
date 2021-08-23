@@ -19,7 +19,7 @@ _NUM 46 0 BANK0 1
 __Hintentry 0 0 CODE 0
 __Lintentry 0 0 CODE 0
 __end_of_Lcd_Write_String FDC 0 CODE 0
-_Lcd_Write_Char 4 0 CODE 0
+_Lcd_Write_Char 3 0 CODE 0
 __end_of___awdiv 260 0 CODE 0
 _con 38 0 BANK0 1
 osc_config@freq 72 0 COMMON 1
@@ -50,7 +50,7 @@ wtemp0 7E 0 ABS 0
 __Hconfig 2009 0 CONFIG 4
 __Lconfig 0 0 CONFIG 4
 __end_of_Lcd_Init FBB 0 CODE 0
-_I2C_Master_Stop F6A 0 CODE 0
+_I2C_Master_Stop F69 0 CODE 0
 ?___awmod 79 0 COMMON 1
 __Hram 0 0 ABS 0
 __Lram 0 0 ABS 0
@@ -71,7 +71,7 @@ _SSPADD 93 0 ABS 0
 ___int_sp 0 0 STACK 2
 ?___lldiv 70 0 COMMON 1
 ?___awdiv 70 0 COMMON 1
-_Lcd_Port F53 0 CODE 0
+_Lcd_Port F52 0 CODE 0
 _BASURA 45 0 BANK0 1
 _ANSELH 189 0 ABS 0
 _SSPBUF 13 0 ABS 0
@@ -94,13 +94,13 @@ _Lcd_Write_String FBB 0 CODE 0
 __end_of___awmod 193 0 CODE 0
 __Hcode 0 0 ABS 0
 __Lcode 0 0 ABS 0
-__end_of_I2C_Master_Wait F8A 0 CODE 0
+__end_of_I2C_Master_Wait F89 0 CODE 0
 __HcstackBANK0 0 0 ABS 0
 __LcstackBANK0 0 0 ABS 0
 __pcstackBANK0 20 0 BANK0 1
 __end_of_I2C_Master_Init B5 0 CODE 0
 ___awmod@sign 21 0 BANK0 1
-__end_of_I2C_Master_Stop F73 0 CODE 0
+__end_of_I2C_Master_Stop F72 0 CODE 0
 __Hinit 0 0 CODE 0
 __Linit 0 0 CODE 0
 _conver F4 0 CODE 0
@@ -140,12 +140,12 @@ _conver1 260 0 CODE 0
 _SSPCON2bits 91 0 ABS 0
 __ptext1 2D7 0 CODE 0
 __ptext2 46 0 CODE 0
-__ptext3 F73 0 CODE 0
-__ptext4 F6A 0 CODE 0
-__ptext5 F61 0 CODE 0
+__ptext3 F72 0 CODE 0
+__ptext4 F69 0 CODE 0
+__ptext5 F60 0 CODE 0
 __size_of_I2C_Master_Write 0 0 ABS 0
 __ptext6 18 0 CODE 0
-__ptext7 F7D 0 CODE 0
+__ptext7 F7C 0 CODE 0
 Lcd_Set_Cursor@a 76 0 COMMON 1
 __ptext8 7D 0 CODE 0
 __ptext9 193 0 CODE 0
@@ -155,7 +155,7 @@ _osc_config 46 0 CODE 0
 __end_of__initialization 7FC 0 CODE 0
 Lcd_Write_String@a 76 0 COMMON 1
 Lcd_Write_String@i 74 0 COMMON 1
-_Lcd_Cmd F8A 0 CODE 0
+_Lcd_Cmd F89 0 CODE 0
 Lcd_Set_Cursor@temp 77 0 COMMON 1
 __Hstack 0 0 STACK 2
 __Lstack 0 0 STACK 2
@@ -182,11 +182,11 @@ __end_of_Lcd_Set_Cursor 1000 0 CODE 0
 __Hspace_4 4010 0 ABS 0
 __size_of_Lcd_Set_Cursor 0 0 ABS 0
 __Lspace_4 0 0 ABS 0
-clear_ram0 F59 0 CODE 0
+clear_ram0 F58 0 CODE 0
 __HbssBANK0 0 0 ABS 0
 __LbssBANK0 0 0 ABS 0
 __pbssBANK0 37 0 BANK0 1
-_I2C_Master_Start F61 0 CODE 0
+_I2C_Master_Start F60 0 CODE 0
 __end_of_conver1 2D7 0 CODE 0
 __ptext10 260 0 CODE 0
 __ptext20 46B 0 CODE 0
@@ -197,12 +197,12 @@ __ptext13 F4 0 CODE 0
 __size_of___awdiv 0 0 ABS 0
 __ptext14 FBB 0 CODE 0
 I2C_Master_Read@a 70 0 COMMON 1
-__ptext15 4 0 CODE 0
+__ptext15 3 0 CODE 0
 __ptext16 FDC 0 CODE 0
 __ptext17 FA2 0 CODE 0
 ___awmod@divisor 79 0 COMMON 1
-__ptext18 F8A 0 CODE 0
-__ptext19 F53 0 CODE 0
+__ptext18 F89 0 CODE 0
+__ptext19 F52 0 CODE 0
 __size_of_num_ascii 0 0 ABS 0
 _OSCCONbits 8F 0 ABS 0
 I2C_Master_Read@temp 74 0 COMMON 1
@@ -218,17 +218,17 @@ __end_of_setup 46B 0 CODE 0
 __Hreset_vec 0 0 CODE 0
 __Lreset_vec 0 0 CODE 0
 __size_of_LECT1 0 0 ABS 0
-_I2C_Master_Write F73 0 CODE 0
+_I2C_Master_Write F72 0 CODE 0
 intlevel0 0 0 ENTRY 0
 intlevel1 0 0 ENTRY 0
-__end_of_I2C_Master_Write F7D 0 CODE 0
+__end_of_I2C_Master_Write F7C 0 CODE 0
 intlevel2 0 0 ENTRY 0
 intlevel3 0 0 ENTRY 0
 intlevel4 0 0 ENTRY 0
-__end_of_Lcd_Port F59 0 CODE 0
+__end_of_Lcd_Port F58 0 CODE 0
 intlevel5 0 0 ENTRY 0
 __size_of_Lcd_Port 0 0 ABS 0
-_I2C_Master_Wait F7D 0 CODE 0
+_I2C_Master_Wait F7C 0 CODE 0
 __size_of_Lcd_Write_Char 0 0 ABS 0
 __HcstackCOMMON 0 0 ABS 0
 __LcstackCOMMON 0 0 ABS 0
@@ -237,7 +237,7 @@ __end_of_LECT1 619 0 CODE 0
 start_initialization 7F3 0 CODE 0
 ___lldiv@quotient 79 0 COMMON 1
 ___awdiv@quotient 77 0 COMMON 1
-__end_of_I2C_Master_Start F6A 0 CODE 0
+__end_of_I2C_Master_Start F69 0 CODE 0
 _I2C_Master_Init 7D 0 CODE 0
 __Hmaintext 0 0 ABS 0
 __Lmaintext 0 0 ABS 0
@@ -256,7 +256,7 @@ I2C_Master_Init@c 20 0 BANK0 1
 ___lldiv@dividend 74 0 COMMON 1
 ___awdiv@dividend 72 0 COMMON 1
 %segments
-reset_vec 0 5 CODE 0 0
+reset_vec 0 2F CODE 0 0
 cinit FE6 FFF CODE FE6 0
 cstackCOMMON 70 7D COMMON 70 1
 cstackBANK0 20 47 BANK0 20 1
@@ -275,17 +275,16 @@ text6 30 8B CODE 30 0
 text16 1FB8 1FFF CODE 1FB8 0
 text14 1F76 1FB7 CODE 1F76 0
 text17 1F44 1F75 CODE 1F44 0
-text18 1F14 1F43 CODE 1F14 0
-text15 8 2F CODE 8 0
-text7 1EFA 1F13 CODE 1EFA 0
-text3 1EE6 1EF9 CODE 1EE6 0
-text4 1ED4 1EE5 CODE 1ED4 0
-text5 1EC2 1ED3 CODE 1EC2 0
-clrtext 1EB2 1EC1 CODE 1EB2 0
-text19 1EA6 1EB1 CODE 1EA6 0
+text18 1F12 1F43 CODE 1F12 0
+text7 1EF8 1F11 CODE 1EF8 0
+text3 1EE4 1EF7 CODE 1EE4 0
+text4 1ED2 1EE3 CODE 1ED2 0
+text5 1EC0 1ED1 CODE 1EC0 0
+clrtext 1EB0 1EBF CODE 1EB0 0
+text19 1EA4 1EAF CODE 1EA4 0
 %locals
 dist/default/production\PIC_maestro.X.production.o
-C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsido.s
+C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs3cs.s
 1144 7F3 0 CODE 0
 1147 7F3 0 CODE 0
 1221 7F3 0 CODE 0
@@ -296,16 +295,16 @@ C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsido.s
 1231 7FC 0 CODE 0
 1233 7FC 0 CODE 0
 1234 7FD 0 CODE 0
-1208 F59 0 CODE 0
-1209 F59 0 CODE 0
-1210 F5A 0 CODE 0
-1211 F5A 0 CODE 0
-1212 F5B 0 CODE 0
-1213 F5C 0 CODE 0
-1214 F5D 0 CODE 0
-1215 F5E 0 CODE 0
-1216 F5F 0 CODE 0
-1217 F60 0 CODE 0
+1208 F58 0 CODE 0
+1209 F58 0 CODE 0
+1210 F59 0 CODE 0
+1211 F59 0 CODE 0
+1212 F5A 0 CODE 0
+1213 F5B 0 CODE 0
+1214 F5C 0 CODE 0
+1215 F5D 0 CODE 0
+1216 F5E 0 CODE 0
+1217 F5F 0 CODE 0
 C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
 71 619 0 CODE 0
 72 619 0 CODE 0
@@ -445,18 +444,18 @@ C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/Osc_confi
 40 79 0 CODE 0
 42 7C 0 CODE 0
 C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
-65 F73 0 CODE 0
-67 F73 0 CODE 0
-68 F78 0 CODE 0
-69 F7C 0 CODE 0
-55 F6A 0 CODE 0
-57 F6A 0 CODE 0
-58 F6F 0 CODE 0
-59 F72 0 CODE 0
-39 F61 0 CODE 0
-41 F61 0 CODE 0
-42 F66 0 CODE 0
-43 F69 0 CODE 0
+65 F72 0 CODE 0
+67 F72 0 CODE 0
+68 F77 0 CODE 0
+69 F7B 0 CODE 0
+55 F69 0 CODE 0
+57 F69 0 CODE 0
+58 F6E 0 CODE 0
+59 F71 0 CODE 0
+39 F60 0 CODE 0
+41 F60 0 CODE 0
+42 F65 0 CODE 0
+43 F68 0 CODE 0
 74 18 0 CODE 0
 77 18 0 CODE 0
 78 1D 0 CODE 0
@@ -471,9 +470,9 @@ C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
 87 40 0 CODE 0
 88 41 0 CODE 0
 89 45 0 CODE 0
-32 F7D 0 CODE 0
-34 F7D 0 CODE 0
-35 F89 0 CODE 0
+32 F7C 0 CODE 0
+34 F7C 0 CODE 0
+35 F88 0 CODE 0
 16 7D 0 CODE 0
 18 7D 0 CODE 0
 19 81 0 CODE 0
@@ -629,12 +628,12 @@ C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo
 59 FBF 0 CODE 0
 59 FCC 0 CODE 0
 60 FDB 0 CODE 0
-47 4 0 CODE 0
-48 5 0 CODE 0
-49 B 0 CODE 0
-50 E 0 CODE 0
-51 F 0 CODE 0
-52 10 0 CODE 0
+47 3 0 CODE 0
+48 4 0 CODE 0
+49 A 0 CODE 0
+50 D 0 CODE 0
+51 E 0 CODE 0
+52 F 0 CODE 0
 53 14 0 CODE 0
 54 17 0 CODE 0
 20 FDC 0 CODE 0
@@ -652,17 +651,17 @@ C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo
 43 FAE 0 CODE 0
 44 FB4 0 CODE 0
 45 FBA 0 CODE 0
-7 F8A 0 CODE 0
-8 F8B 0 CODE 0
-9 F91 0 CODE 0
-10 F94 0 CODE 0
-11 F95 0 CODE 0
-12 F96 0 CODE 0
+7 F89 0 CODE 0
+8 F8A 0 CODE 0
+9 F90 0 CODE 0
+10 F93 0 CODE 0
+11 F94 0 CODE 0
+12 F95 0 CODE 0
 13 F9E 0 CODE 0
 14 FA1 0 CODE 0
-3 F53 0 CODE 0
-4 F54 0 CODE 0
-5 F58 0 CODE 0
+3 F52 0 CODE 0
+4 F53 0 CODE 0
+5 F57 0 CODE 0
 C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
 257 46B 0 CODE 0
 258 46B 0 CODE 0

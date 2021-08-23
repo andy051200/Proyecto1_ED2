@@ -2508,7 +2508,7 @@ void Lcd_Shift_Left(void);
 
 
 void Lcd_Port(char a) {
-    PORTB = a;
+    PORTD = a;
 }
 
 void Lcd_Cmd(char a) {
@@ -2516,7 +2516,7 @@ void Lcd_Cmd(char a) {
     PORTEbits.RE1 = 0;
     PORTEbits.RE2 = 0;
     PORTEbits.RE0 = 1;
-    _delay((unsigned long)((5)*(4000000/4000.0)));
+    _delay((unsigned long)((5)*(8000000/4000.0)));
     PORTEbits.RE0 = 0;
 }
 
@@ -2556,7 +2556,7 @@ void Lcd_Write_Char(char a) {
     PORTEbits.RE1 = 1;
     PORTEbits.RE2 = 0;
     PORTEbits.RE0 = 1;
-    _delay((unsigned long)((40)*(4000000/4000000.0)));
+    _delay((unsigned long)((40)*(8000000/4000000.0)));
     PORTEbits.RE0 = 0;
 }
 

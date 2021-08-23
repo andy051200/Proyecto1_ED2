@@ -159,56 +159,56 @@ void setup(void){
     I2C_Master_Init(100000);        // Inicializar Comuncaci n I2C
     
     I2C_Master_Start();     //Escritura de datos iniciales
-        I2C_Master_Write(0xD0);
-        I2C_Master_Write(0x02);
-        I2C_Master_Write(0x06);
-        I2C_Master_Stop();
-        __delay_ms(10);
-       
-        I2C_Master_Start();
-        I2C_Master_Write(0xD1);
-        BASURA = I2C_Master_Read(0);
-        I2C_Master_Stop();
-        __delay_ms(10);
+    I2C_Master_Write(0xD0);
+    I2C_Master_Write(0x02);
+    I2C_Master_Write(0x06);
+    I2C_Master_Stop();
+    __delay_ms(10);
+    
+    I2C_Master_Start();
+    I2C_Master_Write(0xD1);
+    BASURA = I2C_Master_Read(0);
+    I2C_Master_Stop();
+    __delay_ms(10);
         
-        I2C_Master_Start();
-        I2C_Master_Write(0xD0);
-        I2C_Master_Write(0x01);
-        I2C_Master_Write(0x59);
-        I2C_Master_Stop();
-        __delay_ms(10);
+    I2C_Master_Start();
+    I2C_Master_Write(0xD0);
+    I2C_Master_Write(0x01);
+    I2C_Master_Write(0x59);
+    I2C_Master_Stop();
+    __delay_ms(10);
        
-        I2C_Master_Start();
-        I2C_Master_Write(0xD1);
-        BASURA = I2C_Master_Read(0);
-        I2C_Master_Stop();
-        __delay_ms(10);
+    I2C_Master_Start();
+    I2C_Master_Write(0xD1);
+    BASURA = I2C_Master_Read(0);
+    I2C_Master_Stop();
+    __delay_ms(10);
         
-        I2C_Master_Start();
-        I2C_Master_Write(0xD0);
-        I2C_Master_Write(0x00);
-        I2C_Master_Write(0x58);
-        I2C_Master_Stop();
-        __delay_ms(10);
+    I2C_Master_Start();
+    I2C_Master_Write(0xD0);
+    I2C_Master_Write(0x00);
+    I2C_Master_Write(0x58);
+    I2C_Master_Stop();
+    __delay_ms(10);
        
-        I2C_Master_Start();
-        I2C_Master_Write(0xD1);
-        BASURA = I2C_Master_Read(0);
-        I2C_Master_Stop();
-        __delay_ms(10);
+    I2C_Master_Start();
+    I2C_Master_Write(0xD1);
+    BASURA = I2C_Master_Read(0);
+    I2C_Master_Stop();
+    __delay_ms(10);
         
-        I2C_Master_Start();
-        I2C_Master_Write(0xD0);
-        I2C_Master_Write(0x03);
-        I2C_Master_Write(0x06);
-        I2C_Master_Stop();
-        __delay_ms(10);
+    I2C_Master_Start();
+    I2C_Master_Write(0xD0);
+    I2C_Master_Write(0x03);
+    I2C_Master_Write(0x06);
+    I2C_Master_Stop();
+    __delay_ms(10);
        
-        I2C_Master_Start();
-        I2C_Master_Write(0xD1);
-        BASURA = I2C_Master_Read(0);
-        I2C_Master_Stop();
-        __delay_ms(10);
+    I2C_Master_Start();
+    I2C_Master_Write(0xD1);
+    BASURA = I2C_Master_Read(0);
+    I2C_Master_Stop();
+    __delay_ms(10);
 }
 //cadena de caracteres para linea 2 de lcd
 const char* conver(void){   //Datos que recivirá la LCD
@@ -235,7 +235,7 @@ const char* conver(void){   //Datos que recivirá la LCD
 const char* conver1(void)
 {
     char temporal[16];
-    temporal[0] = C1; //Caractéres del día
+    temporal[0] = NUM; //Caractéres del día
     temporal[1] = C2; 
     temporal[2] = C3; 
     temporal[3] = 0x2E; //.

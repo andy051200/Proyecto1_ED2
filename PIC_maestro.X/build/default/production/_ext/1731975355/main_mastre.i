@@ -2844,56 +2844,56 @@ void setup(void){
     I2C_Master_Init(100000);
 
     I2C_Master_Start();
-        I2C_Master_Write(0xD0);
-        I2C_Master_Write(0x02);
-        I2C_Master_Write(0x06);
-        I2C_Master_Stop();
-        _delay((unsigned long)((10)*(8000000/4000.0)));
+    I2C_Master_Write(0xD0);
+    I2C_Master_Write(0x02);
+    I2C_Master_Write(0x06);
+    I2C_Master_Stop();
+    _delay((unsigned long)((10)*(8000000/4000.0)));
 
-        I2C_Master_Start();
-        I2C_Master_Write(0xD1);
-        BASURA = I2C_Master_Read(0);
-        I2C_Master_Stop();
-        _delay((unsigned long)((10)*(8000000/4000.0)));
+    I2C_Master_Start();
+    I2C_Master_Write(0xD1);
+    BASURA = I2C_Master_Read(0);
+    I2C_Master_Stop();
+    _delay((unsigned long)((10)*(8000000/4000.0)));
 
-        I2C_Master_Start();
-        I2C_Master_Write(0xD0);
-        I2C_Master_Write(0x01);
-        I2C_Master_Write(0x59);
-        I2C_Master_Stop();
-        _delay((unsigned long)((10)*(8000000/4000.0)));
+    I2C_Master_Start();
+    I2C_Master_Write(0xD0);
+    I2C_Master_Write(0x01);
+    I2C_Master_Write(0x59);
+    I2C_Master_Stop();
+    _delay((unsigned long)((10)*(8000000/4000.0)));
 
-        I2C_Master_Start();
-        I2C_Master_Write(0xD1);
-        BASURA = I2C_Master_Read(0);
-        I2C_Master_Stop();
-        _delay((unsigned long)((10)*(8000000/4000.0)));
+    I2C_Master_Start();
+    I2C_Master_Write(0xD1);
+    BASURA = I2C_Master_Read(0);
+    I2C_Master_Stop();
+    _delay((unsigned long)((10)*(8000000/4000.0)));
 
-        I2C_Master_Start();
-        I2C_Master_Write(0xD0);
-        I2C_Master_Write(0x00);
-        I2C_Master_Write(0x58);
-        I2C_Master_Stop();
-        _delay((unsigned long)((10)*(8000000/4000.0)));
+    I2C_Master_Start();
+    I2C_Master_Write(0xD0);
+    I2C_Master_Write(0x00);
+    I2C_Master_Write(0x58);
+    I2C_Master_Stop();
+    _delay((unsigned long)((10)*(8000000/4000.0)));
 
-        I2C_Master_Start();
-        I2C_Master_Write(0xD1);
-        BASURA = I2C_Master_Read(0);
-        I2C_Master_Stop();
-        _delay((unsigned long)((10)*(8000000/4000.0)));
+    I2C_Master_Start();
+    I2C_Master_Write(0xD1);
+    BASURA = I2C_Master_Read(0);
+    I2C_Master_Stop();
+    _delay((unsigned long)((10)*(8000000/4000.0)));
 
-        I2C_Master_Start();
-        I2C_Master_Write(0xD0);
-        I2C_Master_Write(0x03);
-        I2C_Master_Write(0x06);
-        I2C_Master_Stop();
-        _delay((unsigned long)((10)*(8000000/4000.0)));
+    I2C_Master_Start();
+    I2C_Master_Write(0xD0);
+    I2C_Master_Write(0x03);
+    I2C_Master_Write(0x06);
+    I2C_Master_Stop();
+    _delay((unsigned long)((10)*(8000000/4000.0)));
 
-        I2C_Master_Start();
-        I2C_Master_Write(0xD1);
-        BASURA = I2C_Master_Read(0);
-        I2C_Master_Stop();
-        _delay((unsigned long)((10)*(8000000/4000.0)));
+    I2C_Master_Start();
+    I2C_Master_Write(0xD1);
+    BASURA = I2C_Master_Read(0);
+    I2C_Master_Stop();
+    _delay((unsigned long)((10)*(8000000/4000.0)));
 }
 
 const char* conver(void){
@@ -2920,7 +2920,7 @@ const char* conver(void){
 const char* conver1(void)
 {
     char temporal[16];
-    temporal[0] = C1;
+    temporal[0] = NUM;
     temporal[1] = C2;
     temporal[2] = C3;
     temporal[3] = 0x2E;

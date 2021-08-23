@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files\Microchip\xc8\v2.32\pic\dat\en_msgs.txt -cn \
   -h+dist/default/production\PIC_maestro.X.production.sym \
   --cmf=dist/default/production\PIC_maestro.X.production.cmf -z -Q16F887 \
-  -oC:\Users\ANDYBO~1\AppData\Local\Temp\xcAsido.4 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\ANDYBO~1\AppData\Local\Temp\xcAs3cs.4 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/PIC_maestro.X.production.map -E1 \
   -ver=XC8 Compiler --acfsm=1493 -ASTACK=0110h-016Fh -pstack=STACK \
   -ACODE=00h-07FFhx4 -ASTRCODE=00h-01FFFh -ASTRING=00h-0FFhx32 \
@@ -18,7 +18,7 @@ Linker command line:
   -AEEDATA=00h-0FFh/02100h -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 \
   -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 \
   -preset_vec=00h,intentry,init,end_init -ppowerup=CODE -pcinit=CODE \
-  -pfunctab=ENTRY -k C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsido.o \
+  -pfunctab=ENTRY -k C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs3cs.o \
   dist/default/production\PIC_maestro.X.production.o 
 
 Object code version is 3.11
@@ -28,7 +28,7 @@ Machine type is 16F887
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsido.o
+C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs3cs.o
                 end_init                              0        0        3        0       0
                 config                             2007     2007        2        0       4
 dist/default/production\PIC_maestro.X.production.o
@@ -36,11 +36,11 @@ dist/default/production\PIC_maestro.X.production.o
                 config                             2007     2007        2        0       4
                 text21                               B5       B5       3F      16A       0
                 text20                              46B      46B      1AE      8D6       0
-                text19                              F53      F53        6     1EA6       0
-                text18                              F8A      F8A       18     1F14       0
+                text19                              F52      F52        6     1EA4       0
+                text18                              F89      F89       19     1F12       0
                 text17                              FA2      FA2       19     1F44       0
                 text16                              FDC      FDC       24     1FB8       0
-                text15                                4        4       14        8       0
+                text15                                3        3       15        0       0
                 text14                              FBB      FBB       21     1F76       0
                 text13                               F4       F4       44      1E8       0
                 text12                              1F9      1F9       67      3F2       0
@@ -48,17 +48,17 @@ dist/default/production\PIC_maestro.X.production.o
                 text10                              260      260       77      4C0       0
                 text9                               193      193       66      326       0
                 text8                                7D       7D       38       FA       0
-                text7                               F7D      F7D        D     1EFA       0
+                text7                               F7C      F7C        D     1EF8       0
                 text6                                18       18       2E       30       0
-                text5                               F61      F61        9     1EC2       0
-                text4                               F6A      F6A        9     1ED4       0
-                text3                               F73      F73        A     1EE6       0
+                text5                               F60      F60        9     1EC0       0
+                text4                               F69      F69        9     1ED2       0
+                text3                               F72      F72        A     1EE4       0
                 text2                                46       46       37       8C       0
                 text1                               2D7      2D7      194      5AE       0
                 maintext                            619      619      1DA      C32       0
                 cstackBANK0                          20       20       17       20       1
                 cstackCOMMON                         70       70        E       70       1
-                clrtext                             F59      F59        8     1EB2       0
+                clrtext                             F58      F58        8     1EB0       0
                 bssBANK0                             37       37       11       20       1
 
 TOTAL           Name                               Link     Load   Length     Space
@@ -69,11 +69,11 @@ TOTAL           Name                               Link     Load   Length     Sp
                 cinit                               7F3      7F3        D         0
                 text21                               B5       B5       3F         0
                 text20                              46B      46B      1AE         0
-                text19                              F53      F53        6         0
-                text18                              F8A      F8A       18         0
+                text19                              F52      F52        6         0
+                text18                              F89      F89       19         0
                 text17                              FA2      FA2       19         0
                 text16                              FDC      FDC       24         0
-                text15                                4        4       14         0
+                text15                                3        3       15         0
                 text14                              FBB      FBB       21         0
                 text13                               F4       F4       44         0
                 text12                              1F9      1F9       67         0
@@ -81,15 +81,15 @@ TOTAL           Name                               Link     Load   Length     Sp
                 text10                              260      260       77         0
                 text9                               193      193       66         0
                 text8                                7D       7D       38         0
-                text7                               F7D      F7D        D         0
+                text7                               F7C      F7C        D         0
                 text6                                18       18       2E         0
-                text5                               F61      F61        9         0
-                text4                               F6A      F6A        9         0
-                text3                               F73      F73        A         0
+                text5                               F60      F60        9         0
+                text4                               F69      F69        9         0
+                text3                               F72      F72        A         0
                 text2                                46       46       37         0
                 text1                               2D7      2D7      194         0
                 maintext                            619      619      1DA         0
-                clrtext                             F59      F59        8         0
+                clrtext                             F58      F58        8         0
 
         CLASS   STRCODE        
 
@@ -136,8 +136,7 @@ TOTAL           Name                               Link     Load   Length     Sp
 
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class     Delta
 
-                reset_vec                      000000  000003  000003         0       0  CODE        2
-                text15                         000004  000014  000018         8       0  CODE        2
+                reset_vec                      000000  000018  000018         0       0  CODE        2
                 cstackBANK0                    000020  000028  000048        20       1  BANK0       1
                 text6                          000018  00002E  000046        30       0  CODE        2
                 cstackCOMMON                   000070  00000E  00007E        70       1  COMMON      1
@@ -153,13 +152,13 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
                 text20                         00046B  0001AE  000619       8D6       0  CODE        2
                 maintext                       000619  0001DA  0007F3       C32       0  CODE        2
                 cinit                          0007F3  00000D  000800       FE6       0  CODE        2
-                text19                         000F53  000006  000F59      1EA6       0  CODE        2
-                clrtext                        000F59  000008  000F61      1EB2       0  CODE        2
-                text5                          000F61  000009  000F6A      1EC2       0  CODE        2
-                text4                          000F6A  000009  000F73      1ED4       0  CODE        2
-                text3                          000F73  00000A  000F7D      1EE6       0  CODE        2
-                text7                          000F7D  00000D  000F8A      1EFA       0  CODE        2
-                text18                         000F8A  000018  000FA2      1F14       0  CODE        2
+                text19                         000F52  000006  000F58      1EA4       0  CODE        2
+                clrtext                        000F58  000008  000F60      1EB0       0  CODE        2
+                text5                          000F60  000009  000F69      1EC0       0  CODE        2
+                text4                          000F69  000009  000F72      1ED2       0  CODE        2
+                text3                          000F72  00000A  000F7C      1EE4       0  CODE        2
+                text7                          000F7C  00000D  000F89      1EF8       0  CODE        2
+                text18                         000F89  000019  000FA2      1F12       0  CODE        2
                 text17                         000FA2  000019  000FBB      1F44       0  CODE        2
                 text14                         000FBB  000021  000FDC      1F76       0  CODE        2
                 text16                         000FDC  000024  001000      1FB8       0  CODE        2
@@ -172,15 +171,12 @@ UNUSED ADDRESS RANGES
         BANK1            00A0-00EF             50           1
         BANK2            0110-016F             60           1
         BANK3            0190-01EF             60           1
-        CODE             0003-0003              1           2
-                         0800-0F52            753
+        CODE             0800-0F51            752           2
                          1000-1FFF            800
-        CONST            0003-0003              1           2
-                         0800-0F52            100
+        CONST            0800-0F51            100           2
                          1000-1FFF            100
         EEDATA           2100-21FF            100           2
-        ENTRY            0003-0003              1           2
-                         0800-0F52            100
+        ENTRY            0800-0F51            100           2
                          1000-1FFF            100
         IDLOC            2000-2003              4           2
         RAM              0048-006F             28           1
@@ -192,11 +188,9 @@ UNUSED ADDRESS RANGES
         SFR2             0100-010F             10           1
         SFR3             0180-018F             10           1
         STACK            0110-016F             60           1
-        STRCODE          0003-0003              1           2
-                         0800-0F52            753
+        STRCODE          0800-0F51            752           2
                          1000-1FFF           1000
-        STRING           0003-0003              1           2
-                         0800-0F52            100
+        STRING           0800-0F51            100           2
                          1000-1FFF            100
 
                                   Symbol Table
@@ -231,16 +225,16 @@ _GIE                       (abs)        005F
 _HORA                      bssBANK0     0043
 _I2C_Master_Init           text8        007D
 _I2C_Master_Read           text6        0018
-_I2C_Master_Start          text5        0F61
-_I2C_Master_Stop           text4        0F6A
-_I2C_Master_Wait           text7        0F7D
-_I2C_Master_Write          text3        0F73
+_I2C_Master_Start          text5        0F60
+_I2C_Master_Stop           text4        0F69
+_I2C_Master_Wait           text7        0F7C
+_I2C_Master_Write          text3        0F72
 _LECT1                     text20       046B
-_Lcd_Cmd                   text18       0F8A
+_Lcd_Cmd                   text18       0F89
 _Lcd_Init                  text17       0FA2
-_Lcd_Port                  text19       0F53
+_Lcd_Port                  text19       0F52
 _Lcd_Set_Cursor            text16       0FDC
-_Lcd_Write_Char            text15       0004
+_Lcd_Write_Char            text15       0003
 _Lcd_Write_String          text14       0FBB
 _MIN                       bssBANK0     0042
 _NUM                       bssBANK0     0046
@@ -364,14 +358,14 @@ ___stackhi                 (abs)        0000
 ___stacklo                 (abs)        0000
 __end_of_I2C_Master_Init   text8        00B5
 __end_of_I2C_Master_Read   text6        0046
-__end_of_I2C_Master_Start  text5        0F6A
-__end_of_I2C_Master_Stop   text4        0F73
-__end_of_I2C_Master_Wait   text7        0F8A
-__end_of_I2C_Master_Write  text3        0F7D
+__end_of_I2C_Master_Start  text5        0F69
+__end_of_I2C_Master_Stop   text4        0F72
+__end_of_I2C_Master_Wait   text7        0F89
+__end_of_I2C_Master_Write  text3        0F7C
 __end_of_LECT1             text20       0619
 __end_of_Lcd_Cmd           text18       0FA2
 __end_of_Lcd_Init          text17       0FBB
-__end_of_Lcd_Port          text19       0F59
+__end_of_Lcd_Port          text19       0F58
 __end_of_Lcd_Set_Cursor    text16       1000
 __end_of_Lcd_Write_Char    text15       0018
 __end_of_Lcd_Write_String  text14       0FDC
@@ -396,19 +390,19 @@ __ptext11                  text11       0138
 __ptext12                  text12       01F9
 __ptext13                  text13       00F4
 __ptext14                  text14       0FBB
-__ptext15                  text15       0004
+__ptext15                  text15       0003
 __ptext16                  text16       0FDC
 __ptext17                  text17       0FA2
-__ptext18                  text18       0F8A
-__ptext19                  text19       0F53
+__ptext18                  text18       0F89
+__ptext19                  text19       0F52
 __ptext2                   text2        0046
 __ptext20                  text20       046B
 __ptext21                  text21       00B5
-__ptext3                   text3        0F73
-__ptext4                   text4        0F6A
-__ptext5                   text5        0F61
+__ptext3                   text3        0F72
+__ptext4                   text4        0F69
+__ptext5                   text5        0F60
 __ptext6                   text6        0018
-__ptext7                   text7        0F7D
+__ptext7                   text7        0F7C
 __ptext8                   text8        007D
 __ptext9                   text9        0193
 __size_of_I2C_Master_Init  (abs)        0000
@@ -442,7 +436,7 @@ _osc_config                text2        0046
 _setup                     text1        02D7
 _temperatura               bssBANK0     0037
 btemp                      (abs)        007E
-clear_ram0                 clrtext      0F59
+clear_ram0                 clrtext      0F58
 conver1@temporal           cstackBANK0  0025
 conver@temporal            cstackBANK0  0020
 end_of_initialization      cinit        07FC
@@ -471,12 +465,12 @@ C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/Osc_confi
 C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
 		_Lcd_Write_String		CODE           	0FBB	0000	33
 		_Lcd_Init      		CODE           	0FA2	0000	25
-		_Lcd_Write_Char		CODE           	0004	0000	20
-		_Lcd_Cmd       		CODE           	0F8A	0000	24
+		_Lcd_Write_Char		CODE           	0003	0000	21
+		_Lcd_Cmd       		CODE           	0F89	0000	25
 		_Lcd_Set_Cursor		CODE           	0FDC	0000	36
-		_Lcd_Port      		CODE           	0F53	0000	6
+		_Lcd_Port      		CODE           	0F52	0000	6
 
-C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c estimated size: 144
+C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c estimated size: 146
 
 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
 		___awmod       		CODE           	0138	0000	91
@@ -504,11 +498,11 @@ C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/ASCII.c e
 
 C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
 		_I2C_Master_Read		CODE           	0018	0000	46
-		_I2C_Master_Wait		CODE           	0F7D	0000	13
+		_I2C_Master_Wait		CODE           	0F7C	0000	13
 		_I2C_Master_Init		CODE           	007D	0000	56
-		_I2C_Master_Stop		CODE           	0F6A	0000	9
-		_I2C_Master_Write		CODE           	0F73	0000	10
-		_I2C_Master_Start		CODE           	0F61	0000	9
+		_I2C_Master_Stop		CODE           	0F69	0000	9
+		_I2C_Master_Write		CODE           	0F72	0000	10
+		_I2C_Master_Start		CODE           	0F60	0000	9
 
 C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c estimated size: 143
 
