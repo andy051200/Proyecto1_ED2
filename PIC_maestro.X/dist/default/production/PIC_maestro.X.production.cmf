@@ -11,37 +11,44 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs7q4.o
-end_init CODE 0 0 0 3 2
+$C:\Users\ANDYBO~1\AppData\Local\Temp\xcAseac.o
+reset_vec CODE 0 0 0 3 2
+end_init CODE 0 10 10 3 2
 config CONFIG 4 2007 2007 2 2
 $dist/default/production\PIC_maestro.X.production.o
-cinit CODE 0 7F3 7F3 D 2
-text1 CODE 0 2D7 2D7 194 2
-text2 CODE 0 46 46 37 2
-text3 CODE 0 F72 F72 A 2
-text4 CODE 0 F69 F69 9 2
-text5 CODE 0 F60 F60 9 2
-text6 CODE 0 18 18 2E 2
-text7 CODE 0 F7C F7C D 2
-text8 CODE 0 7D 7D 38 2
-text9 CODE 0 193 193 66 2
-text10 CODE 0 260 260 77 2
-text11 CODE 0 138 138 5B 2
-text12 CODE 0 1F9 1F9 67 2
-text13 CODE 0 F4 F4 44 2
-text14 CODE 0 FBB FBB 21 2
-text15 CODE 0 3 3 15 2
-text16 CODE 0 FDC FDC 24 2
-text17 CODE 0 FA2 FA2 19 2
-text18 CODE 0 F89 F89 19 2
-text19 CODE 0 F52 F52 6 2
-text20 CODE 0 46B 46B 1AE 2
-text21 CODE 0 B5 B5 3F 2
-maintext CODE 0 619 619 1DA 2
+cinit CODE 0 13 13 D 2
+text1 CODE 0 224 224 1C9 2
+text2 CODE 0 D9C D9C 16 2
+text3 CODE 0 E96 E96 39 2
+text4 CODE 0 D92 D92 A 2
+text5 CODE 0 D89 D89 9 2
+text6 CODE 0 D80 D80 9 2
+text7 CODE 0 E64 E64 32 2
+text8 CODE 0 7F1 7F1 D 2
+text9 CODE 0 ECF ECF 3A 2
+text10 CODE 0 67D 67D 68 2
+text11 CODE 0 59B 59B 79 2
+text12 CODE 0 FA5 FA5 5B 2
+text13 CODE 0 614 614 69 2
+text14 CODE 0 7AD 7AD 44 2
+text15 CODE 0 E19 E19 25 2
+text16 CODE 0 DE4 DE4 19 2
+text17 CODE 0 E3E E3E 26 2
+text18 CODE 0 DCB DCB 19 2
+text19 CODE 0 DFD DFD 1C 2
+text20 CODE 0 D72 D72 6 2
+text21 CODE 0 3ED 3ED 1AE 2
+text22 CODE 0 F09 F09 41 2
+text23 CODE 0 DB2 DB2 19 2
+text24 CODE 0 74C 74C 61 2
+text25 CODE 0 F4A F4A 5B 2
+text26 CODE 0 6E5 6E5 67 2
+maintext CODE 0 20 20 204 2
 cstackCOMMON COMMON 1 70 70 E 1
-cstackBANK0 BANK0 1 20 20 17 1
-bssBANK0 BANK0 1 37 37 11 1
-clrtext CODE 0 F58 F58 8 2
+cstackBANK0 BANK0 1 20 20 2D 1
+intentry CODE 0 4 4 C 2
+bssBANK0 BANK0 1 4D 4D 12 1
+clrtext CODE 0 D78 D78 8 2
 config CONFIG 4 2007 2007 2 2
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
@@ -49,30 +56,35 @@ config CONFIG 4 2007 2007 2 2
 #    <class name> <range> <delta>
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
-RAM 48-6F 1
+RAM 5F-6F 1
 RAM A0-EF 1
 RAM 110-16F 1
 RAM 190-1EF 1
-BANK0 48-6F 1
+BANK0 5F-6F 1
 BANK1 A0-EF 1
 BANK2 110-16F 1
 BANK3 190-1EF 1
-CONST 800-F51 2
+CONST 3-3 2
+CONST 7FE-D71 2
 CONST 1000-1FFF 2
-ENTRY 800-F51 2
+ENTRY 3-3 2
+ENTRY 7FE-D71 2
 ENTRY 1000-1FFF 2
 IDLOC 2000-2003 2
 STACK 110-16F 1
-CODE 800-F51 2
+CODE 3-3 2
+CODE 7FE-D71 2
 CODE 1000-1FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-10F 1
 SFR3 180-18F 1
 EEDATA 2100-21FF 2
-STRCODE 800-F51 2
+STRCODE 3-3 2
+STRCODE 7FE-D71 2
 STRCODE 1000-1FFF 2
-STRING 800-F51 2
+STRING 3-3 2
+STRING 7FE-D71 2
 STRING 1000-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
@@ -88,513 +100,626 @@ STRING 1000-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\PIC_maestro.X.production.o
-7F3 cinit CODE >1144:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs7q4.s
-7F3 cinit CODE >1147:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs7q4.s
-7F3 cinit CODE >1221:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs7q4.s
-7F4 cinit CODE >1222:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs7q4.s
-7F5 cinit CODE >1223:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs7q4.s
-7F6 cinit CODE >1224:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs7q4.s
-7F7 cinit CODE >1225:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs7q4.s
-7FC cinit CODE >1231:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs7q4.s
-7FC cinit CODE >1233:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs7q4.s
-7FD cinit CODE >1234:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs7q4.s
-B5 text21 CODE >3:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/ASCII.c
-B6 text21 CODE >5:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/ASCII.c
-B7 text21 CODE >8:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/ASCII.c
-B9 text21 CODE >16:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/ASCII.c
-BB text21 CODE >20:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/ASCII.c
-BD text21 CODE >24:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/ASCII.c
-BF text21 CODE >28:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/ASCII.c
-C1 text21 CODE >32:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/ASCII.c
-C3 text21 CODE >36:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/ASCII.c
-C5 text21 CODE >40:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/ASCII.c
-C7 text21 CODE >44:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/ASCII.c
-C9 text21 CODE >48:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/ASCII.c
-CB text21 CODE >50:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/ASCII.c
-D0 text21 CODE >50:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/ASCII.c
-D5 text21 CODE >50:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/ASCII.c
-D8 text21 CODE >50:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/ASCII.c
-DB text21 CODE >50:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/ASCII.c
-DE text21 CODE >50:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/ASCII.c
-E1 text21 CODE >50:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/ASCII.c
-E4 text21 CODE >50:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/ASCII.c
-E7 text21 CODE >50:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/ASCII.c
-EA text21 CODE >50:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/ASCII.c
-ED text21 CODE >50:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/ASCII.c
-F0 text21 CODE >50:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/ASCII.c
-F3 text21 CODE >51:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/ASCII.c
-46B text20 CODE >257:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-46B text20 CODE >258:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-478 text20 CODE >259:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-47D text20 CODE >260:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-481 text20 CODE >261:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-485 text20 CODE >262:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-489 text20 CODE >263:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-48A text20 CODE >264:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-490 text20 CODE >265:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-494 text20 CODE >266:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-498 text20 CODE >267:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-49C text20 CODE >268:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-49D text20 CODE >269:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-4A3 text20 CODE >270:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-4A7 text20 CODE >271:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-4AB text20 CODE >272:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-4AF text20 CODE >273:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-4B0 text20 CODE >274:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-4B6 text20 CODE >275:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-4BA text20 CODE >276:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-4BE text20 CODE >277:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-4C2 text20 CODE >278:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-4C3 text20 CODE >279:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-4C9 text20 CODE >280:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-4CD text20 CODE >281:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-4D1 text20 CODE >282:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-4D5 text20 CODE >283:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-4D6 text20 CODE >284:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-4DC text20 CODE >285:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-4E0 text20 CODE >286:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-4E4 text20 CODE >287:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-4E8 text20 CODE >288:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-4E9 text20 CODE >289:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-4EF text20 CODE >290:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-4F3 text20 CODE >291:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-4F7 text20 CODE >292:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-4FB text20 CODE >293:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-4FE text20 CODE >294:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-4FE text20 CODE >295:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-500 text20 CODE >295:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-504 text20 CODE >296:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-508 text20 CODE >297:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-513 text20 CODE >298:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-515 text20 CODE >298:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-519 text20 CODE >299:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-51A text20 CODE >300:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-51B text20 CODE >301:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-51D text20 CODE >302:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-51E text20 CODE >303:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-51E text20 CODE >304:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-51F text20 CODE >305:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-520 text20 CODE >306:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-526 text20 CODE >307:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-528 text20 CODE >311:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-52A text20 CODE >311:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-52E text20 CODE >312:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-532 text20 CODE >313:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-537 text20 CODE >314:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-542 text20 CODE >315:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-548 text20 CODE >316:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-549 text20 CODE >318:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-54B text20 CODE >318:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-54F text20 CODE >319:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-550 text20 CODE >320:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-551 text20 CODE >321:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-552 text20 CODE >322:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-552 text20 CODE >323:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-553 text20 CODE >324:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-555 text20 CODE >328:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-559 text20 CODE >329:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-55E text20 CODE >330:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-569 text20 CODE >331:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-56A text20 CODE >332:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-56B text20 CODE >333:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-56D text20 CODE >333:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-571 text20 CODE >334:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-573 text20 CODE >335:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-574 text20 CODE >337:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-57B text20 CODE >342:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-57D text20 CODE >342:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-581 text20 CODE >343:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-585 text20 CODE >344:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-590 text20 CODE >345:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-591 text20 CODE >346:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-593 text20 CODE >346:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-597 text20 CODE >347:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-59B text20 CODE >348:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-5A0 text20 CODE >349:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-5AB text20 CODE >350:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-5AC text20 CODE >351:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-5AE text20 CODE >351:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-5B2 text20 CODE >352:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-5B6 text20 CODE >353:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-5BB text20 CODE >354:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-5C6 text20 CODE >355:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-5C7 text20 CODE >356:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-5C9 text20 CODE >356:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-5CD text20 CODE >357:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-5D1 text20 CODE >358:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-5D6 text20 CODE >359:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-5E1 text20 CODE >360:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-5E2 text20 CODE >361:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-5E4 text20 CODE >361:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-5E8 text20 CODE >362:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-5EC text20 CODE >363:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-5F1 text20 CODE >364:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-5FC text20 CODE >365:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-5FD text20 CODE >366:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-5FF text20 CODE >366:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-603 text20 CODE >367:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-607 text20 CODE >368:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-60C text20 CODE >369:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-618 text20 CODE >370:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-618 text20 CODE >371:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-F52 text19 CODE >3:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
-F53 text19 CODE >4:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
-F57 text19 CODE >5:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
-F89 text18 CODE >7:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
-F8A text18 CODE >8:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
-F90 text18 CODE >9:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
-F93 text18 CODE >10:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
-F94 text18 CODE >11:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
-F95 text18 CODE >12:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
-F9E text18 CODE >13:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
-FA1 text18 CODE >14:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
-FA2 text17 CODE >33:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
-FA2 text17 CODE >41:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
-FA8 text17 CODE >42:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
-FAE text17 CODE >43:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
-FB4 text17 CODE >44:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
-FBA text17 CODE >45:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
-FDC text16 CODE >20:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
-FDD text16 CODE >22:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
-FE2 text16 CODE >24:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
-FE7 text16 CODE >25:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
-FED text16 CODE >26:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
-FEE text16 CODE >27:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
-FF4 text16 CODE >28:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
-FF9 text16 CODE >29:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
-FFF text16 CODE >31:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
-3 text15 CODE >47:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
-4 text15 CODE >48:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
-A text15 CODE >49:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
-D text15 CODE >50:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
-E text15 CODE >51:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
-F text15 CODE >52:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
-14 text15 CODE >53:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
-17 text15 CODE >54:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
-FBB text14 CODE >56:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
-FBC text14 CODE >58:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
-FBF text14 CODE >59:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
-FCC text14 CODE >59:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
-FDB text14 CODE >60:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
-F4 text13 CODE >214:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-F4 text13 CODE >216:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-FA text13 CODE >217:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-FE text13 CODE >218:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-102 text13 CODE >219:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-106 text13 CODE >220:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-10A text13 CODE >221:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-10E text13 CODE >222:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-112 text13 CODE >223:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-116 text13 CODE >224:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-11A text13 CODE >225:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-11E text13 CODE >226:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-122 text13 CODE >227:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-126 text13 CODE >228:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-12A text13 CODE >229:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-12E text13 CODE >230:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-132 text13 CODE >231:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-136 text13 CODE >232:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-137 text13 CODE >233:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-1F9 text12 CODE >5:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
-1F9 text12 CODE >13:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
-1FA text12 CODE >14:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
-1FE text12 CODE >15:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
-201 text12 CODE >15:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
-203 text12 CODE >16:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
-205 text12 CODE >18:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
-209 text12 CODE >19:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
-20C text12 CODE >19:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
-20E text12 CODE >20:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
-212 text12 CODE >22:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
-214 text12 CODE >23:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
-21A text12 CODE >24:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
-21C text12 CODE >25:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
-21D text12 CODE >26:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
-21E text12 CODE >26:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
-222 text12 CODE >26:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
-224 text12 CODE >27:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
-228 text12 CODE >25:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
-22C text12 CODE >30:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
-22D text12 CODE >30:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
-231 text12 CODE >30:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
-233 text12 CODE >31:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
-235 text12 CODE >31:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
-239 text12 CODE >31:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
-23D text12 CODE >32:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
-240 text12 CODE >32:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
-243 text12 CODE >33:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
-244 text12 CODE >35:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
-245 text12 CODE >35:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
-249 text12 CODE >35:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
-24B text12 CODE >36:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
-251 text12 CODE >38:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
-256 text12 CODE >39:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
-259 text12 CODE >39:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
-25B text12 CODE >40:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
-25F text12 CODE >41:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
-138 text11 CODE >5:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
-138 text11 CODE >12:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
-13B text11 CODE >13:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
-13F text11 CODE >14:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
-142 text11 CODE >14:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
-144 text11 CODE >15:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
-146 text11 CODE >17:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
-14A text11 CODE >18:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
-14D text11 CODE >18:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
-14F text11 CODE >19:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
-155 text11 CODE >20:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
-157 text11 CODE >21:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
-158 text11 CODE >22:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
-159 text11 CODE >22:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
-15D text11 CODE >22:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
-15F text11 CODE >23:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
-163 text11 CODE >21:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
-167 text11 CODE >26:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
-169 text11 CODE >26:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
-16D text11 CODE >26:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
-171 text11 CODE >27:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
-174 text11 CODE >27:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
-177 text11 CODE >28:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
-178 text11 CODE >28:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
-17C text11 CODE >28:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
-17E text11 CODE >29:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
-184 text11 CODE >31:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
-189 text11 CODE >32:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
-18C text11 CODE >32:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
-18E text11 CODE >33:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
-192 text11 CODE >34:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
-260 text10 CODE >235:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-260 text10 CODE >238:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-266 text10 CODE >239:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-26A text10 CODE >240:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-26E text10 CODE >241:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-272 text10 CODE >242:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-276 text10 CODE >243:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-27A text10 CODE >244:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-27E text10 CODE >245:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-282 text10 CODE >246:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-286 text10 CODE >247:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-28A text10 CODE >248:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-28E text10 CODE >249:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-2B2 text10 CODE >250:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-2C9 text10 CODE >251:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-2CD text10 CODE >252:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-2D1 text10 CODE >253:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-2D5 text10 CODE >254:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-2D6 text10 CODE >255:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-193 text9 CODE >5:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
-193 text9 CODE >13:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
-19B text9 CODE >14:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
-19F text9 CODE >14:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
-1A3 text9 CODE >15:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
-1A5 text9 CODE >16:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
-1A6 text9 CODE >17:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
-1A8 text9 CODE >17:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
-1AF text9 CODE >18:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
-1B3 text9 CODE >16:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
-1B7 text9 CODE >21:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
-1B9 text9 CODE >21:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
-1C0 text9 CODE >22:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
-1C2 text9 CODE >22:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
-1C6 text9 CODE >22:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
-1CA text9 CODE >22:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
-1CE text9 CODE >22:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
-1D2 text9 CODE >23:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
-1D5 text9 CODE >23:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
-1D9 text9 CODE >23:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
-1DD text9 CODE >23:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
-1E0 text9 CODE >24:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
-1E1 text9 CODE >26:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
-1E2 text9 CODE >26:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
-1E8 text9 CODE >26:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
-1EA text9 CODE >27:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
-1F0 text9 CODE >29:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
-1F8 text9 CODE >30:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
-7D text8 CODE >16:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
-7D text8 CODE >18:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
-81 text8 CODE >19:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
-84 text8 CODE >20:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
-8F text8 CODE >20:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
-95 text8 CODE >20:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
-B1 text8 CODE >21:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
-B2 text8 CODE >22:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
-B3 text8 CODE >23:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
-B4 text8 CODE >24:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
-F7C text7 CODE >32:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
-F7C text7 CODE >34:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
-F88 text7 CODE >35:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
-18 text6 CODE >74:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
-18 text6 CODE >77:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
-1D text6 CODE >78:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
-20 text6 CODE >79:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
-25 text6 CODE >80:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
-2E text6 CODE >81:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
-33 text6 CODE >82:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
-39 text6 CODE >83:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
-3C text6 CODE >84:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
-3D text6 CODE >85:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
-40 text6 CODE >86:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
-40 text6 CODE >87:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
-41 text6 CODE >88:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
-45 text6 CODE >89:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
-F60 text5 CODE >39:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
-F60 text5 CODE >41:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
-F65 text5 CODE >42:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
-F68 text5 CODE >43:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
-F69 text4 CODE >55:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
-F69 text4 CODE >57:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
-F6E text4 CODE >58:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
-F71 text4 CODE >59:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
-F72 text3 CODE >65:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
-F72 text3 CODE >67:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
-F77 text3 CODE >68:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
-F7B text3 CODE >69:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
-46 text2 CODE >16:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/Osc_config.c
-47 text2 CODE >18:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/Osc_config.c
-48 text2 CODE >21:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/Osc_config.c
-4E text2 CODE >22:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/Osc_config.c
-4F text2 CODE >23:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/Osc_config.c
-50 text2 CODE >26:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/Osc_config.c
-56 text2 CODE >27:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/Osc_config.c
-57 text2 CODE >28:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/Osc_config.c
-58 text2 CODE >31:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/Osc_config.c
-5E text2 CODE >32:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/Osc_config.c
-5F text2 CODE >33:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/Osc_config.c
-60 text2 CODE >36:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/Osc_config.c
-64 text2 CODE >37:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/Osc_config.c
-65 text2 CODE >38:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/Osc_config.c
-66 text2 CODE >40:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/Osc_config.c
-6B text2 CODE >40:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/Osc_config.c
-70 text2 CODE >40:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/Osc_config.c
-73 text2 CODE >40:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/Osc_config.c
-76 text2 CODE >40:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/Osc_config.c
-79 text2 CODE >40:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/Osc_config.c
-7C text2 CODE >42:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/Osc_config.c
-2D7 text1 CODE >148:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-2D7 text1 CODE >149:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-2DA text1 CODE >150:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-2DB text1 CODE >151:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-2DE text1 CODE >152:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-2DF text1 CODE >153:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-2E0 text1 CODE >154:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-2E1 text1 CODE >155:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-2E4 text1 CODE >156:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-2E5 text1 CODE >157:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-2E6 text1 CODE >158:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-2EC text1 CODE >159:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-2FB text1 CODE >161:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-300 text1 CODE >162:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-309 text1 CODE >163:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-312 text1 CODE >164:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-31B text1 CODE >165:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-320 text1 CODE >166:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-32B text1 CODE >168:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-330 text1 CODE >169:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-339 text1 CODE >170:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-347 text1 CODE >171:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-34C text1 CODE >172:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-357 text1 CODE >174:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-35C text1 CODE >175:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-365 text1 CODE >176:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-36E text1 CODE >177:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-377 text1 CODE >178:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-37C text1 CODE >179:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-387 text1 CODE >181:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-38C text1 CODE >182:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-395 text1 CODE >183:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-3A3 text1 CODE >184:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-3A8 text1 CODE >185:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-3B3 text1 CODE >187:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-3B8 text1 CODE >188:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-3C1 text1 CODE >189:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-3C9 text1 CODE >190:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-3D2 text1 CODE >191:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-3D7 text1 CODE >192:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-3E2 text1 CODE >194:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-3E7 text1 CODE >195:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-3F0 text1 CODE >196:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-3FE text1 CODE >197:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-403 text1 CODE >198:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-40E text1 CODE >200:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-413 text1 CODE >201:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-41C text1 CODE >202:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-425 text1 CODE >203:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-42E text1 CODE >204:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-433 text1 CODE >205:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-43E text1 CODE >207:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-443 text1 CODE >208:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-44C text1 CODE >209:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-45A text1 CODE >210:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-45F text1 CODE >211:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-46A text1 CODE >212:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-619 maintext CODE >71:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-619 maintext CODE >72:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-61E maintext CODE >73:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-623 maintext CODE >76:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-62B maintext CODE >77:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-635 maintext CODE >78:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-63D maintext CODE >79:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-647 maintext CODE >80:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-64C maintext CODE >82:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-651 maintext CODE >83:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-65A maintext CODE >84:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-662 maintext CODE >85:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-667 maintext CODE >86:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-672 maintext CODE >88:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-677 maintext CODE >89:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-680 maintext CODE >90:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-68E maintext CODE >91:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-693 maintext CODE >92:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-69E maintext CODE >94:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-6A3 maintext CODE >95:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-6AC maintext CODE >96:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-6BA maintext CODE >97:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-6BF maintext CODE >98:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-6CA maintext CODE >100:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-6CF maintext CODE >101:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-6D8 maintext CODE >102:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-6E6 maintext CODE >103:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-6EB maintext CODE >104:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-6F6 maintext CODE >106:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-6FB maintext CODE >107:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-704 maintext CODE >108:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-70D maintext CODE >109:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-712 maintext CODE >110:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-71D maintext CODE >112:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-722 maintext CODE >113:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-72B maintext CODE >114:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-739 maintext CODE >115:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-73E maintext CODE >116:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-749 maintext CODE >118:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-74E maintext CODE >119:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-757 maintext CODE >120:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-760 maintext CODE >121:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-765 maintext CODE >122:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-770 maintext CODE >124:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-775 maintext CODE >125:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-77E maintext CODE >126:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-78C maintext CODE >127:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-791 maintext CODE >128:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-79C maintext CODE >130:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-7A1 maintext CODE >131:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-7AA maintext CODE >132:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-7B3 maintext CODE >133:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-7B8 maintext CODE >134:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-7C3 maintext CODE >136:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-7C8 maintext CODE >137:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-7D1 maintext CODE >138:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-7DF maintext CODE >139:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-7E4 maintext CODE >140:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-F58 clrtext CODE >1208:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs7q4.s
-F58 clrtext CODE >1209:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs7q4.s
-F59 clrtext CODE >1210:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs7q4.s
-F59 clrtext CODE >1211:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs7q4.s
-F5A clrtext CODE >1212:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs7q4.s
-F5B clrtext CODE >1213:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs7q4.s
-F5C clrtext CODE >1214:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs7q4.s
-F5D clrtext CODE >1215:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs7q4.s
-F5E clrtext CODE >1216:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs7q4.s
-F5F clrtext CODE >1217:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs7q4.s
+13 cinit CODE >1326:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAseac.s
+13 cinit CODE >1329:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAseac.s
+13 cinit CODE >1406:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAseac.s
+14 cinit CODE >1407:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAseac.s
+15 cinit CODE >1408:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAseac.s
+16 cinit CODE >1409:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAseac.s
+17 cinit CODE >1410:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAseac.s
+1C cinit CODE >1416:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAseac.s
+1C cinit CODE >1418:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAseac.s
+1D cinit CODE >1419:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAseac.s
+4 intentry CODE >75:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+6E5 text26 CODE >5:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+6E5 text26 CODE >13:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+6E6 text26 CODE >14:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+6EA text26 CODE >15:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+6ED text26 CODE >15:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+6EF text26 CODE >16:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+6F1 text26 CODE >18:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+6F5 text26 CODE >19:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+6F8 text26 CODE >19:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+6FA text26 CODE >20:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+6FE text26 CODE >22:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+700 text26 CODE >23:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+706 text26 CODE >24:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+708 text26 CODE >25:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+709 text26 CODE >26:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+70A text26 CODE >26:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+70E text26 CODE >26:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+710 text26 CODE >27:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+714 text26 CODE >25:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+718 text26 CODE >30:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+719 text26 CODE >30:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+71D text26 CODE >30:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+71F text26 CODE >31:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+721 text26 CODE >31:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+725 text26 CODE >31:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+729 text26 CODE >32:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+72C text26 CODE >32:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+72F text26 CODE >33:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+730 text26 CODE >35:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+731 text26 CODE >35:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+735 text26 CODE >35:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+737 text26 CODE >36:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+73D text26 CODE >38:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+742 text26 CODE >39:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+745 text26 CODE >39:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+747 text26 CODE >40:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+74B text26 CODE >41:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+F4A text25 CODE >5:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+F4A text25 CODE >12:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+F4D text25 CODE >13:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+F51 text25 CODE >14:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+F54 text25 CODE >14:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+F56 text25 CODE >15:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+F58 text25 CODE >17:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+F5C text25 CODE >18:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+F5F text25 CODE >18:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+F61 text25 CODE >19:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+F67 text25 CODE >20:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+F69 text25 CODE >21:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+F6A text25 CODE >22:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+F6B text25 CODE >22:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+F6F text25 CODE >22:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+F71 text25 CODE >23:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+F75 text25 CODE >21:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+F79 text25 CODE >26:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+F7B text25 CODE >26:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+F7F text25 CODE >26:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+F83 text25 CODE >27:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+F86 text25 CODE >27:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+F89 text25 CODE >28:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+F8A text25 CODE >28:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+F8E text25 CODE >28:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+F90 text25 CODE >29:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+F96 text25 CODE >31:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+F9B text25 CODE >32:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+F9E text25 CODE >32:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+FA0 text25 CODE >33:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+FA4 text25 CODE >34:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+74C text24 CODE >397:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+74C text24 CODE >399:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+74D text24 CODE >402:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+76F text24 CODE >403:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+770 text24 CODE >405:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+785 text24 CODE >406:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+786 text24 CODE >408:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+788 text24 CODE >409:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+789 text24 CODE >411:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+78B text24 CODE >412:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+78C text24 CODE >417:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+78D text24 CODE >418:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+78E text24 CODE >419:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+795 text24 CODE >419:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+79A text24 CODE >419:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+79D text24 CODE >419:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+7A0 text24 CODE >419:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+7A3 text24 CODE >419:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+7A6 text24 CODE >419:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+7A9 text24 CODE >419:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+7AC text24 CODE >421:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+DB2 text23 CODE >75:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+DB2 text23 CODE >78:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+DB6 text23 CODE >80:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+DBA text23 CODE >81:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+DBF text23 CODE >82:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+DC2 text23 CODE >84:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+F09 text22 CODE >3:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/ASCII.c
+F0C text22 CODE >5:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/ASCII.c
+F0D text22 CODE >8:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/ASCII.c
+F0F text22 CODE >16:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/ASCII.c
+F11 text22 CODE >20:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/ASCII.c
+F13 text22 CODE >24:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/ASCII.c
+F15 text22 CODE >28:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/ASCII.c
+F17 text22 CODE >32:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/ASCII.c
+F19 text22 CODE >36:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/ASCII.c
+F1B text22 CODE >40:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/ASCII.c
+F1D text22 CODE >44:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/ASCII.c
+F1F text22 CODE >48:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/ASCII.c
+F21 text22 CODE >50:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/ASCII.c
+F26 text22 CODE >50:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/ASCII.c
+F2B text22 CODE >50:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/ASCII.c
+F2E text22 CODE >50:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/ASCII.c
+F31 text22 CODE >50:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/ASCII.c
+F34 text22 CODE >50:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/ASCII.c
+F37 text22 CODE >50:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/ASCII.c
+F3A text22 CODE >50:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/ASCII.c
+F3D text22 CODE >50:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/ASCII.c
+F40 text22 CODE >50:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/ASCII.c
+F43 text22 CODE >50:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/ASCII.c
+F46 text22 CODE >50:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/ASCII.c
+F49 text22 CODE >51:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/ASCII.c
+3ED text21 CODE >281:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+3ED text21 CODE >282:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+3FA text21 CODE >283:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+3FF text21 CODE >284:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+403 text21 CODE >285:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+407 text21 CODE >286:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+40B text21 CODE >287:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+40C text21 CODE >288:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+412 text21 CODE >289:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+416 text21 CODE >290:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+41A text21 CODE >291:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+41E text21 CODE >292:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+41F text21 CODE >293:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+425 text21 CODE >294:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+429 text21 CODE >295:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+42D text21 CODE >296:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+431 text21 CODE >297:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+432 text21 CODE >298:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+438 text21 CODE >299:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+43C text21 CODE >300:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+440 text21 CODE >301:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+444 text21 CODE >302:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+445 text21 CODE >303:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+44B text21 CODE >304:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+44F text21 CODE >305:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+453 text21 CODE >306:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+457 text21 CODE >307:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+458 text21 CODE >308:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+45E text21 CODE >309:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+462 text21 CODE >310:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+466 text21 CODE >311:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+46A text21 CODE >312:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+46B text21 CODE >313:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+471 text21 CODE >314:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+475 text21 CODE >315:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+479 text21 CODE >316:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+47D text21 CODE >317:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+480 text21 CODE >318:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+480 text21 CODE >319:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+482 text21 CODE >319:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+486 text21 CODE >320:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+48A text21 CODE >321:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+495 text21 CODE >322:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+497 text21 CODE >322:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+49B text21 CODE >323:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+49C text21 CODE >324:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+49D text21 CODE >325:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+49F text21 CODE >326:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+4A0 text21 CODE >327:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+4A0 text21 CODE >328:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+4A1 text21 CODE >329:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+4A2 text21 CODE >330:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+4A8 text21 CODE >331:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+4AA text21 CODE >335:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+4AC text21 CODE >335:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+4B0 text21 CODE >336:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+4B4 text21 CODE >337:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+4B9 text21 CODE >338:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+4C4 text21 CODE >339:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+4CA text21 CODE >340:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+4CB text21 CODE >342:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+4CD text21 CODE >342:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+4D1 text21 CODE >343:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+4D2 text21 CODE >344:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+4D3 text21 CODE >345:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+4D4 text21 CODE >346:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+4D4 text21 CODE >347:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+4D5 text21 CODE >348:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+4D7 text21 CODE >352:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+4DB text21 CODE >353:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+4E0 text21 CODE >354:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+4EB text21 CODE >355:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+4EC text21 CODE >356:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+4ED text21 CODE >357:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+4EF text21 CODE >357:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+4F3 text21 CODE >358:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+4F5 text21 CODE >359:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+4F6 text21 CODE >361:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+4FD text21 CODE >366:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+4FF text21 CODE >366:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+503 text21 CODE >367:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+507 text21 CODE >368:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+512 text21 CODE >369:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+513 text21 CODE >370:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+515 text21 CODE >370:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+519 text21 CODE >371:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+51D text21 CODE >372:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+522 text21 CODE >373:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+52D text21 CODE >374:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+52E text21 CODE >375:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+530 text21 CODE >375:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+534 text21 CODE >376:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+538 text21 CODE >377:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+53D text21 CODE >378:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+548 text21 CODE >379:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+549 text21 CODE >380:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+54B text21 CODE >380:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+54F text21 CODE >381:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+553 text21 CODE >382:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+558 text21 CODE >383:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+563 text21 CODE >384:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+564 text21 CODE >385:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+566 text21 CODE >385:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+56A text21 CODE >386:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+56E text21 CODE >387:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+573 text21 CODE >388:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+57E text21 CODE >389:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+57F text21 CODE >390:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+581 text21 CODE >390:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+585 text21 CODE >391:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+589 text21 CODE >392:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+58E text21 CODE >393:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+59A text21 CODE >394:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+59A text21 CODE >395:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+D72 text20 CODE >3:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
+D75 text20 CODE >4:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
+D77 text20 CODE >5:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
+DFD text19 CODE >7:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
+E00 text19 CODE >8:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
+E06 text19 CODE >9:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
+E09 text19 CODE >10:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
+E0A text19 CODE >11:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
+E0B text19 CODE >12:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
+E15 text19 CODE >13:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
+E18 text19 CODE >14:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
+DCB text18 CODE >33:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
+DCB text18 CODE >41:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
+DD1 text18 CODE >42:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
+DD7 text18 CODE >43:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
+DDD text18 CODE >44:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
+DE3 text18 CODE >45:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
+E3E text17 CODE >20:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
+E41 text17 CODE >22:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
+E46 text17 CODE >24:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
+E4B text17 CODE >25:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
+E51 text17 CODE >26:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
+E52 text17 CODE >27:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
+E58 text17 CODE >28:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
+E5D text17 CODE >29:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
+E63 text17 CODE >31:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
+DE4 text16 CODE >47:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
+DE7 text16 CODE >48:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
+DED text16 CODE >49:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
+DF0 text16 CODE >50:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
+DF1 text16 CODE >51:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
+DF2 text16 CODE >52:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
+DF9 text16 CODE >53:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
+DFC text16 CODE >54:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
+E19 text15 CODE >56:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
+E1C text15 CODE >58:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
+E1F text15 CODE >59:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
+E2E text15 CODE >59:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
+E3D text15 CODE >60:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
+7AD text14 CODE >238:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+7AD text14 CODE >240:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+7B3 text14 CODE >241:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+7B7 text14 CODE >242:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+7BB text14 CODE >243:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+7BF text14 CODE >244:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+7C3 text14 CODE >245:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+7C7 text14 CODE >246:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+7CB text14 CODE >247:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+7CF text14 CODE >248:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+7D3 text14 CODE >249:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+7D7 text14 CODE >250:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+7DB text14 CODE >251:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+7DF text14 CODE >252:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+7E3 text14 CODE >253:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+7E7 text14 CODE >254:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+7EB text14 CODE >255:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+7EF text14 CODE >256:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+7F0 text14 CODE >257:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+614 text13 CODE >5:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+614 text13 CODE >13:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+617 text13 CODE >14:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+61B text13 CODE >15:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+61E text13 CODE >15:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+620 text13 CODE >16:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+622 text13 CODE >18:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+626 text13 CODE >19:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+629 text13 CODE >19:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+62B text13 CODE >20:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+62F text13 CODE >22:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+631 text13 CODE >23:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+637 text13 CODE >24:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+639 text13 CODE >25:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+63A text13 CODE >26:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+63B text13 CODE >26:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+63F text13 CODE >26:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+641 text13 CODE >27:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+645 text13 CODE >25:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+649 text13 CODE >30:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+64A text13 CODE >30:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+64E text13 CODE >30:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+650 text13 CODE >31:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+652 text13 CODE >31:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+656 text13 CODE >31:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+65A text13 CODE >32:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+65D text13 CODE >32:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+660 text13 CODE >33:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+661 text13 CODE >35:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+662 text13 CODE >35:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+666 text13 CODE >35:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+668 text13 CODE >36:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+66E text13 CODE >38:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+673 text13 CODE >39:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+676 text13 CODE >39:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+678 text13 CODE >40:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+67C text13 CODE >41:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awdiv.c
+FA5 text12 CODE >5:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+FA5 text12 CODE >12:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+FA8 text12 CODE >13:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+FAC text12 CODE >14:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+FAF text12 CODE >14:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+FB1 text12 CODE >15:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+FB3 text12 CODE >17:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+FB7 text12 CODE >18:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+FBA text12 CODE >18:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+FBC text12 CODE >19:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+FC2 text12 CODE >20:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+FC4 text12 CODE >21:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+FC5 text12 CODE >22:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+FC6 text12 CODE >22:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+FCA text12 CODE >22:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+FCC text12 CODE >23:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+FD0 text12 CODE >21:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+FD4 text12 CODE >26:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+FD6 text12 CODE >26:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+FDA text12 CODE >26:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+FDE text12 CODE >27:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+FE1 text12 CODE >27:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+FE4 text12 CODE >28:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+FE5 text12 CODE >28:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+FE9 text12 CODE >28:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+FEB text12 CODE >29:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+FF1 text12 CODE >31:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+FF6 text12 CODE >32:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+FF9 text12 CODE >32:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+FFB text12 CODE >33:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+FFF text12 CODE >34:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
+59B text11 CODE >259:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+59B text11 CODE >262:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+5A1 text11 CODE >263:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+5A5 text11 CODE >264:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+5A9 text11 CODE >265:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+5AD text11 CODE >266:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+5B1 text11 CODE >267:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+5B5 text11 CODE >268:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+5B9 text11 CODE >269:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+5BD text11 CODE >270:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+5C1 text11 CODE >271:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+5C5 text11 CODE >272:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+5C9 text11 CODE >273:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+5EF text11 CODE >274:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+606 text11 CODE >275:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+60A text11 CODE >276:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+60E text11 CODE >277:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+612 text11 CODE >278:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+613 text11 CODE >279:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+67D text10 CODE >5:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+67D text10 CODE >13:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+687 text10 CODE >14:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+68B text10 CODE >14:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+68F text10 CODE >15:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+691 text10 CODE >16:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+692 text10 CODE >17:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+694 text10 CODE >17:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+69B text10 CODE >18:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+69F text10 CODE >16:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+6A3 text10 CODE >21:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+6A5 text10 CODE >21:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+6AC text10 CODE >22:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+6AE text10 CODE >22:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+6B2 text10 CODE >22:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+6B6 text10 CODE >22:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+6BA text10 CODE >22:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+6BE text10 CODE >23:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+6C1 text10 CODE >23:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+6C5 text10 CODE >23:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+6C9 text10 CODE >23:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+6CC text10 CODE >24:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+6CD text10 CODE >26:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+6CE text10 CODE >26:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+6D4 text10 CODE >26:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+6D6 text10 CODE >27:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+6DC text10 CODE >29:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+6E4 text10 CODE >30:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
+ECF text9 CODE >16:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
+ECF text9 CODE >18:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
+ED3 text9 CODE >19:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
+ED6 text9 CODE >20:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
+EE1 text9 CODE >20:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
+EE7 text9 CODE >20:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
+F05 text9 CODE >21:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
+F06 text9 CODE >22:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
+F07 text9 CODE >23:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
+F08 text9 CODE >24:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
+7F1 text8 CODE >32:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
+7F1 text8 CODE >34:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
+7FD text8 CODE >35:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
+E64 text7 CODE >74:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
+E64 text7 CODE >77:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
+E69 text7 CODE >78:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
+E6C text7 CODE >79:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
+E71 text7 CODE >80:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
+E7A text7 CODE >81:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
+E7F text7 CODE >82:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
+E87 text7 CODE >83:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
+E8A text7 CODE >84:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
+E8B text7 CODE >85:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
+E8E text7 CODE >86:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
+E8E text7 CODE >87:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
+E8F text7 CODE >88:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
+E95 text7 CODE >89:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
+D80 text6 CODE >39:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
+D80 text6 CODE >41:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
+D85 text6 CODE >42:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
+D88 text6 CODE >43:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
+D89 text5 CODE >55:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
+D89 text5 CODE >57:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
+D8E text5 CODE >58:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
+D91 text5 CODE >59:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
+D92 text4 CODE >65:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
+D92 text4 CODE >67:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
+D97 text4 CODE >68:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
+D9B text4 CODE >69:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.c
+E96 text3 CODE >16:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/Osc_config.c
+E99 text3 CODE >18:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/Osc_config.c
+E9A text3 CODE >21:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/Osc_config.c
+EA0 text3 CODE >22:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/Osc_config.c
+EA1 text3 CODE >23:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/Osc_config.c
+EA2 text3 CODE >26:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/Osc_config.c
+EA8 text3 CODE >27:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/Osc_config.c
+EA9 text3 CODE >28:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/Osc_config.c
+EAA text3 CODE >31:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/Osc_config.c
+EB0 text3 CODE >32:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/Osc_config.c
+EB1 text3 CODE >33:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/Osc_config.c
+EB2 text3 CODE >36:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/Osc_config.c
+EB6 text3 CODE >37:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/Osc_config.c
+EB7 text3 CODE >38:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/Osc_config.c
+EB8 text3 CODE >40:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/Osc_config.c
+EBD text3 CODE >40:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/Osc_config.c
+EC2 text3 CODE >40:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/Osc_config.c
+EC5 text3 CODE >40:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/Osc_config.c
+EC8 text3 CODE >40:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/Osc_config.c
+ECB text3 CODE >40:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/Osc_config.c
+ECE text3 CODE >42:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/Osc_config.c
+D9C text2 CODE >21:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/UART_CONFIG.c
+D9C text2 CODE >24:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/UART_CONFIG.c
+D9F text2 CODE >25:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/UART_CONFIG.c
+DA0 text2 CODE >26:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/UART_CONFIG.c
+DA1 text2 CODE >27:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/UART_CONFIG.c
+DA4 text2 CODE >28:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/UART_CONFIG.c
+DA7 text2 CODE >29:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/UART_CONFIG.c
+DA9 text2 CODE >31:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/UART_CONFIG.c
+DAC text2 CODE >32:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/UART_CONFIG.c
+DAD text2 CODE >33:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/UART_CONFIG.c
+DAE text2 CODE >34:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/UART_CONFIG.c
+DB1 text2 CODE >35:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/UART_CONFIG.c
+224 text1 CODE >166:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+224 text1 CODE >167:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+227 text1 CODE >168:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+228 text1 CODE >169:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+22B text1 CODE >170:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+22C text1 CODE >171:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+22D text1 CODE >172:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+22E text1 CODE >173:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+231 text1 CODE >174:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+232 text1 CODE >175:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+233 text1 CODE >176:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+239 text1 CODE >177:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+23E text1 CODE >178:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+24D text1 CODE >180:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+24E text1 CODE >181:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+24F text1 CODE >182:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+252 text1 CODE >183:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+255 text1 CODE >185:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+25A text1 CODE >186:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+265 text1 CODE >187:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+270 text1 CODE >188:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+27B text1 CODE >189:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+280 text1 CODE >190:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+28B text1 CODE >192:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+290 text1 CODE >193:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+29B text1 CODE >194:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+2AB text1 CODE >195:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+2B0 text1 CODE >196:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+2BB text1 CODE >198:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+2C0 text1 CODE >199:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+2CB text1 CODE >200:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+2D6 text1 CODE >201:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+2E1 text1 CODE >202:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+2E6 text1 CODE >203:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+2F1 text1 CODE >205:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+2F6 text1 CODE >206:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+301 text1 CODE >207:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+311 text1 CODE >208:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+316 text1 CODE >209:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+321 text1 CODE >211:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+326 text1 CODE >212:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+331 text1 CODE >213:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+33B text1 CODE >214:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+346 text1 CODE >215:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+34B text1 CODE >216:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+356 text1 CODE >218:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+35B text1 CODE >219:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+366 text1 CODE >220:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+376 text1 CODE >221:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+37B text1 CODE >222:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+386 text1 CODE >224:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+38B text1 CODE >225:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+396 text1 CODE >226:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+3A1 text1 CODE >227:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+3AC text1 CODE >228:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+3B1 text1 CODE >229:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+3BC text1 CODE >231:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+3C1 text1 CODE >232:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+3CC text1 CODE >233:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+3DC text1 CODE >234:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+3E1 text1 CODE >235:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+3EC text1 CODE >236:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+20 maintext CODE >89:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+20 maintext CODE >90:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+25 maintext CODE >91:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+2A maintext CODE >94:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+34 maintext CODE >95:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+3E maintext CODE >96:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+48 maintext CODE >97:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+52 maintext CODE >98:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+57 maintext CODE >100:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+5C maintext CODE >101:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+67 maintext CODE >102:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+71 maintext CODE >103:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+76 maintext CODE >104:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+81 maintext CODE >106:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+86 maintext CODE >107:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+91 maintext CODE >108:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+A1 maintext CODE >109:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+A6 maintext CODE >110:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+B1 maintext CODE >112:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+B6 maintext CODE >113:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+C1 maintext CODE >114:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+CF maintext CODE >115:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+D4 maintext CODE >116:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+DF maintext CODE >118:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+E4 maintext CODE >119:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+EF maintext CODE >120:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+FF maintext CODE >121:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+104 maintext CODE >122:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+10F maintext CODE >124:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+114 maintext CODE >125:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+11F maintext CODE >126:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+12A maintext CODE >127:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+12F maintext CODE >128:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+13A maintext CODE >130:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+13F maintext CODE >131:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+14A maintext CODE >132:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+15A maintext CODE >133:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+15F maintext CODE >134:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+16A maintext CODE >136:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+16F maintext CODE >137:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+17A maintext CODE >138:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+185 maintext CODE >139:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+18A maintext CODE >140:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+195 maintext CODE >142:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+19A maintext CODE >143:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+1A5 maintext CODE >144:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+1B5 maintext CODE >145:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+1BA maintext CODE >146:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+1C5 maintext CODE >148:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+1CA maintext CODE >149:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+1D5 maintext CODE >150:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+1E0 maintext CODE >151:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+1E5 maintext CODE >152:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+1F0 maintext CODE >154:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+1F5 maintext CODE >155:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+200 maintext CODE >156:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+210 maintext CODE >157:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+215 maintext CODE >158:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+D78 clrtext CODE >1393:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAseac.s
+D78 clrtext CODE >1394:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAseac.s
+D79 clrtext CODE >1395:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAseac.s
+D79 clrtext CODE >1396:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAseac.s
+D7A clrtext CODE >1397:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAseac.s
+D7B clrtext CODE >1398:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAseac.s
+D7C clrtext CODE >1399:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAseac.s
+D7D clrtext CODE >1400:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAseac.s
+D7E clrtext CODE >1401:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAseac.s
+D7F clrtext CODE >1402:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAseac.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -608,80 +733,95 @@ F5F clrtext CODE >1217:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs7q4.s
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
 ___latbits 2 0 ABS 0 - dist/default/production\PIC_maestro.X.production.o
-___awdiv@counter 75 0 COMMON 1 cstackCOMMON dist/default/production\PIC_maestro.X.production.o
+___awdiv@counter 2D 0 BANK0 1 cstackBANK0 dist/default/production\PIC_maestro.X.production.o
 __Hspace_0 1000 0 ABS 0 - -
 __Hspace_1 7E 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
 __Hspace_4 4010 0 ABS 0 - -
-_Lcd_Init 1F44 0 CODE 0 text17 dist/default/production\PIC_maestro.X.production.o
-_Lcd_Port 1EA4 0 CODE 0 text19 dist/default/production\PIC_maestro.X.production.o
-I2C_Master_Init@c 20 0 BANK0 1 cstackBANK0 dist/default/production\PIC_maestro.X.production.o
+_Lcd_Init 1B96 0 CODE 0 text18 dist/default/production\PIC_maestro.X.production.o
+_Lcd_Port 1AE4 0 CODE 0 text20 dist/default/production\PIC_maestro.X.production.o
+I2C_Master_Init@c 36 0 BANK0 1 cstackBANK0 dist/default/production\PIC_maestro.X.production.o
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
-_C1 40 0 BANK0 1 bssBANK0 dist/default/production\PIC_maestro.X.production.o
-_C2 3F 0 BANK0 1 bssBANK0 dist/default/production\PIC_maestro.X.production.o
-_C3 3E 0 BANK0 1 bssBANK0 dist/default/production\PIC_maestro.X.production.o
-_DH 3C 0 BANK0 1 bssBANK0 dist/default/production\PIC_maestro.X.production.o
-_DM 3A 0 BANK0 1 bssBANK0 dist/default/production\PIC_maestro.X.production.o
-_UH 3D 0 BANK0 1 bssBANK0 dist/default/production\PIC_maestro.X.production.o
-_UM 3B 0 BANK0 1 bssBANK0 dist/default/production\PIC_maestro.X.production.o
-__end_of_Lcd_Init 1F76 0 CODE 0 text17 dist/default/production\PIC_maestro.X.production.o
-__end_of_Lcd_Port 1EB0 0 CODE 0 text19 dist/default/production\PIC_maestro.X.production.o
+i1___awdiv@dividend 72 0 COMMON 1 cstackCOMMON dist/default/production\PIC_maestro.X.production.o
+_C1 57 0 BANK0 1 bssBANK0 dist/default/production\PIC_maestro.X.production.o
+_C2 56 0 BANK0 1 bssBANK0 dist/default/production\PIC_maestro.X.production.o
+_C3 55 0 BANK0 1 bssBANK0 dist/default/production\PIC_maestro.X.production.o
+_DH 53 0 BANK0 1 bssBANK0 dist/default/production\PIC_maestro.X.production.o
+_DM 51 0 BANK0 1 bssBANK0 dist/default/production\PIC_maestro.X.production.o
+_UH 54 0 BANK0 1 bssBANK0 dist/default/production\PIC_maestro.X.production.o
+_UM 52 0 BANK0 1 bssBANK0 dist/default/production\PIC_maestro.X.production.o
+__end_of_Lcd_Init 1BC8 0 CODE 0 text18 dist/default/production\PIC_maestro.X.production.o
+__end_of_Lcd_Port 1AF0 0 CODE 0 text20 dist/default/production\PIC_maestro.X.production.o
 __Hstrings 0 0 ABS 0 strings -
-_HORA 43 0 BANK0 1 bssBANK0 dist/default/production\PIC_maestro.X.production.o
+_HORA 5A 0 BANK0 1 bssBANK0 dist/default/production\PIC_maestro.X.production.o
 _PEIE 5E 0 ABS 0 - dist/default/production\PIC_maestro.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs7q4.o
-_main C32 0 CODE 0 maintext dist/default/production\PIC_maestro.X.production.o
+___sp 0 0 STACK 2 stack C:\Users\ANDYBO~1\AppData\Local\Temp\xcAseac.o
+_main 40 0 CODE 0 maintext dist/default/production\PIC_maestro.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\PIC_maestro.X.production.o
-_Lcd_Write_Char 6 0 CODE 0 text15 dist/default/production\PIC_maestro.X.production.o
-start 0 0 CODE 0 init C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs7q4.o
+_Lcd_Write_Char 1BC8 0 CODE 0 text16 dist/default/production\PIC_maestro.X.production.o
+start 20 0 CODE 0 init C:\Users\ANDYBO~1\AppData\Local\Temp\xcAseac.o
 __size_of___awdiv 0 0 ABS 0 - dist/default/production\PIC_maestro.X.production.o
 __size_of___awmod 0 0 ABS 0 - dist/default/production\PIC_maestro.X.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production\PIC_maestro.X.production.o
 __size_of___lldiv 0 0 ABS 0 - dist/default/production\PIC_maestro.X.production.o
-Lcd_Port@a 70 0 COMMON 1 cstackCOMMON dist/default/production\PIC_maestro.X.production.o
-conver@temporal 20 0 BANK0 1 cstackBANK0 dist/default/production\PIC_maestro.X.production.o
+Lcd_Port@a 28 0 BANK0 1 cstackBANK0 dist/default/production\PIC_maestro.X.production.o
+conver@temporal 29 0 BANK0 1 cstackBANK0 dist/default/production\PIC_maestro.X.production.o
+__size_of_uart_config 0 0 ABS 0 - dist/default/production\PIC_maestro.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
-___awmod@sign 21 0 BANK0 1 cstackBANK0 dist/default/production\PIC_maestro.X.production.o
-I2C_Master_Read@a 70 0 COMMON 1 cstackCOMMON dist/default/production\PIC_maestro.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs7q4.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs7q4.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs7q4.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs7q4.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs7q4.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs7q4.o
+___awmod@sign 37 0 BANK0 1 cstackBANK0 dist/default/production\PIC_maestro.X.production.o
+I2C_Master_Read@a 28 0 BANK0 1 cstackBANK0 dist/default/production\PIC_maestro.X.production.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\ANDYBO~1\AppData\Local\Temp\xcAseac.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\ANDYBO~1\AppData\Local\Temp\xcAseac.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\ANDYBO~1\AppData\Local\Temp\xcAseac.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\ANDYBO~1\AppData\Local\Temp\xcAseac.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\ANDYBO~1\AppData\Local\Temp\xcAseac.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\ANDYBO~1\AppData\Local\Temp\xcAseac.o
 _OSCCONbits 8F 0 ABS 0 - dist/default/production\PIC_maestro.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\PIC_maestro.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
-I2C_Master_Read@temp 74 0 COMMON 1 cstackCOMMON dist/default/production\PIC_maestro.X.production.o
+I2C_Master_Read@temp 2C 0 BANK0 1 cstackBANK0 dist/default/production\PIC_maestro.X.production.o
 __size_of_Lcd_Set_Cursor 0 0 ABS 0 - dist/default/production\PIC_maestro.X.production.o
-___awdiv@sign 76 0 COMMON 1 cstackCOMMON dist/default/production\PIC_maestro.X.production.o
+___awdiv@sign 2E 0 BANK0 1 cstackBANK0 dist/default/production\PIC_maestro.X.production.o
 __Hclrtext 0 0 ABS 0 clrtext -
-__end_of_Lcd_Write_Char 30 0 CODE 0 text15 dist/default/production\PIC_maestro.X.production.o
+__end_of_Lcd_Write_Char 1BFA 0 CODE 0 text16 dist/default/production\PIC_maestro.X.production.o
+_mandar_datos E98 0 CODE 0 text24 dist/default/production\PIC_maestro.X.production.o
 _ANSELH 189 0 ABS 0 - dist/default/production\PIC_maestro.X.production.o
-___awdiv@dividend 72 0 COMMON 1 cstackCOMMON dist/default/production\PIC_maestro.X.production.o
-_BASURA 45 0 BANK0 1 bssBANK0 dist/default/production\PIC_maestro.X.production.o
-num_ascii@num 72 0 COMMON 1 cstackCOMMON dist/default/production\PIC_maestro.X.production.o
+_cuenta_uart 4D 0 BANK0 1 bssBANK0 dist/default/production\PIC_maestro.X.production.o
+___awdiv@dividend 2A 0 BANK0 1 cstackBANK0 dist/default/production\PIC_maestro.X.production.o
+_BASURA 5C 0 BANK0 1 bssBANK0 dist/default/production\PIC_maestro.X.production.o
+num_ascii@num 2A 0 BANK0 1 cstackBANK0 dist/default/production\PIC_maestro.X.production.o
+i1___awmod@divisor 79 0 COMMON 1 cstackCOMMON dist/default/production\PIC_maestro.X.production.o
+__end_ofi1___awdiv E98 0 CODE 0 text26 dist/default/production\PIC_maestro.X.production.o
+__end_ofi1___awmod 1F4A 0 CODE 0 text25 dist/default/production\PIC_maestro.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
-___awdiv@divisor 70 0 COMMON 1 cstackCOMMON dist/default/production\PIC_maestro.X.production.o
-__end_of___awdiv 4C0 0 CODE 0 text12 dist/default/production\PIC_maestro.X.production.o
-__end_of___awmod 326 0 CODE 0 text11 dist/default/production\PIC_maestro.X.production.o
-__end_of___lldiv 3F2 0 CODE 0 text9 dist/default/production\PIC_maestro.X.production.o
-__end_of_conver 270 0 CODE 0 text13 dist/default/production\PIC_maestro.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs7q4.o
-___stacklo 0 0 ABS 0 - C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs7q4.o
+___awdiv@divisor 28 0 BANK0 1 cstackBANK0 dist/default/production\PIC_maestro.X.production.o
+__size_ofi1___awdiv 0 0 ABS 0 - dist/default/production\PIC_maestro.X.production.o
+__size_ofi1___awmod 0 0 ABS 0 - dist/default/production\PIC_maestro.X.production.o
+__end_of___awdiv CFA 0 CODE 0 text13 dist/default/production\PIC_maestro.X.production.o
+__end_of___awmod 2000 0 CODE 0 text12 dist/default/production\PIC_maestro.X.production.o
+__end_of___lldiv DCA 0 CODE 0 text10 dist/default/production\PIC_maestro.X.production.o
+__end_of_conver FE2 0 CODE 0 text14 dist/default/production\PIC_maestro.X.production.o
+___stackhi 0 0 ABS 0 - C:\Users\ANDYBO~1\AppData\Local\Temp\xcAseac.o
+___stacklo 0 0 ABS 0 - C:\Users\ANDYBO~1\AppData\Local\Temp\xcAseac.o
+__size_of_mandar_datos 0 0 ABS 0 - dist/default/production\PIC_maestro.X.production.o
 __size_of_LECT1 0 0 ABS 0 - dist/default/production\PIC_maestro.X.production.o
+_BAUDCTLbits 187 0 ABS 0 - dist/default/production\PIC_maestro.X.production.o
 __size_of_setup 0 0 ABS 0 - dist/default/production\PIC_maestro.X.production.o
-Lcd_Set_Cursor@temp 77 0 COMMON 1 cstackCOMMON dist/default/production\PIC_maestro.X.production.o
-___lldiv@counter 7D 0 COMMON 1 cstackCOMMON dist/default/production\PIC_maestro.X.production.o
-start_initialization FE6 0 CODE 0 cinit dist/default/production\PIC_maestro.X.production.o
+i1___awdiv DCA 0 CODE 0 text26 dist/default/production\PIC_maestro.X.production.o
+i1___awmod 1E94 0 CODE 0 text25 dist/default/production\PIC_maestro.X.production.o
+Lcd_Set_Cursor@temp 2F 0 BANK0 1 cstackBANK0 dist/default/production\PIC_maestro.X.production.o
+___lldiv@counter 35 0 BANK0 1 cstackBANK0 dist/default/production\PIC_maestro.X.production.o
+start_initialization 26 0 CODE 0 cinit dist/default/production\PIC_maestro.X.production.o
 _TRISCbits 87 0 ABS 0 - dist/default/production\PIC_maestro.X.production.o
-___lldiv@dividend 74 0 COMMON 1 cstackCOMMON dist/default/production\PIC_maestro.X.production.o
-conver1@temporal 25 0 BANK0 1 cstackBANK0 dist/default/production\PIC_maestro.X.production.o
-__end_of_num_ascii 1E8 0 CODE 0 text21 dist/default/production\PIC_maestro.X.production.o
-_osc_config 8C 0 CODE 0 text2 dist/default/production\PIC_maestro.X.production.o
-_Lcd_Write_String 1F76 0 CODE 0 text14 dist/default/production\PIC_maestro.X.production.o
-clear_ram0 1EB0 0 CODE 0 clrtext dist/default/production\PIC_maestro.X.production.o
+___lldiv@dividend 2C 0 BANK0 1 cstackBANK0 dist/default/production\PIC_maestro.X.production.o
+__end_of_mandar_datos F5A 0 CODE 0 text24 dist/default/production\PIC_maestro.X.production.o
+conver1@temporal 3B 0 BANK0 1 cstackBANK0 dist/default/production\PIC_maestro.X.production.o
+__end_of_num_ascii 1E94 0 CODE 0 text22 dist/default/production\PIC_maestro.X.production.o
+_osc_config 1D2C 0 CODE 0 text3 dist/default/production\PIC_maestro.X.production.o
+_Lcd_Write_String 1C32 0 CODE 0 text15 dist/default/production\PIC_maestro.X.production.o
+clear_ram0 1AF0 0 CODE 0 clrtext dist/default/production\PIC_maestro.X.production.o
+_SPBRGH 9A 0 ABS 0 - dist/default/production\PIC_maestro.X.production.o
 __pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production\PIC_maestro.X.production.o
 _SSPADD 93 0 ABS 0 - dist/default/production\PIC_maestro.X.production.o
 _SSPBUF 13 0 ABS 0 - dist/default/production\PIC_maestro.X.production.o
@@ -690,16 +830,18 @@ __size_of_num_ascii 0 0 ABS 0 - dist/default/production\PIC_maestro.X.production
 _TRISC3 43B 0 ABS 0 - dist/default/production\PIC_maestro.X.production.o
 _TRISC4 43C 0 ABS 0 - dist/default/production\PIC_maestro.X.production.o
 __size_of_Lcd_Cmd 0 0 ABS 0 - dist/default/production\PIC_maestro.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs7q4.o
+i1___awdiv@counter 75 0 COMMON 1 cstackCOMMON dist/default/production\PIC_maestro.X.production.o
+___int_sp 0 0 STACK 2 stack C:\Users\ANDYBO~1\AppData\Local\Temp\xcAseac.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
 __Hbank3 0 0 ABS 0 bank3 -
-__Hcinit 1000 0 CODE 0 cinit -
-_num_ascii 16A 0 CODE 0 text21 dist/default/production\PIC_maestro.X.production.o
+__Hcinit 40 0 CODE 0 cinit -
+_num_ascii 1E12 0 CODE 0 text22 dist/default/production\PIC_maestro.X.production.o
 __Hstack 0 0 STACK 2 stack -
-I2C_Master_Write@d 70 0 COMMON 1 cstackCOMMON dist/default/production\PIC_maestro.X.production.o
+I2C_Master_Write@d 28 0 BANK0 1 cstackBANK0 dist/default/production\PIC_maestro.X.production.o
 __size_of_conver1 0 0 ABS 0 - dist/default/production\PIC_maestro.X.production.o
+_uart_config 1B38 0 CODE 0 text2 dist/default/production\PIC_maestro.X.production.o
 __Hmaintext 0 0 ABS 0 maintext -
 __Hcommon 0 0 ABS 0 common -
 __Hconfig 4012 0 CONFIG 4 config -
@@ -707,13 +849,14 @@ __Lbank0 0 0 ABS 0 bank0 -
 __Lbank1 0 0 ABS 0 bank1 -
 __Lbank2 0 0 ABS 0 bank2 -
 __Lbank3 0 0 ABS 0 bank3 -
-__Lcinit FE6 0 CODE 0 cinit -
+__Lcinit 26 0 CODE 0 cinit -
 __Lstack 0 0 STACK 2 stack -
 _PORTDbits 8 0 ABS 0 - dist/default/production\PIC_maestro.X.production.o
 _PORTEbits 9 0 ABS 0 - dist/default/production\PIC_maestro.X.production.o
+_INTCONbits B 0 ABS 0 - dist/default/production\PIC_maestro.X.production.o
 __Habs1 0 0 ABS 0 abs1 -
 __Hcode 0 0 ABS 0 code -
-__Hinit 0 0 CODE 0 init -
+__Hinit 20 0 CODE 0 init -
 __Hsfr0 0 0 ABS 0 sfr0 -
 __Hsfr1 0 0 ABS 0 sfr1 -
 __Hsfr2 0 0 ABS 0 sfr2 -
@@ -721,7 +864,7 @@ __Hsfr3 0 0 ABS 0 sfr3 -
 __Htext 0 0 ABS 0 text -
 __Labs1 0 0 ABS 0 abs1 -
 __Lcode 0 0 ABS 0 code -
-__Linit 0 0 CODE 0 init -
+__Linit 20 0 CODE 0 init -
 __Lsfr0 0 0 ABS 0 sfr0 -
 __Lsfr1 0 0 ABS 0 sfr1 -
 __Lsfr2 0 0 ABS 0 sfr2 -
@@ -729,137 +872,163 @@ __Lsfr3 0 0 ABS 0 sfr3 -
 __Ltext 0 0 ABS 0 text -
 __LcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
-_DIA 44 0 BANK0 1 bssBANK0 dist/default/production\PIC_maestro.X.production.o
+_DIA 5B 0 BANK0 1 bssBANK0 dist/default/production\PIC_maestro.X.production.o
 _GIE 5F 0 ABS 0 - dist/default/production\PIC_maestro.X.production.o
-_MIN 42 0 BANK0 1 bssBANK0 dist/default/production\PIC_maestro.X.production.o
-_NUM 46 0 BANK0 1 bssBANK0 dist/default/production\PIC_maestro.X.production.o
+_MIN 59 0 BANK0 1 bssBANK0 dist/default/production\PIC_maestro.X.production.o
+_NUM 5D 0 BANK0 1 bssBANK0 dist/default/production\PIC_maestro.X.production.o
 __S0 1000 0 ABS 0 - -
 __S1 7E 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
-_con 38 0 BANK0 1 bssBANK0 dist/default/production\PIC_maestro.X.production.o
-__end_of_osc_config FA 0 CODE 0 text2 dist/default/production\PIC_maestro.X.production.o
-_conver 1E8 0 CODE 0 text13 dist/default/production\PIC_maestro.X.production.o
-_I2C_Master_Start 1EC0 0 CODE 0 text5 dist/default/production\PIC_maestro.X.production.o
-_I2C_Master_Write 1EE4 0 CODE 0 text3 dist/default/production\PIC_maestro.X.production.o
-__end_of_Lcd_Write_String 1FB8 0 CODE 0 text14 dist/default/production\PIC_maestro.X.production.o
-__Lintentry 0 0 CODE 0 intentry -
-___lldiv@divisor 70 0 COMMON 1 cstackCOMMON dist/default/production\PIC_maestro.X.production.o
+_con 4F 0 BANK0 1 bssBANK0 dist/default/production\PIC_maestro.X.production.o
+_isr 1B64 0 CODE 0 text23 dist/default/production\PIC_maestro.X.production.o
+__end_of_osc_config 1D9E 0 CODE 0 text3 dist/default/production\PIC_maestro.X.production.o
+saved_w 7E 0 ABS 0 - dist/default/production\PIC_maestro.X.production.o
+_conver F5A 0 CODE 0 text14 dist/default/production\PIC_maestro.X.production.o
+_I2C_Master_Start 1B00 0 CODE 0 text6 dist/default/production\PIC_maestro.X.production.o
+_I2C_Master_Write 1B24 0 CODE 0 text4 dist/default/production\PIC_maestro.X.production.o
+__end_of_Lcd_Write_String 1C7C 0 CODE 0 text15 dist/default/production\PIC_maestro.X.production.o
+__end_of_isr 1B96 0 CODE 0 text23 dist/default/production\PIC_maestro.X.production.o
+__Lintentry 8 0 CODE 0 intentry -
+___lldiv@divisor 28 0 BANK0 1 cstackBANK0 dist/default/production\PIC_maestro.X.production.o
 __size_of_Lcd_Write_String 0 0 ABS 0 - dist/default/production\PIC_maestro.X.production.o
-Lcd_Write_String@a 76 0 COMMON 1 cstackCOMMON dist/default/production\PIC_maestro.X.production.o
-Lcd_Write_String@i 74 0 COMMON 1 cstackCOMMON dist/default/production\PIC_maestro.X.production.o
-reset_vec 0 0 CODE 0 reset_vec C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs7q4.o
-__end_of_Lcd_Cmd 1F44 0 CODE 0 text18 dist/default/production\PIC_maestro.X.production.o
+Lcd_Write_String@a 2E 0 BANK0 1 cstackBANK0 dist/default/production\PIC_maestro.X.production.o
+Lcd_Write_String@i 2C 0 BANK0 1 cstackBANK0 dist/default/production\PIC_maestro.X.production.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\ANDYBO~1\AppData\Local\Temp\xcAseac.o
+__end_of_Lcd_Cmd 1C32 0 CODE 0 text19 dist/default/production\PIC_maestro.X.production.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
-___awmod@counter 20 0 BANK0 1 cstackBANK0 dist/default/production\PIC_maestro.X.production.o
-__end_of_conver1 5AE 0 CODE 0 text10 dist/default/production\PIC_maestro.X.production.o
-__ptext10 4C0 0 CODE 0 text10 dist/default/production\PIC_maestro.X.production.o
-__ptext11 270 0 CODE 0 text11 dist/default/production\PIC_maestro.X.production.o
-__ptext12 3F2 0 CODE 0 text12 dist/default/production\PIC_maestro.X.production.o
-__ptext13 1E8 0 CODE 0 text13 dist/default/production\PIC_maestro.X.production.o
-__ptext14 1F76 0 CODE 0 text14 dist/default/production\PIC_maestro.X.production.o
-__ptext15 6 0 CODE 0 text15 dist/default/production\PIC_maestro.X.production.o
-__ptext16 1FB8 0 CODE 0 text16 dist/default/production\PIC_maestro.X.production.o
-__ptext17 1F44 0 CODE 0 text17 dist/default/production\PIC_maestro.X.production.o
-__ptext18 1F12 0 CODE 0 text18 dist/default/production\PIC_maestro.X.production.o
-__ptext19 1EA4 0 CODE 0 text19 dist/default/production\PIC_maestro.X.production.o
-__ptext20 8D6 0 CODE 0 text20 dist/default/production\PIC_maestro.X.production.o
-__ptext21 16A 0 CODE 0 text21 dist/default/production\PIC_maestro.X.production.o
+i1___awdiv@quotient 77 0 COMMON 1 cstackCOMMON dist/default/production\PIC_maestro.X.production.o
+___awmod@counter 36 0 BANK0 1 cstackBANK0 dist/default/production\PIC_maestro.X.production.o
+_RCSTAbits 18 0 ABS 0 - dist/default/production\PIC_maestro.X.production.o
+_PIE1bits 8C 0 ABS 0 - dist/default/production\PIC_maestro.X.production.o
+i1___awmod@sign 21 0 BANK0 1 cstackBANK0 dist/default/production\PIC_maestro.X.production.o
+__end_of_conver1 C28 0 CODE 0 text11 dist/default/production\PIC_maestro.X.production.o
+i1___awmod@dividend 7B 0 COMMON 1 cstackCOMMON dist/default/production\PIC_maestro.X.production.o
+__ptext10 CFA 0 CODE 0 text10 dist/default/production\PIC_maestro.X.production.o
+__ptext11 B36 0 CODE 0 text11 dist/default/production\PIC_maestro.X.production.o
+__ptext12 1F4A 0 CODE 0 text12 dist/default/production\PIC_maestro.X.production.o
+__ptext13 C28 0 CODE 0 text13 dist/default/production\PIC_maestro.X.production.o
+__ptext14 F5A 0 CODE 0 text14 dist/default/production\PIC_maestro.X.production.o
+__ptext15 1C32 0 CODE 0 text15 dist/default/production\PIC_maestro.X.production.o
+__ptext16 1BC8 0 CODE 0 text16 dist/default/production\PIC_maestro.X.production.o
+__ptext17 1C7C 0 CODE 0 text17 dist/default/production\PIC_maestro.X.production.o
+__ptext18 1B96 0 CODE 0 text18 dist/default/production\PIC_maestro.X.production.o
+__ptext19 1BFA 0 CODE 0 text19 dist/default/production\PIC_maestro.X.production.o
+__ptext20 1AE4 0 CODE 0 text20 dist/default/production\PIC_maestro.X.production.o
+__ptext21 7DA 0 CODE 0 text21 dist/default/production\PIC_maestro.X.production.o
+__ptext22 1E12 0 CODE 0 text22 dist/default/production\PIC_maestro.X.production.o
+__ptext23 1B64 0 CODE 0 text23 dist/default/production\PIC_maestro.X.production.o
+__ptext24 E98 0 CODE 0 text24 dist/default/production\PIC_maestro.X.production.o
+__ptext25 1E94 0 CODE 0 text25 dist/default/production\PIC_maestro.X.production.o
+__ptext26 DCA 0 CODE 0 text26 dist/default/production\PIC_maestro.X.production.o
 __size_of_Lcd_Write_Char 0 0 ABS 0 - dist/default/production\PIC_maestro.X.production.o
-___awdiv 3F2 0 CODE 0 text12 dist/default/production\PIC_maestro.X.production.o
-___awmod 270 0 CODE 0 text11 dist/default/production\PIC_maestro.X.production.o
-_Lcd_Set_Cursor 1FB8 0 CODE 0 text16 dist/default/production\PIC_maestro.X.production.o
+___awdiv C28 0 CODE 0 text13 dist/default/production\PIC_maestro.X.production.o
+___awmod 1F4A 0 CODE 0 text12 dist/default/production\PIC_maestro.X.production.o
+_Lcd_Set_Cursor 1C7C 0 CODE 0 text17 dist/default/production\PIC_maestro.X.production.o
 __size_of_conver 0 0 ABS 0 - dist/default/production\PIC_maestro.X.production.o
-___lldiv 326 0 CODE 0 text9 dist/default/production\PIC_maestro.X.production.o
-__pmaintext C32 0 CODE 0 maintext dist/default/production\PIC_maestro.X.production.o
+___lldiv CFA 0 CODE 0 text10 dist/default/production\PIC_maestro.X.production.o
+__pmaintext 40 0 CODE 0 maintext dist/default/production\PIC_maestro.X.production.o
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 0 0 CONFIG 4 config -
-?_I2C_Master_Read 70 0 COMMON 1 cstackCOMMON dist/default/production\PIC_maestro.X.production.o
-__end_of_I2C_Master_Init 16A 0 CODE 0 text8 dist/default/production\PIC_maestro.X.production.o
-__end_of_I2C_Master_Read 8C 0 CODE 0 text6 dist/default/production\PIC_maestro.X.production.o
-__end_of_I2C_Master_Stop 1EE4 0 CODE 0 text4 dist/default/production\PIC_maestro.X.production.o
-__end_of_I2C_Master_Wait 1F12 0 CODE 0 text7 dist/default/production\PIC_maestro.X.production.o
-__end_of_I2C_Master_Start 1ED2 0 CODE 0 text5 dist/default/production\PIC_maestro.X.production.o
+i1___awdiv@divisor 70 0 COMMON 1 cstackCOMMON dist/default/production\PIC_maestro.X.production.o
+i1___awdiv@sign 76 0 COMMON 1 cstackCOMMON dist/default/production\PIC_maestro.X.production.o
+?_I2C_Master_Read 28 0 BANK0 1 cstackBANK0 dist/default/production\PIC_maestro.X.production.o
+__end_of_I2C_Master_Init 1E12 0 CODE 0 text9 dist/default/production\PIC_maestro.X.production.o
+__end_of_I2C_Master_Read 1D2C 0 CODE 0 text7 dist/default/production\PIC_maestro.X.production.o
+__end_of_I2C_Master_Stop 1B24 0 CODE 0 text5 dist/default/production\PIC_maestro.X.production.o
+__end_of_I2C_Master_Wait FFC 0 CODE 0 text8 dist/default/production\PIC_maestro.X.production.o
+__end_of_I2C_Master_Start 1B12 0 CODE 0 text6 dist/default/production\PIC_maestro.X.production.o
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
 __Lspace_3 0 0 ABS 0 - -
 __Lspace_4 0 0 ABS 0 - -
-__end_of_I2C_Master_Write 1EF8 0 CODE 0 text3 dist/default/production\PIC_maestro.X.production.o
+__end_of_I2C_Master_Write 1B38 0 CODE 0 text4 dist/default/production\PIC_maestro.X.production.o
 __HcstackBANK0 0 0 ABS 0 cstackBANK0 -
-__Lend_init 0 0 CODE 0 end_init -
+_PIR1bits C 0 ABS 0 - dist/default/production\PIC_maestro.X.production.o
+__Lend_init 20 0 CODE 0 end_init -
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 __size_of_I2C_Master_Start 0 0 ABS 0 - dist/default/production\PIC_maestro.X.production.o
 __size_of_I2C_Master_Write 0 0 ABS 0 - dist/default/production\PIC_maestro.X.production.o
-end_of_initialization FF8 0 CODE 0 cinit dist/default/production\PIC_maestro.X.production.o
-__end_of_Lcd_Set_Cursor 2000 0 CODE 0 text16 dist/default/production\PIC_maestro.X.production.o
-__Hintentry 0 0 CODE 0 intentry -
-Lcd_Set_Cursor@a 76 0 COMMON 1 cstackCOMMON dist/default/production\PIC_maestro.X.production.o
-Lcd_Set_Cursor@b 74 0 COMMON 1 cstackCOMMON dist/default/production\PIC_maestro.X.production.o
+end_of_initialization 38 0 CODE 0 cinit dist/default/production\PIC_maestro.X.production.o
+__end_of_Lcd_Set_Cursor 1CC8 0 CODE 0 text17 dist/default/production\PIC_maestro.X.production.o
+__Hintentry 20 0 CODE 0 intentry -
+Lcd_Set_Cursor@a 2E 0 BANK0 1 cstackBANK0 dist/default/production\PIC_maestro.X.production.o
+Lcd_Set_Cursor@b 2C 0 BANK0 1 cstackBANK0 dist/default/production\PIC_maestro.X.production.o
 __Lstrings 0 0 ABS 0 strings -
-___awdiv@quotient 77 0 COMMON 1 cstackCOMMON dist/default/production\PIC_maestro.X.production.o
-?___awdiv 70 0 COMMON 1 cstackCOMMON dist/default/production\PIC_maestro.X.production.o
-?___awmod 79 0 COMMON 1 cstackCOMMON dist/default/production\PIC_maestro.X.production.o
-?___lldiv 70 0 COMMON 1 cstackCOMMON dist/default/production\PIC_maestro.X.production.o
-__Hreset_vec 0 0 CODE 0 reset_vec -
+___awdiv@quotient 2F 0 BANK0 1 cstackBANK0 dist/default/production\PIC_maestro.X.production.o
+?___awdiv 28 0 BANK0 1 cstackBANK0 dist/default/production\PIC_maestro.X.production.o
+?___awmod 31 0 BANK0 1 cstackBANK0 dist/default/production\PIC_maestro.X.production.o
+?___lldiv 28 0 BANK0 1 cstackBANK0 dist/default/production\PIC_maestro.X.production.o
+__Hreset_vec 6 0 CODE 0 reset_vec -
 __HbssBANK0 0 0 ABS 0 bssBANK0 -
-___awmod@dividend 7B 0 COMMON 1 cstackCOMMON dist/default/production\PIC_maestro.X.production.o
+___awmod@dividend 33 0 BANK0 1 cstackBANK0 dist/default/production\PIC_maestro.X.production.o
 _SSPCON2bits 91 0 ABS 0 - dist/default/production\PIC_maestro.X.production.o
-__ptext1 5AE 0 CODE 0 text1 dist/default/production\PIC_maestro.X.production.o
-__ptext2 8C 0 CODE 0 text2 dist/default/production\PIC_maestro.X.production.o
-__ptext3 1EE4 0 CODE 0 text3 dist/default/production\PIC_maestro.X.production.o
-__ptext4 1ED2 0 CODE 0 text4 dist/default/production\PIC_maestro.X.production.o
-__ptext5 1EC0 0 CODE 0 text5 dist/default/production\PIC_maestro.X.production.o
-__ptext6 30 0 CODE 0 text6 dist/default/production\PIC_maestro.X.production.o
-__ptext7 1EF8 0 CODE 0 text7 dist/default/production\PIC_maestro.X.production.o
-__ptext8 FA 0 CODE 0 text8 dist/default/production\PIC_maestro.X.production.o
-__ptext9 326 0 CODE 0 text9 dist/default/production\PIC_maestro.X.production.o
+__ptext1 448 0 CODE 0 text1 dist/default/production\PIC_maestro.X.production.o
+__ptext2 1B38 0 CODE 0 text2 dist/default/production\PIC_maestro.X.production.o
+__ptext3 1D2C 0 CODE 0 text3 dist/default/production\PIC_maestro.X.production.o
+__ptext4 1B24 0 CODE 0 text4 dist/default/production\PIC_maestro.X.production.o
+__ptext5 1B12 0 CODE 0 text5 dist/default/production\PIC_maestro.X.production.o
+__ptext6 1B00 0 CODE 0 text6 dist/default/production\PIC_maestro.X.production.o
+__ptext7 1CC8 0 CODE 0 text7 dist/default/production\PIC_maestro.X.production.o
+__ptext8 FE2 0 CODE 0 text8 dist/default/production\PIC_maestro.X.production.o
+__ptext9 1D9E 0 CODE 0 text9 dist/default/production\PIC_maestro.X.production.o
 __Lpowerup 0 0 CODE 0 powerup -
 __size_of_osc_config 0 0 ABS 0 - dist/default/production\PIC_maestro.X.production.o
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
-_I2C_Master_Init FA 0 CODE 0 text8 dist/default/production\PIC_maestro.X.production.o
-_I2C_Master_Read 30 0 CODE 0 text6 dist/default/production\PIC_maestro.X.production.o
-_I2C_Master_Stop 1ED2 0 CODE 0 text4 dist/default/production\PIC_maestro.X.production.o
-_I2C_Master_Wait 1EF8 0 CODE 0 text7 dist/default/production\PIC_maestro.X.production.o
+_I2C_Master_Init 1D9E 0 CODE 0 text9 dist/default/production\PIC_maestro.X.production.o
+_I2C_Master_Read 1CC8 0 CODE 0 text7 dist/default/production\PIC_maestro.X.production.o
+_I2C_Master_Stop 1B12 0 CODE 0 text5 dist/default/production\PIC_maestro.X.production.o
+_I2C_Master_Wait FE2 0 CODE 0 text8 dist/default/production\PIC_maestro.X.production.o
 __Lreset_vec 0 0 CODE 0 reset_vec -
-__end_of__initialization FF8 0 CODE 0 cinit dist/default/production\PIC_maestro.X.production.o
-___awmod@divisor 79 0 COMMON 1 cstackCOMMON dist/default/production\PIC_maestro.X.production.o
+__end_of_uart_config 1B64 0 CODE 0 text2 dist/default/production\PIC_maestro.X.production.o
+?i1___awdiv 70 0 COMMON 1 cstackCOMMON dist/default/production\PIC_maestro.X.production.o
+?i1___awmod 79 0 COMMON 1 cstackCOMMON dist/default/production\PIC_maestro.X.production.o
+__end_of__initialization 38 0 CODE 0 cinit dist/default/production\PIC_maestro.X.production.o
+___awmod@divisor 31 0 BANK0 1 cstackBANK0 dist/default/production\PIC_maestro.X.production.o
 __Lfunctab 0 0 ENTRY 0 functab -
-Lcd_Cmd@a 73 0 COMMON 1 cstackCOMMON dist/default/production\PIC_maestro.X.production.o
+Lcd_Cmd@a 2B 0 BANK0 1 cstackBANK0 dist/default/production\PIC_maestro.X.production.o
 __Lclrtext 0 0 ABS 0 clrtext -
-___lldiv@quotient 79 0 COMMON 1 cstackCOMMON dist/default/production\PIC_maestro.X.production.o
+___lldiv@quotient 31 0 BANK0 1 cstackBANK0 dist/default/production\PIC_maestro.X.production.o
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\PIC_maestro.X.production.o
+_TXSTAbits 98 0 ABS 0 - dist/default/production\PIC_maestro.X.production.o
 _SSPCON2 91 0 ABS 0 - dist/default/production\PIC_maestro.X.production.o
 _SSPSTAT 94 0 ABS 0 - dist/default/production\PIC_maestro.X.production.o
 __size_of_Lcd_Init 0 0 ABS 0 - dist/default/production\PIC_maestro.X.production.o
 __size_of_Lcd_Port 0 0 ABS 0 - dist/default/production\PIC_maestro.X.production.o
-__Hend_init 6 0 CODE 0 end_init -
-__end_of_main FE6 0 CODE 0 maintext dist/default/production\PIC_maestro.X.production.o
-__end_of_LECT1 C32 0 CODE 0 text20 dist/default/production\PIC_maestro.X.production.o
-osc_config@freq 72 0 COMMON 1 cstackCOMMON dist/default/production\PIC_maestro.X.production.o
+__Hend_init 26 0 CODE 0 end_init -
+__end_of_main 448 0 CODE 0 maintext dist/default/production\PIC_maestro.X.production.o
+__end_of_LECT1 B36 0 CODE 0 text21 dist/default/production\PIC_maestro.X.production.o
+osc_config@freq 2A 0 BANK0 1 cstackBANK0 dist/default/production\PIC_maestro.X.production.o
 _ANSEL 188 0 ABS 0 - dist/default/production\PIC_maestro.X.production.o
-_LECT1 8D6 0 CODE 0 text20 dist/default/production\PIC_maestro.X.production.o
-_PARKH 47 0 BANK0 1 bssBANK0 dist/default/production\PIC_maestro.X.production.o
+_LECT1 7DA 0 CODE 0 text21 dist/default/production\PIC_maestro.X.production.o
+_PARKH 5E 0 BANK0 1 bssBANK0 dist/default/production\PIC_maestro.X.production.o
 _PORTA 5 0 ABS 0 - dist/default/production\PIC_maestro.X.production.o
 _PORTB 6 0 ABS 0 - dist/default/production\PIC_maestro.X.production.o
 _PORTD 8 0 ABS 0 - dist/default/production\PIC_maestro.X.production.o
+_SPBRG 99 0 ABS 0 - dist/default/production\PIC_maestro.X.production.o
 _SSPIE 463 0 ABS 0 - dist/default/production\PIC_maestro.X.production.o
 _SSPIF 63 0 ABS 0 - dist/default/production\PIC_maestro.X.production.o
 _TRISA 85 0 ABS 0 - dist/default/production\PIC_maestro.X.production.o
 _TRISB 86 0 ABS 0 - dist/default/production\PIC_maestro.X.production.o
 _TRISD 88 0 ABS 0 - dist/default/production\PIC_maestro.X.production.o
 _TRISE 89 0 ABS 0 - dist/default/production\PIC_maestro.X.production.o
-__end_of_setup 8D6 0 CODE 0 text1 dist/default/production\PIC_maestro.X.production.o
+_TXREG 19 0 ABS 0 - dist/default/production\PIC_maestro.X.production.o
+__end_of_setup 7DA 0 CODE 0 text1 dist/default/production\PIC_maestro.X.production.o
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
-_setup 5AE 0 CODE 0 text1 dist/default/production\PIC_maestro.X.production.o
-_temperatura 37 0 BANK0 1 bssBANK0 dist/default/production\PIC_maestro.X.production.o
-_Lcd_Cmd 1F12 0 CODE 0 text18 dist/default/production\PIC_maestro.X.production.o
-_CERRADO 39 0 BANK0 1 bssBANK0 dist/default/production\PIC_maestro.X.production.o
-__initialization FE6 0 CODE 0 cinit dist/default/production\PIC_maestro.X.production.o
-__pbssBANK0 37 0 BANK0 1 bssBANK0 dist/default/production\PIC_maestro.X.production.o
-_conver1 4C0 0 CODE 0 text10 dist/default/production\PIC_maestro.X.production.o
-Lcd_Write_Char@a 72 0 COMMON 1 cstackCOMMON dist/default/production\PIC_maestro.X.production.o
+interrupt_function 8 0 CODE 0 intentry dist/default/production\PIC_maestro.X.production.o
+_setup 448 0 CODE 0 text1 dist/default/production\PIC_maestro.X.production.o
+_temperatura 4E 0 BANK0 1 bssBANK0 dist/default/production\PIC_maestro.X.production.o
+__pintentry 8 0 CODE 0 intentry dist/default/production\PIC_maestro.X.production.o
+_Lcd_Cmd 1BFA 0 CODE 0 text19 dist/default/production\PIC_maestro.X.production.o
+__size_of_isr 0 0 ABS 0 - dist/default/production\PIC_maestro.X.production.o
+_CERRADO 50 0 BANK0 1 bssBANK0 dist/default/production\PIC_maestro.X.production.o
+__initialization 26 0 CODE 0 cinit dist/default/production\PIC_maestro.X.production.o
+__pbssBANK0 4D 0 BANK0 1 bssBANK0 dist/default/production\PIC_maestro.X.production.o
+_conver1 B36 0 CODE 0 text11 dist/default/production\PIC_maestro.X.production.o
+i1___awmod@counter 20 0 BANK0 1 cstackBANK0 dist/default/production\PIC_maestro.X.production.o
+Lcd_Write_Char@a 2A 0 BANK0 1 cstackBANK0 dist/default/production\PIC_maestro.X.production.o
 __size_of_I2C_Master_Init 0 0 ABS 0 - dist/default/production\PIC_maestro.X.production.o
 __size_of_I2C_Master_Read 0 0 ABS 0 - dist/default/production\PIC_maestro.X.production.o
 __size_of_I2C_Master_Stop 0 0 ABS 0 - dist/default/production\PIC_maestro.X.production.o
@@ -889,32 +1058,28 @@ __size_of_I2C_Master_Wait 0 0 ABS 0 - dist/default/production\PIC_maestro.X.prod
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-cinit 0 7F3 FE6 D 2
-text1 0 2D7 5AE 194 2
-text2 0 46 8C 37 2
-text3 0 F72 1EE4 A 2
-text4 0 F69 1ED2 9 2
-text5 0 F60 1EC0 9 2
-text6 0 18 30 2E 2
-text7 0 F7C 1EF8 D 2
-text8 0 7D FA 38 2
-text9 0 193 326 66 2
-text10 0 260 4C0 77 2
-text11 0 138 270 5B 2
-text12 0 1F9 3F2 67 2
-text13 0 F4 1E8 44 2
-text14 0 FBB 1F76 21 2
-text16 0 FDC 1FB8 24 2
-text17 0 FA2 1F44 19 2
-text18 0 F89 1F12 19 2
-text19 0 F52 1EA4 6 2
-text20 0 46B 8D6 1AE 2
-text21 0 B5 16A 3F 2
-maintext 0 619 C32 1DA 2
+text2 0 D9C 1B38 16 2
+text3 0 E96 1D2C 39 2
+text4 0 D92 1B24 A 2
+text5 0 D89 1B12 9 2
+text6 0 D80 1B00 9 2
+text7 0 E64 1CC8 32 2
+text9 0 ECF 1D9E 3A 2
+text12 0 FA5 1F4A 5B 2
+text15 0 E19 1C32 25 2
+text16 0 DE4 1BC8 19 2
+text17 0 E3E 1C7C 26 2
+text18 0 DCB 1B96 19 2
+text19 0 DFD 1BFA 1C 2
+text20 0 D72 1AE4 6 2
+text22 0 F09 1E12 41 2
+text23 0 DB2 1B64 19 2
+text25 0 F4A 1E94 5B 2
 cstackCOMMON 1 70 70 E 1
-cstackBANK0 1 20 20 28 1
-reset_vec 0 0 0 18 2
-clrtext 0 F58 1EB0 8 2
+cstackBANK0 1 20 20 3F 1
+intentry 0 4 8 7FA 2
+reset_vec 0 0 0 3 2
+clrtext 0 D78 1AF0 8 2
 # %NOTES Section
 # This section contains data of all the note-psects.  The beginning of the section
 # is indicated by %NOTES. The first line indicates the name and decimal

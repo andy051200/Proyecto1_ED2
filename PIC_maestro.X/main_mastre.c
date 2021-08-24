@@ -35,6 +35,7 @@
 #include "Osc_config.h"
 #include "ASCII.h"
 #include "lcd_pablo.h"
+#include "UART_CONFIG.h"
 #include <xc.h>
 //*****************************************************************************
 // Definici n de variables
@@ -57,6 +58,7 @@ uint8_t DM;
 uint8_t CERRADO;
 uint8_t con;
 uint8_t temperatura;
+uint8_t cuenta_uart;
 //*****************************************************************************
 // Definici n de funciones para que se puedan colocar despu s del main de lo 
 // contrario hay que colocarlos todas las funciones antes del main
@@ -65,6 +67,22 @@ void setup(void);
 void LECT1(void);
 const char* conver(void); //Datos que recibirá la LCD
 const char* conver1(void);
+void mandar_datos(void);
+
+//*****************************************************************************
+// INTERRUPCIONES
+//*****************************************************************************
+void __interrupt() isr(void) //funcion de interrupciones
+{
+    //-------INTERRUPCION POR COMUNICACION UART
+    if (PIR1bits.TXIF)
+    {
+        cuenta_uart++;      //se suma variable guia
+        mandar_datos();     //invoco funcion para mandar uart
+        PIR1bits.TXIF=0;    //apago interrupcion
+    }  
+}
+
 //*****************************************************************************
 // Main
 //*****************************************************************************
@@ -156,7 +174,13 @@ void setup(void){
     PORTB = 0;
     PORTD = 0;
     osc_config(8);
+    uart_config();
     I2C_Master_Init(100000);        // Inicializar Comuncaci n I2C
+    //interrupciones
+    INTCONbits.GIE=1;           //se habilita interrupciones globales
+    INTCONbits.PEIE=1;          //habilitan interrupciones por perifericos
+    PIE1bits.TXIE=1;            //enable interrupcion de tx uart
+    PIR1bits.TXIF=0;            //apago bandera interrupcion tx uart
     
     I2C_Master_Start();     //Escritura de datos iniciales
     I2C_Master_Write(0xD0);
@@ -368,4 +392,30 @@ void LECT1(void){
         con = MIN-64-16;
         UM = num_ascii(con);
     }
+}
+//funcion para mandar caracteres a python
+void mandar_datos(void)
+{
+    switch(cuenta_uart)
+    {
+        case(1):
+            TXREG=((temperatura/10)%10+0x30);    //mando decenas temperatura
+            break;
+        case(2):
+            TXREG=((temperatura%10)+0x30);    //mando unidades temperatura
+            break;
+        case(3):
+            TXREG=44;               //separador de coma
+            break;
+        case(4):
+            TXREG=NUM;            //mando parqueos disponibles
+            break;
+        case(5):
+            TXREG=44;               //separador de coma
+            break;
+        case(20):
+            cuenta_uart=0;          //un tipo de delay para reiniciar cuenta
+            break;
+    }
+    
 }
