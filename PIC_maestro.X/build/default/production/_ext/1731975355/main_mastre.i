@@ -2720,11 +2720,6 @@ void Lcd_Shift_Right(void);
 void Lcd_Shift_Left(void);
 # 37 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c" 2
 
-# 1 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/UART_CONFIG.h" 1
-# 17 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/UART_CONFIG.h"
-void uart_config(void);
-# 38 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c" 2
-
 
 
 
@@ -2747,7 +2742,6 @@ uint8_t DM;
 uint8_t CERRADO;
 uint8_t con;
 uint8_t temperatura;
-uint8_t cuenta_uart;
 
 
 
@@ -2756,22 +2750,6 @@ void setup(void);
 void LECT1(void);
 const char* conver(void);
 const char* conver1(void);
-void mandar_datos(void);
-
-
-
-
-void __attribute__((picinterrupt(("")))) isr(void)
-{
-
-    if (PIR1bits.TXIF)
-    {
-        cuenta_uart++;
-
-        PIR1bits.TXIF=0;
-    }
-}
-
 
 
 
@@ -2846,8 +2824,6 @@ void main(void) {
         I2C_Master_Stop();
         _delay((unsigned long)((10)*(8000000/4000.0)));
 
-
-        mandar_datos();
     }
     return;
 }
@@ -2859,21 +2835,13 @@ void setup(void){
     ANSELH = 0;
     TRISA = 0;
     TRISB = 0;
-    TRISCbits.TRISC6=0;
-    TRISCbits.TRISC7=1;
     TRISD = 0;
     TRISE = 0;
     PORTA = 0;
     PORTB = 0;
     PORTD = 0;
     osc_config(8);
-    uart_config();
     I2C_Master_Init(100000);
-
-    INTCONbits.GIE=1;
-    INTCONbits.PEIE=1;
-    PIE1bits.TXIE=1;
-    PIR1bits.TXIF=0;
 
     I2C_Master_Start();
     I2C_Master_Write(0xD0);
@@ -3085,30 +3053,4 @@ void LECT1(void){
         con = MIN-64-16;
         UM = num_ascii(con);
     }
-}
-
-void mandar_datos(void)
-{
-    switch(cuenta_uart)
-    {
-        case(1):
-            TXREG=((temperatura/10)%10+0x30);
-            break;
-        case(2):
-            TXREG=((temperatura%10)+0x30);
-            break;
-        case(3):
-            TXREG=44;
-            break;
-        case(4):
-            TXREG=NUM;
-            break;
-        case(5):
-            TXREG=44;
-            break;
-        case(20):
-            cuenta_uart=0;
-            break;
-    }
-
 }

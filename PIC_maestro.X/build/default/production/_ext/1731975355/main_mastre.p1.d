@@ -3,5 +3,4 @@ C:/Users/Andy\ Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mas
 C:/Users/Andy\ Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.h  \
 C:/Users/Andy\ Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/Osc_config.h  \
 C:/Users/Andy\ Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/ASCII.h  \
-C:/Users/Andy\ Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.h  \
-C:/Users/Andy\ Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/UART_CONFIG.h 
+C:/Users/Andy\ Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.h 
