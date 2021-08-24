@@ -75,12 +75,12 @@ void mandar_datos(void);
 void __interrupt() isr(void) //funcion de interrupciones
 {
     //-------INTERRUPCION POR COMUNICACION UART
-    if (PIR1bits.TXIF)
+   if (PIR1bits.TXIF)
     {
         cuenta_uart++;      //se suma variable guia
         mandar_datos();     //invoco funcion para mandar uart
         PIR1bits.TXIF=0;    //apago interrupcion
-    }  
+    }
 }
 
 //*****************************************************************************
@@ -157,6 +157,8 @@ void main(void) {
         I2C_Master_Stop();
         __delay_ms(10);
        
+        //
+        //mandar_datos();
     }
     return;
 }
@@ -168,6 +170,10 @@ void setup(void){
     ANSELH = 0;
     TRISA = 0;
     TRISB = 0;
+    TRISCbits.TRISC3=0;
+    TRISCbits.TRISC4=0;
+    TRISCbits.TRISC6=0;
+    TRISCbits.TRISC7=1;
     TRISD = 0;
     TRISE = 0;
     PORTA = 0;
@@ -180,7 +186,7 @@ void setup(void){
     INTCONbits.GIE=1;           //se habilita interrupciones globales
     INTCONbits.PEIE=1;          //habilitan interrupciones por perifericos
     PIE1bits.TXIE=1;            //enable interrupcion de tx uart
-    PIR1bits.TXIF=0;            //apago bandera interrupcion tx uart
+    PIR1bits.TXIF=0;            //apago bandera interrupcion tx uart*
     
     I2C_Master_Start();     //Escritura de datos iniciales
     I2C_Master_Write(0xD0);
@@ -412,6 +418,12 @@ void mandar_datos(void)
             break;
         case(5):
             TXREG=44;               //separador de coma
+            break;
+        case(6):
+            TXREG=10;               
+            break;
+        case(7):
+            TXREG=13;               
             break;
         case(20):
             cuenta_uart=0;          //un tipo de delay para reiniciar cuenta

@@ -12,7 +12,7 @@
 #include <pic16f887.h>
 #include <pic16f887.h>                 //se incluye libreria del compilador
 #include "UART_CONFIG.h"
-#define _XTAL_FREQ 8000000
+#define _XTAL_FREQ 4000000
 
 /*-----------------------------------------------------------------------------
 -------------------------- FUNCION DE LIBRERIA --------------------------------

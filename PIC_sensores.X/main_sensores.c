@@ -40,15 +40,15 @@ Descripcion:
 #include "Osc_config.h"
 #include "ADC_CONFIG.h"
 #include "I2C.h"
+#include "UART_CONFIG.h"
 /*-----------------------------------------------------------------------------
  ----------------------- VARIABLES A IMPLEMTENTAR------------------------------
  -----------------------------------------------------------------------------*/
-
 //-------DIRECTIVAS DEL COMPILADOR
 #define _XTAL_FREQ 8000000
 
 //-------VARIABLES DE PROGRAMA
-unsigned char antirrebote;
+unsigned char antirrebote, cuenta_uart;
 unsigned char infrarrojo1, infrarrojo2, infrarrojo3, suma_ir;
 float conversion1, conversion_total, temperatura_aprox;
 uint8_t abierto_cerrado, BASURA, PARQUEO; 
@@ -57,6 +57,7 @@ uint8_t abierto_cerrado, BASURA, PARQUEO;
  -----------------------------------------------------------------------------*/
 void setup(void);
 void infrarrojos(void);
+void mandar_datos(void);
 /*-----------------------------------------------------------------------------
  --------------------------- INTERRUPCIONES -----------------------------------
  -----------------------------------------------------------------------------*/
@@ -95,7 +96,13 @@ void __interrupt() isr(void) //funcion de interrupciones
        
         PIR1bits.SSPIF = 0;    
     }
-   
+    if (PIR1bits.TXIF)
+    {
+        cuenta_uart++;      //se suma variable guia
+        mandar_datos();     //invoco funcion para mandar uart
+        PIR1bits.TXIF=0;    //apago interrupcion
+    }
+    //if    
 }
 /*-----------------------------------------------------------------------------
  ----------------------------- MAIN LOOP --------------------------------------
@@ -130,7 +137,8 @@ void setup(void)
     TRISBbits.TRISB3=1;                 //entrada de sensor IR3
     TRISEbits.TRISE0=0;                 //salida para led verde
     TRISEbits.TRISE1=0;                 //salida para led rojo
-    TRISC=0;
+    TRISCbits.TRISC6=0;
+    TRISCbits.TRISC7=1;
     TRISD=0;
     //-------LIMPIEZA DE PUERTOS
     PORTB=0;
@@ -140,10 +148,14 @@ void setup(void)
     osc_config(8);
     //-------CONFIGURACION DE ADC
     ADC_config();
+    uart_config();
     //-------CONFIGURACION DE COMUNICACION I2C
     I2C_Slave_Init(0x50);   //se da direccion 0x50
     //-------CONFIGURACION DE INTERRUPCIONES
-    
+    INTCONbits.GIE=1;           //se habilita interrupciones globales
+    INTCONbits.PEIE=1;          //habilitan interrupciones por perifericos
+    PIE1bits.TXIE=1;            //enable interrupcion de tx uart
+    PIR1bits.TXIF=0;            //apago bandera interrupcion tx uart
     
 }
 /*-----------------------------------------------------------------------------
@@ -206,4 +218,22 @@ void toggle_adc(void)
     }
 }
 
-//-------FUNCION PARA MAPEO DE TEMPERATURA  
+//-------FUNCION PARA datos uart
+void mandar_datos(void)
+{
+    switch(cuenta_uart)
+    {
+        case(1):
+            TXREG=(suma_ir+0x30);
+            break;
+      
+        case(5):
+            TXREG=44;               //separador de coma
+            break;
+        case(20):
+            cuenta_uart=0;          //un tipo de delay para reiniciar cuenta
+            break;
+    }
+    
+}
+

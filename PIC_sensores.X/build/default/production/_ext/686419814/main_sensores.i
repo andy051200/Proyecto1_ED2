@@ -2700,8 +2700,20 @@ unsigned short I2C_Master_Read(unsigned short a);
 
 void I2C_Slave_Init(uint8_t address);
 # 42 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c" 2
-# 51 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c"
-unsigned char antirrebote;
+
+# 1 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/UART_CONFIG.h" 1
+# 17 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/UART_CONFIG.h"
+void uart_config(void);
+# 43 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c" 2
+
+
+
+
+
+
+
+
+unsigned char antirrebote, cuenta_uart;
 unsigned char infrarrojo1, infrarrojo2, infrarrojo3, suma_ir;
 float conversion1, conversion_total, temperatura_aprox;
 uint8_t abierto_cerrado, BASURA, PARQUEO;
@@ -2710,6 +2722,7 @@ uint8_t abierto_cerrado, BASURA, PARQUEO;
 
 void setup(void);
 void infrarrojos(void);
+void mandar_datos(void);
 
 
 
@@ -2748,6 +2761,12 @@ void __attribute__((picinterrupt(("")))) isr(void)
 
         PIR1bits.SSPIF = 0;
     }
+    if (PIR1bits.TXIF)
+    {
+        cuenta_uart++;
+        mandar_datos();
+        PIR1bits.TXIF=0;
+    }
 
 }
 
@@ -2783,7 +2802,8 @@ void setup(void)
     TRISBbits.TRISB3=1;
     TRISEbits.TRISE0=0;
     TRISEbits.TRISE1=0;
-    TRISC=0;
+    TRISCbits.TRISC6=0;
+    TRISCbits.TRISC7=1;
     TRISD=0;
 
     PORTB=0;
@@ -2793,10 +2813,14 @@ void setup(void)
     osc_config(8);
 
     ADC_config();
+    uart_config();
 
     I2C_Slave_Init(0x50);
 
-
+    INTCONbits.GIE=1;
+    INTCONbits.PEIE=1;
+    PIE1bits.TXIE=1;
+    PIR1bits.TXIF=0;
 
 }
 
@@ -2857,4 +2881,23 @@ void toggle_adc(void)
         _delay((unsigned long)((1)*(8000000/4000.0)));
         ADCON0bits.GO=1;
     }
+}
+
+
+void mandar_datos(void)
+{
+    switch(cuenta_uart)
+    {
+        case(1):
+            TXREG=(suma_ir+0x30);
+            break;
+
+        case(5):
+            TXREG=44;
+            break;
+        case(20):
+            cuenta_uart=0;
+            break;
+    }
+
 }
