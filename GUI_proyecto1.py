@@ -36,18 +36,28 @@ port1.open()                      #apertura del puerto serial '''
 ------------------------------------------------------------------------------'''
 #---------INICIALIZACION DE COMUNICACION CON ADAFRUIT
 ADAFRUIT_IO_USERNAME = "anbo_one"
-ADAFRUIT_IO_KEY = "aio_uAgE72b2tkNiRLKVkc8MElcvrwvU"
+ADAFRUIT_IO_KEY = "al"
 aio = Client(ADAFRUIT_IO_USERNAME, ADAFRUIT_IO_KEY)     #parametros
 
 #---------SE MANDAN VALORES DE CANTIDAD DE PARQUEOS DESDE PIC PARA ADAFRUIT
 digital_feed = aio.feeds('parqueos')
-aio.send_data(digital_feed.key, 2)
-digital_data = aio.receive(digital_feed.key)
-#---------SE MANDAN VALORES DE CANTIDAD DE PARQUEOS DESDE PIC PARA ADAFRUIT
-digital_feed = aio.feeds('temperatura')
-aio.send_data(digital_feed.key, 28)
+aio.send_data(digital_feed.key, 1)
 digital_data = aio.receive(digital_feed.key)
 
+#---------SE MANDA SI ESTA OCUPADO EL PARQUEO1
+digital_feed = aio.feeds('parqueo1')
+aio.send_data(digital_feed.key, 1)
+digital_data = aio.receive(digital_feed.key)
+
+#---------SE MANDA SI ESTA OCUPADO EL PARQUEO2
+digital_feed = aio.feeds('parqueo2')
+aio.send_data(digital_feed.key, 0)
+digital_data = aio.receive(digital_feed.key)
+
+#---------SE MANDA SI ESTA OCUPADO EL PARQUEO3
+digital_feed = aio.feeds('parqueo3')
+aio.send_data(digital_feed.key, 0)
+digital_data = aio.receive(digital_feed.key)
 
 '''------------------------------------------------------------------------------
 -----------------------DEFINICION DE FUNCIONES-----------------------------------
@@ -58,6 +68,7 @@ def actualizar():
     uart_recibido2 = uart_recibido1.split(b',')'''
     digital_feed = aio.feeds('parqueos')
     aio.send_data(digital_feed.key, slider2.get())
+    
     digital_feed = aio.feeds('temperatura')
     aio.send_data(digital_feed.key, slider1.get())
     #aio.send_data(digital_feed.key, int(uart_recibido2[0]))
