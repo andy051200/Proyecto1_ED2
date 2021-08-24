@@ -2891,9 +2891,11 @@ void mandar_datos(void)
         case(1):
             TXREG=(suma_ir+0x30);
             break;
-
-        case(5):
-            TXREG=44;
+        case(2):
+            TXREG=10;
+            break;
+        case(3):
+            TXREG=13;
             break;
         case(20):
             cuenta_uart=0;

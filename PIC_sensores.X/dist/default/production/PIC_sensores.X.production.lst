@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.32 build 20210201212658 
-                                                                                               Mon Aug 23 21:16:13 2021
+                                                                                               Mon Aug 23 21:58:15 2021
 
 Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1 
      1                           	processor	16F887
@@ -615,7 +615,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    601                           
    602  0028                     __end_of__initialization:
    603  0028  0183               	clrf	3
-   604  0029  120A  118A  29B0   	ljmp	_main	;jump to C main() function
+   604  0029  120A  118A  29B8   	ljmp	_main	;jump to C main() function
    605                           
    606                           	psect	bssCOMMON
    607  0070                     __pbssCOMMON:
@@ -716,7 +716,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    702                           
    703                           
    704                           	psect	maintext
-   705  01B0                     __pmaintext:	
+   705  01B8                     __pmaintext:	
    706                           ; 1 bytes @ 0x3
    707 ;;
    708 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
@@ -753,24 +753,24 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    739                           
    740                           
    741                           ;psect for function _main
-   742  01B0                     _main:
-   743  01B0                     l1641:	
+   742  01B8                     _main:
+   743  01B8                     l1646:	
    744                           ;incstack = 0
    745                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+pclath+cstack]
    746                           
    747                           
    748                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 113:     setup();
-   749  01B0  120A  118A  2112  120A  118A  	fcall	_setup
-   750  01B5                     l1643:
+   749  01B8  120A  118A  2112  120A  118A  	fcall	_setup
+   750  01BD                     l1648:
    751                           
    752                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 116:     {;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/mai
       +                          n_sensores.c: 119:         infrarrojos();
-   753  01B5  120A  118A  20DA  120A  118A  	fcall	_infrarrojos
-   754  01BA  29B5               	goto	l1643
-   755  01BB  120A  118A  280E   	ljmp	start
-   756  01BE                     __end_of_main:
+   753  01BD  120A  118A  20DA  120A  118A  	fcall	_infrarrojos
+   754  01C2  29BD               	goto	l1648
+   755  01C3  120A  118A  280E   	ljmp	start
+   756  01C6                     __end_of_main:
    757                           
    758                           	psect	text1
    759  0112                     __ptext1:	
@@ -810,7 +810,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    793                           
    794                           ;psect for function _setup
    795  0112                     _setup:
-   796  0112                     l1579:	
+   796  0112                     l1584:	
    797                           ;incstack = 0
    798                           ; Regs used in _setup: [wreg-fsr0h+status,2+status,0+pclath+cstack]
    799                           
@@ -824,49 +824,49 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    806                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 131:     ANSELH=0;
    807  0115  0189               	clrf	9	;volatile
-   808  0116                     l1581:
+   808  0116                     l1586:
    809                           
    810                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 132:     ANSELbits.ANS0=1;
    811  0116  1408               	bsf	8,0	;volatile
-   812  0117                     l1583:
+   812  0117                     l1588:
    813                           
    814                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 134:     TRISAbits.TRISA0=1;
    815  0117  1683               	bsf	3,5	;RP0=1, select bank1
    816  0118  1303               	bcf	3,6	;RP1=0, select bank1
    817  0119  1405               	bsf	5,0	;volatile
-   818  011A                     l1585:
+   818  011A                     l1590:
    819                           
    820                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 135:     TRISBbits.TRISB1=1;
    821  011A  1486               	bsf	6,1	;volatile
-   822  011B                     l1587:
+   822  011B                     l1592:
    823                           
    824                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 136:     TRISBbits.TRISB2=1;
    825  011B  1506               	bsf	6,2	;volatile
-   826  011C                     l1589:
+   826  011C                     l1594:
    827                           
    828                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 137:     TRISBbits.TRISB3=1;
    829  011C  1586               	bsf	6,3	;volatile
-   830  011D                     l1591:
+   830  011D                     l1596:
    831                           
    832                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 138:     TRISEbits.TRISE0=0;
    833  011D  1009               	bcf	9,0	;volatile
-   834  011E                     l1593:
+   834  011E                     l1598:
    835                           
    836                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 139:     TRISEbits.TRISE1=0;
    837  011E  1089               	bcf	9,1	;volatile
-   838  011F                     l1595:
+   838  011F                     l1600:
    839                           
    840                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 140:     TRISCbits.TRISC6=0;
    841  011F  1307               	bcf	7,6	;volatile
-   842  0120                     l1597:
+   842  0120                     l1602:
    843                           
    844                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 141:     TRISCbits.TRISC7=1;
@@ -889,46 +889,46 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    858                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 146:     PORTE=0;
    859  0126  0189               	clrf	9	;volatile
-   860  0127                     l1599:
+   860  0127                     l1604:
    861                           
    862                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 148:     osc_config(8);
    863  0127  3008               	movlw	8
    864  0128  120A  118A  20A1  120A  118A  	fcall	_osc_config
-   865  012D                     l1601:
+   865  012D                     l1606:
    866                           
    867                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 150:     ADC_config();
-   868  012D  120A  118A  219A  120A  118A  	fcall	_ADC_config
-   869  0132                     l1603:
+   868  012D  120A  118A  21A2  120A  118A  	fcall	_ADC_config
+   869  0132                     l1608:
    870                           
    871                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 151:     uart_config();
-   872  0132  120A  118A  2184  120A  118A  	fcall	_uart_config
-   873  0137                     l1605:
+   872  0132  120A  118A  218C  120A  118A  	fcall	_uart_config
+   873  0137                     l1610:
    874                           
    875                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 153:     I2C_Slave_Init(0x50);
    876  0137  3050               	movlw	80
-   877  0138  120A  118A  2168  120A  118A  	fcall	_I2C_Slave_Init
-   878  013D                     l1607:
+   877  0138  120A  118A  2170  120A  118A  	fcall	_I2C_Slave_Init
+   878  013D                     l1612:
    879                           
    880                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 155:     INTCONbits.GIE=1;
    881  013D  178B               	bsf	11,7	;volatile
-   882  013E                     l1609:
+   882  013E                     l1614:
    883                           
    884                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 156:     INTCONbits.PEIE=1;
    885  013E  170B               	bsf	11,6	;volatile
-   886  013F                     l1611:
+   886  013F                     l1616:
    887                           
    888                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 157:     PIE1bits.TXIE=1;
    889  013F  1683               	bsf	3,5	;RP0=1, select bank1
    890  0140  1303               	bcf	3,6	;RP1=0, select bank1
    891  0141  160C               	bsf	12,4	;volatile
-   892  0142                     l1613:
+   892  0142                     l1618:
    893                           
    894                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 158:     PIR1bits.TXIF=0;
@@ -940,7 +940,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    900  0146                     __end_of_setup:
    901                           
    902                           	psect	text2
-   903  0184                     __ptext2:	
+   903  018C                     __ptext2:	
    904 ;; *************** function _uart_config *****************
    905 ;; Defined at:
    906 ;;		line 21 in file "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/UART_CONFIG.c"
@@ -973,71 +973,71 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    933                           
    934                           
    935                           ;psect for function _uart_config
-   936  0184                     _uart_config:
-   937  0184                     l1551:	
+   936  018C                     _uart_config:
+   937  018C                     l1556:	
    938                           ;incstack = 0
    939                           ; Regs used in _uart_config: [wreg+status,2]
    940                           
    941                           
    942                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/UART_CONFIG.c: 
       +                          24:     TXSTAbits.SYNC = 0;
-   943  0184  1683               	bsf	3,5	;RP0=1, select bank1
-   944  0185  1303               	bcf	3,6	;RP1=0, select bank1
-   945  0186  1218               	bcf	24,4	;volatile
+   943  018C  1683               	bsf	3,5	;RP0=1, select bank1
+   944  018D  1303               	bcf	3,6	;RP1=0, select bank1
+   945  018E  1218               	bcf	24,4	;volatile
    946                           
    947                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/UART_CONFIG.c: 
       +                          25:  TXSTAbits.BRGH = 1;
-   948  0187  1518               	bsf	24,2	;volatile
+   948  018F  1518               	bsf	24,2	;volatile
    949                           
    950                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/UART_CONFIG.c: 
       +                          26:  TXSTAbits.TX9 = 0;
-   951  0188  1318               	bcf	24,6	;volatile
+   951  0190  1318               	bcf	24,6	;volatile
    952                           
    953                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/UART_CONFIG.c: 
       +                          27:  BAUDCTLbits.BRG16 = 0;
-   954  0189  1683               	bsf	3,5	;RP0=1, select bank3
-   955  018A  1703               	bsf	3,6	;RP1=1, select bank3
-   956  018B  1187               	bcf	7,3	;volatile
-   957  018C                     l1553:
+   954  0191  1683               	bsf	3,5	;RP0=1, select bank3
+   955  0192  1703               	bsf	3,6	;RP1=1, select bank3
+   956  0193  1187               	bcf	7,3	;volatile
+   957  0194                     l1558:
    958                           
    959                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/UART_CONFIG.c: 
       +                          28:  SPBRGH = 0;
-   960  018C  1683               	bsf	3,5	;RP0=1, select bank1
-   961  018D  1303               	bcf	3,6	;RP1=0, select bank1
-   962  018E  019A               	clrf	26	;volatile
-   963  018F                     l1555:
+   960  0194  1683               	bsf	3,5	;RP0=1, select bank1
+   961  0195  1303               	bcf	3,6	;RP1=0, select bank1
+   962  0196  019A               	clrf	26	;volatile
+   963  0197                     l1560:
    964                           
    965                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/UART_CONFIG.c: 
-      +                          29:  SPBRG = 25;
-   966  018F  3019               	movlw	25
-   967  0190  0099               	movwf	25	;volatile
-   968  0191                     l1557:
+      +                          29:  SPBRG = 51;
+   966  0197  3033               	movlw	51
+   967  0198  0099               	movwf	25	;volatile
+   968  0199                     l1562:
    969                           
    970                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/UART_CONFIG.c: 
       +                          31:  RCSTAbits.SPEN = 1;
-   971  0191  1283               	bcf	3,5	;RP0=0, select bank0
-   972  0192  1303               	bcf	3,6	;RP1=0, select bank0
-   973  0193  1798               	bsf	24,7	;volatile
-   974  0194                     l1559:
+   971  0199  1283               	bcf	3,5	;RP0=0, select bank0
+   972  019A  1303               	bcf	3,6	;RP1=0, select bank0
+   973  019B  1798               	bsf	24,7	;volatile
+   974  019C                     l1564:
    975                           
    976                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/UART_CONFIG.c: 
       +                          32:  RCSTAbits.RX9 = 0;
-   977  0194  1318               	bcf	24,6	;volatile
-   978  0195                     l1561:
+   977  019C  1318               	bcf	24,6	;volatile
+   978  019D                     l1566:
    979                           
    980                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/UART_CONFIG.c: 
       +                          33:  RCSTAbits.CREN = 0;
-   981  0195  1218               	bcf	24,4	;volatile
-   982  0196                     l1563:
+   981  019D  1218               	bcf	24,4	;volatile
+   982  019E                     l1568:
    983                           
    984                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/UART_CONFIG.c: 
       +                          34:  TXSTAbits.TXEN = 1;
-   985  0196  1683               	bsf	3,5	;RP0=1, select bank1
-   986  0197  1303               	bcf	3,6	;RP1=0, select bank1
-   987  0198  1698               	bsf	24,5	;volatile
-   988  0199                     l227:
-   989  0199  0008               	return
-   990  019A                     __end_of_uart_config:
+   985  019E  1683               	bsf	3,5	;RP0=1, select bank1
+   986  019F  1303               	bcf	3,6	;RP1=0, select bank1
+   987  01A0  1698               	bsf	24,5	;volatile
+   988  01A1                     l228:
+   989  01A1  0008               	return
+   990  01A2                     __end_of_uart_config:
    991                           
    992                           	psect	text3
    993  00A1                     __ptext3:	
@@ -1081,14 +1081,14 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1031  00A1  1283               	bcf	3,5	;RP0=0, select bank0
   1032  00A2  1303               	bcf	3,6	;RP1=0, select bank0
   1033  00A3  00B1               	movwf	osc_config@freq
-  1034  00A4                     l1515:
+  1034  00A4                     l1520:
   1035                           
   1036                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/Osc_config.c: 1
       +                          6: void osc_config(uint8_t freq);C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED
       +                          2/PIC_sensores.X/Osc_config.c: 17: {;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto
       +                          1_ED2/PIC_sensores.X/Osc_config.c: 18:     switch(freq)
-  1037  00A4  28C3               	goto	l1535
-  1038  00A5                     l1517:
+  1037  00A4  28C3               	goto	l1540
+  1038  00A5                     l1522:
   1039                           
   1040                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/Osc_config.c: 2
       +                          1:             OSCCONbits.IRCF=0b100;
@@ -1098,7 +1098,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1044  00A8  398F               	andlw	-113
   1045  00A9  3840               	iorlw	64
   1046  00AA  008F               	movwf	15	;volatile
-  1047  00AB                     l1519:
+  1047  00AB                     l1524:
   1048                           
   1049                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/Osc_config.c: 2
       +                          2:             OSCCONbits.SCS=1;
@@ -1106,8 +1106,8 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1051                           
   1052                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/Osc_config.c: 2
       +                          3:             break;
-  1053  00AC  28D9               	goto	l150
-  1054  00AD                     l1521:
+  1053  00AC  28D9               	goto	l151
+  1054  00AD                     l1526:
   1055                           
   1056                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/Osc_config.c: 2
       +                          6:             OSCCONbits.IRCF=0b101;
@@ -1117,7 +1117,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1060  00B0  398F               	andlw	-113
   1061  00B1  3850               	iorlw	80
   1062  00B2  008F               	movwf	15	;volatile
-  1063  00B3                     l1523:
+  1063  00B3                     l1528:
   1064                           
   1065                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/Osc_config.c: 2
       +                          7:             OSCCONbits.SCS=1;
@@ -1125,8 +1125,8 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1067                           
   1068                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/Osc_config.c: 2
       +                          8:             break;
-  1069  00B4  28D9               	goto	l150
-  1070  00B5                     l1525:
+  1069  00B4  28D9               	goto	l151
+  1070  00B5                     l1530:
   1071                           
   1072                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/Osc_config.c: 3
       +                          1:             OSCCONbits.IRCF=0b110;
@@ -1136,7 +1136,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1076  00B8  398F               	andlw	-113
   1077  00B9  3860               	iorlw	96
   1078  00BA  008F               	movwf	15	;volatile
-  1079  00BB                     l1527:
+  1079  00BB                     l1532:
   1080                           
   1081                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/Osc_config.c: 3
       +                          2:             OSCCONbits.SCS=1;
@@ -1144,8 +1144,8 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1083                           
   1084                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/Osc_config.c: 3
       +                          3:             break;
-  1085  00BC  28D9               	goto	l150
-  1086  00BD                     l1529:
+  1085  00BC  28D9               	goto	l151
+  1086  00BD                     l1534:
   1087                           
   1088                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/Osc_config.c: 3
       +                          6:             OSCCONbits.IRCF=0b111;
@@ -1153,7 +1153,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1090  00BE  1683               	bsf	3,5	;RP0=1, select bank1
   1091  00BF  1303               	bcf	3,6	;RP1=0, select bank1
   1092  00C0  048F               	iorwf	15,f	;volatile
-  1093  00C1                     l1531:
+  1093  00C1                     l1536:
   1094                           
   1095                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/Osc_config.c: 3
       +                          7:             OSCCONbits.SCS=1;
@@ -1161,8 +1161,8 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1097                           
   1098                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/Osc_config.c: 3
       +                          8:             break;
-  1099  00C2  28D9               	goto	l150
-  1100  00C3                     l1535:
+  1099  00C2  28D9               	goto	l151
+  1100  00C3                     l1540:
   1101  00C3  0831               	movf	osc_config@freq,w
   1102  00C4  00AF               	movwf	??_osc_config
   1103  00C5  01B0               	clrf	??_osc_config+1
@@ -1180,9 +1180,9 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1114  00C6  0830               	movf	??_osc_config+1,w
   1115  00C7  3A00               	xorlw	0	; case 0
   1116  00C8  1903               	skipnz
-  1117  00C9  28CB               	goto	l1695
-  1118  00CA  28D9               	goto	l150
-  1119  00CB                     l1695:
+  1117  00C9  28CB               	goto	l1700
+  1118  00CA  28D9               	goto	l151
+  1119  00CB                     l1700:
   1120                           
   1121                           ; Switch size 1, requested type "simple"
   1122                           ; Number of cases is 4, Range of values is 1 to 8
@@ -1195,23 +1195,23 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1129  00CB  082F               	movf	??_osc_config,w
   1130  00CC  3A01               	xorlw	1	; case 1
   1131  00CD  1903               	skipnz
-  1132  00CE  28A5               	goto	l1517
+  1132  00CE  28A5               	goto	l1522
   1133  00CF  3A03               	xorlw	3	; case 2
   1134  00D0  1903               	skipnz
-  1135  00D1  28AD               	goto	l1521
+  1135  00D1  28AD               	goto	l1526
   1136  00D2  3A06               	xorlw	6	; case 4
   1137  00D3  1903               	skipnz
-  1138  00D4  28B5               	goto	l1525
+  1138  00D4  28B5               	goto	l1530
   1139  00D5  3A0C               	xorlw	12	; case 8
   1140  00D6  1903               	skipnz
-  1141  00D7  28BD               	goto	l1529
-  1142  00D8  28D9               	goto	l150
-  1143  00D9                     l150:
+  1141  00D7  28BD               	goto	l1534
+  1142  00D8  28D9               	goto	l151
+  1143  00D9                     l151:
   1144  00D9  0008               	return
   1145  00DA                     __end_of_osc_config:
   1146                           
   1147                           	psect	text4
-  1148  0168                     __ptext4:	
+  1148  0170                     __ptext4:	
   1149 ;; *************** function _I2C_Slave_Init *****************
   1150 ;; Defined at:
   1151 ;;		line 93 in file "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/I2C.c"
@@ -1244,83 +1244,83 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1178                           
   1179                           
   1180                           ;psect for function _I2C_Slave_Init
-  1181  0168                     _I2C_Slave_Init:
+  1181  0170                     _I2C_Slave_Init:
   1182                           
   1183                           ;incstack = 0
   1184                           ; Regs used in _I2C_Slave_Init: [wreg]
   1185                           ;I2C_Slave_Init@address stored from wreg
-  1186  0168  1283               	bcf	3,5	;RP0=0, select bank0
-  1187  0169  1303               	bcf	3,6	;RP1=0, select bank0
-  1188  016A  00AF               	movwf	I2C_Slave_Init@address
-  1189  016B                     l1565:
+  1186  0170  1283               	bcf	3,5	;RP0=0, select bank0
+  1187  0171  1303               	bcf	3,6	;RP1=0, select bank0
+  1188  0172  00AF               	movwf	I2C_Slave_Init@address
+  1189  0173                     l1570:
   1190                           
   1191                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/I2C.c: 93: void
       +                           I2C_Slave_Init(uint8_t address);C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED
       +                          2/PIC_sensores.X/I2C.c: 94: {;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/P
       +                          IC_sensores.X/I2C.c: 95:     SSPADD = address;
-  1192  016B  082F               	movf	I2C_Slave_Init@address,w
-  1193  016C  1683               	bsf	3,5	;RP0=1, select bank1
-  1194  016D  1303               	bcf	3,6	;RP1=0, select bank1
-  1195  016E  0093               	movwf	19	;volatile
+  1192  0173  082F               	movf	I2C_Slave_Init@address,w
+  1193  0174  1683               	bsf	3,5	;RP0=1, select bank1
+  1194  0175  1303               	bcf	3,6	;RP1=0, select bank1
+  1195  0176  0093               	movwf	19	;volatile
   1196                           
   1197                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/I2C.c: 96:     
       +                          SSPCON = 0x36;
-  1198  016F  3036               	movlw	54
-  1199  0170  1283               	bcf	3,5	;RP0=0, select bank0
-  1200  0171  1303               	bcf	3,6	;RP1=0, select bank0
-  1201  0172  0094               	movwf	20	;volatile
+  1198  0177  3036               	movlw	54
+  1199  0178  1283               	bcf	3,5	;RP0=0, select bank0
+  1200  0179  1303               	bcf	3,6	;RP1=0, select bank0
+  1201  017A  0094               	movwf	20	;volatile
   1202                           
   1203                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/I2C.c: 97:     
       +                          SSPSTAT = 0x80;
-  1204  0173  3080               	movlw	128
-  1205  0174  1683               	bsf	3,5	;RP0=1, select bank1
-  1206  0175  1303               	bcf	3,6	;RP1=0, select bank1
-  1207  0176  0094               	movwf	20	;volatile
+  1204  017B  3080               	movlw	128
+  1205  017C  1683               	bsf	3,5	;RP0=1, select bank1
+  1206  017D  1303               	bcf	3,6	;RP1=0, select bank1
+  1207  017E  0094               	movwf	20	;volatile
   1208                           
   1209                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/I2C.c: 98:     
       +                          SSPCON2 = 0x01;
-  1210  0177  3001               	movlw	1
-  1211  0178  0091               	movwf	17	;volatile
-  1212  0179                     l1567:
+  1210  017F  3001               	movlw	1
+  1211  0180  0091               	movwf	17	;volatile
+  1212  0181                     l1572:
   1213                           
   1214                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/I2C.c: 99:     
       +                          TRISC3 = 1;
-  1215  0179  1587               	bsf	7,3	;volatile
-  1216  017A                     l1569:
+  1215  0181  1587               	bsf	7,3	;volatile
+  1216  0182                     l1574:
   1217                           
   1218                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/I2C.c: 100:    
       +                           TRISC4 = 1;
-  1219  017A  1607               	bsf	7,4	;volatile
-  1220  017B                     l1571:
+  1219  0182  1607               	bsf	7,4	;volatile
+  1220  0183                     l1576:
   1221                           
   1222                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/I2C.c: 101:    
       +                           GIE = 1;
-  1223  017B  178B               	bsf	11,7	;volatile
-  1224  017C                     l1573:
+  1223  0183  178B               	bsf	11,7	;volatile
+  1224  0184                     l1578:
   1225                           
   1226                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/I2C.c: 102:    
       +                           PEIE = 1;
-  1227  017C  170B               	bsf	11,6	;volatile
-  1228  017D                     l1575:
+  1227  0184  170B               	bsf	11,6	;volatile
+  1228  0185                     l1580:
   1229                           
   1230                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/I2C.c: 103:    
       +                           SSPIF = 0;
-  1231  017D  1283               	bcf	3,5	;RP0=0, select bank0
-  1232  017E  1303               	bcf	3,6	;RP1=0, select bank0
-  1233  017F  118C               	bcf	12,3	;volatile
-  1234  0180                     l1577:
+  1231  0185  1283               	bcf	3,5	;RP0=0, select bank0
+  1232  0186  1303               	bcf	3,6	;RP1=0, select bank0
+  1233  0187  118C               	bcf	12,3	;volatile
+  1234  0188                     l1582:
   1235                           
   1236                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/I2C.c: 104:    
       +                           SSPIE = 1;
-  1237  0180  1683               	bsf	3,5	;RP0=1, select bank1
-  1238  0181  1303               	bcf	3,6	;RP1=0, select bank1
-  1239  0182  158C               	bsf	12,3	;volatile
-  1240  0183                     l214:
-  1241  0183  0008               	return
-  1242  0184                     __end_of_I2C_Slave_Init:
+  1237  0188  1683               	bsf	3,5	;RP0=1, select bank1
+  1238  0189  1303               	bcf	3,6	;RP1=0, select bank1
+  1239  018A  158C               	bsf	12,3	;volatile
+  1240  018B                     l215:
+  1241  018B  0008               	return
+  1242  018C                     __end_of_I2C_Slave_Init:
   1243                           
   1244                           	psect	text5
-  1245  019A                     __ptext5:	
+  1245  01A2                     __ptext5:	
   1246 ;; *************** function _ADC_config *****************
   1247 ;; Defined at:
   1248 ;;		line 22 in file "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/ADC_CONFIG.c"
@@ -1353,60 +1353,60 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1275                           
   1276                           
   1277                           ;psect for function _ADC_config
-  1278  019A                     _ADC_config:
-  1279  019A                     l1543:	
+  1278  01A2                     _ADC_config:
+  1279  01A2                     l1548:	
   1280                           ;incstack = 0
   1281                           ; Regs used in _ADC_config: [wreg+status,2+status,0]
   1282                           
   1283                           
   1284                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/ADC_CONFIG.c: 2
       +                          5:     ADCON1bits.ADFM = 1 ;
-  1285  019A  1683               	bsf	3,5	;RP0=1, select bank1
-  1286  019B  1303               	bcf	3,6	;RP1=0, select bank1
-  1287  019C  179F               	bsf	31,7	;volatile
+  1285  01A2  1683               	bsf	3,5	;RP0=1, select bank1
+  1286  01A3  1303               	bcf	3,6	;RP1=0, select bank1
+  1287  01A4  179F               	bsf	31,7	;volatile
   1288                           
   1289                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/ADC_CONFIG.c: 2
       +                          6:     ADCON1bits.VCFG0 = 0 ;
-  1290  019D  121F               	bcf	31,4	;volatile
+  1290  01A5  121F               	bcf	31,4	;volatile
   1291                           
   1292                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/ADC_CONFIG.c: 2
       +                          7:     ADCON1bits.VCFG1 = 0 ;
-  1293  019E  129F               	bcf	31,5	;volatile
-  1294  019F                     l1545:
+  1293  01A6  129F               	bcf	31,5	;volatile
+  1294  01A7                     l1550:
   1295                           
   1296                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/ADC_CONFIG.c: 2
       +                          9:     ADCON0bits.ADCS = 0b00;
-  1297  019F  303F               	movlw	-193
-  1298  01A0  1283               	bcf	3,5	;RP0=0, select bank0
-  1299  01A1  1303               	bcf	3,6	;RP1=0, select bank0
-  1300  01A2  059F               	andwf	31,f	;volatile
+  1297  01A7  303F               	movlw	-193
+  1298  01A8  1283               	bcf	3,5	;RP0=0, select bank0
+  1299  01A9  1303               	bcf	3,6	;RP1=0, select bank0
+  1300  01AA  059F               	andwf	31,f	;volatile
   1301                           
   1302                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/ADC_CONFIG.c: 3
       +                          0:     ADCON0bits.CHS = 0;
-  1303  01A3  30C3               	movlw	-61
-  1304  01A4  059F               	andwf	31,f	;volatile
-  1305  01A5                     l1547:
+  1303  01AB  30C3               	movlw	-61
+  1304  01AC  059F               	andwf	31,f	;volatile
+  1305  01AD                     l1552:
   1306                           
   1307                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/ADC_CONFIG.c: 3
       +                          1:     _delay((unsigned long)((100)*(8000000/4000000.0)));
-  1308  01A5  3041               	movlw	65
-  1309  01A6  1283               	bcf	3,5	;RP0=0, select bank0
-  1310  01A7  1303               	bcf	3,6	;RP1=0, select bank0
-  1311  01A8  00AF               	movwf	??_ADC_config
-  1312  01A9                     u997:
-  1313  01A9  0BAF               	decfsz	??_ADC_config,f
-  1314  01AA  29A9               	goto	u997
-  1315  01AB  29AC               	nop2
-  1316  01AC                     l1549:
+  1308  01AD  3041               	movlw	65
+  1309  01AE  1283               	bcf	3,5	;RP0=0, select bank0
+  1310  01AF  1303               	bcf	3,6	;RP1=0, select bank0
+  1311  01B0  00AF               	movwf	??_ADC_config
+  1312  01B1                     u997:
+  1313  01B1  0BAF               	decfsz	??_ADC_config,f
+  1314  01B2  29B1               	goto	u997
+  1315  01B3  29B4               	nop2
+  1316  01B4                     l1554:
   1317                           
   1318                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/ADC_CONFIG.c: 3
       +                          2:     ADCON0bits.ADON = 1 ;
-  1319  01AC  1283               	bcf	3,5	;RP0=0, select bank0
-  1320  01AD  1303               	bcf	3,6	;RP1=0, select bank0
-  1321  01AE  141F               	bsf	31,0	;volatile
-  1322  01AF                     l159:
-  1323  01AF  0008               	return
-  1324  01B0                     __end_of_ADC_config:
+  1319  01B4  1283               	bcf	3,5	;RP0=0, select bank0
+  1320  01B5  1303               	bcf	3,6	;RP1=0, select bank0
+  1321  01B6  141F               	bsf	31,0	;volatile
+  1322  01B7                     l160:
+  1323  01B7  0008               	return
+  1324  01B8                     __end_of_ADC_config:
   1325                           
   1326                           	psect	text6
   1327  00DA                     __ptext6:	
@@ -1443,7 +1443,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1358                           
   1359                           ;psect for function _infrarrojos
   1360  00DA                     _infrarrojos:
-  1361  00DA                     l1615:	
+  1361  00DA                     l1620:	
   1362                           ;incstack = 0
   1363                           ; Regs used in _infrarrojos: [wreg+status,2+status,0]
   1364                           
@@ -1458,7 +1458,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1372  00DF                     u931:
   1373  00DF  28E4               	goto	l121
   1374  00E0                     u930:
-  1375  00E0                     l1617:
+  1375  00E0                     l1622:
   1376                           
   1377                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 169:     {;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/mai
@@ -1484,9 +1484,9 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1392  00E5  28E7               	goto	u941
   1393  00E6  28E8               	goto	u940
   1394  00E7                     u941:
-  1395  00E7  28EB               	goto	l1623
+  1395  00E7  28EB               	goto	l1628
   1396  00E8                     u940:
-  1397  00E8                     l1619:
+  1397  00E8                     l1624:
   1398                           
   1399                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 175:     {;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/mai
@@ -1496,12 +1496,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1402                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 177:         PORTDbits.RD1=1;
   1403  00E9  1488               	bsf	8,1	;volatile
-  1404  00EA                     l1621:
+  1404  00EA                     l1626:
   1405                           
   1406                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 178:         infrarrojo1=0;
   1407  00EA  01F3               	clrf	_infrarrojo1
-  1408  00EB                     l1623:
+  1408  00EB                     l1628:
   1409                           
   1410                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 181:     if (PORTBbits.RB2==1)
@@ -1511,7 +1511,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1414  00EE                     u951:
   1415  00EE  28F3               	goto	l123
   1416  00EF                     u950:
-  1417  00EF                     l1625:
+  1417  00EF                     l1630:
   1418                           
   1419                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 182:     {;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/mai
@@ -1537,9 +1537,9 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1434  00F4  28F6               	goto	u961
   1435  00F5  28F7               	goto	u960
   1436  00F6                     u961:
-  1437  00F6  28FA               	goto	l1631
+  1437  00F6  28FA               	goto	l1636
   1438  00F7                     u960:
-  1439  00F7                     l1627:
+  1439  00F7                     l1632:
   1440                           
   1441                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 188:     {;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/mai
@@ -1549,12 +1549,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1444                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 190:         PORTDbits.RD3=1;
   1445  00F8  1588               	bsf	8,3	;volatile
-  1446  00F9                     l1629:
+  1446  00F9                     l1634:
   1447                           
   1448                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 191:         infrarrojo2=0;
   1449  00F9  01F2               	clrf	_infrarrojo2
-  1450  00FA                     l1631:
+  1450  00FA                     l1636:
   1451                           
   1452                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 194:     if (PORTBbits.RB3==1)
@@ -1564,7 +1564,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1456  00FD                     u971:
   1457  00FD  2902               	goto	l125
   1458  00FE                     u970:
-  1459  00FE                     l1633:
+  1459  00FE                     l1638:
   1460                           
   1461                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 195:     {;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/mai
@@ -1590,9 +1590,9 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1476  0103  2905               	goto	u981
   1477  0104  2906               	goto	u980
   1478  0105                     u981:
-  1479  0105  2909               	goto	l1639
+  1479  0105  2909               	goto	l1644
   1480  0106                     u980:
-  1481  0106                     l1635:
+  1481  0106                     l1640:
   1482                           
   1483                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 201:     {;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/mai
@@ -1602,12 +1602,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1486                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 203:         PORTDbits.RD5=1;
   1487  0107  1688               	bsf	8,5	;volatile
-  1488  0108                     l1637:
+  1488  0108                     l1642:
   1489                           
   1490                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 204:         infrarrojo3=0;
   1491  0108  01F1               	clrf	_infrarrojo3
-  1492  0109                     l1639:
+  1492  0109                     l1644:
   1493                           
   1494                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 206:     suma_ir=infrarrojo1+infrarrojo2+infrarrojo3;
@@ -1658,7 +1658,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1539                           
   1540                           ;psect for function _isr
   1541  002C                     _isr:
-  1542  002C                     i1l1369:
+  1542  002C                     i1l1374:
   1543                           
   1544                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 67:     if(PIR1bits.SSPIF == 1){
@@ -1670,7 +1670,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1550  0031                     u68_21:
   1551  0031  2888               	goto	i1l93
   1552  0032                     u68_20:
-  1553  0032                     i1l1371:
+  1553  0032                     i1l1376:
   1554                           
   1555                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 69:         SSPCONbits.CKP = 0;
@@ -1682,16 +1682,16 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1560  0034  2836               	goto	u69_21
   1561  0035  2837               	goto	u69_20
   1562  0036                     u69_21:
-  1563  0036  283B               	goto	i1l1375
+  1563  0036  283B               	goto	i1l1380
   1564  0037                     u69_20:
-  1565  0037                     i1l1373:
+  1565  0037                     i1l1378:
   1566  0037  1F94               	btfss	20,7	;volatile
   1567  0038  283A               	goto	u70_21
   1568  0039  283B               	goto	u70_20
   1569  003A                     u70_21:
-  1570  003A  2842               	goto	i1l1383
+  1570  003A  2842               	goto	i1l1388
   1571  003B                     u70_20:
-  1572  003B                     i1l1375:
+  1572  003B                     i1l1380:
   1573                           
   1574                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 72:             abierto_cerrado = SSPBUF;
@@ -1699,22 +1699,22 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1576  003C  00F8               	movwf	??_isr
   1577  003D  0878               	movf	??_isr,w
   1578  003E  00AE               	movwf	_abierto_cerrado
-  1579  003F                     i1l1377:
+  1579  003F                     i1l1382:
   1580                           
   1581                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 73:             SSPCONbits.SSPOV = 0;
   1582  003F  1314               	bcf	20,6	;volatile
-  1583  0040                     i1l1379:
+  1583  0040                     i1l1384:
   1584                           
   1585                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 74:             SSPCONbits.WCOL = 0;
   1586  0040  1394               	bcf	20,7	;volatile
-  1587  0041                     i1l1381:
+  1587  0041                     i1l1386:
   1588                           
   1589                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 75:             SSPCONbits.CKP = 1;
   1590  0041  1614               	bsf	20,4	;volatile
-  1591  0042                     i1l1383:
+  1591  0042                     i1l1388:
   1592                           
   1593                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 78:         if(!SSPSTATbits.D_nA && !SSPSTATbits.R_nW)
@@ -1726,14 +1726,14 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1599  0047                     u71_21:
   1600  0047  2865               	goto	i1l97
   1601  0048                     u71_20:
-  1602  0048                     i1l1385:
+  1602  0048                     i1l1390:
   1603  0048  1914               	btfsc	20,2	;volatile
   1604  0049  284B               	goto	u72_21
   1605  004A  284C               	goto	u72_20
   1606  004B                     u72_21:
   1607  004B  2865               	goto	i1l97
   1608  004C                     u72_20:
-  1609  004C                     i1l1387:
+  1609  004C                     i1l1392:
   1610                           
   1611                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 79:         {;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/
@@ -1744,12 +1744,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1615  004F  00F8               	movwf	??_isr
   1616  0050  0878               	movf	??_isr,w
   1617  0051  00AE               	movwf	_abierto_cerrado
-  1618  0052                     i1l1389:
+  1618  0052                     i1l1394:
   1619                           
   1620                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 81:             PIR1bits.SSPIF = 0;
   1621  0052  118C               	bcf	12,3	;volatile
-  1622  0053                     i1l1391:
+  1622  0053                     i1l1396:
   1623                           
   1624                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 82:             SSPCONbits.CKP = 1;
@@ -1766,7 +1766,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1634  0059                     u73_21:
   1635  0059  2854               	goto	i1l98
   1636  005A                     u73_20:
-  1637  005A                     i1l1393:
+  1637  005A                     i1l1398:
   1638                           
   1639                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 84:             BASURA = SSPBUF;
@@ -1798,14 +1798,14 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1662  0068                     u74_21:
   1663  0068  2885               	goto	i1l101
   1664  0069                     u74_20:
-  1665  0069                     i1l1395:
+  1665  0069                     i1l1400:
   1666  0069  1D14               	btfss	20,2	;volatile
   1667  006A  286C               	goto	u75_21
   1668  006B  286D               	goto	u75_20
   1669  006C                     u75_21:
   1670  006C  2885               	goto	i1l101
   1671  006D                     u75_20:
-  1672  006D                     i1l1397:
+  1672  006D                     i1l1402:
   1673                           
   1674                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 89:             abierto_cerrado = SSPBUF;
@@ -1815,7 +1815,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1678  0070  00F8               	movwf	??_isr
   1679  0071  0878               	movf	??_isr,w
   1680  0072  00AE               	movwf	_abierto_cerrado
-  1681  0073                     i1l1399:
+  1681  0073                     i1l1404:
   1682                           
   1683                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 90:             BF = 0;
@@ -1829,7 +1829,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1690  0077  1283               	bcf	3,5	;RP0=0, select bank0
   1691  0078  1303               	bcf	3,6	;RP1=0, select bank0
   1692  0079  0093               	movwf	19	;volatile
-  1693  007A                     i1l1401:
+  1693  007A                     i1l1406:
   1694                           
   1695                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 92:             SSPCONbits.CKP = 1;
@@ -1874,7 +1874,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1729  008B                     u77_21:
   1730  008B  2898               	goto	i1l107
   1731  008C                     u77_20:
-  1732  008C                     i1l1403:
+  1732  008C                     i1l1408:
   1733                           
   1734                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 100:     {;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/mai
@@ -1883,12 +1883,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1736  008D  00F8               	movwf	??_isr
   1737  008E  0878               	movf	??_isr,w
   1738  008F  07F4               	addwf	_cuenta_uart,f
-  1739  0090                     i1l1405:
+  1739  0090                     i1l1410:
   1740                           
   1741                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 102:         mandar_datos();
   1742  0090  120A  118A  2146  120A  118A  	fcall	_mandar_datos
-  1743  0095                     i1l1407:
+  1743  0095                     i1l1412:
   1744                           
   1745                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 103:         PIR1bits.TXIF=0;
@@ -1957,15 +1957,15 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1808                           
   1809                           ;psect for function _mandar_datos
   1810  0146                     _mandar_datos:
-  1811  0146                     i1l1123:	
+  1811  0146                     i1l1126:	
   1812                           ;incstack = 0
   1813                           ; Regs used in _mandar_datos: [wreg-fsr0h+status,2+status,0]
   1814                           
   1815                           
   1816                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 224:     switch(cuenta_uart)
-  1817  0146  2954               	goto	i1l1133
-  1818  0147                     i1l1125:
+  1817  0146  2959               	goto	i1l1138
+  1818  0147                     i1l1128:
   1819                           
   1820                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 227:             TXREG=(suma_ir+0x30);
@@ -1977,111 +1977,126 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1826                           
   1827                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 228:             break;
-  1828  014C  2967               	goto	i1l139
-  1829  014D                     i1l1127:
+  1828  014C  296F               	goto	i1l140
+  1829  014D                     i1l1130:
   1830                           
   1831                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 231:             TXREG=44;
-  1832  014D  302C               	movlw	44
+      +                          : 230:             TXREG=10;
+  1832  014D  300A               	movlw	10
   1833  014E  1283               	bcf	3,5	;RP0=0, select bank0
   1834  014F  1303               	bcf	3,6	;RP1=0, select bank0
   1835  0150  0099               	movwf	25	;volatile
   1836                           
   1837                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 232:             break;
-  1838  0151  2967               	goto	i1l139
-  1839  0152                     i1l1129:
+      +                          : 231:             break;
+  1838  0151  296F               	goto	i1l140
+  1839  0152                     i1l1132:
   1840                           
   1841                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 234:             cuenta_uart=0;
-  1842  0152  01F4               	clrf	_cuenta_uart
-  1843                           
-  1844                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 235:             break;
-  1845  0153  2967               	goto	i1l139
-  1846  0154                     i1l1133:
-  1847  0154  0874               	movf	_cuenta_uart,w
-  1848  0155  00F6               	movwf	??_mandar_datos
-  1849  0156  01F7               	clrf	??_mandar_datos+1
+      +                          : 233:             TXREG=13;
+  1842  0152  300D               	movlw	13
+  1843  0153  1283               	bcf	3,5	;RP0=0, select bank0
+  1844  0154  1303               	bcf	3,6	;RP1=0, select bank0
+  1845  0155  0099               	movwf	25	;volatile
+  1846                           
+  1847                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 234:             break;
+  1848  0156  296F               	goto	i1l140
+  1849  0157                     i1l1134:
   1850                           
-  1851                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
+  1851                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 236:             cuenta_uart=0;
+  1852  0157  01F4               	clrf	_cuenta_uart
+  1853                           
+  1854                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 237:             break;
+  1855  0158  296F               	goto	i1l140
+  1856  0159                     i1l1138:
+  1857  0159  0874               	movf	_cuenta_uart,w
+  1858  015A  00F6               	movwf	??_mandar_datos
+  1859  015B  01F7               	clrf	??_mandar_datos+1
+  1860                           
+  1861                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
       +                          itches
-  1852                           ; Switch size 1, requested type "simple"
-  1853                           ; Number of cases is 1, Range of values is 0 to 0
-  1854                           ; switch strategies available:
-  1855                           ; Name         Instructions Cycles
-  1856                           ; simple_byte            4     3 (average)
-  1857                           ; direct_byte           11     8 (fixed)
-  1858                           ; jumptable            260     6 (fixed)
-  1859                           ;	Chosen strategy is simple_byte
-  1860  0157  0877               	movf	??_mandar_datos+1,w
-  1861  0158  3A00               	xorlw	0	; case 0
-  1862  0159  1903               	skipnz
-  1863  015A  295C               	goto	i1l1697
-  1864  015B  2967               	goto	i1l139
-  1865  015C                     i1l1697:
-  1866                           
-  1867                           ; Switch size 1, requested type "simple"
-  1868                           ; Number of cases is 3, Range of values is 1 to 20
-  1869                           ; switch strategies available:
-  1870                           ; Name         Instructions Cycles
-  1871                           ; simple_byte           10     6 (average)
-  1872                           ; direct_byte           71    11 (fixed)
-  1873                           ; jumptable            263     9 (fixed)
-  1874                           ;	Chosen strategy is simple_byte
-  1875  015C  0876               	movf	??_mandar_datos,w
-  1876  015D  3A01               	xorlw	1	; case 1
-  1877  015E  1903               	skipnz
-  1878  015F  2947               	goto	i1l1125
-  1879  0160  3A04               	xorlw	4	; case 5
-  1880  0161  1903               	skipnz
-  1881  0162  294D               	goto	i1l1127
-  1882  0163  3A11               	xorlw	17	; case 20
-  1883  0164  1903               	skipnz
-  1884  0165  2952               	goto	i1l1129
-  1885  0166  2967               	goto	i1l139
-  1886  0167                     i1l139:
-  1887  0167  0008               	return
-  1888  0168                     __end_of_mandar_datos:
-  1889  007E                     btemp	set	126	;btemp
-  1890  007E                     wtemp0	set	126
-  1891                           
-  1892                           	psect	config
-  1893                           
-  1894                           ;Config register CONFIG1 @ 0x2007
-  1895                           ;	Oscillator Selection bits
-  1896                           ;	FOSC = INTRC_NOCLKOUT, INTOSCIO oscillator: I/O function on RA6/OSC2/CLKOUT pin, I/O f
+  1862                           ; Switch size 1, requested type "simple"
+  1863                           ; Number of cases is 1, Range of values is 0 to 0
+  1864                           ; switch strategies available:
+  1865                           ; Name         Instructions Cycles
+  1866                           ; simple_byte            4     3 (average)
+  1867                           ; direct_byte           11     8 (fixed)
+  1868                           ; jumptable            260     6 (fixed)
+  1869                           ;	Chosen strategy is simple_byte
+  1870  015C  0877               	movf	??_mandar_datos+1,w
+  1871  015D  3A00               	xorlw	0	; case 0
+  1872  015E  1903               	skipnz
+  1873  015F  2961               	goto	i1l1702
+  1874  0160  296F               	goto	i1l140
+  1875  0161                     i1l1702:
+  1876                           
+  1877                           ; Switch size 1, requested type "simple"
+  1878                           ; Number of cases is 4, Range of values is 1 to 20
+  1879                           ; switch strategies available:
+  1880                           ; Name         Instructions Cycles
+  1881                           ; simple_byte           13     7 (average)
+  1882                           ; direct_byte           71    11 (fixed)
+  1883                           ; jumptable            263     9 (fixed)
+  1884                           ;	Chosen strategy is simple_byte
+  1885  0161  0876               	movf	??_mandar_datos,w
+  1886  0162  3A01               	xorlw	1	; case 1
+  1887  0163  1903               	skipnz
+  1888  0164  2947               	goto	i1l1128
+  1889  0165  3A03               	xorlw	3	; case 2
+  1890  0166  1903               	skipnz
+  1891  0167  294D               	goto	i1l1130
+  1892  0168  3A01               	xorlw	1	; case 3
+  1893  0169  1903               	skipnz
+  1894  016A  2952               	goto	i1l1132
+  1895  016B  3A17               	xorlw	23	; case 20
+  1896  016C  1903               	skipnz
+  1897  016D  2957               	goto	i1l1134
+  1898  016E  296F               	goto	i1l140
+  1899  016F                     i1l140:
+  1900  016F  0008               	return
+  1901  0170                     __end_of_mandar_datos:
+  1902  007E                     btemp	set	126	;btemp
+  1903  007E                     wtemp0	set	126
+  1904                           
+  1905                           	psect	config
+  1906                           
+  1907                           ;Config register CONFIG1 @ 0x2007
+  1908                           ;	Oscillator Selection bits
+  1909                           ;	FOSC = INTRC_NOCLKOUT, INTOSCIO oscillator: I/O function on RA6/OSC2/CLKOUT pin, I/O f
       +                          unction on RA7/OSC1/CLKIN
-  1897                           ;	Watchdog Timer Enable bit
-  1898                           ;	WDTE = OFF, WDT disabled and can be enabled by SWDTEN bit of the WDTCON register
-  1899                           ;	Power-up Timer Enable bit
-  1900                           ;	PWRTE = OFF, PWRT disabled
-  1901                           ;	RE3/MCLR pin function select bit
-  1902                           ;	MCLRE = OFF, RE3/MCLR pin function is digital input, MCLR internally tied to VDD
-  1903                           ;	Code Protection bit
-  1904                           ;	CP = OFF, Program memory code protection is disabled
-  1905                           ;	Data Code Protection bit
-  1906                           ;	CPD = OFF, Data memory code protection is disabled
-  1907                           ;	Brown Out Reset Selection bits
-  1908                           ;	BOREN = OFF, BOR disabled
-  1909                           ;	Internal External Switchover bit
-  1910                           ;	IESO = OFF, Internal/External Switchover mode is disabled
-  1911                           ;	Fail-Safe Clock Monitor Enabled bit
-  1912                           ;	FCMEN = OFF, Fail-Safe Clock Monitor is disabled
-  1913                           ;	Low Voltage Programming Enable bit
-  1914                           ;	LVP = OFF, RB3 pin has digital I/O, HV on MCLR must be used for programming
-  1915                           ;	In-Circuit Debugger Mode bit
-  1916                           ;	DEBUG = 0x1, unprogrammed default
-  1917  2007                     	org	8199
-  1918  2007  20D4               	dw	8404
-  1919                           
-  1920                           ;Config register CONFIG2 @ 0x2008
-  1921                           ;	Brown-out Reset Selection bit
-  1922                           ;	BOR4V = BOR40V, Brown-out Reset set to 4.0V
-  1923                           ;	Flash Program Memory Self Write Enable bits
-  1924                           ;	WRT = OFF, Write protection off
-  1925  2008                     	org	8200
-  1926  2008  3FFF               	dw	16383
+  1910                           ;	Watchdog Timer Enable bit
+  1911                           ;	WDTE = OFF, WDT disabled and can be enabled by SWDTEN bit of the WDTCON register
+  1912                           ;	Power-up Timer Enable bit
+  1913                           ;	PWRTE = OFF, PWRT disabled
+  1914                           ;	RE3/MCLR pin function select bit
+  1915                           ;	MCLRE = OFF, RE3/MCLR pin function is digital input, MCLR internally tied to VDD
+  1916                           ;	Code Protection bit
+  1917                           ;	CP = OFF, Program memory code protection is disabled
+  1918                           ;	Data Code Protection bit
+  1919                           ;	CPD = OFF, Data memory code protection is disabled
+  1920                           ;	Brown Out Reset Selection bits
+  1921                           ;	BOREN = OFF, BOR disabled
+  1922                           ;	Internal External Switchover bit
+  1923                           ;	IESO = OFF, Internal/External Switchover mode is disabled
+  1924                           ;	Fail-Safe Clock Monitor Enabled bit
+  1925                           ;	FCMEN = OFF, Fail-Safe Clock Monitor is disabled
+  1926                           ;	Low Voltage Programming Enable bit
+  1927                           ;	LVP = OFF, RB3 pin has digital I/O, HV on MCLR must be used for programming
+  1928                           ;	In-Circuit Debugger Mode bit
+  1929                           ;	DEBUG = 0x1, unprogrammed default
+  1930  2007                     	org	8199
+  1931  2007  20D4               	dw	8404
+  1932                           
+  1933                           ;Config register CONFIG2 @ 0x2008
+  1934                           ;	Brown-out Reset Selection bit
+  1935                           ;	BOR4V = BOR40V, Brown-out Reset set to 4.0V
+  1936                           ;	Flash Program Memory Self Write Enable bits
+  1937                           ;	WRT = OFF, Write protection off
+  1938  2008                     	org	8200
+  1939  2008  3FFF               	dw	16383
 
 Data Sizes:
     Strings     0
@@ -2228,44 +2243,44 @@ DATA                 0      0      1E      12        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.32 build 20210201212658 
-Symbol Table                                                                                   Mon Aug 23 21:16:13 2021
+Symbol Table                                                                                   Mon Aug 23 21:58:15 2021
 
             _SSPSTATbits 0094                       _BF 04A0                      l121 00E4  
-                    l123 00F3                      l125 0102                      l214 0183  
-                    l150 00D9                      l118 0145                      l127 0111  
-                    l227 0199                      l159 01AF                      _GIE 005F  
+                    l123 00F3                      l125 0102                      l118 0145  
+                    l127 0111                      l215 018B                      l151 00D9  
+                    l160 01B7                      l228 01A1                      _GIE 005F  
                     u930 00E0                      u931 00DF                      u940 00E8  
                     u941 00E7                      u950 00EF                      u951 00EE  
                     u960 00F7                      u961 00F6                      u970 00FE  
                     u971 00FD                      u980 0106                      u981 0105  
-                    u997 01A9                      _isr 002C                      fsr0 0004  
-    __size_of_ADC_config 0016                     l1521 00AD                     l1601 012D  
-                   l1531 00C1                     l1523 00B3                     l1515 00A4  
-                   l1611 013F                     l1603 0132                     l1621 00EA  
-                   l1525 00B5                     l1517 00A5                     l1613 0142  
-                   l1605 0137                     l1631 00FA                     l1623 00EB  
-                   l1615 00DA                     l1543 019A                     l1527 00BB  
-                   l1519 00AB                     l1535 00C3                     l1551 0184  
-                   l1607 013D                     l1633 00FE                     l1625 00EF  
-                   l1617 00E0                     l1545 019F                     l1529 00BD  
-                   l1561 0195                     l1553 018C                     l1609 013E  
-                   l1641 01B0                     l1635 0106                     l1627 00F7  
-                   l1619 00E8                     l1547 01A5                     l1571 017B  
-                   l1563 0196                     l1555 018F                     l1643 01B5  
-                   l1637 0108                     l1629 00F9                     l1549 01AC  
-                   l1573 017C                     l1565 016B                     l1557 0191  
-                   l1581 0116                     l1639 0109                     l1575 017D  
-                   l1567 0179                     l1559 0194                     l1591 011D  
-                   l1583 0117                     l1577 0180                     l1569 017A  
-                   l1593 011E                     l1585 011A                     l1595 011F  
-                   l1587 011B                     l1579 0112                     l1597 0120  
-                   l1589 011C                     l1695 00CB                     l1599 0127  
+                    u997 01B1                      _isr 002C                      fsr0 0004  
+    __size_of_ADC_config 0016                     l1520 00A4                     l1600 011F  
+                   l1530 00B5                     l1522 00A5                     l1610 0137  
+                   l1602 0120                     l1620 00DA                     l1700 00CB  
+                   l1532 00BB                     l1524 00AB                     l1540 00C3  
+                   l1612 013D                     l1604 0127                     l1630 00EF  
+                   l1622 00E0                     l1550 01A7                     l1534 00BD  
+                   l1526 00AD                     l1614 013E                     l1606 012D  
+                   l1640 0106                     l1632 00F7                     l1624 00E8  
+                   l1552 01AD                     l1536 00C1                     l1528 00B3  
+                   l1560 0197                     l1616 013F                     l1608 0132  
+                   l1642 0108                     l1634 00F9                     l1626 00EA  
+                   l1554 01B4                     l1570 0173                     l1562 0199  
+                   l1618 0142                     l1644 0109                     l1636 00FA  
+                   l1628 00EB                     l1548 01A2                     l1580 0185  
+                   l1572 0181                     l1564 019C                     l1556 018C  
+                   l1638 00FE                     l1582 0188                     l1574 0182  
+                   l1566 019D                     l1558 0194                     l1590 011A  
+                   l1646 01B8                     l1576 0183                     l1568 019E  
+                   l1592 011B                     l1584 0112                     l1648 01BD  
+                   l1578 0184                     l1594 011C                     l1586 0116  
+                   l1596 011D                     l1588 0117                     l1598 011E  
                    ?_isr 0076                     _PEIE 005E                     i1l93 0088  
-                   i1l97 0065                     i1l98 0054                     _main 01B0  
+                   i1l97 0065                     i1l98 0054                     _main 01B8  
                    btemp 007E                     start 000E           osc_config@freq 0031  
                   ??_isr 0078            ?_mandar_datos 0076             ?_infrarrojos 0076  
                   ?_main 0076                    _ANSEL 0188                    i1l101 0085  
-                  i1l103 007F                    i1l107 0098                    i1l139 0167  
+                  i1l103 007F                    i1l107 0098                    i1l140 016F  
                   _SPBRG 0099                    _PORTB 0006                    _PORTD 0008  
                   _PORTE 0009                    u70_20 003B                    u70_21 003A  
                   u71_20 0048                    u71_21 0047                    u72_20 004C  
@@ -2277,46 +2292,46 @@ Symbol Table                                                                    
                   u69_20 0037                    u77_21 008B                    u69_21 0036  
                   _TXREG 0019                    _setup 0112                    pclath 000A  
                   status 0003                    wtemp0 007E          __initialization 0011  
-           __end_of_main 01BE           ??_mandar_datos 0076                   ??_main 0032  
+           __end_of_main 01C6           ??_mandar_datos 0076                   ??_main 0032  
                  _ADRESH 001E                   _ADRESL 009E                   _BASURA 002D  
       _temperatura_aprox 0020                   ?_setup 0076                   _ANSELH 0189  
-                 u100_27 0062                   u101_27 007D                   i1l1123 0146  
-                 i1l1125 0147                   i1l1133 0154                   i1l1127 014D  
-                 i1l1129 0152                   i1l1401 007A                   i1l1403 008C  
-                 i1l1405 0090                   i1l1407 0095                   i1l1371 0032  
-                 i1l1381 0041                   i1l1373 0037                   i1l1391 0053  
-                 i1l1383 0042                   i1l1375 003B                   i1l1393 005A  
-                 i1l1385 0048                   i1l1377 003F                   i1l1369 002C  
-                 i1l1395 0069                   i1l1387 004C                   i1l1379 0040  
-                 i1l1397 006D                   i1l1389 0052                   i1l1399 0073  
-                 i1l1697 015C                   _SPBRGH 009A                   _SSPADD 0093  
-                 _TRISC3 043B                   _TRISC4 043C                   _SSPBUF 0013  
-                 _SSPCON 0014             ??_ADC_config 002F             ?_uart_config 0076  
-                 saved_w 007E       __end_of_ADC_config 01B0  __end_of__initialization 0028  
-         __pcstackCOMMON 0076  __size_of_I2C_Slave_Init 001C            __end_of_setup 0146  
-   __size_of_infrarrojos 0038                  ??_setup 0032    I2C_Slave_Init@address 002F  
-             __pbssBANK0 0020     __end_of_mandar_datos 0168          _abierto_cerrado 002E  
-             __pmaintext 01B0               __pintentry 0004                  _PARQUEO 002C  
-                _SSPCON2 0091                  _SSPSTAT 0094                _ANSELbits 0188  
-                __ptext1 0112                  __ptext2 0184                  __ptext3 00A1  
-                __ptext4 0168                  __ptext5 019A                  __ptext6 00DA  
-                __ptext7 002C                  __ptext8 0146             __size_of_isr 0075  
-   __size_of_uart_config 0016                  _suma_ir 0070     end_of_initialization 0028  
-             _osc_config 00A1                _RCSTAbits 0018           _I2C_Slave_Init 0168  
-              _PORTBbits 0006                _PORTDbits 0008                _TRISAbits 0085  
-              _TRISBbits 0086                _TRISCbits 0087                _TRISEbits 0089  
-  __size_of_mandar_datos 0022                _TXSTAbits 0098   __end_of_I2C_Slave_Init 0184  
-           _mandar_datos 0146              _BAUDCTLbits 0187      start_initialization 0011  
-            __end_of_isr 00A1              ?_osc_config 0076          ?_I2C_Slave_Init 0076  
-          ??_infrarrojos 002F              __pbssCOMMON 0070                ___latbits 0002  
-          __pcstackBANK0 002F      __size_of_osc_config 0039      __end_of_infrarrojos 0112  
-         __size_of_setup 0034        interrupt_function 0004         _conversion_total 0024  
-               _PIE1bits 008C                 _PIR1bits 000C              _antirrebote 0075  
-             _ADCON0bits 001F               _ADCON1bits 009F            ??_uart_config 002F  
-            _cuenta_uart 0074              _conversion1 0028               _ADC_config 019A  
-            _infrarrojo1 0073              _infrarrojo2 0072              _infrarrojo3 0071  
-            _infrarrojos 00DA      __end_of_uart_config 019A         ??_I2C_Slave_Init 002F  
-           ??_osc_config 002F            __size_of_main 000E               _INTCONbits 000B  
-     __end_of_osc_config 00DA                 intlevel1 0000               _OSCCONbits 008F  
-            ?_ADC_config 0076              _uart_config 0184              _SSPCON2bits 0091  
-             _SSPCONbits 0014  
+                 u100_27 0062                   u101_27 007D                   i1l1130 014D  
+                 i1l1132 0152                   i1l1134 0157                   i1l1126 0146  
+                 i1l1128 0147                   i1l1400 0069                   i1l1138 0159  
+                 i1l1410 0090                   i1l1402 006D                   i1l1412 0095  
+                 i1l1404 0073                   i1l1406 007A                   i1l1408 008C  
+                 i1l1380 003B                   i1l1702 0161                   i1l1390 0048  
+                 i1l1382 003F                   i1l1374 002C                   i1l1392 004C  
+                 i1l1384 0040                   i1l1376 0032                   i1l1394 0052  
+                 i1l1386 0041                   i1l1378 0037                   i1l1396 0053  
+                 i1l1388 0042                   i1l1398 005A                   _SPBRGH 009A  
+                 _SSPADD 0093                   _TRISC3 043B                   _TRISC4 043C  
+                 _SSPBUF 0013                   _SSPCON 0014             ??_ADC_config 002F  
+           ?_uart_config 0076                   saved_w 007E       __end_of_ADC_config 01B8  
+__end_of__initialization 0028           __pcstackCOMMON 0076  __size_of_I2C_Slave_Init 001C  
+          __end_of_setup 0146     __size_of_infrarrojos 0038                  ??_setup 0032  
+  I2C_Slave_Init@address 002F               __pbssBANK0 0020     __end_of_mandar_datos 0170  
+        _abierto_cerrado 002E               __pmaintext 01B8               __pintentry 0004  
+                _PARQUEO 002C                  _SSPCON2 0091                  _SSPSTAT 0094  
+              _ANSELbits 0188                  __ptext1 0112                  __ptext2 018C  
+                __ptext3 00A1                  __ptext4 0170                  __ptext5 01A2  
+                __ptext6 00DA                  __ptext7 002C                  __ptext8 0146  
+           __size_of_isr 0075     __size_of_uart_config 0016                  _suma_ir 0070  
+   end_of_initialization 0028               _osc_config 00A1                _RCSTAbits 0018  
+         _I2C_Slave_Init 0170                _PORTBbits 0006                _PORTDbits 0008  
+              _TRISAbits 0085                _TRISBbits 0086                _TRISCbits 0087  
+              _TRISEbits 0089    __size_of_mandar_datos 002A                _TXSTAbits 0098  
+ __end_of_I2C_Slave_Init 018C             _mandar_datos 0146              _BAUDCTLbits 0187  
+    start_initialization 0011              __end_of_isr 00A1              ?_osc_config 0076  
+        ?_I2C_Slave_Init 0076            ??_infrarrojos 002F              __pbssCOMMON 0070  
+              ___latbits 0002            __pcstackBANK0 002F      __size_of_osc_config 0039  
+    __end_of_infrarrojos 0112           __size_of_setup 0034        interrupt_function 0004  
+       _conversion_total 0024                 _PIE1bits 008C                 _PIR1bits 000C  
+            _antirrebote 0075               _ADCON0bits 001F               _ADCON1bits 009F  
+          ??_uart_config 002F              _cuenta_uart 0074              _conversion1 0028  
+             _ADC_config 01A2              _infrarrojo1 0073              _infrarrojo2 0072  
+            _infrarrojo3 0071              _infrarrojos 00DA      __end_of_uart_config 01A2  
+       ??_I2C_Slave_Init 002F             ??_osc_config 002F            __size_of_main 000E  
+             _INTCONbits 000B       __end_of_osc_config 00DA                 intlevel1 0000  
+             _OSCCONbits 008F              ?_ADC_config 0076              _uart_config 018C  
+            _SSPCON2bits 0091               _SSPCONbits 0014  

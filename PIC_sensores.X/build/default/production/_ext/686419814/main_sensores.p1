@@ -814,35 +814,45 @@ Version 4.0 HI-TECH Software Intermediate Code
 "228
 [; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 228:             break;
 [e $U 166  ]
-"230
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 230:         case(5):
+"229
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 229:         case(2):
 [e :U 169 ]
+"230
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 230:             TXREG=10;
+[e = _TXREG -> -> 10 `i `uc ]
 "231
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 231:             TXREG=44;
-[e = _TXREG -> -> 44 `i `uc ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 231:             break;
+[e $U 166  ]
 "232
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 232:             break;
-[e $U 166  ]
-"233
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 233:         case(20):
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 232:         case(3):
 [e :U 170 ]
+"233
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 233:             TXREG=13;
+[e = _TXREG -> -> 13 `i `uc ]
 "234
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 234:             cuenta_uart=0;
-[e = _cuenta_uart -> -> 0 `i `uc ]
-"235
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 235:             break;
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 234:             break;
 [e $U 166  ]
+"235
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 235:         case(20):
+[e :U 171 ]
 "236
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 236:     }
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 236:             cuenta_uart=0;
+[e = _cuenta_uart -> -> 0 `i `uc ]
+"237
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 237:             break;
+[e $U 166  ]
+"238
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 238:     }
 }
 [e $U 166  ]
 [e :U 167 ]
 [e [\ -> _cuenta_uart `i , $ -> 1 `i 168
- , $ -> 5 `i 169
- , $ -> 20 `i 170
+ , $ -> 2 `i 169
+ , $ -> 3 `i 170
+ , $ -> 20 `i 171
  166 ]
 [e :U 166 ]
-"238
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 238: }
+"240
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c: 240: }
 [e :UE 165 ]
 }

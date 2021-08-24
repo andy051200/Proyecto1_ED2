@@ -11,21 +11,21 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsd0c.o
+$C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs5jo.o
 reset_vec CODE 0 0 0 3 2
 end_init CODE 0 E E 3 2
 config CONFIG 4 2007 2007 2 2
 $dist/default/production\PIC_sensores.X.production.o
 cinit CODE 0 11 11 1B 2
 text1 CODE 0 112 112 34 2
-text2 CODE 0 184 184 16 2
+text2 CODE 0 18C 18C 16 2
 text3 CODE 0 A1 A1 39 2
-text4 CODE 0 168 168 1C 2
-text5 CODE 0 19A 19A 16 2
+text4 CODE 0 170 170 1C 2
+text5 CODE 0 1A2 1A2 16 2
 text6 CODE 0 DA DA 38 2
 text7 CODE 0 2C 2C 75 2
-text8 CODE 0 146 146 22 2
-maintext CODE 0 1B0 1B0 E 2
+text8 CODE 0 146 146 2A 2
+maintext CODE 0 1B8 1B8 E 2
 cstackCOMMON COMMON 1 76 76 6 1
 cstackBANK0 BANK0 1 2F 2F 3 1
 intentry CODE 0 4 4 A 2
@@ -47,13 +47,13 @@ BANK1 A0-EF 1
 BANK2 110-16F 1
 BANK3 190-1EF 1
 CONST 3-3 2
-CONST 1BE-1FFF 2
+CONST 1C6-1FFF 2
 ENTRY 3-3 2
-ENTRY 1BE-1FFF 2
+ENTRY 1C6-1FFF 2
 IDLOC 2000-2003 2
 STACK 110-16F 1
 CODE 3-3 2
-CODE 1BE-1FFF 2
+CODE 1C6-1FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-10F 1
@@ -61,9 +61,9 @@ SFR3 180-18F 1
 COMMON 7C-7D 1
 EEDATA 2100-21FF 2
 STRCODE 3-3 2
-STRCODE 1BE-1FFF 2
+STRCODE 1C6-1FFF 2
 STRING 3-3 2
-STRING 1BE-1FFF 2
+STRING 1C6-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -78,49 +78,52 @@ STRING 1BE-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\PIC_sensores.X.production.o
-11 cinit CODE >1151:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsd0c.s
-11 cinit CODE >1154:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsd0c.s
-11 cinit CODE >1201:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsd0c.s
-12 cinit CODE >1202:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsd0c.s
-13 cinit CODE >1203:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsd0c.s
-14 cinit CODE >1204:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsd0c.s
-15 cinit CODE >1205:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsd0c.s
-16 cinit CODE >1206:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsd0c.s
-17 cinit CODE >1209:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsd0c.s
-18 cinit CODE >1210:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsd0c.s
-19 cinit CODE >1211:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsd0c.s
-1A cinit CODE >1212:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsd0c.s
-1B cinit CODE >1213:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsd0c.s
-1C cinit CODE >1214:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsd0c.s
-1D cinit CODE >1215:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsd0c.s
-1E cinit CODE >1216:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsd0c.s
-1F cinit CODE >1217:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsd0c.s
-20 cinit CODE >1218:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsd0c.s
-21 cinit CODE >1219:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsd0c.s
-22 cinit CODE >1220:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsd0c.s
-23 cinit CODE >1221:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsd0c.s
-24 cinit CODE >1222:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsd0c.s
-25 cinit CODE >1223:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsd0c.s
-26 cinit CODE >1224:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsd0c.s
-27 cinit CODE >1225:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsd0c.s
-28 cinit CODE >1231:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsd0c.s
-28 cinit CODE >1233:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsd0c.s
-29 cinit CODE >1234:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsd0c.s
+11 cinit CODE >1151:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs5jo.s
+11 cinit CODE >1154:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs5jo.s
+11 cinit CODE >1201:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs5jo.s
+12 cinit CODE >1202:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs5jo.s
+13 cinit CODE >1203:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs5jo.s
+14 cinit CODE >1204:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs5jo.s
+15 cinit CODE >1205:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs5jo.s
+16 cinit CODE >1206:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs5jo.s
+17 cinit CODE >1209:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs5jo.s
+18 cinit CODE >1210:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs5jo.s
+19 cinit CODE >1211:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs5jo.s
+1A cinit CODE >1212:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs5jo.s
+1B cinit CODE >1213:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs5jo.s
+1C cinit CODE >1214:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs5jo.s
+1D cinit CODE >1215:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs5jo.s
+1E cinit CODE >1216:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs5jo.s
+1F cinit CODE >1217:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs5jo.s
+20 cinit CODE >1218:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs5jo.s
+21 cinit CODE >1219:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs5jo.s
+22 cinit CODE >1220:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs5jo.s
+23 cinit CODE >1221:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs5jo.s
+24 cinit CODE >1222:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs5jo.s
+25 cinit CODE >1223:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs5jo.s
+26 cinit CODE >1224:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs5jo.s
+27 cinit CODE >1225:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs5jo.s
+28 cinit CODE >1231:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs5jo.s
+28 cinit CODE >1233:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs5jo.s
+29 cinit CODE >1234:C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs5jo.s
 4 intentry CODE >64:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
 146 text8 CODE >222:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
 146 text8 CODE >224:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
 147 text8 CODE >227:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
 14C text8 CODE >228:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-14D text8 CODE >231:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-151 text8 CODE >232:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-152 text8 CODE >234:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-153 text8 CODE >235:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-154 text8 CODE >236:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-159 text8 CODE >236:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-15E text8 CODE >236:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-161 text8 CODE >236:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-164 text8 CODE >236:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-167 text8 CODE >238:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+14D text8 CODE >230:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+151 text8 CODE >231:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+152 text8 CODE >233:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+156 text8 CODE >234:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+157 text8 CODE >236:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+158 text8 CODE >237:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+159 text8 CODE >238:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+15E text8 CODE >238:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+163 text8 CODE >238:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+166 text8 CODE >238:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+169 text8 CODE >238:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+16C text8 CODE >238:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+16F text8 CODE >240:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
 2C text7 CODE >64:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
 2C text7 CODE >67:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
 32 text7 CODE >69:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
@@ -182,27 +185,27 @@ FF text6 CODE >197:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_
 108 text6 CODE >204:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
 109 text6 CODE >206:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
 111 text6 CODE >208:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-19A text5 CODE >22:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/ADC_CONFIG.c
-19A text5 CODE >25:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/ADC_CONFIG.c
-19D text5 CODE >26:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/ADC_CONFIG.c
-19E text5 CODE >27:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/ADC_CONFIG.c
-19F text5 CODE >29:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/ADC_CONFIG.c
-1A3 text5 CODE >30:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/ADC_CONFIG.c
-1A5 text5 CODE >31:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/ADC_CONFIG.c
-1AC text5 CODE >32:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/ADC_CONFIG.c
-1AF text5 CODE >33:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/ADC_CONFIG.c
-168 text4 CODE >93:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/I2C.c
-16B text4 CODE >95:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/I2C.c
-16F text4 CODE >96:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/I2C.c
-173 text4 CODE >97:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/I2C.c
-177 text4 CODE >98:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/I2C.c
-179 text4 CODE >99:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/I2C.c
-17A text4 CODE >100:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/I2C.c
-17B text4 CODE >101:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/I2C.c
-17C text4 CODE >102:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/I2C.c
-17D text4 CODE >103:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/I2C.c
-180 text4 CODE >104:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/I2C.c
-183 text4 CODE >105:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/I2C.c
+1A2 text5 CODE >22:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/ADC_CONFIG.c
+1A2 text5 CODE >25:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/ADC_CONFIG.c
+1A5 text5 CODE >26:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/ADC_CONFIG.c
+1A6 text5 CODE >27:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/ADC_CONFIG.c
+1A7 text5 CODE >29:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/ADC_CONFIG.c
+1AB text5 CODE >30:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/ADC_CONFIG.c
+1AD text5 CODE >31:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/ADC_CONFIG.c
+1B4 text5 CODE >32:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/ADC_CONFIG.c
+1B7 text5 CODE >33:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/ADC_CONFIG.c
+170 text4 CODE >93:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/I2C.c
+173 text4 CODE >95:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/I2C.c
+177 text4 CODE >96:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/I2C.c
+17B text4 CODE >97:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/I2C.c
+17F text4 CODE >98:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/I2C.c
+181 text4 CODE >99:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/I2C.c
+182 text4 CODE >100:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/I2C.c
+183 text4 CODE >101:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/I2C.c
+184 text4 CODE >102:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/I2C.c
+185 text4 CODE >103:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/I2C.c
+188 text4 CODE >104:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/I2C.c
+18B text4 CODE >105:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/I2C.c
 A1 text3 CODE >16:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/Osc_config.c
 A4 text3 CODE >18:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/Osc_config.c
 A5 text3 CODE >21:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/Osc_config.c
@@ -224,18 +227,18 @@ D0 text3 CODE >40:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_s
 D3 text3 CODE >40:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/Osc_config.c
 D6 text3 CODE >40:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/Osc_config.c
 D9 text3 CODE >42:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/Osc_config.c
-184 text2 CODE >21:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/UART_CONFIG.c
-184 text2 CODE >24:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/UART_CONFIG.c
-187 text2 CODE >25:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/UART_CONFIG.c
-188 text2 CODE >26:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/UART_CONFIG.c
-189 text2 CODE >27:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/UART_CONFIG.c
-18C text2 CODE >28:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/UART_CONFIG.c
-18F text2 CODE >29:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/UART_CONFIG.c
-191 text2 CODE >31:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/UART_CONFIG.c
-194 text2 CODE >32:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/UART_CONFIG.c
-195 text2 CODE >33:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/UART_CONFIG.c
-196 text2 CODE >34:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/UART_CONFIG.c
-199 text2 CODE >35:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/UART_CONFIG.c
+18C text2 CODE >21:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/UART_CONFIG.c
+18C text2 CODE >24:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/UART_CONFIG.c
+18F text2 CODE >25:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/UART_CONFIG.c
+190 text2 CODE >26:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/UART_CONFIG.c
+191 text2 CODE >27:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/UART_CONFIG.c
+194 text2 CODE >28:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/UART_CONFIG.c
+197 text2 CODE >29:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/UART_CONFIG.c
+199 text2 CODE >31:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/UART_CONFIG.c
+19C text2 CODE >32:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/UART_CONFIG.c
+19D text2 CODE >33:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/UART_CONFIG.c
+19E text2 CODE >34:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/UART_CONFIG.c
+1A1 text2 CODE >35:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/UART_CONFIG.c
 112 text1 CODE >127:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
 112 text1 CODE >130:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
 115 text1 CODE >131:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
@@ -261,9 +264,9 @@ D9 text3 CODE >42:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_s
 13F text1 CODE >157:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
 142 text1 CODE >158:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
 145 text1 CODE >160:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-1B0 maintext CODE >110:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-1B0 maintext CODE >113:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-1B5 maintext CODE >119:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+1B8 maintext CODE >110:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+1B8 maintext CODE >113:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+1BD maintext CODE >119:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -277,7 +280,7 @@ D9 text3 CODE >42:C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_s
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
 ___latbits 2 0 ABS 0 - dist/default/production\PIC_sensores.X.production.o
-__Hspace_0 1BE 0 ABS 0 - -
+__Hspace_0 1C6 0 ABS 0 - -
 __Hspace_1 7C 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
@@ -286,20 +289,20 @@ __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 _BF 4A0 0 ABS 0 - dist/default/production\PIC_sensores.X.production.o
 __Hstrings 0 0 ABS 0 strings -
 _PEIE 5E 0 ABS 0 - dist/default/production\PIC_sensores.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsd0c.o
-_main 360 0 CODE 0 maintext dist/default/production\PIC_sensores.X.production.o
+___sp 0 0 STACK 2 stack C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs5jo.o
+_main 370 0 CODE 0 maintext dist/default/production\PIC_sensores.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\PIC_sensores.X.production.o
-start 1C 0 CODE 0 init C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsd0c.o
+start 1C 0 CODE 0 init C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs5jo.o
 __size_of_main 0 0 ABS 0 - dist/default/production\PIC_sensores.X.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 __size_of_uart_config 0 0 ABS 0 - dist/default/production\PIC_sensores.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsd0c.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsd0c.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsd0c.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsd0c.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsd0c.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsd0c.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs5jo.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs5jo.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs5jo.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs5jo.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs5jo.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs5jo.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 _OSCCONbits 8F 0 ABS 0 - dist/default/production\PIC_sensores.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\PIC_sensores.X.production.o
@@ -317,18 +320,18 @@ _SSPCONbits 14 0 ABS 0 - dist/default/production\PIC_sensores.X.production.o
 _conversion1 28 0 BANK0 1 bssBANK0 dist/default/production\PIC_sensores.X.production.o
 _conversion_total 24 0 BANK0 1 bssBANK0 dist/default/production\PIC_sensores.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
-___stackhi 0 0 ABS 0 - C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsd0c.o
-___stacklo 0 0 ABS 0 - C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsd0c.o
+___stackhi 0 0 ABS 0 - C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs5jo.o
+___stacklo 0 0 ABS 0 - C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs5jo.o
 __size_of_mandar_datos 0 0 ABS 0 - dist/default/production\PIC_sensores.X.production.o
 _BAUDCTLbits 187 0 ABS 0 - dist/default/production\PIC_sensores.X.production.o
-_I2C_Slave_Init 2D0 0 CODE 0 text4 dist/default/production\PIC_sensores.X.production.o
+_I2C_Slave_Init 2E0 0 CODE 0 text4 dist/default/production\PIC_sensores.X.production.o
 __size_of_setup 0 0 ABS 0 - dist/default/production\PIC_sensores.X.production.o
 start_initialization 22 0 CODE 0 cinit dist/default/production\PIC_sensores.X.production.o
 _TRISAbits 85 0 ABS 0 - dist/default/production\PIC_sensores.X.production.o
 _TRISBbits 86 0 ABS 0 - dist/default/production\PIC_sensores.X.production.o
 _TRISCbits 87 0 ABS 0 - dist/default/production\PIC_sensores.X.production.o
 _TRISEbits 89 0 ABS 0 - dist/default/production\PIC_sensores.X.production.o
-__end_of_mandar_datos 2D0 0 CODE 0 text8 dist/default/production\PIC_sensores.X.production.o
+__end_of_mandar_datos 2E0 0 CODE 0 text8 dist/default/production\PIC_sensores.X.production.o
 _osc_config 142 0 CODE 0 text3 dist/default/production\PIC_sensores.X.production.o
 _SPBRGH 9A 0 ABS 0 - dist/default/production\PIC_sensores.X.production.o
 __pcstackBANK0 2F 0 BANK0 1 cstackBANK0 dist/default/production\PIC_sensores.X.production.o
@@ -337,15 +340,15 @@ _SSPBUF 13 0 ABS 0 - dist/default/production\PIC_sensores.X.production.o
 _SSPCON 14 0 ABS 0 - dist/default/production\PIC_sensores.X.production.o
 _TRISC3 43B 0 ABS 0 - dist/default/production\PIC_sensores.X.production.o
 _TRISC4 43C 0 ABS 0 - dist/default/production\PIC_sensores.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsd0c.o
+___int_sp 0 0 STACK 2 stack C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs5jo.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
 __Hbank3 0 0 ABS 0 bank3 -
 __Hcinit 58 0 CODE 0 cinit -
-__end_of_I2C_Slave_Init 308 0 CODE 0 text4 dist/default/production\PIC_sensores.X.production.o
+__end_of_I2C_Slave_Init 318 0 CODE 0 text4 dist/default/production\PIC_sensores.X.production.o
 __Hstack 0 0 STACK 2 stack -
-_uart_config 308 0 CODE 0 text2 dist/default/production\PIC_sensores.X.production.o
+_uart_config 318 0 CODE 0 text2 dist/default/production\PIC_sensores.X.production.o
 __Hmaintext 0 0 ABS 0 maintext -
 __Hcommon 0 0 ABS 0 common -
 __Hconfig 4012 0 CONFIG 4 config -
@@ -378,7 +381,7 @@ __LcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __size_of_infrarrojos 0 0 ABS 0 - dist/default/production\PIC_sensores.X.production.o
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 _GIE 5F 0 ABS 0 - dist/default/production\PIC_sensores.X.production.o
-__S0 1BE 0 ABS 0 - -
+__S0 1C6 0 ABS 0 - -
 __S1 7C 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
@@ -387,11 +390,11 @@ __end_of_osc_config 1B4 0 CODE 0 text3 dist/default/production\PIC_sensores.X.pr
 saved_w 7E 0 ABS 0 - dist/default/production\PIC_sensores.X.production.o
 __end_of_isr 142 0 CODE 0 text7 dist/default/production\PIC_sensores.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\ANDYBO~1\AppData\Local\Temp\xcAsd0c.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\ANDYBO~1\AppData\Local\Temp\xcAs5jo.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
 _RCSTAbits 18 0 ABS 0 - dist/default/production\PIC_sensores.X.production.o
 _PIE1bits 8C 0 ABS 0 - dist/default/production\PIC_sensores.X.production.o
-__pmaintext 360 0 CODE 0 maintext dist/default/production\PIC_sensores.X.production.o
+__pmaintext 370 0 CODE 0 maintext dist/default/production\PIC_sensores.X.production.o
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 0 0 CONFIG 4 config -
 I2C_Slave_Init@address 2F 0 BANK0 1 cstackBANK0 dist/default/production\PIC_sensores.X.production.o
@@ -403,7 +406,7 @@ __Lspace_2 0 0 ABS 0 - -
 __Lspace_3 0 0 ABS 0 - -
 __Lspace_4 0 0 ABS 0 - -
 __pbssCOMMON 70 0 COMMON 1 bssCOMMON dist/default/production\PIC_sensores.X.production.o
-_ADC_config 334 0 CODE 0 text5 dist/default/production\PIC_sensores.X.production.o
+_ADC_config 344 0 CODE 0 text5 dist/default/production\PIC_sensores.X.production.o
 __HcstackBANK0 0 0 ABS 0 cstackBANK0 -
 _PIR1bits C 0 ABS 0 - dist/default/production\PIC_sensores.X.production.o
 __Lend_init 1C 0 CODE 0 end_init -
@@ -415,10 +418,10 @@ __Hreset_vec 6 0 CODE 0 reset_vec -
 __HbssBANK0 0 0 ABS 0 bssBANK0 -
 _SSPCON2bits 91 0 ABS 0 - dist/default/production\PIC_sensores.X.production.o
 __ptext1 224 0 CODE 0 text1 dist/default/production\PIC_sensores.X.production.o
-__ptext2 308 0 CODE 0 text2 dist/default/production\PIC_sensores.X.production.o
+__ptext2 318 0 CODE 0 text2 dist/default/production\PIC_sensores.X.production.o
 __ptext3 142 0 CODE 0 text3 dist/default/production\PIC_sensores.X.production.o
-__ptext4 2D0 0 CODE 0 text4 dist/default/production\PIC_sensores.X.production.o
-__ptext5 334 0 CODE 0 text5 dist/default/production\PIC_sensores.X.production.o
+__ptext4 2E0 0 CODE 0 text4 dist/default/production\PIC_sensores.X.production.o
+__ptext5 344 0 CODE 0 text5 dist/default/production\PIC_sensores.X.production.o
 __ptext6 1B4 0 CODE 0 text6 dist/default/production\PIC_sensores.X.production.o
 __ptext7 58 0 CODE 0 text7 dist/default/production\PIC_sensores.X.production.o
 __ptext8 28C 0 CODE 0 text8 dist/default/production\PIC_sensores.X.production.o
@@ -431,11 +434,11 @@ _infrarrojo3 71 0 COMMON 1 bssCOMMON dist/default/production\PIC_sensores.X.prod
 _infrarrojos 1B4 0 CODE 0 text6 dist/default/production\PIC_sensores.X.production.o
 _abierto_cerrado 2E 0 BANK0 1 bssBANK0 dist/default/production\PIC_sensores.X.production.o
 __Lreset_vec 0 0 CODE 0 reset_vec -
-__end_of_uart_config 334 0 CODE 0 text2 dist/default/production\PIC_sensores.X.production.o
+__end_of_uart_config 344 0 CODE 0 text2 dist/default/production\PIC_sensores.X.production.o
 _suma_ir 70 0 COMMON 1 bssCOMMON dist/default/production\PIC_sensores.X.production.o
 __end_of__initialization 50 0 CODE 0 cinit dist/default/production\PIC_sensores.X.production.o
 __size_of_I2C_Slave_Init 0 0 ABS 0 - dist/default/production\PIC_sensores.X.production.o
-__end_of_ADC_config 360 0 CODE 0 text5 dist/default/production\PIC_sensores.X.production.o
+__end_of_ADC_config 370 0 CODE 0 text5 dist/default/production\PIC_sensores.X.production.o
 __Lfunctab 0 0 ENTRY 0 functab -
 __Lclrtext 0 0 ABS 0 clrtext -
 _ANSELbits 188 0 ABS 0 - dist/default/production\PIC_sensores.X.production.o
@@ -444,7 +447,7 @@ _TXSTAbits 98 0 ABS 0 - dist/default/production\PIC_sensores.X.production.o
 _SSPCON2 91 0 ABS 0 - dist/default/production\PIC_sensores.X.production.o
 _SSPSTAT 94 0 ABS 0 - dist/default/production\PIC_sensores.X.production.o
 __Hend_init 22 0 CODE 0 end_init -
-__end_of_main 37C 0 CODE 0 maintext dist/default/production\PIC_sensores.X.production.o
+__end_of_main 38C 0 CODE 0 maintext dist/default/production\PIC_sensores.X.production.o
 osc_config@freq 31 0 BANK0 1 cstackBANK0 dist/default/production\PIC_sensores.X.production.o
 _ANSEL 188 0 ABS 0 - dist/default/production\PIC_sensores.X.production.o
 _PORTB 6 0 ABS 0 - dist/default/production\PIC_sensores.X.production.o
@@ -490,7 +493,7 @@ __pbssBANK0 20 0 BANK0 1 bssBANK0 dist/default/production\PIC_sensores.X.product
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-intentry 0 4 8 1BA 2
+intentry 0 4 8 1C2 2
 reset_vec 0 0 0 3 2
 bssBANK0 1 20 20 12 1
 bssCOMMON 1 70 70 C 1

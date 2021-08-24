@@ -12,7 +12,7 @@
 #include <pic16f887.h>
 #include <pic16f887.h>                 //se incluye libreria del compilador
 #include "UART_CONFIG.h"
-#define _XTAL_FREQ 4000000
+#define _XTAL_FREQ 8000000
 
 /*-----------------------------------------------------------------------------
 -------------------------- FUNCION DE LIBRERIA --------------------------------
@@ -26,7 +26,7 @@ void uart_config(void)
 	TXSTAbits.TX9 = 0;      //comunicacion de 8bits
 	BAUDCTLbits.BRG16 = 0;  //
 	SPBRGH = 0;             //configuracion de braudeaje segun Freq osc
-	SPBRG = 25;
+	SPBRG = 51;
 	//SETUP RECIBIR
 	RCSTAbits.SPEN = 1;     //se habilita modulo
 	RCSTAbits.RX9 = 0;      //comunicacion de 8bits

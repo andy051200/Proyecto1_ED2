@@ -2511,7 +2511,7 @@ void uart_config(void)
  TXSTAbits.TX9 = 0;
  BAUDCTLbits.BRG16 = 0;
  SPBRGH = 0;
- SPBRG = 25;
+ SPBRG = 51;
 
  RCSTAbits.SPEN = 1;
  RCSTAbits.RX9 = 0;

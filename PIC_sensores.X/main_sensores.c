@@ -226,9 +226,11 @@ void mandar_datos(void)
         case(1):
             TXREG=(suma_ir+0x30);
             break;
-      
-        case(5):
-            TXREG=44;               //separador de coma
+        case(2):
+            TXREG=10;               //separador de coma
+            break;
+        case(3):
+            TXREG=13;               //separador de coma
             break;
         case(20):
             cuenta_uart=0;          //un tipo de delay para reiniciar cuenta
