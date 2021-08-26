@@ -44,6 +44,7 @@ Descripcion:
 /*-----------------------------------------------------------------------------
  ----------------------- VARIABLES A IMPLEMTENTAR------------------------------
  -----------------------------------------------------------------------------*/
+
 //-------DIRECTIVAS DEL COMPILADOR
 #define _XTAL_FREQ 8000000
 
@@ -102,7 +103,7 @@ void __interrupt() isr(void) //funcion de interrupciones
         mandar_datos();     //invoco funcion para mandar uart
         PIR1bits.TXIF=0;    //apago interrupcion
     }
-    //if    
+   
 }
 /*-----------------------------------------------------------------------------
  ----------------------------- MAIN LOOP --------------------------------------
@@ -138,7 +139,6 @@ void setup(void)
     TRISEbits.TRISE0=0;                 //salida para led verde
     TRISEbits.TRISE1=0;                 //salida para led rojo
     TRISCbits.TRISC6=0;
-    TRISCbits.TRISC7=1;
     TRISD=0;
     //-------LIMPIEZA DE PUERTOS
     PORTB=0;
@@ -151,6 +151,7 @@ void setup(void)
     uart_config();
     //-------CONFIGURACION DE COMUNICACION I2C
     I2C_Slave_Init(0x50);   //se da direccion 0x50
+    //-------CONFIGURACION DE INTERRUPCIONES
     //-------CONFIGURACION DE INTERRUPCIONES
     INTCONbits.GIE=1;           //se habilita interrupciones globales
     INTCONbits.PEIE=1;          //habilitan interrupciones por perifericos
@@ -218,7 +219,8 @@ void toggle_adc(void)
     }
 }
 
-//-------FUNCION PARA datos uart
+
+
 void mandar_datos(void)
 {
     switch(cuenta_uart)
@@ -227,9 +229,27 @@ void mandar_datos(void)
             TXREG=(suma_ir+0x30);
             break;
         case(2):
-            TXREG=10;               //separador de coma
+            TXREG=44;
             break;
         case(3):
+            TXREG=infrarrojo1+0x30;
+            break;
+        case(4):
+            TXREG=44;
+            break;
+        case(5):
+            TXREG=infrarrojo2+0x30;
+            break;
+        case(6):
+            TXREG=44;
+            break;
+        case(7):
+            TXREG=infrarrojo3+0x30;
+            break;
+        case(8):
+            TXREG=10;               //separador de coma
+            break;
+        case(9):
             TXREG=13;               //separador de coma
             break;
         case(20):
@@ -238,4 +258,3 @@ void mandar_datos(void)
     }
     
 }
-

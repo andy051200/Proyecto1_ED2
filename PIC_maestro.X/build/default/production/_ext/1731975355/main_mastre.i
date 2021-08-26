@@ -2846,7 +2846,7 @@ void setup(void){
     I2C_Master_Start();
     I2C_Master_Write(0xD0);
     I2C_Master_Write(0x02);
-    I2C_Master_Write(0x06);
+    I2C_Master_Write(0x21);
     I2C_Master_Stop();
     _delay((unsigned long)((10)*(8000000/4000.0)));
 
@@ -2859,7 +2859,7 @@ void setup(void){
     I2C_Master_Start();
     I2C_Master_Write(0xD0);
     I2C_Master_Write(0x01);
-    I2C_Master_Write(0x59);
+    I2C_Master_Write(0x09);
     I2C_Master_Stop();
     _delay((unsigned long)((10)*(8000000/4000.0)));
 
@@ -2897,24 +2897,46 @@ void setup(void){
 }
 
 const char* conver(void){
-    char temporal[16];
-    temporal[0] = 0x50;
-    temporal[1] = 0x41;
-    temporal[2] = 0x52;
-    temporal[3] = 0x51;
-    temporal[4] = 0x55;
-    temporal[5] = 0x45;
-    temporal[6] = 0x4F;
-    temporal[7] = 0x53;
-    temporal[8] = 0x3A;
-    temporal[9] = 0X20;
-    temporal[10] = 0x30;
-    temporal[11] = NUM;
-    temporal[12] = 0x20;
-    temporal[13] = 0x20;
-    temporal[14] = 0x20;
-    temporal[15] = 0x20;
-    return temporal;
+    if (CERRADO==0){
+        char temporal[16];
+        temporal[0] = 0x50;
+        temporal[1] = 0x41;
+        temporal[2] = 0x52;
+        temporal[3] = 0x51;
+        temporal[4] = 0x55;
+        temporal[5] = 0x45;
+        temporal[6] = 0x4F;
+        temporal[7] = 0x53;
+        temporal[8] = 0x3A;
+        temporal[9] = 0X20;
+        temporal[10] = 0x30;
+        temporal[11] = NUM;
+        temporal[12] = 0x20;
+        temporal[13] = 0x20;
+        temporal[14] = 0x20;
+        temporal[15] = 0x20;
+        return temporal;
+    }
+    else{
+        char temporal[16];
+        temporal[0] = 0x43;
+        temporal[1] = 0x45;
+        temporal[2] = 0x52;
+        temporal[3] = 0x52;
+        temporal[4] = 0x41;
+        temporal[5] = 0x44;
+        temporal[6] = 0x4F;
+        temporal[7] = 0x20;
+        temporal[8] = 0x20;
+        temporal[9] = 0X20;
+        temporal[10] = 0x20;
+        temporal[11] = 0x20;
+        temporal[12] = 0x20;
+        temporal[13] = 0x20;
+        temporal[14] = 0x20;
+        temporal[15] = 0x20;
+        return temporal;
+    }
 }
 
 const char* conver1(void)
@@ -2981,13 +3003,11 @@ void LECT1(void){
         DH = 0x30;
         UH = num_ascii(HORA);
         if (HORA<7){
-            PORTDbits.RD0 = 1;
-            PORTDbits.RD1 = 1;
+            PORTA = 0b00111111;
             CERRADO = 1;
         }
         else{
-            PORTDbits.RD0 = 0;
-            PORTDbits.RD1 = 0;
+            PORTA = 0;
             if (DIA!=7){
                 CERRADO = 0;
             }
@@ -3001,20 +3021,17 @@ void LECT1(void){
             CERRADO = 0;
         }
         if (con>7){
-            PORTDbits.RD0 = 1;
-            PORTDbits.RD1 = 1;
+            PORTA = 0b00111111;
         }
         else{
-            PORTDbits.RD0 = 0;
-            PORTDbits.RD1 = 0;
+            PORTA = 0;
         }
     }
     else{
         DH = 0x32;
         con = HORA-32;
         UH = num_ascii(con);
-        PORTDbits.RD0 = 1;
-        PORTDbits.RD1 = 1;
+        PORTA = 0b00111111;
         if (con>1){
             CERRADO = 1;
         }

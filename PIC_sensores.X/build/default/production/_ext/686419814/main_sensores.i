@@ -2705,14 +2705,7 @@ void I2C_Slave_Init(uint8_t address);
 # 17 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/UART_CONFIG.h"
 void uart_config(void);
 # 43 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c" 2
-
-
-
-
-
-
-
-
+# 52 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c"
 unsigned char antirrebote, cuenta_uart;
 unsigned char infrarrojo1, infrarrojo2, infrarrojo3, suma_ir;
 float conversion1, conversion_total, temperatura_aprox;
@@ -2803,7 +2796,6 @@ void setup(void)
     TRISEbits.TRISE0=0;
     TRISEbits.TRISE1=0;
     TRISCbits.TRISC6=0;
-    TRISCbits.TRISC7=1;
     TRISD=0;
 
     PORTB=0;
@@ -2816,6 +2808,7 @@ void setup(void)
     uart_config();
 
     I2C_Slave_Init(0x50);
+
 
     INTCONbits.GIE=1;
     INTCONbits.PEIE=1;
@@ -2884,6 +2877,7 @@ void toggle_adc(void)
 }
 
 
+
 void mandar_datos(void)
 {
     switch(cuenta_uart)
@@ -2892,9 +2886,27 @@ void mandar_datos(void)
             TXREG=(suma_ir+0x30);
             break;
         case(2):
-            TXREG=10;
+            TXREG=44;
             break;
         case(3):
+            TXREG=infrarrojo1+0x30;
+            break;
+        case(4):
+            TXREG=44;
+            break;
+        case(5):
+            TXREG=infrarrojo2+0x30;
+            break;
+        case(6):
+            TXREG=44;
+            break;
+        case(7):
+            TXREG=infrarrojo3+0x30;
+            break;
+        case(8):
+            TXREG=10;
+            break;
+        case(9):
             TXREG=13;
             break;
         case(20):

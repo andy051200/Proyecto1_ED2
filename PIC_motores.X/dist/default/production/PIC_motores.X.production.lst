@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.32 build 20210201212658 
-                                                                                               Mon Aug 23 12:57:02 2021
+                                                                                               Thu Aug 26 13:45:40 2021
 
 Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1 
      1                           	processor	16F887
@@ -608,13 +608,13 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    594                           
    595  0019                     __end_of__initialization:
    596  0019  0183               	clrf	3
-   597  001A  120A  118A  2CDD   	ljmp	_main	;jump to C main() function
+   597  001A  120A  118A  2CED   	ljmp	_main	;jump to C main() function
    598                           
    599                           	psect	bssCOMMON
    600  0077                     __pbssCOMMON:
-   601  0077                     _temperatura_aprox:
+   601  0077                     _motor_recibido:
    602  0077                     	ds	1
-   603  0078                     _botonazo:
+   603  0078                     _temperatura_aprox:
    604  0078                     	ds	1
    605  0079                     _antirrebote:
    606  0079                     	ds	1
@@ -623,13 +623,13 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    609  0054                     __pbssBANK0:
    610  0054                     _BASURA:
    611  0054                     	ds	1
-   612  0055                     _motor_recibido:
+   612  0055                     _z:
    613  0055                     	ds	1
-   614  0056                     _z:
+   614  0056                     _conversion_total:
    615  0056                     	ds	1
-   616  0057                     _conversion_total:
+   616  0057                     _conversion1:
    617  0057                     	ds	1
-   618  0058                     _conversion1:
+   618  0058                     _botonazo:
    619  0058                     	ds	1
    620                           
    621                           	psect	cstackCOMMON
@@ -783,13 +783,13 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    769  004F                     	ds	5
    770                           
    771                           	psect	maintext
-   772  04DD                     __pmaintext:	
+   772  04ED                     __pmaintext:	
    773 ;;
    774 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
    775 ;;
    776 ;; *************** function _main *****************
    777 ;; Defined at:
-   778 ;;		line 113 in file "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c"
+   778 ;;		line 114 in file "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c"
    779 ;; Parameters:    Size  Location     Type
    780 ;;		None
    781 ;; Auto vars:     Size  Location     Type
@@ -821,37 +821,37 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    807                           
    808                           
    809                           ;psect for function _main
-   810  04DD                     _main:
-   811  04DD                     l1616:	
+   810  04ED                     _main:
+   811  04ED                     l1663:	
    812                           ;incstack = 0
    813                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cstack]
    814                           
    815                           
-   816                           ;Main_motores.c: 115: setup();
-   817  04DD  120A  118A  243A  120A  118A  	fcall	_setup
-   818  04E2                     l114:	
-   819                           ;Main_motores.c: 117: while(1)
+   816                           ;Main_motores.c: 116: setup();
+   817  04ED  120A  118A  244A  120A  118A  	fcall	_setup
+   818  04F2                     l114:	
+   819                           ;Main_motores.c: 118: while(1)
    820                           
    821                           
-   822                           ;Main_motores.c: 118: {;Main_motores.c: 120: servo();
-   823  04E2  120A  118A  23FB  120A  118A  	fcall	_servo
-   824  04E7                     l1618:
+   822                           ;Main_motores.c: 119: {;Main_motores.c: 121: servo();
+   823  04F2  120A  118A  23FB  120A  118A  	fcall	_servo
+   824  04F7                     l1665:
    825                           
-   826                           ;Main_motores.c: 122: toggle_adc();
-   827  04E7  120A  118A  24A7  120A  118A  	fcall	_toggle_adc
-   828  04EC                     l1620:
+   826                           ;Main_motores.c: 123: toggle_adc();
+   827  04F7  120A  118A  24B7  120A  118A  	fcall	_toggle_adc
+   828  04FC                     l1667:
    829                           
-   830                           ;Main_motores.c: 124: temp();
-   831  04EC  120A  118A  23A6  120A  118A  	fcall	_temp
-   832  04F1  2CE2               	goto	l114
-   833  04F2  120A  118A  280C   	ljmp	start
-   834  04F5                     __end_of_main:
+   830                           ;Main_motores.c: 125: temp();
+   831  04FC  120A  118A  23A6  120A  118A  	fcall	_temp
+   832  0501  2CF2               	goto	l114
+   833  0502  120A  118A  280C   	ljmp	start
+   834  0505                     __end_of_main:
    835                           
    836                           	psect	text1
-   837  04A7                     __ptext1:	
+   837  04B7                     __ptext1:	
    838 ;; *************** function _toggle_adc *****************
    839 ;; Defined at:
-   840 ;;		line 204 in file "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c"
+   840 ;;		line 206 in file "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c"
    841 ;; Parameters:    Size  Location     Type
    842 ;;		None
    843 ;; Auto vars:     Size  Location     Type
@@ -881,64 +881,64 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    867                           
    868                           
    869                           ;psect for function _toggle_adc
-   870  04A7                     _toggle_adc:
-   871  04A7                     l1496:	
+   870  04B7                     _toggle_adc:
+   871  04B7                     l1543:	
    872                           ;incstack = 0
    873                           ; Regs used in _toggle_adc: [wreg+status,2+status,0]
    874                           
    875                           
-   876                           ;Main_motores.c: 206: if (ADCON0bits.GO==0)
-   877  04A7  1283               	bcf	3,5	;RP0=0, select bank0
-   878  04A8  1303               	bcf	3,6	;RP1=0, select bank0
-   879  04A9  189F               	btfsc	31,1	;volatile
-   880  04AA  2CAC               	goto	u1271
-   881  04AB  2CAD               	goto	u1270
-   882  04AC                     u1271:
-   883  04AC  2CC2               	goto	l133
-   884  04AD                     u1270:
-   885  04AD                     l1498:
+   876                           ;Main_motores.c: 208: if (ADCON0bits.GO==0)
+   877  04B7  1283               	bcf	3,5	;RP0=0, select bank0
+   878  04B8  1303               	bcf	3,6	;RP1=0, select bank0
+   879  04B9  189F               	btfsc	31,1	;volatile
+   880  04BA  2CBC               	goto	u1331
+   881  04BB  2CBD               	goto	u1330
+   882  04BC                     u1331:
+   883  04BC  2CD2               	goto	l134
+   884  04BD                     u1330:
+   885  04BD                     l1545:
    886                           
-   887                           ;Main_motores.c: 207: {;Main_motores.c: 208: conversion1=ADRESH<<8;
-   888  04AD  01D8               	clrf	_conversion1
-   889  04AE                     l1500:
+   887                           ;Main_motores.c: 209: {;Main_motores.c: 210: conversion1=ADRESH<<8;
+   888  04BD  01D7               	clrf	_conversion1
+   889  04BE                     l1547:
    890                           
-   891                           ;Main_motores.c: 209: conversion_total=conversion1+ADRESL;
-   892  04AE  1683               	bsf	3,5	;RP0=1, select bank1
-   893  04AF  1303               	bcf	3,6	;RP1=0, select bank1
-   894  04B0  081E               	movf	30,w	;volatile
-   895  04B1  00F3               	movwf	??_toggle_adc
-   896  04B2  0873               	movf	??_toggle_adc,w
-   897  04B3  1283               	bcf	3,5	;RP0=0, select bank0
-   898  04B4  1303               	bcf	3,6	;RP1=0, select bank0
-   899  04B5  00D7               	movwf	_conversion_total
-   900  04B6                     l1502:
+   891                           ;Main_motores.c: 211: conversion_total=conversion1+ADRESL;
+   892  04BE  1683               	bsf	3,5	;RP0=1, select bank1
+   893  04BF  1303               	bcf	3,6	;RP1=0, select bank1
+   894  04C0  081E               	movf	30,w	;volatile
+   895  04C1  00F3               	movwf	??_toggle_adc
+   896  04C2  0873               	movf	??_toggle_adc,w
+   897  04C3  1283               	bcf	3,5	;RP0=0, select bank0
+   898  04C4  1303               	bcf	3,6	;RP1=0, select bank0
+   899  04C5  00D6               	movwf	_conversion_total
+   900  04C6                     l1549:
    901                           
-   902                           ;Main_motores.c: 210: _delay((unsigned long)((1)*(8000000/4000.0)));
-   903  04B6  3003               	movlw	3
-   904  04B7  00F4               	movwf	??_toggle_adc+1
-   905  04B8  3097               	movlw	151
-   906  04B9  00F3               	movwf	??_toggle_adc
-   907  04BA                     u1577:
-   908  04BA  0BF3               	decfsz	??_toggle_adc,f
-   909  04BB  2CBA               	goto	u1577
-   910  04BC  0BF4               	decfsz	??_toggle_adc+1,f
-   911  04BD  2CBA               	goto	u1577
-   912  04BE  2CBF               	nop2
-   913  04BF                     l1504:
+   902                           ;Main_motores.c: 212: _delay((unsigned long)((1)*(8000000/4000.0)));
+   903  04C6  3003               	movlw	3
+   904  04C7  00F4               	movwf	??_toggle_adc+1
+   905  04C8  3097               	movlw	151
+   906  04C9  00F3               	movwf	??_toggle_adc
+   907  04CA                     u1637:
+   908  04CA  0BF3               	decfsz	??_toggle_adc,f
+   909  04CB  2CCA               	goto	u1637
+   910  04CC  0BF4               	decfsz	??_toggle_adc+1,f
+   911  04CD  2CCA               	goto	u1637
+   912  04CE  2CCF               	nop2
+   913  04CF                     l1551:
    914                           
-   915                           ;Main_motores.c: 211: ADCON0bits.GO=1;
-   916  04BF  1283               	bcf	3,5	;RP0=0, select bank0
-   917  04C0  1303               	bcf	3,6	;RP1=0, select bank0
-   918  04C1  149F               	bsf	31,1	;volatile
-   919  04C2                     l133:
-   920  04C2  0008               	return
-   921  04C3                     __end_of_toggle_adc:
+   915                           ;Main_motores.c: 213: ADCON0bits.GO=1;
+   916  04CF  1283               	bcf	3,5	;RP0=0, select bank0
+   917  04D0  1303               	bcf	3,6	;RP1=0, select bank0
+   918  04D1  149F               	bsf	31,1	;volatile
+   919  04D2                     l134:
+   920  04D2  0008               	return
+   921  04D3                     __end_of_toggle_adc:
    922                           
    923                           	psect	text2
    924  03A6                     __ptext2:	
    925 ;; *************** function _temp *****************
    926 ;; Defined at:
-   927 ;;		line 215 in file "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c"
+   927 ;;		line 217 in file "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c"
    928 ;; Parameters:    Size  Location     Type
    929 ;;		None
    930 ;; Auto vars:     Size  Location     Type
@@ -971,15 +971,15 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    957                           
    958                           ;psect for function _temp
    959  03A6                     _temp:
-   960  03A6                     l1608:	
+   960  03A6                     l1655:	
    961                           ;incstack = 0
    962                           ; Regs used in _temp: [wreg+status,2+status,0+btemp+1+pclath+cstack]
    963                           
    964                           
-   965                           ;Main_motores.c: 217: temperatura_aprox=(conversion_total/2.046);
+   965                           ;Main_motores.c: 219: temperatura_aprox=(conversion_total/2.046);
    966  03A6  1283               	bcf	3,5	;RP0=0, select bank0
    967  03A7  1303               	bcf	3,6	;RP1=0, select bank0
-   968  03A8  0857               	movf	_conversion_total,w
+   968  03A8  0856               	movf	_conversion_total,w
    969  03A9  00CF               	movwf	??_temp
    970  03AA  01D0               	clrf	??_temp+1
    971  03AB  01D1               	clrf	??_temp+2
@@ -1029,41 +1029,41 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1015  03E3  0844               	movf	?___fltol,w
   1016  03E4  00D3               	movwf	??_temp+4
   1017  03E5  0853               	movf	??_temp+4,w
-  1018  03E6  00F7               	movwf	_temperatura_aprox
-  1019  03E7                     l1610:
+  1018  03E6  00F8               	movwf	_temperatura_aprox
+  1019  03E7                     l1657:
   1020                           
-  1021                           ;Main_motores.c: 219: if (temperatura_aprox>28 && temperatura_aprox <50)
+  1021                           ;Main_motores.c: 221: if (temperatura_aprox>28 && temperatura_aprox <50)
   1022  03E7  301D               	movlw	29
-  1023  03E8  0277               	subwf	_temperatura_aprox,w
+  1023  03E8  0278               	subwf	_temperatura_aprox,w
   1024  03E9  1C03               	skipc
-  1025  03EA  2BEC               	goto	u1551
-  1026  03EB  2BED               	goto	u1550
-  1027  03EC                     u1551:
-  1028  03EC  2BF7               	goto	l136
-  1029  03ED                     u1550:
-  1030  03ED                     l1612:
+  1025  03EA  2BEC               	goto	u1611
+  1026  03EB  2BED               	goto	u1610
+  1027  03EC                     u1611:
+  1028  03EC  2BF7               	goto	l137
+  1029  03ED                     u1610:
+  1030  03ED                     l1659:
   1031  03ED  3032               	movlw	50
-  1032  03EE  0277               	subwf	_temperatura_aprox,w
+  1032  03EE  0278               	subwf	_temperatura_aprox,w
   1033  03EF  1803               	skipnc
-  1034  03F0  2BF2               	goto	u1561
-  1035  03F1  2BF3               	goto	u1560
-  1036  03F2                     u1561:
-  1037  03F2  2BF7               	goto	l136
-  1038  03F3                     u1560:
-  1039  03F3                     l1614:
+  1034  03F0  2BF2               	goto	u1621
+  1035  03F1  2BF3               	goto	u1620
+  1036  03F2                     u1621:
+  1037  03F2  2BF7               	goto	l137
+  1038  03F3                     u1620:
+  1039  03F3                     l1661:
   1040                           
-  1041                           ;Main_motores.c: 220: TRISCbits.TRISC2=0;
+  1041                           ;Main_motores.c: 222: TRISCbits.TRISC2=0;
   1042  03F3  1683               	bsf	3,5	;RP0=1, select bank1
   1043  03F4  1303               	bcf	3,6	;RP1=0, select bank1
   1044  03F5  1107               	bcf	7,2	;volatile
-  1045  03F6  2BFA               	goto	l138
-  1046  03F7                     l136:
+  1045  03F6  2BFA               	goto	l139
+  1046  03F7                     l137:
   1047                           
-  1048                           ;Main_motores.c: 221: else;Main_motores.c: 222: TRISCbits.TRISC2=1;
+  1048                           ;Main_motores.c: 223: else;Main_motores.c: 224: TRISCbits.TRISC2=1;
   1049  03F7  1683               	bsf	3,5	;RP0=1, select bank1
   1050  03F8  1303               	bcf	3,6	;RP1=0, select bank1
   1051  03F9  1507               	bsf	7,2	;volatile
-  1052  03FA                     l138:
+  1052  03FA                     l139:
   1053  03FA  0008               	return
   1054  03FB                     __end_of_temp:
   1055                           
@@ -1112,22 +1112,22 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1098  01FA  1283               	bcf	3,5	;RP0=0, select bank0
   1099  01FB  1303               	bcf	3,6	;RP1=0, select bank0
   1100  01FC  00A4               	movwf	___xxtofl@sign
-  1101  01FD                     l1564:
+  1101  01FD                     l1611:
   1102  01FD  0824               	movf	___xxtofl@sign,w
   1103  01FE  1903               	btfsc	3,2
-  1104  01FF  2A01               	goto	u1411
-  1105  0200  2A02               	goto	u1410
-  1106  0201                     u1411:
-  1107  0201  2A16               	goto	l1570
-  1108  0202                     u1410:
-  1109  0202                     l1566:
+  1104  01FF  2A01               	goto	u1471
+  1105  0200  2A02               	goto	u1470
+  1106  0201                     u1471:
+  1107  0201  2A16               	goto	l1617
+  1108  0202                     u1470:
+  1109  0202                     l1613:
   1110  0202  1FF6               	btfss	___xxtofl@val+3,7
-  1111  0203  2A05               	goto	u1421
-  1112  0204  2A06               	goto	u1420
-  1113  0205                     u1421:
-  1114  0205  2A16               	goto	l1570
-  1115  0206                     u1420:
-  1116  0206                     l1568:
+  1111  0203  2A05               	goto	u1481
+  1112  0204  2A06               	goto	u1480
+  1113  0205                     u1481:
+  1114  0205  2A16               	goto	l1617
+  1115  0206                     u1480:
+  1116  0206                     l1615:
   1117  0206  0973               	comf	___xxtofl@val,w
   1118  0207  00A6               	movwf	___xxtofl@arg
   1119  0208  0974               	comf	___xxtofl@val+1,w
@@ -1143,8 +1143,8 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1129  0212  0AA8               	incf	___xxtofl@arg+2,f
   1130  0213  1903               	skipnz
   1131  0214  0AA9               	incf	___xxtofl@arg+3,f
-  1132  0215  2A1E               	goto	l745
-  1133  0216                     l1570:
+  1132  0215  2A1E               	goto	l746
+  1133  0216                     l1617:
   1134  0216  0876               	movf	___xxtofl@val+3,w
   1135  0217  00A9               	movwf	___xxtofl@arg+3
   1136  0218  0875               	movf	___xxtofl@val+2,w
@@ -1153,18 +1153,18 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1139  021B  00A7               	movwf	___xxtofl@arg+1
   1140  021C  0873               	movf	___xxtofl@val,w
   1141  021D  00A6               	movwf	___xxtofl@arg
-  1142  021E                     l745:
+  1142  021E                     l746:
   1143  021E  0876               	movf	___xxtofl@val+3,w
   1144  021F  0475               	iorwf	___xxtofl@val+2,w
   1145  0220  0474               	iorwf	___xxtofl@val+1,w
   1146  0221  0473               	iorwf	___xxtofl@val,w
   1147  0222  1D03               	skipz
-  1148  0223  2A25               	goto	u1431
-  1149  0224  2A26               	goto	u1430
-  1150  0225                     u1431:
-  1151  0225  2A2F               	goto	l1576
-  1152  0226                     u1430:
-  1153  0226                     l1572:
+  1148  0223  2A25               	goto	u1491
+  1149  0224  2A26               	goto	u1490
+  1150  0225                     u1491:
+  1151  0225  2A2F               	goto	l1623
+  1152  0226                     u1490:
+  1153  0226                     l1619:
   1154  0226  3000               	movlw	0
   1155  0227  00F6               	movwf	?___xxtofl+3
   1156  0228  3000               	movlw	0
@@ -1173,20 +1173,20 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1159  022B  00F4               	movwf	?___xxtofl+1
   1160  022C  3000               	movlw	0
   1161  022D  00F3               	movwf	?___xxtofl
-  1162  022E  2AB5               	goto	l747
-  1163  022F                     l1576:
+  1162  022E  2AB5               	goto	l748
+  1163  022F                     l1623:
   1164  022F  3096               	movlw	150
   1165  0230  00A0               	movwf	??___xxtofl
   1166  0231  0820               	movf	??___xxtofl,w
   1167  0232  00A5               	movwf	___xxtofl@exp
-  1168  0233  2A41               	goto	l1580
-  1169  0234                     l1578:
+  1168  0233  2A41               	goto	l1627
+  1169  0234                     l1625:
   1170  0234  3001               	movlw	1
   1171  0235  00A0               	movwf	??___xxtofl
   1172  0236  0820               	movf	??___xxtofl,w
   1173  0237  07A5               	addwf	___xxtofl@exp,f
   1174  0238  3001               	movlw	1
-  1175  0239                     u1445:
+  1175  0239                     u1505:
   1176  0239  1003               	clrc
   1177  023A  0CA9               	rrf	___xxtofl@arg+3,f
   1178  023B  0CA8               	rrf	___xxtofl@arg+2,f
@@ -1194,23 +1194,23 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1180  023D  0CA6               	rrf	___xxtofl@arg,f
   1181  023E  3EFF               	addlw	-1
   1182  023F  1D03               	skipz
-  1183  0240  2A39               	goto	u1445
-  1184  0241                     l1580:
+  1183  0240  2A39               	goto	u1505
+  1184  0241                     l1627:
   1185  0241  30FE               	movlw	254
   1186  0242  0529               	andwf	___xxtofl@arg+3,w
   1187  0243  1D03               	btfss	3,2
-  1188  0244  2A46               	goto	u1451
-  1189  0245  2A47               	goto	u1450
-  1190  0246                     u1451:
-  1191  0246  2A34               	goto	l1578
-  1192  0247                     u1450:
-  1193  0247  2A63               	goto	l751
-  1194  0248                     l1582:
+  1188  0244  2A46               	goto	u1511
+  1189  0245  2A47               	goto	u1510
+  1190  0246                     u1511:
+  1191  0246  2A34               	goto	l1625
+  1192  0247                     u1510:
+  1193  0247  2A63               	goto	l752
+  1194  0248                     l1629:
   1195  0248  3001               	movlw	1
   1196  0249  00A0               	movwf	??___xxtofl
   1197  024A  0820               	movf	??___xxtofl,w
   1198  024B  07A5               	addwf	___xxtofl@exp,f
-  1199  024C                     l1584:
+  1199  024C                     l1631:
   1200  024C  3001               	movlw	1
   1201  024D  07A6               	addwf	___xxtofl@arg,f
   1202  024E  3000               	movlw	0
@@ -1225,9 +1225,9 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1211  0257  1803               	skipnc
   1212  0258  3001               	movlw	1
   1213  0259  07A9               	addwf	___xxtofl@arg+3,f
-  1214  025A                     l1586:
+  1214  025A                     l1633:
   1215  025A  3001               	movlw	1
-  1216  025B                     u1465:
+  1216  025B                     u1525:
   1217  025B  1003               	clrc
   1218  025C  0CA9               	rrf	___xxtofl@arg+3,f
   1219  025D  0CA8               	rrf	___xxtofl@arg+2,f
@@ -1235,54 +1235,54 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1221  025F  0CA6               	rrf	___xxtofl@arg,f
   1222  0260  3EFF               	addlw	-1
   1223  0261  1D03               	skipz
-  1224  0262  2A5B               	goto	u1465
-  1225  0263                     l751:
+  1224  0262  2A5B               	goto	u1525
+  1225  0263                     l752:
   1226  0263  30FF               	movlw	255
   1227  0264  0529               	andwf	___xxtofl@arg+3,w
   1228  0265  1D03               	btfss	3,2
-  1229  0266  2A68               	goto	u1471
-  1230  0267  2A69               	goto	u1470
-  1231  0268                     u1471:
-  1232  0268  2A48               	goto	l1582
-  1233  0269                     u1470:
-  1234  0269  2A75               	goto	l1590
-  1235  026A                     l1588:
+  1229  0266  2A68               	goto	u1531
+  1230  0267  2A69               	goto	u1530
+  1231  0268                     u1531:
+  1232  0268  2A48               	goto	l1629
+  1233  0269                     u1530:
+  1234  0269  2A75               	goto	l1637
+  1235  026A                     l1635:
   1236  026A  3001               	movlw	1
   1237  026B  02A5               	subwf	___xxtofl@exp,f
   1238  026C  3001               	movlw	1
   1239  026D  00A0               	movwf	??___xxtofl
-  1240  026E                     u1485:
+  1240  026E                     u1545:
   1241  026E  1003               	clrc
   1242  026F  0DA6               	rlf	___xxtofl@arg,f
   1243  0270  0DA7               	rlf	___xxtofl@arg+1,f
   1244  0271  0DA8               	rlf	___xxtofl@arg+2,f
   1245  0272  0DA9               	rlf	___xxtofl@arg+3,f
   1246  0273  0BA0               	decfsz	??___xxtofl,f
-  1247  0274  2A6E               	goto	u1485
-  1248  0275                     l1590:
+  1247  0274  2A6E               	goto	u1545
+  1248  0275                     l1637:
   1249  0275  1BA8               	btfsc	___xxtofl@arg+2,7
-  1250  0276  2A78               	goto	u1491
-  1251  0277  2A79               	goto	u1490
-  1252  0278                     u1491:
-  1253  0278  2A7F               	goto	l758
-  1254  0279                     u1490:
-  1255  0279                     l1592:
+  1250  0276  2A78               	goto	u1551
+  1251  0277  2A79               	goto	u1550
+  1252  0278                     u1551:
+  1253  0278  2A7F               	goto	l759
+  1254  0279                     u1550:
+  1255  0279                     l1639:
   1256  0279  3002               	movlw	2
   1257  027A  0225               	subwf	___xxtofl@exp,w
   1258  027B  1803               	skipnc
-  1259  027C  2A7E               	goto	u1501
-  1260  027D  2A7F               	goto	u1500
-  1261  027E                     u1501:
-  1262  027E  2A6A               	goto	l1588
-  1263  027F                     u1500:
-  1264  027F                     l758:
+  1259  027C  2A7E               	goto	u1561
+  1260  027D  2A7F               	goto	u1560
+  1261  027E                     u1561:
+  1262  027E  2A6A               	goto	l1635
+  1263  027F                     u1560:
+  1264  027F                     l759:
   1265  027F  1825               	btfsc	___xxtofl@exp,0
-  1266  0280  2A82               	goto	u1511
-  1267  0281  2A83               	goto	u1510
-  1268  0282                     u1511:
-  1269  0282  2A8B               	goto	l759
-  1270  0283                     u1510:
-  1271  0283                     l1594:
+  1266  0280  2A82               	goto	u1571
+  1267  0281  2A83               	goto	u1570
+  1268  0282                     u1571:
+  1269  0282  2A8B               	goto	l760
+  1270  0283                     u1570:
+  1271  0283                     l1641:
   1272  0283  30FF               	movlw	255
   1273  0284  05A6               	andwf	___xxtofl@arg,f
   1274  0285  30FF               	movlw	255
@@ -1291,26 +1291,26 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1277  0288  05A8               	andwf	___xxtofl@arg+2,f
   1278  0289  30FF               	movlw	255
   1279  028A  05A9               	andwf	___xxtofl@arg+3,f
-  1280  028B                     l759:
+  1280  028B                     l760:
   1281  028B  1003               	clrc
   1282  028C  0CA5               	rrf	___xxtofl@exp,f
-  1283  028D                     l1596:
+  1283  028D                     l1643:
   1284  028D  0825               	movf	___xxtofl@exp,w
   1285  028E  00A0               	movwf	??___xxtofl
   1286  028F  01A1               	clrf	??___xxtofl+1
   1287  0290  01A2               	clrf	??___xxtofl+2
   1288  0291  01A3               	clrf	??___xxtofl+3
   1289  0292  3018               	movlw	24
-  1290  0293                     u1525:
+  1290  0293                     u1585:
   1291  0293  1003               	clrc
   1292  0294  0DA0               	rlf	??___xxtofl,f
   1293  0295  0DA1               	rlf	??___xxtofl+1,f
   1294  0296  0DA2               	rlf	??___xxtofl+2,f
   1295  0297  0DA3               	rlf	??___xxtofl+3,f
-  1296  0298                     u1520:
+  1296  0298                     u1580:
   1297  0298  3EFF               	addlw	-1
   1298  0299  1D03               	skipz
-  1299  029A  2A93               	goto	u1525
+  1299  029A  2A93               	goto	u1585
   1300  029B  0820               	movf	??___xxtofl,w
   1301  029C  04A6               	iorwf	___xxtofl@arg,f
   1302  029D  0821               	movf	??___xxtofl+1,w
@@ -1319,24 +1319,24 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1305  02A0  04A8               	iorwf	___xxtofl@arg+2,f
   1306  02A1  0823               	movf	??___xxtofl+3,w
   1307  02A2  04A9               	iorwf	___xxtofl@arg+3,f
-  1308  02A3                     l1598:
+  1308  02A3                     l1645:
   1309  02A3  0824               	movf	___xxtofl@sign,w
   1310  02A4  1903               	btfsc	3,2
-  1311  02A5  2AA7               	goto	u1531
-  1312  02A6  2AA8               	goto	u1530
-  1313  02A7                     u1531:
-  1314  02A7  2AAD               	goto	l1604
-  1315  02A8                     u1530:
-  1316  02A8                     l1600:
+  1311  02A5  2AA7               	goto	u1591
+  1312  02A6  2AA8               	goto	u1590
+  1313  02A7                     u1591:
+  1314  02A7  2AAD               	goto	l1651
+  1315  02A8                     u1590:
+  1316  02A8                     l1647:
   1317  02A8  1FF6               	btfss	___xxtofl@val+3,7
-  1318  02A9  2AAB               	goto	u1541
-  1319  02AA  2AAC               	goto	u1540
-  1320  02AB                     u1541:
-  1321  02AB  2AAD               	goto	l1604
-  1322  02AC                     u1540:
-  1323  02AC                     l1602:
+  1318  02A9  2AAB               	goto	u1601
+  1319  02AA  2AAC               	goto	u1600
+  1320  02AB                     u1601:
+  1321  02AB  2AAD               	goto	l1651
+  1322  02AC                     u1600:
+  1323  02AC                     l1649:
   1324  02AC  17A9               	bsf	___xxtofl@arg+3,7
-  1325  02AD                     l1604:
+  1325  02AD                     l1651:
   1326  02AD  0829               	movf	___xxtofl@arg+3,w
   1327  02AE  00F6               	movwf	?___xxtofl+3
   1328  02AF  0828               	movf	___xxtofl@arg+2,w
@@ -1345,7 +1345,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1331  02B2  00F4               	movwf	?___xxtofl+1
   1332  02B3  0826               	movf	___xxtofl@arg,w
   1333  02B4  00F3               	movwf	?___xxtofl
-  1334  02B5                     l747:
+  1334  02B5                     l748:
   1335  02B5  0008               	return
   1336  02B6                     __end_of___xxtofl:
   1337                           
@@ -1385,7 +1385,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1371                           
   1372                           ;psect for function ___fltol
   1373  02B6                     ___fltol:
-  1374  02B6                     l1274:	
+  1374  02B6                     l1287:	
   1375                           ;incstack = 0
   1376                           ; Regs used in ___fltol: [wreg+status,2+status,0]
   1377                           
@@ -1399,12 +1399,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1385  02BD  00CE               	movwf	___fltol@exp1
   1386  02BE  084E               	movf	___fltol@exp1,w
   1387  02BF  1D03               	btfss	3,2
-  1388  02C0  2AC2               	goto	u741
-  1389  02C1  2AC3               	goto	u740
-  1390  02C2                     u741:
-  1391  02C2  2ACC               	goto	l1280
-  1392  02C3                     u740:
-  1393  02C3                     l1276:
+  1388  02C0  2AC2               	goto	u761
+  1389  02C1  2AC3               	goto	u760
+  1390  02C2                     u761:
+  1391  02C2  2ACC               	goto	l1293
+  1392  02C3                     u760:
+  1393  02C3                     l1289:
   1394  02C3  3000               	movlw	0
   1395  02C4  00C7               	movwf	?___fltol+3
   1396  02C5  3000               	movlw	0
@@ -1413,8 +1413,8 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1399  02C8  00C5               	movwf	?___fltol+1
   1400  02C9  3000               	movlw	0
   1401  02CA  00C4               	movwf	?___fltol
-  1402  02CB  2B31               	goto	l498
-  1403  02CC                     l1280:
+  1402  02CB  2B31               	goto	l499
+  1403  02CC                     l1293:
   1404  02CC  0844               	movf	___fltol@f1,w
   1405  02CD  00C8               	movwf	??___fltol
   1406  02CE  0845               	movf	___fltol@f1+1,w
@@ -1424,23 +1424,23 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1410  02D2  0847               	movf	___fltol@f1+3,w
   1411  02D3  00CB               	movwf	??___fltol+3
   1412  02D4  301F               	movlw	31
-  1413  02D5                     u755:
+  1413  02D5                     u775:
   1414  02D5  1003               	clrc
   1415  02D6  0CCB               	rrf	??___fltol+3,f
   1416  02D7  0CCA               	rrf	??___fltol+2,f
   1417  02D8  0CC9               	rrf	??___fltol+1,f
   1418  02D9  0CC8               	rrf	??___fltol,f
-  1419  02DA                     u750:
+  1419  02DA                     u770:
   1420  02DA  3EFF               	addlw	-1
   1421  02DB  1D03               	skipz
-  1422  02DC  2AD5               	goto	u755
+  1422  02DC  2AD5               	goto	u775
   1423  02DD  0848               	movf	??___fltol,w
   1424  02DE  00CC               	movwf	??___fltol+4
   1425  02DF  084C               	movf	??___fltol+4,w
   1426  02E0  00CD               	movwf	___fltol@sign1
-  1427  02E1                     l1282:
+  1427  02E1                     l1295:
   1428  02E1  17C6               	bsf	___fltol@f1+2,7
-  1429  02E2                     l1284:
+  1429  02E2                     l1297:
   1430  02E2  30FF               	movlw	255
   1431  02E3  05C4               	andwf	___fltol@f1,f
   1432  02E4  30FF               	movlw	255
@@ -1449,30 +1449,30 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1435  02E7  05C6               	andwf	___fltol@f1+2,f
   1436  02E8  3000               	movlw	0
   1437  02E9  05C7               	andwf	___fltol@f1+3,f
-  1438  02EA                     l1286:
+  1438  02EA                     l1299:
   1439  02EA  3096               	movlw	150
   1440  02EB  02CE               	subwf	___fltol@exp1,f
-  1441  02EC                     l1288:
+  1441  02EC                     l1301:
   1442  02EC  1FCE               	btfss	___fltol@exp1,7
-  1443  02ED  2AEF               	goto	u761
-  1444  02EE  2AF0               	goto	u760
-  1445  02EF                     u761:
-  1446  02EF  2B0A               	goto	l1298
-  1447  02F0                     u760:
-  1448  02F0                     l1290:
+  1443  02ED  2AEF               	goto	u781
+  1444  02EE  2AF0               	goto	u780
+  1445  02EF                     u781:
+  1446  02EF  2B0A               	goto	l1311
+  1447  02F0                     u780:
+  1448  02F0                     l1303:
   1449  02F0  084E               	movf	___fltol@exp1,w
   1450  02F1  3A80               	xorlw	128
   1451  02F2  3E97               	addlw	151
   1452  02F3  1803               	skipnc
-  1453  02F4  2AF6               	goto	u771
-  1454  02F5  2AF7               	goto	u770
-  1455  02F6                     u771:
-  1456  02F6  2AF8               	goto	l1296
-  1457  02F7                     u770:
-  1458  02F7  2AC3               	goto	l1276
-  1459  02F8                     l1296:
+  1453  02F4  2AF6               	goto	u791
+  1454  02F5  2AF7               	goto	u790
+  1455  02F6                     u791:
+  1456  02F6  2AF8               	goto	l1309
+  1457  02F7                     u790:
+  1458  02F7  2AC3               	goto	l1289
+  1459  02F8                     l1309:
   1460  02F8  3001               	movlw	1
-  1461  02F9                     u785:
+  1461  02F9                     u805:
   1462  02F9  1003               	clrc
   1463  02FA  0CC7               	rrf	___fltol@f1+3,f
   1464  02FB  0CC6               	rrf	___fltol@f1+2,f
@@ -1480,58 +1480,58 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1466  02FD  0CC4               	rrf	___fltol@f1,f
   1467  02FE  3EFF               	addlw	-1
   1468  02FF  1D03               	skipz
-  1469  0300  2AF9               	goto	u785
+  1469  0300  2AF9               	goto	u805
   1470  0301  3001               	movlw	1
   1471  0302  00C8               	movwf	??___fltol
   1472  0303  0848               	movf	??___fltol,w
   1473  0304  07CE               	addwf	___fltol@exp1,f
   1474  0305  1D03               	btfss	3,2
-  1475  0306  2B08               	goto	u791
-  1476  0307  2B09               	goto	u790
-  1477  0308                     u791:
-  1478  0308  2AF8               	goto	l1296
-  1479  0309                     u790:
-  1480  0309  2B21               	goto	l1306
-  1481  030A                     l1298:
+  1475  0306  2B08               	goto	u811
+  1476  0307  2B09               	goto	u810
+  1477  0308                     u811:
+  1478  0308  2AF8               	goto	l1309
+  1479  0309                     u810:
+  1480  0309  2B21               	goto	l1319
+  1481  030A                     l1311:
   1482  030A  3020               	movlw	32
   1483  030B  024E               	subwf	___fltol@exp1,w
   1484  030C  1C03               	skipc
-  1485  030D  2B0F               	goto	u801
-  1486  030E  2B10               	goto	u800
-  1487  030F                     u801:
-  1488  030F  2B1C               	goto	l505
-  1489  0310                     u800:
-  1490  0310  2AC3               	goto	l1276
-  1491  0311                     l1304:
+  1485  030D  2B0F               	goto	u821
+  1486  030E  2B10               	goto	u820
+  1487  030F                     u821:
+  1488  030F  2B1C               	goto	l506
+  1489  0310                     u820:
+  1490  0310  2AC3               	goto	l1289
+  1491  0311                     l1317:
   1492  0311  3001               	movlw	1
   1493  0312  00C8               	movwf	??___fltol
-  1494  0313                     u815:
+  1494  0313                     u835:
   1495  0313  1003               	clrc
   1496  0314  0DC4               	rlf	___fltol@f1,f
   1497  0315  0DC5               	rlf	___fltol@f1+1,f
   1498  0316  0DC6               	rlf	___fltol@f1+2,f
   1499  0317  0DC7               	rlf	___fltol@f1+3,f
   1500  0318  0BC8               	decfsz	??___fltol,f
-  1501  0319  2B13               	goto	u815
+  1501  0319  2B13               	goto	u835
   1502  031A  3001               	movlw	1
   1503  031B  02CE               	subwf	___fltol@exp1,f
-  1504  031C                     l505:
+  1504  031C                     l506:
   1505  031C  084E               	movf	___fltol@exp1,w
   1506  031D  1D03               	btfss	3,2
-  1507  031E  2B20               	goto	u821
-  1508  031F  2B21               	goto	u820
-  1509  0320                     u821:
-  1510  0320  2B11               	goto	l1304
-  1511  0321                     u820:
-  1512  0321                     l1306:
+  1507  031E  2B20               	goto	u841
+  1508  031F  2B21               	goto	u840
+  1509  0320                     u841:
+  1510  0320  2B11               	goto	l1317
+  1511  0321                     u840:
+  1512  0321                     l1319:
   1513  0321  084D               	movf	___fltol@sign1,w
   1514  0322  1903               	btfsc	3,2
-  1515  0323  2B25               	goto	u831
-  1516  0324  2B26               	goto	u830
-  1517  0325                     u831:
-  1518  0325  2B31               	goto	l508
-  1519  0326                     u830:
-  1520  0326                     l1308:
+  1515  0323  2B25               	goto	u851
+  1516  0324  2B26               	goto	u850
+  1517  0325                     u851:
+  1518  0325  2B31               	goto	l509
+  1519  0326                     u850:
+  1520  0326                     l1321:
   1521  0326  09C4               	comf	___fltol@f1,f
   1522  0327  09C5               	comf	___fltol@f1+1,f
   1523  0328  09C6               	comf	___fltol@f1+2,f
@@ -1543,8 +1543,8 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1529  032E  0AC6               	incf	___fltol@f1+2,f
   1530  032F  1903               	skipnz
   1531  0330  0AC7               	incf	___fltol@f1+3,f
-  1532  0331                     l508:
-  1533  0331                     l498:
+  1532  0331                     l509:
+  1533  0331                     l499:
   1534  0331  0008               	return
   1535  0332                     __end_of___fltol:
   1536                           
@@ -1589,7 +1589,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1575                           
   1576                           ;psect for function ___fldiv
   1577  001D                     ___fldiv:
-  1578  001D                     l1310:	
+  1578  001D                     l1323:	
   1579                           ;incstack = 0
   1580                           ; Regs used in ___fldiv: [wreg+status,2+status,0+btemp+1]
   1581                           
@@ -1600,39 +1600,39 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1586  0021  00B2               	movwf	??___fldiv
   1587  0022  0832               	movf	??___fldiv,w
   1588  0023  00BB               	movwf	___fldiv@sign
-  1589  0024                     l1312:
+  1589  0024                     l1325:
   1590  0024  0831               	movf	___fldiv@b+3,w
   1591  0025  00B2               	movwf	??___fldiv
   1592  0026  0732               	addwf	??___fldiv,w
   1593  0027  00B3               	movwf	??___fldiv+1
   1594  0028  0833               	movf	??___fldiv+1,w
   1595  0029  00C2               	movwf	___fldiv@bexp
-  1596  002A                     l1314:
+  1596  002A                     l1327:
   1597  002A  1FB0               	btfss	___fldiv@b+2,7
-  1598  002B  282D               	goto	u841
-  1599  002C  282E               	goto	u840
-  1600  002D                     u841:
-  1601  002D  282F               	goto	l1318
-  1602  002E                     u840:
-  1603  002E                     l1316:
+  1598  002B  282D               	goto	u861
+  1599  002C  282E               	goto	u860
+  1600  002D                     u861:
+  1601  002D  282F               	goto	l1331
+  1602  002E                     u860:
+  1603  002E                     l1329:
   1604  002E  1442               	bsf	___fldiv@bexp,0
-  1605  002F                     l1318:
+  1605  002F                     l1331:
   1606  002F  0842               	movf	___fldiv@bexp,w
   1607  0030  1903               	btfsc	3,2
-  1608  0031  2833               	goto	u851
-  1609  0032  2834               	goto	u850
-  1610  0033                     u851:
-  1611  0033  2844               	goto	l1328
-  1612  0034                     u850:
-  1613  0034                     l1320:
+  1608  0031  2833               	goto	u871
+  1609  0032  2834               	goto	u870
+  1610  0033                     u871:
+  1611  0033  2844               	goto	l1341
+  1612  0034                     u870:
+  1613  0034                     l1333:
   1614  0034  0A42               	incf	___fldiv@bexp,w
   1615  0035  1D03               	btfss	3,2
-  1616  0036  2838               	goto	u861
-  1617  0037  2839               	goto	u860
-  1618  0038                     u861:
-  1619  0038  2841               	goto	l1324
-  1620  0039                     u860:
-  1621  0039                     l1322:
+  1616  0036  2838               	goto	u881
+  1617  0037  2839               	goto	u880
+  1618  0038                     u881:
+  1619  0038  2841               	goto	l1337
+  1620  0039                     u880:
+  1621  0039                     l1335:
   1622  0039  3000               	movlw	0
   1623  003A  00B1               	movwf	___fldiv@b+3
   1624  003B  3000               	movlw	0
@@ -1641,12 +1641,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1627  003E  00AF               	movwf	___fldiv@b+1
   1628  003F  3000               	movlw	0
   1629  0040  00AE               	movwf	___fldiv@b
-  1630  0041                     l1324:
+  1630  0041                     l1337:
   1631  0041  17B0               	bsf	___fldiv@b+2,7
-  1632  0042                     l1326:
+  1632  0042                     l1339:
   1633  0042  01B1               	clrf	___fldiv@b+3
-  1634  0043  284C               	goto	l1330
-  1635  0044                     l1328:
+  1634  0043  284C               	goto	l1343
+  1635  0044                     l1341:
   1636  0044  3000               	movlw	0
   1637  0045  00B1               	movwf	___fldiv@b+3
   1638  0046  3000               	movlw	0
@@ -1655,45 +1655,45 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1641  0049  00AF               	movwf	___fldiv@b+1
   1642  004A  3000               	movlw	0
   1643  004B  00AE               	movwf	___fldiv@b
-  1644  004C                     l1330:
+  1644  004C                     l1343:
   1645  004C  082D               	movf	___fldiv@a+3,w
   1646  004D  3980               	andlw	128
   1647  004E  00B2               	movwf	??___fldiv
   1648  004F  0832               	movf	??___fldiv,w
   1649  0050  06BB               	xorwf	___fldiv@sign,f
-  1650  0051                     l1332:
+  1650  0051                     l1345:
   1651  0051  082D               	movf	___fldiv@a+3,w
   1652  0052  00B2               	movwf	??___fldiv
   1653  0053  0732               	addwf	??___fldiv,w
   1654  0054  00B3               	movwf	??___fldiv+1
   1655  0055  0833               	movf	??___fldiv+1,w
   1656  0056  00C3               	movwf	___fldiv@aexp
-  1657  0057                     l1334:
+  1657  0057                     l1347:
   1658  0057  1FAC               	btfss	___fldiv@a+2,7
-  1659  0058  285A               	goto	u871
-  1660  0059  285B               	goto	u870
-  1661  005A                     u871:
-  1662  005A  285C               	goto	l1338
-  1663  005B                     u870:
-  1664  005B                     l1336:
+  1659  0058  285A               	goto	u891
+  1660  0059  285B               	goto	u890
+  1661  005A                     u891:
+  1662  005A  285C               	goto	l1351
+  1663  005B                     u890:
+  1664  005B                     l1349:
   1665  005B  1443               	bsf	___fldiv@aexp,0
-  1666  005C                     l1338:
+  1666  005C                     l1351:
   1667  005C  0843               	movf	___fldiv@aexp,w
   1668  005D  1903               	btfsc	3,2
-  1669  005E  2860               	goto	u881
-  1670  005F  2861               	goto	u880
-  1671  0060                     u881:
-  1672  0060  2871               	goto	l1348
-  1673  0061                     u880:
-  1674  0061                     l1340:
+  1669  005E  2860               	goto	u901
+  1670  005F  2861               	goto	u900
+  1671  0060                     u901:
+  1672  0060  2871               	goto	l1361
+  1673  0061                     u900:
+  1674  0061                     l1353:
   1675  0061  0A43               	incf	___fldiv@aexp,w
   1676  0062  1D03               	btfss	3,2
-  1677  0063  2865               	goto	u891
-  1678  0064  2866               	goto	u890
-  1679  0065                     u891:
-  1680  0065  286E               	goto	l1344
-  1681  0066                     u890:
-  1682  0066                     l1342:
+  1677  0063  2865               	goto	u911
+  1678  0064  2866               	goto	u910
+  1679  0065                     u911:
+  1680  0065  286E               	goto	l1357
+  1681  0066                     u910:
+  1682  0066                     l1355:
   1683  0066  3000               	movlw	0
   1684  0067  00AD               	movwf	___fldiv@a+3
   1685  0068  3000               	movlw	0
@@ -1702,12 +1702,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1688  006B  00AB               	movwf	___fldiv@a+1
   1689  006C  3000               	movlw	0
   1690  006D  00AA               	movwf	___fldiv@a
-  1691  006E                     l1344:
+  1691  006E                     l1357:
   1692  006E  17AC               	bsf	___fldiv@a+2,7
-  1693  006F                     l1346:
+  1693  006F                     l1359:
   1694  006F  01AD               	clrf	___fldiv@a+3
-  1695  0070  2879               	goto	l661
-  1696  0071                     l1348:
+  1695  0070  2879               	goto	l662
+  1696  0071                     l1361:
   1697  0071  3000               	movlw	0
   1698  0072  00AD               	movwf	___fldiv@a+3
   1699  0073  3000               	movlw	0
@@ -1716,18 +1716,18 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1702  0076  00AB               	movwf	___fldiv@a+1
   1703  0077  3000               	movlw	0
   1704  0078  00AA               	movwf	___fldiv@a
-  1705  0079                     l661:
+  1705  0079                     l662:
   1706  0079  082D               	movf	___fldiv@a+3,w
   1707  007A  042C               	iorwf	___fldiv@a+2,w
   1708  007B  042B               	iorwf	___fldiv@a+1,w
   1709  007C  042A               	iorwf	___fldiv@a,w
   1710  007D  1D03               	skipz
-  1711  007E  2880               	goto	u901
-  1712  007F  2881               	goto	u900
-  1713  0080                     u901:
-  1714  0080  289A               	goto	l1358
-  1715  0081                     u900:
-  1716  0081                     l1350:
+  1711  007E  2880               	goto	u921
+  1712  007F  2881               	goto	u920
+  1713  0080                     u921:
+  1714  0080  289A               	goto	l1371
+  1715  0081                     u920:
+  1716  0081                     l1363:
   1717  0081  3000               	movlw	0
   1718  0082  00B1               	movwf	___fldiv@b+3
   1719  0083  3000               	movlw	0
@@ -1740,12 +1740,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1726  008A  04B0               	iorwf	___fldiv@b+2,f
   1727  008B  307F               	movlw	127
   1728  008C  04B1               	iorwf	___fldiv@b+3,f
-  1729  008D                     l1352:
+  1729  008D                     l1365:
   1730  008D  083B               	movf	___fldiv@sign,w
   1731  008E  00B2               	movwf	??___fldiv
   1732  008F  0832               	movf	??___fldiv,w
   1733  0090  04B1               	iorwf	___fldiv@b+3,f
-  1734  0091                     l1354:
+  1734  0091                     l1367:
   1735  0091  0831               	movf	___fldiv@b+3,w
   1736  0092  00AD               	movwf	?___fldiv+3
   1737  0093  0830               	movf	___fldiv@b+2,w
@@ -1754,16 +1754,16 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1740  0096  00AB               	movwf	?___fldiv+1
   1741  0097  082E               	movf	___fldiv@b,w
   1742  0098  00AA               	movwf	?___fldiv
-  1743  0099  29F9               	goto	l663
-  1744  009A                     l1358:
+  1743  0099  29F9               	goto	l664
+  1744  009A                     l1371:
   1745  009A  0842               	movf	___fldiv@bexp,w
   1746  009B  1D03               	btfss	3,2
-  1747  009C  289E               	goto	u911
-  1748  009D  289F               	goto	u910
-  1749  009E                     u911:
-  1750  009E  28A8               	goto	l1364
-  1751  009F                     u910:
-  1752  009F                     l1360:
+  1747  009C  289E               	goto	u931
+  1748  009D  289F               	goto	u930
+  1749  009E                     u931:
+  1750  009E  28A8               	goto	l1377
+  1751  009F                     u930:
+  1752  009F                     l1373:
   1753  009F  3000               	movlw	0
   1754  00A0  00AD               	movwf	?___fldiv+3
   1755  00A1  3000               	movlw	0
@@ -1772,8 +1772,8 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1758  00A4  00AB               	movwf	?___fldiv+1
   1759  00A5  3000               	movlw	0
   1760  00A6  00AA               	movwf	?___fldiv
-  1761  00A7  29F9               	goto	l663
-  1762  00A8                     l1364:
+  1761  00A7  29F9               	goto	l664
+  1762  00A8                     l1377:
   1763  00A8  0842               	movf	___fldiv@bexp,w
   1764  00A9  00B2               	movwf	??___fldiv
   1765  00AA  01B3               	clrf	??___fldiv+1
@@ -1792,7 +1792,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1778  00B7  3E01               	addlw	1
   1779  00B8  3E00               	addlw	0
   1780  00B9  00BD               	movwf	___fldiv@new_exp+1
-  1781  00BA                     l1366:
+  1781  00BA                     l1379:
   1782  00BA  0831               	movf	___fldiv@b+3,w
   1783  00BB  00BA               	movwf	___fldiv@rem+3
   1784  00BC  0830               	movf	___fldiv@b+2,w
@@ -1801,7 +1801,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1787  00BF  00B8               	movwf	___fldiv@rem+1
   1788  00C0  082E               	movf	___fldiv@b,w
   1789  00C1  00B7               	movwf	___fldiv@rem
-  1790  00C2                     l1368:
+  1790  00C2                     l1381:
   1791  00C2  3000               	movlw	0
   1792  00C3  00B1               	movwf	___fldiv@b+3
   1793  00C4  3000               	movlw	0
@@ -1810,7 +1810,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1796  00C7  00AF               	movwf	___fldiv@b+1
   1797  00C8  3000               	movlw	0
   1798  00C9  00AE               	movwf	___fldiv@b
-  1799  00CA                     l1370:
+  1799  00CA                     l1383:
   1800  00CA  3000               	movlw	0
   1801  00CB  00C1               	movwf	___fldiv@grs+3
   1802  00CC  3000               	movlw	0
@@ -1819,83 +1819,83 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1805  00CF  00BF               	movwf	___fldiv@grs+1
   1806  00D0  3000               	movlw	0
   1807  00D1  00BE               	movwf	___fldiv@grs
-  1808  00D2                     l1372:
+  1808  00D2                     l1385:
   1809  00D2  01C3               	clrf	___fldiv@aexp
-  1810  00D3  291E               	goto	l1392
-  1811  00D4                     l1374:
+  1810  00D3  291E               	goto	l1405
+  1811  00D4                     l1387:
   1812  00D4  0843               	movf	___fldiv@aexp,w
   1813  00D5  1903               	btfsc	3,2
-  1814  00D6  28D8               	goto	u921
-  1815  00D7  28D9               	goto	u920
-  1816  00D8                     u921:
-  1817  00D8  28F9               	goto	l1384
-  1818  00D9                     u920:
-  1819  00D9                     l1376:
+  1814  00D6  28D8               	goto	u941
+  1815  00D7  28D9               	goto	u940
+  1816  00D8                     u941:
+  1817  00D8  28F9               	goto	l1397
+  1818  00D9                     u940:
+  1819  00D9                     l1389:
   1820  00D9  3001               	movlw	1
   1821  00DA  00B2               	movwf	??___fldiv
-  1822  00DB                     u935:
+  1822  00DB                     u955:
   1823  00DB  1003               	clrc
   1824  00DC  0DB7               	rlf	___fldiv@rem,f
   1825  00DD  0DB8               	rlf	___fldiv@rem+1,f
   1826  00DE  0DB9               	rlf	___fldiv@rem+2,f
   1827  00DF  0DBA               	rlf	___fldiv@rem+3,f
   1828  00E0  0BB2               	decfsz	??___fldiv,f
-  1829  00E1  28DB               	goto	u935
+  1829  00E1  28DB               	goto	u955
   1830  00E2  3001               	movlw	1
   1831  00E3  00B2               	movwf	??___fldiv
-  1832  00E4                     u945:
+  1832  00E4                     u965:
   1833  00E4  1003               	clrc
   1834  00E5  0DAE               	rlf	___fldiv@b,f
   1835  00E6  0DAF               	rlf	___fldiv@b+1,f
   1836  00E7  0DB0               	rlf	___fldiv@b+2,f
   1837  00E8  0DB1               	rlf	___fldiv@b+3,f
   1838  00E9  0BB2               	decfsz	??___fldiv,f
-  1839  00EA  28E4               	goto	u945
-  1840  00EB                     l1378:
+  1839  00EA  28E4               	goto	u965
+  1840  00EB                     l1391:
   1841  00EB  1FC1               	btfss	___fldiv@grs+3,7
-  1842  00EC  28EE               	goto	u951
-  1843  00ED  28EF               	goto	u950
-  1844  00EE                     u951:
-  1845  00EE  28F0               	goto	l1382
-  1846  00EF                     u950:
-  1847  00EF                     l1380:
+  1842  00EC  28EE               	goto	u971
+  1843  00ED  28EF               	goto	u970
+  1844  00EE                     u971:
+  1845  00EE  28F0               	goto	l1395
+  1846  00EF                     u970:
+  1847  00EF                     l1393:
   1848  00EF  142E               	bsf	___fldiv@b,0
-  1849  00F0                     l1382:
+  1849  00F0                     l1395:
   1850  00F0  3001               	movlw	1
   1851  00F1  00B2               	movwf	??___fldiv
-  1852  00F2                     u965:
+  1852  00F2                     u985:
   1853  00F2  1003               	clrc
   1854  00F3  0DBE               	rlf	___fldiv@grs,f
   1855  00F4  0DBF               	rlf	___fldiv@grs+1,f
   1856  00F5  0DC0               	rlf	___fldiv@grs+2,f
   1857  00F6  0DC1               	rlf	___fldiv@grs+3,f
   1858  00F7  0BB2               	decfsz	??___fldiv,f
-  1859  00F8  28F2               	goto	u965
-  1860  00F9                     l1384:
+  1859  00F8  28F2               	goto	u985
+  1860  00F9                     l1397:
   1861  00F9  082D               	movf	___fldiv@a+3,w
   1862  00FA  023A               	subwf	___fldiv@rem+3,w
   1863  00FB  1D03               	skipz
-  1864  00FC  2907               	goto	u975
+  1864  00FC  2907               	goto	u995
   1865  00FD  082C               	movf	___fldiv@a+2,w
   1866  00FE  0239               	subwf	___fldiv@rem+2,w
   1867  00FF  1D03               	skipz
-  1868  0100  2907               	goto	u975
+  1868  0100  2907               	goto	u995
   1869  0101  082B               	movf	___fldiv@a+1,w
   1870  0102  0238               	subwf	___fldiv@rem+1,w
   1871  0103  1D03               	skipz
-  1872  0104  2907               	goto	u975
+  1872  0104  2907               	goto	u995
   1873  0105  082A               	movf	___fldiv@a,w
   1874  0106  0237               	subwf	___fldiv@rem,w
-  1875  0107                     u975:
+  1875  0107                     u995:
   1876  0107  1C03               	skipc
-  1877  0108  290A               	goto	u971
-  1878  0109  290B               	goto	u970
-  1879  010A                     u971:
-  1880  010A  291A               	goto	l1390
-  1881  010B                     u970:
-  1882  010B                     l1386:
+  1877  0108  290A               	goto	u991
+  1878  0109  290B               	goto	u990
+  1879  010A                     u991:
+  1880  010A  291A               	goto	l1403
+  1881  010B                     u990:
+  1882  010B                     l1399:
   1883  010B  1741               	bsf	___fldiv@grs+3,6
-  1884  010C                     l1388:
+  1884  010C                     l1401:
   1885  010C  082A               	movf	___fldiv@a,w
   1886  010D  02B7               	subwf	___fldiv@rem,f
   1887  010E  082B               	movf	___fldiv@a+1,w
@@ -1910,89 +1910,89 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1896  0117  1C03               	skipc
   1897  0118  0F2D               	incfsz	___fldiv@a+3,w
   1898  0119  02BA               	subwf	___fldiv@rem+3,f
-  1899  011A                     l1390:
+  1899  011A                     l1403:
   1900  011A  3001               	movlw	1
   1901  011B  00B2               	movwf	??___fldiv
   1902  011C  0832               	movf	??___fldiv,w
   1903  011D  07C3               	addwf	___fldiv@aexp,f
-  1904  011E                     l1392:
+  1904  011E                     l1405:
   1905  011E  301A               	movlw	26
   1906  011F  0243               	subwf	___fldiv@aexp,w
   1907  0120  1C03               	skipc
-  1908  0121  2923               	goto	u981
-  1909  0122  2924               	goto	u980
-  1910  0123                     u981:
-  1911  0123  28D4               	goto	l1374
-  1912  0124                     u980:
-  1913  0124                     l1394:
+  1908  0121  2923               	goto	u1001
+  1909  0122  2924               	goto	u1000
+  1910  0123                     u1001:
+  1911  0123  28D4               	goto	l1387
+  1912  0124                     u1000:
+  1913  0124                     l1407:
   1914  0124  083A               	movf	___fldiv@rem+3,w
   1915  0125  0439               	iorwf	___fldiv@rem+2,w
   1916  0126  0438               	iorwf	___fldiv@rem+1,w
   1917  0127  0437               	iorwf	___fldiv@rem,w
   1918  0128  1903               	skipnz
-  1919  0129  292B               	goto	u991
-  1920  012A  292C               	goto	u990
-  1921  012B                     u991:
-  1922  012B  294B               	goto	l1408
-  1923  012C                     u990:
-  1924  012C                     l1396:
+  1919  0129  292B               	goto	u1011
+  1920  012A  292C               	goto	u1010
+  1921  012B                     u1011:
+  1922  012B  294B               	goto	l1421
+  1923  012C                     u1010:
+  1924  012C                     l1409:
   1925  012C  143E               	bsf	___fldiv@grs,0
-  1926  012D  294B               	goto	l1408
-  1927  012E                     l1398:
+  1926  012D  294B               	goto	l1421
+  1927  012E                     l1411:
   1928  012E  3001               	movlw	1
   1929  012F  00B2               	movwf	??___fldiv
-  1930  0130                     u1005:
+  1930  0130                     u1025:
   1931  0130  1003               	clrc
   1932  0131  0DAE               	rlf	___fldiv@b,f
   1933  0132  0DAF               	rlf	___fldiv@b+1,f
   1934  0133  0DB0               	rlf	___fldiv@b+2,f
   1935  0134  0DB1               	rlf	___fldiv@b+3,f
   1936  0135  0BB2               	decfsz	??___fldiv,f
-  1937  0136  2930               	goto	u1005
-  1938  0137                     l1400:
+  1937  0136  2930               	goto	u1025
+  1938  0137                     l1413:
   1939  0137  1FC1               	btfss	___fldiv@grs+3,7
-  1940  0138  293A               	goto	u1011
-  1941  0139  293B               	goto	u1010
-  1942  013A                     u1011:
-  1943  013A  293C               	goto	l1404
-  1944  013B                     u1010:
-  1945  013B                     l1402:
+  1940  0138  293A               	goto	u1031
+  1941  0139  293B               	goto	u1030
+  1942  013A                     u1031:
+  1943  013A  293C               	goto	l1417
+  1944  013B                     u1030:
+  1945  013B                     l1415:
   1946  013B  142E               	bsf	___fldiv@b,0
-  1947  013C                     l1404:
+  1947  013C                     l1417:
   1948  013C  3001               	movlw	1
   1949  013D  00B2               	movwf	??___fldiv
-  1950  013E                     u1025:
+  1950  013E                     u1045:
   1951  013E  1003               	clrc
   1952  013F  0DBE               	rlf	___fldiv@grs,f
   1953  0140  0DBF               	rlf	___fldiv@grs+1,f
   1954  0141  0DC0               	rlf	___fldiv@grs+2,f
   1955  0142  0DC1               	rlf	___fldiv@grs+3,f
   1956  0143  0BB2               	decfsz	??___fldiv,f
-  1957  0144  293E               	goto	u1025
-  1958  0145                     l1406:
+  1957  0144  293E               	goto	u1045
+  1958  0145                     l1419:
   1959  0145  30FF               	movlw	255
   1960  0146  07BC               	addwf	___fldiv@new_exp,f
   1961  0147  1803               	skipnc
   1962  0148  0ABD               	incf	___fldiv@new_exp+1,f
   1963  0149  30FF               	movlw	255
   1964  014A  07BD               	addwf	___fldiv@new_exp+1,f
-  1965  014B                     l1408:
+  1965  014B                     l1421:
   1966  014B  1FB0               	btfss	___fldiv@b+2,7
-  1967  014C  294E               	goto	u1031
-  1968  014D  294F               	goto	u1030
-  1969  014E                     u1031:
-  1970  014E  292E               	goto	l1398
-  1971  014F                     u1030:
-  1972  014F                     l1410:
+  1967  014C  294E               	goto	u1051
+  1968  014D  294F               	goto	u1050
+  1969  014E                     u1051:
+  1970  014E  292E               	goto	l1411
+  1971  014F                     u1050:
+  1972  014F                     l1423:
   1973  014F  01C3               	clrf	___fldiv@aexp
-  1974  0150                     l1412:
+  1974  0150                     l1425:
   1975  0150  1FC1               	btfss	___fldiv@grs+3,7
-  1976  0151  2953               	goto	u1041
-  1977  0152  2954               	goto	u1040
-  1978  0153                     u1041:
-  1979  0153  2970               	goto	l1420
-  1980  0154                     u1040:
-  1981  0154                     l1414:
+  1976  0151  2953               	goto	u1061
+  1977  0152  2954               	goto	u1060
+  1978  0153                     u1061:
+  1979  0153  2970               	goto	l1433
+  1980  0154                     u1060:
+  1981  0154                     l1427:
   1982  0154  30FF               	movlw	255
   1983  0155  053E               	andwf	___fldiv@grs,w
   1984  0156  00B2               	movwf	??___fldiv
@@ -2010,32 +2010,32 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1996  0162  0433               	iorwf	??___fldiv+1,w
   1997  0163  0432               	iorwf	??___fldiv,w
   1998  0164  1903               	skipnz
-  1999  0165  2967               	goto	u1051
-  2000  0166  2968               	goto	u1050
-  2001  0167                     u1051:
-  2002  0167  296B               	goto	l677
-  2003  0168                     u1050:
-  2004  0168                     l1416:
+  1999  0165  2967               	goto	u1071
+  2000  0166  2968               	goto	u1070
+  2001  0167                     u1071:
+  2002  0167  296B               	goto	l678
+  2003  0168                     u1070:
+  2004  0168                     l1429:
   2005  0168  01C3               	clrf	___fldiv@aexp
   2006  0169  0AC3               	incf	___fldiv@aexp,f
-  2007  016A  2970               	goto	l1420
-  2008  016B                     l677:
+  2007  016A  2970               	goto	l1433
+  2008  016B                     l678:
   2009  016B  1C2E               	btfss	___fldiv@b,0
-  2010  016C  296E               	goto	u1061
-  2011  016D  296F               	goto	u1060
-  2012  016E                     u1061:
-  2013  016E  2970               	goto	l1420
-  2014  016F                     u1060:
-  2015  016F  2968               	goto	l1416
-  2016  0170                     l1420:
+  2010  016C  296E               	goto	u1081
+  2011  016D  296F               	goto	u1080
+  2012  016E                     u1081:
+  2013  016E  2970               	goto	l1433
+  2014  016F                     u1080:
+  2015  016F  2968               	goto	l1429
+  2016  0170                     l1433:
   2017  0170  0843               	movf	___fldiv@aexp,w
   2018  0171  1903               	btfsc	3,2
-  2019  0172  2974               	goto	u1071
-  2020  0173  2975               	goto	u1070
-  2021  0174                     u1071:
-  2022  0174  29A6               	goto	l1430
-  2023  0175                     u1070:
-  2024  0175                     l1422:
+  2019  0172  2974               	goto	u1091
+  2020  0173  2975               	goto	u1090
+  2021  0174                     u1091:
+  2022  0174  29A6               	goto	l1443
+  2023  0175                     u1090:
+  2024  0175                     l1435:
   2025  0175  3001               	movlw	1
   2026  0176  07AE               	addwf	___fldiv@b,f
   2027  0177  3000               	movlw	0
@@ -2050,14 +2050,14 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2036  0180  1803               	skipnc
   2037  0181  3001               	movlw	1
   2038  0182  07B1               	addwf	___fldiv@b+3,f
-  2039  0183                     l1424:
+  2039  0183                     l1437:
   2040  0183  1C31               	btfss	___fldiv@b+3,0
-  2041  0184  2986               	goto	u1081
-  2042  0185  2987               	goto	u1080
-  2043  0186                     u1081:
-  2044  0186  29A6               	goto	l1430
-  2045  0187                     u1080:
-  2046  0187                     l1426:
+  2041  0184  2986               	goto	u1101
+  2042  0185  2987               	goto	u1100
+  2043  0186                     u1101:
+  2044  0186  29A6               	goto	l1443
+  2045  0187                     u1100:
+  2046  0187                     l1439:
   2047  0187  082E               	movf	___fldiv@b,w
   2048  0188  00B2               	movwf	??___fldiv
   2049  0189  082F               	movf	___fldiv@b+1,w
@@ -2068,15 +2068,15 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2054  018E  00B5               	movwf	??___fldiv+3
   2055  018F  3001               	movlw	1
   2056  0190  00B6               	movwf	??___fldiv+4
-  2057  0191                     u1095:
+  2057  0191                     u1115:
   2058  0191  0D35               	rlf	??___fldiv+3,w
   2059  0192  0CB5               	rrf	??___fldiv+3,f
   2060  0193  0CB4               	rrf	??___fldiv+2,f
   2061  0194  0CB3               	rrf	??___fldiv+1,f
   2062  0195  0CB2               	rrf	??___fldiv,f
-  2063  0196                     u1090:
+  2063  0196                     u1110:
   2064  0196  0BB6               	decfsz	??___fldiv+4,f
-  2065  0197  2991               	goto	u1095
+  2065  0197  2991               	goto	u1115
   2066  0198  0835               	movf	??___fldiv+3,w
   2067  0199  00B1               	movwf	___fldiv@b+3
   2068  019A  0834               	movf	??___fldiv+2,w
@@ -2085,31 +2085,31 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2071  019D  00AF               	movwf	___fldiv@b+1
   2072  019E  0832               	movf	??___fldiv,w
   2073  019F  00AE               	movwf	___fldiv@b
-  2074  01A0                     l1428:
+  2074  01A0                     l1441:
   2075  01A0  3001               	movlw	1
   2076  01A1  07BC               	addwf	___fldiv@new_exp,f
   2077  01A2  1803               	skipnc
   2078  01A3  0ABD               	incf	___fldiv@new_exp+1,f
   2079  01A4  3000               	movlw	0
   2080  01A5  07BD               	addwf	___fldiv@new_exp+1,f
-  2081  01A6                     l1430:
+  2081  01A6                     l1443:
   2082  01A6  083D               	movf	___fldiv@new_exp+1,w
   2083  01A7  3A80               	xorlw	128
   2084  01A8  00FF               	movwf	btemp+1
   2085  01A9  3080               	movlw	128
   2086  01AA  027F               	subwf	btemp+1,w
   2087  01AB  1D03               	skipz
-  2088  01AC  29AF               	goto	u1105
+  2088  01AC  29AF               	goto	u1125
   2089  01AD  30FF               	movlw	255
   2090  01AE  023C               	subwf	___fldiv@new_exp,w
-  2091  01AF                     u1105:
+  2091  01AF                     u1125:
   2092  01AF  1C03               	skipc
-  2093  01B0  29B2               	goto	u1101
-  2094  01B1  29B3               	goto	u1100
-  2095  01B2                     u1101:
-  2096  01B2  29C1               	goto	l1434
-  2097  01B3                     u1100:
-  2098  01B3                     l1432:
+  2093  01B0  29B2               	goto	u1121
+  2094  01B1  29B3               	goto	u1120
+  2095  01B2                     u1121:
+  2096  01B2  29C1               	goto	l1447
+  2097  01B3                     u1120:
+  2098  01B3                     l1445:
   2099  01B3  30FF               	movlw	255
   2100  01B4  1283               	bcf	3,5	;RP0=0, select bank0
   2101  01B5  1303               	bcf	3,6	;RP1=0, select bank0
@@ -2124,7 +2124,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2110  01BE  00AF               	movwf	___fldiv@b+1
   2111  01BF  3000               	movlw	0
   2112  01C0  00AE               	movwf	___fldiv@b
-  2113  01C1                     l1434:
+  2113  01C1                     l1447:
   2114  01C1  1283               	bcf	3,5	;RP0=0, select bank0
   2115  01C2  1303               	bcf	3,6	;RP1=0, select bank0
   2116  01C3  083D               	movf	___fldiv@new_exp+1,w
@@ -2133,22 +2133,22 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2119  01C6  3080               	movlw	128
   2120  01C7  027F               	subwf	btemp+1,w
   2121  01C8  1D03               	skipz
-  2122  01C9  29CC               	goto	u1115
+  2122  01C9  29CC               	goto	u1135
   2123  01CA  3001               	movlw	1
   2124  01CB  023C               	subwf	___fldiv@new_exp,w
-  2125  01CC                     u1115:
+  2125  01CC                     u1135:
   2126  01CC  1803               	skipnc
-  2127  01CD  29CF               	goto	u1111
-  2128  01CE  29D0               	goto	u1110
-  2129  01CF                     u1111:
-  2130  01CF  29DD               	goto	l683
-  2131  01D0                     u1110:
-  2132  01D0                     l1436:
+  2127  01CD  29CF               	goto	u1131
+  2128  01CE  29D0               	goto	u1130
+  2129  01CF                     u1131:
+  2130  01CF  29DD               	goto	l684
+  2131  01D0                     u1130:
+  2132  01D0                     l1449:
   2133  01D0  1283               	bcf	3,5	;RP0=0, select bank0
   2134  01D1  1303               	bcf	3,6	;RP1=0, select bank0
   2135  01D2  01BC               	clrf	___fldiv@new_exp
   2136  01D3  01BD               	clrf	___fldiv@new_exp+1
-  2137  01D4                     l1438:
+  2137  01D4                     l1451:
   2138  01D4  3000               	movlw	0
   2139  01D5  00B1               	movwf	___fldiv@b+3
   2140  01D6  3000               	movlw	0
@@ -2157,31 +2157,31 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2143  01D9  00AF               	movwf	___fldiv@b+1
   2144  01DA  3000               	movlw	0
   2145  01DB  00AE               	movwf	___fldiv@b
-  2146  01DC                     l1440:
+  2146  01DC                     l1453:
   2147  01DC  01BB               	clrf	___fldiv@sign
-  2148  01DD                     l683:
+  2148  01DD                     l684:
   2149  01DD  1283               	bcf	3,5	;RP0=0, select bank0
   2150  01DE  1303               	bcf	3,6	;RP1=0, select bank0
   2151  01DF  083C               	movf	___fldiv@new_exp,w
   2152  01E0  00B2               	movwf	??___fldiv
   2153  01E1  0832               	movf	??___fldiv,w
   2154  01E2  00C2               	movwf	___fldiv@bexp
-  2155  01E3                     l1442:
+  2155  01E3                     l1455:
   2156  01E3  1C42               	btfss	___fldiv@bexp,0
-  2157  01E4  29E6               	goto	u1121
-  2158  01E5  29E7               	goto	u1120
-  2159  01E6                     u1121:
-  2160  01E6  29E9               	goto	l1446
-  2161  01E7                     u1120:
-  2162  01E7                     l1444:
+  2157  01E4  29E6               	goto	u1141
+  2158  01E5  29E7               	goto	u1140
+  2159  01E6                     u1141:
+  2160  01E6  29E9               	goto	l1459
+  2161  01E7                     u1140:
+  2162  01E7                     l1457:
   2163  01E7  17B0               	bsf	___fldiv@b+2,7
-  2164  01E8  29ED               	goto	l685
-  2165  01E9                     l1446:
+  2164  01E8  29ED               	goto	l686
+  2165  01E9                     l1459:
   2166  01E9  307F               	movlw	127
   2167  01EA  00B2               	movwf	??___fldiv
   2168  01EB  0832               	movf	??___fldiv,w
   2169  01EC  05B0               	andwf	___fldiv@b+2,f
-  2170  01ED                     l685:
+  2170  01ED                     l686:
   2171  01ED  0842               	movf	___fldiv@bexp,w
   2172  01EE  00B2               	movwf	??___fldiv
   2173  01EF  1003               	clrc
@@ -2193,16 +2193,16 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2179  01F5  00B2               	movwf	??___fldiv
   2180  01F6  0832               	movf	??___fldiv,w
   2181  01F7  04B1               	iorwf	___fldiv@b+3,f
-  2182  01F8  2891               	goto	l1354
-  2183  01F9                     l663:
+  2182  01F8  2891               	goto	l1367
+  2183  01F9                     l664:
   2184  01F9  0008               	return
   2185  01FA                     __end_of___fldiv:
   2186                           
   2187                           	psect	text6
-  2188  043A                     __ptext6:	
+  2188  044A                     __ptext6:	
   2189 ;; *************** function _setup *****************
   2190 ;; Defined at:
-  2191 ;;		line 132 in file "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c"
+  2191 ;;		line 131 in file "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c"
   2192 ;; Parameters:    Size  Location     Type
   2193 ;;		None
   2194 ;; Auto vars:     Size  Location     Type
@@ -2234,140 +2234,140 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2220                           
   2221                           
   2222                           ;psect for function _setup
-  2223  043A                     _setup:
-  2224  043A                     l1084:	
+  2223  044A                     _setup:
+  2224  044A                     l1085:	
   2225                           ;incstack = 0
   2226                           ; Regs used in _setup: [wreg-fsr0h+status,2+status,0+pclath+cstack]
   2227                           
   2228                           
-  2229                           ;Main_motores.c: 135: ANSEL=0;
-  2230  043A  1683               	bsf	3,5	;RP0=1, select bank3
-  2231  043B  1703               	bsf	3,6	;RP1=1, select bank3
-  2232  043C  0188               	clrf	8	;volatile
+  2229                           ;Main_motores.c: 134: ANSEL=0;
+  2230  044A  1683               	bsf	3,5	;RP0=1, select bank3
+  2231  044B  1703               	bsf	3,6	;RP1=1, select bank3
+  2232  044C  0188               	clrf	8	;volatile
   2233                           
-  2234                           ;Main_motores.c: 136: ANSELH=0;
-  2235  043D  0189               	clrf	9	;volatile
-  2236  043E                     l1086:
+  2234                           ;Main_motores.c: 135: ANSELH=0;
+  2235  044D  0189               	clrf	9	;volatile
+  2236  044E                     l1087:
   2237                           
-  2238                           ;Main_motores.c: 137: ANSELbits.ANS0=1;
-  2239  043E  1408               	bsf	8,0	;volatile
-  2240  043F                     l1088:
+  2238                           ;Main_motores.c: 136: ANSELbits.ANS0=1;
+  2239  044E  1408               	bsf	8,0	;volatile
+  2240  044F                     l1089:
   2241                           
-  2242                           ;Main_motores.c: 139: TRISDbits.TRISD0=0;
-  2243  043F  1683               	bsf	3,5	;RP0=1, select bank1
-  2244  0440  1303               	bcf	3,6	;RP1=0, select bank1
-  2245  0441  1008               	bcf	8,0	;volatile
-  2246  0442                     l1090:
+  2242                           ;Main_motores.c: 138: TRISDbits.TRISD0=0;
+  2243  044F  1683               	bsf	3,5	;RP0=1, select bank1
+  2244  0450  1303               	bcf	3,6	;RP1=0, select bank1
+  2245  0451  1008               	bcf	8,0	;volatile
+  2246  0452                     l1091:
   2247                           
-  2248                           ;Main_motores.c: 140: TRISBbits.TRISB1=1;
-  2249  0442  1486               	bsf	6,1	;volatile
-  2250  0443                     l1092:
+  2248                           ;Main_motores.c: 139: TRISBbits.TRISB1=1;
+  2249  0452  1486               	bsf	6,1	;volatile
+  2250  0453                     l1093:
   2251                           
-  2252                           ;Main_motores.c: 141: TRISCbits.TRISC2=0;
-  2253  0443  1107               	bcf	7,2	;volatile
+  2252                           ;Main_motores.c: 140: TRISCbits.TRISC2=0;
+  2253  0453  1107               	bcf	7,2	;volatile
   2254                           
-  2255                           ;Main_motores.c: 142: TRISD=0;
-  2256  0444  0188               	clrf	8	;volatile
-  2257  0445                     l1094:
+  2255                           ;Main_motores.c: 141: TRISD=0;
+  2256  0454  0188               	clrf	8	;volatile
+  2257  0455                     l1095:
   2258                           
-  2259                           ;Main_motores.c: 143: TRISEbits.TRISE0=0;
-  2260  0445  1009               	bcf	9,0	;volatile
+  2259                           ;Main_motores.c: 142: TRISEbits.TRISE0=0;
+  2260  0455  1009               	bcf	9,0	;volatile
   2261                           
-  2262                           ;Main_motores.c: 146: PORTB=0;
-  2263  0446  1283               	bcf	3,5	;RP0=0, select bank0
-  2264  0447  1303               	bcf	3,6	;RP1=0, select bank0
-  2265  0448  0186               	clrf	6	;volatile
+  2262                           ;Main_motores.c: 145: PORTB=0;
+  2263  0456  1283               	bcf	3,5	;RP0=0, select bank0
+  2264  0457  1303               	bcf	3,6	;RP1=0, select bank0
+  2265  0458  0186               	clrf	6	;volatile
   2266                           
-  2267                           ;Main_motores.c: 147: PORTC=0;
-  2268  0449  0187               	clrf	7	;volatile
+  2267                           ;Main_motores.c: 146: PORTC=0;
+  2268  0459  0187               	clrf	7	;volatile
   2269                           
-  2270                           ;Main_motores.c: 148: PORTD=0;
-  2271  044A  0188               	clrf	8	;volatile
+  2270                           ;Main_motores.c: 147: PORTD=0;
+  2271  045A  0188               	clrf	8	;volatile
   2272                           
-  2273                           ;Main_motores.c: 149: PORTE=0;
-  2274  044B  0189               	clrf	9	;volatile
-  2275  044C                     l1096:
+  2273                           ;Main_motores.c: 148: PORTE=0;
+  2274  045B  0189               	clrf	9	;volatile
+  2275  045C                     l1097:
   2276                           
-  2277                           ;Main_motores.c: 151: osc_config(8);
-  2278  044C  3008               	movlw	8
-  2279  044D  120A  118A  2478  120A  118A  	fcall	_osc_config
-  2280  0452                     l1098:
+  2277                           ;Main_motores.c: 150: osc_config(8);
+  2278  045C  3008               	movlw	8
+  2279  045D  120A  118A  2488  120A  118A  	fcall	_osc_config
+  2280  0462                     l1099:
   2281                           
-  2282                           ;Main_motores.c: 153: ADC_config();
-  2283  0452  120A  118A  24F5  120A  118A  	fcall	_ADC_config
-  2284  0457                     l1100:
+  2282                           ;Main_motores.c: 152: ADC_config();
+  2283  0462  120A  118A  2505  120A  118A  	fcall	_ADC_config
+  2284  0467                     l1101:
   2285                           
-  2286                           ;Main_motores.c: 155: TRISCbits.TRISC2=1;
-  2287  0457  1683               	bsf	3,5	;RP0=1, select bank1
-  2288  0458  1303               	bcf	3,6	;RP1=0, select bank1
-  2289  0459  1507               	bsf	7,2	;volatile
-  2290  045A                     l1102:
+  2286                           ;Main_motores.c: 154: TRISCbits.TRISC2=1;
+  2287  0467  1683               	bsf	3,5	;RP0=1, select bank1
+  2288  0468  1303               	bcf	3,6	;RP1=0, select bank1
+  2289  0469  1507               	bsf	7,2	;volatile
+  2290  046A                     l1103:
   2291                           
-  2292                           ;Main_motores.c: 156: CCP1CONbits.P1M = 0;
-  2293  045A  303F               	movlw	-193
-  2294  045B  1283               	bcf	3,5	;RP0=0, select bank0
-  2295  045C  1303               	bcf	3,6	;RP1=0, select bank0
-  2296  045D  0597               	andwf	23,f	;volatile
-  2297  045E                     l1104:
+  2292                           ;Main_motores.c: 155: CCP1CONbits.P1M = 0;
+  2293  046A  303F               	movlw	-193
+  2294  046B  1283               	bcf	3,5	;RP0=0, select bank0
+  2295  046C  1303               	bcf	3,6	;RP1=0, select bank0
+  2296  046D  0597               	andwf	23,f	;volatile
+  2297  046E                     l1105:
   2298                           
-  2299                           ;Main_motores.c: 157: CCP1CONbits.CCP1M = 0b1100;
-  2300  045E  0817               	movf	23,w	;volatile
-  2301  045F  39F0               	andlw	-16
-  2302  0460  380C               	iorlw	12
-  2303  0461  0097               	movwf	23	;volatile
-  2304  0462                     l1106:
+  2299                           ;Main_motores.c: 156: CCP1CONbits.CCP1M = 0b1100;
+  2300  046E  0817               	movf	23,w	;volatile
+  2301  046F  39F0               	andlw	-16
+  2302  0470  380C               	iorlw	12
+  2303  0471  0097               	movwf	23	;volatile
+  2304  0472                     l1107:
   2305                           
-  2306                           ;Main_motores.c: 158: CCPR1L = 0x0f ;
-  2307  0462  300F               	movlw	15
-  2308  0463  0095               	movwf	21	;volatile
-  2309  0464                     l1108:
+  2306                           ;Main_motores.c: 157: CCPR1L = 0x0f ;
+  2307  0472  300F               	movlw	15
+  2308  0473  0095               	movwf	21	;volatile
+  2309  0474                     l1109:
   2310                           
-  2311                           ;Main_motores.c: 159: CCP1CONbits.DC1B = 0;
-  2312  0464  30CF               	movlw	-49
-  2313  0465  0597               	andwf	23,f	;volatile
-  2314  0466                     l1110:
+  2311                           ;Main_motores.c: 158: CCP1CONbits.DC1B = 0;
+  2312  0474  30CF               	movlw	-49
+  2313  0475  0597               	andwf	23,f	;volatile
+  2314  0476                     l1111:
   2315                           
-  2316                           ;Main_motores.c: 162: OPTION_REGbits.nRBPU=0;
-  2317  0466  1683               	bsf	3,5	;RP0=1, select bank1
-  2318  0467  1303               	bcf	3,6	;RP1=0, select bank1
-  2319  0468  1381               	bcf	1,7	;volatile
-  2320  0469                     l1112:
+  2316                           ;Main_motores.c: 161: OPTION_REGbits.nRBPU=0;
+  2317  0476  1683               	bsf	3,5	;RP0=1, select bank1
+  2318  0477  1303               	bcf	3,6	;RP1=0, select bank1
+  2319  0478  1381               	bcf	1,7	;volatile
+  2320  0479                     l1113:
   2321                           
-  2322                           ;Main_motores.c: 163: WPUBbits.WPUB1=1;
-  2323  0469  1495               	bsf	21,1	;volatile
-  2324  046A                     l1114:
+  2322                           ;Main_motores.c: 162: WPUBbits.WPUB1=1;
+  2323  0479  1495               	bsf	21,1	;volatile
+  2324  047A                     l1115:
   2325                           
-  2326                           ;Main_motores.c: 165: I2C_Slave_Init(0x60);
-  2327  046A  3060               	movlw	96
-  2328  046B  120A  118A  24C3  120A  118A  	fcall	_I2C_Slave_Init
-  2329  0470                     l1116:
+  2326                           ;Main_motores.c: 164: I2C_Slave_Init(0x60);
+  2327  047A  3060               	movlw	96
+  2328  047B  120A  118A  24D3  120A  118A  	fcall	_I2C_Slave_Init
+  2329  0480                     l1117:
   2330                           
-  2331                           ;Main_motores.c: 167: INTCONbits.GIE=1;
-  2332  0470  178B               	bsf	11,7	;volatile
-  2333  0471                     l1118:
+  2331                           ;Main_motores.c: 166: INTCONbits.GIE=1;
+  2332  0480  178B               	bsf	11,7	;volatile
+  2333  0481                     l1119:
   2334                           
-  2335                           ;Main_motores.c: 168: INTCONbits.PEIE = 1;
-  2336  0471  170B               	bsf	11,6	;volatile
-  2337  0472                     l1120:
+  2335                           ;Main_motores.c: 167: INTCONbits.PEIE = 1;
+  2336  0481  170B               	bsf	11,6	;volatile
+  2337  0482                     l1121:
   2338                           
-  2339                           ;Main_motores.c: 169: INTCONbits.RBIE=1;
-  2340  0472  158B               	bsf	11,3	;volatile
-  2341  0473                     l1122:
+  2339                           ;Main_motores.c: 168: INTCONbits.RBIE=1;
+  2340  0482  158B               	bsf	11,3	;volatile
+  2341  0483                     l1123:
   2342                           
-  2343                           ;Main_motores.c: 170: INTCONbits.RBIF=0;
-  2344  0473  100B               	bcf	11,0	;volatile
-  2345  0474                     l1124:
+  2343                           ;Main_motores.c: 169: INTCONbits.RBIF=0;
+  2344  0483  100B               	bcf	11,0	;volatile
+  2345  0484                     l1125:
   2346                           
-  2347                           ;Main_motores.c: 171: IOCBbits.IOCB1=1;
-  2348  0474  1683               	bsf	3,5	;RP0=1, select bank1
-  2349  0475  1303               	bcf	3,6	;RP1=0, select bank1
-  2350  0476  1496               	bsf	22,1	;volatile
-  2351  0477                     l120:
-  2352  0477  0008               	return
-  2353  0478                     __end_of_setup:
+  2347                           ;Main_motores.c: 170: IOCBbits.IOCB1=1;
+  2348  0484  1683               	bsf	3,5	;RP0=1, select bank1
+  2349  0485  1303               	bcf	3,6	;RP1=0, select bank1
+  2350  0486  1496               	bsf	22,1	;volatile
+  2351  0487                     l120:
+  2352  0487  0008               	return
+  2353  0488                     __end_of_setup:
   2354                           
   2355                           	psect	text7
-  2356  0478                     __ptext7:	
+  2356  0488                     __ptext7:	
   2357 ;; *************** function _osc_config *****************
   2358 ;; Defined at:
   2359 ;;		line 16 in file "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Osc_config.c"
@@ -2400,80 +2400,80 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2386                           
   2387                           
   2388                           ;psect for function _osc_config
-  2389  0478                     _osc_config:
+  2389  0488                     _osc_config:
   2390                           
   2391                           ;incstack = 0
   2392                           ; Regs used in _osc_config: [wreg-fsr0h+status,2+status,0]
   2393                           ;osc_config@freq stored from wreg
-  2394  0478  00F3               	movwf	osc_config@freq
-  2395  0479                     l818:
+  2394  0488  00F3               	movwf	osc_config@freq
+  2395  0489                     l819:
   2396                           
   2397                           ;Osc_config.c: 18: switch(freq)
-  2398  0479  2C98               	goto	l838
-  2399  047A                     l820:
+  2398  0489  2CA8               	goto	l839
+  2399  048A                     l821:
   2400                           
   2401                           ;Osc_config.c: 21: OSCCONbits.IRCF=0b100;
-  2402  047A  1683               	bsf	3,5	;RP0=1, select bank1
-  2403  047B  1303               	bcf	3,6	;RP1=0, select bank1
-  2404  047C  080F               	movf	15,w	;volatile
-  2405  047D  398F               	andlw	-113
-  2406  047E  3840               	iorlw	64
-  2407  047F  008F               	movwf	15	;volatile
-  2408  0480                     l822:
+  2402  048A  1683               	bsf	3,5	;RP0=1, select bank1
+  2403  048B  1303               	bcf	3,6	;RP1=0, select bank1
+  2404  048C  080F               	movf	15,w	;volatile
+  2405  048D  398F               	andlw	-113
+  2406  048E  3840               	iorlw	64
+  2407  048F  008F               	movwf	15	;volatile
+  2408  0490                     l823:
   2409                           
   2410                           ;Osc_config.c: 22: OSCCONbits.SCS=1;
-  2411  0480  140F               	bsf	15,0	;volatile
+  2411  0490  140F               	bsf	15,0	;volatile
   2412                           
   2413                           ;Osc_config.c: 23: break;
-  2414  0481  2CA6               	goto	l204
-  2415  0482                     l824:
+  2414  0491  2CB6               	goto	l205
+  2415  0492                     l825:
   2416                           
   2417                           ;Osc_config.c: 26: OSCCONbits.IRCF=0b101;
-  2418  0482  1683               	bsf	3,5	;RP0=1, select bank1
-  2419  0483  1303               	bcf	3,6	;RP1=0, select bank1
-  2420  0484  080F               	movf	15,w	;volatile
-  2421  0485  398F               	andlw	-113
-  2422  0486  3850               	iorlw	80
-  2423  0487  008F               	movwf	15	;volatile
-  2424  0488                     l826:
+  2418  0492  1683               	bsf	3,5	;RP0=1, select bank1
+  2419  0493  1303               	bcf	3,6	;RP1=0, select bank1
+  2420  0494  080F               	movf	15,w	;volatile
+  2421  0495  398F               	andlw	-113
+  2422  0496  3850               	iorlw	80
+  2423  0497  008F               	movwf	15	;volatile
+  2424  0498                     l827:
   2425                           
   2426                           ;Osc_config.c: 27: OSCCONbits.SCS=1;
-  2427  0488  140F               	bsf	15,0	;volatile
+  2427  0498  140F               	bsf	15,0	;volatile
   2428                           
   2429                           ;Osc_config.c: 28: break;
-  2430  0489  2CA6               	goto	l204
-  2431  048A                     l828:
+  2430  0499  2CB6               	goto	l205
+  2431  049A                     l829:
   2432                           
   2433                           ;Osc_config.c: 31: OSCCONbits.IRCF=0b110;
-  2434  048A  1683               	bsf	3,5	;RP0=1, select bank1
-  2435  048B  1303               	bcf	3,6	;RP1=0, select bank1
-  2436  048C  080F               	movf	15,w	;volatile
-  2437  048D  398F               	andlw	-113
-  2438  048E  3860               	iorlw	96
-  2439  048F  008F               	movwf	15	;volatile
-  2440  0490                     l830:
+  2434  049A  1683               	bsf	3,5	;RP0=1, select bank1
+  2435  049B  1303               	bcf	3,6	;RP1=0, select bank1
+  2436  049C  080F               	movf	15,w	;volatile
+  2437  049D  398F               	andlw	-113
+  2438  049E  3860               	iorlw	96
+  2439  049F  008F               	movwf	15	;volatile
+  2440  04A0                     l831:
   2441                           
   2442                           ;Osc_config.c: 32: OSCCONbits.SCS=1;
-  2443  0490  140F               	bsf	15,0	;volatile
+  2443  04A0  140F               	bsf	15,0	;volatile
   2444                           
   2445                           ;Osc_config.c: 33: break;
-  2446  0491  2CA6               	goto	l204
-  2447  0492                     l832:
+  2446  04A1  2CB6               	goto	l205
+  2447  04A2                     l833:
   2448                           
   2449                           ;Osc_config.c: 36: OSCCONbits.IRCF=0b111;
-  2450  0492  3070               	movlw	112
-  2451  0493  1683               	bsf	3,5	;RP0=1, select bank1
-  2452  0494  1303               	bcf	3,6	;RP1=0, select bank1
-  2453  0495  048F               	iorwf	15,f	;volatile
-  2454  0496                     l834:
+  2450  04A2  3070               	movlw	112
+  2451  04A3  1683               	bsf	3,5	;RP0=1, select bank1
+  2452  04A4  1303               	bcf	3,6	;RP1=0, select bank1
+  2453  04A5  048F               	iorwf	15,f	;volatile
+  2454  04A6                     l835:
   2455                           
   2456                           ;Osc_config.c: 37: OSCCONbits.SCS=1;
-  2457  0496  140F               	bsf	15,0	;volatile
+  2457  04A6  140F               	bsf	15,0	;volatile
   2458                           
   2459                           ;Osc_config.c: 38: break;
-  2460  0497  2CA6               	goto	l204
-  2461  0498                     l838:
-  2462  0498  0873               	movf	osc_config@freq,w
+  2460  04A7  2CB6               	goto	l205
+  2461  04A8                     l839:
+  2462  04A8  0873               	movf	osc_config@freq,w
   2463                           
   2464                           ; Switch size 1, requested type "simple"
   2465                           ; Number of cases is 4, Range of values is 1 to 8
@@ -2483,25 +2483,25 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2469                           ; direct_byte           35    11 (fixed)
   2470                           ; jumptable            263     9 (fixed)
   2471                           ;	Chosen strategy is simple_byte
-  2472  0499  3A01               	xorlw	1	; case 1
-  2473  049A  1903               	skipnz
-  2474  049B  2C7A               	goto	l820
-  2475  049C  3A03               	xorlw	3	; case 2
-  2476  049D  1903               	skipnz
-  2477  049E  2C82               	goto	l824
-  2478  049F  3A06               	xorlw	6	; case 4
-  2479  04A0  1903               	skipnz
-  2480  04A1  2C8A               	goto	l828
-  2481  04A2  3A0C               	xorlw	12	; case 8
-  2482  04A3  1903               	skipnz
-  2483  04A4  2C92               	goto	l832
-  2484  04A5  2CA6               	goto	l204
-  2485  04A6                     l204:
-  2486  04A6  0008               	return
-  2487  04A7                     __end_of_osc_config:
+  2472  04A9  3A01               	xorlw	1	; case 1
+  2473  04AA  1903               	skipnz
+  2474  04AB  2C8A               	goto	l821
+  2475  04AC  3A03               	xorlw	3	; case 2
+  2476  04AD  1903               	skipnz
+  2477  04AE  2C92               	goto	l825
+  2478  04AF  3A06               	xorlw	6	; case 4
+  2479  04B0  1903               	skipnz
+  2480  04B1  2C9A               	goto	l829
+  2481  04B2  3A0C               	xorlw	12	; case 8
+  2482  04B3  1903               	skipnz
+  2483  04B4  2CA2               	goto	l833
+  2484  04B5  2CB6               	goto	l205
+  2485  04B6                     l205:
+  2486  04B6  0008               	return
+  2487  04B7                     __end_of_osc_config:
   2488                           
   2489                           	psect	text8
-  2490  04C3                     __ptext8:	
+  2490  04D3                     __ptext8:	
   2491 ;; *************** function _I2C_Slave_Init *****************
   2492 ;; Defined at:
   2493 ;;		line 93 in file "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/I2C.c"
@@ -2534,69 +2534,69 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2520                           
   2521                           
   2522                           ;psect for function _I2C_Slave_Init
-  2523  04C3                     _I2C_Slave_Init:
+  2523  04D3                     _I2C_Slave_Init:
   2524                           
   2525                           ;incstack = 0
   2526                           ; Regs used in _I2C_Slave_Init: [wreg]
   2527                           ;I2C_Slave_Init@address stored from wreg
-  2528  04C3  00F3               	movwf	I2C_Slave_Init@address
-  2529  04C4                     l848:
+  2528  04D3  00F3               	movwf	I2C_Slave_Init@address
+  2529  04D4                     l849:
   2530                           
   2531                           ;I2C.c: 95: SSPADD = address;
-  2532  04C4  0873               	movf	I2C_Slave_Init@address,w
-  2533  04C5  1683               	bsf	3,5	;RP0=1, select bank1
-  2534  04C6  1303               	bcf	3,6	;RP1=0, select bank1
-  2535  04C7  0093               	movwf	19	;volatile
+  2532  04D4  0873               	movf	I2C_Slave_Init@address,w
+  2533  04D5  1683               	bsf	3,5	;RP0=1, select bank1
+  2534  04D6  1303               	bcf	3,6	;RP1=0, select bank1
+  2535  04D7  0093               	movwf	19	;volatile
   2536                           
   2537                           ;I2C.c: 96: SSPCON = 0x36;
-  2538  04C8  3036               	movlw	54
-  2539  04C9  1283               	bcf	3,5	;RP0=0, select bank0
-  2540  04CA  1303               	bcf	3,6	;RP1=0, select bank0
-  2541  04CB  0094               	movwf	20	;volatile
+  2538  04D8  3036               	movlw	54
+  2539  04D9  1283               	bcf	3,5	;RP0=0, select bank0
+  2540  04DA  1303               	bcf	3,6	;RP1=0, select bank0
+  2541  04DB  0094               	movwf	20	;volatile
   2542                           
   2543                           ;I2C.c: 97: SSPSTAT = 0x80;
-  2544  04CC  3080               	movlw	128
-  2545  04CD  1683               	bsf	3,5	;RP0=1, select bank1
-  2546  04CE  1303               	bcf	3,6	;RP1=0, select bank1
-  2547  04CF  0094               	movwf	20	;volatile
+  2544  04DC  3080               	movlw	128
+  2545  04DD  1683               	bsf	3,5	;RP0=1, select bank1
+  2546  04DE  1303               	bcf	3,6	;RP1=0, select bank1
+  2547  04DF  0094               	movwf	20	;volatile
   2548                           
   2549                           ;I2C.c: 98: SSPCON2 = 0x01;
-  2550  04D0  3001               	movlw	1
-  2551  04D1  0091               	movwf	17	;volatile
-  2552  04D2                     l850:
+  2550  04E0  3001               	movlw	1
+  2551  04E1  0091               	movwf	17	;volatile
+  2552  04E2                     l851:
   2553                           
   2554                           ;I2C.c: 99: TRISC3 = 1;
-  2555  04D2  1587               	bsf	7,3	;volatile
-  2556  04D3                     l852:
+  2555  04E2  1587               	bsf	7,3	;volatile
+  2556  04E3                     l853:
   2557                           
   2558                           ;I2C.c: 100: TRISC4 = 1;
-  2559  04D3  1607               	bsf	7,4	;volatile
-  2560  04D4                     l854:
+  2559  04E3  1607               	bsf	7,4	;volatile
+  2560  04E4                     l855:
   2561                           
   2562                           ;I2C.c: 101: GIE = 1;
-  2563  04D4  178B               	bsf	11,7	;volatile
-  2564  04D5                     l856:
+  2563  04E4  178B               	bsf	11,7	;volatile
+  2564  04E5                     l857:
   2565                           
   2566                           ;I2C.c: 102: PEIE = 1;
-  2567  04D5  170B               	bsf	11,6	;volatile
-  2568  04D6                     l858:
+  2567  04E5  170B               	bsf	11,6	;volatile
+  2568  04E6                     l859:
   2569                           
   2570                           ;I2C.c: 103: SSPIF = 0;
-  2571  04D6  1283               	bcf	3,5	;RP0=0, select bank0
-  2572  04D7  1303               	bcf	3,6	;RP1=0, select bank0
-  2573  04D8  118C               	bcf	12,3	;volatile
-  2574  04D9                     l860:
+  2571  04E6  1283               	bcf	3,5	;RP0=0, select bank0
+  2572  04E7  1303               	bcf	3,6	;RP1=0, select bank0
+  2573  04E8  118C               	bcf	12,3	;volatile
+  2574  04E9                     l861:
   2575                           
   2576                           ;I2C.c: 104: SSPIE = 1;
-  2577  04D9  1683               	bsf	3,5	;RP0=1, select bank1
-  2578  04DA  1303               	bcf	3,6	;RP1=0, select bank1
-  2579  04DB  158C               	bsf	12,3	;volatile
-  2580  04DC                     l193:
-  2581  04DC  0008               	return
-  2582  04DD                     __end_of_I2C_Slave_Init:
+  2577  04E9  1683               	bsf	3,5	;RP0=1, select bank1
+  2578  04EA  1303               	bcf	3,6	;RP1=0, select bank1
+  2579  04EB  158C               	bsf	12,3	;volatile
+  2580  04EC                     l194:
+  2581  04EC  0008               	return
+  2582  04ED                     __end_of_I2C_Slave_Init:
   2583                           
   2584                           	psect	text9
-  2585  04F5                     __ptext9:	
+  2585  0505                     __ptext9:	
   2586 ;; *************** function _ADC_config *****************
   2587 ;; Defined at:
   2588 ;;		line 22 in file "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/ADC_CONFIG.c"
@@ -2629,57 +2629,57 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2615                           
   2616                           
   2617                           ;psect for function _ADC_config
-  2618  04F5                     _ADC_config:
-  2619  04F5                     l840:	
+  2618  0505                     _ADC_config:
+  2619  0505                     l841:	
   2620                           ;incstack = 0
   2621                           ; Regs used in _ADC_config: [wreg+status,2+status,0]
   2622                           
   2623                           
   2624                           ;ADC_CONFIG.c: 25: ADCON1bits.ADFM = 1 ;
-  2625  04F5  1683               	bsf	3,5	;RP0=1, select bank1
-  2626  04F6  1303               	bcf	3,6	;RP1=0, select bank1
-  2627  04F7  179F               	bsf	31,7	;volatile
+  2625  0505  1683               	bsf	3,5	;RP0=1, select bank1
+  2626  0506  1303               	bcf	3,6	;RP1=0, select bank1
+  2627  0507  179F               	bsf	31,7	;volatile
   2628                           
   2629                           ;ADC_CONFIG.c: 26: ADCON1bits.VCFG0 = 0 ;
-  2630  04F8  121F               	bcf	31,4	;volatile
+  2630  0508  121F               	bcf	31,4	;volatile
   2631                           
   2632                           ;ADC_CONFIG.c: 27: ADCON1bits.VCFG1 = 0 ;
-  2633  04F9  129F               	bcf	31,5	;volatile
-  2634  04FA                     l842:
+  2633  0509  129F               	bcf	31,5	;volatile
+  2634  050A                     l843:
   2635                           
   2636                           ;ADC_CONFIG.c: 29: ADCON0bits.ADCS = 0b00;
-  2637  04FA  303F               	movlw	-193
-  2638  04FB  1283               	bcf	3,5	;RP0=0, select bank0
-  2639  04FC  1303               	bcf	3,6	;RP1=0, select bank0
-  2640  04FD  059F               	andwf	31,f	;volatile
+  2637  050A  303F               	movlw	-193
+  2638  050B  1283               	bcf	3,5	;RP0=0, select bank0
+  2639  050C  1303               	bcf	3,6	;RP1=0, select bank0
+  2640  050D  059F               	andwf	31,f	;volatile
   2641                           
   2642                           ;ADC_CONFIG.c: 30: ADCON0bits.CHS = 0;
-  2643  04FE  30C3               	movlw	-61
-  2644  04FF  059F               	andwf	31,f	;volatile
-  2645  0500                     l844:
+  2643  050E  30C3               	movlw	-61
+  2644  050F  059F               	andwf	31,f	;volatile
+  2645  0510                     l845:
   2646                           
   2647                           ;ADC_CONFIG.c: 31: _delay((unsigned long)((100)*(8000000/4000000.0)));
-  2648  0500  3042               	movlw	66
-  2649  0501  00F3               	movwf	??_ADC_config
-  2650  0502                     u1587:
-  2651  0502  0BF3               	decfsz	??_ADC_config,f
-  2652  0503  2D02               	goto	u1587
-  2653  0504  0000               	nop
-  2654  0505                     l846:
+  2648  0510  3042               	movlw	66
+  2649  0511  00F3               	movwf	??_ADC_config
+  2650  0512                     u1647:
+  2651  0512  0BF3               	decfsz	??_ADC_config,f
+  2652  0513  2D12               	goto	u1647
+  2653  0514  0000               	nop
+  2654  0515                     l847:
   2655                           
   2656                           ;ADC_CONFIG.c: 32: ADCON0bits.ADON = 1 ;
-  2657  0505  1283               	bcf	3,5	;RP0=0, select bank0
-  2658  0506  1303               	bcf	3,6	;RP1=0, select bank0
-  2659  0507  141F               	bsf	31,0	;volatile
-  2660  0508                     l226:
-  2661  0508  0008               	return
-  2662  0509                     __end_of_ADC_config:
+  2657  0515  1283               	bcf	3,5	;RP0=0, select bank0
+  2658  0516  1303               	bcf	3,6	;RP1=0, select bank0
+  2659  0517  141F               	bsf	31,0	;volatile
+  2660  0518                     l227:
+  2661  0518  0008               	return
+  2662  0519                     __end_of_ADC_config:
   2663                           
   2664                           	psect	text10
   2665  03FB                     __ptext10:	
   2666 ;; *************** function _servo *****************
   2667 ;; Defined at:
-  2668 ;;		line 177 in file "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c"
+  2668 ;;		line 176 in file "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c"
   2669 ;; Parameters:    Size  Location     Type
   2670 ;;		None
   2671 ;; Auto vars:     Size  Location     Type
@@ -2710,443 +2710,479 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2696                           
   2697                           ;psect for function _servo
   2698  03FB                     _servo:
-  2699  03FB                     l1126:	
+  2699  03FB                     l1509:	
   2700                           ;incstack = 0
   2701                           ; Regs used in _servo: [wreg-fsr0h+status,2+status,0]
   2702                           
   2703                           
-  2704                           ;Main_motores.c: 180: if (antirrebote==1 && PORTBbits.RB1==0 )
+  2704                           ;Main_motores.c: 179: if (antirrebote==1 && PORTBbits.RB1==0 && motor_recibido==0)
   2705  03FB  0379               	decf	_antirrebote,w
   2706  03FC  1D03               	btfss	3,2
-  2707  03FD  2BFF               	goto	u541
-  2708  03FE  2C00               	goto	u540
-  2709  03FF                     u541:
-  2710  03FF  2C2E               	goto	l1146
-  2711  0400                     u540:
-  2712  0400                     l1128:
+  2707  03FD  2BFF               	goto	u1291
+  2708  03FE  2C00               	goto	u1290
+  2709  03FF                     u1291:
+  2710  03FF  2C35               	goto	l1535
+  2711  0400                     u1290:
+  2712  0400                     l1511:
   2713  0400  1283               	bcf	3,5	;RP0=0, select bank0
   2714  0401  1303               	bcf	3,6	;RP1=0, select bank0
   2715  0402  1886               	btfsc	6,1	;volatile
-  2716  0403  2C05               	goto	u551
-  2717  0404  2C06               	goto	u550
-  2718  0405                     u551:
-  2719  0405  2C2E               	goto	l1146
-  2720  0406                     u550:
-  2721  0406                     l1130:
-  2722                           
-  2723                           ;Main_motores.c: 181: {;Main_motores.c: 182: botonazo++;
-  2724  0406  3001               	movlw	1
-  2725  0407  00F3               	movwf	??_servo
-  2726  0408  0873               	movf	??_servo,w
-  2727  0409  07F8               	addwf	_botonazo,f
-  2728  040A                     l1132:
-  2729                           
-  2730                           ;Main_motores.c: 183: antirrebote=0;
-  2731  040A  01F9               	clrf	_antirrebote
-  2732  040B  2C2E               	goto	l1146
-  2733  040C                     l125:	
-  2734                           ;Main_motores.c: 187: {;Main_motores.c: 188: case(0):
-  2735                           
-  2736                           
-  2737                           ;Main_motores.c: 189: PORTEbits.RE0=1;
-  2738  040C  1283               	bcf	3,5	;RP0=0, select bank0
-  2739  040D  1303               	bcf	3,6	;RP1=0, select bank0
-  2740  040E  1409               	bsf	9,0	;volatile
-  2741  040F                     l1134:
-  2742                           
-  2743                           ;Main_motores.c: 190: _delay((unsigned long)((1)*(8000000/4000.0)));
-  2744  040F  3003               	movlw	3
-  2745  0410  00F4               	movwf	??_servo+1
-  2746  0411  3097               	movlw	151
-  2747  0412  00F3               	movwf	??_servo
-  2748  0413                     u1597:
-  2749  0413  0BF3               	decfsz	??_servo,f
-  2750  0414  2C13               	goto	u1597
-  2751  0415  0BF4               	decfsz	??_servo+1,f
-  2752  0416  2C13               	goto	u1597
-  2753  0417  2C18               	nop2
-  2754  0418                     l1136:
-  2755                           
-  2756                           ;Main_motores.c: 191: PORTEbits.RE0=0;
-  2757  0418  1283               	bcf	3,5	;RP0=0, select bank0
-  2758  0419  1303               	bcf	3,6	;RP1=0, select bank0
-  2759  041A  1009               	bcf	9,0	;volatile
+  2716  0403  2C05               	goto	u1301
+  2717  0404  2C06               	goto	u1300
+  2718  0405                     u1301:
+  2719  0405  2C35               	goto	l1535
+  2720  0406                     u1300:
+  2721  0406                     l1513:
+  2722  0406  0877               	movf	_motor_recibido,w
+  2723  0407  1D03               	btfss	3,2
+  2724  0408  2C0A               	goto	u1311
+  2725  0409  2C0B               	goto	u1310
+  2726  040A                     u1311:
+  2727  040A  2C35               	goto	l1535
+  2728  040B                     u1310:
+  2729  040B  2C2B               	goto	l1531
+  2730  040C                     l125:	
+  2731                           ;Main_motores.c: 183: {;Main_motores.c: 184: case(0):
+  2732                           
+  2733                           
+  2734                           ;Main_motores.c: 185: PORTEbits.RE0=1;
+  2735  040C  1409               	bsf	9,0	;volatile
+  2736  040D                     l1517:
+  2737                           
+  2738                           ;Main_motores.c: 186: _delay((unsigned long)((1)*(8000000/4000.0)));
+  2739  040D  3003               	movlw	3
+  2740  040E  00F4               	movwf	??_servo+1
+  2741  040F  3097               	movlw	151
+  2742  0410  00F3               	movwf	??_servo
+  2743  0411                     u1657:
+  2744  0411  0BF3               	decfsz	??_servo,f
+  2745  0412  2C11               	goto	u1657
+  2746  0413  0BF4               	decfsz	??_servo+1,f
+  2747  0414  2C11               	goto	u1657
+  2748  0415  2C16               	nop2
+  2749  0416                     l1519:
+  2750                           
+  2751                           ;Main_motores.c: 187: PORTEbits.RE0=0;
+  2752  0416  1283               	bcf	3,5	;RP0=0, select bank0
+  2753  0417  1303               	bcf	3,6	;RP1=0, select bank0
+  2754  0418  1009               	bcf	9,0	;volatile
+  2755  0419                     l1521:
+  2756                           
+  2757                           ;Main_motores.c: 188: botonazo=1;
+  2758  0419  01D8               	clrf	_botonazo
+  2759  041A  0AD8               	incf	_botonazo,f
   2760                           
-  2761                           ;Main_motores.c: 192: break;
-  2762  041B  2C39               	goto	l129
+  2761                           ;Main_motores.c: 189: break;
+  2762  041B  2C33               	goto	l1533
   2763  041C                     l127:	
-  2764                           ;Main_motores.c: 193: case(1):
+  2764                           ;Main_motores.c: 190: case(1):
   2765                           
   2766                           
-  2767                           ;Main_motores.c: 194: PORTEbits.RE0=1;
-  2768  041C  1283               	bcf	3,5	;RP0=0, select bank0
-  2769  041D  1303               	bcf	3,6	;RP1=0, select bank0
-  2770  041E  1409               	bsf	9,0	;volatile
-  2771  041F                     l1138:
-  2772                           
-  2773                           ;Main_motores.c: 195: _delay((unsigned long)((2)*(8000000/4000.0)));
-  2774  041F  3006               	movlw	6
-  2775  0420  00F4               	movwf	??_servo+1
-  2776  0421  3030               	movlw	48
-  2777  0422  00F3               	movwf	??_servo
-  2778  0423                     u1607:
-  2779  0423  0BF3               	decfsz	??_servo,f
-  2780  0424  2C23               	goto	u1607
-  2781  0425  0BF4               	decfsz	??_servo+1,f
-  2782  0426  2C23               	goto	u1607
-  2783  0427  0000               	nop
-  2784  0428                     l1140:
-  2785                           
-  2786                           ;Main_motores.c: 196: PORTEbits.RE0=0;
-  2787  0428  1283               	bcf	3,5	;RP0=0, select bank0
-  2788  0429  1303               	bcf	3,6	;RP1=0, select bank0
-  2789  042A  1009               	bcf	9,0	;volatile
-  2790                           
-  2791                           ;Main_motores.c: 197: break;
-  2792  042B  2C39               	goto	l129
-  2793  042C                     l1142:
-  2794                           
-  2795                           ;Main_motores.c: 199: botonazo=0;
-  2796  042C  01F8               	clrf	_botonazo
+  2767                           ;Main_motores.c: 191: PORTEbits.RE0=1;
+  2768  041C  1409               	bsf	9,0	;volatile
+  2769  041D                     l1523:
+  2770                           
+  2771                           ;Main_motores.c: 192: _delay((unsigned long)((2)*(8000000/4000.0)));
+  2772  041D  3006               	movlw	6
+  2773  041E  00F4               	movwf	??_servo+1
+  2774  041F  3030               	movlw	48
+  2775  0420  00F3               	movwf	??_servo
+  2776  0421                     u1667:
+  2777  0421  0BF3               	decfsz	??_servo,f
+  2778  0422  2C21               	goto	u1667
+  2779  0423  0BF4               	decfsz	??_servo+1,f
+  2780  0424  2C21               	goto	u1667
+  2781  0425  0000               	nop
+  2782  0426                     l1525:
+  2783                           
+  2784                           ;Main_motores.c: 193: PORTEbits.RE0=0;
+  2785  0426  1283               	bcf	3,5	;RP0=0, select bank0
+  2786  0427  1303               	bcf	3,6	;RP1=0, select bank0
+  2787  0428  1009               	bcf	9,0	;volatile
+  2788  0429                     l1527:
+  2789                           
+  2790                           ;Main_motores.c: 194: botonazo = 0;
+  2791  0429  01D8               	clrf	_botonazo
+  2792                           
+  2793                           ;Main_motores.c: 195: break;
+  2794  042A  2C33               	goto	l1533
+  2795  042B                     l1531:
+  2796  042B  0858               	movf	_botonazo,w
   2797                           
-  2798                           ;Main_motores.c: 200: break;
-  2799  042D  2C39               	goto	l129
-  2800  042E                     l1146:
-  2801  042E  0878               	movf	_botonazo,w
-  2802                           
-  2803                           ; Switch size 1, requested type "simple"
-  2804                           ; Number of cases is 3, Range of values is 0 to 2
-  2805                           ; switch strategies available:
-  2806                           ; Name         Instructions Cycles
-  2807                           ; simple_byte           10     6 (average)
-  2808                           ; direct_byte           17     8 (fixed)
-  2809                           ; jumptable            260     6 (fixed)
-  2810                           ;	Chosen strategy is simple_byte
-  2811  042F  3A00               	xorlw	0	; case 0
-  2812  0430  1903               	skipnz
-  2813  0431  2C0C               	goto	l125
-  2814  0432  3A01               	xorlw	1	; case 1
-  2815  0433  1903               	skipnz
-  2816  0434  2C1C               	goto	l127
-  2817  0435  3A03               	xorlw	3	; case 2
-  2818  0436  1903               	skipnz
-  2819  0437  2C2C               	goto	l1142
-  2820  0438  2C39               	goto	l129
-  2821  0439                     l129:
-  2822  0439  0008               	return
-  2823  043A                     __end_of_servo:
-  2824                           
-  2825                           	psect	text11
-  2826  0332                     __ptext11:	
-  2827 ;; *************** function _isr *****************
-  2828 ;; Defined at:
-  2829 ;;		line 64 in file "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c"
-  2830 ;; Parameters:    Size  Location     Type
-  2831 ;;		None
-  2832 ;; Auto vars:     Size  Location     Type
-  2833 ;;		None
-  2834 ;; Return value:  Size  Location     Type
-  2835 ;;                  1    wreg      void 
-  2836 ;; Registers used:
-  2837 ;;		wreg, status,2, status,0
-  2838 ;; Tracked objects:
-  2839 ;;		On entry : 0/0
-  2840 ;;		On exit  : 0/0
-  2841 ;;		Unchanged: 0/0
-  2842 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-  2843 ;;      Params:         0       0       0       0       0
-  2844 ;;      Locals:         0       0       0       0       0
-  2845 ;;      Temps:          3       0       0       0       0
-  2846 ;;      Totals:         3       0       0       0       0
-  2847 ;;Total ram usage:        3 bytes
-  2848 ;; Hardware stack levels used: 1
-  2849 ;; This function calls:
-  2850 ;;		Nothing
-  2851 ;; This function is called by:
-  2852 ;;		Interrupt level 1
-  2853 ;; This function uses a non-reentrant model
-  2854 ;;
-  2855                           
-  2856                           
-  2857                           ;psect for function _isr
-  2858  0332                     _isr:
-  2859  0332                     i1l1514:
-  2860                           
-  2861                           ;Main_motores.c: 67: if (INTCONbits.RBIF)
-  2862  0332  1C0B               	btfss	11,0	;volatile
-  2863  0333  2B35               	goto	u130_21
-  2864  0334  2B36               	goto	u130_20
-  2865  0335                     u130_21:
-  2866  0335  2B43               	goto	i1l1524
-  2867  0336                     u130_20:
-  2868  0336                     i1l1516:
-  2869                           
-  2870                           ;Main_motores.c: 68: {;Main_motores.c: 69: if (PORTB==0b11111101)
-  2871  0336  30FD               	movlw	253
-  2872  0337  1283               	bcf	3,5	;RP0=0, select bank0
-  2873  0338  1303               	bcf	3,6	;RP1=0, select bank0
-  2874  0339  0606               	xorwf	6,w	;volatile
-  2875  033A  1D03               	btfss	3,2
-  2876  033B  2B3D               	goto	u131_21
-  2877  033C  2B3E               	goto	u131_20
-  2878  033D                     u131_21:
-  2879  033D  2B41               	goto	i1l1520
-  2880  033E                     u131_20:
-  2881  033E                     i1l1518:
-  2882                           
-  2883                           ;Main_motores.c: 70: antirrebote=1;
-  2884  033E  01F9               	clrf	_antirrebote
-  2885  033F  0AF9               	incf	_antirrebote,f
-  2886  0340  2B42               	goto	i1l1522
-  2887  0341                     i1l1520:
-  2888                           
-  2889                           ;Main_motores.c: 71: else;Main_motores.c: 72: antirrebote=0;
-  2890  0341  01F9               	clrf	_antirrebote
-  2891  0342                     i1l1522:
-  2892                           
-  2893                           ;Main_motores.c: 73: INTCONbits.RBIF=0;
-  2894  0342  100B               	bcf	11,0	;volatile
-  2895  0343                     i1l1524:
-  2896                           
-  2897                           ;Main_motores.c: 74: };Main_motores.c: 76: if(PIR1bits.SSPIF == 1){
-  2898  0343  1283               	bcf	3,5	;RP0=0, select bank0
-  2899  0344  1303               	bcf	3,6	;RP1=0, select bank0
-  2900  0345  1D8C               	btfss	12,3	;volatile
-  2901  0346  2B48               	goto	u132_21
-  2902  0347  2B49               	goto	u132_20
-  2903  0348                     u132_21:
-  2904  0348  2B9F               	goto	i1l109
-  2905  0349                     u132_20:
-  2906  0349                     i1l1526:
-  2907                           
-  2908                           ;Main_motores.c: 78: SSPCONbits.CKP = 0;
-  2909  0349  1214               	bcf	20,4	;volatile
-  2910                           
-  2911                           ;Main_motores.c: 80: if ((SSPCONbits.SSPOV) || (SSPCONbits.WCOL)){
-  2912  034A  1B14               	btfsc	20,6	;volatile
-  2913  034B  2B4D               	goto	u133_21
-  2914  034C  2B4E               	goto	u133_20
-  2915  034D                     u133_21:
-  2916  034D  2B52               	goto	i1l1530
-  2917  034E                     u133_20:
-  2918  034E                     i1l1528:
-  2919  034E  1F94               	btfss	20,7	;volatile
-  2920  034F  2B51               	goto	u134_21
-  2921  0350  2B52               	goto	u134_20
-  2922  0351                     u134_21:
-  2923  0351  2B59               	goto	i1l1538
-  2924  0352                     u134_20:
-  2925  0352                     i1l1530:
-  2926                           
-  2927                           ;Main_motores.c: 81: motor_recibido = SSPBUF;
-  2928  0352  0813               	movf	19,w	;volatile
-  2929  0353  00F0               	movwf	??_isr
-  2930  0354  0870               	movf	??_isr,w
-  2931  0355  00D5               	movwf	_motor_recibido
-  2932  0356                     i1l1532:
-  2933                           
-  2934                           ;Main_motores.c: 82: SSPCONbits.SSPOV = 0;
-  2935  0356  1314               	bcf	20,6	;volatile
-  2936  0357                     i1l1534:
-  2937                           
-  2938                           ;Main_motores.c: 83: SSPCONbits.WCOL = 0;
-  2939  0357  1394               	bcf	20,7	;volatile
-  2940  0358                     i1l1536:
-  2941                           
-  2942                           ;Main_motores.c: 84: SSPCONbits.CKP = 1;
-  2943  0358  1614               	bsf	20,4	;volatile
-  2944  0359                     i1l1538:
-  2945                           
-  2946                           ;Main_motores.c: 85: };Main_motores.c: 87: if(!SSPSTATbits.D_nA && !SSPSTATbits.R_nW)
-  2947  0359  1683               	bsf	3,5	;RP0=1, select bank1
-  2948  035A  1303               	bcf	3,6	;RP1=0, select bank1
-  2949  035B  1A94               	btfsc	20,5	;volatile
-  2950  035C  2B5E               	goto	u135_21
-  2951  035D  2B5F               	goto	u135_20
-  2952  035E                     u135_21:
-  2953  035E  2B7C               	goto	i1l100
-  2954  035F                     u135_20:
-  2955  035F                     i1l1540:
-  2956  035F  1914               	btfsc	20,2	;volatile
-  2957  0360  2B62               	goto	u136_21
-  2958  0361  2B63               	goto	u136_20
-  2959  0362                     u136_21:
-  2960  0362  2B7C               	goto	i1l100
-  2961  0363                     u136_20:
-  2962  0363                     i1l1542:
-  2963                           
-  2964                           ;Main_motores.c: 88: {;Main_motores.c: 89: motor_recibido= SSPBUF;
-  2965  0363  1283               	bcf	3,5	;RP0=0, select bank0
-  2966  0364  1303               	bcf	3,6	;RP1=0, select bank0
-  2967  0365  0813               	movf	19,w	;volatile
-  2968  0366  00F0               	movwf	??_isr
-  2969  0367  0870               	movf	??_isr,w
-  2970  0368  00D5               	movwf	_motor_recibido
-  2971  0369                     i1l1544:
-  2972                           
-  2973                           ;Main_motores.c: 90: PIR1bits.SSPIF = 0;
-  2974  0369  118C               	bcf	12,3	;volatile
-  2975  036A                     i1l1546:
-  2976                           
-  2977                           ;Main_motores.c: 91: SSPCONbits.CKP = 1;
-  2978  036A  1614               	bsf	20,4	;volatile
-  2979  036B                     i1l101:	
-  2980                           ;Main_motores.c: 92: while(!SSPSTATbits.BF);
+  2798                           ; Switch size 1, requested type "simple"
+  2799                           ; Number of cases is 2, Range of values is 0 to 1
+  2800                           ; switch strategies available:
+  2801                           ; Name         Instructions Cycles
+  2802                           ; simple_byte            7     4 (average)
+  2803                           ; direct_byte           14     8 (fixed)
+  2804                           ; jumptable            260     6 (fixed)
+  2805                           ;	Chosen strategy is simple_byte
+  2806  042C  3A00               	xorlw	0	; case 0
+  2807  042D  1903               	skipnz
+  2808  042E  2C0C               	goto	l125
+  2809  042F  3A01               	xorlw	1	; case 1
+  2810  0430  1903               	skipnz
+  2811  0431  2C1C               	goto	l127
+  2812  0432  2C33               	goto	l1533
+  2813  0433                     l1533:
+  2814                           
+  2815                           ;Main_motores.c: 197: antirrebote=0;
+  2816  0433  01F9               	clrf	_antirrebote
+  2817                           
+  2818                           ;Main_motores.c: 198: }
+  2819  0434  2C49               	goto	l130
+  2820  0435                     l1535:
+  2821                           
+  2822                           ;Main_motores.c: 199: else if(motor_recibido==1){
+  2823  0435  0377               	decf	_motor_recibido,w
+  2824  0436  1D03               	btfss	3,2
+  2825  0437  2C39               	goto	u1321
+  2826  0438  2C3A               	goto	u1320
+  2827  0439                     u1321:
+  2828  0439  2C49               	goto	l130
+  2829  043A                     u1320:
+  2830  043A                     l1537:
+  2831                           
+  2832                           ;Main_motores.c: 200: PORTEbits.RE0=1;
+  2833  043A  1283               	bcf	3,5	;RP0=0, select bank0
+  2834  043B  1303               	bcf	3,6	;RP1=0, select bank0
+  2835  043C  1409               	bsf	9,0	;volatile
+  2836  043D                     l1539:
+  2837                           
+  2838                           ;Main_motores.c: 201: _delay((unsigned long)((1)*(8000000/4000.0)));
+  2839  043D  3003               	movlw	3
+  2840  043E  00F4               	movwf	??_servo+1
+  2841  043F  3097               	movlw	151
+  2842  0440  00F3               	movwf	??_servo
+  2843  0441                     u1677:
+  2844  0441  0BF3               	decfsz	??_servo,f
+  2845  0442  2C41               	goto	u1677
+  2846  0443  0BF4               	decfsz	??_servo+1,f
+  2847  0444  2C41               	goto	u1677
+  2848  0445  2C46               	nop2
+  2849  0446                     l1541:
+  2850                           
+  2851                           ;Main_motores.c: 202: PORTEbits.RE0=0;
+  2852  0446  1283               	bcf	3,5	;RP0=0, select bank0
+  2853  0447  1303               	bcf	3,6	;RP1=0, select bank0
+  2854  0448  1009               	bcf	9,0	;volatile
+  2855  0449                     l130:
+  2856  0449  0008               	return
+  2857  044A                     __end_of_servo:
+  2858                           
+  2859                           	psect	text11
+  2860  0332                     __ptext11:	
+  2861 ;; *************** function _isr *****************
+  2862 ;; Defined at:
+  2863 ;;		line 63 in file "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c"
+  2864 ;; Parameters:    Size  Location     Type
+  2865 ;;		None
+  2866 ;; Auto vars:     Size  Location     Type
+  2867 ;;		None
+  2868 ;; Return value:  Size  Location     Type
+  2869 ;;                  1    wreg      void 
+  2870 ;; Registers used:
+  2871 ;;		wreg, status,2, status,0
+  2872 ;; Tracked objects:
+  2873 ;;		On entry : 0/0
+  2874 ;;		On exit  : 0/0
+  2875 ;;		Unchanged: 0/0
+  2876 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  2877 ;;      Params:         0       0       0       0       0
+  2878 ;;      Locals:         0       0       0       0       0
+  2879 ;;      Temps:          3       0       0       0       0
+  2880 ;;      Totals:         3       0       0       0       0
+  2881 ;;Total ram usage:        3 bytes
+  2882 ;; Hardware stack levels used: 1
+  2883 ;; This function calls:
+  2884 ;;		Nothing
+  2885 ;; This function is called by:
+  2886 ;;		Interrupt level 1
+  2887 ;; This function uses a non-reentrant model
+  2888 ;;
+  2889                           
+  2890                           
+  2891                           ;psect for function _isr
+  2892  0332                     _isr:
+  2893  0332                     i1l1561:
+  2894                           
+  2895                           ;Main_motores.c: 66: if (INTCONbits.RBIF)
+  2896  0332  1C0B               	btfss	11,0	;volatile
+  2897  0333  2B35               	goto	u136_21
+  2898  0334  2B36               	goto	u136_20
+  2899  0335                     u136_21:
+  2900  0335  2B43               	goto	i1l1571
+  2901  0336                     u136_20:
+  2902  0336                     i1l1563:
+  2903                           
+  2904                           ;Main_motores.c: 67: {;Main_motores.c: 68: if (PORTB==0b11111101){
+  2905  0336  30FD               	movlw	253
+  2906  0337  1283               	bcf	3,5	;RP0=0, select bank0
+  2907  0338  1303               	bcf	3,6	;RP1=0, select bank0
+  2908  0339  0606               	xorwf	6,w	;volatile
+  2909  033A  1D03               	btfss	3,2
+  2910  033B  2B3D               	goto	u137_21
+  2911  033C  2B3E               	goto	u137_20
+  2912  033D                     u137_21:
+  2913  033D  2B41               	goto	i1l1567
+  2914  033E                     u137_20:
+  2915  033E                     i1l1565:
+  2916                           
+  2917                           ;Main_motores.c: 69: antirrebote=1;
+  2918  033E  01F9               	clrf	_antirrebote
+  2919  033F  0AF9               	incf	_antirrebote,f
+  2920                           
+  2921                           ;Main_motores.c: 70: }
+  2922  0340  2B42               	goto	i1l1569
+  2923  0341                     i1l1567:
+  2924                           
+  2925                           ;Main_motores.c: 71: else{;Main_motores.c: 72: antirrebote=0;
+  2926  0341  01F9               	clrf	_antirrebote
+  2927  0342                     i1l1569:
+  2928                           
+  2929                           ;Main_motores.c: 73: };Main_motores.c: 74: INTCONbits.RBIF=0;
+  2930  0342  100B               	bcf	11,0	;volatile
+  2931  0343                     i1l1571:
+  2932                           
+  2933                           ;Main_motores.c: 75: };Main_motores.c: 77: if(PIR1bits.SSPIF == 1){
+  2934  0343  1283               	bcf	3,5	;RP0=0, select bank0
+  2935  0344  1303               	bcf	3,6	;RP1=0, select bank0
+  2936  0345  1D8C               	btfss	12,3	;volatile
+  2937  0346  2B48               	goto	u138_21
+  2938  0347  2B49               	goto	u138_20
+  2939  0348                     u138_21:
+  2940  0348  2B9F               	goto	i1l109
+  2941  0349                     u138_20:
+  2942  0349                     i1l1573:
+  2943                           
+  2944                           ;Main_motores.c: 79: SSPCONbits.CKP = 0;
+  2945  0349  1214               	bcf	20,4	;volatile
+  2946                           
+  2947                           ;Main_motores.c: 81: if ((SSPCONbits.SSPOV) || (SSPCONbits.WCOL)){
+  2948  034A  1B14               	btfsc	20,6	;volatile
+  2949  034B  2B4D               	goto	u139_21
+  2950  034C  2B4E               	goto	u139_20
+  2951  034D                     u139_21:
+  2952  034D  2B52               	goto	i1l1577
+  2953  034E                     u139_20:
+  2954  034E                     i1l1575:
+  2955  034E  1F94               	btfss	20,7	;volatile
+  2956  034F  2B51               	goto	u140_21
+  2957  0350  2B52               	goto	u140_20
+  2958  0351                     u140_21:
+  2959  0351  2B59               	goto	i1l1585
+  2960  0352                     u140_20:
+  2961  0352                     i1l1577:
+  2962                           
+  2963                           ;Main_motores.c: 82: motor_recibido = SSPBUF;
+  2964  0352  0813               	movf	19,w	;volatile
+  2965  0353  00F0               	movwf	??_isr
+  2966  0354  0870               	movf	??_isr,w
+  2967  0355  00F7               	movwf	_motor_recibido
+  2968  0356                     i1l1579:
+  2969                           
+  2970                           ;Main_motores.c: 83: SSPCONbits.SSPOV = 0;
+  2971  0356  1314               	bcf	20,6	;volatile
+  2972  0357                     i1l1581:
+  2973                           
+  2974                           ;Main_motores.c: 84: SSPCONbits.WCOL = 0;
+  2975  0357  1394               	bcf	20,7	;volatile
+  2976  0358                     i1l1583:
+  2977                           
+  2978                           ;Main_motores.c: 85: SSPCONbits.CKP = 1;
+  2979  0358  1614               	bsf	20,4	;volatile
+  2980  0359                     i1l1585:
   2981                           
-  2982  036B  1683               	bsf	3,5	;RP0=1, select bank1
-  2983  036C  1303               	bcf	3,6	;RP1=0, select bank1
-  2984  036D  1C14               	btfss	20,0	;volatile
-  2985  036E  2B70               	goto	u137_21
-  2986  036F  2B71               	goto	u137_20
-  2987  0370                     u137_21:
-  2988  0370  2B6B               	goto	i1l101
-  2989  0371                     u137_20:
-  2990  0371                     i1l1548:
-  2991                           
-  2992                           ;Main_motores.c: 93: motor_recibido = SSPBUF;
-  2993  0371  1283               	bcf	3,5	;RP0=0, select bank0
-  2994  0372  1303               	bcf	3,6	;RP1=0, select bank0
-  2995  0373  0813               	movf	19,w	;volatile
-  2996  0374  00F0               	movwf	??_isr
-  2997  0375  0870               	movf	??_isr,w
-  2998  0376  00D5               	movwf	_motor_recibido
+  2982                           ;Main_motores.c: 86: };Main_motores.c: 88: if(!SSPSTATbits.D_nA && !SSPSTATbits.R_nW)
+  2983  0359  1683               	bsf	3,5	;RP0=1, select bank1
+  2984  035A  1303               	bcf	3,6	;RP1=0, select bank1
+  2985  035B  1A94               	btfsc	20,5	;volatile
+  2986  035C  2B5E               	goto	u141_21
+  2987  035D  2B5F               	goto	u141_20
+  2988  035E                     u141_21:
+  2989  035E  2B7C               	goto	i1l100
+  2990  035F                     u141_20:
+  2991  035F                     i1l1587:
+  2992  035F  1914               	btfsc	20,2	;volatile
+  2993  0360  2B62               	goto	u142_21
+  2994  0361  2B63               	goto	u142_20
+  2995  0362                     u142_21:
+  2996  0362  2B7C               	goto	i1l100
+  2997  0363                     u142_20:
+  2998  0363                     i1l1589:
   2999                           
-  3000                           ;Main_motores.c: 94: _delay((unsigned long)((200)*(8000000/4000000.0)));
-  3001  0377  3085               	movlw	133
-  3002  0378  00F0               	movwf	??_isr
-  3003  0379                     u161_27:
-  3004  0379  0BF0               	decfsz	??_isr,f
-  3005  037A  2B79               	goto	u161_27
-  3006                           
-  3007                           ;Main_motores.c: 96: }
-  3008  037B  2B9C               	goto	i1l104
-  3009  037C                     i1l100:
-  3010                           
-  3011                           ;Main_motores.c: 97: else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
-  3012  037C  1A94               	btfsc	20,5	;volatile
-  3013  037D  2B7F               	goto	u138_21
-  3014  037E  2B80               	goto	u138_20
-  3015  037F                     u138_21:
-  3016  037F  2B9C               	goto	i1l104
-  3017  0380                     u138_20:
-  3018  0380                     i1l1550:
-  3019  0380  1D14               	btfss	20,2	;volatile
-  3020  0381  2B83               	goto	u139_21
-  3021  0382  2B84               	goto	u139_20
-  3022  0383                     u139_21:
-  3023  0383  2B9C               	goto	i1l104
-  3024  0384                     u139_20:
-  3025  0384                     i1l1552:
-  3026                           
-  3027                           ;Main_motores.c: 98: motor_recibido = SSPBUF;
-  3028  0384  1283               	bcf	3,5	;RP0=0, select bank0
-  3029  0385  1303               	bcf	3,6	;RP1=0, select bank0
-  3030  0386  0813               	movf	19,w	;volatile
-  3031  0387  00F0               	movwf	??_isr
-  3032  0388  0870               	movf	??_isr,w
-  3033  0389  00D5               	movwf	_motor_recibido
-  3034  038A                     i1l1554:
+  3000                           ;Main_motores.c: 89: {;Main_motores.c: 90: motor_recibido= SSPBUF;
+  3001  0363  1283               	bcf	3,5	;RP0=0, select bank0
+  3002  0364  1303               	bcf	3,6	;RP1=0, select bank0
+  3003  0365  0813               	movf	19,w	;volatile
+  3004  0366  00F0               	movwf	??_isr
+  3005  0367  0870               	movf	??_isr,w
+  3006  0368  00F7               	movwf	_motor_recibido
+  3007  0369                     i1l1591:
+  3008                           
+  3009                           ;Main_motores.c: 91: PIR1bits.SSPIF = 0;
+  3010  0369  118C               	bcf	12,3	;volatile
+  3011  036A                     i1l1593:
+  3012                           
+  3013                           ;Main_motores.c: 92: SSPCONbits.CKP = 1;
+  3014  036A  1614               	bsf	20,4	;volatile
+  3015  036B                     i1l101:	
+  3016                           ;Main_motores.c: 93: while(!SSPSTATbits.BF);
+  3017                           
+  3018  036B  1683               	bsf	3,5	;RP0=1, select bank1
+  3019  036C  1303               	bcf	3,6	;RP1=0, select bank1
+  3020  036D  1C14               	btfss	20,0	;volatile
+  3021  036E  2B70               	goto	u143_21
+  3022  036F  2B71               	goto	u143_20
+  3023  0370                     u143_21:
+  3024  0370  2B6B               	goto	i1l101
+  3025  0371                     u143_20:
+  3026  0371                     i1l1595:
+  3027                           
+  3028                           ;Main_motores.c: 94: motor_recibido = SSPBUF;
+  3029  0371  1283               	bcf	3,5	;RP0=0, select bank0
+  3030  0372  1303               	bcf	3,6	;RP1=0, select bank0
+  3031  0373  0813               	movf	19,w	;volatile
+  3032  0374  00F0               	movwf	??_isr
+  3033  0375  0870               	movf	??_isr,w
+  3034  0376  00F7               	movwf	_motor_recibido
   3035                           
-  3036                           ;Main_motores.c: 99: BF = 0;
-  3037  038A  1683               	bsf	3,5	;RP0=1, select bank1
-  3038  038B  1303               	bcf	3,6	;RP1=0, select bank1
-  3039  038C  1014               	bcf	20,0	;volatile
-  3040                           
-  3041                           ;Main_motores.c: 100: SSPBUF = temperatura_aprox;
-  3042  038D  0877               	movf	_temperatura_aprox,w
-  3043  038E  1283               	bcf	3,5	;RP0=0, select bank0
-  3044  038F  1303               	bcf	3,6	;RP1=0, select bank0
-  3045  0390  0093               	movwf	19	;volatile
-  3046  0391                     i1l1556:
-  3047                           
-  3048                           ;Main_motores.c: 101: SSPCONbits.CKP = 1;
-  3049  0391  1614               	bsf	20,4	;volatile
-  3050                           
-  3051                           ;Main_motores.c: 102: _delay((unsigned long)((200)*(8000000/4000000.0)));
-  3052  0392  3085               	movlw	133
-  3053  0393  00F0               	movwf	??_isr
-  3054  0394                     u162_27:
-  3055  0394  0BF0               	decfsz	??_isr,f
-  3056  0395  2B94               	goto	u162_27
-  3057  0396                     i1l106:	
-  3058                           ;Main_motores.c: 103: while(SSPSTATbits.BF);
-  3059                           
-  3060  0396  1683               	bsf	3,5	;RP0=1, select bank1
-  3061  0397  1303               	bcf	3,6	;RP1=0, select bank1
-  3062  0398  1814               	btfsc	20,0	;volatile
-  3063  0399  2B9B               	goto	u140_21
-  3064  039A  2B9C               	goto	u140_20
-  3065  039B                     u140_21:
-  3066  039B  2B96               	goto	i1l106
-  3067  039C                     u140_20:
-  3068  039C                     i1l104:
-  3069                           
-  3070                           ;Main_motores.c: 104: };Main_motores.c: 106: PIR1bits.SSPIF = 0;
-  3071  039C  1283               	bcf	3,5	;RP0=0, select bank0
-  3072  039D  1303               	bcf	3,6	;RP1=0, select bank0
-  3073  039E  118C               	bcf	12,3	;volatile
-  3074  039F                     i1l109:
-  3075  039F  0872               	movf	??_isr+2,w
-  3076  03A0  008A               	movwf	10
-  3077  03A1  0E71               	swapf	??_isr+1,w
-  3078  03A2  0083               	movwf	3
-  3079  03A3  0EFE               	swapf	btemp,f
-  3080  03A4  0E7E               	swapf	btemp,w
-  3081  03A5  0009               	retfie
-  3082  03A6                     __end_of_isr:
-  3083  007E                     btemp	set	126	;btemp
-  3084  007E                     wtemp0	set	126
-  3085                           
-  3086                           	psect	intentry
-  3087  0004                     __pintentry:	
-  3088                           ;incstack = 0
-  3089                           ; Regs used in _isr: [wreg+status,2+status,0]
-  3090                           
-  3091  0004                     interrupt_function:
-  3092  007E                     saved_w	set	btemp
-  3093  0004  00FE               	movwf	btemp
-  3094  0005  0E03               	swapf	3,w
-  3095  0006  00F1               	movwf	??_isr+1
-  3096  0007  080A               	movf	10,w
-  3097  0008  00F2               	movwf	??_isr+2
-  3098  0009  120A  118A  2B32   	ljmp	_isr
-  3099                           
-  3100                           	psect	config
-  3101                           
-  3102                           ;Config register CONFIG1 @ 0x2007
-  3103                           ;	Oscillator Selection bits
-  3104                           ;	FOSC = INTRC_NOCLKOUT, INTOSCIO oscillator: I/O function on RA6/OSC2/CLKOUT pin, I/O f
+  3036                           ;Main_motores.c: 95: _delay((unsigned long)((200)*(8000000/4000000.0)));
+  3037  0377  3085               	movlw	133
+  3038  0378  00F0               	movwf	??_isr
+  3039  0379                     u168_27:
+  3040  0379  0BF0               	decfsz	??_isr,f
+  3041  037A  2B79               	goto	u168_27
+  3042                           
+  3043                           ;Main_motores.c: 97: }
+  3044  037B  2B9C               	goto	i1l104
+  3045  037C                     i1l100:
+  3046                           
+  3047                           ;Main_motores.c: 98: else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
+  3048  037C  1A94               	btfsc	20,5	;volatile
+  3049  037D  2B7F               	goto	u144_21
+  3050  037E  2B80               	goto	u144_20
+  3051  037F                     u144_21:
+  3052  037F  2B9C               	goto	i1l104
+  3053  0380                     u144_20:
+  3054  0380                     i1l1597:
+  3055  0380  1D14               	btfss	20,2	;volatile
+  3056  0381  2B83               	goto	u145_21
+  3057  0382  2B84               	goto	u145_20
+  3058  0383                     u145_21:
+  3059  0383  2B9C               	goto	i1l104
+  3060  0384                     u145_20:
+  3061  0384                     i1l1599:
+  3062                           
+  3063                           ;Main_motores.c: 99: z = SSPBUF;
+  3064  0384  1283               	bcf	3,5	;RP0=0, select bank0
+  3065  0385  1303               	bcf	3,6	;RP1=0, select bank0
+  3066  0386  0813               	movf	19,w	;volatile
+  3067  0387  00F0               	movwf	??_isr
+  3068  0388  0870               	movf	??_isr,w
+  3069  0389  00D5               	movwf	_z
+  3070  038A                     i1l1601:
+  3071                           
+  3072                           ;Main_motores.c: 100: BF = 0;
+  3073  038A  1683               	bsf	3,5	;RP0=1, select bank1
+  3074  038B  1303               	bcf	3,6	;RP1=0, select bank1
+  3075  038C  1014               	bcf	20,0	;volatile
+  3076                           
+  3077                           ;Main_motores.c: 101: SSPBUF = temperatura_aprox;
+  3078  038D  0878               	movf	_temperatura_aprox,w
+  3079  038E  1283               	bcf	3,5	;RP0=0, select bank0
+  3080  038F  1303               	bcf	3,6	;RP1=0, select bank0
+  3081  0390  0093               	movwf	19	;volatile
+  3082  0391                     i1l1603:
+  3083                           
+  3084                           ;Main_motores.c: 102: SSPCONbits.CKP = 1;
+  3085  0391  1614               	bsf	20,4	;volatile
+  3086                           
+  3087                           ;Main_motores.c: 103: _delay((unsigned long)((200)*(8000000/4000000.0)));
+  3088  0392  3085               	movlw	133
+  3089  0393  00F0               	movwf	??_isr
+  3090  0394                     u169_27:
+  3091  0394  0BF0               	decfsz	??_isr,f
+  3092  0395  2B94               	goto	u169_27
+  3093  0396                     i1l106:	
+  3094                           ;Main_motores.c: 104: while(SSPSTATbits.BF);
+  3095                           
+  3096  0396  1683               	bsf	3,5	;RP0=1, select bank1
+  3097  0397  1303               	bcf	3,6	;RP1=0, select bank1
+  3098  0398  1814               	btfsc	20,0	;volatile
+  3099  0399  2B9B               	goto	u146_21
+  3100  039A  2B9C               	goto	u146_20
+  3101  039B                     u146_21:
+  3102  039B  2B96               	goto	i1l106
+  3103  039C                     u146_20:
+  3104  039C                     i1l104:
+  3105                           
+  3106                           ;Main_motores.c: 105: };Main_motores.c: 107: PIR1bits.SSPIF = 0;
+  3107  039C  1283               	bcf	3,5	;RP0=0, select bank0
+  3108  039D  1303               	bcf	3,6	;RP1=0, select bank0
+  3109  039E  118C               	bcf	12,3	;volatile
+  3110  039F                     i1l109:
+  3111  039F  0872               	movf	??_isr+2,w
+  3112  03A0  008A               	movwf	10
+  3113  03A1  0E71               	swapf	??_isr+1,w
+  3114  03A2  0083               	movwf	3
+  3115  03A3  0EFE               	swapf	btemp,f
+  3116  03A4  0E7E               	swapf	btemp,w
+  3117  03A5  0009               	retfie
+  3118  03A6                     __end_of_isr:
+  3119  007E                     btemp	set	126	;btemp
+  3120  007E                     wtemp0	set	126
+  3121                           
+  3122                           	psect	intentry
+  3123  0004                     __pintentry:	
+  3124                           ;incstack = 0
+  3125                           ; Regs used in _isr: [wreg+status,2+status,0]
+  3126                           
+  3127  0004                     interrupt_function:
+  3128  007E                     saved_w	set	btemp
+  3129  0004  00FE               	movwf	btemp
+  3130  0005  0E03               	swapf	3,w
+  3131  0006  00F1               	movwf	??_isr+1
+  3132  0007  080A               	movf	10,w
+  3133  0008  00F2               	movwf	??_isr+2
+  3134  0009  120A  118A  2B32   	ljmp	_isr
+  3135                           
+  3136                           	psect	config
+  3137                           
+  3138                           ;Config register CONFIG1 @ 0x2007
+  3139                           ;	Oscillator Selection bits
+  3140                           ;	FOSC = INTRC_NOCLKOUT, INTOSCIO oscillator: I/O function on RA6/OSC2/CLKOUT pin, I/O f
       +                          unction on RA7/OSC1/CLKIN
-  3105                           ;	Watchdog Timer Enable bit
-  3106                           ;	WDTE = OFF, WDT disabled and can be enabled by SWDTEN bit of the WDTCON register
-  3107                           ;	Power-up Timer Enable bit
-  3108                           ;	PWRTE = OFF, PWRT disabled
-  3109                           ;	RE3/MCLR pin function select bit
-  3110                           ;	MCLRE = OFF, RE3/MCLR pin function is digital input, MCLR internally tied to VDD
-  3111                           ;	Code Protection bit
-  3112                           ;	CP = OFF, Program memory code protection is disabled
-  3113                           ;	Data Code Protection bit
-  3114                           ;	CPD = OFF, Data memory code protection is disabled
-  3115                           ;	Brown Out Reset Selection bits
-  3116                           ;	BOREN = OFF, BOR disabled
-  3117                           ;	Internal External Switchover bit
-  3118                           ;	IESO = OFF, Internal/External Switchover mode is disabled
-  3119                           ;	Fail-Safe Clock Monitor Enabled bit
-  3120                           ;	FCMEN = OFF, Fail-Safe Clock Monitor is disabled
-  3121                           ;	Low Voltage Programming Enable bit
-  3122                           ;	LVP = OFF, RB3 pin has digital I/O, HV on MCLR must be used for programming
-  3123                           ;	In-Circuit Debugger Mode bit
-  3124                           ;	DEBUG = 0x1, unprogrammed default
-  3125  2007                     	org	8199
-  3126  2007  20D4               	dw	8404
-  3127                           
-  3128                           ;Config register CONFIG2 @ 0x2008
-  3129                           ;	Brown-out Reset Selection bit
-  3130                           ;	BOR4V = BOR40V, Brown-out Reset set to 4.0V
-  3131                           ;	Flash Program Memory Self Write Enable bits
-  3132                           ;	WRT = OFF, Write protection off
-  3133  2008                     	org	8200
-  3134  2008  3FFF               	dw	16383
+  3141                           ;	Watchdog Timer Enable bit
+  3142                           ;	WDTE = OFF, WDT disabled and can be enabled by SWDTEN bit of the WDTCON register
+  3143                           ;	Power-up Timer Enable bit
+  3144                           ;	PWRTE = OFF, PWRT disabled
+  3145                           ;	RE3/MCLR pin function select bit
+  3146                           ;	MCLRE = OFF, RE3/MCLR pin function is digital input, MCLR internally tied to VDD
+  3147                           ;	Code Protection bit
+  3148                           ;	CP = OFF, Program memory code protection is disabled
+  3149                           ;	Data Code Protection bit
+  3150                           ;	CPD = OFF, Data memory code protection is disabled
+  3151                           ;	Brown Out Reset Selection bits
+  3152                           ;	BOREN = OFF, BOR disabled
+  3153                           ;	Internal External Switchover bit
+  3154                           ;	IESO = OFF, Internal/External Switchover mode is disabled
+  3155                           ;	Fail-Safe Clock Monitor Enabled bit
+  3156                           ;	FCMEN = OFF, Fail-Safe Clock Monitor is disabled
+  3157                           ;	Low Voltage Programming Enable bit
+  3158                           ;	LVP = OFF, RB3 pin has digital I/O, HV on MCLR must be used for programming
+  3159                           ;	In-Circuit Debugger Mode bit
+  3160                           ;	DEBUG = 0x1, unprogrammed default
+  3161  2007                     	org	8199
+  3162  2007  20D4               	dw	8404
+  3163                           
+  3164                           ;Config register CONFIG2 @ 0x2008
+  3165                           ;	Brown-out Reset Selection bit
+  3166                           ;	BOR4V = BOR40V, Brown-out Reset set to 4.0V
+  3167                           ;	Flash Program Memory Self Write Enable bits
+  3168                           ;	WRT = OFF, Write protection off
+  3169  2008                     	org	8200
+  3170  2008  3FFF               	dw	16383
 
 Data Sizes:
     Strings     0
@@ -3324,176 +3360,179 @@ DATA                 0      0      43      12        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.32 build 20210201212658 
-Symbol Table                                                                                   Mon Aug 23 12:57:02 2021
+Symbol Table                                                                                   Thu Aug 26 13:45:40 2021
 
-           ___fldiv@aexp 0043             ___fldiv@bexp 0042                        _z 0056  
+           ___fldiv@aexp 0043             ___fldiv@bexp 0042                        _z 0055  
            ___fldiv@sign 003B              _SSPSTATbits 0094                       _BF 04A0  
-                    l120 0477                      l114 04E2                      l204 04A6  
-                    l125 040C                      l133 04C2                      l127 041C  
-                    l136 03F7                      l129 0439                      l226 0508  
-                    l138 03FA                      l193 04DC                      l505 031C  
-                    l508 0331                      l820 047A                      l661 0079  
-                    l830 0490                      l822 0480                      l663 01F9  
-                    l751 0263                      l840 04F5                      l832 0492  
-                    l824 0482                      l745 021E                      l842 04FA  
-                    l850 04D2                      l834 0496                      l826 0488  
-                    l818 0479                      l498 0331                      l683 01DD  
-                    l747 02B5                      l844 0500                      l860 04D9  
-                    l852 04D3                      l828 048A                      l685 01ED  
-                    l677 016B                      l846 0505                      l854 04D4  
-                    l838 0498                      l758 027F                      l759 028B  
-                    l856 04D5                      l848 04C4                      l858 04D6  
-                    _GIE 005F                      u540 0400                      u541 03FF  
-                    u550 0406                      u551 0405                      u800 0310  
-                    u801 030F                      u900 0081                      u820 0321  
-                    u740 02C3                      u901 0080                      u821 0320  
-                    u741 02C2                      u910 009F                      u830 0326  
-                    u750 02DA                      u911 009E                      u831 0325  
-                    u815 0313                      u920 00D9                      u840 002E  
-                    u760 02F0                      u921 00D8                      u841 002D  
-                    u761 02EF                      u850 0034                      u770 02F7  
-                    u851 0033                      u771 02F6                      u755 02D5  
-                    u860 0039                      u861 0038                      u950 00EF  
-                    u870 005B                      u790 0309                      u951 00EE  
-                    u935 00DB                      u871 005A                      u791 0308  
-                    u880 0061                      u945 00E4                      u881 0060  
-                    u785 02F9                      u970 010B                      u890 0066  
-                    u971 010A                      u891 0065                      u980 0124  
-                    u981 0123                      u965 00F2                      u990 012C  
-                    u991 012B                      u975 0107                      _isr 0332  
-    __size_of_ADC_config 0014             ___fltol@exp1 004E                     l1100 0457  
-                   l1110 0466                     l1102 045A                     l1120 0472  
-                   l1112 0469                     l1104 045E                     l1130 0406  
-                   l1122 0473                     l1114 046A                     l1106 0462  
-                   l1140 0428                     l1132 040A                     l1124 0474  
-                   l1116 0470                     l1108 0464                     l1142 042C  
-                   l1134 040F                     l1126 03FB                     l1118 0471  
-                   l1310 001D                     l1136 0418                     l1128 0400  
-                   l1400 0137                     l1320 0034                     l1312 0024  
-                   l1304 0311                     l1138 041F                     l1146 042E  
-                   l1090 0442                     l1410 014F                     l1402 013B  
-                   l1330 004C                     l1322 0039                     l1314 002A  
-                   l1306 0321                     l1092 0443                     l1084 043A  
-                   l1420 0170                     l1412 0150                     l1404 013C  
-                   l1340 0061                     l1332 0051                     l1324 0041  
-                   l1316 002E                     l1308 0326                     l1500 04AE  
-                   l1094 0445                     l1086 043E                     l1422 0175  
-                   l1430 01A6                     l1414 0154                     l1406 0145  
-                   l1350 0081                     l1342 0066                     l1334 0057  
-                   l1326 0042                     l1318 002F                     l1502 04B6  
-                   l1096 044C                     l1088 043F                     l1440 01DC  
-                   l1432 01B3                     l1424 0183                     l1416 0168  
-                   l1408 014B                     l1360 009F                     l1352 008D  
-                   l1344 006E                     l1336 005B                     l1328 0044  
-                   l1280 02CC                     l1600 02A8                     l1504 04BF  
-                   l1098 0452                     l1442 01E3                     l1434 01C1  
-                   l1426 0187                     l1370 00CA                     l1354 0091  
-                   l1346 006F                     l1338 005C                     l1290 02F0  
-                   l1282 02E1                     l1274 02B6                     l1602 02AC  
-                   l1610 03E7                     l1444 01E7                     l1436 01D0  
-                   l1428 01A0                     l1380 00EF                     l1372 00D2  
-                   l1364 00A8                     l1348 0071                     l1284 02E2  
-                   l1276 02C3                     l1604 02AD                     l1612 03ED  
-                   l1620 04EC                     l1446 01E9                     l1438 01D4  
-                   l1390 011A                     l1382 00F0                     l1374 00D4  
-                   l1366 00BA                     l1358 009A                     l1286 02EA  
-                   l1614 03F3                     l1376 00D9                     l1384 00F9  
-                   l1392 011E                     l1368 00C2                     l1296 02F8  
-                   l1288 02EC                     l1608 03A6                     l1616 04DD  
-                   l1394 0124                     l1386 010B                     l1378 00EB  
-                   l1298 030A                     l1570 0216                     l1618 04E7  
-                   l1396 012C                     l1388 010C                     l1580 0241  
-                   l1572 0226                     l1564 01FD                     l1398 012E  
-                   l1590 0275                     l1582 0248                     l1566 0202  
-                   l1592 0279                     l1584 024C                     l1576 022F  
-                   l1568 0206                     l1496 04A7                     l1594 0283  
-                   l1586 025A                     l1578 0234                     l1498 04AD  
-                   l1596 028D                     l1588 026A                     l1598 02A3  
-                   ?_isr 0070                     u1010 013B                     u1011 013A  
-                   u1100 01B3                     u1101 01B2                     u1005 0130  
-                   u1110 01D0                     u1030 014F                     u1111 01CF  
-                   u1031 014E                     u1120 01E7                     u1040 0154  
-                   u1121 01E6                     u1105 01AF                     u1041 0153  
-                   u1025 013E                     u1050 0168                     u1115 01CC  
-                   u1051 0167                     u1060 016F                     u1061 016E  
-                   u1070 0175                     u1071 0174                     u1080 0187  
-                   u1081 0186                     u1090 0196                     u1410 0202  
-                   u1411 0201                     u1500 027F                     u1420 0206  
-                   u1501 027E                     u1421 0205                     u1510 0283  
-                   u1430 0226                     u1270 04AD                     u1095 0191  
-                   u1511 0282                     u1431 0225                     u1271 04AC  
-                   u1520 0298                     u1530 02A8                     u1450 0247  
-                   u1531 02A7                     u1451 0246                     u1540 02AC  
-                   u1541 02AB                     u1525 0293                     u1445 0239  
-                   u1470 0269                     u1550 03ED                     u1607 0423  
-                   u1471 0268                     u1551 03EC                     u1560 03F3  
-                   u1465 025B                     u1561 03F2                     u1490 0279  
-                   u1491 0278                     u1485 026E                     u1577 04BA  
-                   u1587 0502                     u1597 0413                     _PEIE 005E  
-                   _main 04DD                     _temp 03A6                     btemp 007E  
-                   start 000C          ___fldiv@new_exp 003C           osc_config@freq 0073  
-                  ??_isr 0070            ___fltol@sign1 004D                    ?_main 0070  
-        __end_of___fldiv 01FA                    ?_temp 0070          __end_of___fltol 0332  
-                  _ANSEL 0188                    i1l100 037C                    i1l101 036B  
-                  i1l104 039C                    i1l106 0396                    i1l109 039F  
-                  _SPBRG 0099                    _PORTB 0006                    _PORTC 0007  
-                  _PORTD 0008                    _PORTE 0009                    _TRISD 0088  
-                  _SSPIE 0463                    _SSPIF 0063                    _servo 03FB  
-                  _setup 043A                    pclath 000A                    status 0003  
-                  wtemp0 007E          __initialization 000F             __end_of_main 04F5  
-           __end_of_temp 03FB                   ??_main 0077                   ??_temp 004F  
-                 _ADRESL 009E                   _CCPR1L 0015                   _BASURA 0054  
-      _temperatura_aprox 0077                   ?_servo 0070                   ?_setup 0070  
-                 _ANSELH 0189                   i1l1520 0341                   i1l1530 0352  
-                 i1l1522 0342                   i1l1514 0332                   i1l1540 035F  
-                 i1l1532 0356                   i1l1516 0336                   i1l1524 0343  
-                 i1l1550 0380                   i1l1542 0363                   i1l1534 0357  
-                 i1l1526 0349                   i1l1518 033E                   i1l1552 0384  
-                 i1l1544 0369                   i1l1536 0358                   i1l1528 034E  
-                 i1l1554 038A                   i1l1546 036A                   i1l1538 0359  
-                 i1l1556 0391                   i1l1548 0371                   u130_20 0336  
-                 u130_21 0335                   u131_20 033E                   u131_21 033D  
-                 u140_20 039C                   u132_20 0349                   u140_21 039B  
-                 u132_21 0348                   u133_20 034E                   u133_21 034D  
-                 u134_20 0352                   u134_21 0351                   u135_20 035F  
-                 u135_21 035E                   u136_20 0363                   u136_21 0362  
-                 u137_20 0371                   u137_21 0370                   u161_27 0379  
-                 u138_20 0380                   u138_21 037F                   u162_27 0394  
-                 u139_20 0384                   u139_21 0383                   _SPBRGH 009A  
-                 _SSPADD 0093                   _TRISC3 043B                   _TRISC4 043C  
-                 _SSPBUF 0013                   _SSPCON 0014         __end_of___xxtofl 02B6  
-           ??_ADC_config 0073                ??___fldiv 0032                ??___fltol 0048  
-                 saved_w 007E       __end_of_ADC_config 0509             ___xxtofl@arg 0026  
-           ___xxtofl@exp 0025             ___xxtofl@val 0073  __end_of__initialization 0019  
-             ___fltol@f1 0044           __pcstackCOMMON 0070  __size_of_I2C_Slave_Init 001A  
-          __end_of_servo 043A            __end_of_setup 0478           _OPTION_REGbits 0081  
-                ??_servo 0073                  ??_setup 0074    I2C_Slave_Init@address 0073  
-             __pbssBANK0 0054               __pmaintext 04DD               __pintentry 0004  
-              ?___xxtofl 0073                  _SSPCON2 0091                  _SSPSTAT 0094  
-                ___fldiv 001D                  ___fltol 02B6                _ANSELbits 0188  
-                __ptext1 04A7                  __ptext2 03A6                  __ptext3 01FA  
-                __ptext4 02B6                  __ptext5 001D                  __ptext6 043A  
-                __ptext7 0478                  __ptext8 04C3                  __ptext9 04F5  
-           __size_of_isr 0074               ??___xxtofl 0020     end_of_initialization 0019  
-             _osc_config 0478                _RCSTAbits 0018           _I2C_Slave_Init 04C3  
-              _PORTBbits 0006                _PORTEbits 0009               _toggle_adc 04A7  
-          ___xxtofl@sign 0024                _TRISBbits 0086                _TRISCbits 0087  
-              _TRISDbits 0088                _TRISEbits 0089              ___fldiv@grs 003E  
-            ___fldiv@rem 0037              _CCP1CONbits 0017                _TXSTAbits 0098  
- __end_of_I2C_Slave_Init 04DD              _BAUDCTLbits 0187      start_initialization 000F  
-            __end_of_isr 03A6              ?_osc_config 0070          ?_I2C_Slave_Init 0070  
-              ___fldiv@a 002A                ___fldiv@b 002E              ?_toggle_adc 0070  
-            __pbssCOMMON 0077                ___latbits 0002            __pcstackBANK0 0020  
-         _motor_recibido 0055        __size_of___xxtofl 00BC                 ?___fldiv 002A  
-               ?___fltol 0044      __size_of_osc_config 002F           __size_of_servo 003F  
-         __size_of_setup 003E        interrupt_function 0004                 _IOCBbits 0096  
-       _conversion_total 0057                 _PIR1bits 000C      __size_of_toggle_adc 001C  
-            _antirrebote 0079               _ADCON0bits 001F               _ADCON1bits 009F  
-               _WPUBbits 0095              _conversion1 0058               _ADC_config 04F5  
-       __size_of___fldiv 01DD         __size_of___fltol 007C                 ___xxtofl 01FA  
-               __ptext10 03FB                 __ptext11 0332                 _botonazo 0078  
-       ??_I2C_Slave_Init 0073             ??_osc_config 0073            __size_of_main 0018  
-          __size_of_temp 0055               _INTCONbits 000B             ??_toggle_adc 0073  
-     __end_of_osc_config 04A7                 intlevel1 0000               _OSCCONbits 008F  
-            ?_ADC_config 0070       __end_of_toggle_adc 04C3              _SSPCON2bits 0091  
-             _SSPCONbits 0014  
+                    l120 0487                      l130 0449                      l114 04F2  
+                    l125 040C                      l205 04B6                      l134 04D2  
+                    l127 041C                      l137 03F7                      l227 0518  
+                    l139 03FA                      l194 04EC                      l506 031C  
+                    l509 0331                      l821 048A                      l662 0079  
+                    l831 04A0                      l823 0490                      l664 01F9  
+                    l760 028B                      l752 0263                      l841 0505  
+                    l833 04A2                      l825 0492                      l746 021E  
+                    l843 050A                      l851 04E2                      l835 04A6  
+                    l827 0498                      l819 0489                      l499 0331  
+                    l684 01DD                      l748 02B5                      l845 0510  
+                    l861 04E9                      l853 04E3                      l829 049A  
+                    l686 01ED                      l678 016B                      l847 0515  
+                    l855 04E4                      l839 04A8                      l759 027F  
+                    l857 04E5                      l849 04D4                      l859 04E6  
+                    _GIE 005F                      u810 0309                      u811 0308  
+                    u900 0061                      u820 0310                      u901 0060  
+                    u821 030F                      u805 02F9                      u910 0066  
+                    u911 0065                      u920 0081                      u840 0321  
+                    u760 02C3                      u921 0080                      u841 0320  
+                    u761 02C2                      u930 009F                      u850 0326  
+                    u770 02DA                      u931 009E                      u851 0325  
+                    u835 0313                      u940 00D9                      u860 002E  
+                    u780 02F0                      u941 00D8                      u861 002D  
+                    u781 02EF                      u870 0034                      u790 02F7  
+                    u871 0033                      u791 02F6                      u775 02D5  
+                    u880 0039                      u881 0038                      u970 00EF  
+                    u890 005B                      u971 00EE                      u955 00DB  
+                    u891 005A                      u965 00E4                      u990 010B  
+                    u991 010A                      u985 00F2                      u995 0107  
+                    _isr 0332      __size_of_ADC_config 0014             ___fltol@exp1 004E  
+                   l1101 0467                     l1111 0476                     l1103 046A  
+                   l1121 0482                     l1113 0479                     l1105 046E  
+                   l1123 0483                     l1115 047A                     l1107 0472  
+                   l1125 0484                     l1117 0480                     l1109 0474  
+                   l1301 02EC                     l1119 0481                     l1303 02F0  
+                   l1311 030A                     l1401 010C                     l1321 0326  
+                   l1091 0452                     l1411 012E                     l1403 011A  
+                   l1331 002F                     l1323 001D                     l1093 0453  
+                   l1085 044A                     l1413 0137                     l1421 014B  
+                   l1405 011E                     l1333 0034                     l1341 0044  
+                   l1325 0024                     l1317 0311                     l1309 02F8  
+                   l1511 0400                     l1095 0455                     l1087 044E  
+                   l1423 014F                     l1415 013B                     l1407 0124  
+                   l1351 005C                     l1343 004C                     l1335 0039  
+                   l1327 002A                     l1319 0321                     l1521 0419  
+                   l1513 0406                     l1097 045C                     l1089 044F  
+                   l1441 01A0                     l1433 0170                     l1425 0150  
+                   l1417 013C                     l1409 012C                     l1353 0061  
+                   l1361 0071                     l1345 0051                     l1337 0041  
+                   l1329 002E                     l1523 041D                     l1531 042B  
+                   l1099 0462                     l1451 01D4                     l1435 0175  
+                   l1443 01A6                     l1427 0154                     l1419 0145  
+                   l1363 0081                     l1371 009A                     l1355 0066  
+                   l1347 0057                     l1339 0042                     l1611 01FD  
+                   l1541 0446                     l1525 0426                     l1533 0433  
+                   l1517 040D                     l1509 03FB                     l1453 01DC  
+                   l1445 01B3                     l1437 0183                     l1429 0168  
+                   l1381 00C2                     l1373 009F                     l1365 008D  
+                   l1357 006E                     l1349 005B                     l1293 02CC  
+                   l1613 0202                     l1527 0429                     l1519 0416  
+                   l1535 0435                     l1455 01E3                     l1447 01C1  
+                   l1439 0187                     l1391 00EB                     l1383 00CA  
+                   l1367 0091                     l1359 006F                     l1295 02E1  
+                   l1287 02B6                     l1631 024C                     l1623 022F  
+                   l1615 0206                     l1551 04CF                     l1543 04B7  
+                   l1537 043A                     l1457 01E7                     l1449 01D0  
+                   l1393 00EF                     l1385 00D2                     l1377 00A8  
+                   l1297 02E2                     l1289 02C3                     l1641 0283  
+                   l1633 025A                     l1625 0234                     l1617 0216  
+                   l1545 04BD                     l1539 043D                     l1459 01E9  
+                   l1395 00F0                     l1387 00D4                     l1379 00BA  
+                   l1299 02EA                     l1651 02AD                     l1643 028D  
+                   l1635 026A                     l1627 0241                     l1619 0226  
+                   l1547 04BE                     l1389 00D9                     l1397 00F9  
+                   l1645 02A3                     l1637 0275                     l1629 0248  
+                   l1661 03F3                     l1549 04C6                     l1399 010B  
+                   l1647 02A8                     l1639 0279                     l1655 03A6  
+                   l1663 04ED                     l1649 02AC                     l1657 03E7  
+                   l1665 04F7                     l1659 03ED                     l1667 04FC  
+                   ?_isr 0070                     u1000 0124                     u1001 0123  
+                   u1010 012C                     u1011 012B                     u1100 0187  
+                   u1101 0186                     u1110 0196                     u1030 013B  
+                   u1031 013A                     u1120 01B3                     u1121 01B2  
+                   u1025 0130                     u1130 01D0                     u1050 014F  
+                   u1131 01CF                     u1115 0191                     u1051 014E  
+                   u1300 0406                     u1140 01E7                     u1060 0154  
+                   u1301 0405                     u1141 01E6                     u1125 01AF  
+                   u1061 0153                     u1045 013E                     u1310 040B  
+                   u1070 0168                     u1311 040A                     u1135 01CC  
+                   u1071 0167                     u1320 043A                     u1080 016F  
+                   u1321 0439                     u1081 016E                     u1090 0175  
+                   u1330 04BD                     u1091 0174                     u1331 04BC  
+                   u1510 0247                     u1511 0246                     u1600 02AC  
+                   u1601 02AB                     u1505 0239                     u1290 0400  
+                   u1530 0269                     u1610 03ED                     u1291 03FF  
+                   u1531 0268                     u1611 03EC                     u1620 03F3  
+                   u1525 025B                     u1621 03F2                     u1550 0279  
+                   u1470 0202                     u1551 0278                     u1471 0201  
+                   u1560 027F                     u1480 0206                     u1561 027E  
+                   u1545 026E                     u1481 0205                     u1570 0283  
+                   u1490 0226                     u1571 0282                     u1491 0225  
+                   u1580 0298                     u1637 04CA                     u1590 02A8  
+                   u1647 0512                     u1591 02A7                     u1657 0411  
+                   u1585 0293                     u1667 0421                     u1677 0441  
+                   _PEIE 005E                     _main 04ED                     _temp 03A6  
+                   btemp 007E                     start 000C          ___fldiv@new_exp 003C  
+         osc_config@freq 0073                    ??_isr 0070            ___fltol@sign1 004D  
+                  ?_main 0070          __end_of___fldiv 01FA                    ?_temp 0070  
+        __end_of___fltol 0332                    _ANSEL 0188                    i1l100 037C  
+                  i1l101 036B                    i1l104 039C                    i1l106 0396  
+                  i1l109 039F                    _SPBRG 0099                    _PORTB 0006  
+                  _PORTC 0007                    _PORTD 0008                    _PORTE 0009  
+                  _TRISD 0088                    _SSPIE 0463                    _SSPIF 0063  
+                  _servo 03FB                    _setup 044A                    pclath 000A  
+                  status 0003                    wtemp0 007E          __initialization 000F  
+           __end_of_main 0505             __end_of_temp 03FB                   ??_main 0077  
+                 ??_temp 004F                   _ADRESL 009E                   _CCPR1L 0015  
+                 _BASURA 0054        _temperatura_aprox 0078                   ?_servo 0070  
+                 ?_setup 0070                   _ANSELH 0189                   i1l1601 038A  
+                 i1l1603 0391                   i1l1561 0332                   i1l1563 0336  
+                 i1l1571 0343                   i1l1581 0357                   i1l1573 0349  
+                 i1l1565 033E                   i1l1591 0369                   i1l1583 0358  
+                 i1l1575 034E                   i1l1567 0341                   i1l1593 036A  
+                 i1l1585 0359                   i1l1577 0352                   i1l1569 0342  
+                 i1l1595 0371                   i1l1587 035F                   i1l1579 0356  
+                 i1l1597 0380                   i1l1589 0363                   i1l1599 0384  
+                 u140_20 0352                   u140_21 0351                   u141_20 035F  
+                 u141_21 035E                   u142_20 0363                   u142_21 0362  
+                 u143_20 0371                   u143_21 0370                   u144_20 0380  
+                 u136_20 0336                   u144_21 037F                   u136_21 0335  
+                 u145_20 0384                   u137_20 033E                   u145_21 0383  
+                 u137_21 033D                   u146_20 039C                   u138_20 0349  
+                 u146_21 039B                   u138_21 0348                   u139_20 034E  
+                 u139_21 034D                   u168_27 0379                   u169_27 0394  
+                 _SPBRGH 009A                   _SSPADD 0093                   _TRISC3 043B  
+                 _TRISC4 043C                   _SSPBUF 0013                   _SSPCON 0014  
+       __end_of___xxtofl 02B6             ??_ADC_config 0073                ??___fldiv 0032  
+              ??___fltol 0048                   saved_w 007E       __end_of_ADC_config 0519  
+           ___xxtofl@arg 0026             ___xxtofl@exp 0025             ___xxtofl@val 0073  
+__end_of__initialization 0019               ___fltol@f1 0044           __pcstackCOMMON 0070  
+__size_of_I2C_Slave_Init 001A            __end_of_servo 044A            __end_of_setup 0488  
+         _OPTION_REGbits 0081                  ??_servo 0073                  ??_setup 0074  
+  I2C_Slave_Init@address 0073               __pbssBANK0 0054               __pmaintext 04ED  
+             __pintentry 0004                ?___xxtofl 0073                  _SSPCON2 0091  
+                _SSPSTAT 0094                  ___fldiv 001D                  ___fltol 02B6  
+              _ANSELbits 0188                  __ptext1 04B7                  __ptext2 03A6  
+                __ptext3 01FA                  __ptext4 02B6                  __ptext5 001D  
+                __ptext6 044A                  __ptext7 0488                  __ptext8 04D3  
+                __ptext9 0505             __size_of_isr 0074               ??___xxtofl 0020  
+   end_of_initialization 0019               _osc_config 0488                _RCSTAbits 0018  
+         _I2C_Slave_Init 04D3                _PORTBbits 0006                _PORTEbits 0009  
+             _toggle_adc 04B7            ___xxtofl@sign 0024                _TRISBbits 0086  
+              _TRISCbits 0087                _TRISDbits 0088                _TRISEbits 0089  
+            ___fldiv@grs 003E              ___fldiv@rem 0037              _CCP1CONbits 0017  
+              _TXSTAbits 0098   __end_of_I2C_Slave_Init 04ED              _BAUDCTLbits 0187  
+    start_initialization 000F              __end_of_isr 03A6              ?_osc_config 0070  
+        ?_I2C_Slave_Init 0070                ___fldiv@a 002A                ___fldiv@b 002E  
+            ?_toggle_adc 0070              __pbssCOMMON 0077                ___latbits 0002  
+          __pcstackBANK0 0020           _motor_recibido 0077        __size_of___xxtofl 00BC  
+               ?___fldiv 002A                 ?___fltol 0044      __size_of_osc_config 002F  
+         __size_of_servo 004F           __size_of_setup 003E        interrupt_function 0004  
+               _IOCBbits 0096         _conversion_total 0056                 _PIR1bits 000C  
+    __size_of_toggle_adc 001C              _antirrebote 0079               _ADCON0bits 001F  
+             _ADCON1bits 009F                 _WPUBbits 0095              _conversion1 0057  
+             _ADC_config 0505         __size_of___fldiv 01DD         __size_of___fltol 007C  
+               ___xxtofl 01FA                 __ptext10 03FB                 __ptext11 0332  
+               _botonazo 0058         ??_I2C_Slave_Init 0073             ??_osc_config 0073  
+          __size_of_main 0018            __size_of_temp 0055               _INTCONbits 000B  
+           ??_toggle_adc 0073       __end_of_osc_config 04B7                 intlevel1 0000  
+             _OSCCONbits 008F              ?_ADC_config 0070       __end_of_toggle_adc 04D3  
+            _SSPCON2bits 0091               _SSPCONbits 0014  

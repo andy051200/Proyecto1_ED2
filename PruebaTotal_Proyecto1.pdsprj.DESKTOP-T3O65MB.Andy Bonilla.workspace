@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8' standalone='yes'?>
 <WORKSPACE>
  <FRAME activewindow="0">
-  <PLACEMENT>2c0000000200000003000000ffffffffffffffffffffffffffffffffb10b0000b8000000150f000063040000</PLACEMENT>
+  <PLACEMENT>2c0000000200000003000000ffffffffffffffffffffffffffffffffee0200000100000052060000ac030000</PLACEMENT>
   <WINDOW type="default" module="ISIS"/>
  </FRAME>
  <MODULE name="VSMDEBUG">
@@ -170,7 +170,7 @@
      <ITEM name="TopLineAddress">00000000</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="178" x="2488" flags="00000001" y="344" h="86" pid="1" iid="24">
+   <POPUP w="178" x="225" flags="00000000" y="248" h="86" pid="1" iid="24">
     <PROPERTIES/>
    </POPUP>
    <POPUP w="8" x="2508" flags="00000008" y="364" h="32" pid="2" iid="24">
@@ -229,7 +229,7 @@
      <ITEM name="TopLineAddress">00000000</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="450" x="3358" flags="00008023" y="418" h="250" pid="0" iid="26">
+   <POPUP w="450" x="880" flags="00000022" y="406" h="250" pid="0" iid="26">
     <PROPERTIES>
      <ITEM name="ComboBox1000">S</ITEM>
      <ITEM name="ComboBox1001">Sr</ITEM>
@@ -243,6 +243,18 @@
      <ITEM name="ComboBox1009">N</ITEM>
      <ITEM name="HSplitter1Pos">125</ITEM>
      <ITEM name="VSplitter1Pos">298</ITEM>
+    </PROPERTIES>
+   </POPUP>
+   <POPUP w="450" x="1353" flags="00008023" y="142" h="250" pid="0" iid="27">
+    <PROPERTIES>
+     <ITEM name="AutoEcho">0</ITEM>
+     <ITEM name="HexMode">0</ITEM>
+    </PROPERTIES>
+   </POPUP>
+   <POPUP w="450" x="68" flags="00000022" y="180" h="250" pid="0" iid="19">
+    <PROPERTIES>
+     <ITEM name="AutoEcho">0</ITEM>
+     <ITEM name="HexMode">0</ITEM>
     </PROPERTIES>
    </POPUP>
   </PWI>

@@ -2597,9 +2597,6 @@ extern __bank0 __bit __timeout;
 # 14 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Osc_config.h"
 void osc_config(uint8_t freq);
 
-# 17 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/UART_CONFIG.h"
-void uart_config(void);
-
 # 13 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/ADC_CONFIG.h"
 void ADC_config(void);
 
@@ -2633,27 +2630,29 @@ unsigned short I2C_Master_Read(unsigned short a);
 
 void I2C_Slave_Init(uint8_t address);
 
-# 51 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c"
+# 50 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c"
 unsigned char antirrebote, botonazo;
 unsigned char conversion1, conversion_total, temperatura_aprox;
 uint8_t z = 0, motor_recibido, BASURA;
 
-# 57
+# 56
 void setup(void);
 void servo(void);
 void toggle_adc(void);
 void temp(void);
 
-# 64
+# 63
 void __interrupt() isr(void)
 {
 
 if (INTCONbits.RBIF)
 {
-if (PORTB==0b11111101)
+if (PORTB==0b11111101){
 antirrebote=1;
-else
+}
+else{
 antirrebote=0;
+}
 INTCONbits.RBIF=0;
 }
 
@@ -2679,7 +2678,7 @@ _delay((unsigned long)((200)*(8000000/4000000.0)));
 
 }
 else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
-motor_recibido = SSPBUF;
+z = SSPBUF;
 BF = 0;
 SSPBUF = temperatura_aprox;
 SSPCONbits.CKP = 1;
@@ -2692,7 +2691,7 @@ PIR1bits.SSPIF = 0;
 
 }
 
-# 113
+# 114
 void main(void)
 {
 setup();
@@ -2705,12 +2704,10 @@ servo();
 toggle_adc();
 
 temp();
-
+}
 }
 
-}
-
-# 132
+# 131
 void setup(void)
 {
 
@@ -2753,15 +2750,12 @@ INTCONbits.RBIF=0;
 IOCBbits.IOCB1=1;
 }
 
-# 177
+# 176
 void servo(void)
 {
 
-if (antirrebote==1 && PORTBbits.RB1==0 )
+if (antirrebote==1 && PORTBbits.RB1==0 && motor_recibido==0)
 {
-botonazo++;
-antirrebote=0;
-}
 
 switch(botonazo)
 {
@@ -2769,15 +2763,21 @@ case(0):
 PORTEbits.RE0=1;
 _delay((unsigned long)((1)*(8000000/4000.0)));
 PORTEbits.RE0=0;
+botonazo=1;
 break;
 case(1):
 PORTEbits.RE0=1;
 _delay((unsigned long)((2)*(8000000/4000.0)));
 PORTEbits.RE0=0;
+botonazo = 0;
 break;
-case(2):
-botonazo=0;
-break;
+}
+antirrebote=0;
+}
+else if(motor_recibido==1){
+PORTEbits.RE0=1;
+_delay((unsigned long)((1)*(8000000/4000.0)));
+PORTEbits.RE0=0;
 }
 }
 
