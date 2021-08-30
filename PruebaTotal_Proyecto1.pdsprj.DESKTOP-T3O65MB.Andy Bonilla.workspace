@@ -8,7 +8,7 @@
   <PWI>
    <POPUP w="800" x="48" flags="00000002" y="160" h="200" pid="0" iid="-1">
     <PROPERTIES>
-     <ITEM name="Message Column Width">540</ITEM>
+     <ITEM name="Message Column Width">661</ITEM>
      <ITEM name="ShowGrid">No</ITEM>
      <ITEM name="Source Column Width">100</ITEM>
      <ITEM name="Time Column Width">120</ITEM>
@@ -173,7 +173,7 @@
    <POPUP w="178" x="225" flags="00000000" y="248" h="86" pid="1" iid="24">
     <PROPERTIES/>
    </POPUP>
-   <POPUP w="8" x="2508" flags="00000008" y="364" h="32" pid="2" iid="24">
+   <POPUP w="8" x="1912" flags="00000008" y="364" h="32" pid="2" iid="24">
     <PROPERTIES>
      <ITEM name="DataType">2</ITEM>
      <ITEM name="DispChars">Yes</ITEM>
@@ -183,10 +183,10 @@
      <ITEM name="TopLineAddress">00000000</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="434" x="2528" flags="00000008" y="384" h="216" pid="3" iid="25">
+   <POPUP w="434" x="1868" flags="00000008" y="384" h="216" pid="3" iid="25">
     <PROPERTIES/>
    </POPUP>
-   <POPUP w="8" x="2548" flags="0000000a" y="404" h="32" pid="4" iid="25">
+   <POPUP w="8" x="1912" flags="0000000a" y="404" h="32" pid="4" iid="25">
     <PROPERTIES>
      <ITEM name="DataType">2</ITEM>
      <ITEM name="DispChars">Yes</ITEM>
@@ -196,7 +196,7 @@
      <ITEM name="TopLineAddress">00000000</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="8" x="2568" flags="0000000a" y="424" h="32" pid="5" iid="25">
+   <POPUP w="8" x="1912" flags="0000000a" y="424" h="32" pid="5" iid="25">
     <PROPERTIES>
      <ITEM name="DataType">2</ITEM>
      <ITEM name="DispChars">Yes</ITEM>
@@ -206,7 +206,7 @@
      <ITEM name="TopLineAddress">00000000</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="16" x="2588" flags="0000000a" y="444" h="32" pid="6" iid="25">
+   <POPUP w="16" x="1904" flags="0000000a" y="444" h="32" pid="6" iid="25">
     <PROPERTIES>
      <ITEM name="DataType">2</ITEM>
      <ITEM name="DispChars">Yes</ITEM>
@@ -216,10 +216,10 @@
      <ITEM name="TopLineAddress">00000000</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="130" x="2608" flags="00000008" y="464" h="151" pid="7" iid="25">
+   <POPUP w="130" x="1906" flags="00000008" y="464" h="151" pid="7" iid="25">
     <PROPERTIES/>
    </POPUP>
-   <POPUP w="8" x="2628" flags="00000002" y="484" h="8" pid="8" iid="25">
+   <POPUP w="8" x="1912" flags="00000002" y="484" h="8" pid="8" iid="25">
     <PROPERTIES>
      <ITEM name="DataType">2</ITEM>
      <ITEM name="DispChars">Yes</ITEM>
@@ -245,7 +245,7 @@
      <ITEM name="VSplitter1Pos">298</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="450" x="1353" flags="00008023" y="142" h="250" pid="0" iid="27">
+   <POPUP w="450" x="1317" flags="00008023" y="156" h="250" pid="0" iid="27">
     <PROPERTIES>
      <ITEM name="AutoEcho">0</ITEM>
      <ITEM name="HexMode">0</ITEM>
