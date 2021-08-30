@@ -130,17 +130,21 @@ void setup(void)
     //-------CONFIGURACION ENTRADAS ANALOGICAS
     ANSEL=0;
     ANSELH=0;
-    ANSELbits.ANS0=1;                   //entrada analogica de sensor temperatura
     //-------CONFIGURACION IN/OUT
-    TRISAbits.TRISA0=1;                 //entrada de sensor temperatura
+    //SALIDAS PARA LEDS DE DISPONIBILIDAD
+    TRISAbits.TRISA0=0;                 //salida para led verde1
+    TRISAbits.TRISA1=0;                 //salida para led rojo1
+    TRISAbits.TRISA2=0;                 //salida para led verde2
+    TRISAbits.TRISA3=0;                 //salida para led rojo2
+    TRISAbits.TRISA4=0;                 //salida para led verde3
+    TRISAbits.TRISA5=0;                 //salida para led rojo3
+    //ENTRADAS PARA SENSORES
     TRISBbits.TRISB1=1;                 //entrada de sensor IR1
     TRISBbits.TRISB2=1;                 //entrada de sensor IR2
     TRISBbits.TRISB3=1;                 //entrada de sensor IR3
-    TRISEbits.TRISE0=0;                 //salida para led verde
-    TRISEbits.TRISE1=0;                 //salida para led rojo
-    TRISCbits.TRISC6=0;
-    TRISD=0;
+    
     //-------LIMPIEZA DE PUERTOS
+    PORTA=0;
     PORTB=0;
     PORTD=0;
     PORTE=0;
@@ -168,40 +172,40 @@ void infrarrojos(void)
     //-------PARQUEO 1
     if (PORTBbits.RB1==1)
     {
-        PORTDbits.RD0=1;
-        PORTDbits.RD1=0;
+        PORTAbits.RA0=1;
+        PORTAbits.RA1=0;
         infrarrojo1=1;
     }
     if (PORTBbits.RB1==0)
     {
-        PORTDbits.RD0=0;
-        PORTDbits.RD1=1;
+        PORTAbits.RA0=0;
+        PORTAbits.RA1=1;
         infrarrojo1=0;
     }
     //-------PARQUEO2
     if (PORTBbits.RB2==1)
     {
-        PORTDbits.RD2=1;
-        PORTDbits.RD3=0;
+        PORTAbits.RA2=1;
+        PORTAbits.RA3=0;
         infrarrojo2=1;
     }
     if (PORTBbits.RB2==0)
     {
-        PORTDbits.RD2=0;
-        PORTDbits.RD3=1;
+        PORTAbits.RA2=0;
+        PORTAbits.RA3=1;
         infrarrojo2=0;
     }
     //-------PARQUEO3
     if (PORTBbits.RB3==1)
     {
-        PORTDbits.RD4=1;
-        PORTDbits.RD5=0;
+        PORTAbits.RA4=1;
+        PORTAbits.RA5=0;
         infrarrojo3=1;
     }
     if (PORTBbits.RB3==0)
     {
-        PORTDbits.RD4=0;
-        PORTDbits.RD5=1;
+        PORTAbits.RA4=0;
+        PORTAbits.RA5=1;
         infrarrojo3=0;
     }
     suma_ir=infrarrojo1+infrarrojo2+infrarrojo3; //suma de los parqueos disponibles

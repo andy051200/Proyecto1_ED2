@@ -45,11 +45,12 @@ Descripcion:
  -----------------------------------------------------------------------------*/
 
 //-------DIRECTIVAS DEL COMPILADOR
-#define _XTAL_FREQ 8000000
+#define _XTAL_FREQ 4000000
 //-------VARIABLES DE PROGRAMA
 unsigned char antirrebote, botonazo;        //variables para control servo
 unsigned char conversion1, conversion_total, temperatura_aprox;
-uint8_t z = 0, motor_recibido, BASURA; 
+uint8_t z = 0, motor_recibido, BASURA;
+unsigned char cuenta1, cuenta_total;
 /*-----------------------------------------------------------------------------
  ------------------------ PROTOTIPOS DE FUNCIONES ------------------------------
  -----------------------------------------------------------------------------*/
@@ -63,6 +64,56 @@ void temp(void);
 void __interrupt() isr(void) //funcion de interrupciones
 {
     //-------INTERRUPCION POR BOTONAZO
+    //interrupcion por timer0
+    if (INTCONbits.T0IF)
+    {
+        if (cuenta_total >0 && cuenta_total<85)  //variar oscilacion de 18ms
+        {
+            /*PORTDbits.RD0=1;
+            PORTDbits.RD1=1;
+            PORTDbits.RD2=1;*/
+            PORTEbits.RE0=1;
+            __delay_ms(2);
+            PORTEbits.RE0=0;
+            /*PORTDbits.RD0=0;
+            PORTDbits.RD1=0;
+            PORTDbits.RD2=0;*/
+            TMR0 = 115;  
+            INTCONbits.T0IF = 0;
+        }
+        else if (cuenta_total >85 && cuenta_total<170)    //variar oscilacion de 18.5ms
+        {
+            /*PORTDbits.RD0=1;
+            PORTDbits.RD1=1;
+            PORTDbits.RD2=1;*/
+            PORTEbits.RE0=1;
+            __delay_ms(1.5);
+            PORTEbits.RE0=0;
+            /*PORTDbits.RD0=0;
+            PORTDbits.RD1=0;
+            PORTDbits.RD2=0;*/
+            TMR0 = 111;
+            INTCONbits.T0IF=0;
+        }   
+        else                                    //variar oscilacion de 19ms
+        {
+            /*PORTDbits.RD0=1;
+            PORTDbits.RD1=1;
+            PORTDbits.RD2=1;*/
+            PORTEbits.RE0=1;
+            __delay_ms(1);
+            PORTEbits.RE0=0;
+            /*PORTDbits.RD0=0;
+            PORTDbits.RD1=0;
+            PORTDbits.RD2=0;*/
+            TMR0 = 107;
+            INTCONbits.T0IF=0;
+        }
+    }
+    
+    
+    /*
+    //-------INTERRUPCION POR BOTONAZO
     if (INTCONbits.RBIF)
     {
         if (PORTB==0b11111101){
@@ -72,7 +123,8 @@ void __interrupt() isr(void) //funcion de interrupciones
             antirrebote=0;
         }
         INTCONbits.RBIF=0;
-    }
+    }*/
+    
     //-------INTERRUPCION POR I2C
     if(PIR1bits.SSPIF == 1){    //Le va a mandar la cantidad de parqueos habilitados al master
 
@@ -118,7 +170,7 @@ void main(void)
     while(1)
     {
         //-------FUNCION PARA SERVO CON BOTONAZO
-        servo();
+        //servo();
         //-------FUNCIONES PARA RECEPCION DE CONVERSION ADC
         toggle_adc();
         //-------FUNCIONES PARA 
@@ -134,6 +186,7 @@ void setup(void)
     ANSEL=0;
     ANSELH=0;
     ANSELbits.ANS0=1;
+    ANSELbits.ANS1=1;
     //-------CONFIGURACION IN/OUT
     TRISDbits.TRISD0=0;
     TRISBbits.TRISB1=1;                 //entrada boton prueba
@@ -146,10 +199,15 @@ void setup(void)
     PORTC=0;
     PORTD=0;
     PORTE=0;
-    //-------CONFIGURACION DE RELOJ A 4MHz
-    osc_config(8);
+    //-------CONFIGURACION DE RELOJ A 8MHz
+    osc_config(4);
     //-------CONFIGURACION DEL ADC
     ADC_config();
+    //-------CONFIGURACION DEL TIMER0
+    OPTION_REGbits.T0CS = 0;    //Uso reloj interno
+    OPTION_REGbits.PSA = 0;     //Uso pre-escaler
+    OPTION_REGbits.PS = 0b111;  //PS = 111 / 1:256
+    TMR0 = 78;                  //Reinicio del timmer
     //-------CONFIGURACION DE CCP
     TRISCbits.TRISC2=1;         // a motor se desconecta
     CCP1CONbits.P1M = 0;        //
@@ -207,11 +265,26 @@ void toggle_adc(void)
 {
     if (ADCON0bits.GO==0)
     {
-        conversion1=ADRESH<<8;                  //toma los MSB del ADRE
-        conversion_total=conversion1+ADRESL;    //le suma los LSB
+        switch(ADCON0bits.CHS)
+        {
+            case(0):
+                conversion1=ADRESH<<8;                  //toma los MSB del ADRE
+                conversion_total=conversion1+ADRESL;    //le suma los LSB
+                __delay_ms(1);
+                ADCON0bits.CHS=1;
+                break;
+            case(1):
+                cuenta1=ADRESH<<8;                  //toma los MSB del ADRE
+                cuenta_total=conversion1+ADRESL;    //le suma los LSB
+                __delay_ms(1);
+                ADCON0bits.CHS=0;
+                break;
+        }
+            
         __delay_ms(1);                          //tiempo de carga
         ADCON0bits.GO=1;
     }
+    
 }
 //-------FUNCION PARA CONVERSION DE TEMPERATURA
 void temp(void)

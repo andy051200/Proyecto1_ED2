@@ -2634,28 +2634,60 @@ void I2C_Slave_Init(uint8_t address);
 unsigned char antirrebote, botonazo;
 unsigned char conversion1, conversion_total, temperatura_aprox;
 uint8_t z = 0, motor_recibido, BASURA;
+unsigned char cuenta1, cuenta_total;
 
-# 56
+# 57
 void setup(void);
 void servo(void);
 void toggle_adc(void);
 void temp(void);
 
-# 63
+# 64
 void __interrupt() isr(void)
 {
 
-if (INTCONbits.RBIF)
+
+if (INTCONbits.T0IF)
 {
-if (PORTB==0b11111101){
-antirrebote=1;
+if (cuenta_total >0 && cuenta_total<85)
+{
+
+# 75
+PORTEbits.RE0=1;
+_delay((unsigned long)((2)*(4000000/4000.0)));
+PORTEbits.RE0=0;
+
+# 81
+TMR0 = 115;
+INTCONbits.T0IF = 0;
 }
-else{
-antirrebote=0;
+else if (cuenta_total >85 && cuenta_total<170)
+{
+
+# 89
+PORTEbits.RE0=1;
+_delay((unsigned long)((1.5)*(4000000/4000.0)));
+PORTEbits.RE0=0;
+
+# 95
+TMR0 = 111;
+INTCONbits.T0IF=0;
 }
-INTCONbits.RBIF=0;
+else
+{
+
+# 103
+PORTEbits.RE0=1;
+_delay((unsigned long)((1)*(4000000/4000.0)));
+PORTEbits.RE0=0;
+
+# 109
+TMR0 = 107;
+INTCONbits.T0IF=0;
+}
 }
 
+# 129
 if(PIR1bits.SSPIF == 1){
 
 SSPCONbits.CKP = 0;
@@ -2674,7 +2706,7 @@ PIR1bits.SSPIF = 0;
 SSPCONbits.CKP = 1;
 while(!SSPSTATbits.BF);
 motor_recibido = SSPBUF;
-_delay((unsigned long)((200)*(8000000/4000000.0)));
+_delay((unsigned long)((200)*(4000000/4000000.0)));
 
 }
 else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
@@ -2682,7 +2714,7 @@ z = SSPBUF;
 BF = 0;
 SSPBUF = temperatura_aprox;
 SSPCONbits.CKP = 1;
-_delay((unsigned long)((200)*(8000000/4000000.0)));
+_delay((unsigned long)((200)*(4000000/4000000.0)));
 while(SSPSTATbits.BF);
 }
 
@@ -2691,7 +2723,7 @@ PIR1bits.SSPIF = 0;
 
 }
 
-# 114
+# 166
 void main(void)
 {
 setup();
@@ -2699,7 +2731,7 @@ setup();
 while(1)
 {
 
-servo();
+
 
 toggle_adc();
 
@@ -2707,13 +2739,14 @@ temp();
 }
 }
 
-# 131
+# 183
 void setup(void)
 {
 
 ANSEL=0;
 ANSELH=0;
 ANSELbits.ANS0=1;
+ANSELbits.ANS1=1;
 
 TRISDbits.TRISD0=0;
 TRISBbits.TRISB1=1;
@@ -2727,9 +2760,14 @@ PORTC=0;
 PORTD=0;
 PORTE=0;
 
-osc_config(8);
+osc_config(4);
 
 ADC_config();
+
+OPTION_REGbits.T0CS = 0;
+OPTION_REGbits.PSA = 0;
+OPTION_REGbits.PS = 0b111;
+TMR0 = 78;
 
 TRISCbits.TRISC2=1;
 CCP1CONbits.P1M = 0;
@@ -2750,7 +2788,7 @@ INTCONbits.RBIF=0;
 IOCBbits.IOCB1=1;
 }
 
-# 176
+# 234
 void servo(void)
 {
 
@@ -2761,13 +2799,13 @@ switch(botonazo)
 {
 case(0):
 PORTEbits.RE0=1;
-_delay((unsigned long)((1)*(8000000/4000.0)));
+_delay((unsigned long)((1)*(4000000/4000.0)));
 PORTEbits.RE0=0;
 botonazo=1;
 break;
 case(1):
 PORTEbits.RE0=1;
-_delay((unsigned long)((2)*(8000000/4000.0)));
+_delay((unsigned long)((2)*(4000000/4000.0)));
 PORTEbits.RE0=0;
 botonazo = 0;
 break;
@@ -2776,7 +2814,7 @@ antirrebote=0;
 }
 else if(motor_recibido==1){
 PORTEbits.RE0=1;
-_delay((unsigned long)((1)*(8000000/4000.0)));
+_delay((unsigned long)((1)*(4000000/4000.0)));
 PORTEbits.RE0=0;
 }
 }
@@ -2785,11 +2823,26 @@ void toggle_adc(void)
 {
 if (ADCON0bits.GO==0)
 {
+switch(ADCON0bits.CHS)
+{
+case(0):
 conversion1=ADRESH<<8;
 conversion_total=conversion1+ADRESL;
-_delay((unsigned long)((1)*(8000000/4000.0)));
+_delay((unsigned long)((1)*(4000000/4000.0)));
+ADCON0bits.CHS=1;
+break;
+case(1):
+cuenta1=ADRESH<<8;
+cuenta_total=conversion1+ADRESL;
+_delay((unsigned long)((1)*(4000000/4000.0)));
+ADCON0bits.CHS=0;
+break;
+}
+
+_delay((unsigned long)((1)*(4000000/4000.0)));
 ADCON0bits.GO=1;
 }
+
 }
 
 void temp(void)

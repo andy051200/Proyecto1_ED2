@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.32 build 20210201212658 
-                                                                                               Thu Aug 26 17:13:44 2021
+                                                                                               Mon Aug 30 14:12:38 2021
 
 Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1 
      1                           	processor	16F887
@@ -540,1627 +540,1630 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    526  0019                     _TXREG	set	25
    527  001E                     _ADRESH	set	30
    528  001F                     _ADCON0bits	set	31
-   529  0008                     _PORTDbits	set	8
+   529  0005                     _PORTAbits	set	5
    530  0006                     _PORTBbits	set	6
    531  000B                     _INTCONbits	set	11
    532  0009                     _PORTE	set	9
    533  0008                     _PORTD	set	8
    534  0006                     _PORTB	set	6
-   535  0013                     _SSPBUF	set	19
-   536  0014                     _SSPCONbits	set	20
-   537  000C                     _PIR1bits	set	12
-   538  0063                     _SSPIF	set	99
-   539  005E                     _PEIE	set	94
-   540  005F                     _GIE	set	95
-   541  0099                     _SPBRG	set	153
-   542  009A                     _SPBRGH	set	154
-   543  0098                     _TXSTAbits	set	152
-   544  0091                     _SSPCON2bits	set	145
-   545  0094                     _SSPSTAT	set	148
-   546  0093                     _SSPADD	set	147
-   547  0091                     _SSPCON2	set	145
-   548  009F                     _ADCON1bits	set	159
-   549  008F                     _OSCCONbits	set	143
-   550  009E                     _ADRESL	set	158
-   551  008C                     _PIE1bits	set	140
-   552  0088                     _TRISD	set	136
-   553  0087                     _TRISCbits	set	135
-   554  0089                     _TRISEbits	set	137
-   555  0086                     _TRISBbits	set	134
-   556  0085                     _TRISAbits	set	133
-   557  0094                     _SSPSTATbits	set	148
-   558  0463                     _SSPIE	set	1123
-   559  043C                     _TRISC4	set	1084
-   560  043B                     _TRISC3	set	1083
-   561  04A0                     _BF	set	1184
-   562  0187                     _BAUDCTLbits	set	391
-   563  0188                     _ANSELbits	set	392
-   564  0189                     _ANSELH	set	393
-   565  0188                     _ANSEL	set	392
-   566                           
-   567                           	psect	cinit
-   568  0011                     start_initialization:	
-   569                           ; #config settings
+   535  0005                     _PORTA	set	5
+   536  0013                     _SSPBUF	set	19
+   537  0014                     _SSPCONbits	set	20
+   538  000C                     _PIR1bits	set	12
+   539  0063                     _SSPIF	set	99
+   540  005E                     _PEIE	set	94
+   541  005F                     _GIE	set	95
+   542  0099                     _SPBRG	set	153
+   543  009A                     _SPBRGH	set	154
+   544  0098                     _TXSTAbits	set	152
+   545  0091                     _SSPCON2bits	set	145
+   546  0087                     _TRISCbits	set	135
+   547  0094                     _SSPSTAT	set	148
+   548  0093                     _SSPADD	set	147
+   549  0091                     _SSPCON2	set	145
+   550  009F                     _ADCON1bits	set	159
+   551  008F                     _OSCCONbits	set	143
+   552  009E                     _ADRESL	set	158
+   553  008C                     _PIE1bits	set	140
+   554  0086                     _TRISBbits	set	134
+   555  0085                     _TRISAbits	set	133
+   556  0094                     _SSPSTATbits	set	148
+   557  0463                     _SSPIE	set	1123
+   558  043C                     _TRISC4	set	1084
+   559  043B                     _TRISC3	set	1083
+   560  04A0                     _BF	set	1184
+   561  0187                     _BAUDCTLbits	set	391
+   562  0189                     _ANSELH	set	393
+   563  0188                     _ANSEL	set	392
+   564                           
+   565                           	psect	cinit
+   566  0011                     start_initialization:	
+   567                           ; #config settings
+   568                           
+   569  0011                     __initialization:
    570                           
-   571  0011                     __initialization:
-   572                           
-   573                           ; Clear objects allocated to COMMON
-   574  0011  01F0               	clrf	__pbssCOMMON& (0+127)
-   575  0012  01F1               	clrf	(__pbssCOMMON+1)& (0+127)
-   576  0013  01F2               	clrf	(__pbssCOMMON+2)& (0+127)
-   577  0014  01F3               	clrf	(__pbssCOMMON+3)& (0+127)
-   578  0015  01F4               	clrf	(__pbssCOMMON+4)& (0+127)
-   579  0016  01F5               	clrf	(__pbssCOMMON+5)& (0+127)
-   580                           
-   581                           ; Clear objects allocated to BANK0
-   582  0017  1283               	bcf	3,5	;RP0=0, select bank0
-   583  0018  1303               	bcf	3,6	;RP1=0, select bank0
-   584  0019  01A0               	clrf	__pbssBANK0& (0+127)
-   585  001A  01A1               	clrf	(__pbssBANK0+1)& (0+127)
-   586  001B  01A2               	clrf	(__pbssBANK0+2)& (0+127)
-   587  001C  01A3               	clrf	(__pbssBANK0+3)& (0+127)
-   588  001D  01A4               	clrf	(__pbssBANK0+4)& (0+127)
-   589  001E  01A5               	clrf	(__pbssBANK0+5)& (0+127)
-   590  001F  01A6               	clrf	(__pbssBANK0+6)& (0+127)
-   591  0020  01A7               	clrf	(__pbssBANK0+7)& (0+127)
-   592  0021  01A8               	clrf	(__pbssBANK0+8)& (0+127)
-   593  0022  01A9               	clrf	(__pbssBANK0+9)& (0+127)
-   594  0023  01AA               	clrf	(__pbssBANK0+10)& (0+127)
-   595  0024  01AB               	clrf	(__pbssBANK0+11)& (0+127)
-   596  0025  01AC               	clrf	(__pbssBANK0+12)& (0+127)
-   597  0026  01AD               	clrf	(__pbssBANK0+13)& (0+127)
-   598  0027  01AE               	clrf	(__pbssBANK0+14)& (0+127)
-   599  0028                     end_of_initialization:	
-   600                           ;End of C runtime variable initialization code
-   601                           
-   602  0028                     __end_of__initialization:
-   603  0028  0183               	clrf	3
-   604  0029  120A  118A  29E0   	ljmp	_main	;jump to C main() function
-   605                           
-   606                           	psect	bssCOMMON
-   607  0070                     __pbssCOMMON:
-   608  0070                     _suma_ir:
-   609  0070                     	ds	1
-   610  0071                     _infrarrojo3:
-   611  0071                     	ds	1
-   612  0072                     _infrarrojo2:
-   613  0072                     	ds	1
-   614  0073                     _infrarrojo1:
-   615  0073                     	ds	1
-   616  0074                     _cuenta_uart:
-   617  0074                     	ds	1
-   618  0075                     _antirrebote:
-   619  0075                     	ds	1
-   620                           
-   621                           	psect	bssBANK0
-   622  0020                     __pbssBANK0:
-   623  0020                     _temperatura_aprox:
-   624  0020                     	ds	4
-   625  0024                     _conversion_total:
-   626  0024                     	ds	4
-   627  0028                     _conversion1:
-   628  0028                     	ds	4
-   629  002C                     _PARQUEO:
-   630  002C                     	ds	1
-   631  002D                     _BASURA:
-   632  002D                     	ds	1
-   633  002E                     _abierto_cerrado:
-   634  002E                     	ds	1
-   635                           
-   636                           	psect	cstackCOMMON
-   637  0076                     __pcstackCOMMON:
-   638  0076                     ?_mandar_datos:
-   639  0076                     ??_mandar_datos:	
-   640                           ; 1 bytes @ 0x0
-   641                           
-   642  0076                     ?_setup:	
-   643                           ; 1 bytes @ 0x0
-   644                           
-   645  0076                     ?_infrarrojos:	
-   646                           ; 1 bytes @ 0x0
-   647                           
-   648  0076                     ?_osc_config:	
-   649                           ; 1 bytes @ 0x0
-   650                           
-   651  0076                     ?_ADC_config:	
-   652                           ; 1 bytes @ 0x0
-   653                           
-   654  0076                     ?_uart_config:	
-   655                           ; 1 bytes @ 0x0
-   656                           
-   657  0076                     ?_I2C_Slave_Init:	
-   658                           ; 1 bytes @ 0x0
-   659                           
-   660  0076                     ?_isr:	
-   661                           ; 1 bytes @ 0x0
-   662                           
-   663  0076                     ?_main:	
-   664                           ; 1 bytes @ 0x0
-   665                           
-   666                           
-   667                           ; 1 bytes @ 0x0
-   668  0076                     	ds	2
-   669  0078                     ??_isr:
-   670                           
-   671                           ; 1 bytes @ 0x2
-   672  0078                     	ds	4
-   673                           
-   674                           	psect	cstackBANK0
-   675  002F                     __pcstackBANK0:
-   676  002F                     ??_infrarrojos:
-   677  002F                     ??_osc_config:	
-   678                           ; 1 bytes @ 0x0
-   679                           
-   680  002F                     ??_ADC_config:	
-   681                           ; 1 bytes @ 0x0
-   682                           
-   683  002F                     ??_uart_config:	
-   684                           ; 1 bytes @ 0x0
-   685                           
-   686  002F                     ??_I2C_Slave_Init:	
-   687                           ; 1 bytes @ 0x0
-   688                           
-   689  002F                     I2C_Slave_Init@address:	
-   690                           ; 1 bytes @ 0x0
-   691                           
-   692                           
-   693                           ; 1 bytes @ 0x0
-   694  002F                     	ds	2
-   695  0031                     osc_config@freq:
-   696                           
-   697                           ; 1 bytes @ 0x2
-   698  0031                     	ds	1
-   699  0032                     ??_setup:
-   700  0032                     ??_main:	
-   701                           ; 1 bytes @ 0x3
-   702                           
-   703                           
-   704                           	psect	maintext
-   705  01E0                     __pmaintext:	
-   706                           ; 1 bytes @ 0x3
+   571                           ; Clear objects allocated to COMMON
+   572  0011  01F0               	clrf	__pbssCOMMON& (0+127)
+   573  0012  01F1               	clrf	(__pbssCOMMON+1)& (0+127)
+   574  0013  01F2               	clrf	(__pbssCOMMON+2)& (0+127)
+   575  0014  01F3               	clrf	(__pbssCOMMON+3)& (0+127)
+   576  0015  01F4               	clrf	(__pbssCOMMON+4)& (0+127)
+   577  0016  01F5               	clrf	(__pbssCOMMON+5)& (0+127)
+   578                           
+   579                           ; Clear objects allocated to BANK0
+   580  0017  1283               	bcf	3,5	;RP0=0, select bank0
+   581  0018  1303               	bcf	3,6	;RP1=0, select bank0
+   582  0019  01A0               	clrf	__pbssBANK0& (0+127)
+   583  001A  01A1               	clrf	(__pbssBANK0+1)& (0+127)
+   584  001B  01A2               	clrf	(__pbssBANK0+2)& (0+127)
+   585  001C  01A3               	clrf	(__pbssBANK0+3)& (0+127)
+   586  001D  01A4               	clrf	(__pbssBANK0+4)& (0+127)
+   587  001E  01A5               	clrf	(__pbssBANK0+5)& (0+127)
+   588  001F  01A6               	clrf	(__pbssBANK0+6)& (0+127)
+   589  0020  01A7               	clrf	(__pbssBANK0+7)& (0+127)
+   590  0021  01A8               	clrf	(__pbssBANK0+8)& (0+127)
+   591  0022  01A9               	clrf	(__pbssBANK0+9)& (0+127)
+   592  0023  01AA               	clrf	(__pbssBANK0+10)& (0+127)
+   593  0024  01AB               	clrf	(__pbssBANK0+11)& (0+127)
+   594  0025  01AC               	clrf	(__pbssBANK0+12)& (0+127)
+   595  0026  01AD               	clrf	(__pbssBANK0+13)& (0+127)
+   596  0027  01AE               	clrf	(__pbssBANK0+14)& (0+127)
+   597  0028                     end_of_initialization:	
+   598                           ;End of C runtime variable initialization code
+   599                           
+   600  0028                     __end_of__initialization:
+   601  0028  0183               	clrf	3
+   602  0029  120A  118A  29E1   	ljmp	_main	;jump to C main() function
+   603                           
+   604                           	psect	bssCOMMON
+   605  0070                     __pbssCOMMON:
+   606  0070                     _suma_ir:
+   607  0070                     	ds	1
+   608  0071                     _infrarrojo3:
+   609  0071                     	ds	1
+   610  0072                     _infrarrojo2:
+   611  0072                     	ds	1
+   612  0073                     _infrarrojo1:
+   613  0073                     	ds	1
+   614  0074                     _cuenta_uart:
+   615  0074                     	ds	1
+   616  0075                     _antirrebote:
+   617  0075                     	ds	1
+   618                           
+   619                           	psect	bssBANK0
+   620  0020                     __pbssBANK0:
+   621  0020                     _temperatura_aprox:
+   622  0020                     	ds	4
+   623  0024                     _conversion_total:
+   624  0024                     	ds	4
+   625  0028                     _conversion1:
+   626  0028                     	ds	4
+   627  002C                     _PARQUEO:
+   628  002C                     	ds	1
+   629  002D                     _BASURA:
+   630  002D                     	ds	1
+   631  002E                     _abierto_cerrado:
+   632  002E                     	ds	1
+   633                           
+   634                           	psect	cstackCOMMON
+   635  0076                     __pcstackCOMMON:
+   636  0076                     ?_mandar_datos:
+   637  0076                     ??_mandar_datos:	
+   638                           ; 1 bytes @ 0x0
+   639                           
+   640  0076                     ?_setup:	
+   641                           ; 1 bytes @ 0x0
+   642                           
+   643  0076                     ?_infrarrojos:	
+   644                           ; 1 bytes @ 0x0
+   645                           
+   646  0076                     ?_osc_config:	
+   647                           ; 1 bytes @ 0x0
+   648                           
+   649  0076                     ?_ADC_config:	
+   650                           ; 1 bytes @ 0x0
+   651                           
+   652  0076                     ?_uart_config:	
+   653                           ; 1 bytes @ 0x0
+   654                           
+   655  0076                     ?_I2C_Slave_Init:	
+   656                           ; 1 bytes @ 0x0
+   657                           
+   658  0076                     ?_isr:	
+   659                           ; 1 bytes @ 0x0
+   660                           
+   661  0076                     ?_main:	
+   662                           ; 1 bytes @ 0x0
+   663                           
+   664                           
+   665                           ; 1 bytes @ 0x0
+   666  0076                     	ds	2
+   667  0078                     ??_isr:
+   668                           
+   669                           ; 1 bytes @ 0x2
+   670  0078                     	ds	4
+   671                           
+   672                           	psect	cstackBANK0
+   673  002F                     __pcstackBANK0:
+   674  002F                     ??_infrarrojos:
+   675  002F                     ??_osc_config:	
+   676                           ; 1 bytes @ 0x0
+   677                           
+   678  002F                     ??_ADC_config:	
+   679                           ; 1 bytes @ 0x0
+   680                           
+   681  002F                     ??_uart_config:	
+   682                           ; 1 bytes @ 0x0
+   683                           
+   684  002F                     ??_I2C_Slave_Init:	
+   685                           ; 1 bytes @ 0x0
+   686                           
+   687  002F                     I2C_Slave_Init@address:	
+   688                           ; 1 bytes @ 0x0
+   689                           
+   690                           
+   691                           ; 1 bytes @ 0x0
+   692  002F                     	ds	2
+   693  0031                     osc_config@freq:
+   694                           
+   695                           ; 1 bytes @ 0x2
+   696  0031                     	ds	1
+   697  0032                     ??_setup:
+   698  0032                     ??_main:	
+   699                           ; 1 bytes @ 0x3
+   700                           
+   701                           
+   702                           	psect	maintext
+   703  01E1                     __pmaintext:	
+   704                           ; 1 bytes @ 0x3
+   705 ;;
+   706 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
    707 ;;
-   708 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
-   709 ;;
-   710 ;; *************** function _main *****************
-   711 ;; Defined at:
-   712 ;;		line 111 in file "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c"
-   713 ;; Parameters:    Size  Location     Type
+   708 ;; *************** function _main *****************
+   709 ;; Defined at:
+   710 ;;		line 111 in file "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c"
+   711 ;; Parameters:    Size  Location     Type
+   712 ;;		None
+   713 ;; Auto vars:     Size  Location     Type
    714 ;;		None
-   715 ;; Auto vars:     Size  Location     Type
-   716 ;;		None
-   717 ;; Return value:  Size  Location     Type
-   718 ;;                  1    wreg      void 
-   719 ;; Registers used:
-   720 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
-   721 ;; Tracked objects:
-   722 ;;		On entry : B00/0
-   723 ;;		On exit  : 0/0
-   724 ;;		Unchanged: 0/0
-   725 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-   726 ;;      Params:         0       0       0       0       0
-   727 ;;      Locals:         0       0       0       0       0
-   728 ;;      Temps:          0       0       0       0       0
-   729 ;;      Totals:         0       0       0       0       0
-   730 ;;Total ram usage:        0 bytes
-   731 ;; Hardware stack levels required when called: 4
-   732 ;; This function calls:
-   733 ;;		_infrarrojos
-   734 ;;		_setup
-   735 ;; This function is called by:
-   736 ;;		Startup code after reset
-   737 ;; This function uses a non-reentrant model
-   738 ;;
-   739                           
-   740                           
-   741                           ;psect for function _main
-   742  01E0                     _main:
-   743  01E0                     l1670:	
-   744                           ;incstack = 0
-   745                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+pclath+cstack]
-   746                           
-   747                           
-   748                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+   715 ;; Return value:  Size  Location     Type
+   716 ;;                  1    wreg      void 
+   717 ;; Registers used:
+   718 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+   719 ;; Tracked objects:
+   720 ;;		On entry : B00/0
+   721 ;;		On exit  : 0/0
+   722 ;;		Unchanged: 0/0
+   723 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   724 ;;      Params:         0       0       0       0       0
+   725 ;;      Locals:         0       0       0       0       0
+   726 ;;      Temps:          0       0       0       0       0
+   727 ;;      Totals:         0       0       0       0       0
+   728 ;;Total ram usage:        0 bytes
+   729 ;; Hardware stack levels required when called: 4
+   730 ;; This function calls:
+   731 ;;		_infrarrojos
+   732 ;;		_setup
+   733 ;; This function is called by:
+   734 ;;		Startup code after reset
+   735 ;; This function uses a non-reentrant model
+   736 ;;
+   737                           
+   738                           
+   739                           ;psect for function _main
+   740  01E1                     _main:
+   741  01E1                     l1670:	
+   742                           ;incstack = 0
+   743                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+   744                           
+   745                           
+   746                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 114:     setup();
-   749  01E0  120A  118A  2165  120A  118A  	fcall	_setup
-   750  01E5                     l1672:
-   751                           
-   752                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+   747  01E1  120A  118A  2165  120A  118A  	fcall	_setup
+   748  01E6                     l1672:
+   749                           
+   750                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 117:     {;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/mai
       +                          n_sensores.c: 120:         infrarrojos();
-   753  01E5  120A  118A  212D  120A  118A  	fcall	_infrarrojos
-   754  01EA  29E5               	goto	l1672
-   755  01EB  120A  118A  280E   	ljmp	start
-   756  01EE                     __end_of_main:
-   757                           
-   758                           	psect	text1
-   759  0165                     __ptext1:	
-   760 ;; *************** function _setup *****************
-   761 ;; Defined at:
-   762 ;;		line 128 in file "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c"
-   763 ;; Parameters:    Size  Location     Type
+   751  01E6  120A  118A  212D  120A  118A  	fcall	_infrarrojos
+   752  01EB  29E6               	goto	l1672
+   753  01EC  120A  118A  280E   	ljmp	start
+   754  01EF                     __end_of_main:
+   755                           
+   756                           	psect	text1
+   757  0165                     __ptext1:	
+   758 ;; *************** function _setup *****************
+   759 ;; Defined at:
+   760 ;;		line 128 in file "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c"
+   761 ;; Parameters:    Size  Location     Type
+   762 ;;		None
+   763 ;; Auto vars:     Size  Location     Type
    764 ;;		None
-   765 ;; Auto vars:     Size  Location     Type
-   766 ;;		None
-   767 ;; Return value:  Size  Location     Type
-   768 ;;                  1    wreg      void 
-   769 ;; Registers used:
-   770 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
-   771 ;; Tracked objects:
-   772 ;;		On entry : 0/0
-   773 ;;		On exit  : 0/0
-   774 ;;		Unchanged: 0/0
-   775 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-   776 ;;      Params:         0       0       0       0       0
-   777 ;;      Locals:         0       0       0       0       0
-   778 ;;      Temps:          0       0       0       0       0
-   779 ;;      Totals:         0       0       0       0       0
-   780 ;;Total ram usage:        0 bytes
-   781 ;; Hardware stack levels used: 1
-   782 ;; Hardware stack levels required when called: 3
-   783 ;; This function calls:
-   784 ;;		_ADC_config
-   785 ;;		_I2C_Slave_Init
-   786 ;;		_osc_config
-   787 ;;		_uart_config
-   788 ;; This function is called by:
-   789 ;;		_main
-   790 ;; This function uses a non-reentrant model
-   791 ;;
-   792                           
-   793                           
-   794                           ;psect for function _setup
-   795  0165                     _setup:
-   796  0165                     l1610:	
-   797                           ;incstack = 0
-   798                           ; Regs used in _setup: [wreg-fsr0h+status,2+status,0+pclath+cstack]
-   799                           
-   800                           
-   801                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+   765 ;; Return value:  Size  Location     Type
+   766 ;;                  1    wreg      void 
+   767 ;; Registers used:
+   768 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+   769 ;; Tracked objects:
+   770 ;;		On entry : 0/0
+   771 ;;		On exit  : 0/0
+   772 ;;		Unchanged: 0/0
+   773 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   774 ;;      Params:         0       0       0       0       0
+   775 ;;      Locals:         0       0       0       0       0
+   776 ;;      Temps:          0       0       0       0       0
+   777 ;;      Totals:         0       0       0       0       0
+   778 ;;Total ram usage:        0 bytes
+   779 ;; Hardware stack levels used: 1
+   780 ;; Hardware stack levels required when called: 3
+   781 ;; This function calls:
+   782 ;;		_ADC_config
+   783 ;;		_I2C_Slave_Init
+   784 ;;		_osc_config
+   785 ;;		_uart_config
+   786 ;; This function is called by:
+   787 ;;		_main
+   788 ;; This function uses a non-reentrant model
+   789 ;;
+   790                           
+   791                           
+   792                           ;psect for function _setup
+   793  0165                     _setup:
+   794  0165                     l1608:	
+   795                           ;incstack = 0
+   796                           ; Regs used in _setup: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+   797                           
+   798                           
+   799                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 131:     ANSEL=0;
-   802  0165  1683               	bsf	3,5	;RP0=1, select bank3
-   803  0166  1703               	bsf	3,6	;RP1=1, select bank3
-   804  0167  0188               	clrf	8	;volatile
-   805                           
-   806                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+   800  0165  1683               	bsf	3,5	;RP0=1, select bank3
+   801  0166  1703               	bsf	3,6	;RP1=1, select bank3
+   802  0167  0188               	clrf	8	;volatile
+   803                           
+   804                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 132:     ANSELH=0;
-   807  0168  0189               	clrf	9	;volatile
-   808  0169                     l1612:
-   809                           
-   810                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 133:     ANSELbits.ANS0=1;
-   811  0169  1408               	bsf	8,0	;volatile
-   812  016A                     l1614:
+   805  0168  0189               	clrf	9	;volatile
+   806  0169                     l1610:
+   807                           
+   808                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 135:     TRISAbits.TRISA0=0;
+   809  0169  1683               	bsf	3,5	;RP0=1, select bank1
+   810  016A  1303               	bcf	3,6	;RP1=0, select bank1
+   811  016B  1005               	bcf	5,0	;volatile
+   812  016C                     l1612:
    813                           
    814                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 135:     TRISAbits.TRISA0=1;
-   815  016A  1683               	bsf	3,5	;RP0=1, select bank1
-   816  016B  1303               	bcf	3,6	;RP1=0, select bank1
-   817  016C  1405               	bsf	5,0	;volatile
-   818  016D                     l1616:
-   819                           
-   820                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 136:     TRISBbits.TRISB1=1;
-   821  016D  1486               	bsf	6,1	;volatile
-   822  016E                     l1618:
-   823                           
-   824                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 137:     TRISBbits.TRISB2=1;
-   825  016E  1506               	bsf	6,2	;volatile
-   826  016F                     l1620:
-   827                           
-   828                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 138:     TRISBbits.TRISB3=1;
-   829  016F  1586               	bsf	6,3	;volatile
-   830  0170                     l1622:
-   831                           
-   832                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 139:     TRISEbits.TRISE0=0;
-   833  0170  1009               	bcf	9,0	;volatile
-   834  0171                     l1624:
-   835                           
-   836                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 140:     TRISEbits.TRISE1=0;
-   837  0171  1089               	bcf	9,1	;volatile
-   838  0172                     l1626:
-   839                           
-   840                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 141:     TRISCbits.TRISC6=0;
-   841  0172  1307               	bcf	7,6	;volatile
-   842                           
-   843                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 142:     TRISD=0;
-   844  0173  0188               	clrf	8	;volatile
-   845                           
-   846                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 144:     PORTB=0;
-   847  0174  1283               	bcf	3,5	;RP0=0, select bank0
-   848  0175  1303               	bcf	3,6	;RP1=0, select bank0
-   849  0176  0186               	clrf	6	;volatile
-   850                           
-   851                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 145:     PORTD=0;
-   852  0177  0188               	clrf	8	;volatile
-   853                           
-   854                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 146:     PORTE=0;
-   855  0178  0189               	clrf	9	;volatile
-   856  0179                     l1628:
-   857                           
-   858                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 148:     osc_config(8);
-   859  0179  3008               	movlw	8
-   860  017A  120A  118A  20F4  120A  118A  	fcall	_osc_config
-   861  017F                     l1630:
-   862                           
-   863                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 150:     ADC_config();
-   864  017F  120A  118A  21CA  120A  118A  	fcall	_ADC_config
-   865  0184                     l1632:
-   866                           
-   867                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 151:     uart_config();
-   868  0184  120A  118A  21B4  120A  118A  	fcall	_uart_config
-   869  0189                     l1634:
-   870                           
-   871                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 153:     I2C_Slave_Init(0x50);
-   872  0189  3050               	movlw	80
-   873  018A  120A  118A  2198  120A  118A  	fcall	_I2C_Slave_Init
-   874  018F                     l1636:
-   875                           
-   876                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 156:     INTCONbits.GIE=1;
-   877  018F  178B               	bsf	11,7	;volatile
-   878  0190                     l1638:
-   879                           
-   880                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 157:     INTCONbits.PEIE=1;
-   881  0190  170B               	bsf	11,6	;volatile
-   882  0191                     l1640:
-   883                           
-   884                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 158:     PIE1bits.TXIE=1;
-   885  0191  1683               	bsf	3,5	;RP0=1, select bank1
-   886  0192  1303               	bcf	3,6	;RP1=0, select bank1
-   887  0193  160C               	bsf	12,4	;volatile
-   888  0194                     l1642:
-   889                           
-   890                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 159:     PIR1bits.TXIF=0;
-   891  0194  1283               	bcf	3,5	;RP0=0, select bank0
-   892  0195  1303               	bcf	3,6	;RP1=0, select bank0
-   893  0196  120C               	bcf	12,4	;volatile
-   894  0197                     l118:
-   895  0197  0008               	return
-   896  0198                     __end_of_setup:
-   897                           
-   898                           	psect	text2
-   899  01B4                     __ptext2:	
-   900 ;; *************** function _uart_config *****************
-   901 ;; Defined at:
-   902 ;;		line 21 in file "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/UART_CONFIG.c"
-   903 ;; Parameters:    Size  Location     Type
-   904 ;;		None
-   905 ;; Auto vars:     Size  Location     Type
+      +                          : 136:     TRISAbits.TRISA1=0;
+   815  016C  1085               	bcf	5,1	;volatile
+   816  016D                     l1614:
+   817                           
+   818                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 137:     TRISAbits.TRISA2=0;
+   819  016D  1105               	bcf	5,2	;volatile
+   820  016E                     l1616:
+   821                           
+   822                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 138:     TRISAbits.TRISA3=0;
+   823  016E  1185               	bcf	5,3	;volatile
+   824  016F                     l1618:
+   825                           
+   826                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 139:     TRISAbits.TRISA4=0;
+   827  016F  1205               	bcf	5,4	;volatile
+   828  0170                     l1620:
+   829                           
+   830                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 140:     TRISAbits.TRISA5=0;
+   831  0170  1285               	bcf	5,5	;volatile
+   832  0171                     l1622:
+   833                           
+   834                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 142:     TRISBbits.TRISB1=1;
+   835  0171  1486               	bsf	6,1	;volatile
+   836  0172                     l1624:
+   837                           
+   838                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 143:     TRISBbits.TRISB2=1;
+   839  0172  1506               	bsf	6,2	;volatile
+   840  0173                     l1626:
+   841                           
+   842                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 144:     TRISBbits.TRISB3=1;
+   843  0173  1586               	bsf	6,3	;volatile
+   844                           
+   845                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 147:     PORTA=0;
+   846  0174  1283               	bcf	3,5	;RP0=0, select bank0
+   847  0175  1303               	bcf	3,6	;RP1=0, select bank0
+   848  0176  0185               	clrf	5	;volatile
+   849                           
+   850                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 148:     PORTB=0;
+   851  0177  0186               	clrf	6	;volatile
+   852                           
+   853                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 149:     PORTD=0;
+   854  0178  0188               	clrf	8	;volatile
+   855                           
+   856                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 150:     PORTE=0;
+   857  0179  0189               	clrf	9	;volatile
+   858  017A                     l1628:
+   859                           
+   860                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 152:     osc_config(8);
+   861  017A  3008               	movlw	8
+   862  017B  120A  118A  20F4  120A  118A  	fcall	_osc_config
+   863  0180                     l1630:
+   864                           
+   865                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 154:     ADC_config();
+   866  0180  120A  118A  21CB  120A  118A  	fcall	_ADC_config
+   867  0185                     l1632:
+   868                           
+   869                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 155:     uart_config();
+   870  0185  120A  118A  21B5  120A  118A  	fcall	_uart_config
+   871  018A                     l1634:
+   872                           
+   873                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 157:     I2C_Slave_Init(0x50);
+   874  018A  3050               	movlw	80
+   875  018B  120A  118A  2199  120A  118A  	fcall	_I2C_Slave_Init
+   876  0190                     l1636:
+   877                           
+   878                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 160:     INTCONbits.GIE=1;
+   879  0190  178B               	bsf	11,7	;volatile
+   880  0191                     l1638:
+   881                           
+   882                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 161:     INTCONbits.PEIE=1;
+   883  0191  170B               	bsf	11,6	;volatile
+   884  0192                     l1640:
+   885                           
+   886                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 162:     PIE1bits.TXIE=1;
+   887  0192  1683               	bsf	3,5	;RP0=1, select bank1
+   888  0193  1303               	bcf	3,6	;RP1=0, select bank1
+   889  0194  160C               	bsf	12,4	;volatile
+   890  0195                     l1642:
+   891                           
+   892                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 163:     PIR1bits.TXIF=0;
+   893  0195  1283               	bcf	3,5	;RP0=0, select bank0
+   894  0196  1303               	bcf	3,6	;RP1=0, select bank0
+   895  0197  120C               	bcf	12,4	;volatile
+   896  0198                     l112:
+   897  0198  0008               	return
+   898  0199                     __end_of_setup:
+   899                           
+   900                           	psect	text2
+   901  01B5                     __ptext2:	
+   902 ;; *************** function _uart_config *****************
+   903 ;; Defined at:
+   904 ;;		line 21 in file "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/UART_CONFIG.c"
+   905 ;; Parameters:    Size  Location     Type
    906 ;;		None
-   907 ;; Return value:  Size  Location     Type
-   908 ;;                  1    wreg      void 
-   909 ;; Registers used:
-   910 ;;		wreg, status,2
-   911 ;; Tracked objects:
-   912 ;;		On entry : 0/0
-   913 ;;		On exit  : 0/0
-   914 ;;		Unchanged: 0/0
-   915 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-   916 ;;      Params:         0       0       0       0       0
-   917 ;;      Locals:         0       0       0       0       0
-   918 ;;      Temps:          0       0       0       0       0
-   919 ;;      Totals:         0       0       0       0       0
-   920 ;;Total ram usage:        0 bytes
-   921 ;; Hardware stack levels used: 1
-   922 ;; Hardware stack levels required when called: 2
-   923 ;; This function calls:
-   924 ;;		Nothing
-   925 ;; This function is called by:
-   926 ;;		_setup
-   927 ;; This function uses a non-reentrant model
-   928 ;;
-   929                           
-   930                           
-   931                           ;psect for function _uart_config
-   932  01B4                     _uart_config:
-   933  01B4                     l1582:	
-   934                           ;incstack = 0
-   935                           ; Regs used in _uart_config: [wreg+status,2]
-   936                           
-   937                           
-   938                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/UART_CONFIG.c: 
+   907 ;; Auto vars:     Size  Location     Type
+   908 ;;		None
+   909 ;; Return value:  Size  Location     Type
+   910 ;;                  1    wreg      void 
+   911 ;; Registers used:
+   912 ;;		wreg, status,2
+   913 ;; Tracked objects:
+   914 ;;		On entry : 0/0
+   915 ;;		On exit  : 0/0
+   916 ;;		Unchanged: 0/0
+   917 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   918 ;;      Params:         0       0       0       0       0
+   919 ;;      Locals:         0       0       0       0       0
+   920 ;;      Temps:          0       0       0       0       0
+   921 ;;      Totals:         0       0       0       0       0
+   922 ;;Total ram usage:        0 bytes
+   923 ;; Hardware stack levels used: 1
+   924 ;; Hardware stack levels required when called: 2
+   925 ;; This function calls:
+   926 ;;		Nothing
+   927 ;; This function is called by:
+   928 ;;		_setup
+   929 ;; This function uses a non-reentrant model
+   930 ;;
+   931                           
+   932                           
+   933                           ;psect for function _uart_config
+   934  01B5                     _uart_config:
+   935  01B5                     l1580:	
+   936                           ;incstack = 0
+   937                           ; Regs used in _uart_config: [wreg+status,2]
+   938                           
+   939                           
+   940                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/UART_CONFIG.c: 
       +                          24:     TXSTAbits.SYNC = 0;
-   939  01B4  1683               	bsf	3,5	;RP0=1, select bank1
-   940  01B5  1303               	bcf	3,6	;RP1=0, select bank1
-   941  01B6  1218               	bcf	24,4	;volatile
-   942                           
-   943                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/UART_CONFIG.c: 
+   941  01B5  1683               	bsf	3,5	;RP0=1, select bank1
+   942  01B6  1303               	bcf	3,6	;RP1=0, select bank1
+   943  01B7  1218               	bcf	24,4	;volatile
+   944                           
+   945                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/UART_CONFIG.c: 
       +                          25:  TXSTAbits.BRGH = 1;
-   944  01B7  1518               	bsf	24,2	;volatile
-   945                           
-   946                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/UART_CONFIG.c: 
+   946  01B8  1518               	bsf	24,2	;volatile
+   947                           
+   948                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/UART_CONFIG.c: 
       +                          26:  TXSTAbits.TX9 = 0;
-   947  01B8  1318               	bcf	24,6	;volatile
-   948                           
-   949                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/UART_CONFIG.c: 
+   949  01B9  1318               	bcf	24,6	;volatile
+   950                           
+   951                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/UART_CONFIG.c: 
       +                          27:  BAUDCTLbits.BRG16 = 0;
-   950  01B9  1683               	bsf	3,5	;RP0=1, select bank3
-   951  01BA  1703               	bsf	3,6	;RP1=1, select bank3
-   952  01BB  1187               	bcf	7,3	;volatile
-   953  01BC                     l1584:
-   954                           
-   955                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/UART_CONFIG.c: 
+   952  01BA  1683               	bsf	3,5	;RP0=1, select bank3
+   953  01BB  1703               	bsf	3,6	;RP1=1, select bank3
+   954  01BC  1187               	bcf	7,3	;volatile
+   955  01BD                     l1582:
+   956                           
+   957                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/UART_CONFIG.c: 
       +                          28:  SPBRGH = 0;
-   956  01BC  1683               	bsf	3,5	;RP0=1, select bank1
-   957  01BD  1303               	bcf	3,6	;RP1=0, select bank1
-   958  01BE  019A               	clrf	26	;volatile
-   959  01BF                     l1586:
-   960                           
-   961                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/UART_CONFIG.c: 
+   958  01BD  1683               	bsf	3,5	;RP0=1, select bank1
+   959  01BE  1303               	bcf	3,6	;RP1=0, select bank1
+   960  01BF  019A               	clrf	26	;volatile
+   961  01C0                     l1584:
+   962                           
+   963                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/UART_CONFIG.c: 
       +                          29:  SPBRG = 51;
-   962  01BF  3033               	movlw	51
-   963  01C0  0099               	movwf	25	;volatile
-   964  01C1                     l1588:
-   965                           
-   966                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/UART_CONFIG.c: 
+   964  01C0  3033               	movlw	51
+   965  01C1  0099               	movwf	25	;volatile
+   966  01C2                     l1586:
+   967                           
+   968                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/UART_CONFIG.c: 
       +                          31:  RCSTAbits.SPEN = 1;
-   967  01C1  1283               	bcf	3,5	;RP0=0, select bank0
-   968  01C2  1303               	bcf	3,6	;RP1=0, select bank0
-   969  01C3  1798               	bsf	24,7	;volatile
-   970  01C4                     l1590:
-   971                           
-   972                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/UART_CONFIG.c: 
+   969  01C2  1283               	bcf	3,5	;RP0=0, select bank0
+   970  01C3  1303               	bcf	3,6	;RP1=0, select bank0
+   971  01C4  1798               	bsf	24,7	;volatile
+   972  01C5                     l1588:
+   973                           
+   974                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/UART_CONFIG.c: 
       +                          32:  RCSTAbits.RX9 = 0;
-   973  01C4  1318               	bcf	24,6	;volatile
-   974  01C5                     l1592:
-   975                           
-   976                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/UART_CONFIG.c: 
+   975  01C5  1318               	bcf	24,6	;volatile
+   976  01C6                     l1590:
+   977                           
+   978                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/UART_CONFIG.c: 
       +                          33:  RCSTAbits.CREN = 0;
-   977  01C5  1218               	bcf	24,4	;volatile
-   978  01C6                     l1594:
-   979                           
-   980                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/UART_CONFIG.c: 
+   979  01C6  1218               	bcf	24,4	;volatile
+   980  01C7                     l1592:
+   981                           
+   982                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/UART_CONFIG.c: 
       +                          34:  TXSTAbits.TXEN = 1;
-   981  01C6  1683               	bsf	3,5	;RP0=1, select bank1
-   982  01C7  1303               	bcf	3,6	;RP1=0, select bank1
-   983  01C8  1698               	bsf	24,5	;volatile
-   984  01C9                     l234:
-   985  01C9  0008               	return
-   986  01CA                     __end_of_uart_config:
-   987                           
-   988                           	psect	text3
-   989  00F4                     __ptext3:	
-   990 ;; *************** function _osc_config *****************
-   991 ;; Defined at:
-   992 ;;		line 16 in file "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/Osc_config.c"
-   993 ;; Parameters:    Size  Location     Type
-   994 ;;  freq            1    wreg     unsigned char 
-   995 ;; Auto vars:     Size  Location     Type
-   996 ;;  freq            1    2[BANK0 ] unsigned char 
-   997 ;; Return value:  Size  Location     Type
-   998 ;;                  1    wreg      void 
-   999 ;; Registers used:
-  1000 ;;		wreg, fsr0l, fsr0h, status,2, status,0
-  1001 ;; Tracked objects:
-  1002 ;;		On entry : 0/0
-  1003 ;;		On exit  : 0/0
-  1004 ;;		Unchanged: 0/0
-  1005 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-  1006 ;;      Params:         0       0       0       0       0
-  1007 ;;      Locals:         0       1       0       0       0
-  1008 ;;      Temps:          0       2       0       0       0
-  1009 ;;      Totals:         0       3       0       0       0
-  1010 ;;Total ram usage:        3 bytes
-  1011 ;; Hardware stack levels used: 1
-  1012 ;; Hardware stack levels required when called: 2
-  1013 ;; This function calls:
-  1014 ;;		Nothing
-  1015 ;; This function is called by:
-  1016 ;;		_setup
-  1017 ;; This function uses a non-reentrant model
-  1018 ;;
-  1019                           
-  1020                           
-  1021                           ;psect for function _osc_config
-  1022  00F4                     _osc_config:
-  1023                           
-  1024                           ;incstack = 0
-  1025                           ; Regs used in _osc_config: [wreg-fsr0h+status,2+status,0]
-  1026                           ;osc_config@freq stored from wreg
-  1027  00F4  1283               	bcf	3,5	;RP0=0, select bank0
-  1028  00F5  1303               	bcf	3,6	;RP1=0, select bank0
-  1029  00F6  00B1               	movwf	osc_config@freq
-  1030  00F7                     l1546:
-  1031                           
-  1032                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/Osc_config.c: 1
+   983  01C7  1683               	bsf	3,5	;RP0=1, select bank1
+   984  01C8  1303               	bcf	3,6	;RP1=0, select bank1
+   985  01C9  1698               	bsf	24,5	;volatile
+   986  01CA                     l228:
+   987  01CA  0008               	return
+   988  01CB                     __end_of_uart_config:
+   989                           
+   990                           	psect	text3
+   991  00F4                     __ptext3:	
+   992 ;; *************** function _osc_config *****************
+   993 ;; Defined at:
+   994 ;;		line 16 in file "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/Osc_config.c"
+   995 ;; Parameters:    Size  Location     Type
+   996 ;;  freq            1    wreg     unsigned char 
+   997 ;; Auto vars:     Size  Location     Type
+   998 ;;  freq            1    2[BANK0 ] unsigned char 
+   999 ;; Return value:  Size  Location     Type
+  1000 ;;                  1    wreg      void 
+  1001 ;; Registers used:
+  1002 ;;		wreg, fsr0l, fsr0h, status,2, status,0
+  1003 ;; Tracked objects:
+  1004 ;;		On entry : 0/0
+  1005 ;;		On exit  : 0/0
+  1006 ;;		Unchanged: 0/0
+  1007 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1008 ;;      Params:         0       0       0       0       0
+  1009 ;;      Locals:         0       1       0       0       0
+  1010 ;;      Temps:          0       2       0       0       0
+  1011 ;;      Totals:         0       3       0       0       0
+  1012 ;;Total ram usage:        3 bytes
+  1013 ;; Hardware stack levels used: 1
+  1014 ;; Hardware stack levels required when called: 2
+  1015 ;; This function calls:
+  1016 ;;		Nothing
+  1017 ;; This function is called by:
+  1018 ;;		_setup
+  1019 ;; This function uses a non-reentrant model
+  1020 ;;
+  1021                           
+  1022                           
+  1023                           ;psect for function _osc_config
+  1024  00F4                     _osc_config:
+  1025                           
+  1026                           ;incstack = 0
+  1027                           ; Regs used in _osc_config: [wreg-fsr0h+status,2+status,0]
+  1028                           ;osc_config@freq stored from wreg
+  1029  00F4  1283               	bcf	3,5	;RP0=0, select bank0
+  1030  00F5  1303               	bcf	3,6	;RP1=0, select bank0
+  1031  00F6  00B1               	movwf	osc_config@freq
+  1032  00F7                     l1544:
+  1033                           
+  1034                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/Osc_config.c: 1
       +                          6: void osc_config(uint8_t freq);C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED
       +                          2/PIC_sensores.X/Osc_config.c: 17: {;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto
       +                          1_ED2/PIC_sensores.X/Osc_config.c: 18:     switch(freq)
-  1033  00F7  2916               	goto	l1566
-  1034  00F8                     l1548:
-  1035                           
-  1036                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/Osc_config.c: 2
+  1035  00F7  2916               	goto	l1564
+  1036  00F8                     l1546:
+  1037                           
+  1038                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/Osc_config.c: 2
       +                          1:             OSCCONbits.IRCF=0b100;
-  1037  00F8  1683               	bsf	3,5	;RP0=1, select bank1
-  1038  00F9  1303               	bcf	3,6	;RP1=0, select bank1
-  1039  00FA  080F               	movf	15,w	;volatile
-  1040  00FB  398F               	andlw	-113
-  1041  00FC  3840               	iorlw	64
-  1042  00FD  008F               	movwf	15	;volatile
-  1043  00FE                     l1550:
-  1044                           
-  1045                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/Osc_config.c: 2
+  1039  00F8  1683               	bsf	3,5	;RP0=1, select bank1
+  1040  00F9  1303               	bcf	3,6	;RP1=0, select bank1
+  1041  00FA  080F               	movf	15,w	;volatile
+  1042  00FB  398F               	andlw	-113
+  1043  00FC  3840               	iorlw	64
+  1044  00FD  008F               	movwf	15	;volatile
+  1045  00FE                     l1548:
+  1046                           
+  1047                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/Osc_config.c: 2
       +                          2:             OSCCONbits.SCS=1;
-  1046  00FE  140F               	bsf	15,0	;volatile
-  1047                           
-  1048                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/Osc_config.c: 2
+  1048  00FE  140F               	bsf	15,0	;volatile
+  1049                           
+  1050                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/Osc_config.c: 2
       +                          3:             break;
-  1049  00FF  292C               	goto	l157
-  1050  0100                     l1552:
-  1051                           
-  1052                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/Osc_config.c: 2
+  1051  00FF  292C               	goto	l151
+  1052  0100                     l1550:
+  1053                           
+  1054                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/Osc_config.c: 2
       +                          6:             OSCCONbits.IRCF=0b101;
-  1053  0100  1683               	bsf	3,5	;RP0=1, select bank1
-  1054  0101  1303               	bcf	3,6	;RP1=0, select bank1
-  1055  0102  080F               	movf	15,w	;volatile
-  1056  0103  398F               	andlw	-113
-  1057  0104  3850               	iorlw	80
-  1058  0105  008F               	movwf	15	;volatile
-  1059  0106                     l1554:
-  1060                           
-  1061                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/Osc_config.c: 2
+  1055  0100  1683               	bsf	3,5	;RP0=1, select bank1
+  1056  0101  1303               	bcf	3,6	;RP1=0, select bank1
+  1057  0102  080F               	movf	15,w	;volatile
+  1058  0103  398F               	andlw	-113
+  1059  0104  3850               	iorlw	80
+  1060  0105  008F               	movwf	15	;volatile
+  1061  0106                     l1552:
+  1062                           
+  1063                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/Osc_config.c: 2
       +                          7:             OSCCONbits.SCS=1;
-  1062  0106  140F               	bsf	15,0	;volatile
-  1063                           
-  1064                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/Osc_config.c: 2
+  1064  0106  140F               	bsf	15,0	;volatile
+  1065                           
+  1066                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/Osc_config.c: 2
       +                          8:             break;
-  1065  0107  292C               	goto	l157
-  1066  0108                     l1556:
-  1067                           
-  1068                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/Osc_config.c: 3
+  1067  0107  292C               	goto	l151
+  1068  0108                     l1554:
+  1069                           
+  1070                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/Osc_config.c: 3
       +                          1:             OSCCONbits.IRCF=0b110;
-  1069  0108  1683               	bsf	3,5	;RP0=1, select bank1
-  1070  0109  1303               	bcf	3,6	;RP1=0, select bank1
-  1071  010A  080F               	movf	15,w	;volatile
-  1072  010B  398F               	andlw	-113
-  1073  010C  3860               	iorlw	96
-  1074  010D  008F               	movwf	15	;volatile
-  1075  010E                     l1558:
-  1076                           
-  1077                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/Osc_config.c: 3
+  1071  0108  1683               	bsf	3,5	;RP0=1, select bank1
+  1072  0109  1303               	bcf	3,6	;RP1=0, select bank1
+  1073  010A  080F               	movf	15,w	;volatile
+  1074  010B  398F               	andlw	-113
+  1075  010C  3860               	iorlw	96
+  1076  010D  008F               	movwf	15	;volatile
+  1077  010E                     l1556:
+  1078                           
+  1079                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/Osc_config.c: 3
       +                          2:             OSCCONbits.SCS=1;
-  1078  010E  140F               	bsf	15,0	;volatile
-  1079                           
-  1080                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/Osc_config.c: 3
+  1080  010E  140F               	bsf	15,0	;volatile
+  1081                           
+  1082                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/Osc_config.c: 3
       +                          3:             break;
-  1081  010F  292C               	goto	l157
-  1082  0110                     l1560:
-  1083                           
-  1084                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/Osc_config.c: 3
+  1083  010F  292C               	goto	l151
+  1084  0110                     l1558:
+  1085                           
+  1086                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/Osc_config.c: 3
       +                          6:             OSCCONbits.IRCF=0b111;
-  1085  0110  3070               	movlw	112
-  1086  0111  1683               	bsf	3,5	;RP0=1, select bank1
-  1087  0112  1303               	bcf	3,6	;RP1=0, select bank1
-  1088  0113  048F               	iorwf	15,f	;volatile
-  1089  0114                     l1562:
-  1090                           
-  1091                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/Osc_config.c: 3
+  1087  0110  3070               	movlw	112
+  1088  0111  1683               	bsf	3,5	;RP0=1, select bank1
+  1089  0112  1303               	bcf	3,6	;RP1=0, select bank1
+  1090  0113  048F               	iorwf	15,f	;volatile
+  1091  0114                     l1560:
+  1092                           
+  1093                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/Osc_config.c: 3
       +                          7:             OSCCONbits.SCS=1;
-  1092  0114  140F               	bsf	15,0	;volatile
-  1093                           
-  1094                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/Osc_config.c: 3
+  1094  0114  140F               	bsf	15,0	;volatile
+  1095                           
+  1096                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/Osc_config.c: 3
       +                          8:             break;
-  1095  0115  292C               	goto	l157
-  1096  0116                     l1566:
-  1097  0116  0831               	movf	osc_config@freq,w
-  1098  0117  00AF               	movwf	??_osc_config
-  1099  0118  01B0               	clrf	??_osc_config+1
-  1100                           
-  1101                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
+  1097  0115  292C               	goto	l151
+  1098  0116                     l1564:
+  1099  0116  0831               	movf	osc_config@freq,w
+  1100  0117  00AF               	movwf	??_osc_config
+  1101  0118  01B0               	clrf	??_osc_config+1
+  1102                           
+  1103                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
       +                          itches
-  1102                           ; Switch size 1, requested type "simple"
-  1103                           ; Number of cases is 1, Range of values is 0 to 0
-  1104                           ; switch strategies available:
-  1105                           ; Name         Instructions Cycles
-  1106                           ; simple_byte            4     3 (average)
-  1107                           ; direct_byte           11     8 (fixed)
-  1108                           ; jumptable            260     6 (fixed)
-  1109                           ;	Chosen strategy is simple_byte
-  1110  0119  0830               	movf	??_osc_config+1,w
-  1111  011A  3A00               	xorlw	0	; case 0
-  1112  011B  1903               	skipnz
-  1113  011C  291E               	goto	l1724
-  1114  011D  292C               	goto	l157
-  1115  011E                     l1724:
-  1116                           
-  1117                           ; Switch size 1, requested type "simple"
-  1118                           ; Number of cases is 4, Range of values is 1 to 8
-  1119                           ; switch strategies available:
-  1120                           ; Name         Instructions Cycles
-  1121                           ; simple_byte           13     7 (average)
-  1122                           ; direct_byte           35    11 (fixed)
-  1123                           ; jumptable            263     9 (fixed)
-  1124                           ;	Chosen strategy is simple_byte
-  1125  011E  082F               	movf	??_osc_config,w
-  1126  011F  3A01               	xorlw	1	; case 1
-  1127  0120  1903               	skipnz
-  1128  0121  28F8               	goto	l1548
-  1129  0122  3A03               	xorlw	3	; case 2
-  1130  0123  1903               	skipnz
-  1131  0124  2900               	goto	l1552
-  1132  0125  3A06               	xorlw	6	; case 4
-  1133  0126  1903               	skipnz
-  1134  0127  2908               	goto	l1556
-  1135  0128  3A0C               	xorlw	12	; case 8
-  1136  0129  1903               	skipnz
-  1137  012A  2910               	goto	l1560
-  1138  012B  292C               	goto	l157
-  1139  012C                     l157:
-  1140  012C  0008               	return
-  1141  012D                     __end_of_osc_config:
-  1142                           
-  1143                           	psect	text4
-  1144  0198                     __ptext4:	
-  1145 ;; *************** function _I2C_Slave_Init *****************
-  1146 ;; Defined at:
-  1147 ;;		line 93 in file "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/I2C.c"
-  1148 ;; Parameters:    Size  Location     Type
-  1149 ;;  address         1    wreg     unsigned char 
-  1150 ;; Auto vars:     Size  Location     Type
-  1151 ;;  address         1    0[BANK0 ] unsigned char 
-  1152 ;; Return value:  Size  Location     Type
-  1153 ;;                  1    wreg      void 
-  1154 ;; Registers used:
-  1155 ;;		wreg
-  1156 ;; Tracked objects:
-  1157 ;;		On entry : 0/0
-  1158 ;;		On exit  : 0/0
-  1159 ;;		Unchanged: 0/0
-  1160 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-  1161 ;;      Params:         0       0       0       0       0
-  1162 ;;      Locals:         0       1       0       0       0
-  1163 ;;      Temps:          0       0       0       0       0
-  1164 ;;      Totals:         0       1       0       0       0
-  1165 ;;Total ram usage:        1 bytes
-  1166 ;; Hardware stack levels used: 1
-  1167 ;; Hardware stack levels required when called: 2
-  1168 ;; This function calls:
-  1169 ;;		Nothing
-  1170 ;; This function is called by:
-  1171 ;;		_setup
-  1172 ;; This function uses a non-reentrant model
-  1173 ;;
-  1174                           
-  1175                           
-  1176                           ;psect for function _I2C_Slave_Init
-  1177  0198                     _I2C_Slave_Init:
-  1178                           
-  1179                           ;incstack = 0
-  1180                           ; Regs used in _I2C_Slave_Init: [wreg]
-  1181                           ;I2C_Slave_Init@address stored from wreg
-  1182  0198  1283               	bcf	3,5	;RP0=0, select bank0
-  1183  0199  1303               	bcf	3,6	;RP1=0, select bank0
-  1184  019A  00AF               	movwf	I2C_Slave_Init@address
-  1185  019B                     l1596:
-  1186                           
-  1187                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/I2C.c: 93: void
+  1104                           ; Switch size 1, requested type "simple"
+  1105                           ; Number of cases is 1, Range of values is 0 to 0
+  1106                           ; switch strategies available:
+  1107                           ; Name         Instructions Cycles
+  1108                           ; simple_byte            4     3 (average)
+  1109                           ; direct_byte           11     8 (fixed)
+  1110                           ; jumptable            260     6 (fixed)
+  1111                           ;	Chosen strategy is simple_byte
+  1112  0119  0830               	movf	??_osc_config+1,w
+  1113  011A  3A00               	xorlw	0	; case 0
+  1114  011B  1903               	skipnz
+  1115  011C  291E               	goto	l1724
+  1116  011D  292C               	goto	l151
+  1117  011E                     l1724:
+  1118                           
+  1119                           ; Switch size 1, requested type "simple"
+  1120                           ; Number of cases is 4, Range of values is 1 to 8
+  1121                           ; switch strategies available:
+  1122                           ; Name         Instructions Cycles
+  1123                           ; simple_byte           13     7 (average)
+  1124                           ; direct_byte           35    11 (fixed)
+  1125                           ; jumptable            263     9 (fixed)
+  1126                           ;	Chosen strategy is simple_byte
+  1127  011E  082F               	movf	??_osc_config,w
+  1128  011F  3A01               	xorlw	1	; case 1
+  1129  0120  1903               	skipnz
+  1130  0121  28F8               	goto	l1546
+  1131  0122  3A03               	xorlw	3	; case 2
+  1132  0123  1903               	skipnz
+  1133  0124  2900               	goto	l1550
+  1134  0125  3A06               	xorlw	6	; case 4
+  1135  0126  1903               	skipnz
+  1136  0127  2908               	goto	l1554
+  1137  0128  3A0C               	xorlw	12	; case 8
+  1138  0129  1903               	skipnz
+  1139  012A  2910               	goto	l1558
+  1140  012B  292C               	goto	l151
+  1141  012C                     l151:
+  1142  012C  0008               	return
+  1143  012D                     __end_of_osc_config:
+  1144                           
+  1145                           	psect	text4
+  1146  0199                     __ptext4:	
+  1147 ;; *************** function _I2C_Slave_Init *****************
+  1148 ;; Defined at:
+  1149 ;;		line 93 in file "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/I2C.c"
+  1150 ;; Parameters:    Size  Location     Type
+  1151 ;;  address         1    wreg     unsigned char 
+  1152 ;; Auto vars:     Size  Location     Type
+  1153 ;;  address         1    0[BANK0 ] unsigned char 
+  1154 ;; Return value:  Size  Location     Type
+  1155 ;;                  1    wreg      void 
+  1156 ;; Registers used:
+  1157 ;;		wreg
+  1158 ;; Tracked objects:
+  1159 ;;		On entry : 0/0
+  1160 ;;		On exit  : 0/0
+  1161 ;;		Unchanged: 0/0
+  1162 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1163 ;;      Params:         0       0       0       0       0
+  1164 ;;      Locals:         0       1       0       0       0
+  1165 ;;      Temps:          0       0       0       0       0
+  1166 ;;      Totals:         0       1       0       0       0
+  1167 ;;Total ram usage:        1 bytes
+  1168 ;; Hardware stack levels used: 1
+  1169 ;; Hardware stack levels required when called: 2
+  1170 ;; This function calls:
+  1171 ;;		Nothing
+  1172 ;; This function is called by:
+  1173 ;;		_setup
+  1174 ;; This function uses a non-reentrant model
+  1175 ;;
+  1176                           
+  1177                           
+  1178                           ;psect for function _I2C_Slave_Init
+  1179  0199                     _I2C_Slave_Init:
+  1180                           
+  1181                           ;incstack = 0
+  1182                           ; Regs used in _I2C_Slave_Init: [wreg]
+  1183                           ;I2C_Slave_Init@address stored from wreg
+  1184  0199  1283               	bcf	3,5	;RP0=0, select bank0
+  1185  019A  1303               	bcf	3,6	;RP1=0, select bank0
+  1186  019B  00AF               	movwf	I2C_Slave_Init@address
+  1187  019C                     l1594:
+  1188                           
+  1189                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/I2C.c: 93: void
       +                           I2C_Slave_Init(uint8_t address);C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED
       +                          2/PIC_sensores.X/I2C.c: 94: {;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/P
       +                          IC_sensores.X/I2C.c: 95:     SSPADD = address;
-  1188  019B  082F               	movf	I2C_Slave_Init@address,w
-  1189  019C  1683               	bsf	3,5	;RP0=1, select bank1
-  1190  019D  1303               	bcf	3,6	;RP1=0, select bank1
-  1191  019E  0093               	movwf	19	;volatile
-  1192                           
-  1193                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/I2C.c: 96:     
+  1190  019C  082F               	movf	I2C_Slave_Init@address,w
+  1191  019D  1683               	bsf	3,5	;RP0=1, select bank1
+  1192  019E  1303               	bcf	3,6	;RP1=0, select bank1
+  1193  019F  0093               	movwf	19	;volatile
+  1194                           
+  1195                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/I2C.c: 96:     
       +                          SSPCON = 0x36;
-  1194  019F  3036               	movlw	54
-  1195  01A0  1283               	bcf	3,5	;RP0=0, select bank0
-  1196  01A1  1303               	bcf	3,6	;RP1=0, select bank0
-  1197  01A2  0094               	movwf	20	;volatile
-  1198                           
-  1199                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/I2C.c: 97:     
+  1196  01A0  3036               	movlw	54
+  1197  01A1  1283               	bcf	3,5	;RP0=0, select bank0
+  1198  01A2  1303               	bcf	3,6	;RP1=0, select bank0
+  1199  01A3  0094               	movwf	20	;volatile
+  1200                           
+  1201                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/I2C.c: 97:     
       +                          SSPSTAT = 0x80;
-  1200  01A3  3080               	movlw	128
-  1201  01A4  1683               	bsf	3,5	;RP0=1, select bank1
-  1202  01A5  1303               	bcf	3,6	;RP1=0, select bank1
-  1203  01A6  0094               	movwf	20	;volatile
-  1204                           
-  1205                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/I2C.c: 98:     
+  1202  01A4  3080               	movlw	128
+  1203  01A5  1683               	bsf	3,5	;RP0=1, select bank1
+  1204  01A6  1303               	bcf	3,6	;RP1=0, select bank1
+  1205  01A7  0094               	movwf	20	;volatile
+  1206                           
+  1207                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/I2C.c: 98:     
       +                          SSPCON2 = 0x01;
-  1206  01A7  3001               	movlw	1
-  1207  01A8  0091               	movwf	17	;volatile
-  1208  01A9                     l1598:
-  1209                           
-  1210                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/I2C.c: 99:     
+  1208  01A8  3001               	movlw	1
+  1209  01A9  0091               	movwf	17	;volatile
+  1210  01AA                     l1596:
+  1211                           
+  1212                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/I2C.c: 99:     
       +                          TRISC3 = 1;
-  1211  01A9  1587               	bsf	7,3	;volatile
-  1212  01AA                     l1600:
-  1213                           
-  1214                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/I2C.c: 100:    
+  1213  01AA  1587               	bsf	7,3	;volatile
+  1214  01AB                     l1598:
+  1215                           
+  1216                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/I2C.c: 100:    
       +                           TRISC4 = 1;
-  1215  01AA  1607               	bsf	7,4	;volatile
-  1216  01AB                     l1602:
-  1217                           
-  1218                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/I2C.c: 101:    
+  1217  01AB  1607               	bsf	7,4	;volatile
+  1218  01AC                     l1600:
+  1219                           
+  1220                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/I2C.c: 101:    
       +                           GIE = 1;
-  1219  01AB  178B               	bsf	11,7	;volatile
-  1220  01AC                     l1604:
-  1221                           
-  1222                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/I2C.c: 102:    
+  1221  01AC  178B               	bsf	11,7	;volatile
+  1222  01AD                     l1602:
+  1223                           
+  1224                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/I2C.c: 102:    
       +                           PEIE = 1;
-  1223  01AC  170B               	bsf	11,6	;volatile
-  1224  01AD                     l1606:
-  1225                           
-  1226                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/I2C.c: 103:    
+  1225  01AD  170B               	bsf	11,6	;volatile
+  1226  01AE                     l1604:
+  1227                           
+  1228                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/I2C.c: 103:    
       +                           SSPIF = 0;
-  1227  01AD  1283               	bcf	3,5	;RP0=0, select bank0
-  1228  01AE  1303               	bcf	3,6	;RP1=0, select bank0
-  1229  01AF  118C               	bcf	12,3	;volatile
-  1230  01B0                     l1608:
-  1231                           
-  1232                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/I2C.c: 104:    
+  1229  01AE  1283               	bcf	3,5	;RP0=0, select bank0
+  1230  01AF  1303               	bcf	3,6	;RP1=0, select bank0
+  1231  01B0  118C               	bcf	12,3	;volatile
+  1232  01B1                     l1606:
+  1233                           
+  1234                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/I2C.c: 104:    
       +                           SSPIE = 1;
-  1233  01B0  1683               	bsf	3,5	;RP0=1, select bank1
-  1234  01B1  1303               	bcf	3,6	;RP1=0, select bank1
-  1235  01B2  158C               	bsf	12,3	;volatile
-  1236  01B3                     l221:
-  1237  01B3  0008               	return
-  1238  01B4                     __end_of_I2C_Slave_Init:
-  1239                           
-  1240                           	psect	text5
-  1241  01CA                     __ptext5:	
-  1242 ;; *************** function _ADC_config *****************
-  1243 ;; Defined at:
-  1244 ;;		line 22 in file "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/ADC_CONFIG.c"
-  1245 ;; Parameters:    Size  Location     Type
-  1246 ;;		None
-  1247 ;; Auto vars:     Size  Location     Type
+  1235  01B1  1683               	bsf	3,5	;RP0=1, select bank1
+  1236  01B2  1303               	bcf	3,6	;RP1=0, select bank1
+  1237  01B3  158C               	bsf	12,3	;volatile
+  1238  01B4                     l215:
+  1239  01B4  0008               	return
+  1240  01B5                     __end_of_I2C_Slave_Init:
+  1241                           
+  1242                           	psect	text5
+  1243  01CB                     __ptext5:	
+  1244 ;; *************** function _ADC_config *****************
+  1245 ;; Defined at:
+  1246 ;;		line 22 in file "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/ADC_CONFIG.c"
+  1247 ;; Parameters:    Size  Location     Type
   1248 ;;		None
-  1249 ;; Return value:  Size  Location     Type
-  1250 ;;                  1    wreg      void 
-  1251 ;; Registers used:
-  1252 ;;		wreg, status,2, status,0
-  1253 ;; Tracked objects:
-  1254 ;;		On entry : 0/0
-  1255 ;;		On exit  : 0/0
-  1256 ;;		Unchanged: 0/0
-  1257 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-  1258 ;;      Params:         0       0       0       0       0
-  1259 ;;      Locals:         0       0       0       0       0
-  1260 ;;      Temps:          0       1       0       0       0
-  1261 ;;      Totals:         0       1       0       0       0
-  1262 ;;Total ram usage:        1 bytes
-  1263 ;; Hardware stack levels used: 1
-  1264 ;; Hardware stack levels required when called: 2
-  1265 ;; This function calls:
-  1266 ;;		Nothing
-  1267 ;; This function is called by:
-  1268 ;;		_setup
-  1269 ;; This function uses a non-reentrant model
-  1270 ;;
-  1271                           
-  1272                           
-  1273                           ;psect for function _ADC_config
-  1274  01CA                     _ADC_config:
-  1275  01CA                     l1574:	
-  1276                           ;incstack = 0
-  1277                           ; Regs used in _ADC_config: [wreg+status,2+status,0]
-  1278                           
-  1279                           
-  1280                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/ADC_CONFIG.c: 2
+  1249 ;; Auto vars:     Size  Location     Type
+  1250 ;;		None
+  1251 ;; Return value:  Size  Location     Type
+  1252 ;;                  1    wreg      void 
+  1253 ;; Registers used:
+  1254 ;;		wreg, status,2, status,0
+  1255 ;; Tracked objects:
+  1256 ;;		On entry : 0/0
+  1257 ;;		On exit  : 0/0
+  1258 ;;		Unchanged: 0/0
+  1259 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1260 ;;      Params:         0       0       0       0       0
+  1261 ;;      Locals:         0       0       0       0       0
+  1262 ;;      Temps:          0       1       0       0       0
+  1263 ;;      Totals:         0       1       0       0       0
+  1264 ;;Total ram usage:        1 bytes
+  1265 ;; Hardware stack levels used: 1
+  1266 ;; Hardware stack levels required when called: 2
+  1267 ;; This function calls:
+  1268 ;;		Nothing
+  1269 ;; This function is called by:
+  1270 ;;		_setup
+  1271 ;; This function uses a non-reentrant model
+  1272 ;;
+  1273                           
+  1274                           
+  1275                           ;psect for function _ADC_config
+  1276  01CB                     _ADC_config:
+  1277  01CB                     l1572:	
+  1278                           ;incstack = 0
+  1279                           ; Regs used in _ADC_config: [wreg+status,2+status,0]
+  1280                           
+  1281                           
+  1282                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/ADC_CONFIG.c: 2
       +                          5:     ADCON1bits.ADFM = 1 ;
-  1281  01CA  1683               	bsf	3,5	;RP0=1, select bank1
-  1282  01CB  1303               	bcf	3,6	;RP1=0, select bank1
-  1283  01CC  179F               	bsf	31,7	;volatile
-  1284                           
-  1285                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/ADC_CONFIG.c: 2
+  1283  01CB  1683               	bsf	3,5	;RP0=1, select bank1
+  1284  01CC  1303               	bcf	3,6	;RP1=0, select bank1
+  1285  01CD  179F               	bsf	31,7	;volatile
+  1286                           
+  1287                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/ADC_CONFIG.c: 2
       +                          6:     ADCON1bits.VCFG0 = 0 ;
-  1286  01CD  121F               	bcf	31,4	;volatile
-  1287                           
-  1288                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/ADC_CONFIG.c: 2
+  1288  01CE  121F               	bcf	31,4	;volatile
+  1289                           
+  1290                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/ADC_CONFIG.c: 2
       +                          7:     ADCON1bits.VCFG1 = 0 ;
-  1289  01CE  129F               	bcf	31,5	;volatile
-  1290  01CF                     l1576:
-  1291                           
-  1292                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/ADC_CONFIG.c: 2
+  1291  01CF  129F               	bcf	31,5	;volatile
+  1292  01D0                     l1574:
+  1293                           
+  1294                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/ADC_CONFIG.c: 2
       +                          9:     ADCON0bits.ADCS = 0b00;
-  1293  01CF  303F               	movlw	-193
-  1294  01D0  1283               	bcf	3,5	;RP0=0, select bank0
-  1295  01D1  1303               	bcf	3,6	;RP1=0, select bank0
-  1296  01D2  059F               	andwf	31,f	;volatile
-  1297                           
-  1298                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/ADC_CONFIG.c: 3
+  1295  01D0  303F               	movlw	-193
+  1296  01D1  1283               	bcf	3,5	;RP0=0, select bank0
+  1297  01D2  1303               	bcf	3,6	;RP1=0, select bank0
+  1298  01D3  059F               	andwf	31,f	;volatile
+  1299                           
+  1300                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/ADC_CONFIG.c: 3
       +                          0:     ADCON0bits.CHS = 0;
-  1299  01D3  30C3               	movlw	-61
-  1300  01D4  059F               	andwf	31,f	;volatile
-  1301  01D5                     l1578:
-  1302                           
-  1303                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/ADC_CONFIG.c: 3
+  1301  01D4  30C3               	movlw	-61
+  1302  01D5  059F               	andwf	31,f	;volatile
+  1303  01D6                     l1576:
+  1304                           
+  1305                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/ADC_CONFIG.c: 3
       +                          1:     _delay((unsigned long)((100)*(8000000/4000000.0)));
-  1304  01D5  3041               	movlw	65
-  1305  01D6  1283               	bcf	3,5	;RP0=0, select bank0
-  1306  01D7  1303               	bcf	3,6	;RP1=0, select bank0
-  1307  01D8  00AF               	movwf	??_ADC_config
-  1308  01D9                     u997:
-  1309  01D9  0BAF               	decfsz	??_ADC_config,f
-  1310  01DA  29D9               	goto	u997
-  1311  01DB  29DC               	nop2
-  1312  01DC                     l1580:
-  1313                           
-  1314                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/ADC_CONFIG.c: 3
+  1306  01D6  3041               	movlw	65
+  1307  01D7  1283               	bcf	3,5	;RP0=0, select bank0
+  1308  01D8  1303               	bcf	3,6	;RP1=0, select bank0
+  1309  01D9  00AF               	movwf	??_ADC_config
+  1310  01DA                     u997:
+  1311  01DA  0BAF               	decfsz	??_ADC_config,f
+  1312  01DB  29DA               	goto	u997
+  1313  01DC  29DD               	nop2
+  1314  01DD                     l1578:
+  1315                           
+  1316                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/ADC_CONFIG.c: 3
       +                          2:     ADCON0bits.ADON = 1 ;
-  1315  01DC  1283               	bcf	3,5	;RP0=0, select bank0
-  1316  01DD  1303               	bcf	3,6	;RP1=0, select bank0
-  1317  01DE  141F               	bsf	31,0	;volatile
-  1318  01DF                     l166:
-  1319  01DF  0008               	return
-  1320  01E0                     __end_of_ADC_config:
-  1321                           
-  1322                           	psect	text6
-  1323  012D                     __ptext6:	
-  1324 ;; *************** function _infrarrojos *****************
-  1325 ;; Defined at:
-  1326 ;;		line 166 in file "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c"
-  1327 ;; Parameters:    Size  Location     Type
-  1328 ;;		None
-  1329 ;; Auto vars:     Size  Location     Type
+  1317  01DD  1283               	bcf	3,5	;RP0=0, select bank0
+  1318  01DE  1303               	bcf	3,6	;RP1=0, select bank0
+  1319  01DF  141F               	bsf	31,0	;volatile
+  1320  01E0                     l160:
+  1321  01E0  0008               	return
+  1322  01E1                     __end_of_ADC_config:
+  1323                           
+  1324                           	psect	text6
+  1325  012D                     __ptext6:	
+  1326 ;; *************** function _infrarrojos *****************
+  1327 ;; Defined at:
+  1328 ;;		line 170 in file "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c"
+  1329 ;; Parameters:    Size  Location     Type
   1330 ;;		None
-  1331 ;; Return value:  Size  Location     Type
-  1332 ;;                  1    wreg      void 
-  1333 ;; Registers used:
-  1334 ;;		wreg, status,2, status,0
-  1335 ;; Tracked objects:
-  1336 ;;		On entry : 0/0
-  1337 ;;		On exit  : 0/0
-  1338 ;;		Unchanged: 0/0
-  1339 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-  1340 ;;      Params:         0       0       0       0       0
-  1341 ;;      Locals:         0       0       0       0       0
-  1342 ;;      Temps:          0       2       0       0       0
-  1343 ;;      Totals:         0       2       0       0       0
-  1344 ;;Total ram usage:        2 bytes
-  1345 ;; Hardware stack levels used: 1
-  1346 ;; Hardware stack levels required when called: 2
-  1347 ;; This function calls:
-  1348 ;;		Nothing
-  1349 ;; This function is called by:
-  1350 ;;		_main
-  1351 ;; This function uses a non-reentrant model
-  1352 ;;
-  1353                           
-  1354                           
-  1355                           ;psect for function _infrarrojos
-  1356  012D                     _infrarrojos:
-  1357  012D                     l1644:	
-  1358                           ;incstack = 0
-  1359                           ; Regs used in _infrarrojos: [wreg+status,2+status,0]
-  1360                           
-  1361                           
-  1362                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 169:     if (PORTBbits.RB1==1)
-  1363  012D  1283               	bcf	3,5	;RP0=0, select bank0
-  1364  012E  1303               	bcf	3,6	;RP1=0, select bank0
-  1365  012F  1C86               	btfss	6,1	;volatile
-  1366  0130  2932               	goto	u931
-  1367  0131  2933               	goto	u930
-  1368  0132                     u931:
-  1369  0132  2937               	goto	l121
-  1370  0133                     u930:
-  1371  0133                     l1646:
-  1372                           
-  1373                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 170:     {;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/mai
-      +                          n_sensores.c: 171:         PORTDbits.RD0=1;
-  1374  0133  1408               	bsf	8,0	;volatile
-  1375                           
-  1376                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 172:         PORTDbits.RD1=0;
-  1377  0134  1088               	bcf	8,1	;volatile
-  1378                           
-  1379                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 173:         infrarrojo1=1;
-  1380  0135  01F3               	clrf	_infrarrojo1
-  1381  0136  0AF3               	incf	_infrarrojo1,f
-  1382  0137                     l121:	
-  1383                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 174:     }
-  1384                           
-  1385                           
-  1386                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 175:     if (PORTBbits.RB1==0)
-  1387  0137  1886               	btfsc	6,1	;volatile
-  1388  0138  293A               	goto	u941
-  1389  0139  293B               	goto	u940
-  1390  013A                     u941:
-  1391  013A  293E               	goto	l1652
-  1392  013B                     u940:
-  1393  013B                     l1648:
-  1394                           
-  1395                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 176:     {;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/mai
-      +                          n_sensores.c: 177:         PORTDbits.RD0=0;
-  1396  013B  1008               	bcf	8,0	;volatile
-  1397                           
-  1398                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 178:         PORTDbits.RD1=1;
-  1399  013C  1488               	bsf	8,1	;volatile
-  1400  013D                     l1650:
-  1401                           
-  1402                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 179:         infrarrojo1=0;
-  1403  013D  01F3               	clrf	_infrarrojo1
-  1404  013E                     l1652:
-  1405                           
-  1406                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 182:     if (PORTBbits.RB2==1)
-  1407  013E  1D06               	btfss	6,2	;volatile
-  1408  013F  2941               	goto	u951
-  1409  0140  2942               	goto	u950
-  1410  0141                     u951:
-  1411  0141  2946               	goto	l123
-  1412  0142                     u950:
-  1413  0142                     l1654:
-  1414                           
-  1415                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 183:     {;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/mai
-      +                          n_sensores.c: 184:         PORTDbits.RD2=1;
-  1416  0142  1508               	bsf	8,2	;volatile
-  1417                           
-  1418                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 185:         PORTDbits.RD3=0;
-  1419  0143  1188               	bcf	8,3	;volatile
-  1420                           
-  1421                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 186:         infrarrojo2=1;
-  1422  0144  01F2               	clrf	_infrarrojo2
-  1423  0145  0AF2               	incf	_infrarrojo2,f
-  1424  0146                     l123:	
-  1425                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 187:     }
-  1426                           
-  1427                           
-  1428                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 188:     if (PORTBbits.RB2==0)
-  1429  0146  1906               	btfsc	6,2	;volatile
-  1430  0147  2949               	goto	u961
-  1431  0148  294A               	goto	u960
-  1432  0149                     u961:
-  1433  0149  294D               	goto	l1660
-  1434  014A                     u960:
-  1435  014A                     l1656:
-  1436                           
-  1437                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 189:     {;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/mai
-      +                          n_sensores.c: 190:         PORTDbits.RD2=0;
-  1438  014A  1108               	bcf	8,2	;volatile
-  1439                           
-  1440                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 191:         PORTDbits.RD3=1;
-  1441  014B  1588               	bsf	8,3	;volatile
-  1442  014C                     l1658:
-  1443                           
-  1444                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 192:         infrarrojo2=0;
-  1445  014C  01F2               	clrf	_infrarrojo2
-  1446  014D                     l1660:
-  1447                           
-  1448                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 195:     if (PORTBbits.RB3==1)
-  1449  014D  1D86               	btfss	6,3	;volatile
-  1450  014E  2950               	goto	u971
-  1451  014F  2951               	goto	u970
-  1452  0150                     u971:
-  1453  0150  2955               	goto	l125
-  1454  0151                     u970:
-  1455  0151                     l1662:
-  1456                           
-  1457                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 196:     {;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/mai
-      +                          n_sensores.c: 197:         PORTDbits.RD4=1;
-  1458  0151  1608               	bsf	8,4	;volatile
-  1459                           
-  1460                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 198:         PORTDbits.RD5=0;
-  1461  0152  1288               	bcf	8,5	;volatile
-  1462                           
-  1463                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 199:         infrarrojo3=1;
-  1464  0153  01F1               	clrf	_infrarrojo3
-  1465  0154  0AF1               	incf	_infrarrojo3,f
-  1466  0155                     l125:	
-  1467                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 200:     }
-  1468                           
-  1469                           
-  1470                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 201:     if (PORTBbits.RB3==0)
-  1471  0155  1986               	btfsc	6,3	;volatile
-  1472  0156  2958               	goto	u981
-  1473  0157  2959               	goto	u980
-  1474  0158                     u981:
-  1475  0158  295C               	goto	l1668
-  1476  0159                     u980:
-  1477  0159                     l1664:
-  1478                           
-  1479                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 202:     {;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/mai
-      +                          n_sensores.c: 203:         PORTDbits.RD4=0;
-  1480  0159  1208               	bcf	8,4	;volatile
-  1481                           
-  1482                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 204:         PORTDbits.RD5=1;
-  1483  015A  1688               	bsf	8,5	;volatile
-  1484  015B                     l1666:
-  1485                           
-  1486                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 205:         infrarrojo3=0;
-  1487  015B  01F1               	clrf	_infrarrojo3
-  1488  015C                     l1668:
-  1489                           
-  1490                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 207:     suma_ir=infrarrojo1+infrarrojo2+infrarrojo3;
-  1491  015C  0872               	movf	_infrarrojo2,w
-  1492  015D  0773               	addwf	_infrarrojo1,w
-  1493  015E  00AF               	movwf	??_infrarrojos
-  1494  015F  0871               	movf	_infrarrojo3,w
-  1495  0160  072F               	addwf	??_infrarrojos,w
-  1496  0161  00B0               	movwf	??_infrarrojos+1
-  1497  0162  0830               	movf	??_infrarrojos+1,w
-  1498  0163  00F0               	movwf	_suma_ir
-  1499  0164                     l127:
-  1500  0164  0008               	return
-  1501  0165                     __end_of_infrarrojos:
-  1502                           
-  1503                           	psect	text7
-  1504  002C                     __ptext7:	
-  1505 ;; *************** function _isr *****************
-  1506 ;; Defined at:
-  1507 ;;		line 65 in file "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c"
-  1508 ;; Parameters:    Size  Location     Type
-  1509 ;;		None
-  1510 ;; Auto vars:     Size  Location     Type
+  1331 ;; Auto vars:     Size  Location     Type
+  1332 ;;		None
+  1333 ;; Return value:  Size  Location     Type
+  1334 ;;                  1    wreg      void 
+  1335 ;; Registers used:
+  1336 ;;		wreg, status,2, status,0
+  1337 ;; Tracked objects:
+  1338 ;;		On entry : 0/0
+  1339 ;;		On exit  : 0/0
+  1340 ;;		Unchanged: 0/0
+  1341 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1342 ;;      Params:         0       0       0       0       0
+  1343 ;;      Locals:         0       0       0       0       0
+  1344 ;;      Temps:          0       2       0       0       0
+  1345 ;;      Totals:         0       2       0       0       0
+  1346 ;;Total ram usage:        2 bytes
+  1347 ;; Hardware stack levels used: 1
+  1348 ;; Hardware stack levels required when called: 2
+  1349 ;; This function calls:
+  1350 ;;		Nothing
+  1351 ;; This function is called by:
+  1352 ;;		_main
+  1353 ;; This function uses a non-reentrant model
+  1354 ;;
+  1355                           
+  1356                           
+  1357                           ;psect for function _infrarrojos
+  1358  012D                     _infrarrojos:
+  1359  012D                     l1644:	
+  1360                           ;incstack = 0
+  1361                           ; Regs used in _infrarrojos: [wreg+status,2+status,0]
+  1362                           
+  1363                           
+  1364                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 173:     if (PORTBbits.RB1==1)
+  1365  012D  1283               	bcf	3,5	;RP0=0, select bank0
+  1366  012E  1303               	bcf	3,6	;RP1=0, select bank0
+  1367  012F  1C86               	btfss	6,1	;volatile
+  1368  0130  2932               	goto	u931
+  1369  0131  2933               	goto	u930
+  1370  0132                     u931:
+  1371  0132  2937               	goto	l115
+  1372  0133                     u930:
+  1373  0133                     l1646:
+  1374                           
+  1375                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 174:     {;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/mai
+      +                          n_sensores.c: 175:         PORTAbits.RA0=1;
+  1376  0133  1405               	bsf	5,0	;volatile
+  1377                           
+  1378                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 176:         PORTAbits.RA1=0;
+  1379  0134  1085               	bcf	5,1	;volatile
+  1380                           
+  1381                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 177:         infrarrojo1=1;
+  1382  0135  01F3               	clrf	_infrarrojo1
+  1383  0136  0AF3               	incf	_infrarrojo1,f
+  1384  0137                     l115:	
+  1385                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 178:     }
+  1386                           
+  1387                           
+  1388                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 179:     if (PORTBbits.RB1==0)
+  1389  0137  1886               	btfsc	6,1	;volatile
+  1390  0138  293A               	goto	u941
+  1391  0139  293B               	goto	u940
+  1392  013A                     u941:
+  1393  013A  293E               	goto	l1652
+  1394  013B                     u940:
+  1395  013B                     l1648:
+  1396                           
+  1397                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 180:     {;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/mai
+      +                          n_sensores.c: 181:         PORTAbits.RA0=0;
+  1398  013B  1005               	bcf	5,0	;volatile
+  1399                           
+  1400                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 182:         PORTAbits.RA1=1;
+  1401  013C  1485               	bsf	5,1	;volatile
+  1402  013D                     l1650:
+  1403                           
+  1404                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 183:         infrarrojo1=0;
+  1405  013D  01F3               	clrf	_infrarrojo1
+  1406  013E                     l1652:
+  1407                           
+  1408                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 186:     if (PORTBbits.RB2==1)
+  1409  013E  1D06               	btfss	6,2	;volatile
+  1410  013F  2941               	goto	u951
+  1411  0140  2942               	goto	u950
+  1412  0141                     u951:
+  1413  0141  2946               	goto	l117
+  1414  0142                     u950:
+  1415  0142                     l1654:
+  1416                           
+  1417                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 187:     {;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/mai
+      +                          n_sensores.c: 188:         PORTAbits.RA2=1;
+  1418  0142  1505               	bsf	5,2	;volatile
+  1419                           
+  1420                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 189:         PORTAbits.RA3=0;
+  1421  0143  1185               	bcf	5,3	;volatile
+  1422                           
+  1423                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 190:         infrarrojo2=1;
+  1424  0144  01F2               	clrf	_infrarrojo2
+  1425  0145  0AF2               	incf	_infrarrojo2,f
+  1426  0146                     l117:	
+  1427                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 191:     }
+  1428                           
+  1429                           
+  1430                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 192:     if (PORTBbits.RB2==0)
+  1431  0146  1906               	btfsc	6,2	;volatile
+  1432  0147  2949               	goto	u961
+  1433  0148  294A               	goto	u960
+  1434  0149                     u961:
+  1435  0149  294D               	goto	l1660
+  1436  014A                     u960:
+  1437  014A                     l1656:
+  1438                           
+  1439                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 193:     {;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/mai
+      +                          n_sensores.c: 194:         PORTAbits.RA2=0;
+  1440  014A  1105               	bcf	5,2	;volatile
+  1441                           
+  1442                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 195:         PORTAbits.RA3=1;
+  1443  014B  1585               	bsf	5,3	;volatile
+  1444  014C                     l1658:
+  1445                           
+  1446                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 196:         infrarrojo2=0;
+  1447  014C  01F2               	clrf	_infrarrojo2
+  1448  014D                     l1660:
+  1449                           
+  1450                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 199:     if (PORTBbits.RB3==1)
+  1451  014D  1D86               	btfss	6,3	;volatile
+  1452  014E  2950               	goto	u971
+  1453  014F  2951               	goto	u970
+  1454  0150                     u971:
+  1455  0150  2955               	goto	l119
+  1456  0151                     u970:
+  1457  0151                     l1662:
+  1458                           
+  1459                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 200:     {;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/mai
+      +                          n_sensores.c: 201:         PORTAbits.RA4=1;
+  1460  0151  1605               	bsf	5,4	;volatile
+  1461                           
+  1462                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 202:         PORTAbits.RA5=0;
+  1463  0152  1285               	bcf	5,5	;volatile
+  1464                           
+  1465                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 203:         infrarrojo3=1;
+  1466  0153  01F1               	clrf	_infrarrojo3
+  1467  0154  0AF1               	incf	_infrarrojo3,f
+  1468  0155                     l119:	
+  1469                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 204:     }
+  1470                           
+  1471                           
+  1472                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 205:     if (PORTBbits.RB3==0)
+  1473  0155  1986               	btfsc	6,3	;volatile
+  1474  0156  2958               	goto	u981
+  1475  0157  2959               	goto	u980
+  1476  0158                     u981:
+  1477  0158  295C               	goto	l1668
+  1478  0159                     u980:
+  1479  0159                     l1664:
+  1480                           
+  1481                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 206:     {;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/mai
+      +                          n_sensores.c: 207:         PORTAbits.RA4=0;
+  1482  0159  1205               	bcf	5,4	;volatile
+  1483                           
+  1484                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 208:         PORTAbits.RA5=1;
+  1485  015A  1685               	bsf	5,5	;volatile
+  1486  015B                     l1666:
+  1487                           
+  1488                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 209:         infrarrojo3=0;
+  1489  015B  01F1               	clrf	_infrarrojo3
+  1490  015C                     l1668:
+  1491                           
+  1492                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 211:     suma_ir=infrarrojo1+infrarrojo2+infrarrojo3;
+  1493  015C  0872               	movf	_infrarrojo2,w
+  1494  015D  0773               	addwf	_infrarrojo1,w
+  1495  015E  00AF               	movwf	??_infrarrojos
+  1496  015F  0871               	movf	_infrarrojo3,w
+  1497  0160  072F               	addwf	??_infrarrojos,w
+  1498  0161  00B0               	movwf	??_infrarrojos+1
+  1499  0162  0830               	movf	??_infrarrojos+1,w
+  1500  0163  00F0               	movwf	_suma_ir
+  1501  0164                     l121:
+  1502  0164  0008               	return
+  1503  0165                     __end_of_infrarrojos:
+  1504                           
+  1505                           	psect	text7
+  1506  002C                     __ptext7:	
+  1507 ;; *************** function _isr *****************
+  1508 ;; Defined at:
+  1509 ;;		line 65 in file "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c"
+  1510 ;; Parameters:    Size  Location     Type
   1511 ;;		None
-  1512 ;; Return value:  Size  Location     Type
-  1513 ;;                  1    wreg      void 
-  1514 ;; Registers used:
-  1515 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
-  1516 ;; Tracked objects:
-  1517 ;;		On entry : 0/0
-  1518 ;;		On exit  : 0/0
-  1519 ;;		Unchanged: 0/0
-  1520 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-  1521 ;;      Params:         0       0       0       0       0
-  1522 ;;      Locals:         0       0       0       0       0
-  1523 ;;      Temps:          4       0       0       0       0
-  1524 ;;      Totals:         4       0       0       0       0
-  1525 ;;Total ram usage:        4 bytes
-  1526 ;; Hardware stack levels used: 1
-  1527 ;; Hardware stack levels required when called: 1
-  1528 ;; This function calls:
-  1529 ;;		_mandar_datos
-  1530 ;; This function is called by:
-  1531 ;;		Interrupt level 1
-  1532 ;; This function uses a non-reentrant model
-  1533 ;;
-  1534                           
-  1535                           
-  1536                           ;psect for function _isr
-  1537  002C                     _isr:
-  1538  002C                     i1l1400:
-  1539                           
-  1540                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+  1512 ;; Auto vars:     Size  Location     Type
+  1513 ;;		None
+  1514 ;; Return value:  Size  Location     Type
+  1515 ;;                  1    wreg      void 
+  1516 ;; Registers used:
+  1517 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+  1518 ;; Tracked objects:
+  1519 ;;		On entry : 0/0
+  1520 ;;		On exit  : 0/0
+  1521 ;;		Unchanged: 0/0
+  1522 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1523 ;;      Params:         0       0       0       0       0
+  1524 ;;      Locals:         0       0       0       0       0
+  1525 ;;      Temps:          4       0       0       0       0
+  1526 ;;      Totals:         4       0       0       0       0
+  1527 ;;Total ram usage:        4 bytes
+  1528 ;; Hardware stack levels used: 1
+  1529 ;; Hardware stack levels required when called: 1
+  1530 ;; This function calls:
+  1531 ;;		_mandar_datos
+  1532 ;; This function is called by:
+  1533 ;;		Interrupt level 1
+  1534 ;; This function uses a non-reentrant model
+  1535 ;;
+  1536                           
+  1537                           
+  1538                           ;psect for function _isr
+  1539  002C                     _isr:
+  1540  002C                     i1l1398:
+  1541                           
+  1542                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 68:     if(PIR1bits.SSPIF == 1){
-  1541  002C  1283               	bcf	3,5	;RP0=0, select bank0
-  1542  002D  1303               	bcf	3,6	;RP1=0, select bank0
-  1543  002E  1D8C               	btfss	12,3	;volatile
-  1544  002F  2831               	goto	u68_21
-  1545  0030  2832               	goto	u68_20
-  1546  0031                     u68_21:
-  1547  0031  2888               	goto	i1l93
-  1548  0032                     u68_20:
-  1549  0032                     i1l1402:
-  1550                           
-  1551                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+  1543  002C  1283               	bcf	3,5	;RP0=0, select bank0
+  1544  002D  1303               	bcf	3,6	;RP1=0, select bank0
+  1545  002E  1D8C               	btfss	12,3	;volatile
+  1546  002F  2831               	goto	u68_21
+  1547  0030  2832               	goto	u68_20
+  1548  0031                     u68_21:
+  1549  0031  2888               	goto	i1l87
+  1550  0032                     u68_20:
+  1551  0032                     i1l1400:
+  1552                           
+  1553                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 70:         SSPCONbits.CKP = 0;
-  1552  0032  1214               	bcf	20,4	;volatile
-  1553                           
-  1554                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+  1554  0032  1214               	bcf	20,4	;volatile
+  1555                           
+  1556                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 72:         if ((SSPCONbits.SSPOV) || (SSPCONbits.WCOL)){
-  1555  0033  1B14               	btfsc	20,6	;volatile
-  1556  0034  2836               	goto	u69_21
-  1557  0035  2837               	goto	u69_20
-  1558  0036                     u69_21:
-  1559  0036  283B               	goto	i1l1406
-  1560  0037                     u69_20:
-  1561  0037                     i1l1404:
-  1562  0037  1F94               	btfss	20,7	;volatile
-  1563  0038  283A               	goto	u70_21
-  1564  0039  283B               	goto	u70_20
-  1565  003A                     u70_21:
-  1566  003A  2842               	goto	i1l1414
-  1567  003B                     u70_20:
-  1568  003B                     i1l1406:
-  1569                           
-  1570                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+  1557  0033  1B14               	btfsc	20,6	;volatile
+  1558  0034  2836               	goto	u69_21
+  1559  0035  2837               	goto	u69_20
+  1560  0036                     u69_21:
+  1561  0036  283B               	goto	i1l1404
+  1562  0037                     u69_20:
+  1563  0037                     i1l1402:
+  1564  0037  1F94               	btfss	20,7	;volatile
+  1565  0038  283A               	goto	u70_21
+  1566  0039  283B               	goto	u70_20
+  1567  003A                     u70_21:
+  1568  003A  2842               	goto	i1l1412
+  1569  003B                     u70_20:
+  1570  003B                     i1l1404:
+  1571                           
+  1572                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 73:             abierto_cerrado = SSPBUF;
-  1571  003B  0813               	movf	19,w	;volatile
-  1572  003C  00F8               	movwf	??_isr
-  1573  003D  0878               	movf	??_isr,w
-  1574  003E  00AE               	movwf	_abierto_cerrado
-  1575  003F                     i1l1408:
-  1576                           
-  1577                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+  1573  003B  0813               	movf	19,w	;volatile
+  1574  003C  00F8               	movwf	??_isr
+  1575  003D  0878               	movf	??_isr,w
+  1576  003E  00AE               	movwf	_abierto_cerrado
+  1577  003F                     i1l1406:
+  1578                           
+  1579                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 74:             SSPCONbits.SSPOV = 0;
-  1578  003F  1314               	bcf	20,6	;volatile
-  1579  0040                     i1l1410:
-  1580                           
-  1581                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+  1580  003F  1314               	bcf	20,6	;volatile
+  1581  0040                     i1l1408:
+  1582                           
+  1583                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 75:             SSPCONbits.WCOL = 0;
-  1582  0040  1394               	bcf	20,7	;volatile
-  1583  0041                     i1l1412:
-  1584                           
-  1585                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+  1584  0040  1394               	bcf	20,7	;volatile
+  1585  0041                     i1l1410:
+  1586                           
+  1587                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 76:             SSPCONbits.CKP = 1;
-  1586  0041  1614               	bsf	20,4	;volatile
-  1587  0042                     i1l1414:
-  1588                           
-  1589                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+  1588  0041  1614               	bsf	20,4	;volatile
+  1589  0042                     i1l1412:
+  1590                           
+  1591                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 79:         if(!SSPSTATbits.D_nA && !SSPSTATbits.R_nW)
-  1590  0042  1683               	bsf	3,5	;RP0=1, select bank1
-  1591  0043  1303               	bcf	3,6	;RP1=0, select bank1
-  1592  0044  1A94               	btfsc	20,5	;volatile
-  1593  0045  2847               	goto	u71_21
-  1594  0046  2848               	goto	u71_20
-  1595  0047                     u71_21:
-  1596  0047  2865               	goto	i1l97
-  1597  0048                     u71_20:
-  1598  0048                     i1l1416:
-  1599  0048  1914               	btfsc	20,2	;volatile
-  1600  0049  284B               	goto	u72_21
-  1601  004A  284C               	goto	u72_20
-  1602  004B                     u72_21:
-  1603  004B  2865               	goto	i1l97
-  1604  004C                     u72_20:
-  1605  004C                     i1l1418:
-  1606                           
-  1607                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+  1592  0042  1683               	bsf	3,5	;RP0=1, select bank1
+  1593  0043  1303               	bcf	3,6	;RP1=0, select bank1
+  1594  0044  1A94               	btfsc	20,5	;volatile
+  1595  0045  2847               	goto	u71_21
+  1596  0046  2848               	goto	u71_20
+  1597  0047                     u71_21:
+  1598  0047  2865               	goto	i1l91
+  1599  0048                     u71_20:
+  1600  0048                     i1l1414:
+  1601  0048  1914               	btfsc	20,2	;volatile
+  1602  0049  284B               	goto	u72_21
+  1603  004A  284C               	goto	u72_20
+  1604  004B                     u72_21:
+  1605  004B  2865               	goto	i1l91
+  1606  004C                     u72_20:
+  1607  004C                     i1l1416:
+  1608                           
+  1609                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 80:         {;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/
       +                          main_sensores.c: 81:             abierto_cerrado = SSPBUF;
-  1608  004C  1283               	bcf	3,5	;RP0=0, select bank0
-  1609  004D  1303               	bcf	3,6	;RP1=0, select bank0
-  1610  004E  0813               	movf	19,w	;volatile
-  1611  004F  00F8               	movwf	??_isr
-  1612  0050  0878               	movf	??_isr,w
-  1613  0051  00AE               	movwf	_abierto_cerrado
-  1614  0052                     i1l1420:
-  1615                           
-  1616                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+  1610  004C  1283               	bcf	3,5	;RP0=0, select bank0
+  1611  004D  1303               	bcf	3,6	;RP1=0, select bank0
+  1612  004E  0813               	movf	19,w	;volatile
+  1613  004F  00F8               	movwf	??_isr
+  1614  0050  0878               	movf	??_isr,w
+  1615  0051  00AE               	movwf	_abierto_cerrado
+  1616  0052                     i1l1418:
+  1617                           
+  1618                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 82:             PIR1bits.SSPIF = 0;
-  1617  0052  118C               	bcf	12,3	;volatile
-  1618  0053                     i1l1422:
-  1619                           
-  1620                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+  1619  0052  118C               	bcf	12,3	;volatile
+  1620  0053                     i1l1420:
+  1621                           
+  1622                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 83:             SSPCONbits.CKP = 1;
-  1621  0053  1614               	bsf	20,4	;volatile
-  1622  0054                     i1l98:	
-  1623                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+  1623  0053  1614               	bsf	20,4	;volatile
+  1624  0054                     i1l92:	
+  1625                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 84:             while(!SSPSTATbits.BF);
-  1624                           
-  1625  0054  1683               	bsf	3,5	;RP0=1, select bank1
-  1626  0055  1303               	bcf	3,6	;RP1=0, select bank1
-  1627  0056  1C14               	btfss	20,0	;volatile
-  1628  0057  2859               	goto	u73_21
-  1629  0058  285A               	goto	u73_20
-  1630  0059                     u73_21:
-  1631  0059  2854               	goto	i1l98
-  1632  005A                     u73_20:
-  1633  005A                     i1l1424:
-  1634                           
-  1635                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+  1626                           
+  1627  0054  1683               	bsf	3,5	;RP0=1, select bank1
+  1628  0055  1303               	bcf	3,6	;RP1=0, select bank1
+  1629  0056  1C14               	btfss	20,0	;volatile
+  1630  0057  2859               	goto	u73_21
+  1631  0058  285A               	goto	u73_20
+  1632  0059                     u73_21:
+  1633  0059  2854               	goto	i1l92
+  1634  005A                     u73_20:
+  1635  005A                     i1l1422:
+  1636                           
+  1637                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 85:             BASURA = SSPBUF;
-  1636  005A  1283               	bcf	3,5	;RP0=0, select bank0
-  1637  005B  1303               	bcf	3,6	;RP1=0, select bank0
-  1638  005C  0813               	movf	19,w	;volatile
-  1639  005D  00F8               	movwf	??_isr
-  1640  005E  0878               	movf	??_isr,w
-  1641  005F  00AD               	movwf	_BASURA
-  1642                           
-  1643                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+  1638  005A  1283               	bcf	3,5	;RP0=0, select bank0
+  1639  005B  1303               	bcf	3,6	;RP1=0, select bank0
+  1640  005C  0813               	movf	19,w	;volatile
+  1641  005D  00F8               	movwf	??_isr
+  1642  005E  0878               	movf	??_isr,w
+  1643  005F  00AD               	movwf	_BASURA
+  1644                           
+  1645                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 86:             _delay((unsigned long)((200)*(8000000/4000000.0)));
-  1644  0060  3085               	movlw	133
-  1645  0061  00F8               	movwf	??_isr
-  1646  0062                     u100_27:
-  1647  0062  0BF8               	decfsz	??_isr,f
-  1648  0063  2862               	goto	u100_27
-  1649                           
-  1650                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+  1646  0060  3085               	movlw	133
+  1647  0061  00F8               	movwf	??_isr
+  1648  0062                     u100_27:
+  1649  0062  0BF8               	decfsz	??_isr,f
+  1650  0063  2862               	goto	u100_27
+  1651                           
+  1652                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 88:         }
-  1651  0064  2885               	goto	i1l101
-  1652  0065                     i1l97:	
-  1653                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+  1653  0064  2885               	goto	i1l95
+  1654  0065                     i1l91:	
+  1655                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 89:         else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
-  1654                           
-  1655  0065  1A94               	btfsc	20,5	;volatile
-  1656  0066  2868               	goto	u74_21
-  1657  0067  2869               	goto	u74_20
-  1658  0068                     u74_21:
-  1659  0068  2885               	goto	i1l101
-  1660  0069                     u74_20:
-  1661  0069                     i1l1426:
-  1662  0069  1D14               	btfss	20,2	;volatile
-  1663  006A  286C               	goto	u75_21
-  1664  006B  286D               	goto	u75_20
-  1665  006C                     u75_21:
-  1666  006C  2885               	goto	i1l101
-  1667  006D                     u75_20:
-  1668  006D                     i1l1428:
-  1669                           
-  1670                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+  1656                           
+  1657  0065  1A94               	btfsc	20,5	;volatile
+  1658  0066  2868               	goto	u74_21
+  1659  0067  2869               	goto	u74_20
+  1660  0068                     u74_21:
+  1661  0068  2885               	goto	i1l95
+  1662  0069                     u74_20:
+  1663  0069                     i1l1424:
+  1664  0069  1D14               	btfss	20,2	;volatile
+  1665  006A  286C               	goto	u75_21
+  1666  006B  286D               	goto	u75_20
+  1667  006C                     u75_21:
+  1668  006C  2885               	goto	i1l95
+  1669  006D                     u75_20:
+  1670  006D                     i1l1426:
+  1671                           
+  1672                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 90:             abierto_cerrado = SSPBUF;
-  1671  006D  1283               	bcf	3,5	;RP0=0, select bank0
-  1672  006E  1303               	bcf	3,6	;RP1=0, select bank0
-  1673  006F  0813               	movf	19,w	;volatile
-  1674  0070  00F8               	movwf	??_isr
-  1675  0071  0878               	movf	??_isr,w
-  1676  0072  00AE               	movwf	_abierto_cerrado
-  1677  0073                     i1l1430:
-  1678                           
-  1679                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+  1673  006D  1283               	bcf	3,5	;RP0=0, select bank0
+  1674  006E  1303               	bcf	3,6	;RP1=0, select bank0
+  1675  006F  0813               	movf	19,w	;volatile
+  1676  0070  00F8               	movwf	??_isr
+  1677  0071  0878               	movf	??_isr,w
+  1678  0072  00AE               	movwf	_abierto_cerrado
+  1679  0073                     i1l1428:
+  1680                           
+  1681                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 91:             BF = 0;
-  1680  0073  1683               	bsf	3,5	;RP0=1, select bank1
-  1681  0074  1303               	bcf	3,6	;RP1=0, select bank1
-  1682  0075  1014               	bcf	20,0	;volatile
-  1683                           
-  1684                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+  1682  0073  1683               	bsf	3,5	;RP0=1, select bank1
+  1683  0074  1303               	bcf	3,6	;RP1=0, select bank1
+  1684  0075  1014               	bcf	20,0	;volatile
+  1685                           
+  1686                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 92:             SSPBUF = suma_ir;
-  1685  0076  0870               	movf	_suma_ir,w
-  1686  0077  1283               	bcf	3,5	;RP0=0, select bank0
-  1687  0078  1303               	bcf	3,6	;RP1=0, select bank0
-  1688  0079  0093               	movwf	19	;volatile
-  1689  007A                     i1l1432:
-  1690                           
-  1691                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+  1687  0076  0870               	movf	_suma_ir,w
+  1688  0077  1283               	bcf	3,5	;RP0=0, select bank0
+  1689  0078  1303               	bcf	3,6	;RP1=0, select bank0
+  1690  0079  0093               	movwf	19	;volatile
+  1691  007A                     i1l1430:
+  1692                           
+  1693                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 93:             SSPCONbits.CKP = 1;
-  1692  007A  1614               	bsf	20,4	;volatile
-  1693                           
-  1694                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+  1694  007A  1614               	bsf	20,4	;volatile
+  1695                           
+  1696                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 94:             _delay((unsigned long)((200)*(8000000/4000000.0)));
-  1695  007B  3085               	movlw	133
-  1696  007C  00F8               	movwf	??_isr
-  1697  007D                     u101_27:
-  1698  007D  0BF8               	decfsz	??_isr,f
-  1699  007E  287D               	goto	u101_27
-  1700  007F                     i1l103:	
-  1701                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+  1697  007B  3085               	movlw	133
+  1698  007C  00F8               	movwf	??_isr
+  1699  007D                     u101_27:
+  1700  007D  0BF8               	decfsz	??_isr,f
+  1701  007E  287D               	goto	u101_27
+  1702  007F                     i1l97:	
+  1703                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 95:             while(SSPSTATbits.BF);
-  1702                           
-  1703  007F  1683               	bsf	3,5	;RP0=1, select bank1
-  1704  0080  1303               	bcf	3,6	;RP1=0, select bank1
-  1705  0081  1814               	btfsc	20,0	;volatile
-  1706  0082  2884               	goto	u76_21
-  1707  0083  2885               	goto	u76_20
-  1708  0084                     u76_21:
-  1709  0084  287F               	goto	i1l103
-  1710  0085                     u76_20:
-  1711  0085                     i1l101:
-  1712                           
-  1713                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+  1704                           
+  1705  007F  1683               	bsf	3,5	;RP0=1, select bank1
+  1706  0080  1303               	bcf	3,6	;RP1=0, select bank1
+  1707  0081  1814               	btfsc	20,0	;volatile
+  1708  0082  2884               	goto	u76_21
+  1709  0083  2885               	goto	u76_20
+  1710  0084                     u76_21:
+  1711  0084  287F               	goto	i1l97
+  1712  0085                     u76_20:
+  1713  0085                     i1l95:
+  1714                           
+  1715                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 98:         PIR1bits.SSPIF = 0;
-  1714  0085  1283               	bcf	3,5	;RP0=0, select bank0
-  1715  0086  1303               	bcf	3,6	;RP1=0, select bank0
-  1716  0087  118C               	bcf	12,3	;volatile
-  1717  0088                     i1l93:	
-  1718                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+  1716  0085  1283               	bcf	3,5	;RP0=0, select bank0
+  1717  0086  1303               	bcf	3,6	;RP1=0, select bank0
+  1718  0087  118C               	bcf	12,3	;volatile
+  1719  0088                     i1l87:	
+  1720                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 99:     }
-  1719                           
-  1720                           
-  1721                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+  1721                           
+  1722                           
+  1723                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 100:     if (PIR1bits.TXIF)
-  1722  0088  1E0C               	btfss	12,4	;volatile
-  1723  0089  288B               	goto	u77_21
-  1724  008A  288C               	goto	u77_20
-  1725  008B                     u77_21:
-  1726  008B  2898               	goto	i1l107
-  1727  008C                     u77_20:
-  1728  008C                     i1l1434:
-  1729                           
-  1730                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+  1724  0088  1E0C               	btfss	12,4	;volatile
+  1725  0089  288B               	goto	u77_21
+  1726  008A  288C               	goto	u77_20
+  1727  008B                     u77_21:
+  1728  008B  2898               	goto	i1l101
+  1729  008C                     u77_20:
+  1730  008C                     i1l1432:
+  1731                           
+  1732                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 101:     {;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/mai
       +                          n_sensores.c: 102:         cuenta_uart++;
-  1731  008C  3001               	movlw	1
-  1732  008D  00F8               	movwf	??_isr
-  1733  008E  0878               	movf	??_isr,w
-  1734  008F  07F4               	addwf	_cuenta_uart,f
-  1735  0090                     i1l1436:
-  1736                           
-  1737                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+  1733  008C  3001               	movlw	1
+  1734  008D  00F8               	movwf	??_isr
+  1735  008E  0878               	movf	??_isr,w
+  1736  008F  07F4               	addwf	_cuenta_uart,f
+  1737  0090                     i1l1434:
+  1738                           
+  1739                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 103:         mandar_datos();
-  1738  0090  120A  118A  20A1  120A  118A  	fcall	_mandar_datos
-  1739  0095                     i1l1438:
-  1740                           
-  1741                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+  1740  0090  120A  118A  20A1  120A  118A  	fcall	_mandar_datos
+  1741  0095                     i1l1436:
+  1742                           
+  1743                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
       +                          : 104:         PIR1bits.TXIF=0;
-  1742  0095  1283               	bcf	3,5	;RP0=0, select bank0
-  1743  0096  1303               	bcf	3,6	;RP1=0, select bank0
-  1744  0097  120C               	bcf	12,4	;volatile
-  1745  0098                     i1l107:
-  1746  0098  087B               	movf	??_isr+3,w
-  1747  0099  008A               	movwf	10
-  1748  009A  087A               	movf	??_isr+2,w
-  1749  009B  0084               	movwf	4
-  1750  009C  0E79               	swapf	??_isr+1,w
-  1751  009D  0083               	movwf	3
-  1752  009E  0EFE               	swapf	btemp,f
-  1753  009F  0E7E               	swapf	btemp,w
-  1754  00A0  0009               	retfie
-  1755  00A1                     __end_of_isr:
-  1756                           
-  1757                           	psect	intentry
-  1758  0004                     __pintentry:	
-  1759                           ;incstack = 0
-  1760                           ; Regs used in _isr: [wreg-fsr0h+status,2+status,0+pclath+cstack]
-  1761                           
-  1762  0004                     interrupt_function:
-  1763  007E                     saved_w	set	btemp
-  1764  0004  00FE               	movwf	btemp
-  1765  0005  0E03               	swapf	3,w
-  1766  0006  00F9               	movwf	??_isr+1
-  1767  0007  0804               	movf	4,w
-  1768  0008  00FA               	movwf	??_isr+2
-  1769  0009  080A               	movf	10,w
-  1770  000A  00FB               	movwf	??_isr+3
-  1771  000B  120A  118A  282C   	ljmp	_isr
-  1772                           
-  1773                           	psect	text8
-  1774  00A1                     __ptext8:	
-  1775 ;; *************** function _mandar_datos *****************
-  1776 ;; Defined at:
-  1777 ;;		line 224 in file "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c"
-  1778 ;; Parameters:    Size  Location     Type
-  1779 ;;		None
-  1780 ;; Auto vars:     Size  Location     Type
+  1744  0095  1283               	bcf	3,5	;RP0=0, select bank0
+  1745  0096  1303               	bcf	3,6	;RP1=0, select bank0
+  1746  0097  120C               	bcf	12,4	;volatile
+  1747  0098                     i1l101:
+  1748  0098  087B               	movf	??_isr+3,w
+  1749  0099  008A               	movwf	10
+  1750  009A  087A               	movf	??_isr+2,w
+  1751  009B  0084               	movwf	4
+  1752  009C  0E79               	swapf	??_isr+1,w
+  1753  009D  0083               	movwf	3
+  1754  009E  0EFE               	swapf	btemp,f
+  1755  009F  0E7E               	swapf	btemp,w
+  1756  00A0  0009               	retfie
+  1757  00A1                     __end_of_isr:
+  1758                           
+  1759                           	psect	intentry
+  1760  0004                     __pintentry:	
+  1761                           ;incstack = 0
+  1762                           ; Regs used in _isr: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+  1763                           
+  1764  0004                     interrupt_function:
+  1765  007E                     saved_w	set	btemp
+  1766  0004  00FE               	movwf	btemp
+  1767  0005  0E03               	swapf	3,w
+  1768  0006  00F9               	movwf	??_isr+1
+  1769  0007  0804               	movf	4,w
+  1770  0008  00FA               	movwf	??_isr+2
+  1771  0009  080A               	movf	10,w
+  1772  000A  00FB               	movwf	??_isr+3
+  1773  000B  120A  118A  282C   	ljmp	_isr
+  1774                           
+  1775                           	psect	text8
+  1776  00A1                     __ptext8:	
+  1777 ;; *************** function _mandar_datos *****************
+  1778 ;; Defined at:
+  1779 ;;		line 228 in file "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c"
+  1780 ;; Parameters:    Size  Location     Type
   1781 ;;		None
-  1782 ;; Return value:  Size  Location     Type
-  1783 ;;                  1    wreg      void 
-  1784 ;; Registers used:
-  1785 ;;		wreg, fsr0l, fsr0h, status,2, status,0
-  1786 ;; Tracked objects:
-  1787 ;;		On entry : 0/0
-  1788 ;;		On exit  : 0/0
-  1789 ;;		Unchanged: 0/0
-  1790 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-  1791 ;;      Params:         0       0       0       0       0
-  1792 ;;      Locals:         0       0       0       0       0
-  1793 ;;      Temps:          2       0       0       0       0
-  1794 ;;      Totals:         2       0       0       0       0
-  1795 ;;Total ram usage:        2 bytes
-  1796 ;; Hardware stack levels used: 1
-  1797 ;; This function calls:
-  1798 ;;		Nothing
-  1799 ;; This function is called by:
-  1800 ;;		_isr
-  1801 ;; This function uses a non-reentrant model
-  1802 ;;
-  1803                           
-  1804                           
-  1805                           ;psect for function _mandar_datos
-  1806  00A1                     _mandar_datos:
-  1807  00A1                     i1l1142:	
-  1808                           ;incstack = 0
-  1809                           ; Regs used in _mandar_datos: [wreg-fsr0h+status,2+status,0]
-  1810                           
-  1811                           
-  1812                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 226:     switch(cuenta_uart)
-  1813  00A1  28CB               	goto	i1l1166
-  1814  00A2                     i1l1144:
-  1815                           
-  1816                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 229:             TXREG=(suma_ir+0x30);
-  1817  00A2  0870               	movf	_suma_ir,w
-  1818  00A3  3E30               	addlw	48
-  1819  00A4  1283               	bcf	3,5	;RP0=0, select bank0
-  1820  00A5  1303               	bcf	3,6	;RP1=0, select bank0
-  1821  00A6  0099               	movwf	25	;volatile
-  1822                           
-  1823                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 230:             break;
-  1824  00A7  28F3               	goto	i1l146
-  1825  00A8                     i1l1146:
-  1826                           
-  1827                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 232:             TXREG=44;
-  1828  00A8  302C               	movlw	44
-  1829  00A9  1283               	bcf	3,5	;RP0=0, select bank0
-  1830  00AA  1303               	bcf	3,6	;RP1=0, select bank0
-  1831  00AB  0099               	movwf	25	;volatile
-  1832                           
-  1833                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 233:             break;
-  1834  00AC  28F3               	goto	i1l146
-  1835  00AD                     i1l1148:
-  1836                           
-  1837                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 235:             TXREG=infrarrojo1+0x30;
-  1838  00AD  0873               	movf	_infrarrojo1,w
-  1839  00AE  3E30               	addlw	48
-  1840  00AF  1283               	bcf	3,5	;RP0=0, select bank0
-  1841  00B0  1303               	bcf	3,6	;RP1=0, select bank0
-  1842  00B1  0099               	movwf	25	;volatile
-  1843                           
-  1844                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 236:             break;
-  1845  00B2  28F3               	goto	i1l146
-  1846  00B3                     i1l1152:
-  1847                           
-  1848                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 241:             TXREG=infrarrojo2+0x30;
-  1849  00B3  0872               	movf	_infrarrojo2,w
-  1850  00B4  3E30               	addlw	48
-  1851  00B5  1283               	bcf	3,5	;RP0=0, select bank0
-  1852  00B6  1303               	bcf	3,6	;RP1=0, select bank0
-  1853  00B7  0099               	movwf	25	;volatile
-  1854                           
-  1855                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 242:             break;
-  1856  00B8  28F3               	goto	i1l146
-  1857  00B9                     i1l1156:
-  1858                           
-  1859                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 247:             TXREG=infrarrojo3+0x30;
-  1860  00B9  0871               	movf	_infrarrojo3,w
-  1861  00BA  3E30               	addlw	48
-  1862  00BB  1283               	bcf	3,5	;RP0=0, select bank0
-  1863  00BC  1303               	bcf	3,6	;RP1=0, select bank0
-  1864  00BD  0099               	movwf	25	;volatile
-  1865                           
-  1866                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 248:             break;
-  1867  00BE  28F3               	goto	i1l146
-  1868  00BF                     i1l1158:
-  1869                           
-  1870                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 250:             TXREG=10;
-  1871  00BF  300A               	movlw	10
-  1872  00C0  1283               	bcf	3,5	;RP0=0, select bank0
-  1873  00C1  1303               	bcf	3,6	;RP1=0, select bank0
-  1874  00C2  0099               	movwf	25	;volatile
-  1875                           
-  1876                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 251:             break;
-  1877  00C3  28F3               	goto	i1l146
-  1878  00C4                     i1l1160:
-  1879                           
-  1880                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 253:             TXREG=13;
-  1881  00C4  300D               	movlw	13
-  1882  00C5  1283               	bcf	3,5	;RP0=0, select bank0
-  1883  00C6  1303               	bcf	3,6	;RP1=0, select bank0
-  1884  00C7  0099               	movwf	25	;volatile
-  1885                           
-  1886                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 254:             break;
-  1887  00C8  28F3               	goto	i1l146
-  1888  00C9                     i1l1162:
-  1889                           
-  1890                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 256:             cuenta_uart=0;
-  1891  00C9  01F4               	clrf	_cuenta_uart
-  1892                           
-  1893                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
-      +                          : 257:             break;
-  1894  00CA  28F3               	goto	i1l146
-  1895  00CB                     i1l1166:
-  1896  00CB  0874               	movf	_cuenta_uart,w
-  1897  00CC  00F6               	movwf	??_mandar_datos
-  1898  00CD  01F7               	clrf	??_mandar_datos+1
-  1899                           
-  1900                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
+  1782 ;; Auto vars:     Size  Location     Type
+  1783 ;;		None
+  1784 ;; Return value:  Size  Location     Type
+  1785 ;;                  1    wreg      void 
+  1786 ;; Registers used:
+  1787 ;;		wreg, fsr0l, fsr0h, status,2, status,0
+  1788 ;; Tracked objects:
+  1789 ;;		On entry : 0/0
+  1790 ;;		On exit  : 0/0
+  1791 ;;		Unchanged: 0/0
+  1792 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1793 ;;      Params:         0       0       0       0       0
+  1794 ;;      Locals:         0       0       0       0       0
+  1795 ;;      Temps:          2       0       0       0       0
+  1796 ;;      Totals:         2       0       0       0       0
+  1797 ;;Total ram usage:        2 bytes
+  1798 ;; Hardware stack levels used: 1
+  1799 ;; This function calls:
+  1800 ;;		Nothing
+  1801 ;; This function is called by:
+  1802 ;;		_isr
+  1803 ;; This function uses a non-reentrant model
+  1804 ;;
+  1805                           
+  1806                           
+  1807                           ;psect for function _mandar_datos
+  1808  00A1                     _mandar_datos:
+  1809  00A1                     i1l1138:	
+  1810                           ;incstack = 0
+  1811                           ; Regs used in _mandar_datos: [wreg-fsr0h+status,2+status,0]
+  1812                           
+  1813                           
+  1814                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 230:     switch(cuenta_uart)
+  1815  00A1  28CB               	goto	i1l1162
+  1816  00A2                     i1l1140:
+  1817                           
+  1818                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 233:             TXREG=(suma_ir+0x30);
+  1819  00A2  0870               	movf	_suma_ir,w
+  1820  00A3  3E30               	addlw	48
+  1821  00A4  1283               	bcf	3,5	;RP0=0, select bank0
+  1822  00A5  1303               	bcf	3,6	;RP1=0, select bank0
+  1823  00A6  0099               	movwf	25	;volatile
+  1824                           
+  1825                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 234:             break;
+  1826  00A7  28F3               	goto	i1l140
+  1827  00A8                     i1l1142:
+  1828                           
+  1829                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 236:             TXREG=44;
+  1830  00A8  302C               	movlw	44
+  1831  00A9  1283               	bcf	3,5	;RP0=0, select bank0
+  1832  00AA  1303               	bcf	3,6	;RP1=0, select bank0
+  1833  00AB  0099               	movwf	25	;volatile
+  1834                           
+  1835                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 237:             break;
+  1836  00AC  28F3               	goto	i1l140
+  1837  00AD                     i1l1144:
+  1838                           
+  1839                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 239:             TXREG=infrarrojo1+0x30;
+  1840  00AD  0873               	movf	_infrarrojo1,w
+  1841  00AE  3E30               	addlw	48
+  1842  00AF  1283               	bcf	3,5	;RP0=0, select bank0
+  1843  00B0  1303               	bcf	3,6	;RP1=0, select bank0
+  1844  00B1  0099               	movwf	25	;volatile
+  1845                           
+  1846                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 240:             break;
+  1847  00B2  28F3               	goto	i1l140
+  1848  00B3                     i1l1148:
+  1849                           
+  1850                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 245:             TXREG=infrarrojo2+0x30;
+  1851  00B3  0872               	movf	_infrarrojo2,w
+  1852  00B4  3E30               	addlw	48
+  1853  00B5  1283               	bcf	3,5	;RP0=0, select bank0
+  1854  00B6  1303               	bcf	3,6	;RP1=0, select bank0
+  1855  00B7  0099               	movwf	25	;volatile
+  1856                           
+  1857                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 246:             break;
+  1858  00B8  28F3               	goto	i1l140
+  1859  00B9                     i1l1152:
+  1860                           
+  1861                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 251:             TXREG=infrarrojo3+0x30;
+  1862  00B9  0871               	movf	_infrarrojo3,w
+  1863  00BA  3E30               	addlw	48
+  1864  00BB  1283               	bcf	3,5	;RP0=0, select bank0
+  1865  00BC  1303               	bcf	3,6	;RP1=0, select bank0
+  1866  00BD  0099               	movwf	25	;volatile
+  1867                           
+  1868                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 252:             break;
+  1869  00BE  28F3               	goto	i1l140
+  1870  00BF                     i1l1154:
+  1871                           
+  1872                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 254:             TXREG=10;
+  1873  00BF  300A               	movlw	10
+  1874  00C0  1283               	bcf	3,5	;RP0=0, select bank0
+  1875  00C1  1303               	bcf	3,6	;RP1=0, select bank0
+  1876  00C2  0099               	movwf	25	;volatile
+  1877                           
+  1878                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 255:             break;
+  1879  00C3  28F3               	goto	i1l140
+  1880  00C4                     i1l1156:
+  1881                           
+  1882                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 257:             TXREG=13;
+  1883  00C4  300D               	movlw	13
+  1884  00C5  1283               	bcf	3,5	;RP0=0, select bank0
+  1885  00C6  1303               	bcf	3,6	;RP1=0, select bank0
+  1886  00C7  0099               	movwf	25	;volatile
+  1887                           
+  1888                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 258:             break;
+  1889  00C8  28F3               	goto	i1l140
+  1890  00C9                     i1l1158:
+  1891                           
+  1892                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 260:             cuenta_uart=0;
+  1893  00C9  01F4               	clrf	_cuenta_uart
+  1894                           
+  1895                           ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_sensores.X/main_sensores.c
+      +                          : 261:             break;
+  1896  00CA  28F3               	goto	i1l140
+  1897  00CB                     i1l1162:
+  1898  00CB  0874               	movf	_cuenta_uart,w
+  1899  00CC  00F6               	movwf	??_mandar_datos
+  1900  00CD  01F7               	clrf	??_mandar_datos+1
+  1901                           
+  1902                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
       +                          itches
-  1901                           ; Switch size 1, requested type "simple"
-  1902                           ; Number of cases is 1, Range of values is 0 to 0
-  1903                           ; switch strategies available:
-  1904                           ; Name         Instructions Cycles
-  1905                           ; simple_byte            4     3 (average)
-  1906                           ; direct_byte           11     8 (fixed)
-  1907                           ; jumptable            260     6 (fixed)
-  1908                           ;	Chosen strategy is simple_byte
-  1909  00CE  0877               	movf	??_mandar_datos+1,w
-  1910  00CF  3A00               	xorlw	0	; case 0
-  1911  00D0  1903               	skipnz
-  1912  00D1  28D3               	goto	i1l1726
-  1913  00D2  28F3               	goto	i1l146
-  1914  00D3                     i1l1726:
-  1915                           
-  1916                           ; Switch size 1, requested type "simple"
-  1917                           ; Number of cases is 10, Range of values is 1 to 20
-  1918                           ; switch strategies available:
-  1919                           ; Name         Instructions Cycles
-  1920                           ; simple_byte           31    16 (average)
-  1921                           ; direct_byte           71    11 (fixed)
-  1922                           ; jumptable            263     9 (fixed)
-  1923                           ;	Chosen strategy is simple_byte
-  1924  00D3  0876               	movf	??_mandar_datos,w
-  1925  00D4  3A01               	xorlw	1	; case 1
-  1926  00D5  1903               	skipnz
-  1927  00D6  28A2               	goto	i1l1144
-  1928  00D7  3A03               	xorlw	3	; case 2
-  1929  00D8  1903               	skipnz
-  1930  00D9  28A8               	goto	i1l1146
-  1931  00DA  3A01               	xorlw	1	; case 3
-  1932  00DB  1903               	skipnz
-  1933  00DC  28AD               	goto	i1l1148
-  1934  00DD  3A07               	xorlw	7	; case 4
-  1935  00DE  1903               	skipnz
-  1936  00DF  28A8               	goto	i1l1146
-  1937  00E0  3A01               	xorlw	1	; case 5
-  1938  00E1  1903               	skipnz
-  1939  00E2  28B3               	goto	i1l1152
-  1940  00E3  3A03               	xorlw	3	; case 6
-  1941  00E4  1903               	skipnz
-  1942  00E5  28A8               	goto	i1l1146
-  1943  00E6  3A01               	xorlw	1	; case 7
-  1944  00E7  1903               	skipnz
-  1945  00E8  28B9               	goto	i1l1156
-  1946  00E9  3A0F               	xorlw	15	; case 8
-  1947  00EA  1903               	skipnz
-  1948  00EB  28BF               	goto	i1l1158
-  1949  00EC  3A01               	xorlw	1	; case 9
-  1950  00ED  1903               	skipnz
-  1951  00EE  28C4               	goto	i1l1160
-  1952  00EF  3A1D               	xorlw	29	; case 20
-  1953  00F0  1903               	skipnz
-  1954  00F1  28C9               	goto	i1l1162
-  1955  00F2  28F3               	goto	i1l146
-  1956  00F3                     i1l146:
-  1957  00F3  0008               	return
-  1958  00F4                     __end_of_mandar_datos:
-  1959  007E                     btemp	set	126	;btemp
-  1960  007E                     wtemp0	set	126
-  1961                           
-  1962                           	psect	config
+  1903                           ; Switch size 1, requested type "simple"
+  1904                           ; Number of cases is 1, Range of values is 0 to 0
+  1905                           ; switch strategies available:
+  1906                           ; Name         Instructions Cycles
+  1907                           ; simple_byte            4     3 (average)
+  1908                           ; direct_byte           11     8 (fixed)
+  1909                           ; jumptable            260     6 (fixed)
+  1910                           ;	Chosen strategy is simple_byte
+  1911  00CE  0877               	movf	??_mandar_datos+1,w
+  1912  00CF  3A00               	xorlw	0	; case 0
+  1913  00D0  1903               	skipnz
+  1914  00D1  28D3               	goto	i1l1726
+  1915  00D2  28F3               	goto	i1l140
+  1916  00D3                     i1l1726:
+  1917                           
+  1918                           ; Switch size 1, requested type "simple"
+  1919                           ; Number of cases is 10, Range of values is 1 to 20
+  1920                           ; switch strategies available:
+  1921                           ; Name         Instructions Cycles
+  1922                           ; simple_byte           31    16 (average)
+  1923                           ; direct_byte           71    11 (fixed)
+  1924                           ; jumptable            263     9 (fixed)
+  1925                           ;	Chosen strategy is simple_byte
+  1926  00D3  0876               	movf	??_mandar_datos,w
+  1927  00D4  3A01               	xorlw	1	; case 1
+  1928  00D5  1903               	skipnz
+  1929  00D6  28A2               	goto	i1l1140
+  1930  00D7  3A03               	xorlw	3	; case 2
+  1931  00D8  1903               	skipnz
+  1932  00D9  28A8               	goto	i1l1142
+  1933  00DA  3A01               	xorlw	1	; case 3
+  1934  00DB  1903               	skipnz
+  1935  00DC  28AD               	goto	i1l1144
+  1936  00DD  3A07               	xorlw	7	; case 4
+  1937  00DE  1903               	skipnz
+  1938  00DF  28A8               	goto	i1l1142
+  1939  00E0  3A01               	xorlw	1	; case 5
+  1940  00E1  1903               	skipnz
+  1941  00E2  28B3               	goto	i1l1148
+  1942  00E3  3A03               	xorlw	3	; case 6
+  1943  00E4  1903               	skipnz
+  1944  00E5  28A8               	goto	i1l1142
+  1945  00E6  3A01               	xorlw	1	; case 7
+  1946  00E7  1903               	skipnz
+  1947  00E8  28B9               	goto	i1l1152
+  1948  00E9  3A0F               	xorlw	15	; case 8
+  1949  00EA  1903               	skipnz
+  1950  00EB  28BF               	goto	i1l1154
+  1951  00EC  3A01               	xorlw	1	; case 9
+  1952  00ED  1903               	skipnz
+  1953  00EE  28C4               	goto	i1l1156
+  1954  00EF  3A1D               	xorlw	29	; case 20
+  1955  00F0  1903               	skipnz
+  1956  00F1  28C9               	goto	i1l1158
+  1957  00F2  28F3               	goto	i1l140
+  1958  00F3                     i1l140:
+  1959  00F3  0008               	return
+  1960  00F4                     __end_of_mandar_datos:
+  1961  007E                     btemp	set	126	;btemp
+  1962  007E                     wtemp0	set	126
   1963                           
-  1964                           ;Config register CONFIG1 @ 0x2007
-  1965                           ;	Oscillator Selection bits
-  1966                           ;	FOSC = INTRC_NOCLKOUT, INTOSCIO oscillator: I/O function on RA6/OSC2/CLKOUT pin, I/O f
+  1964                           	psect	config
+  1965                           
+  1966                           ;Config register CONFIG1 @ 0x2007
+  1967                           ;	Oscillator Selection bits
+  1968                           ;	FOSC = INTRC_NOCLKOUT, INTOSCIO oscillator: I/O function on RA6/OSC2/CLKOUT pin, I/O f
       +                          unction on RA7/OSC1/CLKIN
-  1967                           ;	Watchdog Timer Enable bit
-  1968                           ;	WDTE = OFF, WDT disabled and can be enabled by SWDTEN bit of the WDTCON register
-  1969                           ;	Power-up Timer Enable bit
-  1970                           ;	PWRTE = OFF, PWRT disabled
-  1971                           ;	RE3/MCLR pin function select bit
-  1972                           ;	MCLRE = OFF, RE3/MCLR pin function is digital input, MCLR internally tied to VDD
-  1973                           ;	Code Protection bit
-  1974                           ;	CP = OFF, Program memory code protection is disabled
-  1975                           ;	Data Code Protection bit
-  1976                           ;	CPD = OFF, Data memory code protection is disabled
-  1977                           ;	Brown Out Reset Selection bits
-  1978                           ;	BOREN = OFF, BOR disabled
-  1979                           ;	Internal External Switchover bit
-  1980                           ;	IESO = OFF, Internal/External Switchover mode is disabled
-  1981                           ;	Fail-Safe Clock Monitor Enabled bit
-  1982                           ;	FCMEN = OFF, Fail-Safe Clock Monitor is disabled
-  1983                           ;	Low Voltage Programming Enable bit
-  1984                           ;	LVP = OFF, RB3 pin has digital I/O, HV on MCLR must be used for programming
-  1985                           ;	In-Circuit Debugger Mode bit
-  1986                           ;	DEBUG = 0x1, unprogrammed default
-  1987  2007                     	org	8199
-  1988  2007  20D4               	dw	8404
-  1989                           
-  1990                           ;Config register CONFIG2 @ 0x2008
-  1991                           ;	Brown-out Reset Selection bit
-  1992                           ;	BOR4V = BOR40V, Brown-out Reset set to 4.0V
-  1993                           ;	Flash Program Memory Self Write Enable bits
-  1994                           ;	WRT = OFF, Write protection off
-  1995  2008                     	org	8200
-  1996  2008  3FFF               	dw	16383
+  1969                           ;	Watchdog Timer Enable bit
+  1970                           ;	WDTE = OFF, WDT disabled and can be enabled by SWDTEN bit of the WDTCON register
+  1971                           ;	Power-up Timer Enable bit
+  1972                           ;	PWRTE = OFF, PWRT disabled
+  1973                           ;	RE3/MCLR pin function select bit
+  1974                           ;	MCLRE = OFF, RE3/MCLR pin function is digital input, MCLR internally tied to VDD
+  1975                           ;	Code Protection bit
+  1976                           ;	CP = OFF, Program memory code protection is disabled
+  1977                           ;	Data Code Protection bit
+  1978                           ;	CPD = OFF, Data memory code protection is disabled
+  1979                           ;	Brown Out Reset Selection bits
+  1980                           ;	BOREN = OFF, BOR disabled
+  1981                           ;	Internal External Switchover bit
+  1982                           ;	IESO = OFF, Internal/External Switchover mode is disabled
+  1983                           ;	Fail-Safe Clock Monitor Enabled bit
+  1984                           ;	FCMEN = OFF, Fail-Safe Clock Monitor is disabled
+  1985                           ;	Low Voltage Programming Enable bit
+  1986                           ;	LVP = OFF, RB3 pin has digital I/O, HV on MCLR must be used for programming
+  1987                           ;	In-Circuit Debugger Mode bit
+  1988                           ;	DEBUG = 0x1, unprogrammed default
+  1989  2007                     	org	8199
+  1990  2007  20D4               	dw	8404
+  1991                           
+  1992                           ;Config register CONFIG2 @ 0x2008
+  1993                           ;	Brown-out Reset Selection bit
+  1994                           ;	BOR4V = BOR40V, Brown-out Reset set to 4.0V
+  1995                           ;	Flash Program Memory Self Write Enable bits
+  1996                           ;	WRT = OFF, Write protection off
+  1997  2008                     	org	8200
+  1998  2008  3FFF               	dw	16383
 
 Data Sizes:
     Strings     0
@@ -2307,96 +2310,96 @@ DATA                 0      0      1E      12        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.32 build 20210201212658 
-Symbol Table                                                                                   Thu Aug 26 17:13:44 2021
+Symbol Table                                                                                   Mon Aug 30 14:12:38 2021
 
-            _SSPSTATbits 0094                       _BF 04A0                      l121 0137  
-                    l123 0146                      l125 0155                      l221 01B3  
-                    l118 0197                      l127 0164                      l234 01C9  
-                    l157 012C                      l166 01DF                      _GIE 005F  
+            _SSPSTATbits 0094                       _BF 04A0                      l112 0198  
+                    l121 0164                      l115 0137                      l117 0146  
+                    l119 0155                      l215 01B4                      l151 012C  
+                    l160 01E0                      l228 01CA                      _GIE 005F  
                     u930 0133                      u931 0132                      u940 013B  
                     u941 013A                      u950 0142                      u951 0141  
                     u960 014A                      u961 0149                      u970 0151  
                     u971 0150                      u980 0159                      u981 0158  
-                    u997 01D9                      _isr 002C                      fsr0 0004  
-    __size_of_ADC_config 0016                     l1600 01AA                     l1602 01AB  
-                   l1610 0165                     l1604 01AC                     l1620 016F  
-                   l1612 0169                     l1606 01AD                     l1550 00FE  
-                   l1630 017F                     l1622 0170                     l1614 016A  
-                   l1608 01B0                     l1560 0110                     l1552 0100  
-                   l1640 0191                     l1632 0184                     l1624 0171  
-                   l1616 016D                     l1650 013D                     l1562 0114  
-                   l1554 0106                     l1546 00F7                     l1642 0194  
-                   l1634 0189                     l1626 0172                     l1618 016E  
+                    u997 01DA                      _isr 002C                      fsr0 0004  
+    __size_of_ADC_config 0016                     l1600 01AC                     l1602 01AD  
+                   l1610 0169                     l1604 01AE                     l1620 0170  
+                   l1612 016C                     l1606 01B1                     l1550 0100  
+                   l1630 0180                     l1622 0171                     l1614 016D  
+                   l1560 0114                     l1552 0106                     l1544 00F7  
+                   l1640 0192                     l1632 0185                     l1624 0172  
+                   l1616 016E                     l1608 0165                     l1650 013D  
+                   l1554 0108                     l1546 00F8                     l1642 0195  
+                   l1634 018A                     l1626 0173                     l1618 016F  
                    l1660 014D                     l1652 013E                     l1644 012D  
-                   l1580 01DC                     l1724 011E                     l1556 0108  
-                   l1548 00F8                     l1636 018F                     l1628 0179  
-                   l1662 0151                     l1654 0142                     l1646 0133  
-                   l1574 01CA                     l1558 010E                     l1566 0116  
-                   l1590 01C4                     l1582 01B4                     l1638 0190  
-                   l1670 01E0                     l1664 0159                     l1656 014A  
-                   l1648 013B                     l1576 01CF                     l1592 01C5  
-                   l1584 01BC                     l1672 01E5                     l1666 015B  
-                   l1658 014C                     l1578 01D5                     l1594 01C6  
-                   l1586 01BF                     l1668 015C                     l1596 019B  
-                   l1588 01C1                     l1598 01A9                     ?_isr 0076  
-                   _PEIE 005E                     i1l93 0088                     i1l97 0065  
-                   i1l98 0054                     _main 01E0                     btemp 007E  
+                   l1572 01CB                     l1724 011E                     l1556 010E  
+                   l1548 00FE                     l1564 0116                     l1580 01B5  
+                   l1636 0190                     l1628 017A                     l1662 0151  
+                   l1654 0142                     l1646 0133                     l1574 01D0  
+                   l1558 0110                     l1590 01C6                     l1582 01BD  
+                   l1638 0191                     l1670 01E1                     l1664 0159  
+                   l1656 014A                     l1648 013B                     l1576 01D6  
+                   l1592 01C7                     l1584 01C0                     l1672 01E6  
+                   l1666 015B                     l1658 014C                     l1578 01DD  
+                   l1594 019C                     l1586 01C2                     l1668 015C  
+                   l1596 01AA                     l1588 01C5                     l1598 01AB  
+                   ?_isr 0076                     _PEIE 005E                     i1l91 0065  
+                   i1l92 0054                     i1l95 0085                     i1l87 0088  
+                   i1l97 007F                     _main 01E1                     btemp 007E  
                    start 000E           osc_config@freq 0031                    ??_isr 0078  
           ?_mandar_datos 0076             ?_infrarrojos 0076                    ?_main 0076  
-                  _ANSEL 0188                    i1l101 0085                    i1l103 007F  
-                  i1l107 0098                    i1l146 00F3                    _SPBRG 0099  
-                  _PORTB 0006                    _PORTD 0008                    _PORTE 0009  
-                  u70_20 003B                    u70_21 003A                    u71_20 0048  
-                  u71_21 0047                    u72_20 004C                    u72_21 004B  
-                  u73_20 005A                    u73_21 0059                    _TRISD 0088  
-                  _SSPIE 0463                    u74_20 0069                    _SSPIF 0063  
-                  u74_21 0068                    u75_20 006D                    u75_21 006C  
-                  u76_20 0085                    u68_20 0032                    u76_21 0084  
-                  u68_21 0031                    u77_20 008C                    u69_20 0037  
-                  u77_21 008B                    u69_21 0036                    _TXREG 0019  
-                  _setup 0165                    pclath 000A                    status 0003  
-                  wtemp0 007E          __initialization 0011             __end_of_main 01EE  
-         ??_mandar_datos 0076                   ??_main 0032                   _ADRESH 001E  
-                 _ADRESL 009E                   _BASURA 002D        _temperatura_aprox 0020  
-                 ?_setup 0076                   _ANSELH 0189                   u100_27 0062  
-                 u101_27 007D                   i1l1142 00A1                   i1l1160 00C4  
-                 i1l1152 00B3                   i1l1144 00A2                   i1l1400 002C  
-                 i1l1162 00C9                   i1l1146 00A8                   i1l1410 0040  
-                 i1l1402 0032                   i1l1156 00B9                   i1l1148 00AD  
-                 i1l1420 0052                   i1l1412 0041                   i1l1404 0037  
-                 i1l1158 00BF                   i1l1166 00CB                   i1l1430 0073  
-                 i1l1422 0053                   i1l1414 0042                   i1l1406 003B  
-                 i1l1432 007A                   i1l1424 005A                   i1l1416 0048  
-                 i1l1408 003F                   i1l1434 008C                   i1l1426 0069  
-                 i1l1418 004C                   i1l1436 0090                   i1l1428 006D  
-                 i1l1438 0095                   i1l1726 00D3                   _SPBRGH 009A  
-                 _SSPADD 0093                   _TRISC3 043B                   _TRISC4 043C  
-                 _SSPBUF 0013                   _SSPCON 0014             ??_ADC_config 002F  
-           ?_uart_config 0076                   saved_w 007E       __end_of_ADC_config 01E0  
-__end_of__initialization 0028           __pcstackCOMMON 0076  __size_of_I2C_Slave_Init 001C  
-          __end_of_setup 0198     __size_of_infrarrojos 0038                  ??_setup 0032  
-  I2C_Slave_Init@address 002F               __pbssBANK0 0020     __end_of_mandar_datos 00F4  
-        _abierto_cerrado 002E               __pmaintext 01E0               __pintentry 0004  
-                _PARQUEO 002C                  _SSPCON2 0091                  _SSPSTAT 0094  
-              _ANSELbits 0188                  __ptext1 0165                  __ptext2 01B4  
-                __ptext3 00F4                  __ptext4 0198                  __ptext5 01CA  
+                  _ANSEL 0188                    i1l101 0098                    i1l140 00F3  
+                  _SPBRG 0099                    _PORTA 0005                    _PORTB 0006  
+                  _PORTD 0008                    _PORTE 0009                    u70_20 003B  
+                  u70_21 003A                    u71_20 0048                    u71_21 0047  
+                  u72_20 004C                    u72_21 004B                    u73_20 005A  
+                  u73_21 0059                    _SSPIE 0463                    u74_20 0069  
+                  _SSPIF 0063                    u74_21 0068                    u75_20 006D  
+                  u75_21 006C                    u76_20 0085                    u68_20 0032  
+                  u76_21 0084                    u68_21 0031                    u77_20 008C  
+                  u69_20 0037                    u77_21 008B                    u69_21 0036  
+                  _TXREG 0019                    _setup 0165                    pclath 000A  
+                  status 0003                    wtemp0 007E          __initialization 0011  
+           __end_of_main 01EF           ??_mandar_datos 0076                   ??_main 0032  
+                 _ADRESH 001E                   _ADRESL 009E                   _BASURA 002D  
+      _temperatura_aprox 0020                   ?_setup 0076                   _ANSELH 0189  
+                 u100_27 0062                   u101_27 007D                   i1l1140 00A2  
+                 i1l1142 00A8                   i1l1152 00B9                   i1l1144 00AD  
+                 i1l1400 0032                   i1l1154 00BF                   i1l1162 00CB  
+                 i1l1138 00A1                   i1l1410 0041                   i1l1402 0037  
+                 i1l1156 00C4                   i1l1148 00B3                   i1l1420 0053  
+                 i1l1412 0042                   i1l1404 003B                   i1l1158 00C9  
+                 i1l1430 007A                   i1l1422 005A                   i1l1414 0048  
+                 i1l1406 003F                   i1l1432 008C                   i1l1424 0069  
+                 i1l1416 004C                   i1l1408 0040                   i1l1434 0090  
+                 i1l1426 006D                   i1l1418 0052                   i1l1436 0095  
+                 i1l1428 0073                   i1l1726 00D3                   i1l1398 002C  
+                 _SPBRGH 009A                   _SSPADD 0093                   _TRISC3 043B  
+                 _TRISC4 043C                   _SSPBUF 0013                   _SSPCON 0014  
+           ??_ADC_config 002F             ?_uart_config 0076                   saved_w 007E  
+     __end_of_ADC_config 01E1  __end_of__initialization 0028           __pcstackCOMMON 0076  
+__size_of_I2C_Slave_Init 001C            __end_of_setup 0199     __size_of_infrarrojos 0038  
+                ??_setup 0032    I2C_Slave_Init@address 002F               __pbssBANK0 0020  
+   __end_of_mandar_datos 00F4          _abierto_cerrado 002E               __pmaintext 01E1  
+             __pintentry 0004                  _PARQUEO 002C                  _SSPCON2 0091  
+                _SSPSTAT 0094                  __ptext1 0165                  __ptext2 01B5  
+                __ptext3 00F4                  __ptext4 0199                  __ptext5 01CB  
                 __ptext6 012D                  __ptext7 002C                  __ptext8 00A1  
            __size_of_isr 0075     __size_of_uart_config 0016                  _suma_ir 0070  
    end_of_initialization 0028               _osc_config 00F4                _RCSTAbits 0018  
-         _I2C_Slave_Init 0198                _PORTBbits 0006                _PORTDbits 0008  
+         _I2C_Slave_Init 0199                _PORTAbits 0005                _PORTBbits 0006  
               _TRISAbits 0085                _TRISBbits 0086                _TRISCbits 0087  
-              _TRISEbits 0089    __size_of_mandar_datos 0053                _TXSTAbits 0098  
- __end_of_I2C_Slave_Init 01B4             _mandar_datos 00A1              _BAUDCTLbits 0187  
-    start_initialization 0011              __end_of_isr 00A1              ?_osc_config 0076  
-        ?_I2C_Slave_Init 0076            ??_infrarrojos 002F              __pbssCOMMON 0070  
-              ___latbits 0002            __pcstackBANK0 002F      __size_of_osc_config 0039  
-    __end_of_infrarrojos 0165           __size_of_setup 0033        interrupt_function 0004  
-       _conversion_total 0024                 _PIE1bits 008C                 _PIR1bits 000C  
-            _antirrebote 0075               _ADCON0bits 001F               _ADCON1bits 009F  
-          ??_uart_config 002F              _cuenta_uart 0074              _conversion1 0028  
-             _ADC_config 01CA              _infrarrojo1 0073              _infrarrojo2 0072  
-            _infrarrojo3 0071              _infrarrojos 012D      __end_of_uart_config 01CA  
-       ??_I2C_Slave_Init 002F             ??_osc_config 002F            __size_of_main 000E  
-             _INTCONbits 000B       __end_of_osc_config 012D                 intlevel1 0000  
-             _OSCCONbits 008F              ?_ADC_config 0076              _uart_config 01B4  
-            _SSPCON2bits 0091               _SSPCONbits 0014  
+  __size_of_mandar_datos 0053                _TXSTAbits 0098   __end_of_I2C_Slave_Init 01B5  
+           _mandar_datos 00A1              _BAUDCTLbits 0187      start_initialization 0011  
+            __end_of_isr 00A1              ?_osc_config 0076          ?_I2C_Slave_Init 0076  
+          ??_infrarrojos 002F              __pbssCOMMON 0070                ___latbits 0002  
+          __pcstackBANK0 002F      __size_of_osc_config 0039      __end_of_infrarrojos 0165  
+         __size_of_setup 0034        interrupt_function 0004         _conversion_total 0024  
+               _PIE1bits 008C                 _PIR1bits 000C              _antirrebote 0075  
+             _ADCON0bits 001F               _ADCON1bits 009F            ??_uart_config 002F  
+            _cuenta_uart 0074              _conversion1 0028               _ADC_config 01CB  
+            _infrarrojo1 0073              _infrarrojo2 0072              _infrarrojo3 0071  
+            _infrarrojos 012D      __end_of_uart_config 01CB         ??_I2C_Slave_Init 002F  
+           ??_osc_config 002F            __size_of_main 000E               _INTCONbits 000B  
+     __end_of_osc_config 012D                 intlevel1 0000               _OSCCONbits 008F  
+            ?_ADC_config 0076              _uart_config 01B5              _SSPCON2bits 0091  
+             _SSPCONbits 0014  

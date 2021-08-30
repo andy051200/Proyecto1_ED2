@@ -2787,17 +2787,21 @@ void setup(void)
 
     ANSEL=0;
     ANSELH=0;
-    ANSELbits.ANS0=1;
 
-    TRISAbits.TRISA0=1;
+
+    TRISAbits.TRISA0=0;
+    TRISAbits.TRISA1=0;
+    TRISAbits.TRISA2=0;
+    TRISAbits.TRISA3=0;
+    TRISAbits.TRISA4=0;
+    TRISAbits.TRISA5=0;
+
     TRISBbits.TRISB1=1;
     TRISBbits.TRISB2=1;
     TRISBbits.TRISB3=1;
-    TRISEbits.TRISE0=0;
-    TRISEbits.TRISE1=0;
-    TRISCbits.TRISC6=0;
-    TRISD=0;
 
+
+    PORTA=0;
     PORTB=0;
     PORTD=0;
     PORTE=0;
@@ -2825,40 +2829,40 @@ void infrarrojos(void)
 
     if (PORTBbits.RB1==1)
     {
-        PORTDbits.RD0=1;
-        PORTDbits.RD1=0;
+        PORTAbits.RA0=1;
+        PORTAbits.RA1=0;
         infrarrojo1=1;
     }
     if (PORTBbits.RB1==0)
     {
-        PORTDbits.RD0=0;
-        PORTDbits.RD1=1;
+        PORTAbits.RA0=0;
+        PORTAbits.RA1=1;
         infrarrojo1=0;
     }
 
     if (PORTBbits.RB2==1)
     {
-        PORTDbits.RD2=1;
-        PORTDbits.RD3=0;
+        PORTAbits.RA2=1;
+        PORTAbits.RA3=0;
         infrarrojo2=1;
     }
     if (PORTBbits.RB2==0)
     {
-        PORTDbits.RD2=0;
-        PORTDbits.RD3=1;
+        PORTAbits.RA2=0;
+        PORTAbits.RA3=1;
         infrarrojo2=0;
     }
 
     if (PORTBbits.RB3==1)
     {
-        PORTDbits.RD4=1;
-        PORTDbits.RD5=0;
+        PORTAbits.RA4=1;
+        PORTAbits.RA5=0;
         infrarrojo3=1;
     }
     if (PORTBbits.RB3==0)
     {
-        PORTDbits.RD4=0;
-        PORTDbits.RD5=1;
+        PORTAbits.RA4=0;
+        PORTAbits.RA5=1;
         infrarrojo3=0;
     }
     suma_ir=infrarrojo1+infrarrojo2+infrarrojo3;
