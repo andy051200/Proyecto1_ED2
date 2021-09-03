@@ -2631,63 +2631,33 @@ unsigned short I2C_Master_Read(unsigned short a);
 void I2C_Slave_Init(uint8_t address);
 
 # 50 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c"
-unsigned char antirrebote, botonazo;
-unsigned char conversion1, conversion_total, temperatura_aprox;
+int conversion1, conversion_total, temperatura_aprox;
+unsigned char antirrebote, botonazos;
+unsigned char delay1, delay2;
 uint8_t z = 0, motor_recibido, BASURA;
-unsigned char cuenta1, cuenta_total;
 
 # 57
 void setup(void);
-void servo(void);
 void toggle_adc(void);
-void temp(void);
 
-# 64
+# 62
 void __interrupt() isr(void)
 {
 
-
-if (INTCONbits.T0IF)
+if (INTCONbits.RBIF)
 {
-if (cuenta_total >0 && cuenta_total<85)
+switch(PORTB)
 {
-
-# 75
-PORTEbits.RE0=1;
-_delay((unsigned long)((2)*(4000000/4000.0)));
-PORTEbits.RE0=0;
-
-# 81
-TMR0 = 115;
-INTCONbits.T0IF = 0;
+default:
+antirrebote=0;
+break;
+case(0b11111101):
+antirrebote=1;
+break;
 }
-else if (cuenta_total >85 && cuenta_total<170)
-{
-
-# 89
-PORTEbits.RE0=1;
-_delay((unsigned long)((1.5)*(4000000/4000.0)));
-PORTEbits.RE0=0;
-
-# 95
-TMR0 = 111;
-INTCONbits.T0IF=0;
-}
-else
-{
-
-# 103
-PORTEbits.RE0=1;
-_delay((unsigned long)((1)*(4000000/4000.0)));
-PORTEbits.RE0=0;
-
-# 109
-TMR0 = 107;
-INTCONbits.T0IF=0;
-}
+INTCONbits.RBIF=0;
 }
 
-# 129
 if(PIR1bits.SSPIF == 1){
 
 SSPCONbits.CKP = 0;
@@ -2706,7 +2676,7 @@ PIR1bits.SSPIF = 0;
 SSPCONbits.CKP = 1;
 while(!SSPSTATbits.BF);
 motor_recibido = SSPBUF;
-_delay((unsigned long)((200)*(4000000/4000000.0)));
+_delay((unsigned long)((200)*(8000000/4000000.0)));
 
 }
 else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
@@ -2714,41 +2684,77 @@ z = SSPBUF;
 BF = 0;
 SSPBUF = temperatura_aprox;
 SSPCONbits.CKP = 1;
-_delay((unsigned long)((200)*(4000000/4000000.0)));
+_delay((unsigned long)((200)*(8000000/4000000.0)));
 while(SSPSTATbits.BF);
 }
 
 PIR1bits.SSPIF = 0;
 }
-
 }
 
-# 166
+# 115
 void main(void)
 {
 setup();
-
 while(1)
 {
 
+if (antirrebote==1 && PORTBbits.RB1==0 )
+{
+botonazos++;
+antirrebote=0;
+if(botonazos>1)
+botonazos=0;
+}
 
+if (botonazos==1)
+{
+PORTEbits.RE0=1;
+PORTCbits.RC2=1;
+_delay((unsigned long)((1)*(8000000/4000.0)));
+PORTEbits.RE0=0;
+PORTCbits.RC2=0;
+_delay((unsigned long)((18)*(8000000/4000.0)));
+}
+else
+{
+PORTEbits.RE0=1;
+PORTCbits.RC2=1;
+_delay((unsigned long)((2)*(8000000/4000.0)));
+PORTEbits.RE0=0;
+PORTCbits.RC2=0;
+_delay((unsigned long)((17)*(8000000/4000.0)));
+}
 
 toggle_adc();
 
-temp();
+TRISCbits.TRISC2=1;
+if(temperatura_aprox>25)
+TRISCbits.TRISC2=0;
+PORTD=temperatura_aprox;
+
+if(motor_recibido==1)
+{
+TRISEbits.TRISE0=1;
+TRISCbits.TRISC2=1;
+}
+else
+{
+TRISEbits.TRISE0=0;
+TRISCbits.TRISC2=0;
 }
 }
 
-# 183
+}
+
+# 171
 void setup(void)
 {
 
 ANSEL=0;
 ANSELH=0;
 ANSELbits.ANS0=1;
-ANSELbits.ANS1=1;
 
-TRISDbits.TRISD0=0;
 TRISBbits.TRISB1=1;
 TRISCbits.TRISC2=0;
 TRISD=0;
@@ -2756,101 +2762,41 @@ TRISEbits.TRISE0=0;
 
 
 PORTB=0;
-PORTC=0;
 PORTD=0;
 PORTE=0;
 
-osc_config(4);
+osc_config(8);
+
 
 ADC_config();
 
-OPTION_REGbits.T0CS = 0;
-OPTION_REGbits.PSA = 0;
-OPTION_REGbits.PS = 0b111;
-TMR0 = 78;
-
-TRISCbits.TRISC2=1;
-CCP1CONbits.P1M = 0;
-CCP1CONbits.CCP1M = 0b1100;
-CCPR1L = 0x0f ;
-CCP1CONbits.DC1B = 0;
-
+I2C_Slave_Init(0x60);
 
 OPTION_REGbits.nRBPU=0;
 WPUBbits.WPUB1=1;
 
-I2C_Slave_Init(0x60);
 
 INTCONbits.GIE=1;
 INTCONbits.PEIE = 1;
+
+
+
+
 INTCONbits.RBIE=1;
 INTCONbits.RBIF=0;
 IOCBbits.IOCB1=1;
 }
 
-# 234
-void servo(void)
-{
-
-if (antirrebote==1 && PORTBbits.RB1==0 && motor_recibido==0)
-{
-
-switch(botonazo)
-{
-case(0):
-PORTEbits.RE0=1;
-_delay((unsigned long)((1)*(4000000/4000.0)));
-PORTEbits.RE0=0;
-botonazo=1;
-break;
-case(1):
-PORTEbits.RE0=1;
-_delay((unsigned long)((2)*(4000000/4000.0)));
-PORTEbits.RE0=0;
-botonazo = 0;
-break;
-}
-antirrebote=0;
-}
-else if(motor_recibido==1){
-PORTEbits.RE0=1;
-_delay((unsigned long)((1)*(4000000/4000.0)));
-PORTEbits.RE0=0;
-}
-}
-
+# 213
 void toggle_adc(void)
 {
 if (ADCON0bits.GO==0)
 {
-switch(ADCON0bits.CHS)
-{
-case(0):
-conversion1=ADRESH<<8;
-conversion_total=conversion1+ADRESL;
-_delay((unsigned long)((1)*(4000000/4000.0)));
-ADCON0bits.CHS=1;
-break;
-case(1):
-cuenta1=ADRESH<<8;
-cuenta_total=conversion1+ADRESL;
-_delay((unsigned long)((1)*(4000000/4000.0)));
-ADCON0bits.CHS=0;
-break;
-}
 
-_delay((unsigned long)((1)*(4000000/4000.0)));
+conversion_total=(ADRESH>>3)+ADRESL;
+temperatura_aprox=((conversion_total)/2.046);
+_delay((unsigned long)((1)*(8000000/4000.0)));
 ADCON0bits.GO=1;
 }
 
-}
-
-void temp(void)
-{
-temperatura_aprox=(conversion_total/2.046);
-
-if (temperatura_aprox>28 && temperatura_aprox <50)
-TRISCbits.TRISC2=0;
-else
-TRISCbits.TRISC2=1;
 }

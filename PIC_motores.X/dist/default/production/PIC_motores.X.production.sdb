@@ -9,16 +9,14 @@
 [v _I2C_Master_Wait I2C_Master_Wait `(v  1 e 1 0 ]
 "93
 [v _I2C_Slave_Init I2C_Slave_Init `(v  1 e 1 0 ]
-"64 C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c
+"62 C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c
 [v _isr isr `II(v  1 e 1 0 ]
-"166
+"115
 [v _main main `(v  1 e 1 0 ]
-"183
+"171
 [v _setup setup `(v  1 e 1 0 ]
-"264
+"213
 [v _toggle_adc toggle_adc `(v  1 e 1 0 ]
-"290
-[v _temp temp `(v  1 e 1 0 ]
 "16 C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Osc_config.c
 [v _osc_config osc_config `(v  1 e 1 0 ]
 "5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\__lldiv.c
@@ -37,11 +35,9 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"59 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
-[v _TMR0 TMR0 `VEuc  1 e 1 @1 ]
-"228
+"228 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [v _PORTB PORTB `VEuc  1 e 1 @6 ]
-[s S458 . 1 `uc 1 RB0 1 0 :1:0 
+[s S201 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -51,22 +47,32 @@
 `uc 1 RB7 1 0 :1:7 
 ]
 "245
-[u S467 . 1 `S458 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES467  1 e 1 @6 ]
-"290
-[v _PORTC PORTC `VEuc  1 e 1 @7 ]
+[u S210 . 1 `S201 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES210  1 e 1 @6 ]
+[s S235 . 1 `uc 1 RC0 1 0 :1:0 
+`uc 1 RC1 1 0 :1:1 
+`uc 1 RC2 1 0 :1:2 
+`uc 1 RC3 1 0 :1:3 
+`uc 1 RC4 1 0 :1:4 
+`uc 1 RC5 1 0 :1:5 
+`uc 1 RC6 1 0 :1:6 
+`uc 1 RC7 1 0 :1:7 
+]
+"307
+[u S244 . 1 `S235 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES244  1 e 1 @7 ]
 "352
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
 "414
 [v _PORTE PORTE `VEuc  1 e 1 @9 ]
-[s S54 . 1 `uc 1 RE0 1 0 :1:0 
+[s S222 . 1 `uc 1 RE0 1 0 :1:0 
 `uc 1 RE1 1 0 :1:1 
 `uc 1 RE2 1 0 :1:2 
 `uc 1 RE3 1 0 :1:3 
 ]
 "427
-[u S59 . 1 `S54 1 . 1 0 ]
-[v _PORTEbits PORTEbits `VES59  1 e 1 @9 ]
+[u S227 . 1 `S222 1 . 1 0 ]
+[v _PORTEbits PORTEbits `VES227  1 e 1 @9 ]
 [s S22 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
@@ -84,7 +90,7 @@
 ]
 [u S36 . 1 `S22 1 . 1 0 `S31 1 . 1 0 ]
 [v _INTCONbits INTCONbits `VES36  1 e 1 @11 ]
-[s S74 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[s S55 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSPIF 1 0 :1:3 
@@ -93,49 +99,27 @@
 `uc 1 ADIF 1 0 :1:6 
 ]
 "553
-[u S82 . 1 `S74 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES82  1 e 1 @12 ]
+[u S63 . 1 `S55 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES63  1 e 1 @12 ]
 "843
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
 "850
 [v _SSPCON SSPCON `VEuc  1 e 1 @20 ]
-[s S93 . 1 `uc 1 SSPM 1 0 :4:0 
+[s S74 . 1 `uc 1 SSPM 1 0 :4:0 
 `uc 1 CKP 1 0 :1:4 
 `uc 1 SSPEN 1 0 :1:5 
 `uc 1 SSPOV 1 0 :1:6 
 `uc 1 WCOL 1 0 :1:7 
 ]
 "870
-[s S99 . 1 `uc 1 SSPM0 1 0 :1:0 
+[s S80 . 1 `uc 1 SSPM0 1 0 :1:0 
 `uc 1 SSPM1 1 0 :1:1 
 `uc 1 SSPM2 1 0 :1:2 
 `uc 1 SSPM3 1 0 :1:3 
 ]
-[u S104 . 1 `S93 1 . 1 0 `S99 1 . 1 0 ]
-[v _SSPCONbits SSPCONbits `VES104  1 e 1 @20 ]
-"927
-[v _CCPR1L CCPR1L `VEuc  1 e 1 @21 ]
-[s S361 . 1 `uc 1 CCP1M 1 0 :4:0 
-`uc 1 DC1B 1 0 :2:4 
-`uc 1 P1M 1 0 :2:6 
-]
-"968
-[s S365 . 1 `uc 1 CCP1M0 1 0 :1:0 
-`uc 1 CCP1M1 1 0 :1:1 
-`uc 1 CCP1M2 1 0 :1:2 
-`uc 1 CCP1M3 1 0 :1:3 
-`uc 1 DC1B0 1 0 :1:4 
-`uc 1 DC1B1 1 0 :1:5 
-`uc 1 P1M0 1 0 :1:6 
-`uc 1 P1M1 1 0 :1:7 
-]
-[s S374 . 1 `uc 1 . 1 0 :4:0 
-`uc 1 CCP1Y 1 0 :1:4 
-`uc 1 CCP1X 1 0 :1:5 
-]
-[u S378 . 1 `S361 1 . 1 0 `S365 1 . 1 0 `S374 1 . 1 0 ]
-[v _CCP1CONbits CCP1CONbits `VES378  1 e 1 @23 ]
-[s S823 . 1 `uc 1 RX9D 1 0 :1:0 
+[u S85 . 1 `S74 1 . 1 0 `S80 1 . 1 0 ]
+[v _SSPCONbits SSPCONbits `VES85  1 e 1 @20 ]
+[s S768 . 1 `uc 1 RX9D 1 0 :1:0 
 `uc 1 OERR 1 0 :1:1 
 `uc 1 FERR 1 0 :1:2 
 `uc 1 ADDEN 1 0 :1:3 
@@ -145,25 +129,27 @@
 `uc 1 SPEN 1 0 :1:7 
 ]
 "1068
-[s S832 . 1 `uc 1 RCD8 1 0 :1:0 
+[s S777 . 1 `uc 1 RCD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 RC9 1 0 :1:6 
 ]
-[s S836 . 1 `uc 1 . 1 0 :6:0 
+[s S781 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 nRC8 1 0 :1:6 
 ]
-[s S839 . 1 `uc 1 . 1 0 :6:0 
+[s S784 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 RC8_9 1 0 :1:6 
 ]
-[u S842 . 1 `S823 1 . 1 0 `S832 1 . 1 0 `S836 1 . 1 0 `S839 1 . 1 0 ]
-[v _RCSTAbits RCSTAbits `VES842  1 e 1 @24 ]
-[s S479 . 1 `uc 1 ADON 1 0 :1:0 
+[u S787 . 1 `S768 1 . 1 0 `S777 1 . 1 0 `S781 1 . 1 0 `S784 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES787  1 e 1 @24 ]
+"1238
+[v _ADRESH ADRESH `VEuc  1 e 1 @30 ]
+[s S433 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 GO_nDONE 1 0 :1:1 
 `uc 1 CHS 1 0 :4:2 
 `uc 1 ADCS 1 0 :2:6 
 ]
 "1276
-[s S484 . 1 `uc 1 . 1 0 :1:0 
+[s S438 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO 1 0 :1:1 
 `uc 1 CHS0 1 0 :1:2 
 `uc 1 CHS1 1 0 :1:3 
@@ -172,15 +158,15 @@
 `uc 1 ADCS0 1 0 :1:6 
 `uc 1 ADCS1 1 0 :1:7 
 ]
-[s S493 . 1 `uc 1 . 1 0 :1:0 
+[s S447 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 nDONE 1 0 :1:1 
 ]
-[s S496 . 1 `uc 1 . 1 0 :1:0 
+[s S450 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_DONE 1 0 :1:1 
 ]
-[u S499 . 1 `S479 1 . 1 0 `S484 1 . 1 0 `S493 1 . 1 0 `S496 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES499  1 e 1 @31 ]
-[s S335 . 1 `uc 1 PS 1 0 :3:0 
+[u S453 . 1 `S433 1 . 1 0 `S438 1 . 1 0 `S447 1 . 1 0 `S450 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES453  1 e 1 @31 ]
+[s S355 . 1 `uc 1 PS 1 0 :3:0 
 `uc 1 PSA 1 0 :1:3 
 `uc 1 T0SE 1 0 :1:4 
 `uc 1 T0CS 1 0 :1:5 
@@ -188,13 +174,13 @@
 `uc 1 nRBPU 1 0 :1:7 
 ]
 "1366
-[s S342 . 1 `uc 1 PS0 1 0 :1:0 
+[s S362 . 1 `uc 1 PS0 1 0 :1:0 
 `uc 1 PS1 1 0 :1:1 
 `uc 1 PS2 1 0 :1:2 
 ]
-[u S346 . 1 `S335 1 . 1 0 `S342 1 . 1 0 ]
-[v _OPTION_REGbits OPTION_REGbits `VES346  1 e 1 @129 ]
-[s S266 . 1 `uc 1 TRISB0 1 0 :1:0 
+[u S366 . 1 `S355 1 . 1 0 `S362 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES366  1 e 1 @129 ]
+[s S318 . 1 `uc 1 TRISB0 1 0 :1:0 
 `uc 1 TRISB1 1 0 :1:1 
 `uc 1 TRISB2 1 0 :1:2 
 `uc 1 TRISB3 1 0 :1:3 
@@ -204,9 +190,9 @@
 `uc 1 TRISB7 1 0 :1:7 
 ]
 "1495
-[u S275 . 1 `S266 1 . 1 0 ]
-[v _TRISBbits TRISBbits `VES275  1 e 1 @134 ]
-[s S287 . 1 `uc 1 TRISC0 1 0 :1:0 
+[u S327 . 1 `S318 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES327  1 e 1 @134 ]
+[s S260 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -216,47 +202,35 @@
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "1557
-[u S296 . 1 `S287 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES296  1 e 1 @135 ]
+[u S269 . 1 `S260 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES269  1 e 1 @135 ]
 "1602
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
-[s S245 . 1 `uc 1 TRISD0 1 0 :1:0 
-`uc 1 TRISD1 1 0 :1:1 
-`uc 1 TRISD2 1 0 :1:2 
-`uc 1 TRISD3 1 0 :1:3 
-`uc 1 TRISD4 1 0 :1:4 
-`uc 1 TRISD5 1 0 :1:5 
-`uc 1 TRISD6 1 0 :1:6 
-`uc 1 TRISD7 1 0 :1:7 
-]
-"1619
-[u S254 . 1 `S245 1 . 1 0 ]
-[v _TRISDbits TRISDbits `VES254  1 e 1 @136 ]
-[s S309 . 1 `uc 1 TRISE0 1 0 :1:0 
+[s S282 . 1 `uc 1 TRISE0 1 0 :1:0 
 `uc 1 TRISE1 1 0 :1:1 
 `uc 1 TRISE2 1 0 :1:2 
 `uc 1 TRISE3 1 0 :1:3 
 ]
 "1677
-[u S314 . 1 `S309 1 . 1 0 ]
-[v _TRISEbits TRISEbits `VES314  1 e 1 @137 ]
-[s S730 . 1 `uc 1 SCS 1 0 :1:0 
+[u S287 . 1 `S282 1 . 1 0 ]
+[v _TRISEbits TRISEbits `VES287  1 e 1 @137 ]
+[s S675 . 1 `uc 1 SCS 1 0 :1:0 
 `uc 1 LTS 1 0 :1:1 
 `uc 1 HTS 1 0 :1:2 
 `uc 1 OSTS 1 0 :1:3 
 `uc 1 IRCF 1 0 :3:4 
 ]
 "1882
-[s S736 . 1 `uc 1 . 1 0 :4:0 
+[s S681 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 IRCF0 1 0 :1:4 
 `uc 1 IRCF1 1 0 :1:5 
 `uc 1 IRCF2 1 0 :1:6 
 ]
-[u S741 . 1 `S730 1 . 1 0 `S736 1 . 1 0 ]
-[v _OSCCONbits OSCCONbits `VES741  1 e 1 @143 ]
+[u S686 . 1 `S675 1 . 1 0 `S681 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES686  1 e 1 @143 ]
 "1979
 [v _SSPCON2 SSPCON2 `VEuc  1 e 1 @145 ]
-[s S680 . 1 `uc 1 SEN 1 0 :1:0 
+[s S625 . 1 `uc 1 SEN 1 0 :1:0 
 `uc 1 RSEN 1 0 :1:1 
 `uc 1 PEN 1 0 :1:2 
 `uc 1 RCEN 1 0 :1:3 
@@ -266,13 +240,13 @@
 `uc 1 GCEN 1 0 :1:7 
 ]
 "1996
-[u S689 . 1 `S680 1 . 1 0 ]
-[v _SSPCON2bits SSPCON2bits `VES689  1 e 1 @145 ]
+[u S634 . 1 `S625 1 . 1 0 ]
+[v _SSPCON2bits SSPCON2bits `VES634  1 e 1 @145 ]
 "2048
 [v _SSPADD SSPADD `VEuc  1 e 1 @147 ]
 "2177
 [v _SSPSTAT SSPSTAT `VEuc  1 e 1 @148 ]
-[s S120 . 1 `uc 1 BF 1 0 :1:0 
+[s S101 . 1 `uc 1 BF 1 0 :1:0 
 `uc 1 UA 1 0 :1:1 
 `uc 1 R_nW 1 0 :1:2 
 `uc 1 S 1 0 :1:3 
@@ -282,43 +256,43 @@
 `uc 1 SMP 1 0 :1:7 
 ]
 "2231
-[s S129 . 1 `uc 1 . 1 0 :2:0 
+[s S110 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D 1 0 :1:5 
 ]
-[s S134 . 1 `uc 1 . 1 0 :2:0 
+[s S115 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 I2C_READ 1 0 :1:2 
 `uc 1 I2C_START 1 0 :1:3 
 `uc 1 I2C_STOP 1 0 :1:4 
 `uc 1 I2C_DATA 1 0 :1:5 
 ]
-[s S140 . 1 `uc 1 . 1 0 :2:0 
+[s S121 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nW 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nA 1 0 :1:5 
 ]
-[s S145 . 1 `uc 1 . 1 0 :2:0 
+[s S126 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nWRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nADDRESS 1 0 :1:5 
 ]
-[s S150 . 1 `uc 1 . 1 0 :2:0 
+[s S131 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_W 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D_A 1 0 :1:5 
 ]
-[s S155 . 1 `uc 1 . 1 0 :2:0 
+[s S136 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 READ_WRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 DATA_ADDRESS 1 0 :1:5 
 ]
-[u S160 . 1 `S120 1 . 1 0 `S129 1 . 1 0 `S134 1 . 1 0 `S140 1 . 1 0 `S145 1 . 1 0 `S150 1 . 1 0 `S155 1 . 1 0 ]
-[v _SSPSTATbits SSPSTATbits `VES160  1 e 1 @148 ]
-[s S401 . 1 `uc 1 WPUB 1 0 :8:0 
+[u S141 . 1 `S101 1 . 1 0 `S110 1 . 1 0 `S115 1 . 1 0 `S121 1 . 1 0 `S126 1 . 1 0 `S131 1 . 1 0 `S136 1 . 1 0 ]
+[v _SSPSTATbits SSPSTATbits `VES141  1 e 1 @148 ]
+[s S381 . 1 `uc 1 WPUB 1 0 :8:0 
 ]
 "2366
-[s S403 . 1 `uc 1 WPUB0 1 0 :1:0 
+[s S383 . 1 `uc 1 WPUB0 1 0 :1:0 
 `uc 1 WPUB1 1 0 :1:1 
 `uc 1 WPUB2 1 0 :1:2 
 `uc 1 WPUB3 1 0 :1:3 
@@ -327,12 +301,12 @@
 `uc 1 WPUB6 1 0 :1:6 
 `uc 1 WPUB7 1 0 :1:7 
 ]
-[u S412 . 1 `S401 1 . 1 0 `S403 1 . 1 0 ]
-[v _WPUBbits WPUBbits `VES412  1 e 1 @149 ]
-[s S432 . 1 `uc 1 IOCB 1 0 :8:0 
+[u S392 . 1 `S381 1 . 1 0 `S383 1 . 1 0 ]
+[v _WPUBbits WPUBbits `VES392  1 e 1 @149 ]
+[s S407 . 1 `uc 1 IOCB 1 0 :8:0 
 ]
 "2436
-[s S434 . 1 `uc 1 IOCB0 1 0 :1:0 
+[s S409 . 1 `uc 1 IOCB0 1 0 :1:0 
 `uc 1 IOCB1 1 0 :1:1 
 `uc 1 IOCB2 1 0 :1:2 
 `uc 1 IOCB3 1 0 :1:3 
@@ -341,9 +315,9 @@
 `uc 1 IOCB6 1 0 :1:6 
 `uc 1 IOCB7 1 0 :1:7 
 ]
-[u S443 . 1 `S432 1 . 1 0 `S434 1 . 1 0 ]
-[v _IOCBbits IOCBbits `VES443  1 e 1 @150 ]
-[s S763 . 1 `uc 1 TX9D 1 0 :1:0 
+[u S418 . 1 `S407 1 . 1 0 `S409 1 . 1 0 ]
+[v _IOCBbits IOCBbits `VES418  1 e 1 @150 ]
+[s S708 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
 `uc 1 SENDB 1 0 :1:3 
@@ -353,31 +327,31 @@
 `uc 1 CSRC 1 0 :1:7 
 ]
 "2582
-[s S772 . 1 `uc 1 TXD8 1 0 :1:0 
+[s S717 . 1 `uc 1 TXD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 nTX8 1 0 :1:6 
 ]
-[s S776 . 1 `uc 1 . 1 0 :6:0 
+[s S721 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 TX8_9 1 0 :1:6 
 ]
-[u S779 . 1 `S763 1 . 1 0 `S772 1 . 1 0 `S776 1 . 1 0 ]
-[v _TXSTAbits TXSTAbits `VES779  1 e 1 @152 ]
+[u S724 . 1 `S708 1 . 1 0 `S717 1 . 1 0 `S721 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES724  1 e 1 @152 ]
 "2642
 [v _SPBRG SPBRG `VEuc  1 e 1 @153 ]
 "2704
 [v _SPBRGH SPBRGH `VEuc  1 e 1 @154 ]
 "2970
 [v _ADRESL ADRESL `VEuc  1 e 1 @158 ]
-[s S892 . 1 `uc 1 . 1 0 :4:0 
+[s S837 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 VCFG0 1 0 :1:4 
 `uc 1 VCFG1 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 ADFM 1 0 :1:7 
 ]
 "2991
-[u S898 . 1 `S892 1 . 1 0 ]
-[v _ADCON1bits ADCON1bits `VES898  1 e 1 @159 ]
-[s S800 . 1 `uc 1 ABDEN 1 0 :1:0 
+[u S843 . 1 `S837 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES843  1 e 1 @159 ]
+[s S745 . 1 `uc 1 ABDEN 1 0 :1:0 
 `uc 1 WUE 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 BRG16 1 0 :1:3 
@@ -387,11 +361,11 @@
 `uc 1 ABDOVF 1 0 :1:7 
 ]
 "3352
-[u S809 . 1 `S800 1 . 1 0 ]
-[v _BAUDCTLbits BAUDCTLbits `VES809  1 e 1 @391 ]
+[u S754 . 1 `S745 1 . 1 0 ]
+[v _BAUDCTLbits BAUDCTLbits `VES754  1 e 1 @391 ]
 "3387
 [v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
-[s S224 . 1 `uc 1 ANS0 1 0 :1:0 
+[s S297 . 1 `uc 1 ANS0 1 0 :1:0 
 `uc 1 ANS1 1 0 :1:1 
 `uc 1 ANS2 1 0 :1:2 
 `uc 1 ANS3 1 0 :1:3 
@@ -401,8 +375,8 @@
 `uc 1 ANS7 1 0 :1:7 
 ]
 "3404
-[u S233 . 1 `S224 1 . 1 0 ]
-[v _ANSELbits ANSELbits `VES233  1 e 1 @392 ]
+[u S306 . 1 `S297 1 . 1 0 ]
+[v _ANSELbits ANSELbits `VES306  1 e 1 @392 ]
 "3449
 [v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
 "3641
@@ -420,32 +394,23 @@
 "4460
 [v _TRISC4 TRISC4 `VEb  1 e 0 @1084 ]
 "50 C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c
-[v _antirrebote antirrebote `uc  1 e 1 0 ]
-[v _botonazo botonazo `uc  1 e 1 0 ]
+[v _conversion_total conversion_total `i  1 e 2 0 ]
+[v _temperatura_aprox temperatura_aprox `i  1 e 2 0 ]
 "51
-[v _conversion1 conversion1 `uc  1 e 1 0 ]
-[v _conversion_total conversion_total `uc  1 e 1 0 ]
-[v _temperatura_aprox temperatura_aprox `uc  1 e 1 0 ]
-"52
+[v _antirrebote antirrebote `uc  1 e 1 0 ]
+[v _botonazos botonazos `uc  1 e 1 0 ]
+"53
 [v _z z `uc  1 e 1 0 ]
 [v _motor_recibido motor_recibido `uc  1 e 1 0 ]
-"53
-[v _cuenta1 cuenta1 `uc  1 e 1 0 ]
-[v _cuenta_total cuenta_total `uc  1 e 1 0 ]
-"166
+"115
 [v _main main `(v  1 e 1 0 ]
 {
-"179
+"167
 } 0
-"264
+"213
 [v _toggle_adc toggle_adc `(v  1 e 1 0 ]
 {
-"288
-} 0
-"290
-[v _temp temp `(v  1 e 1 0 ]
-{
-"298
+"224
 } 0
 "10 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
@@ -492,10 +457,10 @@
 [v ___fldiv@b b `d  1 p 4 18 ]
 "185
 } 0
-"183 C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c
+"171 C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c
 [v _setup setup `(v  1 e 1 0 ]
 {
-"229
+"208
 } 0
 "16 C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Osc_config.c
 [v _osc_config osc_config `(v  1 e 1 0 ]
@@ -519,8 +484,8 @@
 {
 "33
 } 0
-"64 C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c
+"62 C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_motores.X/Main_motores.c
 [v _isr isr `II(v  1 e 1 0 ]
 {
-"162
+"111
 } 0

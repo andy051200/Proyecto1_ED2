@@ -45,86 +45,36 @@ Descripcion:
  -----------------------------------------------------------------------------*/
 
 //-------DIRECTIVAS DEL COMPILADOR
-#define _XTAL_FREQ 4000000
+#define _XTAL_FREQ 8000000
 //-------VARIABLES DE PROGRAMA
-unsigned char antirrebote, botonazo;        //variables para control servo
-unsigned char conversion1, conversion_total, temperatura_aprox;
+int conversion1, conversion_total, temperatura_aprox;
+unsigned char antirrebote, botonazos;
+unsigned char delay1, delay2;
 uint8_t z = 0, motor_recibido, BASURA;
-unsigned char cuenta1, cuenta_total;
 /*-----------------------------------------------------------------------------
  ------------------------ PROTOTIPOS DE FUNCIONES ------------------------------
  -----------------------------------------------------------------------------*/
 void setup(void);
-void servo(void);
 void toggle_adc(void);
-void temp(void);
 /*-----------------------------------------------------------------------------
  --------------------------- INTERRUPCIONES -----------------------------------
  -----------------------------------------------------------------------------*/
 void __interrupt() isr(void) //funcion de interrupciones
-{
-    //-------INTERRUPCION POR BOTONAZO
-    //interrupcion por timer0
-    if (INTCONbits.T0IF)
-    {
-        if (cuenta_total >0 && cuenta_total<85)  //variar oscilacion de 18ms
-        {
-            /*PORTDbits.RD0=1;
-            PORTDbits.RD1=1;
-            PORTDbits.RD2=1;*/
-            PORTEbits.RE0=1;
-            __delay_ms(2);
-            PORTEbits.RE0=0;
-            /*PORTDbits.RD0=0;
-            PORTDbits.RD1=0;
-            PORTDbits.RD2=0;*/
-            TMR0 = 115;  
-            INTCONbits.T0IF = 0;
-        }
-        else if (cuenta_total >85 && cuenta_total<170)    //variar oscilacion de 18.5ms
-        {
-            /*PORTDbits.RD0=1;
-            PORTDbits.RD1=1;
-            PORTDbits.RD2=1;*/
-            PORTEbits.RE0=1;
-            __delay_ms(1.5);
-            PORTEbits.RE0=0;
-            /*PORTDbits.RD0=0;
-            PORTDbits.RD1=0;
-            PORTDbits.RD2=0;*/
-            TMR0 = 111;
-            INTCONbits.T0IF=0;
-        }   
-        else                                    //variar oscilacion de 19ms
-        {
-            /*PORTDbits.RD0=1;
-            PORTDbits.RD1=1;
-            PORTDbits.RD2=1;*/
-            PORTEbits.RE0=1;
-            __delay_ms(1);
-            PORTEbits.RE0=0;
-            /*PORTDbits.RD0=0;
-            PORTDbits.RD1=0;
-            PORTDbits.RD2=0;*/
-            TMR0 = 107;
-            INTCONbits.T0IF=0;
-        }
-    }
-    
-    
-    /*
+{   
     //-------INTERRUPCION POR BOTONAZO
     if (INTCONbits.RBIF)
     {
-        if (PORTB==0b11111101){
-            antirrebote=1;   
-        }
-        else{
-            antirrebote=0;
+        switch(PORTB)
+        {
+            default:
+                antirrebote=0;
+                break;
+            case(0b11111101):
+                antirrebote=1;
+                break;
         }
         INTCONbits.RBIF=0;
-    }*/
-    
+    }
     //-------INTERRUPCION POR I2C
     if(PIR1bits.SSPIF == 1){    //Le va a mandar la cantidad de parqueos habilitados al master
 
@@ -158,7 +108,6 @@ void __interrupt() isr(void) //funcion de interrupciones
        
         PIR1bits.SSPIF = 0;    
     }
-    
 }
 /*-----------------------------------------------------------------------------
  ----------------------------- MAIN LOOP --------------------------------------
@@ -166,16 +115,55 @@ void __interrupt() isr(void) //funcion de interrupciones
 void main(void)
 {
     setup();
-    
     while(1)
     {
-        //-------FUNCION PARA SERVO CON BOTONAZO
-        //servo();
-        //-------FUNCIONES PARA RECEPCION DE CONVERSION ADC
+        //-------ANTIRREBOTES DE BOTON 
+        if (antirrebote==1 && PORTBbits.RB1==0  )
+        {
+            botonazos++;
+            antirrebote=0;
+            if(botonazos>1)
+                botonazos=0;
+        }
+        //-------BOTON DE TALANQUERA
+        if (botonazos==1)
+        {
+            PORTEbits.RE0=1;
+            PORTCbits.RC2=1;
+            __delay_ms(1);
+            PORTEbits.RE0=0;
+            PORTCbits.RC2=0;
+            __delay_ms(18);
+        }
+        else
+        {
+            PORTEbits.RE0=1;
+            PORTCbits.RC2=1;
+            __delay_ms(2);
+            PORTEbits.RE0=0;
+            PORTCbits.RC2=0;
+            __delay_ms(17);
+        }
+        //-------FUNCION PARA JALAR VALORES DE ADC
         toggle_adc();
-        //-------FUNCIONES PARA 
-        temp();
-    }   
+        //-------PARTE PARA ACTIVAR VENTILADOR
+        TRISCbits.TRISC2=1;
+        if(temperatura_aprox>25)
+            TRISCbits.TRISC2=0;
+        PORTD=temperatura_aprox;
+        //-------PARTE PARA FUNCIONAR SI ESTA ABIERTO O NO
+        if(motor_recibido==1)
+        {
+            TRISEbits.TRISE0=1;
+            TRISCbits.TRISC2=1;
+        }
+        else
+        {
+            TRISEbits.TRISE0=0;
+            TRISCbits.TRISC2=0;
+        }
+    }
+       
 }
 /*-----------------------------------------------------------------------------
  ---------------------------------- SET UP -----------------------------------
@@ -185,44 +173,35 @@ void setup(void)
     //-------CONFIGURACION ENTRADAS ANALOGICAS
     ANSEL=0;
     ANSELH=0;
-    ANSELbits.ANS0=1;
-    ANSELbits.ANS1=1;
+    ANSELbits.ANS0=1;                   //entrada para sensor temperatura
     //-------CONFIGURACION IN/OUT
-    TRISDbits.TRISD0=0;
     TRISBbits.TRISB1=1;                 //entrada boton prueba
-    TRISCbits.TRISC2=0;                 //salida de PWM de motor DC
+    TRISCbits.TRISC2=0;                 //pin de motor DC
     TRISD=0;
     TRISEbits.TRISE0=0;                 //salida para PWM de servo
     
     //-------LIMPIEZA DE PUERTOS
     PORTB=0;
-    PORTC=0;
     PORTD=0;
     PORTE=0;
     //-------CONFIGURACION DE RELOJ A 8MHz
-    osc_config(4);
+    osc_config(8);
+    
     //-------CONFIGURACION DEL ADC
     ADC_config();
-    //-------CONFIGURACION DEL TIMER0
-    OPTION_REGbits.T0CS = 0;    //Uso reloj interno
-    OPTION_REGbits.PSA = 0;     //Uso pre-escaler
-    OPTION_REGbits.PS = 0b111;  //PS = 111 / 1:256
-    TMR0 = 78;                  //Reinicio del timmer
-    //-------CONFIGURACION DE CCP
-    TRISCbits.TRISC2=1;         // a motor se desconecta
-    CCP1CONbits.P1M = 0;        //
-    CCP1CONbits.CCP1M = 0b1100; // se configura como modo PWM
-    CCPR1L = 0x0f ;             // ciclo de trabajo inicial de la onda cuadrada
-    CCP1CONbits.DC1B = 0;       // LSB para ciclo de trabajo
-    //TRISCbits.TRISC2=0;
+     //-------CONFIGURACION DE COMUNICACION I2C
+    I2C_Slave_Init(0x60);               //se da direccion 0x50    
     //-------CONFIGURACION DE WPUB
     OPTION_REGbits.nRBPU=0;             //se activan WPUB
     WPUBbits.WPUB1=1;                   //RB0, boton prueba
-    //-------CONFIGURACION DE COMUNICACION I2C
-    I2C_Slave_Init(0x60);               //se da direccion 0x50         
+    
     //-------CONFIGURACION DE INTERRUPCIONES
     INTCONbits.GIE=1;                   //se habilita interrupciones globales
     INTCONbits.PEIE = 1;                //habilitan interrupciones por perifericos
+    //INTCONbits.T0IE=1;                  //se habilita interrupcion timer0
+    //INTCONbits.T0IF=0;                  //se habilita interrupcion timer0
+    //PIE1bits.TMR1IE=1;
+    //PIR1bits.TMR1IF=0;
     INTCONbits.RBIE=1;                  //se  habilita IntOnChange B
     INTCONbits.RBIF=0;                  //se  apaga bandera IntOnChange B
     IOCBbits.IOCB1=1;                   //habilita IOCB RB0
@@ -230,69 +209,16 @@ void setup(void)
 /*-----------------------------------------------------------------------------
  --------------------------------- FUNCIONES ----------------------------------
  -----------------------------------------------------------------------------*/
-//-------FUNCION PARA FUNCION DE SERVO/TALANQUERA
-void servo(void)
-{
-    //-------ANTIRREBOTE DE BOTON PARA MOVER MOTOR
-    if (antirrebote==1 && PORTBbits.RB1==0 && motor_recibido==0)
-    {
-        //-------FUNCIONAMIENTO DE SERVO DE TALANQUERA
-    switch(botonazo)
-    {
-        case(0):                //servo en posicion de 0°
-            PORTEbits.RE0=1;
-            __delay_ms(1);
-            PORTEbits.RE0=0;
-            botonazo=1;
-            break;
-        case(1):                //servo en posicion 90°
-            PORTEbits.RE0=1;    
-            __delay_ms(2);
-            PORTEbits.RE0=0;
-            botonazo = 0;
-            break;
-    }
-    antirrebote=0;
-    }
-    else if(motor_recibido==1){
-        PORTEbits.RE0=1;
-        __delay_ms(1);
-        PORTEbits.RE0=0;
-    }
-}
-//-------FUNCION PARA RECEPCION DEL ADC
+
 void toggle_adc(void)
 {
     if (ADCON0bits.GO==0)
     {
-        switch(ADCON0bits.CHS)
-        {
-            case(0):
-                conversion1=ADRESH<<8;                  //toma los MSB del ADRE
-                conversion_total=conversion1+ADRESL;    //le suma los LSB
-                __delay_ms(1);
-                ADCON0bits.CHS=1;
-                break;
-            case(1):
-                cuenta1=ADRESH<<8;                  //toma los MSB del ADRE
-                cuenta_total=conversion1+ADRESL;    //le suma los LSB
-                __delay_ms(1);
-                ADCON0bits.CHS=0;
-                break;
-        }
-            
-        __delay_ms(1);                          //tiempo de carga
+        //conversion1=ADRESH;                  //toma los MSB del ADRE
+        conversion_total=(ADRESH>>3)+ADRESL;    //le suma los LSB
+        temperatura_aprox=((conversion_total)/2.046);
+        __delay_ms(1);
         ADCON0bits.GO=1;
     }
     
-}
-//-------FUNCION PARA CONVERSION DE TEMPERATURA
-void temp(void)
-{
-    temperatura_aprox=(conversion_total/2.046);
-    //PORTD=temperatura_aprox;
-    if (temperatura_aprox>28 && temperatura_aprox <50)
-        TRISCbits.TRISC2=0;
-    else
-        TRISCbits.TRISC2=1;
 }

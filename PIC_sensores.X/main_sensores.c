@@ -151,7 +151,7 @@ void setup(void)
     //-------CONFIGURACION DE RELOJ A 4MHz
     osc_config(8);
     //-------CONFIGURACION DE ADC
-    ADC_config();
+    //ADC_config();
     uart_config();
     //-------CONFIGURACION DE COMUNICACION I2C
     I2C_Slave_Init(0x50);   //se da direccion 0x50
@@ -211,17 +211,7 @@ void infrarrojos(void)
     suma_ir=infrarrojo1+infrarrojo2+infrarrojo3; //suma de los parqueos disponibles
    
 }
-//-------FUNCION PARA CONVERSION DEL ADC
-void toggle_adc(void)
-{
-    if (ADCON0bits.GO==0)
-    {
-        conversion1=ADRESH<<8;                  //toma los MSB del ADRE
-        conversion_total=conversion1+ADRESL;    //le suma los LSB
-        __delay_ms(1);                          //tiempo de carga
-        ADCON0bits.GO=1;
-    }
-}
+
 
 
 
