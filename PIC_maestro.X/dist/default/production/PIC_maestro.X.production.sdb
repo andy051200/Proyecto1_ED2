@@ -21,6 +21,8 @@
 [v _Lcd_Port Lcd_Port `(v  1 e 1 0 ]
 "7
 [v _Lcd_Cmd Lcd_Cmd `(v  1 e 1 0 ]
+"16
+[v _Lcd_Clear Lcd_Clear `(v  1 e 1 0 ]
 "20
 [v _Lcd_Set_Cursor Lcd_Set_Cursor `(v  1 e 1 0 ]
 "33
@@ -29,15 +31,15 @@
 [v _Lcd_Write_Char Lcd_Write_Char `(v  1 e 1 0 ]
 "56
 [v _Lcd_Write_String Lcd_Write_String `(v  1 e 1 0 ]
-"71 C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+"81 C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
 [v _main main `(v  1 e 1 0 ]
-"148
+"159
 [v _setup setup `(v  1 e 1 0 ]
-"214
+"225
 [v _conver conver `(*.4DCuc  1 e 1 0 ]
-"257
+"268
 [v _conver1 conver1 `(*.4DCuc  1 e 1 0 ]
-"279
+"290
 [v _LECT1 LECT1 `(v  1 e 1 0 ]
 "16 C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/Osc_config.c
 [v _osc_config osc_config `(v  1 e 1 0 ]
@@ -61,19 +63,19 @@
 [v _PORTB PORTB `VEuc  1 e 1 @6 ]
 "352
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
-[s S131 . 1 `uc 1 RE0 1 0 :1:0 
+[s S136 . 1 `uc 1 RE0 1 0 :1:0 
 `uc 1 RE1 1 0 :1:1 
 `uc 1 RE2 1 0 :1:2 
 `uc 1 RE3 1 0 :1:3 
 ]
 "427
-[u S136 . 1 `S131 1 . 1 0 ]
-[v _PORTEbits PORTEbits `VES136  1 e 1 @9 ]
+[u S141 . 1 `S136 1 . 1 0 ]
+[v _PORTEbits PORTEbits `VES141  1 e 1 @9 ]
 "843
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
 "850
 [v _SSPCON SSPCON `VEuc  1 e 1 @20 ]
-[s S348 . 1 `uc 1 RX9D 1 0 :1:0 
+[s S353 . 1 `uc 1 RX9D 1 0 :1:0 
 `uc 1 OERR 1 0 :1:1 
 `uc 1 FERR 1 0 :1:2 
 `uc 1 ADDEN 1 0 :1:3 
@@ -83,23 +85,23 @@
 `uc 1 SPEN 1 0 :1:7 
 ]
 "1068
-[s S357 . 1 `uc 1 RCD8 1 0 :1:0 
+[s S362 . 1 `uc 1 RCD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 RC9 1 0 :1:6 
 ]
-[s S361 . 1 `uc 1 . 1 0 :6:0 
+[s S366 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 nRC8 1 0 :1:6 
 ]
-[s S364 . 1 `uc 1 . 1 0 :6:0 
+[s S369 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 RC8_9 1 0 :1:6 
 ]
-[u S367 . 1 `S348 1 . 1 0 `S357 1 . 1 0 `S361 1 . 1 0 `S364 1 . 1 0 ]
-[v _RCSTAbits RCSTAbits `VES367  1 e 1 @24 ]
+[u S372 . 1 `S353 1 . 1 0 `S362 1 . 1 0 `S366 1 . 1 0 `S369 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES372  1 e 1 @24 ]
 "1416
 [v _TRISA TRISA `VEuc  1 e 1 @133 ]
 "1478
 [v _TRISB TRISB `VEuc  1 e 1 @134 ]
-[s S176 . 1 `uc 1 TRISC0 1 0 :1:0 
+[s S181 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -109,29 +111,29 @@
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "1557
-[u S185 . 1 `S176 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES185  1 e 1 @135 ]
+[u S190 . 1 `S181 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES190  1 e 1 @135 ]
 "1602
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
 "1664
 [v _TRISE TRISE `VEuc  1 e 1 @137 ]
-[s S255 . 1 `uc 1 SCS 1 0 :1:0 
+[s S260 . 1 `uc 1 SCS 1 0 :1:0 
 `uc 1 LTS 1 0 :1:1 
 `uc 1 HTS 1 0 :1:2 
 `uc 1 OSTS 1 0 :1:3 
 `uc 1 IRCF 1 0 :3:4 
 ]
 "1882
-[s S261 . 1 `uc 1 . 1 0 :4:0 
+[s S266 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 IRCF0 1 0 :1:4 
 `uc 1 IRCF1 1 0 :1:5 
 `uc 1 IRCF2 1 0 :1:6 
 ]
-[u S266 . 1 `S255 1 . 1 0 `S261 1 . 1 0 ]
-[v _OSCCONbits OSCCONbits `VES266  1 e 1 @143 ]
+[u S271 . 1 `S260 1 . 1 0 `S266 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES271  1 e 1 @143 ]
 "1979
 [v _SSPCON2 SSPCON2 `VEuc  1 e 1 @145 ]
-[s S197 . 1 `uc 1 SEN 1 0 :1:0 
+[s S202 . 1 `uc 1 SEN 1 0 :1:0 
 `uc 1 RSEN 1 0 :1:1 
 `uc 1 PEN 1 0 :1:2 
 `uc 1 RCEN 1 0 :1:3 
@@ -141,13 +143,13 @@
 `uc 1 GCEN 1 0 :1:7 
 ]
 "1996
-[u S206 . 1 `S197 1 . 1 0 ]
-[v _SSPCON2bits SSPCON2bits `VES206  1 e 1 @145 ]
+[u S211 . 1 `S202 1 . 1 0 ]
+[v _SSPCON2bits SSPCON2bits `VES211  1 e 1 @145 ]
 "2048
 [v _SSPADD SSPADD `VEuc  1 e 1 @147 ]
 "2177
 [v _SSPSTAT SSPSTAT `VEuc  1 e 1 @148 ]
-[s S288 . 1 `uc 1 TX9D 1 0 :1:0 
+[s S293 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
 `uc 1 SENDB 1 0 :1:3 
@@ -157,20 +159,20 @@
 `uc 1 CSRC 1 0 :1:7 
 ]
 "2582
-[s S297 . 1 `uc 1 TXD8 1 0 :1:0 
+[s S302 . 1 `uc 1 TXD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 nTX8 1 0 :1:6 
 ]
-[s S301 . 1 `uc 1 . 1 0 :6:0 
+[s S306 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 TX8_9 1 0 :1:6 
 ]
-[u S304 . 1 `S288 1 . 1 0 `S297 1 . 1 0 `S301 1 . 1 0 ]
-[v _TXSTAbits TXSTAbits `VES304  1 e 1 @152 ]
+[u S309 . 1 `S293 1 . 1 0 `S302 1 . 1 0 `S306 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES309  1 e 1 @152 ]
 "2642
 [v _SPBRG SPBRG `VEuc  1 e 1 @153 ]
 "2704
 [v _SPBRGH SPBRGH `VEuc  1 e 1 @154 ]
-[s S325 . 1 `uc 1 ABDEN 1 0 :1:0 
+[s S330 . 1 `uc 1 ABDEN 1 0 :1:0 
 `uc 1 WUE 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 BRG16 1 0 :1:3 
@@ -180,8 +182,8 @@
 `uc 1 ABDOVF 1 0 :1:7 
 ]
 "3352
-[u S334 . 1 `S325 1 . 1 0 ]
-[v _BAUDCTLbits BAUDCTLbits `VES334  1 e 1 @391 ]
+[u S339 . 1 `S330 1 . 1 0 ]
+[v _BAUDCTLbits BAUDCTLbits `VES339  1 e 1 @391 ]
 "3387
 [v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
 "3449
@@ -198,47 +200,47 @@
 [v _TRISC3 TRISC3 `VEb  1 e 0 @1083 ]
 "4460
 [v _TRISC4 TRISC4 `VEb  1 e 0 @1084 ]
-"43 C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+"53 C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
 [v _PARKH PARKH `uc  1 e 1 0 ]
-"44
-[v _NUM NUM `uc  1 e 1 0 ]
-"45
-[v _BASURA BASURA `uc  1 e 1 0 ]
-"46
-[v _DIA DIA `uc  1 e 1 0 ]
-"47
-[v _HORA HORA `uc  1 e 1 0 ]
-"48
-[v _MIN MIN `uc  1 e 1 0 ]
-"50
-[v _C1 C1 `uc  1 e 1 0 ]
-"51
-[v _C2 C2 `uc  1 e 1 0 ]
-"52
-[v _C3 C3 `uc  1 e 1 0 ]
-"53
-[v _UH UH `uc  1 e 1 0 ]
 "54
-[v _DH DH `uc  1 e 1 0 ]
+[v _NUM NUM `uc  1 e 1 0 ]
 "55
-[v _UM UM `uc  1 e 1 0 ]
+[v _BASURA BASURA `uc  1 e 1 0 ]
 "56
-[v _DM DM `uc  1 e 1 0 ]
+[v _DIA DIA `uc  1 e 1 0 ]
 "57
-[v _CERRADO CERRADO `uc  1 e 1 0 ]
+[v _HORA HORA `uc  1 e 1 0 ]
 "58
+[v _MIN MIN `uc  1 e 1 0 ]
+"60
+[v _C1 C1 `uc  1 e 1 0 ]
+"61
+[v _C2 C2 `uc  1 e 1 0 ]
+"62
+[v _C3 C3 `uc  1 e 1 0 ]
+"63
+[v _UH UH `uc  1 e 1 0 ]
+"64
+[v _DH DH `uc  1 e 1 0 ]
+"65
+[v _UM UM `uc  1 e 1 0 ]
+"66
+[v _DM DM `uc  1 e 1 0 ]
+"67
+[v _CERRADO CERRADO `uc  1 e 1 0 ]
+"68
 [v _con con `uc  1 e 1 0 ]
-"59
+"69
 [v _temperatura temperatura `uc  1 e 1 0 ]
-"71
+"81
 [v _main main `(v  1 e 1 0 ]
 {
-"144
+"155
 } 0
-"148
+"159
 [v _setup setup `(v  1 e 1 0 ]
 {
-"212
+"223
 } 0
 "16 C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/Osc_config.c
 [v _osc_config osc_config `(v  1 e 1 0 ]
@@ -296,12 +298,12 @@
 [v ___lldiv@dividend dividend `ul  1 p 4 4 ]
 "30
 } 0
-"257 C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+"268 C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
 [v _conver1 conver1 `(*.4DCuc  1 e 1 0 ]
 {
-"259
+"270
 [v conver1@temporal temporal `[16]uc  1 a 16 5 ]
-"277
+"288
 } 0
 "5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\awmod.c
 [v ___awmod __awmod `(i  1 e 2 0 ]
@@ -327,14 +329,14 @@
 [v ___awdiv@dividend dividend `i  1 p 2 2 ]
 "41
 } 0
-"214 C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+"225 C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
 [v _conver conver `(*.4DCuc  1 e 1 0 ]
 {
-"236
-[v conver@temporal_126 temporal `[16]uc  1 a 16 16 ]
-"216
+"247
+[v conver@temporal_131 temporal `[16]uc  1 a 16 16 ]
+"227
 [v conver@temporal temporal `[16]uc  1 a 16 0 ]
-"255
+"266
 } 0
 "56 C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.c
 [v _Lcd_Write_String Lcd_Write_String `(v  1 e 1 0 ]
@@ -374,6 +376,11 @@
 {
 "45
 } 0
+"16
+[v _Lcd_Clear Lcd_Clear `(v  1 e 1 0 ]
+{
+"18
+} 0
 "7
 [v _Lcd_Cmd Lcd_Cmd `(v  1 e 1 0 ]
 {
@@ -390,10 +397,10 @@
 [v Lcd_Port@a a `uc  1 a 1 0 ]
 "5
 } 0
-"279 C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+"290 C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
 [v _LECT1 LECT1 `(v  1 e 1 0 ]
 {
-"388
+"399
 } 0
 "3 C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/ASCII.c
 [v _num_ascii num_ascii `(uc  1 e 1 0 ]

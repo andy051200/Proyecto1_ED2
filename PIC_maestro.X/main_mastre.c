@@ -34,12 +34,22 @@
 #include "I2C.h"
 #include "Osc_config.h"
 #include "ASCII.h"
-#include "lcd_pablo.h"
+#include "LCD.h"
 #include <xc.h>
 //*****************************************************************************
 // Definici n de variables
 //*****************************************************************************
 #define _XTAL_FREQ 8000000
+//-------DIRECTIVAS DEL COMPILADOR
+#define _XTAL_FREQ 8000000
+#define RS RD2
+#define EN RD3
+#define D4 RD4
+#define D5 RB5
+#define D6 RD6
+#define D7 RD7
+//-------VARIABLES DE PROGRAMA
+unsigned int a;
 uint8_t PARKH;  //Parqueos habilitados
 uint8_t NUM;
 uint8_t BASURA;
@@ -70,9 +80,10 @@ const char* conver1(void);
 //*****************************************************************************
 void main(void) {
     setup();
-    Lcd_Init(); //Inicialización de 8 bits para LCD
+    Lcd_Init();
+    Lcd_Clear();
     while(1){
-        
+        Lcd_Clear();
         Lcd_Set_Cursor(1,1);    //Cursor en primera línea
         Lcd_Write_String(conver1()); //Escribir Día hora y minutos
         Lcd_Set_Cursor(2,1);    //Cursor en segunda línea
@@ -83,13 +94,13 @@ void main(void) {
         I2C_Master_Write(0x50);
         I2C_Master_Write(0);
         I2C_Master_Stop();
-        __delay_ms(10);
+        __delay_ms(200);
        
         I2C_Master_Start();
         I2C_Master_Write(0x51);
         PARKH = I2C_Master_Read(0);
         I2C_Master_Stop();
-        __delay_ms(10);
+        __delay_ms(200);
         
         I2C_Master_Start();     //escribe al pic de los motores que está cerrado
         I2C_Master_Write(0x60);
@@ -161,7 +172,7 @@ void setup(void){
     I2C_Master_Start();     //Escritura de datos iniciales
     I2C_Master_Write(0xD0);
     I2C_Master_Write(0x02);
-    I2C_Master_Write(0x21);
+    I2C_Master_Write(0x06);
     I2C_Master_Stop();
     __delay_ms(10);
     
@@ -174,7 +185,7 @@ void setup(void){
     I2C_Master_Start();
     I2C_Master_Write(0xD0);
     I2C_Master_Write(0x01);
-    I2C_Master_Write(0x09);
+    I2C_Master_Write(0x59);
     I2C_Master_Stop();
     __delay_ms(10);
        
@@ -187,7 +198,7 @@ void setup(void){
     I2C_Master_Start();
     I2C_Master_Write(0xD0);
     I2C_Master_Write(0x00);
-    I2C_Master_Write(0x58);
+    I2C_Master_Write(0x00);
     I2C_Master_Stop();
     __delay_ms(10);
        
@@ -200,7 +211,7 @@ void setup(void){
     I2C_Master_Start();
     I2C_Master_Write(0xD0);
     I2C_Master_Write(0x03);
-    I2C_Master_Write(0x06);
+    I2C_Master_Write(0x01);
     I2C_Master_Stop();
     __delay_ms(10);
        
@@ -318,11 +329,11 @@ void LECT1(void){
         DH = 0x30;
         UH = num_ascii(HORA);
         if (HORA<7){
-            PORTA = 0b00111111;
+            PORTB = 0b11000000;
             CERRADO = 1;
         }
         else{
-            PORTA = 0;
+            PORTB = 0;
             if (DIA!=7){
                 CERRADO = 0;
             }
@@ -336,17 +347,17 @@ void LECT1(void){
             CERRADO = 0;
         }
         if (con>7){
-            PORTA = 0b00111111;
+            PORTB = 0b11000000;
         }
         else{
-            PORTA = 0;
+            PORTB = 0;
         }
     }
     else{
         DH = 0x32;
         con = HORA-32;
         UH = num_ascii(con);
-        PORTA = 0b00111111;
+        PORTB = 0b11000000;
         if (con>1){
             CERRADO = 1;
         }

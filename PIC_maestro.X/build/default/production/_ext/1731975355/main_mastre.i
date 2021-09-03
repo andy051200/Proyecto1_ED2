@@ -2707,24 +2707,28 @@ void osc_config(uint8_t freq);
 char num_ascii(uint8_t num);
 # 36 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c" 2
 
-# 1 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.h" 1
-# 27 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.h"
+# 1 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/LCD.h" 1
+# 47 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/LCD.h"
 void Lcd_Port(char a);
+
 void Lcd_Cmd(char a);
+
 void Lcd_Clear(void);
+
 void Lcd_Set_Cursor(char a, char b);
+
 void Lcd_Init(void);
+
 void Lcd_Write_Char(char a);
+
 void Lcd_Write_String(char *a);
+
 void Lcd_Shift_Right(void);
+
 void Lcd_Shift_Left(void);
 # 37 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c" 2
-
-
-
-
-
-
+# 52 "C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c"
+unsigned int a;
 uint8_t PARKH;
 uint8_t NUM;
 uint8_t BASURA;
@@ -2756,8 +2760,9 @@ const char* conver1(void);
 void main(void) {
     setup();
     Lcd_Init();
+    Lcd_Clear();
     while(1){
-
+        Lcd_Clear();
         Lcd_Set_Cursor(1,1);
         Lcd_Write_String(conver1());
         Lcd_Set_Cursor(2,1);
@@ -2768,13 +2773,13 @@ void main(void) {
         I2C_Master_Write(0x50);
         I2C_Master_Write(0);
         I2C_Master_Stop();
-        _delay((unsigned long)((10)*(8000000/4000.0)));
+        _delay((unsigned long)((200)*(8000000/4000.0)));
 
         I2C_Master_Start();
         I2C_Master_Write(0x51);
         PARKH = I2C_Master_Read(0);
         I2C_Master_Stop();
-        _delay((unsigned long)((10)*(8000000/4000.0)));
+        _delay((unsigned long)((200)*(8000000/4000.0)));
 
         I2C_Master_Start();
         I2C_Master_Write(0x60);
@@ -2846,7 +2851,7 @@ void setup(void){
     I2C_Master_Start();
     I2C_Master_Write(0xD0);
     I2C_Master_Write(0x02);
-    I2C_Master_Write(0x21);
+    I2C_Master_Write(0x06);
     I2C_Master_Stop();
     _delay((unsigned long)((10)*(8000000/4000.0)));
 
@@ -2859,7 +2864,7 @@ void setup(void){
     I2C_Master_Start();
     I2C_Master_Write(0xD0);
     I2C_Master_Write(0x01);
-    I2C_Master_Write(0x09);
+    I2C_Master_Write(0x59);
     I2C_Master_Stop();
     _delay((unsigned long)((10)*(8000000/4000.0)));
 
@@ -2872,7 +2877,7 @@ void setup(void){
     I2C_Master_Start();
     I2C_Master_Write(0xD0);
     I2C_Master_Write(0x00);
-    I2C_Master_Write(0x58);
+    I2C_Master_Write(0x00);
     I2C_Master_Stop();
     _delay((unsigned long)((10)*(8000000/4000.0)));
 
@@ -2885,7 +2890,7 @@ void setup(void){
     I2C_Master_Start();
     I2C_Master_Write(0xD0);
     I2C_Master_Write(0x03);
-    I2C_Master_Write(0x06);
+    I2C_Master_Write(0x01);
     I2C_Master_Stop();
     _delay((unsigned long)((10)*(8000000/4000.0)));
 
@@ -3003,11 +3008,11 @@ void LECT1(void){
         DH = 0x30;
         UH = num_ascii(HORA);
         if (HORA<7){
-            PORTA = 0b00111111;
+            PORTB = 0b11000000;
             CERRADO = 1;
         }
         else{
-            PORTA = 0;
+            PORTB = 0;
             if (DIA!=7){
                 CERRADO = 0;
             }
@@ -3021,17 +3026,17 @@ void LECT1(void){
             CERRADO = 0;
         }
         if (con>7){
-            PORTA = 0b00111111;
+            PORTB = 0b11000000;
         }
         else{
-            PORTA = 0;
+            PORTB = 0;
         }
     }
     else{
         DH = 0x32;
         con = HORA-32;
         UH = num_ascii(con);
-        PORTA = 0b00111111;
+        PORTB = 0b11000000;
         if (con>1){
             CERRADO = 1;
         }

@@ -1,25 +1,28 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [p mainexit ]
-"64 C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 64: void setup(void);
+"74 C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 74: void setup(void);
 [v _setup `(v ~T0 @X0 0 ef ]
-"31 C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.h
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.h: 31: void Lcd_Init(void);
+"55 C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/LCD.h
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/LCD.h: 55: void Lcd_Init(void);
 [v _Lcd_Init `(v ~T0 @X0 0 ef ]
-"30
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.h: 30: void Lcd_Set_Cursor(char a, char b);
+"51
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/LCD.h: 51: void Lcd_Clear(void);
+[v _Lcd_Clear `(v ~T0 @X0 0 ef ]
+"53
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/LCD.h: 53: void Lcd_Set_Cursor(char a, char b);
 [v _Lcd_Set_Cursor `(v ~T0 @X0 0 ef2`uc`uc ]
-"33
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/lcd_pablo.h: 33: void Lcd_Write_String(char *a);
+"59
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/LCD.h: 59: void Lcd_Write_String(char *a);
 [v _Lcd_Write_String `(v ~T0 @X0 0 ef1`*uc ]
-"67 C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 67: const char* conver1(void);
+"77 C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 77: const char* conver1(void);
 [v _conver1 `(*Cuc ~T0 @X0 0 ef ]
-"66
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 66: const char* conver(void);
+"76
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 76: const char* conver(void);
 [v _conver `(*Cuc ~T0 @X0 0 ef ]
-"65
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 65: void LECT1(void);
+"75
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 75: void LECT1(void);
 [v _LECT1 `(v ~T0 @X0 0 ef ]
 "41 C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.h
 [; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/I2C.h: 41: void I2C_Master_Start(void);
@@ -331,765 +334,774 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3546
 [; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 3546: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
-"43 C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 43: uint8_t PARKH;
-[v _PARKH `uc ~T0 @X0 1 e ]
-"44
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 44: uint8_t NUM;
-[v _NUM `uc ~T0 @X0 1 e ]
-"45
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 45: uint8_t BASURA;
-[v _BASURA `uc ~T0 @X0 1 e ]
-"46
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 46: uint8_t DIA;
-[v _DIA `uc ~T0 @X0 1 e ]
-"47
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 47: uint8_t HORA;
-[v _HORA `uc ~T0 @X0 1 e ]
-"48
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 48: uint8_t MIN;
-[v _MIN `uc ~T0 @X0 1 e ]
-"49
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 49: uint8_t TEMP;
-[v _TEMP `uc ~T0 @X0 1 e ]
-"50
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 50: uint8_t C1;
-[v _C1 `uc ~T0 @X0 1 e ]
-"51
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 51: uint8_t C2;
-[v _C2 `uc ~T0 @X0 1 e ]
-"52
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 52: uint8_t C3;
-[v _C3 `uc ~T0 @X0 1 e ]
+"52 C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 52: unsigned int a;
+[v _a `ui ~T0 @X0 1 e ]
 "53
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 53: uint8_t UH;
-[v _UH `uc ~T0 @X0 1 e ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 53: uint8_t PARKH;
+[v _PARKH `uc ~T0 @X0 1 e ]
 "54
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 54: uint8_t DH;
-[v _DH `uc ~T0 @X0 1 e ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 54: uint8_t NUM;
+[v _NUM `uc ~T0 @X0 1 e ]
 "55
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 55: uint8_t UM;
-[v _UM `uc ~T0 @X0 1 e ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 55: uint8_t BASURA;
+[v _BASURA `uc ~T0 @X0 1 e ]
 "56
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 56: uint8_t DM;
-[v _DM `uc ~T0 @X0 1 e ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 56: uint8_t DIA;
+[v _DIA `uc ~T0 @X0 1 e ]
 "57
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 57: uint8_t CERRADO;
-[v _CERRADO `uc ~T0 @X0 1 e ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 57: uint8_t HORA;
+[v _HORA `uc ~T0 @X0 1 e ]
 "58
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 58: uint8_t con;
-[v _con `uc ~T0 @X0 1 e ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 58: uint8_t MIN;
+[v _MIN `uc ~T0 @X0 1 e ]
 "59
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 59: uint8_t temperatura;
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 59: uint8_t TEMP;
+[v _TEMP `uc ~T0 @X0 1 e ]
+"60
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 60: uint8_t C1;
+[v _C1 `uc ~T0 @X0 1 e ]
+"61
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 61: uint8_t C2;
+[v _C2 `uc ~T0 @X0 1 e ]
+"62
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 62: uint8_t C3;
+[v _C3 `uc ~T0 @X0 1 e ]
+"63
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 63: uint8_t UH;
+[v _UH `uc ~T0 @X0 1 e ]
+"64
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 64: uint8_t DH;
+[v _DH `uc ~T0 @X0 1 e ]
+"65
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 65: uint8_t UM;
+[v _UM `uc ~T0 @X0 1 e ]
+"66
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 66: uint8_t DM;
+[v _DM `uc ~T0 @X0 1 e ]
+"67
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 67: uint8_t CERRADO;
+[v _CERRADO `uc ~T0 @X0 1 e ]
+"68
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 68: uint8_t con;
+[v _con `uc ~T0 @X0 1 e ]
+"69
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 69: uint8_t temperatura;
 [v _temperatura `uc ~T0 @X0 1 e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"71
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 71: void main(void) {
+"81
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 81: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"72
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 72:     setup();
+"82
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 82:     setup();
 [e ( _setup ..  ]
-"73
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 73:     Lcd_Init();
+"83
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 83:     Lcd_Init();
 [e ( _Lcd_Init ..  ]
-"74
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 74:     while(1){
+"84
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 84:     Lcd_Clear();
+[e ( _Lcd_Clear ..  ]
+"85
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 85:     while(1){
 [e :U 140 ]
 {
-"76
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 76:         Lcd_Set_Cursor(1,1);
-[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-"77
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 77:         Lcd_Write_String(conver1());
-[e ( _Lcd_Write_String (1 -> ( _conver1 ..  `*uc ]
-"78
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 78:         Lcd_Set_Cursor(2,1);
-[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
-"79
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 79:         Lcd_Write_String(conver());
-[e ( _Lcd_Write_String (1 -> ( _conver ..  `*uc ]
-"80
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 80:         LECT1();
-[e ( _LECT1 ..  ]
-"82
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 82:         I2C_Master_Start();
-[e ( _I2C_Master_Start ..  ]
-"83
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 83:         I2C_Master_Write(0x50);
-[e ( _I2C_Master_Write (1 -> -> 80 `i `ui ]
-"84
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 84:         I2C_Master_Write(0);
-[e ( _I2C_Master_Write (1 -> -> 0 `i `ui ]
-"85
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 85:         I2C_Master_Stop();
-[e ( _I2C_Master_Stop ..  ]
 "86
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 86:         _delay((unsigned long)((10)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 86:         Lcd_Clear();
+[e ( _Lcd_Clear ..  ]
+"87
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 87:         Lcd_Set_Cursor(1,1);
+[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
 "88
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 88:         I2C_Master_Start();
-[e ( _I2C_Master_Start ..  ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 88:         Lcd_Write_String(conver1());
+[e ( _Lcd_Write_String (1 -> ( _conver1 ..  `*uc ]
 "89
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 89:         I2C_Master_Write(0x51);
-[e ( _I2C_Master_Write (1 -> -> 81 `i `ui ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 89:         Lcd_Set_Cursor(2,1);
+[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
 "90
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 90:         PARKH = I2C_Master_Read(0);
-[e = _PARKH -> ( _I2C_Master_Read (1 -> -> 0 `i `us `uc ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 90:         Lcd_Write_String(conver());
+[e ( _Lcd_Write_String (1 -> ( _conver ..  `*uc ]
 "91
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 91:         I2C_Master_Stop();
-[e ( _I2C_Master_Stop ..  ]
-"92
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 92:         _delay((unsigned long)((10)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 91:         LECT1();
+[e ( _LECT1 ..  ]
+"93
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 93:         I2C_Master_Start();
+[e ( _I2C_Master_Start ..  ]
 "94
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 94:         I2C_Master_Start();
-[e ( _I2C_Master_Start ..  ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 94:         I2C_Master_Write(0x50);
+[e ( _I2C_Master_Write (1 -> -> 80 `i `ui ]
 "95
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 95:         I2C_Master_Write(0x60);
-[e ( _I2C_Master_Write (1 -> -> 96 `i `ui ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 95:         I2C_Master_Write(0);
+[e ( _I2C_Master_Write (1 -> -> 0 `i `ui ]
 "96
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 96:         I2C_Master_Write(CERRADO);
-[e ( _I2C_Master_Write (1 -> _CERRADO `ui ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 96:         I2C_Master_Stop();
+[e ( _I2C_Master_Stop ..  ]
 "97
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 97:         I2C_Master_Stop();
-[e ( _I2C_Master_Stop ..  ]
-"98
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 98:         _delay((unsigned long)((10)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 97:         _delay((unsigned long)((200)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"99
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 99:         I2C_Master_Start();
+[e ( _I2C_Master_Start ..  ]
 "100
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 100:         I2C_Master_Start();
-[e ( _I2C_Master_Start ..  ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 100:         I2C_Master_Write(0x51);
+[e ( _I2C_Master_Write (1 -> -> 81 `i `ui ]
 "101
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 101:         I2C_Master_Write(0x61);
-[e ( _I2C_Master_Write (1 -> -> 97 `i `ui ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 101:         PARKH = I2C_Master_Read(0);
+[e = _PARKH -> ( _I2C_Master_Read (1 -> -> 0 `i `us `uc ]
 "102
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 102:         temperatura = I2C_Master_Read(0);
-[e = _temperatura -> ( _I2C_Master_Read (1 -> -> 0 `i `us `uc ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 102:         I2C_Master_Stop();
+[e ( _I2C_Master_Stop ..  ]
 "103
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 103:         I2C_Master_Stop();
-[e ( _I2C_Master_Stop ..  ]
-"104
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 104:         _delay((unsigned long)((10)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 103:         _delay((unsigned long)((200)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"105
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 105:         I2C_Master_Start();
+[e ( _I2C_Master_Start ..  ]
 "106
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 106:         I2C_Master_Start();
-[e ( _I2C_Master_Start ..  ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 106:         I2C_Master_Write(0x60);
+[e ( _I2C_Master_Write (1 -> -> 96 `i `ui ]
 "107
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 107:         I2C_Master_Write(0xD0);
-[e ( _I2C_Master_Write (1 -> -> 208 `i `ui ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 107:         I2C_Master_Write(CERRADO);
+[e ( _I2C_Master_Write (1 -> _CERRADO `ui ]
 "108
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 108:         I2C_Master_Write(0x02);
-[e ( _I2C_Master_Write (1 -> -> 2 `i `ui ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 108:         I2C_Master_Stop();
+[e ( _I2C_Master_Stop ..  ]
 "109
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 109:         I2C_Master_Stop();
-[e ( _I2C_Master_Stop ..  ]
-"110
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 110:         _delay((unsigned long)((10)*(8000000/4000.0)));
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 109:         _delay((unsigned long)((10)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"111
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 111:         I2C_Master_Start();
+[e ( _I2C_Master_Start ..  ]
 "112
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 112:         I2C_Master_Start();
-[e ( _I2C_Master_Start ..  ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 112:         I2C_Master_Write(0x61);
+[e ( _I2C_Master_Write (1 -> -> 97 `i `ui ]
 "113
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 113:         I2C_Master_Write(0xD1);
-[e ( _I2C_Master_Write (1 -> -> 209 `i `ui ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 113:         temperatura = I2C_Master_Read(0);
+[e = _temperatura -> ( _I2C_Master_Read (1 -> -> 0 `i `us `uc ]
 "114
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 114:         HORA = I2C_Master_Read(0);
-[e = _HORA -> ( _I2C_Master_Read (1 -> -> 0 `i `us `uc ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 114:         I2C_Master_Stop();
+[e ( _I2C_Master_Stop ..  ]
 "115
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 115:         I2C_Master_Stop();
-[e ( _I2C_Master_Stop ..  ]
-"116
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 116:         _delay((unsigned long)((10)*(8000000/4000.0)));
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 115:         _delay((unsigned long)((10)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"117
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 117:         I2C_Master_Start();
+[e ( _I2C_Master_Start ..  ]
 "118
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 118:         I2C_Master_Start();
-[e ( _I2C_Master_Start ..  ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 118:         I2C_Master_Write(0xD0);
+[e ( _I2C_Master_Write (1 -> -> 208 `i `ui ]
 "119
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 119:         I2C_Master_Write(0xD0);
-[e ( _I2C_Master_Write (1 -> -> 208 `i `ui ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 119:         I2C_Master_Write(0x02);
+[e ( _I2C_Master_Write (1 -> -> 2 `i `ui ]
 "120
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 120:         I2C_Master_Write(0x03);
-[e ( _I2C_Master_Write (1 -> -> 3 `i `ui ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 120:         I2C_Master_Stop();
+[e ( _I2C_Master_Stop ..  ]
 "121
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 121:         I2C_Master_Stop();
-[e ( _I2C_Master_Stop ..  ]
-"122
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 122:         _delay((unsigned long)((10)*(8000000/4000.0)));
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 121:         _delay((unsigned long)((10)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"123
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 123:         I2C_Master_Start();
+[e ( _I2C_Master_Start ..  ]
 "124
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 124:         I2C_Master_Start();
-[e ( _I2C_Master_Start ..  ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 124:         I2C_Master_Write(0xD1);
+[e ( _I2C_Master_Write (1 -> -> 209 `i `ui ]
 "125
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 125:         I2C_Master_Write(0xD1);
-[e ( _I2C_Master_Write (1 -> -> 209 `i `ui ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 125:         HORA = I2C_Master_Read(0);
+[e = _HORA -> ( _I2C_Master_Read (1 -> -> 0 `i `us `uc ]
 "126
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 126:         DIA = I2C_Master_Read(0);
-[e = _DIA -> ( _I2C_Master_Read (1 -> -> 0 `i `us `uc ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 126:         I2C_Master_Stop();
+[e ( _I2C_Master_Stop ..  ]
 "127
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 127:         I2C_Master_Stop();
-[e ( _I2C_Master_Stop ..  ]
-"128
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 128:         _delay((unsigned long)((10)*(8000000/4000.0)));
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 127:         _delay((unsigned long)((10)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"129
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 129:         I2C_Master_Start();
+[e ( _I2C_Master_Start ..  ]
 "130
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 130:         I2C_Master_Start();
-[e ( _I2C_Master_Start ..  ]
-"131
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 131:         I2C_Master_Write(0xD0);
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 130:         I2C_Master_Write(0xD0);
 [e ( _I2C_Master_Write (1 -> -> 208 `i `ui ]
+"131
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 131:         I2C_Master_Write(0x03);
+[e ( _I2C_Master_Write (1 -> -> 3 `i `ui ]
 "132
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 132:         I2C_Master_Write(0x01);
-[e ( _I2C_Master_Write (1 -> -> 1 `i `ui ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 132:         I2C_Master_Stop();
+[e ( _I2C_Master_Stop ..  ]
 "133
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 133:         I2C_Master_Stop();
-[e ( _I2C_Master_Stop ..  ]
-"134
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 134:         _delay((unsigned long)((10)*(8000000/4000.0)));
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 133:         _delay((unsigned long)((10)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"136
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 136:         I2C_Master_Start();
+"135
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 135:         I2C_Master_Start();
 [e ( _I2C_Master_Start ..  ]
-"137
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 137:         I2C_Master_Write(0xD1);
+"136
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 136:         I2C_Master_Write(0xD1);
 [e ( _I2C_Master_Write (1 -> -> 209 `i `ui ]
+"137
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 137:         DIA = I2C_Master_Read(0);
+[e = _DIA -> ( _I2C_Master_Read (1 -> -> 0 `i `us `uc ]
 "138
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 138:         MIN = I2C_Master_Read(0);
-[e = _MIN -> ( _I2C_Master_Read (1 -> -> 0 `i `us `uc ]
-"139
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 139:         I2C_Master_Stop();
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 138:         I2C_Master_Stop();
 [e ( _I2C_Master_Stop ..  ]
-"140
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 140:         _delay((unsigned long)((10)*(8000000/4000.0)));
+"139
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 139:         _delay((unsigned long)((10)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"141
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 141:         I2C_Master_Start();
+[e ( _I2C_Master_Start ..  ]
 "142
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 142:     }
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 142:         I2C_Master_Write(0xD0);
+[e ( _I2C_Master_Write (1 -> -> 208 `i `ui ]
+"143
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 143:         I2C_Master_Write(0x01);
+[e ( _I2C_Master_Write (1 -> -> 1 `i `ui ]
+"144
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 144:         I2C_Master_Stop();
+[e ( _I2C_Master_Stop ..  ]
+"145
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 145:         _delay((unsigned long)((10)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"147
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 147:         I2C_Master_Start();
+[e ( _I2C_Master_Start ..  ]
+"148
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 148:         I2C_Master_Write(0xD1);
+[e ( _I2C_Master_Write (1 -> -> 209 `i `ui ]
+"149
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 149:         MIN = I2C_Master_Read(0);
+[e = _MIN -> ( _I2C_Master_Read (1 -> -> 0 `i `us `uc ]
+"150
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 150:         I2C_Master_Stop();
+[e ( _I2C_Master_Stop ..  ]
+"151
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 151:         _delay((unsigned long)((10)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"153
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 153:     }
 }
 [e :U 139 ]
 [e $U 140  ]
 [e :U 141 ]
-"143
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 143:     return;
+"154
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 154:     return;
 [e $UE 138  ]
-"144
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 144: }
+"155
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 155: }
 [e :UE 138 ]
 }
-"148
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 148: void setup(void){
+"159
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 159: void setup(void){
 [v _setup `(v ~T0 @X0 1 ef ]
 {
 [e :U _setup ]
 [f ]
-"149
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 149:     ANSEL = 0;
+"160
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 160:     ANSEL = 0;
 [e = _ANSEL -> -> 0 `i `uc ]
-"150
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 150:     ANSELH = 0;
-[e = _ANSELH -> -> 0 `i `uc ]
-"151
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 151:     TRISA = 0;
-[e = _TRISA -> -> 0 `i `uc ]
-"152
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 152:     TRISB = 0;
-[e = _TRISB -> -> 0 `i `uc ]
-"153
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 153:     TRISD = 0;
-[e = _TRISD -> -> 0 `i `uc ]
-"154
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 154:     TRISE = 0;
-[e = _TRISE -> -> 0 `i `uc ]
-"155
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 155:     PORTA = 0;
-[e = _PORTA -> -> 0 `i `uc ]
-"156
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 156:     PORTB = 0;
-[e = _PORTB -> -> 0 `i `uc ]
-"157
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 157:     PORTD = 0;
-[e = _PORTD -> -> 0 `i `uc ]
-"158
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 158:     osc_config(8);
-[e ( _osc_config (1 -> -> 8 `i `uc ]
-"159
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 159:     I2C_Master_Init(100000);
-[e ( _I2C_Master_Init (1 -> -> 100000 `l `ul ]
 "161
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 161:     I2C_Master_Start();
-[e ( _I2C_Master_Start ..  ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 161:     ANSELH = 0;
+[e = _ANSELH -> -> 0 `i `uc ]
 "162
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 162:     I2C_Master_Write(0xD0);
-[e ( _I2C_Master_Write (1 -> -> 208 `i `ui ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 162:     TRISA = 0;
+[e = _TRISA -> -> 0 `i `uc ]
 "163
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 163:     I2C_Master_Write(0x02);
-[e ( _I2C_Master_Write (1 -> -> 2 `i `ui ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 163:     TRISB = 0;
+[e = _TRISB -> -> 0 `i `uc ]
 "164
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 164:     I2C_Master_Write(0x21);
-[e ( _I2C_Master_Write (1 -> -> 33 `i `ui ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 164:     TRISD = 0;
+[e = _TRISD -> -> 0 `i `uc ]
 "165
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 165:     I2C_Master_Stop();
-[e ( _I2C_Master_Stop ..  ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 165:     TRISE = 0;
+[e = _TRISE -> -> 0 `i `uc ]
 "166
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 166:     _delay((unsigned long)((10)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 166:     PORTA = 0;
+[e = _PORTA -> -> 0 `i `uc ]
+"167
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 167:     PORTB = 0;
+[e = _PORTB -> -> 0 `i `uc ]
 "168
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 168:     I2C_Master_Start();
-[e ( _I2C_Master_Start ..  ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 168:     PORTD = 0;
+[e = _PORTD -> -> 0 `i `uc ]
 "169
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 169:     I2C_Master_Write(0xD1);
-[e ( _I2C_Master_Write (1 -> -> 209 `i `ui ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 169:     osc_config(8);
+[e ( _osc_config (1 -> -> 8 `i `uc ]
 "170
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 170:     BASURA = I2C_Master_Read(0);
-[e = _BASURA -> ( _I2C_Master_Read (1 -> -> 0 `i `us `uc ]
-"171
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 171:     I2C_Master_Stop();
-[e ( _I2C_Master_Stop ..  ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 170:     I2C_Master_Init(100000);
+[e ( _I2C_Master_Init (1 -> -> 100000 `l `ul ]
 "172
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 172:     _delay((unsigned long)((10)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 172:     I2C_Master_Start();
+[e ( _I2C_Master_Start ..  ]
+"173
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 173:     I2C_Master_Write(0xD0);
+[e ( _I2C_Master_Write (1 -> -> 208 `i `ui ]
 "174
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 174:     I2C_Master_Start();
-[e ( _I2C_Master_Start ..  ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 174:     I2C_Master_Write(0x02);
+[e ( _I2C_Master_Write (1 -> -> 2 `i `ui ]
 "175
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 175:     I2C_Master_Write(0xD0);
-[e ( _I2C_Master_Write (1 -> -> 208 `i `ui ]
-"176
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 176:     I2C_Master_Write(0x01);
-[e ( _I2C_Master_Write (1 -> -> 1 `i `ui ]
-"177
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 177:     I2C_Master_Write(0x09);
-[e ( _I2C_Master_Write (1 -> -> 9 `i `ui ]
-"178
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 178:     I2C_Master_Stop();
-[e ( _I2C_Master_Stop ..  ]
-"179
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 179:     _delay((unsigned long)((10)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"181
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 181:     I2C_Master_Start();
-[e ( _I2C_Master_Start ..  ]
-"182
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 182:     I2C_Master_Write(0xD1);
-[e ( _I2C_Master_Write (1 -> -> 209 `i `ui ]
-"183
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 183:     BASURA = I2C_Master_Read(0);
-[e = _BASURA -> ( _I2C_Master_Read (1 -> -> 0 `i `us `uc ]
-"184
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 184:     I2C_Master_Stop();
-[e ( _I2C_Master_Stop ..  ]
-"185
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 185:     _delay((unsigned long)((10)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"187
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 187:     I2C_Master_Start();
-[e ( _I2C_Master_Start ..  ]
-"188
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 188:     I2C_Master_Write(0xD0);
-[e ( _I2C_Master_Write (1 -> -> 208 `i `ui ]
-"189
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 189:     I2C_Master_Write(0x00);
-[e ( _I2C_Master_Write (1 -> -> 0 `i `ui ]
-"190
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 190:     I2C_Master_Write(0x58);
-[e ( _I2C_Master_Write (1 -> -> 88 `i `ui ]
-"191
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 191:     I2C_Master_Stop();
-[e ( _I2C_Master_Stop ..  ]
-"192
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 192:     _delay((unsigned long)((10)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"194
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 194:     I2C_Master_Start();
-[e ( _I2C_Master_Start ..  ]
-"195
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 195:     I2C_Master_Write(0xD1);
-[e ( _I2C_Master_Write (1 -> -> 209 `i `ui ]
-"196
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 196:     BASURA = I2C_Master_Read(0);
-[e = _BASURA -> ( _I2C_Master_Read (1 -> -> 0 `i `us `uc ]
-"197
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 197:     I2C_Master_Stop();
-[e ( _I2C_Master_Stop ..  ]
-"198
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 198:     _delay((unsigned long)((10)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"200
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 200:     I2C_Master_Start();
-[e ( _I2C_Master_Start ..  ]
-"201
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 201:     I2C_Master_Write(0xD0);
-[e ( _I2C_Master_Write (1 -> -> 208 `i `ui ]
-"202
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 202:     I2C_Master_Write(0x03);
-[e ( _I2C_Master_Write (1 -> -> 3 `i `ui ]
-"203
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 203:     I2C_Master_Write(0x06);
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 175:     I2C_Master_Write(0x06);
 [e ( _I2C_Master_Write (1 -> -> 6 `i `ui ]
-"204
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 204:     I2C_Master_Stop();
+"176
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 176:     I2C_Master_Stop();
 [e ( _I2C_Master_Stop ..  ]
-"205
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 205:     _delay((unsigned long)((10)*(8000000/4000.0)));
+"177
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 177:     _delay((unsigned long)((10)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"207
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 207:     I2C_Master_Start();
+"179
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 179:     I2C_Master_Start();
 [e ( _I2C_Master_Start ..  ]
-"208
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 208:     I2C_Master_Write(0xD1);
+"180
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 180:     I2C_Master_Write(0xD1);
 [e ( _I2C_Master_Write (1 -> -> 209 `i `ui ]
-"209
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 209:     BASURA = I2C_Master_Read(0);
+"181
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 181:     BASURA = I2C_Master_Read(0);
 [e = _BASURA -> ( _I2C_Master_Read (1 -> -> 0 `i `us `uc ]
-"210
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 210:     I2C_Master_Stop();
+"182
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 182:     I2C_Master_Stop();
 [e ( _I2C_Master_Stop ..  ]
-"211
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 211:     _delay((unsigned long)((10)*(8000000/4000.0)));
+"183
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 183:     _delay((unsigned long)((10)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"185
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 185:     I2C_Master_Start();
+[e ( _I2C_Master_Start ..  ]
+"186
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 186:     I2C_Master_Write(0xD0);
+[e ( _I2C_Master_Write (1 -> -> 208 `i `ui ]
+"187
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 187:     I2C_Master_Write(0x01);
+[e ( _I2C_Master_Write (1 -> -> 1 `i `ui ]
+"188
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 188:     I2C_Master_Write(0x59);
+[e ( _I2C_Master_Write (1 -> -> 89 `i `ui ]
+"189
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 189:     I2C_Master_Stop();
+[e ( _I2C_Master_Stop ..  ]
+"190
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 190:     _delay((unsigned long)((10)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"192
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 192:     I2C_Master_Start();
+[e ( _I2C_Master_Start ..  ]
+"193
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 193:     I2C_Master_Write(0xD1);
+[e ( _I2C_Master_Write (1 -> -> 209 `i `ui ]
+"194
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 194:     BASURA = I2C_Master_Read(0);
+[e = _BASURA -> ( _I2C_Master_Read (1 -> -> 0 `i `us `uc ]
+"195
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 195:     I2C_Master_Stop();
+[e ( _I2C_Master_Stop ..  ]
+"196
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 196:     _delay((unsigned long)((10)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"198
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 198:     I2C_Master_Start();
+[e ( _I2C_Master_Start ..  ]
+"199
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 199:     I2C_Master_Write(0xD0);
+[e ( _I2C_Master_Write (1 -> -> 208 `i `ui ]
+"200
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 200:     I2C_Master_Write(0x00);
+[e ( _I2C_Master_Write (1 -> -> 0 `i `ui ]
+"201
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 201:     I2C_Master_Write(0x00);
+[e ( _I2C_Master_Write (1 -> -> 0 `i `ui ]
+"202
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 202:     I2C_Master_Stop();
+[e ( _I2C_Master_Stop ..  ]
+"203
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 203:     _delay((unsigned long)((10)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"205
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 205:     I2C_Master_Start();
+[e ( _I2C_Master_Start ..  ]
+"206
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 206:     I2C_Master_Write(0xD1);
+[e ( _I2C_Master_Write (1 -> -> 209 `i `ui ]
+"207
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 207:     BASURA = I2C_Master_Read(0);
+[e = _BASURA -> ( _I2C_Master_Read (1 -> -> 0 `i `us `uc ]
+"208
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 208:     I2C_Master_Stop();
+[e ( _I2C_Master_Stop ..  ]
+"209
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 209:     _delay((unsigned long)((10)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"211
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 211:     I2C_Master_Start();
+[e ( _I2C_Master_Start ..  ]
 "212
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 212: }
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 212:     I2C_Master_Write(0xD0);
+[e ( _I2C_Master_Write (1 -> -> 208 `i `ui ]
+"213
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 213:     I2C_Master_Write(0x03);
+[e ( _I2C_Master_Write (1 -> -> 3 `i `ui ]
+"214
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 214:     I2C_Master_Write(0x01);
+[e ( _I2C_Master_Write (1 -> -> 1 `i `ui ]
+"215
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 215:     I2C_Master_Stop();
+[e ( _I2C_Master_Stop ..  ]
+"216
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 216:     _delay((unsigned long)((10)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"218
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 218:     I2C_Master_Start();
+[e ( _I2C_Master_Start ..  ]
+"219
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 219:     I2C_Master_Write(0xD1);
+[e ( _I2C_Master_Write (1 -> -> 209 `i `ui ]
+"220
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 220:     BASURA = I2C_Master_Read(0);
+[e = _BASURA -> ( _I2C_Master_Read (1 -> -> 0 `i `us `uc ]
+"221
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 221:     I2C_Master_Stop();
+[e ( _I2C_Master_Stop ..  ]
+"222
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 222:     _delay((unsigned long)((10)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"223
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 223: }
 [e :UE 142 ]
 }
-"214
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 214: const char* conver(void){
+"225
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 225: const char* conver(void){
 [v _conver `(*Cuc ~T0 @X0 1 ef ]
 {
 [e :U _conver ]
 [f ]
-"215
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 215:     if (CERRADO==0){
+"226
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 226:     if (CERRADO==0){
 [e $ ! == -> _CERRADO `i -> 0 `i 144  ]
 {
-"216
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 216:         char temporal[16];
-[v _temporal `uc ~T0 @X0 -> 16 `i a ]
-"217
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 217:         temporal[0] = 0x50;
-[e = *U + &U _temporal * -> -> -> 0 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 80 `i `uc ]
-"218
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 218:         temporal[1] = 0x41;
-[e = *U + &U _temporal * -> -> -> 1 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 65 `i `uc ]
-"219
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 219:         temporal[2] = 0x52;
-[e = *U + &U _temporal * -> -> -> 2 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 82 `i `uc ]
-"220
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 220:         temporal[3] = 0x51;
-[e = *U + &U _temporal * -> -> -> 3 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 81 `i `uc ]
-"221
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 221:         temporal[4] = 0x55;
-[e = *U + &U _temporal * -> -> -> 4 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 85 `i `uc ]
-"222
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 222:         temporal[5] = 0x45;
-[e = *U + &U _temporal * -> -> -> 5 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 69 `i `uc ]
-"223
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 223:         temporal[6] = 0x4F;
-[e = *U + &U _temporal * -> -> -> 6 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 79 `i `uc ]
-"224
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 224:         temporal[7] = 0x53;
-[e = *U + &U _temporal * -> -> -> 7 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 83 `i `uc ]
-"225
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 225:         temporal[8] = 0x3A;
-[e = *U + &U _temporal * -> -> -> 8 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 58 `i `uc ]
-"226
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 226:         temporal[9] = 0X20;
-[e = *U + &U _temporal * -> -> -> 9 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 32 `i `uc ]
 "227
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 227:         temporal[10] = 0x30;
-[e = *U + &U _temporal * -> -> -> 10 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 48 `i `uc ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 227:         char temporal[16];
+[v _temporal `uc ~T0 @X0 -> 16 `i a ]
 "228
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 228:         temporal[11] = NUM;
-[e = *U + &U _temporal * -> -> -> 11 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> _NUM `uc ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 228:         temporal[0] = 0x50;
+[e = *U + &U _temporal * -> -> -> 0 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 80 `i `uc ]
 "229
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 229:         temporal[12] = 0x20;
-[e = *U + &U _temporal * -> -> -> 12 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 32 `i `uc ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 229:         temporal[1] = 0x41;
+[e = *U + &U _temporal * -> -> -> 1 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 65 `i `uc ]
 "230
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 230:         temporal[13] = 0x20;
-[e = *U + &U _temporal * -> -> -> 13 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 32 `i `uc ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 230:         temporal[2] = 0x52;
+[e = *U + &U _temporal * -> -> -> 2 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 82 `i `uc ]
 "231
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 231:         temporal[14] = 0x20;
-[e = *U + &U _temporal * -> -> -> 14 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 32 `i `uc ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 231:         temporal[3] = 0x51;
+[e = *U + &U _temporal * -> -> -> 3 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 81 `i `uc ]
 "232
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 232:         temporal[15] = 0x20;
-[e = *U + &U _temporal * -> -> -> 15 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 32 `i `uc ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 232:         temporal[4] = 0x55;
+[e = *U + &U _temporal * -> -> -> 4 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 85 `i `uc ]
 "233
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 233:         return temporal;
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 233:         temporal[5] = 0x45;
+[e = *U + &U _temporal * -> -> -> 5 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 69 `i `uc ]
+"234
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 234:         temporal[6] = 0x4F;
+[e = *U + &U _temporal * -> -> -> 6 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 79 `i `uc ]
+"235
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 235:         temporal[7] = 0x53;
+[e = *U + &U _temporal * -> -> -> 7 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 83 `i `uc ]
+"236
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 236:         temporal[8] = 0x3A;
+[e = *U + &U _temporal * -> -> -> 8 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 58 `i `uc ]
+"237
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 237:         temporal[9] = 0X20;
+[e = *U + &U _temporal * -> -> -> 9 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 32 `i `uc ]
+"238
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 238:         temporal[10] = 0x30;
+[e = *U + &U _temporal * -> -> -> 10 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 48 `i `uc ]
+"239
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 239:         temporal[11] = NUM;
+[e = *U + &U _temporal * -> -> -> 11 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> _NUM `uc ]
+"240
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 240:         temporal[12] = 0x20;
+[e = *U + &U _temporal * -> -> -> 12 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 32 `i `uc ]
+"241
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 241:         temporal[13] = 0x20;
+[e = *U + &U _temporal * -> -> -> 13 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 32 `i `uc ]
+"242
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 242:         temporal[14] = 0x20;
+[e = *U + &U _temporal * -> -> -> 14 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 32 `i `uc ]
+"243
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 243:         temporal[15] = 0x20;
+[e = *U + &U _temporal * -> -> -> 15 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 32 `i `uc ]
+"244
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 244:         return temporal;
 [e ) -> &U _temporal `*Cuc ]
 [e $UE 143  ]
-"234
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 234:     }
+"245
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 245:     }
 }
 [e $U 145  ]
-"235
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 235:     else{
+"246
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 246:     else{
 [e :U 144 ]
 {
-"236
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 236:         char temporal[16];
-[v _temporal `uc ~T0 @X0 -> 16 `i a ]
-"237
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 237:         temporal[0] = 0x43;
-[e = *U + &U _temporal * -> -> -> 0 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 67 `i `uc ]
-"238
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 238:         temporal[1] = 0x45;
-[e = *U + &U _temporal * -> -> -> 1 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 69 `i `uc ]
-"239
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 239:         temporal[2] = 0x52;
-[e = *U + &U _temporal * -> -> -> 2 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 82 `i `uc ]
-"240
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 240:         temporal[3] = 0x52;
-[e = *U + &U _temporal * -> -> -> 3 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 82 `i `uc ]
-"241
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 241:         temporal[4] = 0x41;
-[e = *U + &U _temporal * -> -> -> 4 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 65 `i `uc ]
-"242
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 242:         temporal[5] = 0x44;
-[e = *U + &U _temporal * -> -> -> 5 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 68 `i `uc ]
-"243
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 243:         temporal[6] = 0x4F;
-[e = *U + &U _temporal * -> -> -> 6 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 79 `i `uc ]
-"244
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 244:         temporal[7] = 0x20;
-[e = *U + &U _temporal * -> -> -> 7 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 32 `i `uc ]
-"245
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 245:         temporal[8] = 0x20;
-[e = *U + &U _temporal * -> -> -> 8 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 32 `i `uc ]
-"246
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 246:         temporal[9] = 0X20;
-[e = *U + &U _temporal * -> -> -> 9 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 32 `i `uc ]
 "247
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 247:         temporal[10] = 0x20;
-[e = *U + &U _temporal * -> -> -> 10 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 32 `i `uc ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 247:         char temporal[16];
+[v _temporal `uc ~T0 @X0 -> 16 `i a ]
 "248
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 248:         temporal[11] = 0x20;
-[e = *U + &U _temporal * -> -> -> 11 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 32 `i `uc ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 248:         temporal[0] = 0x43;
+[e = *U + &U _temporal * -> -> -> 0 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 67 `i `uc ]
 "249
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 249:         temporal[12] = 0x20;
-[e = *U + &U _temporal * -> -> -> 12 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 32 `i `uc ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 249:         temporal[1] = 0x45;
+[e = *U + &U _temporal * -> -> -> 1 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 69 `i `uc ]
 "250
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 250:         temporal[13] = 0x20;
-[e = *U + &U _temporal * -> -> -> 13 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 32 `i `uc ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 250:         temporal[2] = 0x52;
+[e = *U + &U _temporal * -> -> -> 2 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 82 `i `uc ]
 "251
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 251:         temporal[14] = 0x20;
-[e = *U + &U _temporal * -> -> -> 14 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 32 `i `uc ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 251:         temporal[3] = 0x52;
+[e = *U + &U _temporal * -> -> -> 3 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 82 `i `uc ]
 "252
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 252:         temporal[15] = 0x20;
-[e = *U + &U _temporal * -> -> -> 15 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 32 `i `uc ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 252:         temporal[4] = 0x41;
+[e = *U + &U _temporal * -> -> -> 4 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 65 `i `uc ]
 "253
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 253:         return temporal;
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 253:         temporal[5] = 0x44;
+[e = *U + &U _temporal * -> -> -> 5 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 68 `i `uc ]
+"254
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 254:         temporal[6] = 0x4F;
+[e = *U + &U _temporal * -> -> -> 6 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 79 `i `uc ]
+"255
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 255:         temporal[7] = 0x20;
+[e = *U + &U _temporal * -> -> -> 7 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 32 `i `uc ]
+"256
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 256:         temporal[8] = 0x20;
+[e = *U + &U _temporal * -> -> -> 8 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 32 `i `uc ]
+"257
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 257:         temporal[9] = 0X20;
+[e = *U + &U _temporal * -> -> -> 9 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 32 `i `uc ]
+"258
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 258:         temporal[10] = 0x20;
+[e = *U + &U _temporal * -> -> -> 10 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 32 `i `uc ]
+"259
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 259:         temporal[11] = 0x20;
+[e = *U + &U _temporal * -> -> -> 11 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 32 `i `uc ]
+"260
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 260:         temporal[12] = 0x20;
+[e = *U + &U _temporal * -> -> -> 12 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 32 `i `uc ]
+"261
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 261:         temporal[13] = 0x20;
+[e = *U + &U _temporal * -> -> -> 13 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 32 `i `uc ]
+"262
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 262:         temporal[14] = 0x20;
+[e = *U + &U _temporal * -> -> -> 14 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 32 `i `uc ]
+"263
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 263:         temporal[15] = 0x20;
+[e = *U + &U _temporal * -> -> -> 15 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 32 `i `uc ]
+"264
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 264:         return temporal;
 [e ) -> &U _temporal `*Cuc ]
 [e $UE 143  ]
-"254
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 254:     }
+"265
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 265:     }
 }
 [e :U 145 ]
-"255
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 255: }
+"266
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 266: }
 [e :UE 143 ]
 }
-"257
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 257: const char* conver1(void)
+"268
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 268: const char* conver1(void)
 [v _conver1 `(*Cuc ~T0 @X0 1 ef ]
-"258
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 258: {
+"269
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 269: {
 {
 [e :U _conver1 ]
 [f ]
-"259
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 259:     char temporal[16];
-[v _temporal `uc ~T0 @X0 -> 16 `i a ]
-"260
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 260:     temporal[0] = C1;
-[e = *U + &U _temporal * -> -> -> 0 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> _C1 `uc ]
-"261
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 261:     temporal[1] = C2;
-[e = *U + &U _temporal * -> -> -> 1 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> _C2 `uc ]
-"262
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 262:     temporal[2] = C3;
-[e = *U + &U _temporal * -> -> -> 2 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> _C3 `uc ]
-"263
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 263:     temporal[3] = 0x2E;
-[e = *U + &U _temporal * -> -> -> 3 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 46 `i `uc ]
-"264
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 264:     temporal[4] = 0x20;
-[e = *U + &U _temporal * -> -> -> 4 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 32 `i `uc ]
-"265
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 265:     temporal[5] = DH;
-[e = *U + &U _temporal * -> -> -> 5 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> _DH `uc ]
-"266
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 266:     temporal[6] = UH;
-[e = *U + &U _temporal * -> -> -> 6 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> _UH `uc ]
-"267
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 267:     temporal[7] = 0x3A;
-[e = *U + &U _temporal * -> -> -> 7 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 58 `i `uc ]
-"268
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 268:     temporal[8] = DM;
-[e = *U + &U _temporal * -> -> -> 8 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> _DM `uc ]
-"269
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 269:     temporal[9] = UM;
-[e = *U + &U _temporal * -> -> -> 9 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> _UM `uc ]
 "270
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 270:     temporal[10] = 0x20;
-[e = *U + &U _temporal * -> -> -> 10 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 32 `i `uc ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 270:     char temporal[16];
+[v _temporal `uc ~T0 @X0 -> 16 `i a ]
 "271
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 271:     temporal[11] = ((temperatura/10)%10+0x30);
-[e = *U + &U _temporal * -> -> -> 11 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> + % / -> _temperatura `i -> 10 `i -> 10 `i -> 48 `i `uc ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 271:     temporal[0] = C1;
+[e = *U + &U _temporal * -> -> -> 0 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> _C1 `uc ]
 "272
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 272:     temporal[12] = ((temperatura%10)+0x30);
-[e = *U + &U _temporal * -> -> -> 12 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> + % -> _temperatura `i -> 10 `i -> 48 `i `uc ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 272:     temporal[1] = C2;
+[e = *U + &U _temporal * -> -> -> 1 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> _C2 `uc ]
 "273
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 273:     temporal[13] = 0xDF;
-[e = *U + &U _temporal * -> -> -> 13 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 223 `i `uc ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 273:     temporal[2] = C3;
+[e = *U + &U _temporal * -> -> -> 2 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> _C3 `uc ]
 "274
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 274:     temporal[14] = 0x43;
-[e = *U + &U _temporal * -> -> -> 14 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 67 `i `uc ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 274:     temporal[3] = 0x2E;
+[e = *U + &U _temporal * -> -> -> 3 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 46 `i `uc ]
 "275
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 275:     temporal[15] = 0x20;
-[e = *U + &U _temporal * -> -> -> 15 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 32 `i `uc ]
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 275:     temporal[4] = 0x20;
+[e = *U + &U _temporal * -> -> -> 4 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 32 `i `uc ]
 "276
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 276:     return temporal;
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 276:     temporal[5] = DH;
+[e = *U + &U _temporal * -> -> -> 5 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> _DH `uc ]
+"277
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 277:     temporal[6] = UH;
+[e = *U + &U _temporal * -> -> -> 6 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> _UH `uc ]
+"278
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 278:     temporal[7] = 0x3A;
+[e = *U + &U _temporal * -> -> -> 7 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 58 `i `uc ]
+"279
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 279:     temporal[8] = DM;
+[e = *U + &U _temporal * -> -> -> 8 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> _DM `uc ]
+"280
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 280:     temporal[9] = UM;
+[e = *U + &U _temporal * -> -> -> 9 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> _UM `uc ]
+"281
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 281:     temporal[10] = 0x20;
+[e = *U + &U _temporal * -> -> -> 10 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 32 `i `uc ]
+"282
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 282:     temporal[11] = ((temperatura/10)%10+0x30);
+[e = *U + &U _temporal * -> -> -> 11 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> + % / -> _temperatura `i -> 10 `i -> 10 `i -> 48 `i `uc ]
+"283
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 283:     temporal[12] = ((temperatura%10)+0x30);
+[e = *U + &U _temporal * -> -> -> 12 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> + % -> _temperatura `i -> 10 `i -> 48 `i `uc ]
+"284
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 284:     temporal[13] = 0xDF;
+[e = *U + &U _temporal * -> -> -> 13 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 223 `i `uc ]
+"285
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 285:     temporal[14] = 0x43;
+[e = *U + &U _temporal * -> -> -> 14 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 67 `i `uc ]
+"286
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 286:     temporal[15] = 0x20;
+[e = *U + &U _temporal * -> -> -> 15 `i `ui `ux -> -> # *U &U _temporal `ui `ux -> -> 32 `i `uc ]
+"287
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 287:     return temporal;
 [e ) -> &U _temporal `*Cuc ]
 [e $UE 146  ]
-"277
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 277: }
+"288
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 288: }
 [e :UE 146 ]
 }
-"279
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 279: void LECT1(void){
+"290
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 290: void LECT1(void){
 [v _LECT1 `(v ~T0 @X0 1 ef ]
 {
 [e :U _LECT1 ]
 [f ]
-"280
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 280:     NUM = num_ascii(PARKH);
+"291
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 291:     NUM = num_ascii(PARKH);
 [e = _NUM -> ( _num_ascii (1 _PARKH `uc ]
-"281
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 281:     if (DIA == 1){
+"292
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 292:     if (DIA == 1){
 [e $ ! == -> _DIA `i -> 1 `i 148  ]
 {
-"282
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 282:         C1 = 0x4C;
+"293
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 293:         C1 = 0x4C;
 [e = _C1 -> -> 76 `i `uc ]
-"283
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 283:         C2 = 0x75;
+"294
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 294:         C2 = 0x75;
 [e = _C2 -> -> 117 `i `uc ]
-"284
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 284:         C3 = 0x6E;
+"295
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 295:         C3 = 0x6E;
 [e = _C3 -> -> 110 `i `uc ]
-"285
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 285:     }
+"296
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 296:     }
 }
 [e $U 149  ]
-"286
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 286:     else if(DIA == 2){
+"297
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 297:     else if(DIA == 2){
 [e :U 148 ]
 [e $ ! == -> _DIA `i -> 2 `i 150  ]
 {
-"287
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 287:         C1 = 0x4D;
+"298
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 298:         C1 = 0x4D;
 [e = _C1 -> -> 77 `i `uc ]
-"288
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 288:         C2 = 0x61;
+"299
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 299:         C2 = 0x61;
 [e = _C2 -> -> 97 `i `uc ]
-"289
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 289:         C3 = 0x72;
+"300
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 300:         C3 = 0x72;
 [e = _C3 -> -> 114 `i `uc ]
-"290
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 290:     }
+"301
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 301:     }
 }
 [e $U 151  ]
-"291
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 291:     else if(DIA == 3){
+"302
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 302:     else if(DIA == 3){
 [e :U 150 ]
 [e $ ! == -> _DIA `i -> 3 `i 152  ]
 {
-"292
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 292:         C1 = 0x4D;
+"303
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 303:         C1 = 0x4D;
 [e = _C1 -> -> 77 `i `uc ]
-"293
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 293:         C2 = 0x69;
+"304
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 304:         C2 = 0x69;
 [e = _C2 -> -> 105 `i `uc ]
-"294
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 294:         C3 = 0x65;
+"305
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 305:         C3 = 0x65;
 [e = _C3 -> -> 101 `i `uc ]
-"295
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 295:     }
+"306
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 306:     }
 }
 [e $U 153  ]
-"296
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 296:     else if (DIA == 4){
+"307
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 307:     else if (DIA == 4){
 [e :U 152 ]
 [e $ ! == -> _DIA `i -> 4 `i 154  ]
 {
-"297
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 297:         C1 = 0x4A;
+"308
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 308:         C1 = 0x4A;
 [e = _C1 -> -> 74 `i `uc ]
-"298
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 298:         C2 = 0x75;
+"309
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 309:         C2 = 0x75;
 [e = _C2 -> -> 117 `i `uc ]
-"299
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 299:         C3 = 0x65;
+"310
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 310:         C3 = 0x65;
 [e = _C3 -> -> 101 `i `uc ]
-"300
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 300:     }
+"311
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 311:     }
 }
 [e $U 155  ]
-"301
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 301:     else if (DIA == 5){
+"312
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 312:     else if (DIA == 5){
 [e :U 154 ]
 [e $ ! == -> _DIA `i -> 5 `i 156  ]
 {
-"302
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 302:         C1 = 0x56;
+"313
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 313:         C1 = 0x56;
 [e = _C1 -> -> 86 `i `uc ]
-"303
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 303:         C2 = 0x69;
+"314
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 314:         C2 = 0x69;
 [e = _C2 -> -> 105 `i `uc ]
-"304
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 304:         C3 = 0x65;
+"315
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 315:         C3 = 0x65;
 [e = _C3 -> -> 101 `i `uc ]
-"305
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 305:     }
+"316
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 316:     }
 }
 [e $U 157  ]
-"306
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 306:     else if (DIA == 6){
+"317
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 317:     else if (DIA == 6){
 [e :U 156 ]
 [e $ ! == -> _DIA `i -> 6 `i 158  ]
 {
-"307
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 307:         C1 = 0x53;
+"318
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 318:         C1 = 0x53;
 [e = _C1 -> -> 83 `i `uc ]
-"308
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 308:         C2 = 0x61;
+"319
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 319:         C2 = 0x61;
 [e = _C2 -> -> 97 `i `uc ]
-"309
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 309:         C3 = 0x62;
+"320
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 320:         C3 = 0x62;
 [e = _C3 -> -> 98 `i `uc ]
-"310
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 310:     }
+"321
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 321:     }
 }
 [e $U 159  ]
-"311
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 311:     else if (DIA == 7){
+"322
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 322:     else if (DIA == 7){
 [e :U 158 ]
 [e $ ! == -> _DIA `i -> 7 `i 160  ]
 {
-"312
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 312:         C1 = 0x44;
+"323
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 323:         C1 = 0x44;
 [e = _C1 -> -> 68 `i `uc ]
-"313
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 313:         C2 = 0x6F;
+"324
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 324:         C2 = 0x6F;
 [e = _C2 -> -> 111 `i `uc ]
-"314
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 314:         C3 = 0x6D;
+"325
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 325:         C3 = 0x6D;
 [e = _C3 -> -> 109 `i `uc ]
-"315
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 315:         CERRADO = 1;
+"326
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 326:         CERRADO = 1;
 [e = _CERRADO -> -> 1 `i `uc ]
-"316
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 316:     }
+"327
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 327:     }
 }
 [e :U 160 ]
 [e :U 159 ]
@@ -1098,260 +1110,260 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 153 ]
 [e :U 151 ]
 [e :U 149 ]
-"317
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 317:     if (HORA<10){
+"328
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 328:     if (HORA<10){
 [e $ ! < -> _HORA `i -> 10 `i 161  ]
 {
-"318
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 318:         DH = 0x30;
+"329
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 329:         DH = 0x30;
 [e = _DH -> -> 48 `i `uc ]
-"319
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 319:         UH = num_ascii(HORA);
+"330
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 330:         UH = num_ascii(HORA);
 [e = _UH -> ( _num_ascii (1 _HORA `uc ]
-"320
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 320:         if (HORA<7){
+"331
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 331:         if (HORA<7){
 [e $ ! < -> _HORA `i -> 7 `i 162  ]
 {
-"321
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 321:             PORTA = 0b00111111;
-[e = _PORTA -> -> 63 `i `uc ]
-"322
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 322:             CERRADO = 1;
+"332
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 332:             PORTB = 0b11000000;
+[e = _PORTB -> -> 192 `i `uc ]
+"333
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 333:             CERRADO = 1;
 [e = _CERRADO -> -> 1 `i `uc ]
-"323
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 323:         }
+"334
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 334:         }
 }
 [e $U 163  ]
-"324
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 324:         else{
+"335
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 335:         else{
 [e :U 162 ]
 {
-"325
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 325:             PORTA = 0;
-[e = _PORTA -> -> 0 `i `uc ]
-"326
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 326:             if (DIA!=7){
+"336
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 336:             PORTB = 0;
+[e = _PORTB -> -> 0 `i `uc ]
+"337
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 337:             if (DIA!=7){
 [e $ ! != -> _DIA `i -> 7 `i 164  ]
 {
-"327
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 327:                 CERRADO = 0;
+"338
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 338:                 CERRADO = 0;
 [e = _CERRADO -> -> 0 `i `uc ]
-"328
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 328:             }
+"339
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 339:             }
 }
 [e :U 164 ]
-"329
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 329:         }
-}
-[e :U 163 ]
-"330
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 330:     }
-}
-[e $U 165  ]
-"331
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 331:     else if (HORA<26){
-[e :U 161 ]
-[e $ ! < -> _HORA `i -> 26 `i 166  ]
-{
-"332
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 332:         DH = 0x31;
-[e = _DH -> -> 49 `i `uc ]
-"333
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 333:         con = HORA-16;
-[e = _con -> - -> _HORA `i -> 16 `i `uc ]
-"334
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 334:         UH = num_ascii(con);
-[e = _UH -> ( _num_ascii (1 _con `uc ]
-"335
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 335:         if (DIA!=7){
-[e $ ! != -> _DIA `i -> 7 `i 167  ]
-{
-"336
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 336:             CERRADO = 0;
-[e = _CERRADO -> -> 0 `i `uc ]
-"337
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 337:         }
-}
-[e :U 167 ]
-"338
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 338:         if (con>7){
-[e $ ! > -> _con `i -> 7 `i 168  ]
-{
-"339
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 339:             PORTA = 0b00111111;
-[e = _PORTA -> -> 63 `i `uc ]
 "340
 [; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 340:         }
 }
-[e $U 169  ]
+[e :U 163 ]
 "341
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 341:         else{
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 341:     }
+}
+[e $U 165  ]
+"342
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 342:     else if (HORA<26){
+[e :U 161 ]
+[e $ ! < -> _HORA `i -> 26 `i 166  ]
+{
+"343
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 343:         DH = 0x31;
+[e = _DH -> -> 49 `i `uc ]
+"344
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 344:         con = HORA-16;
+[e = _con -> - -> _HORA `i -> 16 `i `uc ]
+"345
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 345:         UH = num_ascii(con);
+[e = _UH -> ( _num_ascii (1 _con `uc ]
+"346
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 346:         if (DIA!=7){
+[e $ ! != -> _DIA `i -> 7 `i 167  ]
+{
+"347
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 347:             CERRADO = 0;
+[e = _CERRADO -> -> 0 `i `uc ]
+"348
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 348:         }
+}
+[e :U 167 ]
+"349
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 349:         if (con>7){
+[e $ ! > -> _con `i -> 7 `i 168  ]
+{
+"350
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 350:             PORTB = 0b11000000;
+[e = _PORTB -> -> 192 `i `uc ]
+"351
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 351:         }
+}
+[e $U 169  ]
+"352
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 352:         else{
 [e :U 168 ]
 {
-"342
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 342:             PORTA = 0;
-[e = _PORTA -> -> 0 `i `uc ]
-"343
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 343:         }
+"353
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 353:             PORTB = 0;
+[e = _PORTB -> -> 0 `i `uc ]
+"354
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 354:         }
 }
 [e :U 169 ]
-"344
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 344:     }
+"355
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 355:     }
 }
 [e $U 170  ]
-"345
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 345:     else{
+"356
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 356:     else{
 [e :U 166 ]
 {
-"346
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 346:         DH = 0x32;
+"357
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 357:         DH = 0x32;
 [e = _DH -> -> 50 `i `uc ]
-"347
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 347:         con = HORA-32;
+"358
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 358:         con = HORA-32;
 [e = _con -> - -> _HORA `i -> 32 `i `uc ]
-"348
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 348:         UH = num_ascii(con);
+"359
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 359:         UH = num_ascii(con);
 [e = _UH -> ( _num_ascii (1 _con `uc ]
-"349
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 349:         PORTA = 0b00111111;
-[e = _PORTA -> -> 63 `i `uc ]
-"350
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 350:         if (con>1){
+"360
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 360:         PORTB = 0b11000000;
+[e = _PORTB -> -> 192 `i `uc ]
+"361
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 361:         if (con>1){
 [e $ ! > -> _con `i -> 1 `i 171  ]
 {
-"351
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 351:             CERRADO = 1;
+"362
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 362:             CERRADO = 1;
 [e = _CERRADO -> -> 1 `i `uc ]
-"352
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 352:         }
+"363
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 363:         }
 }
 [e $U 172  ]
-"353
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 353:         else{
+"364
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 364:         else{
 [e :U 171 ]
 {
-"354
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 354:             if (DIA!=7){
+"365
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 365:             if (DIA!=7){
 [e $ ! != -> _DIA `i -> 7 `i 173  ]
 {
-"355
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 355:                 CERRADO = 0;
+"366
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 366:                 CERRADO = 0;
 [e = _CERRADO -> -> 0 `i `uc ]
-"356
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 356:             }
+"367
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 367:             }
 }
 [e :U 173 ]
-"357
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 357:         }
+"368
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 368:         }
 }
 [e :U 172 ]
-"358
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 358:     }
+"369
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 369:     }
 }
 [e :U 170 ]
 [e :U 165 ]
-"359
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 359:     if (MIN<10){
+"370
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 370:     if (MIN<10){
 [e $ ! < -> _MIN `i -> 10 `i 174  ]
 {
-"360
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 360:         DM = 0x30;
+"371
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 371:         DM = 0x30;
 [e = _DM -> -> 48 `i `uc ]
-"361
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 361:         UM = num_ascii(MIN);
+"372
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 372:         UM = num_ascii(MIN);
 [e = _UM -> ( _num_ascii (1 _MIN `uc ]
-"362
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 362:     }
+"373
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 373:     }
 }
 [e $U 175  ]
-"363
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 363:     else if (MIN<26){
+"374
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 374:     else if (MIN<26){
 [e :U 174 ]
 [e $ ! < -> _MIN `i -> 26 `i 176  ]
 {
-"364
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 364:         DM = 0x31;
+"375
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 375:         DM = 0x31;
 [e = _DM -> -> 49 `i `uc ]
-"365
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 365:         con = MIN-16;
+"376
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 376:         con = MIN-16;
 [e = _con -> - -> _MIN `i -> 16 `i `uc ]
-"366
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 366:         UM = num_ascii(con);
+"377
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 377:         UM = num_ascii(con);
 [e = _UM -> ( _num_ascii (1 _con `uc ]
-"367
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 367:     }
+"378
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 378:     }
 }
 [e $U 177  ]
-"368
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 368:     else if (MIN<42){
+"379
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 379:     else if (MIN<42){
 [e :U 176 ]
 [e $ ! < -> _MIN `i -> 42 `i 178  ]
 {
-"369
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 369:         DM = 0x32;
+"380
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 380:         DM = 0x32;
 [e = _DM -> -> 50 `i `uc ]
-"370
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 370:         con = MIN-32;
+"381
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 381:         con = MIN-32;
 [e = _con -> - -> _MIN `i -> 32 `i `uc ]
-"371
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 371:         UM = num_ascii(con);
+"382
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 382:         UM = num_ascii(con);
 [e = _UM -> ( _num_ascii (1 _con `uc ]
-"372
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 372:     }
+"383
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 383:     }
 }
 [e $U 179  ]
-"373
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 373:     else if (MIN<58){
+"384
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 384:     else if (MIN<58){
 [e :U 178 ]
 [e $ ! < -> _MIN `i -> 58 `i 180  ]
 {
-"374
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 374:         DM = 0x33;
+"385
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 385:         DM = 0x33;
 [e = _DM -> -> 51 `i `uc ]
-"375
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 375:         con = MIN-32-16;
+"386
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 386:         con = MIN-32-16;
 [e = _con -> - - -> _MIN `i -> 32 `i -> 16 `i `uc ]
-"376
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 376:         UM = num_ascii(con);
+"387
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 387:         UM = num_ascii(con);
 [e = _UM -> ( _num_ascii (1 _con `uc ]
-"377
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 377:     }
+"388
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 388:     }
 }
 [e $U 181  ]
-"378
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 378:     else if (MIN<74){
+"389
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 389:     else if (MIN<74){
 [e :U 180 ]
 [e $ ! < -> _MIN `i -> 74 `i 182  ]
 {
-"379
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 379:         DM = 0x34;
+"390
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 390:         DM = 0x34;
 [e = _DM -> -> 52 `i `uc ]
-"380
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 380:         con = MIN-64;
+"391
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 391:         con = MIN-64;
 [e = _con -> - -> _MIN `i -> 64 `i `uc ]
-"381
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 381:         UM = num_ascii(con);
+"392
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 392:         UM = num_ascii(con);
 [e = _UM -> ( _num_ascii (1 _con `uc ]
-"382
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 382:     }
+"393
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 393:     }
 }
 [e $U 183  ]
-"383
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 383:     else if (MIN<90){
+"394
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 394:     else if (MIN<90){
 [e :U 182 ]
 [e $ ! < -> _MIN `i -> 90 `i 184  ]
 {
-"384
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 384:         DM = 0x35;
+"395
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 395:         DM = 0x35;
 [e = _DM -> -> 53 `i `uc ]
-"385
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 385:         con = MIN-64-16;
+"396
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 396:         con = MIN-64-16;
 [e = _con -> - - -> _MIN `i -> 64 `i -> 16 `i `uc ]
-"386
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 386:         UM = num_ascii(con);
+"397
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 397:         UM = num_ascii(con);
 [e = _UM -> ( _num_ascii (1 _con `uc ]
-"387
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 387:     }
+"398
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 398:     }
 }
 [e :U 184 ]
 [e :U 183 ]
@@ -1359,7 +1371,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 179 ]
 [e :U 177 ]
 [e :U 175 ]
-"388
-[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 388: }
+"399
+[; ;C:/Users/Andy Bonilla/Documents/GitHub/ED2/Proyecto1_ED2/PIC_maestro.X/main_mastre.c: 399: }
 [e :UE 147 ]
 }
